@@ -1,4 +1,4 @@
-import { GLOB_CSS, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from '../globs'
+import { GLOB_LESS, GLOB_MARKDOWN } from '../globs'
 import type { VendoredPrettierOptions } from '../vender/prettier-types'
 import { ensurePackages, interopDefault } from '../utils'
 import type { FlatConfigItem, OptionsFormatters, StylisticConfig } from '../types'
@@ -15,9 +15,7 @@ export async function formatters(
 
   if (options === true) {
     options = {
-      css: true,
       graphql: true,
-      html: true,
       markdown: true,
       toml: true,
     }
@@ -40,7 +38,7 @@ export async function formatters(
       trailingComma: 'all',
       useTabs: indent === 'tab',
     } satisfies VendoredPrettierOptions,
-    options.prettierOptions || {},
+    options.prettierOptions ?? {},
   )
 
   const dprintOptions = Object.assign(
@@ -49,7 +47,7 @@ export async function formatters(
       quoteStyle: quotes === 'single' ? 'preferSingle' : 'preferDouble',
       useTabs: indent === 'tab',
     },
-    options.dprintOptions || {},
+    options.dprintOptions ?? {},
   )
 
   const pluginFormat = await interopDefault(import('eslint-plugin-format'))
@@ -62,78 +60,6 @@ export async function formatters(
       },
     },
   ]
-
-  if (options.css) {
-    configs.push(
-      {
-        files: [GLOB_CSS, GLOB_POSTCSS],
-        languageOptions: {
-          parser: pluginFormat.parserPlain,
-        },
-        name: 'antfu:formatter:css',
-        rules: {
-          'format/prettier': [
-            'error',
-            {
-              ...prettierOptions,
-              parser: 'css',
-            },
-          ],
-        },
-      },
-      {
-        files: [GLOB_SCSS],
-        languageOptions: {
-          parser: pluginFormat.parserPlain,
-        },
-        name: 'antfu:formatter:scss',
-        rules: {
-          'format/prettier': [
-            'error',
-            {
-              ...prettierOptions,
-              parser: 'scss',
-            },
-          ],
-        },
-      },
-      {
-        files: [GLOB_LESS],
-        languageOptions: {
-          parser: pluginFormat.parserPlain,
-        },
-        name: 'antfu:formatter:less',
-        rules: {
-          'format/prettier': [
-            'error',
-            {
-              ...prettierOptions,
-              parser: 'less',
-            },
-          ],
-        },
-      },
-    )
-  }
-
-  if (options.html) {
-    configs.push({
-      files: ['**/*.html'],
-      languageOptions: {
-        parser: pluginFormat.parserPlain,
-      },
-      name: 'antfu:formatter:html',
-      rules: {
-        'format/prettier': [
-          'error',
-          {
-            ...prettierOptions,
-            parser: 'html',
-          },
-        ],
-      },
-    })
-  }
 
   if (options.toml) {
     configs.push({

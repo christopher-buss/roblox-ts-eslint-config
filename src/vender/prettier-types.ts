@@ -34,7 +34,7 @@ export interface VendoredPrettierOptionsRequired {
    */
   bracketSpacing: boolean
   /**
-   * Put the `>` of a multi-line HTML (HTML, JSX, Angular) element at the end of the last line instead of being
+   * Put the `>` of a multi-line JSX element at the end of the last line instead of being
    * alone on the next line (does not apply to self closing elements).
    */
   bracketSameLine: boolean
@@ -68,11 +68,6 @@ export interface VendoredPrettierOptionsRequired {
    */
   plugins: Array<string | any>
   /**
-   * How to handle whitespaces in HTML.
-   * @default "css"
-   */
-  htmlWhitespaceSensitivity: 'css' | 'strict' | 'ignore'
-  /**
    * Which end of line characters to apply.
    * @default "lf"
    */
@@ -83,7 +78,7 @@ export interface VendoredPrettierOptionsRequired {
    */
   quoteProps: 'as-needed' | 'consistent' | 'preserve'
   /**
-   * Enforce single attribute per line in HTML, and JSX.
+   * Enforce single attribute per line in JSX.
    * @default false
    */
   singleAttributePerLine: boolean
@@ -95,12 +90,10 @@ export type BuiltInParserName =
   | 'babel-flow'
   | 'babel-ts'
   | 'babel'
-  | 'css'
   | 'espree'
   | 'flow'
   | 'glimmer'
   | 'graphql'
-  | 'html'
   | 'json-stringify'
   | 'json'
   | 'json5'
@@ -109,7 +102,6 @@ export type BuiltInParserName =
   | 'markdown'
   | 'mdx'
   | 'meriyah'
-  | 'scss'
   | 'typescript'
   | 'yaml'
 

@@ -39,11 +39,8 @@ export const vscodeSettingsString = `
 
   // Enable eslint for all supported languages
   "eslint.validate": [
-    "javascript",
-    "javascriptreact",
     "typescript",
     "typescriptreact",
-    "html",
     "markdown",
     "json",
     "jsonc",

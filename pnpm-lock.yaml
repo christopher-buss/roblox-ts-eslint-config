@@ -132,9 +132,6 @@ importers:
       '@types/yargs':
         specifier: ^17.0.32
         version: 17.0.32
-      '@unocss/eslint-plugin':
-        specifier: ^0.58.0
-        version: 0.58.0(eslint@8.55.0)(typescript@5.3.2)
       bumpp:
         specifier: ^9.2.0
         version: 9.2.0
@@ -225,10 +222,6 @@ packages:
   /@antfu/ni@0.21.12:
     resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
     hasBin: true
-    dev: true
-
-  /@antfu/utils@0.7.6:
-    resolution: {integrity: sha512-pvFiLP2BeOKA/ZOS6jxx4XhKzdVLHDhGlFEaZ2flWWYf2xOqVniqpk38I04DFRyz+L0ASggl7SkItTc+ZLju4w==}
     dev: true
 
   /@babel/code-frame@7.22.13:
@@ -1138,6 +1131,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.13.1
       '@typescript-eslint/visitor-keys': 6.13.1
+    dev: false
 
   /@typescript-eslint/scope-manager@6.13.2:
     resolution: {integrity: sha512-CXQA0xo7z6x13FeDYCgBkjWzNqzBn8RXaE3QVQVIUm74fWJLkJkaHmHdKStrxQllGh6Q4eUGyNpMe0b1hMkXFA==}
@@ -1179,6 +1173,7 @@ packages:
   /@typescript-eslint/types@6.13.1:
     resolution: {integrity: sha512-gjeEskSmiEKKFIbnhDXUyiqVma1gRCQNbVZ1C8q7Zjcxh3WZMbzWVfGE9rHfWd1msQtPS0BVD9Jz9jded44eKg==}
     engines: {node: ^16.0.0 || >=18.0.0}
+    dev: false
 
   /@typescript-eslint/types@6.13.2:
     resolution: {integrity: sha512-7sxbQ+EMRubQc3wTfTsycgYpSujyVbI1xw+3UMRUcrhSy+pN09y/lWzeKDbvhoqcRbHdc+APLs/PWYi/cisLPg==}
@@ -1245,6 +1240,7 @@ packages:
       typescript: 5.3.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   /@typescript-eslint/typescript-estree@6.13.2(typescript@5.3.2):
     resolution: {integrity: sha512-SuD8YLQv6WHnOEtKv8D6HZUzOub855cfPnPMKvdM/Bh1plv1f7Q/0iFUDLKKlxHcEstQnaUU4QZskgQq74t+3w==}
@@ -1322,6 +1318,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: false
 
   /@typescript-eslint/utils@6.13.2(eslint@8.55.0)(typescript@5.3.2):
     resolution: {integrity: sha512-b9Ptq4eAZUym4idijCRzl61oPCwwREcfDI8xGk751Vhzig5fFZR9CyzDz4Sp/nxSLBYxUPyh4QdIDqWykFhNmQ==}
@@ -1363,6 +1360,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.13.1
       eslint-visitor-keys: 3.4.3
+    dev: false
 
   /@typescript-eslint/visitor-keys@6.13.2:
     resolution: {integrity: sha512-OGznFs0eAQXJsp+xSd6k/O1UbFi/K/L7WjqeRoFE7vadjAF9y0uppXhYNQNEqygjou782maGClOoZwPqF0Drlw==}
@@ -1373,33 +1371,6 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
-
-  /@unocss/config@0.58.0:
-    resolution: {integrity: sha512-WQD29gCZ7cajnMzezD1PRW0qQSxo/C6PX9ktygwhdinFx9nXuLZnKFOz65TiI8y48e53g1i7ivvgY3m4Sq5mIg==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@unocss/core': 0.58.0
-      unconfig: 0.3.11
-    dev: true
-
-  /@unocss/core@0.58.0:
-    resolution: {integrity: sha512-KhABQXGE2AgtO9vE28d+HnciuyGDcuygsnQdUwlzUuR4K05OSw2kRE9emRN4HaMycD+gA/zDbQrJxTXb6mQUiA==}
-    dev: true
-
-  /@unocss/eslint-plugin@0.58.0(eslint@8.55.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-n6bNKG9rSUVcii5XmlbfpSNRT/ncgvfCtI+lkppETfdGDC7UR9ky1SLb+awvG2JJ5phg/FObAtahMyPgblyJLw==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@typescript-eslint/utils': 6.13.1(eslint@8.55.0)(typescript@5.3.2)
-      '@unocss/config': 0.58.0
-      '@unocss/core': 0.58.0
-      magic-string: 0.30.5
-      synckit: 0.8.6
-    transitivePeerDependencies:
-      - eslint
-      - supports-color
-      - typescript
-    dev: true
 
   /@vitest/expect@1.0.1:
     resolution: {integrity: sha512-3cdrb/eKD/0tygDX75YscuHEHMUJ70u3UoLSq2eqhWks57AyzvsDQbyn53IhZ0tBN7gA8Jj2VhXiOV2lef7thw==}
@@ -4802,15 +4773,6 @@ packages:
       has-bigints: 1.0.2
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
-    dev: true
-
-  /unconfig@0.3.11:
-    resolution: {integrity: sha512-bV/nqePAKv71v3HdVUn6UefbsDKQWRX+bJIkiSm0+twIds6WiD2bJLWWT3i214+J/B4edufZpG2w7Y63Vbwxow==}
-    dependencies:
-      '@antfu/utils': 0.7.6
-      defu: 6.1.2
-      jiti: 1.21.0
-      mlly: 1.4.2
     dev: true
 
   /undici-types@5.26.5:

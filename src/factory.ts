@@ -6,7 +6,6 @@ import {
   comments,
   ignores,
   imports,
-  javascript,
   jsdoc,
   jsonc,
   markdown,
@@ -19,7 +18,6 @@ import {
   test,
   typescript,
   unicorn,
-  unocss,
   yaml,
 } from './configs'
 import { combine, interopDefault } from './utils'
@@ -50,7 +48,6 @@ export async function antfu(
     overrides = {},
     react: enableReact = false,
     typescript: enableTypeScript = isPackageExists('typescript'),
-    unocss: enableUnoCSS = false,
   } = options
 
   const stylisticOptions = options.stylistic === false
@@ -76,10 +73,6 @@ export async function antfu(
   // Base configs
   configs.push(
     ignores(),
-    javascript({
-      isInEditor,
-      overrides: overrides.javascript,
-    }),
     comments(),
     node(),
     jsdoc({
@@ -119,12 +112,6 @@ export async function antfu(
       overrides: overrides.react,
       typescript: !!enableTypeScript,
     }))
-  }
-
-  if (enableUnoCSS) {
-    configs.push(unocss(
-      typeof enableUnoCSS === 'boolean' ? {} : enableUnoCSS,
-    ))
   }
 
   if (options.jsonc ?? true) {

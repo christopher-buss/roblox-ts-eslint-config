@@ -159,10 +159,6 @@ export function sortTsconfig(): FlatConfigItem[] {
               'allowArbitraryExtensions',
               'allowImportingTsExtensions',
               'allowUmdGlobalAccess',
-              /* JavaScript Support */
-              'allowJs',
-              'checkJs',
-              'maxNodeModuleJsDepth',
               /* Type Checking */
               'strict',
               'strictBindCallApply',

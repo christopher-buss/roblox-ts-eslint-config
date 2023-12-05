@@ -78,20 +78,6 @@ export interface OptionsFiles {
 
 export interface OptionsFormatters {
   /**
-   * Enable formatting support for CSS, Less, Sass, and SCSS.
-   *
-   * Currently only support Prettier.
-   */
-  css?: 'prettier' | boolean
-
-  /**
-   * Enable formatting support for HTML.
-   *
-   * Currently only support Prettier.
-   */
-  html?: 'prettier' | boolean
-
-  /**
    * Enable formatting support for TOML.
    *
    * Currently only support dprint.
@@ -169,19 +155,6 @@ export interface OptionsOverrides {
 
 export interface OptionsIsInEditor {
   isInEditor?: boolean
-}
-
-export interface OptionsUnoCSS {
-  /**
-   * Enable attributify support.
-   * @default true
-   */
-  attributify?: boolean
-  /**
-   * Enable strict mode by throwing errors about blocklisted classes.
-   * @default false
-   */
-  strict?: boolean
 }
 
 export interface OptionsConfig extends OptionsComponentExts {
@@ -262,16 +235,6 @@ export interface OptionsConfig extends OptionsComponentExts {
   react?: boolean
 
   /**
-   * Enable unocss rules.
-   *
-   * Requires installing:
-   * - `@unocss/eslint-plugin`
-   *
-   * @default false
-   */
-  unocss?: boolean | OptionsUnoCSS
-
-  /**
    * Use external formatters to format files.
    *
    * Requires installing:
@@ -293,7 +256,6 @@ export interface OptionsConfig extends OptionsComponentExts {
    * Provide overrides for rules for each integration.
    */
   overrides?: {
-    javascript?: FlatConfigItem['rules']
     typescript?: FlatConfigItem['rules']
     test?: FlatConfigItem['rules']
     jsonc?: FlatConfigItem['rules']

@@ -137,13 +137,5 @@ export async function typescript(
         'no-unused-expressions': 'off',
       },
     },
-    {
-      files: ['**/*.js', '**/*.cjs'],
-      name: 'antfu:typescript:javascript-overrides',
-      rules: {
-        'ts/no-require-imports': 'off',
-        'ts/no-var-requires': 'off',
-      },
-    },
   ]
 }
