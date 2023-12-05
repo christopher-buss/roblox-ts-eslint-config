@@ -1,41 +1,42 @@
-import { isPackageExists } from 'local-pkg'
+/* eslint-disable perfectionist/sort-objects */
 import { ensurePackages, interopDefault } from '../utils'
 import type { FlatConfigItem, OptionsFiles, OptionsHasTypeScript, OptionsOverrides } from '../types'
 import { GLOB_JSX, GLOB_TSX } from '../globs'
-
-// react refresh
-const ReactRefreshAllowConstantExportPackages = [
-  'vite',
-]
 
 export async function react(
   options: OptionsHasTypeScript & OptionsOverrides & OptionsFiles = {},
 ): Promise<FlatConfigItem[]> {
   const {
     files = [GLOB_JSX, GLOB_TSX],
-    overrides = {},
     typescript = true,
   } = options
+
+  let { overrides = {} } = options
+
+  overrides = Object.assign(overrides, {
+    files: [
+      '*.tsx',
+    ],
+    excludedFiles: [
+      '*.story.tsx',
+    ],
+    rules: {
+      'react-hooks/rules-of-hooks': 'error',
+    },
+  })
 
   await ensurePackages([
     'eslint-plugin-react',
     'eslint-plugin-react-hooks',
-    'eslint-plugin-react-refresh',
   ])
 
   const [
     pluginReact,
     pluginReactHooks,
-    pluginReactRefresh,
   ] = await Promise.all([
     interopDefault(import('eslint-plugin-react')),
     interopDefault(import('eslint-plugin-react-hooks')),
-    interopDefault(import('eslint-plugin-react-refresh')),
   ] as const)
-
-  const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some(
-    i => isPackageExists(i),
-  )
 
   return [
     {
@@ -43,11 +44,10 @@ export async function react(
       plugins: {
         'react': pluginReact,
         'react-hooks': pluginReactHooks,
-        'react-refresh': pluginReactRefresh,
       },
       settings: {
         react: {
-          version: 'detect',
+          version: '17.0',
         },
       },
     },
@@ -64,37 +64,87 @@ export async function react(
       rules: {
         // recommended rules react-hooks
         'react-hooks/exhaustive-deps': 'warn',
-        'react-hooks/rules-of-hooks': 'error',
-
-        // react refresh
-        'react-refresh/only-export-components': [
-          'warn',
-          { allowConstantExport: isAllowConstantExport },
-        ],
+        'react-hooks/rules-of-hooks': 'off',
 
         // recommended rules react
-        'react/display-name': 'error',
-        'react/jsx-key': 'error',
-        'react/jsx-no-comment-textnodes': 'error',
+        'react/jsx-key': [
+          'error',
+          {
+            checkFragmentShorthand: true,
+            checkKeyMustBeforeSpread: true,
+            warnOnDuplicates: true,
+          },
+        ],
         'react/jsx-no-duplicate-props': 'error',
-        'react/jsx-no-target-blank': 'error',
         'react/jsx-no-undef': 'error',
         'react/jsx-uses-react': 'error',
         'react/jsx-uses-vars': 'error',
         'react/no-children-prop': 'error',
-        'react/no-danger-with-children': 'error',
-        'react/no-deprecated': 'error',
         'react/no-direct-mutation-state': 'error',
-        'react/no-find-dom-node': 'error',
-        'react/no-is-mounted': 'error',
-        'react/no-render-return-value': 'error',
-        'react/no-string-refs': 'error',
-        'react/no-unescaped-entities': 'error',
-        'react/no-unknown-property': 'error',
         'react/no-unsafe': 'off',
-        'react/prop-types': 'error',
         'react/react-in-jsx-scope': 'off',
         'react/require-render-return': 'error',
+        'react/destructuring-assignment': [
+          'error',
+          'always',
+          {
+            destructureInSignature: 'always',
+          },
+        ],
+        'react/jsx-no-leaked-render': [
+          'error',
+          {
+            validStrategies: [
+              'ternary',
+            ],
+          },
+        ],
+        'react/jsx-max-depth': [
+          'error',
+          {
+            max: 5,
+          },
+        ],
+        'react/function-component-definition': 'error',
+        'react/prefer-read-only-props': 'error',
+        'react/jsx-no-bind': 'error',
+        'react/prefer-stateless-function': 'error',
+        'react/no-unused-prop-types': 'error',
+        'react/jsx-pascal-case': 'error',
+        'react/no-unstable-nested-components': [
+          'error',
+          {
+            allowAsProps: true,
+          },
+        ],
+
+        // non-relevant rules for roblox-ts
+        'react/display-name': 'off',
+        'react/jsx-no-target-blank': 'off',
+        'react/jsx-no-comment-textnodes': 'off',
+        'react/no-danger-with-children': 'off',
+        'react/no-deprecated': 'off',
+        'react/no-find-dom-node': 'off',
+        'react/no-is-mounted': 'off',
+        'react/no-render-return-value': 'off',
+        'react/no-string-refs': 'off',
+        'react/no-unescaped-entities': 'off',
+        'react/no-unknown-property': 'off',
+        'react/prop-types': 'off',
+        'style/jsx-self-closing-comp': [
+          'error',
+          {
+            component: true,
+          },
+        ],
+        'style/jsx-curly-brace-presence': [
+          'warn',
+          {
+            props: 'never',
+            children: 'never',
+            propElementValues: 'always',
+          },
+        ],
 
         ...typescript
           ? {

@@ -382,7 +382,7 @@ export default antfu({
 Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
 
 ```bash
-npm i -D eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
+npm i -D eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 #### UnoCSS
