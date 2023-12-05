@@ -47,8 +47,6 @@ export async function yaml(
         'yaml/no-irregular-whitespace': 'error',
         'yaml/plain-scalar': 'error',
 
-        'yaml/vue-custom-block/no-parsing-error': 'error',
-
         ...stylistic
           ? {
               'yaml/block-mapping-question-indicator-newline': 'error',

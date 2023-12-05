@@ -15,7 +15,6 @@ import type {
   RenamePrefix,
   RuleConfig,
   VitestRules,
-  VueRules,
   YmlRules,
 } from '@antfu/eslint-define-config'
 import type { RuleOptions as JSDocRules } from '@eslint-types/jsdoc/types'
@@ -45,7 +44,6 @@ export type Rules = WrapRuleConfig<
     ImportRules &
     EslintRules &
     JsoncRules &
-    VueRules &
     UnicornRules &
     EslintCommentsRules &
     {
@@ -133,7 +131,7 @@ export interface OptionsComponentExts {
   /**
    * Additional extensions for components.
    *
-   * @example ['vue']
+   * @example ['']
    * @default []
    */
   componentExts?: string[]
@@ -223,13 +221,6 @@ export interface OptionsConfig extends OptionsComponentExts {
   test?: boolean
 
   /**
-   * Enable Vue support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  vue?: boolean
-
-  /**
    * Enable JSONC support.
    *
    * @default true
@@ -306,7 +297,6 @@ export interface OptionsConfig extends OptionsComponentExts {
     javascript?: FlatConfigItem['rules']
     typescript?: FlatConfigItem['rules']
     test?: FlatConfigItem['rules']
-    vue?: FlatConfigItem['rules']
     jsonc?: FlatConfigItem['rules']
     markdown?: FlatConfigItem['rules']
     yaml?: FlatConfigItem['rules']

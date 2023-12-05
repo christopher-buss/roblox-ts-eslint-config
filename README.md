@@ -526,7 +526,6 @@ Sure, you can configure and override rules locally in your project to fit your n
 - [antfu/dotfiles](https://github.com/antfu/dotfiles) - My dotfiles
 - [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - My VS Code settings
 - [antfu/starter-ts](https://github.com/antfu/starter-ts) - My starter template for TypeScript library
-- [antfu/vitesse](https://github.com/antfu/vitesse) - My starter template for Vue & Vite app
 
 ## License
 

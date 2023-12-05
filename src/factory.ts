@@ -20,7 +20,6 @@ import {
   typescript,
   unicorn,
   unocss,
-  vue,
   yaml,
 } from './configs'
 import { combine, interopDefault } from './utils'
@@ -35,13 +34,6 @@ const flatConfigProps: (keyof FlatConfigItem)[] = [
   'plugins',
   'rules',
   'settings',
-]
-
-const VuePackages = [
-  'vue',
-  'nuxt',
-  'vitepress',
-  '@slidev/cli',
 ]
 
 /**
@@ -59,7 +51,6 @@ export async function antfu(
     react: enableReact = false,
     typescript: enableTypeScript = isPackageExists('typescript'),
     unocss: enableUnoCSS = false,
-    vue: enableVue = VuePackages.some(i => isPackageExists(i)),
   } = options
 
   const stylisticOptions = options.stylistic === false
@@ -103,9 +94,6 @@ export async function antfu(
     perfectionist(),
   )
 
-  if (enableVue)
-    componentExts.push('vue')
-
   if (enableTypeScript) {
     configs.push(typescript({
       ...typeof enableTypeScript !== 'boolean'
@@ -123,14 +111,6 @@ export async function antfu(
     configs.push(test({
       isInEditor,
       overrides: overrides.test,
-    }))
-  }
-
-  if (enableVue) {
-    configs.push(vue({
-      overrides: overrides.vue,
-      stylistic: stylisticOptions,
-      typescript: !!enableTypeScript,
     }))
   }
 

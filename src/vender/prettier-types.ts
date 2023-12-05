@@ -34,7 +34,7 @@ export interface VendoredPrettierOptionsRequired {
    */
   bracketSpacing: boolean
   /**
-   * Put the `>` of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being
+   * Put the `>` of a multi-line HTML (HTML, JSX, Angular) element at the end of the last line instead of being
    * alone on the next line (does not apply to self closing elements).
    */
   bracketSameLine: boolean
@@ -83,12 +83,7 @@ export interface VendoredPrettierOptionsRequired {
    */
   quoteProps: 'as-needed' | 'consistent' | 'preserve'
   /**
-   * Whether or not to indent the code inside <script> and <style> tags in Vue files.
-   * @default false
-   */
-  vueIndentScriptAndStyle: boolean
-  /**
-   * Enforce single attribute per line in HTML, Vue and JSX.
+   * Enforce single attribute per line in HTML, and JSX.
    * @default false
    */
   singleAttributePerLine: boolean
@@ -116,7 +111,6 @@ export type BuiltInParserName =
   | 'meriyah'
   | 'scss'
   | 'typescript'
-  | 'vue'
   | 'yaml'
 
 // This utility is here to handle the case where you have an explicit union

@@ -43,7 +43,6 @@ export const vscodeSettingsString = `
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue",
     "html",
     "markdown",
     "json",

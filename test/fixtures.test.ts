@@ -14,22 +14,18 @@ afterAll(async () => {
 
 runWithConfig('js', {
   typescript: false,
-  vue: false,
 })
 runWithConfig('all', {
   typescript: true,
-  vue: true,
 })
 runWithConfig('no-style', {
   typescript: true,
-  vue: true,
   stylistic: false,
 })
 runWithConfig(
   'tab-double-quotes',
   {
     typescript: true,
-    vue: true,
     stylistic: {
       indent: 'tab',
       quotes: 'double',
@@ -59,7 +55,6 @@ runWithConfig(
   'with-formatters',
   {
     typescript: true,
-    vue: true,
     formatters: true,
   },
 )
@@ -68,7 +63,6 @@ runWithConfig(
   'no-markdown-with-formatters',
   {
     jsx: false,
-    vue: false,
     markdown: false,
     formatters: {
       markdown: true,

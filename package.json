@@ -83,7 +83,6 @@
     "eslint-plugin-unicorn": "^49.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vitest": "^0.3.10",
-    "eslint-plugin-vue": "^9.19.2",
     "eslint-plugin-yml": "^1.10.0",
     "globals": "^13.23.0",
     "jsonc-eslint-parser": "^2.4.0",
@@ -91,7 +90,6 @@
     "parse-gitignore": "^2.0.0",
     "picocolors": "^1.0.0",
     "prompts": "^2.4.2",
-    "vue-eslint-parser": "^9.3.2",
     "yaml-eslint-parser": "^1.2.2",
     "yargs": "^17.7.2"
   },
