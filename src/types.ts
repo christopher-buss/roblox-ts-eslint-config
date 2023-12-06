@@ -178,6 +178,13 @@ export interface OptionsConfig extends OptionsComponentExts {
   typescript?: boolean | OptionsTypeScriptWithTypes | OptionsTypeScriptParserOptions
 
   /**
+   * Enable Roblox TS support.
+   *
+   * @hidden
+   */
+  roblox?: boolean
+
+  /**
    * Enable JSX related rules.
    *
    * Currently only stylistic rules are included.

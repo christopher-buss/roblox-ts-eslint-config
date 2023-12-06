@@ -1,4 +1,3 @@
-import process from 'node:process'
 import type { FlatConfigItem, OptionsComponentExts, OptionsFiles, OptionsOverrides, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes } from '../types'
 import { GLOB_SRC } from '../globs'
 import { pluginAntfu } from '../plugins'
@@ -24,6 +23,7 @@ export async function typescript(
     'no-throw-literal': 'off',
     'ts/await-thenable': 'error',
     'ts/dot-notation': ['error', { allowKeywords: true }],
+    'ts/no-confusing-void-expression': 'error',
     'ts/no-floating-promises': 'error',
     'ts/no-for-in-array': 'error',
     'ts/no-implied-eval': 'error',
@@ -66,6 +66,7 @@ export async function typescript(
       languageOptions: {
         parser: parserTs,
         parserOptions: {
+          ecmaVersion: 2018,
           extraFileExtensions: componentExts.map(ext => `.${ext}`),
           sourceType: 'module',
           ...tsconfigPath

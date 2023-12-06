@@ -1,6 +1,5 @@
 import process from 'node:process'
 import fs from 'node:fs'
-import { isPackageExists } from 'local-pkg'
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from './types'
 import {
   comments,
@@ -12,6 +11,7 @@ import {
   node,
   perfectionist,
   react,
+  roblox,
   sortPackageJson,
   sortTsconfig,
   stylistic,
@@ -47,10 +47,10 @@ export async function antfu(
     isInEditor = !!((process.env.VSCODE_PID || process.env.JETBRAINS_IDE) && !process.env.CI),
     overrides = {},
     react: enableReact = false,
-    typescript: enableTypeScript = isPackageExists('typescript'),
+    roblox: enableRoblox = true,
   } = options
 
-  const stylisticOptions = options.stylistic === false
+  const stylisticOptions = !options.stylistic
     ? false
     : typeof options.stylistic === 'object'
       ? options.stylistic
@@ -61,19 +61,17 @@ export async function antfu(
   const configs: Awaitable<FlatConfigItem[]>[] = []
 
   if (enableGitignore) {
-    if (typeof enableGitignore !== 'boolean') {
+    if (typeof enableGitignore !== 'boolean')
       configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r(enableGitignore)]))
-    }
-    else {
-      if (fs.existsSync('.gitignore'))
-        configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r()]))
-    }
+
+    else if (fs.existsSync('.gitignore'))
+      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r()]))
   }
 
   // Base configs
   configs.push(
-    ignores(),
     comments(),
+    ignores(),
     node(),
     jsdoc({
       stylistic: stylisticOptions,
@@ -82,20 +80,17 @@ export async function antfu(
       stylistic: stylisticOptions,
     }),
     unicorn(),
-
     // Optional plugins (installed but not enabled by default)
     perfectionist(),
   )
 
-  if (enableTypeScript) {
-    configs.push(typescript({
-      ...typeof enableTypeScript !== 'boolean'
-        ? enableTypeScript
-        : {},
-      componentExts,
-      overrides: overrides.typescript,
-    }))
-  }
+  configs.push(typescript({
+    componentExts,
+    overrides: overrides.typescript,
+  }))
+
+  if (enableRoblox)
+    configs.push(roblox())
 
   if (stylisticOptions)
     configs.push(stylistic(stylisticOptions))
@@ -110,7 +105,6 @@ export async function antfu(
   if (enableReact) {
     configs.push(react({
       overrides: overrides.react,
-      typescript: !!enableTypeScript,
     }))
   }
 

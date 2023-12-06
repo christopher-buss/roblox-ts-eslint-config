@@ -4,6 +4,7 @@ import antfu from './dist/index.js'
 
 export default antfu(
   {
+    roblox: false,
     // react: true,
     typescript: true,
     ignores: [
