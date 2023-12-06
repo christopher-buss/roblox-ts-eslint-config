@@ -55,7 +55,7 @@ export async function markdown(
 
   return [
     {
-      name: 'antfu:markdown:setup',
+      name: 'style:markdown:setup',
       plugins: {
         markdown,
       },
@@ -63,7 +63,7 @@ export async function markdown(
     {
       files,
       ignores: [GLOB_MARKDOWN_IN_MARKDOWN],
-      name: 'antfu:markdown:processor',
+      name: 'style:markdown:processor',
       processor,
     },
     {
@@ -78,7 +78,7 @@ export async function markdown(
           },
         },
       },
-      name: 'antfu:markdown:disables',
+      name: 'style:markdown:disables',
       rules: {
         'import/newline-after-import': 'off',
 

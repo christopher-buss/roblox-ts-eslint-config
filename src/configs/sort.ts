@@ -9,7 +9,7 @@ export async function sortPackageJson(): Promise<FlatConfigItem[]> {
   return [
     {
       files: ['**/package.json'],
-      name: 'antfu:sort-package-json',
+      name: 'style:sort-package-json',
       rules: {
         'jsonc/sort-array-values': [
           'error',
@@ -104,7 +104,7 @@ export function sortTsconfig(): FlatConfigItem[] {
   return [
     {
       files: ['**/tsconfig.json', '**/tsconfig.*.json'],
-      name: 'antfu:sort-tsconfig',
+      name: 'style:sort-tsconfig',
       rules: {
         'jsonc/sort-keys': [
           'error',

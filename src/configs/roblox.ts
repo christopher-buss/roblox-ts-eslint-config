@@ -4,7 +4,7 @@ import type { FlatConfigItem } from '../types'
 export async function roblox(): Promise<FlatConfigItem[]> {
   return [
     {
-      name: 'antfu:roblox',
+      name: 'style:roblox',
       plugins: {
         roblox: pluginRobloxTS,
       },

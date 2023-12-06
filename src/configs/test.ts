@@ -22,7 +22,7 @@ export async function test(
 
   return [
     {
-      name: 'antfu:test:setup',
+      name: 'style:test:setup',
       plugins: {
         test: {
           ...pluginVitest,
@@ -36,7 +36,7 @@ export async function test(
     },
     {
       files,
-      name: 'antfu:test:rules',
+      name: 'style:test:rules',
       rules: {
         'node/prefer-global/process': 'off',
 

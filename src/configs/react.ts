@@ -40,7 +40,7 @@ export async function react(
 
   return [
     {
-      name: 'antfu:react:setup',
+      name: 'style:react:setup',
       plugins: {
         'react': pluginReact,
         'react-hooks': pluginReactHooks,
@@ -60,7 +60,7 @@ export async function react(
           },
         },
       },
-      name: 'antfu:react:rules',
+      name: 'style:react:rules',
       rules: {
         // recommended rules react-hooks
         'react-hooks/exhaustive-deps': 'warn',

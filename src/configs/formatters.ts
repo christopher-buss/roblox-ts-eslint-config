@@ -54,7 +54,7 @@ export async function formatters(
 
   const configs: FlatConfigItem[] = [
     {
-      name: 'antfu:formatters:setup',
+      name: 'style:formatters:setup',
       plugins: {
         format: pluginFormat,
       },
@@ -67,7 +67,7 @@ export async function formatters(
       languageOptions: {
         parser: pluginFormat.parserPlain,
       },
-      name: 'antfu:formatter:toml',
+      name: 'style:formatter:toml',
       rules: {
         'format/dprint': [
           'error',
@@ -92,7 +92,7 @@ export async function formatters(
       languageOptions: {
         parser: pluginFormat.parserPlain,
       },
-      name: 'antfu:formatter:markdown',
+      name: 'style:formatter:markdown',
       rules: {
         [`format/${formater}`]: [
           'error',
@@ -117,7 +117,7 @@ export async function formatters(
       languageOptions: {
         parser: pluginFormat.parserPlain,
       },
-      name: 'antfu:formatter:graphql',
+      name: 'style:formatter:graphql',
       rules: {
         'format/prettier': [
           'error',

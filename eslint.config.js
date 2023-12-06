@@ -1,11 +1,10 @@
 // @ts-check
 import styleMigrate from '@stylistic/eslint-plugin-migrate'
-import antfu from './dist/index.js'
+import style from './dist/index.js'
 
-export default antfu(
+export default style(
   {
     roblox: false,
-    // react: true,
     typescript: true,
     ignores: [
       'fixtures',

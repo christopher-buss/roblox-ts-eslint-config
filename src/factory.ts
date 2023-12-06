@@ -37,7 +37,7 @@ const flatConfigProps: (keyof FlatConfigItem)[] = [
 /**
  * Construct an array of ESLint flat config items.
  */
-export async function antfu(
+export async function style(
   options: OptionsConfig & FlatConfigItem = {},
   ...userConfigs: Awaitable<UserConfigItem | UserConfigItem[]>[]
 ): Promise<UserConfigItem[]> {

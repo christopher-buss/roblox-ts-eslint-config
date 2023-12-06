@@ -8,7 +8,7 @@ export async function imports(options: OptionsStylistic = {}): Promise<FlatConfi
 
   return [
     {
-      name: 'antfu:imports',
+      name: 'style:imports',
       plugins: {
         antfu: pluginAntfu,
         import: pluginImport,
