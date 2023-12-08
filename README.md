@@ -2,18 +2,18 @@
 
 [![npm](https://img.shields.io/npm/v/@antfu/eslint-config?color=444&label=)](https://npmjs.com/package/@antfu/eslint-config) [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
-- Single quotes, no semi
-- Auto fix for formatting (aimed to be used standalone **without** Prettier)
-- Designed to work with TypeScript, JSX, Vue out-of-box
-- Lints also for json, yaml, markdown
-- Sorted imports, dangling commas
-- Reasonable defaults, best practices, only one-line of config
-- Opinionated, but [very customizable](#customization)
-- [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
-- Using [ESLint Stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
-- Respects `.gitignore` by default
-- Optional [formatters](#formatters) support for CSS, HTML, TOML, etc.
-- **Style principle**: Minimal for reading, stable for diff, consistent
+-   Single quotes, no semi
+-   Auto fix for formatting (aimed to be used standalone **without** Prettier)
+-   Designed to work with TypeScript, JSX, Vue out-of-box
+-   Lints also for json, yaml, markdown
+-   Sorted imports, dangling commas
+-   Reasonable defaults, best practices, only one-line of config
+-   Opinionated, but [very customizable](#customization)
+-   [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
+-   Using [ESLint Stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
+-   Respects `.gitignore` by default
+-   Optional [formatters](#formatters) support for CSS, HTML, TOML, etc.
+-   **Style principle**: Minimal for reading, stable for diff, consistent
 
 > [!IMPORTANT]
 > Since v1.0.0, this config is rewritten to the new [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), check the [release note](https://github.com/antfu/eslint-config/releases/tag/v1.0.0) for more details.
@@ -80,10 +80,10 @@ For example:
 
 ```json
 {
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  }
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	}
 }
 ```
 
@@ -105,46 +105,46 @@ Add the following settings to your `.vscode/settings.json`:
 
 ```jsonc
 {
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
+	// Enable the ESlint flat config support
+	"eslint.experimental.useFlatConfig": true,
 
-  // Disable the default formatter, use eslint instead
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
+	// Disable the default formatter, use eslint instead
+	"prettier.enable": false,
+	"editor.formatOnSave": false,
 
-  // Auto fix
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
+	// Auto fix
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "never"
+	},
 
-  // Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "format/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
-  ],
+	// Silent the stylistic rules in you IDE, but still auto fix them
+	"eslint.rules.customizations": [
+		{ "rule": "style/*", "severity": "off" },
+		{ "rule": "format/*", "severity": "off" },
+		{ "rule": "*-indent", "severity": "off" },
+		{ "rule": "*-spacing", "severity": "off" },
+		{ "rule": "*-spaces", "severity": "off" },
+		{ "rule": "*-order", "severity": "off" },
+		{ "rule": "*-dangle", "severity": "off" },
+		{ "rule": "*-newline", "severity": "off" },
+		{ "rule": "*quotes", "severity": "off" },
+		{ "rule": "*semi", "severity": "off" }
+	],
 
-  // Enable eslint for all supported languages
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml"
-  ]
+	// Enable eslint for all supported languages
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"html",
+		"markdown",
+		"json",
+		"jsonc",
+		"yaml"
+	]
 }
 ```
 
@@ -447,12 +447,12 @@ If you want to apply lint and auto-fix before every commit, you can add the foll
 
 ```json
 {
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+	"simple-git-hooks": {
+		"pre-commit": "pnpm lint-staged"
+	},
+	"lint-staged": {
+		"*": "eslint --fix"
+	}
 }
 ```
 
@@ -478,16 +478,16 @@ This project follows [Semantic Versioning](https://semver.org/) for releases. Ho
 
 ### Changes Considered as Breaking Changes
 
-- Node.js version requirement changes
-- Huge refactors that might break the config
-- Plugins made major changes that might break the config
-- Changes that might affect most of the codebases
+-   Node.js version requirement changes
+-   Huge refactors that might break the config
+-   Plugins made major changes that might break the config
+-   Changes that might affect most of the codebases
 
 ### Changes Considered as Non-breaking Changes
 
-- Enable/disable rules and plugins (that might become stricter)
-- Rules options changes
-- Version bumps of dependencies
+-   Enable/disable rules and plugins (that might become stricter)
+-   Rules options changes
+-   Version bumps of dependencies
 
 ## Badge
 
@@ -523,9 +523,9 @@ Sure, you can configure and override rules locally in your project to fit your n
 
 ## Check Also
 
-- [antfu/dotfiles](https://github.com/antfu/dotfiles) - My dotfiles
-- [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - My VS Code settings
-- [antfu/starter-ts](https://github.com/antfu/starter-ts) - My starter template for TypeScript library
+-   [antfu/dotfiles](https://github.com/antfu/dotfiles) - My dotfiles
+-   [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - My VS Code settings
+-   [antfu/starter-ts](https://github.com/antfu/starter-ts) - My starter template for TypeScript library
 
 ## License
 
