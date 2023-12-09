@@ -189,7 +189,12 @@ export interface OptionsConfig extends OptionsComponentExts {
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	typescript?: boolean | OptionsTypeScriptWithTypes | OptionsTypeScriptParserOptions;
+	typescript?: OptionsTypeScriptWithTypes | OptionsTypeScriptParserOptions;
+
+	/**
+	 * Enable Roblox-TS support.
+	 */
+	roblox?: boolean;
 
 	/**
 	 * Enable JSX related rules.

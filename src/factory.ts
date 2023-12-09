@@ -1,6 +1,5 @@
 import process from "node:process";
 import fs from "node:fs";
-import { isPackageExists } from "local-pkg";
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
 import {
 	comments,
@@ -12,7 +11,9 @@ import {
 	markdown,
 	node,
 	perfectionist,
+	prettier,
 	react,
+	roblox,
 	sortPackageJson,
 	sortTsconfig,
 	stylistic,
@@ -22,7 +23,6 @@ import {
 } from "./configs";
 import { combine, interopDefault } from "./utils";
 import { formatters } from "./configs/formatters";
-import { prettier } from "./configs/prettier";
 
 const flatConfigProps: (keyof FlatConfigItem)[] = [
 	"files",
@@ -48,7 +48,8 @@ export async function style(
 		isInEditor = !!((process.env.VSCODE_PID ?? process.env.JETBRAINS_IDE) && !process.env.CI),
 		overrides = {},
 		react: enableReact = false,
-		typescript: enableTypeScript = isPackageExists("typescript"),
+		roblox: enableRoblox = true,
+		typescript: enableTypeScript,
 	} = options;
 
 	const stylisticOptions =
@@ -96,9 +97,17 @@ export async function style(
 		perfectionist(),
 	);
 
-	if (enableTypeScript) {
+	configs.push(
+		typescript({
+			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
+			componentExts,
+			overrides: overrides.typescript,
+		}),
+	);
+
+	if (enableRoblox) {
 		configs.push(
-			typescript({
+			roblox({
 				...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
 				componentExts,
 				overrides: overrides.typescript,

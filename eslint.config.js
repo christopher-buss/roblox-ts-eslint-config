@@ -4,8 +4,17 @@ import style from "./dist/index.js";
 
 export default style(
 	{
-		roblox: true,
-		typescript: true,
+		roblox: false,
+		// typescript: {
+		// 	parserOptions: {
+		// 		ecmaVersion: 2018,
+		// 		jsx: true,
+		// 		project: "./tsconfig.json",
+		// 		sourceType: "module",
+		// 		useJSXTextNode: true,
+		// 	},
+		// 	tsconfigPath: "./tsconfig.json",
+		// },
 		ignores: ["fixtures", "_fixtures"],
 		formatters: true,
 	},

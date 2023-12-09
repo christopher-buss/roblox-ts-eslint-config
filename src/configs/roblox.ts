@@ -1,9 +1,49 @@
+import process from "node:process";
 import { pluginRobloxTS } from "src/plugins";
-import type { FlatConfigItem } from "../types";
+import { interopDefault, toArray } from "src/utils";
+import { GLOB_SRC } from "src";
+import type {
+	FlatConfigItem,
+	OptionsComponentExts,
+	OptionsFiles,
+	OptionsOverrides,
+	OptionsTypeScriptParserOptions,
+	OptionsTypeScriptWithTypes,
+} from "../types";
 
-export async function roblox(): Promise<FlatConfigItem[]> {
+export async function roblox(
+	options: OptionsFiles &
+		OptionsComponentExts &
+		OptionsOverrides &
+		OptionsTypeScriptWithTypes &
+		OptionsTypeScriptParserOptions = {},
+): Promise<FlatConfigItem[]> {
+	const { componentExts = [], parserOptions = {} } = options;
+
+	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
+
+	const [parserTs] = await Promise.all([
+		interopDefault(import("@typescript-eslint/parser")),
+	] as const);
+
+	const files = options.files ?? [GLOB_SRC, ...componentExts.map(ext => `**/*.${ext}`)];
+
 	return [
 		{
+			files,
+			languageOptions: {
+				parser: parserTs,
+				parserOptions: {
+					ecmaVersion: 2018,
+					...(tsconfigPath
+						? {
+								project: tsconfigPath,
+								tsconfigRootDir: process.cwd(),
+						  }
+						: {}),
+					...(parserOptions as any),
+				},
+			},
 			name: "style:roblox",
 			plugins: {
 				roblox: pluginRobloxTS,
