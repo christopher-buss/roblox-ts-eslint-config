@@ -14,7 +14,7 @@ export async function comments(): Promise<Array<FlatConfigItem>> {
 				"eslint-comments/no-duplicate-disable": "error",
 				"eslint-comments/no-unlimited-disable": "error",
 				"eslint-comments/no-unused-enable": "error",
-				"eslint-comments/require-description": "warn",
+				"eslint-comments/require-description": "off",
 
 				"multiline-comment-style": "error",
 				"no-inline-comments": "error",

@@ -1,5 +1,5 @@
 {
-	"name": "@antfu/eslint-config",
+	"name": "@rbxts/eslint-config",
 	"type": "module",
 	"version": "2.3.4",
 	"packageManager": "pnpm@8.11.0",

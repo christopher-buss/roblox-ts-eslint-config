@@ -45,7 +45,12 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Fla
 			},
 			rules: {
 				"simple-import-sort/exports": "error",
-				"simple-import-sort/imports": "error",
+				"simple-import-sort/imports": [
+					"error",
+					{
+						groups: [["^react"], ["@?"], ["^\\w"], ["^\\."]],
+					},
+				],
 			},
 		},
 	];
