@@ -21,7 +21,14 @@ export default style(
 	{
 		files: ["src/**/*.ts"],
 		rules: {
-			"perfectionist/sort-objects": "error",
+			"perfectionist/sort-objects": [
+				"error",
+				{
+					type: "natural",
+					order: "asc",
+					"partition-by-comment": "Part:**",
+				},
+			],
 		},
 	},
 	{

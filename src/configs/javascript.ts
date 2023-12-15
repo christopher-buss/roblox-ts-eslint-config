@@ -177,7 +177,6 @@ export async function javascript(
 				"no-useless-computed-key": "error",
 				"no-useless-constructor": "error",
 				"no-useless-rename": "error",
-				"no-useless-return": "error",
 				"no-var": "error",
 				"no-with": "error",
 				"object-shorthand": [
@@ -196,13 +195,7 @@ export async function javascript(
 						allowUnboundThis: true,
 					},
 				],
-				"prefer-const": [
-					"error",
-					{
-						destructuring: "all",
-						ignoreReadBeforeAssign: true,
-					},
-				],
+				"prefer-const": "off",
 				"prefer-exponentiation-operator": "error",
 				"prefer-promise-reject-errors": "error",
 				"prefer-regex-literals": ["error", { disallowRedundantWrapping: true }],

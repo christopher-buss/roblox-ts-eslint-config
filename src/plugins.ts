@@ -11,3 +11,4 @@ export { default as pluginPerfectionist } from "eslint-plugin-perfectionist";
 export { default as pluginRobloxTS } from "@isentinels/eslint-plugin-roblox-ts";
 export { default as configPrettier } from "eslint-config-prettier";
 export { default as pluginPrettier } from "eslint-plugin-prettier";
+export { default as pluginNoAutofix } from "eslint-plugin-no-autofix";
