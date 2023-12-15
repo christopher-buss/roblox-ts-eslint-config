@@ -1,5 +1,5 @@
+import { pluginAntfu, pluginImport, pluginSimpleImportSort } from "../plugins";
 import type { FlatConfigItem, OptionsStylistic } from "../types";
-import { pluginAntfu, pluginImport } from "../plugins";
 
 export async function imports(options: OptionsStylistic = {}): Promise<Array<FlatConfigItem>> {
 	const { stylistic = true } = options;
@@ -20,8 +20,8 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Fla
 				"import/no-mutable-exports": "error",
 				"import/no-named-default": "error",
 				"import/no-self-import": "error",
-				"import/no-webpack-loader-syntax": "error",
-				"import/order": "error",
+				"import/no-webpack-loader-syntax": "off",
+				"import/order": "off",
 
 				...(stylistic
 					? {
@@ -31,6 +31,21 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Fla
 							],
 					  }
 					: {}),
+			},
+		},
+		{
+			languageOptions: {
+				parserOptions: {
+					sourceType: "script",
+				},
+			},
+			name: "style:import-sort",
+			plugins: {
+				"simple-import-sort": pluginSimpleImportSort,
+			},
+			rules: {
+				"simple-import-sort/exports": "error",
+				"simple-import-sort/imports": "error",
 			},
 		},
 	];

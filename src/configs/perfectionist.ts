@@ -1,5 +1,5 @@
-import type { FlatConfigItem } from "../types";
 import { pluginPerfectionist } from "../plugins";
+import type { FlatConfigItem } from "../types";
 
 /**
  * Perfectionist plugin for props and items sorting.

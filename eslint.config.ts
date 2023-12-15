@@ -1,5 +1,7 @@
-// @ts-check
+// eslint-disable-next-line ts/ban-ts-comment -- /
+// @ts-nocheck
 import styleMigrate from "@stylistic/eslint-plugin-migrate";
+
 import style from "./dist/index.js";
 
 export default style(

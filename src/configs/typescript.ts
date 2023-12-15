@@ -1,4 +1,7 @@
 import process from "node:process";
+
+import { GLOB_SRC } from "../globs";
+import { pluginAntfu, pluginNoAutofix } from "../plugins";
 import type {
 	FlatConfigItem,
 	OptionsComponentExts,
@@ -7,8 +10,6 @@ import type {
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
 } from "../types";
-import { GLOB_SRC } from "../globs";
-import { pluginAntfu, pluginNoAutofix } from "../plugins";
 import { interopDefault, renameRules, toArray } from "../utils";
 
 export async function typescript(

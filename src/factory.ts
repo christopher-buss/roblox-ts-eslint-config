@@ -1,6 +1,6 @@
-import process from "node:process";
 import fs from "node:fs";
-import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
+import process from "node:process";
+
 import {
 	comments,
 	ignores,
@@ -20,8 +20,9 @@ import {
 	typescript,
 	unicorn,
 } from "./configs";
-import { combine, interopDefault } from "./utils";
 import { formatters } from "./configs/formatters";
+import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
+import { combine, interopDefault } from "./utils";
 
 const flatConfigProps: Array<keyof FlatConfigItem> = [
 	"files",
