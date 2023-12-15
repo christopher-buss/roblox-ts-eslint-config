@@ -6,10 +6,10 @@ import fg from "fast-glob";
 import type { FlatConfigItem, OptionsConfig } from "../src/types";
 
 beforeAll(async () => {
-	await fs.rm("_fixtures", { recursive: true, force: true });
+	await fs.rm("_fixtures", { force: true, recursive: true });
 });
 afterAll(async () => {
-	await fs.rm("_fixtures", { recursive: true, force: true });
+	await fs.rm("_fixtures", { force: true, recursive: true });
 });
 
 runWithConfig("js", {
@@ -19,17 +19,17 @@ runWithConfig("all", {
 	typescript: true,
 });
 runWithConfig("no-style", {
-	typescript: true,
 	stylistic: false,
+	typescript: true,
 });
 runWithConfig(
 	"tab-double-quotes",
 	{
-		typescript: true,
 		stylistic: {
 			indent: "tab",
 			quotes: "double",
 		},
+		typescript: true,
 	},
 	{
 		rules: {
@@ -52,19 +52,23 @@ runWithConfig(
 );
 
 runWithConfig("with-formatters", {
-	typescript: true,
 	formatters: true,
+	typescript: true,
 });
 
 runWithConfig("no-markdown-with-formatters", {
-	jsx: false,
-	markdown: false,
 	formatters: {
 		markdown: true,
 	},
+	jsx: false,
+	markdown: false,
 });
 
-function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfigItem[]): void {
+function runWithConfig(
+	name: string,
+	configs: OptionsConfig,
+	...items: Array<FlatConfigItem>
+): void {
 	it.concurrent(
 		name,
 		async ({ expect }) => {
@@ -96,8 +100,8 @@ export default antfu(
 			});
 
 			const files = await fg("**/*", {
-				ignore: ["node_modules", "eslint.config.js"],
 				cwd: target,
+				ignore: ["node_modules", "eslint.config.js"],
 			});
 
 			await Promise.all(

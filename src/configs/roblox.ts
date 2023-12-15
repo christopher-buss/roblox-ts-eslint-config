@@ -17,7 +17,7 @@ export async function roblox(
 		OptionsOverrides &
 		OptionsTypeScriptWithTypes &
 		OptionsTypeScriptParserOptions = {},
-): Promise<FlatConfigItem[]> {
+): Promise<Array<FlatConfigItem>> {
 	const { componentExts = [], parserOptions = {} } = options;
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
@@ -35,6 +35,7 @@ export async function roblox(
 				parser: parserTs,
 				parserOptions: {
 					ecmaVersion: 2018,
+					sourceType: "script",
 					...(tsconfigPath
 						? {
 								project: tsconfigPath,

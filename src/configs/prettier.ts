@@ -1,7 +1,7 @@
 import { configPrettier, pluginPrettier } from "../plugins";
 import type { FlatConfigItem } from "../types";
 
-export async function prettier(): Promise<FlatConfigItem[]> {
+export async function prettier(): Promise<Array<FlatConfigItem>> {
 	return [
 		{
 			plugins: {
@@ -101,7 +101,6 @@ export async function prettier(): Promise<FlatConfigItem[]> {
 				"style/wrap-regex": "off",
 				"style/yield-star-spacing": "off",
 				"unicorn/empty-brace-spaces": "off",
-				"unicorn/no-nested-ternary": "off",
 				"unicorn/number-literal-case": "off",
 				"unicorn/template-indent": "off",
 			},

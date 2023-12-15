@@ -9,7 +9,7 @@ export const StylisticConfigDefaults: StylisticConfig = {
 	semi: false,
 };
 
-export async function stylistic(options: StylisticConfig = {}): Promise<FlatConfigItem[]> {
+export async function stylistic(options: StylisticConfig = {}): Promise<Array<FlatConfigItem>> {
 	const { indent, jsx, quotes, semi } = {
 		...StylisticConfigDefaults,
 		...options,
@@ -37,10 +37,31 @@ export async function stylistic(options: StylisticConfig = {}): Promise<FlatConf
 				...config.rules,
 
 				"antfu/consistent-list-newline": "error",
-				"antfu/if-newline": "error",
+				"antfu/if-newline": "off",
 				"antfu/top-level-function": "error",
 
 				curly: ["error", "all"],
+
+				"style/object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
+
+				"style/padding-line-between-statements": [
+					"error",
+					{
+						blankLine: "always",
+						next: "*",
+						prev: ["block", "block-like", "class", "export", "import"],
+					},
+					{
+						blankLine: "never",
+						next: "*",
+						prev: ["case"],
+					},
+					{
+						blankLine: "any",
+						next: ["export", "import"],
+						prev: ["export", "import"],
+					},
+				],
 			},
 		},
 	];

@@ -5,7 +5,7 @@ import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
 
 export async function javascript(
 	options: OptionsIsInEditor & OptionsOverrides = {},
-): Promise<FlatConfigItem[]> {
+): Promise<Array<FlatConfigItem>> {
 	const { isInEditor = false, overrides = {} } = options;
 
 	return [

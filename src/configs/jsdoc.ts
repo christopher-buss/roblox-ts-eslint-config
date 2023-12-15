@@ -1,7 +1,7 @@
 import { interopDefault } from "../utils";
 import type { FlatConfigItem, OptionsStylistic } from "../types";
 
-export async function jsdoc(options: OptionsStylistic = {}): Promise<FlatConfigItem[]> {
+export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<FlatConfigItem>> {
 	const { stylistic = true } = options;
 
 	return [
@@ -18,6 +18,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<FlatConfigI
 				"jsdoc/check-types": "warn",
 				"jsdoc/empty-tags": "warn",
 				"jsdoc/implements-on-classes": "warn",
+				"jsdoc/informative-docs": "warn",
 				"jsdoc/no-defaults": "warn",
 				"jsdoc/no-multi-asterisks": "warn",
 				"jsdoc/require-param-name": "warn",

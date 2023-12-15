@@ -9,7 +9,7 @@ import { GLOB_JSX, GLOB_TSX } from "../globs";
 
 export async function react(
 	options: OptionsHasTypeScript & OptionsOverrides & OptionsFiles = {},
-): Promise<FlatConfigItem[]> {
+): Promise<Array<FlatConfigItem>> {
 	const { files = [GLOB_JSX, GLOB_TSX], overrides = {}, typescript = true } = options;
 
 	await ensurePackages(["eslint-plugin-react", "eslint-plugin-react-hooks"]);
@@ -45,8 +45,9 @@ export async function react(
 			rules: {
 				// recommended rules react
 				"react/display-name": "error",
-				"react/jsx-key": "error",
+				"react/hook-use-state": "error",
 
+				"react/jsx-key": "error",
 				"react/jsx-no-comment-textnodes": "error",
 				"react/jsx-no-duplicate-props": "error",
 				"react/jsx-no-target-blank": "error",
@@ -54,10 +55,10 @@ export async function react(
 				"react/jsx-uses-react": "error",
 				"react/jsx-uses-vars": "error",
 				"react/no-children-prop": "error",
-				"react/no-danger-with-children": "error",
+				"react/no-danger-with-children": "off",
 				"react/no-deprecated": "error",
 				"react/no-direct-mutation-state": "error",
-				"react/no-find-dom-node": "error",
+				"react/no-find-dom-node": "off",
 				"react/no-is-mounted": "error",
 				"react/no-render-return-value": "error",
 				"react/no-string-refs": "error",

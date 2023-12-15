@@ -8,7 +8,7 @@ export async function formatters(
 	options: OptionsFormatters | true = {},
 	stylistic: StylisticConfig = {},
 	markdownEnabled = true,
-): Promise<FlatConfigItem[]> {
+): Promise<Array<FlatConfigItem>> {
 	await ensurePackages(["eslint-plugin-format"]);
 
 	if (options === true) {
@@ -48,7 +48,7 @@ export async function formatters(
 
 	const pluginFormat = await interopDefault(import("eslint-plugin-format"));
 
-	const configs: FlatConfigItem[] = [
+	const configs: Array<FlatConfigItem> = [
 		{
 			name: "style:formatters:setup",
 			plugins: {

@@ -23,7 +23,7 @@ import {
 import { combine, interopDefault } from "./utils";
 import { formatters } from "./configs/formatters";
 
-const flatConfigProps: (keyof FlatConfigItem)[] = [
+const flatConfigProps: Array<keyof FlatConfigItem> = [
 	"files",
 	"ignores",
 	"languageOptions",
@@ -39,12 +39,13 @@ const flatConfigProps: (keyof FlatConfigItem)[] = [
  */
 export async function style(
 	options: OptionsConfig & FlatConfigItem = {},
-	...userConfigs: Awaitable<UserConfigItem | UserConfigItem[]>[]
-): Promise<UserConfigItem[]> {
+	...userConfigs: Array<Awaitable<UserConfigItem | Array<UserConfigItem>>>
+): Promise<Array<UserConfigItem>> {
 	const {
 		componentExts = [],
 		gitignore: enableGitignore = true,
 		isInEditor = !!((process.env.VSCODE_PID ?? process.env.JETBRAINS_IDE) && !process.env.CI),
+		jsx,
 		overrides = {},
 		react: enableReact = false,
 		roblox: enableRoblox = true,
@@ -58,10 +59,10 @@ export async function style(
 			  ? options.stylistic
 			  : {};
 	if (stylisticOptions && !("jsx" in stylisticOptions)) {
-		stylisticOptions.jsx = options.jsx ?? true;
+		stylisticOptions.jsx = jsx ?? true;
 	}
 
-	const configs: Awaitable<FlatConfigItem[]>[] = [];
+	const configs: Array<Awaitable<Array<FlatConfigItem>>> = [];
 
 	if (enableGitignore) {
 		if (typeof enableGitignore !== "boolean") {
@@ -163,12 +164,15 @@ export async function style(
 
 	configs.push(prettier());
 
-	// User can optionally pass a flat config item to the first argument
-	// We pick the known keys as ESLint would do schema validation
+	/*
+	 * User can optionally pass a flat config item to the first argument
+	 * We pick the known keys as ESLint would do schema validation
+	 */
 	const fusedConfig = flatConfigProps.reduce((acc, key) => {
 		if (key in options) {
 			acc[key] = options[key] as any;
 		}
+
 		return acc;
 	}, {} as FlatConfigItem);
 	if (Object.keys(fusedConfig).length) {

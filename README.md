@@ -168,28 +168,32 @@ And that's it! Or you can configure each integration individually, for example:
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
-  // Enable stylistic formatting rules
-  // stylistic: true,
+  /*
+   * Enable stylistic formatting rules
+   * stylistic: true,
+   */
 
+  // `.eslintignore` is no longer supported in Flat config, use `ignores` instead
+  ignores: [
+    './fixtures',
+    // ...globs
+  ],
+
+  // Disable jsonc and yaml support
+  jsonc: false,
   // Or customize the stylistic rules
   stylistic: {
-    indent: 2, // 4, or 'tab'
-    quotes: 'single', // or 'double'
+    // 4, or 'tab'
+    indent: 2,
+    // or 'double'
+    quotes: 'single',
   },
 
   // TypeScript and Vue are auto-detected, you can also explicitly enable them:
   typescript: true,
   vue: true,
 
-  // Disable jsonc and yaml support
-  jsonc: false,
-  yaml: false,
-
-  // `.eslintignore` is no longer supported in Flat config, use `ignores` instead
-  ignores: [
-    './fixtures',
-    // ...globs
-  ]
+  yaml: false
 })
 ```
 
@@ -204,8 +208,10 @@ export default antfu(
     // Configures for antfu's config
   },
 
-  // From the second arguments they are ESLint Flat Configs
-  // you can have multiple configs
+  /*
+   * From the second arguments they are ESLint Flat Configs
+   * you can have multiple configs
+   */
   {
     files: ['**/*.ts'],
     rules: {},
@@ -298,7 +304,7 @@ Certain rules would only be enabled in specific files, for example, `ts/*` rules
 import antfu from '@antfu/eslint-config'
 
 export default antfu(
-  { vue: true, typescript: true },
+  { typescript: true, vue: true },
   {
     // Remember to specify the file glob here, otherwise it might cause the vue plugin to handle non-vue files
     files: ['**/*.vue'],
@@ -323,11 +329,11 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu({
   overrides: {
-    vue: {
-      'vue/operator-linebreak': ['error', 'before'],
-    },
     typescript: {
       'ts/consistent-type-definitions': ['error', 'interface'],
+    },
+    vue: {
+      'vue/operator-linebreak': ['error', 'before'],
     },
     yaml: {},
     // ...
@@ -354,8 +360,8 @@ export default antfu({
   formatters: {
     css: true, // by default use Prettier
     html: true, // by default use Prettier
-    toml: 'dprint', // use dprint for TOML
-    markdown: 'prettier' // use prettier for markdown
+    markdown: 'prettier', // use prettier for markdown
+    toml: 'dprint' // use dprint for TOML
   }
 })
 ```
@@ -417,13 +423,13 @@ The plugin is installed but no rules are enabled by default.
 It's recommended to opt-in on each file individually using [configuration comments](https://eslint.org/docs/latest/use/configure/rules#using-configuration-comments-1).
 
 ```js
-/* eslint perfectionist/sort-objects: "error" */
+
 const objectWantedToSort = {
   a: 2,
   b: 1,
   c: 3,
 }
-/* eslint perfectionist/sort-objects: "off" */
+
 ```
 
 ### Type Aware Rules

@@ -17,7 +17,7 @@ export async function typescript(
 		OptionsOverrides &
 		OptionsTypeScriptWithTypes &
 		OptionsTypeScriptParserOptions = {},
-): Promise<FlatConfigItem[]> {
+): Promise<Array<FlatConfigItem>> {
 	const { componentExts = [], overrides = {}, parserOptions = {} } = options;
 
 	const files = options.files ?? [GLOB_SRC, ...componentExts.map(ext => `**/*.${ext}`)];
@@ -26,14 +26,31 @@ export async function typescript(
 		"dot-notation": "off",
 		"no-implied-eval": "off",
 		"no-throw-literal": "off",
+		"no-unsafe-optional-chaining": "error",
 		"ts/await-thenable": "error",
 		"ts/consistent-type-assertions": [
 			"error",
 			{ assertionStyle: "as", objectLiteralTypeAssertions: "allow" },
 		],
 		"ts/dot-notation": ["error", { allowKeywords: true }],
+		"ts/naming-convention": [
+			"error",
+			{
+				custom: {
+					match: false,
+					regex: "^I[A-Z]",
+				},
+				format: ["PascalCase"],
+				selector: "interface",
+			},
+		],
 		"ts/no-duplicate-type-constituents": "error",
-		"ts/no-floating-promises": "error",
+		"ts/no-floating-promises": [
+			"error",
+			{
+				ignoreVoid: true,
+			},
+		],
 		"ts/no-for-in-array": "error",
 		"ts/no-implied-eval": "error",
 		"ts/no-meaningless-void-operator": "error",
@@ -49,14 +66,12 @@ export async function typescript(
 		"ts/no-unsafe-assignment": "error",
 		"ts/no-unsafe-call": "error",
 		"ts/no-unsafe-member-access": "error",
-		"ts/no-unsafe-optional-chaining": "error",
 		"ts/no-unsafe-return": "error",
 		"ts/non-nullable-type-assertion-style": "error",
 		"ts/prefer-includes": "error",
 		"ts/prefer-nullish-coalescing": "error",
 		"ts/prefer-optional-chain": "error",
 		"ts/prefer-readonly": "error",
-		"ts/prefer-readonly-parameter-types": "error",
 		"ts/prefer-reduce-type-parameter": "error",
 		"ts/prefer-return-this-type": "error",
 		"ts/promise-function-async": "error",
@@ -102,11 +117,11 @@ export async function typescript(
 			name: "style:typescript:rules",
 			rules: {
 				...renameRules(
-					pluginTs.configs["eslint-recommended"].overrides![0].rules!,
+					pluginTs.configs["eslint-recommended"].overrides?.[0].rules ?? {},
 					"@typescript-eslint/",
 					"ts/",
 				),
-				...renameRules(pluginTs.configs.strict.rules!, "@typescript-eslint/", "ts/"),
+				...renameRules(pluginTs.configs.strict.rules ?? {}, "@typescript-eslint/", "ts/"),
 
 				"no-autofix/no-useless-return": "error",
 				"no-autofix/prefer-const": [
@@ -123,35 +138,72 @@ export async function typescript(
 				"no-useless-constructor": "off",
 				"no-useless-return": "off",
 				"prefer-const": "off",
+				"ts/array-type": [
+					"error",
+					{
+						default: "generic",
+						readonly: "generic",
+					},
+				],
 				"ts/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
 				"ts/ban-types": ["error", { types: { Function: false } }],
+				"ts/consistent-generic-constructors": ["error", "constructor"],
+				"ts/consistent-indexed-object-style": ["error", "record"],
 				"ts/consistent-type-definitions": ["error", "interface"],
 				"ts/consistent-type-imports": [
 					"error",
 					{ disallowTypeAnnotations: false, prefer: "type-imports" },
 				],
+				"ts/default-param-last": "error",
 				"ts/explicit-function-return-type": [
 					"error",
 					{
 						allowExpressions: true,
 					},
 				],
+				"ts/explicit-member-accessibility": [
+					"error",
+					{
+						overrides: {
+							constructors: "no-public",
+						},
+					},
+				],
+				"ts/max-params": ["error", { max: 4 }],
+				"ts/method-signature-style": ["error", "property"],
+				"ts/no-confusing-non-null-assertion": "error",
 				"ts/no-dupe-class-members": "error",
 				"ts/no-dynamic-delete": "off",
+				"ts/no-empty-function": "error",
+				"ts/no-empty-interface": "error",
 				"ts/no-explicit-any": "off",
 				"ts/no-extraneous-class": "off",
+				"ts/no-for-in-array": "off",
 				"ts/no-import-type-side-effects": "error",
+				"ts/no-inferrable-types": "error",
 				"ts/no-invalid-void-type": "off",
 				"ts/no-loss-of-precision": "error",
-				"ts/no-non-null-assertion": "off",
+				"ts/no-namespace": "off",
+				"ts/no-non-null-assertion": "error",
 				"ts/no-redeclare": "error",
 				"ts/no-require-imports": "error",
-				"ts/no-unused-vars": "off",
+				"ts/no-shadow": "error",
+				"ts/no-throw-literal": "off",
+				"ts/no-unused-vars": [
+					"error",
+					{
+						argsIgnorePattern: "^_",
+						caughtErrorsIgnorePattern: "^_",
+						varsIgnorePattern: "^(Roact$|_)",
+					},
+				],
 				"ts/no-use-before-define": [
 					"error",
 					{ classes: false, functions: false, variables: true },
 				],
 				"ts/no-useless-constructor": "error",
+				"ts/prefer-for-of": "error",
+				"ts/prefer-function-type": "error",
 				"ts/prefer-ts-expect-error": "error",
 				"ts/triple-slash-reference": "off",
 				"ts/unified-signatures": "off",

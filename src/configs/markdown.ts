@@ -10,17 +10,19 @@ import { interopDefault } from "../utils";
 
 export async function markdown(
 	options: OptionsFiles & OptionsComponentExts & OptionsOverrides = {},
-	formatMarkdown: boolean = false,
-): Promise<FlatConfigItem[]> {
+	formatMarkdown = false,
+): Promise<Array<FlatConfigItem>> {
 	const { componentExts = [], files = [GLOB_MARKDOWN], overrides = {} } = options;
 
 	// @ts-expect-error missing types
-	const markdown = await interopDefault(import("eslint-plugin-markdown"));
-	const baseProcessor = markdown.processors.markdown;
+	const markdownPlugin = await interopDefault(import("eslint-plugin-markdown"));
+	const baseProcessor = markdownPlugin.processors.markdown;
 
-	// `eslint-plugin-markdown` only creates virtual files for code blocks,
-	// but not the markdown file itself. In order to format the whole markdown file,
-	// we need to create another virtual file for the markdown file itself.
+	/*
+	 * `eslint-plugin-markdown` only creates virtual files for code blocks,
+	 * but not the markdown file itself. In order to format the whole markdown file,
+	 * we need to create another virtual file for the markdown file itself.
+	 */
 	const processor: Linter.Processor = !formatMarkdown
 		? {
 				meta: {
@@ -55,7 +57,7 @@ export async function markdown(
 		{
 			name: "style:markdown:setup",
 			plugins: {
-				markdown,
+				markdown: markdownPlugin,
 			},
 		},
 		{
@@ -82,17 +84,18 @@ export async function markdown(
 
 				"no-alert": "off",
 				"no-console": "off",
+				"no-inline-comments": "off",
 				"no-labels": "off",
 				"no-lone-blocks": "off",
 				"no-restricted-syntax": "off",
 				"no-undef": "off",
 				"no-unused-expressions": "off",
 				"no-unused-labels": "off",
+
 				"no-unused-vars": "off",
-
 				"node/prefer-global/process": "off",
-				"style/comma-dangle": "off",
 
+				"style/comma-dangle": "off",
 				"style/eol-last": "off",
 				"ts/consistent-type-imports": "off",
 				"ts/no-namespace": "off",

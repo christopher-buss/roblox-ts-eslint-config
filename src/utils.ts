@@ -6,8 +6,8 @@ import type { Awaitable, UserConfigItem } from "./types";
  * Combine array and non-array configs into a single array.
  */
 export async function combine(
-	...configs: Awaitable<UserConfigItem | UserConfigItem[]>[]
-): Promise<UserConfigItem[]> {
+	...configs: Array<Awaitable<UserConfigItem | Array<UserConfigItem>>>
+): Promise<Array<UserConfigItem>> {
 	const resolved = await Promise.all(configs);
 	return resolved.flat();
 }
@@ -28,7 +28,7 @@ export function renameRules(
 	);
 }
 
-export function toArray<T>(value: T | T[]): T[] {
+export function toArray<T>(value: T | Array<T>): Array<T> {
 	return Array.isArray(value) ? value : [value];
 }
 
@@ -39,7 +39,7 @@ export async function interopDefault<T>(
 	return (resolved as any).default || resolved;
 }
 
-export async function ensurePackages(packages: string[]): Promise<void> {
+export async function ensurePackages(packages: Array<string>): Promise<void> {
 	if (process.env.CI ?? process.stdout.isTTY === false) {
 		return;
 	}

@@ -4,19 +4,9 @@ import style from "./dist/index.js";
 
 export default style(
 	{
-		roblox: false,
-		// typescript: {
-		// 	parserOptions: {
-		// 		ecmaVersion: 2018,
-		// 		jsx: true,
-		// 		project: "./tsconfig.json",
-		// 		sourceType: "module",
-		// 		useJSXTextNode: true,
-		// 	},
-		// 	tsconfigPath: "./tsconfig.json",
-		// },
-		ignores: ["fixtures", "_fixtures"],
 		formatters: true,
+		ignores: ["fixtures", "_fixtures"],
+		roblox: false,
 	},
 	{
 		files: ["src/**/*.ts"],
@@ -24,9 +14,9 @@ export default style(
 			"perfectionist/sort-objects": [
 				"error",
 				{
-					type: "natural",
 					order: "asc",
 					"partition-by-comment": "Part:**",
+					type: "natural",
 				},
 			],
 		},

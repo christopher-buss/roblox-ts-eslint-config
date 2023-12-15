@@ -5,7 +5,7 @@ import type { FlatConfigItem } from "../types";
  *
  * Requires `jsonc` config
  */
-export async function sortPackageJson(): Promise<FlatConfigItem[]> {
+export async function sortPackageJson(): Promise<Array<FlatConfigItem>> {
 	return [
 		{
 			files: ["**/package.json"],
@@ -96,7 +96,7 @@ export async function sortPackageJson(): Promise<FlatConfigItem[]> {
  * Requires `jsonc` config
  */
 
-export function sortTsconfig(): FlatConfigItem[] {
+export function sortTsconfig(): Array<FlatConfigItem> {
 	return [
 		{
 			files: ["**/tsconfig.json", "**/tsconfig.*.json"],

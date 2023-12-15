@@ -1,7 +1,7 @@
 import type { FlatConfigItem } from "../types";
 import { pluginNode } from "../plugins";
 
-export async function node(): Promise<FlatConfigItem[]> {
+export async function node(): Promise<Array<FlatConfigItem>> {
 	return [
 		{
 			name: "style:node",

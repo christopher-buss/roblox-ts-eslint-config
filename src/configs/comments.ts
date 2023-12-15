@@ -1,7 +1,7 @@
 import type { FlatConfigItem } from "../types";
 import { pluginComments } from "../plugins";
 
-export async function comments(): Promise<FlatConfigItem[]> {
+export async function comments(): Promise<Array<FlatConfigItem>> {
 	return [
 		{
 			name: "style:eslint-comments",
@@ -14,6 +14,10 @@ export async function comments(): Promise<FlatConfigItem[]> {
 				"eslint-comments/no-duplicate-disable": "error",
 				"eslint-comments/no-unlimited-disable": "error",
 				"eslint-comments/no-unused-enable": "error",
+				"eslint-comments/require-description": "warn",
+
+				"multiline-comment-style": "error",
+				"no-inline-comments": "error",
 			},
 		},
 	];
