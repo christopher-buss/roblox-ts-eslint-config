@@ -14,9 +14,10 @@ export async function react(
 
 	await ensurePackages(["eslint-plugin-react", "eslint-plugin-react-hooks"]);
 
-	const [pluginReact, pluginReactHooks] = await Promise.all([
+	const [pluginReact, pluginReactHooks, pluginStylistic] = await Promise.all([
 		interopDefault(import("eslint-plugin-react")),
 		interopDefault(import("eslint-plugin-react-hooks")),
+		interopDefault(import("@stylistic/eslint-plugin")),
 	] as const);
 
 	return [
@@ -25,6 +26,7 @@ export async function react(
 			plugins: {
 				react: pluginReact,
 				"react-hooks": pluginReactHooks,
+				style: pluginStylistic,
 			},
 			settings: {
 				react: {
@@ -43,13 +45,30 @@ export async function react(
 			},
 			name: "style:react:rules",
 			rules: {
+				"react/destructuring-assignment": [
+					"error",
+					"always",
+					{
+						destructureInSignature: "always",
+					},
+				],
 				// recommended rules react
 				"react/display-name": "error",
-				"react/hook-use-state": "error",
 
+				"react/function-component-definition": "error",
+				"react/hook-use-state": "error",
+				"react/jsx-fragments": "error",
 				"react/jsx-key": "error",
+				"react/jsx-max-depth": [
+					"error",
+					{
+						max: 5,
+					},
+				],
+				"react/jsx-no-bind": "error",
 				"react/jsx-no-comment-textnodes": "error",
 				"react/jsx-no-duplicate-props": "error",
+				"react/jsx-no-leaked-render": "error",
 				"react/jsx-no-target-blank": "error",
 				"react/jsx-no-undef": "error",
 				"react/jsx-uses-react": "error",
@@ -62,15 +81,46 @@ export async function react(
 				"react/no-is-mounted": "error",
 				"react/no-render-return-value": "error",
 				"react/no-string-refs": "error",
-				"react/no-unescaped-entities": "error",
-				"react/no-unknown-property": "error",
+				"react/no-unescaped-entities": "off",
+				"react/no-unknown-property": "off",
 				"react/no-unsafe": "off",
+				"react/no-unstable-nested-components": [
+					"error",
+					{
+						allowAsProps: true,
+					},
+				],
+				"react/no-unused-prop-types": "error",
+				"react/prefer-read-only-props": "error",
 				"react/prop-types": "error",
 				"react/react-in-jsx-scope": "off",
 				"react/require-render-return": "error",
+				"react/self-closing-comp": [
+					"error",
+					{
+						component: true,
+					},
+				],
 				// recommended rules react-hooks
 				"react-hooks/exhaustive-deps": "warn",
 				"react-hooks/rules-of-hooks": "error",
+				"style/jsx-curly-brace-presence": [
+					"error",
+					{
+						children: "never",
+						propElementValues: "always",
+						props: "never",
+					},
+				],
+				"style/jsx-sort-props": [
+					"error",
+					{
+						callbacksLast: true,
+						ignoreCase: true,
+						reservedFirst: true,
+						shorthandFirst: true,
+					},
+				],
 
 				...(typescript
 					? {
@@ -81,6 +131,17 @@ export async function react(
 
 				// overrides
 				...overrides,
+			},
+			settings: {
+				react: {
+					version: "17.0",
+				},
+			},
+		},
+		{
+			files: ["**/*.story.tsx"],
+			rules: {
+				"react-hooks/rules-of-hooks": "off",
 			},
 		},
 	];
