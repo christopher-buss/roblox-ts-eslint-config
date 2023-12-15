@@ -12,12 +12,17 @@ export async function combine(
 	return resolved.flat();
 }
 
-export function renameRules(rules: Record<string, any>, from: string, to: string) {
+export function renameRules(
+	rules: Record<string, any>,
+	from: string,
+	to: string,
+): Record<string, any> {
 	return Object.fromEntries(
 		Object.entries(rules).map(([key, value]) => {
 			if (key.startsWith(from)) {
 				return [to + key.slice(from.length), value];
 			}
+
 			return [key, value];
 		}),
 	);
@@ -34,7 +39,7 @@ export async function interopDefault<T>(
 	return (resolved as any).default || resolved;
 }
 
-export async function ensurePackages(packages: string[]) {
+export async function ensurePackages(packages: string[]): Promise<void> {
 	if (process.env.CI ?? process.stdout.isTTY === false) {
 		return;
 	}
@@ -56,6 +61,7 @@ export async function ensurePackages(packages: string[]) {
 			type: "confirm",
 		},
 	]);
+
 	if (result) {
 		await import("@antfu/install-pkg").then(i =>
 			i.installPackage(nonExistingPackages, { dev: true }),

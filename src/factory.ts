@@ -17,7 +17,6 @@ import {
 	sortPackageJson,
 	sortTsconfig,
 	stylistic,
-	test,
 	typescript,
 	unicorn,
 } from "./configs";
@@ -117,15 +116,6 @@ export async function style(
 
 	if (stylisticOptions) {
 		configs.push(stylistic(stylisticOptions));
-	}
-
-	if (options.test ?? true) {
-		configs.push(
-			test({
-				isInEditor,
-				overrides: overrides.test,
-			}),
-		);
 	}
 
 	if (enableReact) {

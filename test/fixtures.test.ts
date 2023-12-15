@@ -64,7 +64,7 @@ runWithConfig("no-markdown-with-formatters", {
 	},
 });
 
-function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfigItem[]) {
+function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfigItem[]): void {
 	it.concurrent(
 		name,
 		async ({ expect }) => {
@@ -109,8 +109,10 @@ export default antfu(
 						if (fs.existsSync(outputPath)) {
 							void fs.remove(outputPath);
 						}
+
 						return;
 					}
+
 					await expect.soft(content).toMatchFileSnapshot(join(output, file));
 				}),
 			);

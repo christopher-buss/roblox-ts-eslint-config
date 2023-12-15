@@ -23,14 +23,6 @@ export const GLOB_HTML = "**/*.htm?(l)";
 
 export const GLOB_MARKDOWN_CODE = `${GLOB_MARKDOWN}/${GLOB_SRC}`;
 
-export const GLOB_TESTS = [
-	`**/__tests__/**/*.${GLOB_SRC_EXT}`,
-	`**/*.spec.${GLOB_SRC_EXT}`,
-	`**/*.test.${GLOB_SRC_EXT}`,
-	`**/*.bench.${GLOB_SRC_EXT}`,
-	`**/*.benchmark.${GLOB_SRC_EXT}`,
-];
-
 export const GLOB_ALL_SRC = [GLOB_SRC, GLOB_STYLE, GLOB_JSON, GLOB_JSON5, GLOB_MARKDOWN, GLOB_HTML];
 
 export const GLOB_EXCLUDE = [

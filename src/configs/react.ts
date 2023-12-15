@@ -43,13 +43,10 @@ export async function react(
 			},
 			name: "style:react:rules",
 			rules: {
-				// recommended rules react-hooks
-				"react-hooks/exhaustive-deps": "warn",
-				"react-hooks/rules-of-hooks": "error",
-
 				// recommended rules react
 				"react/display-name": "error",
 				"react/jsx-key": "error",
+
 				"react/jsx-no-comment-textnodes": "error",
 				"react/jsx-no-duplicate-props": "error",
 				"react/jsx-no-target-blank": "error",
@@ -70,6 +67,9 @@ export async function react(
 				"react/prop-types": "error",
 				"react/react-in-jsx-scope": "off",
 				"react/require-render-return": "error",
+				// recommended rules react-hooks
+				"react-hooks/exhaustive-deps": "warn",
+				"react-hooks/rules-of-hooks": "error",
 
 				...(typescript
 					? {

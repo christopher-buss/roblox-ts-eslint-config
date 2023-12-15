@@ -171,13 +171,6 @@ export async function typescript(
 			},
 		},
 		{
-			files: ["**/*.{test,spec}.ts?(x)"],
-			name: "style:typescript:tests-overrides",
-			rules: {
-				"no-unused-expressions": "off",
-			},
-		},
-		{
 			files: ["**/*.js", "**/*.cjs"],
 			name: "style:typescript:javascript-overrides",
 			rules: {

@@ -14,7 +14,6 @@ import type {
 	ReactRules,
 	RenamePrefix,
 	RuleConfig,
-	VitestRules,
 } from "@antfu/eslint-define-config";
 import type { RuleOptions as JSDocRules } from "@eslint-types/jsdoc/types";
 import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
@@ -35,7 +34,6 @@ export type Awaitable<T> = T | Promise<T>;
 export type Rules = WrapRuleConfig<
 	MergeIntersection<
 		RenamePrefix<TypeScriptRules, "@typescript-eslint/", "ts/"> &
-			RenamePrefix<VitestRules, "vitest/", "test/"> &
 			RenamePrefix<NRules, "n/", "node/"> &
 			Prefix<StylisticRules, "style/"> &
 			Prefix<AntfuRules, "antfu/"> &
@@ -46,9 +44,7 @@ export type Rules = WrapRuleConfig<
 			EslintRules &
 			JsoncRules &
 			UnicornRules &
-			EslintCommentsRules & {
-				"test/no-only-tests": RuleConfig<[]>;
-			}
+			EslintCommentsRules
 	>
 >;
 
@@ -206,13 +202,6 @@ export interface OptionsConfig extends OptionsComponentExts {
 	jsx?: boolean;
 
 	/**
-	 * Enable test support.
-	 *
-	 * @default true
-	 */
-	test?: boolean;
-
-	/**
 	 * Enable JSONC support.
 	 *
 	 * @default true
@@ -270,7 +259,6 @@ export interface OptionsConfig extends OptionsComponentExts {
 	overrides?: {
 		javascript?: FlatConfigItem["rules"];
 		typescript?: FlatConfigItem["rules"];
-		test?: FlatConfigItem["rules"];
 		jsonc?: FlatConfigItem["rules"];
 		markdown?: FlatConfigItem["rules"];
 		react?: FlatConfigItem["rules"];

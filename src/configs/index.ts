@@ -13,6 +13,5 @@ export * from "./react";
 export * from "./roblox";
 export * from "./sort";
 export * from "./stylistic";
-export * from "./test";
 export * from "./typescript";
 export * from "./unicorn";
