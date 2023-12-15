@@ -223,13 +223,5 @@ export async function typescript(
 				"unused-imports/no-unused-vars": "off",
 			},
 		},
-		{
-			files: ["**/*.js", "**/*.cjs"],
-			name: "style:typescript:javascript-overrides",
-			rules: {
-				"ts/no-require-imports": "off",
-				"ts/no-var-requires": "off",
-			},
-		},
 	];
 }

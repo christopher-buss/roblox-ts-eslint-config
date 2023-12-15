@@ -1,11 +1,9 @@
 import fs from "node:fs";
-import process from "node:process";
 
 import {
 	comments,
 	ignores,
 	imports,
-	javascript,
 	jsdoc,
 	jsonc,
 	markdown,
@@ -45,7 +43,6 @@ export async function style(
 	const {
 		componentExts = [],
 		gitignore: enableGitignore = true,
-		isInEditor = !!((process.env.VSCODE_PID ?? process.env.JETBRAINS_IDE) && !process.env.CI),
 		jsx,
 		overrides = {},
 		react: enableReact = false,
@@ -80,10 +77,6 @@ export async function style(
 	// Base configs
 	configs.push(
 		ignores(),
-		javascript({
-			isInEditor,
-			overrides: overrides.javascript,
-		}),
 		comments(),
 		node(),
 		jsdoc({

@@ -222,7 +222,6 @@ export interface OptionsConfig extends OptionsComponentExts {
 	 * Provide overrides for rules for each integration.
 	 */
 	overrides?: {
-		javascript?: FlatConfigItem["rules"];
 		jsonc?: FlatConfigItem["rules"];
 		markdown?: FlatConfigItem["rules"];
 		react?: FlatConfigItem["rules"];
