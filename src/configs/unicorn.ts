@@ -17,6 +17,7 @@ export async function unicorn(): Promise<Array<FlatConfigItem>> {
 				"unicorn/escape-case": "off",
 				// Array.isArray instead of instanceof
 				"unicorn/no-instanceof-array": "off",
+				"unicorn/no-lonely-if": "error",
 				// Ban `new Array` as `Array` constructor's params are ambiguous
 				"unicorn/no-new-array": "off",
 				// Prevent deprecated `new Buffer()`

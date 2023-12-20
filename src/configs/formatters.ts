@@ -1,6 +1,7 @@
+import { pluginFormat } from "src/plugins";
+
 import { GLOB_CSS, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from "../globs";
 import type { FlatConfigItem, OptionsFormatters, StylisticConfig } from "../types";
-import { ensurePackages, interopDefault } from "../utils";
 import type { VendoredPrettierOptions } from "../vender/prettier-types";
 import { StylisticConfigDefaults } from "./stylistic";
 
@@ -9,8 +10,6 @@ export async function formatters(
 	stylistic: StylisticConfig = {},
 	markdownEnabled = true,
 ): Promise<Array<FlatConfigItem>> {
-	await ensurePackages(["eslint-plugin-format"]);
-
 	if (options === true) {
 		options = {
 			css: true,
@@ -45,8 +44,6 @@ export async function formatters(
 		},
 		options.dprintOptions ?? {},
 	);
-
-	const pluginFormat = await interopDefault(import("eslint-plugin-format"));
 
 	const configs: Array<FlatConfigItem> = [
 		{

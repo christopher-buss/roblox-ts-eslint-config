@@ -156,12 +156,16 @@ export async function style(
 		);
 	}
 
-	configs.push(prettier());
+	configs.push(
+		prettier({
+			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
+			componentExts,
+			overrides: overrides.typescript,
+		}),
+	);
 
-	/*
-	 * User can optionally pass a flat config item to the first argument
-	 * We pick the known keys as ESLint would do schema validation
-	 */
+	// User can optionally pass a flat config item to the first argument
+	// We pick the known keys as ESLint would do schema validation
 	const fusedConfig = flatConfigProps.reduce((acc, key) => {
 		if (key in options) {
 			acc[key] = options[key] as any;

@@ -1,8 +1,7 @@
-import { join, resolve } from "node:path";
-
 import { execa } from "execa";
 import fg from "fast-glob";
 import fs from "fs-extra";
+import { join, resolve } from "node:path";
 import { afterAll, beforeAll, it } from "vitest";
 
 import type { FlatConfigItem, OptionsConfig } from "../src/types";

@@ -1,6 +1,5 @@
-import process from "node:process";
-
 import { isPackageExists } from "local-pkg";
+import process from "node:process";
 
 import type { Awaitable, UserConfigItem } from "./types";
 

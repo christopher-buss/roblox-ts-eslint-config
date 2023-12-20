@@ -1,5 +1,4 @@
 import process from "node:process";
-
 import { GLOB_SRC } from "src";
 import { pluginRobloxTS } from "src/plugins";
 import { interopDefault, toArray } from "src/utils";

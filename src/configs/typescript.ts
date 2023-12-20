@@ -45,6 +45,7 @@ export async function typescript(
 				selector: "interface",
 			},
 		],
+		"ts/no-confusing-void-expression": "error",
 		"ts/no-duplicate-type-constituents": "error",
 		"ts/no-floating-promises": [
 			"error",
@@ -59,7 +60,7 @@ export async function typescript(
 		"ts/no-mixed-enums": "error",
 		"ts/no-redundant-type-constituents": "error",
 		"ts/no-throw-literal": "off",
-		"ts/no-unnecessary-condition": "error",
+		"ts/no-unnecessary-condition": ["error", { allowConstantLoopConditions: true }],
 		"ts/no-unnecessary-qualifier": "error",
 		"ts/no-unnecessary-type-arguments": "error",
 		"ts/no-unnecessary-type-assertion": "error",
@@ -124,6 +125,7 @@ export async function typescript(
 				),
 				...renameRules(pluginTs.configs.strict.rules ?? {}, "@typescript-eslint/", "ts/"),
 
+				"array-callback-return": "error",
 				"no-autofix/no-useless-return": "error",
 				"no-autofix/prefer-const": [
 					"error",
@@ -133,6 +135,7 @@ export async function typescript(
 					},
 				],
 				"no-dupe-class-members": "off",
+				"no-lonely-if": "error",
 				"no-loss-of-precision": "off",
 				"no-redeclare": "off",
 				"no-use-before-define": "off",
@@ -208,6 +211,7 @@ export async function typescript(
 				"ts/prefer-ts-expect-error": "error",
 				"ts/triple-slash-reference": "off",
 				"ts/unified-signatures": "off",
+				yoda: ["error", "never"],
 
 				...(tsconfigPath ? typeAwareRules : {}),
 				...overrides,

@@ -3,10 +3,10 @@ import type { FlatConfigItem, StylisticConfig } from "../types";
 import { interopDefault } from "../utils";
 
 export const StylisticConfigDefaults: StylisticConfig = {
-	indent: 4,
+	indent: "tab",
 	jsx: true,
-	quotes: "single",
-	semi: false,
+	quotes: "double",
+	semi: true,
 };
 
 export async function stylistic(options: StylisticConfig = {}): Promise<Array<FlatConfigItem>> {
@@ -60,6 +60,11 @@ export async function stylistic(options: StylisticConfig = {}): Promise<Array<Fl
 						blankLine: "any",
 						next: ["export", "import"],
 						prev: ["export", "import"],
+					},
+					{
+						blankLine: "any",
+						next: "*",
+						prev: ["do"],
 					},
 				],
 			},

@@ -42,6 +42,7 @@ export interface VendoredPrettierOptionsRequired {
 	 * Provide ability to support new languages to prettier.
 	 */
 	plugins: Array<string | any>;
+	printWidth: number;
 	/**
 	 * By default, Prettier will wrap markdown text as-is since some services use a linebreak-sensitive renderer.
 	 * In some cases you may want to rely on editor/viewer soft wrapping instead, so this option allows you to opt out.
@@ -113,15 +114,13 @@ export type BuiltInParserName =
 	| "typescript"
 	| "yaml";
 
-/*
- * This utility is here to handle the case where you have an explicit union
- * between string literals and the generic string type. It would normally
- * resolve out to just the string type, but this generic LiteralUnion maintains
- * the intellisense of the original union.
- *
- * It comes from this issue: microsoft/TypeScript#29729:
- *   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
- */
+// This utility is here to handle the case where you have an explicit union
+// between string literals and the generic string type. It would normally
+// resolve out to just the string type, but this generic LiteralUnion maintains
+// the intellisense of the original union.
+//
+// It comes from this issue: microsoft/TypeScript#29729:
+//   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
 export type LiteralUnion<T extends U, U = string> =
 	| T
 	| (Pick<U, never> & { _?: never | undefined });

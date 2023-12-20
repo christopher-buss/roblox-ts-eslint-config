@@ -1,19 +1,56 @@
-import { configPrettier, pluginPrettier } from "../plugins";
-import type { FlatConfigItem } from "../types";
+import { GLOB_SRC } from "src";
+import type { VendoredPrettierOptions } from "src/vender/prettier-types";
 
-export async function prettier(): Promise<Array<FlatConfigItem>> {
+import { configPrettier, pluginFormat } from "../plugins";
+import type {
+	FlatConfigItem,
+	OptionsComponentExts,
+	OptionsFiles,
+	OptionsOverrides,
+	OptionsTypeScriptParserOptions,
+	OptionsTypeScriptWithTypes,
+} from "../types";
+
+export async function prettier(
+	options: OptionsFiles &
+		OptionsComponentExts &
+		OptionsOverrides &
+		OptionsTypeScriptWithTypes &
+		OptionsTypeScriptParserOptions = {},
+): Promise<Array<FlatConfigItem>> {
+	const { componentExts = [] } = options;
+
+	const files = options.files ?? [GLOB_SRC, ...componentExts.map(ext => `**/*.${ext}`)];
+
+	const prettierOptions: VendoredPrettierOptions = {
+		arrowParens: "avoid",
+		printWidth: 100,
+		semi: true,
+		singleQuote: false,
+		tabWidth: 4,
+		trailingComma: "all",
+		useTabs: true,
+	} satisfies VendoredPrettierOptions;
+
 	return [
 		{
+			files,
 			plugins: {
-				prettier: pluginPrettier,
+				format: pluginFormat,
 			},
 			rules: {
 				...configPrettier.rules,
 				"arrow-body-style": "off",
 				curly: ["error", "all"],
+				"format/prettier": [
+					"error",
+					{
+						...prettierOptions,
+						parser: "typescript",
+					},
+				],
 				"no-unexpected-multiline": "off",
 				"prefer-arrow-callback": "off",
-				"prettier/prettier": "error",
 				"standard/array-bracket-even-spacing": "off",
 				"standard/computed-property-even-spacing": "off",
 				"standard/object-curly-even-spacing": "off",
@@ -51,7 +88,6 @@ export async function prettier(): Promise<Array<FlatConfigItem>> {
 				"style/jsx-one-expression-per-line": "off",
 				"style/jsx-props-no-multi-spaces": "off",
 				"style/jsx-quotes": "off",
-
 				"style/jsx-tag-spacing": "off",
 				"style/jsx-wrap-multilines": "off",
 				"style/key-spacing": "off",

@@ -20,6 +20,7 @@ import type {
 	UnprefixedRuleOptions as StylisticRules,
 } from "@stylistic/eslint-plugin";
 import type { ParserOptions } from "@typescript-eslint/parser";
+
 import type { Linter } from "eslint";
 import type { FlatGitignoreOptions } from "eslint-config-flat-gitignore";
 import type { Rules as AntfuRules } from "eslint-plugin-antfu";

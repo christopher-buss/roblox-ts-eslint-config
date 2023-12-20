@@ -19,11 +19,9 @@ export async function markdown(
 	const markdownPlugin = await interopDefault(import("eslint-plugin-markdown"));
 	const baseProcessor = markdownPlugin.processors.markdown;
 
-	/*
-	 * `eslint-plugin-markdown` only creates virtual files for code blocks,
-	 * but not the markdown file itself. In order to format the whole markdown file,
-	 * we need to create another virtual file for the markdown file itself.
-	 */
+	// `eslint-plugin-markdown` only creates virtual files for code blocks,
+	// but not the markdown file itself. In order to format the whole markdown file,
+	// we need to create another virtual file for the markdown file itself.
 	const processor: Linter.Processor = !formatMarkdown
 		? {
 				meta: {
