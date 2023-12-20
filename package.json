@@ -1,5 +1,5 @@
 {
-	"name": "@rbxts/eslint-config",
+	"name": "@roblox-ts/eslint-config",
 	"type": "module",
 	"version": "2.3.4",
 	"packageManager": "pnpm@8.11.0",
@@ -9,7 +9,8 @@
 	"funding": "https://github.com/sponsors/antfu",
 	"homepage": "https://github.com/antfu/eslint-config",
 	"keywords": [
-		"eslint-config"
+		"eslint-config",
+		"roblox"
 	],
 	"exports": {
 		".": {
