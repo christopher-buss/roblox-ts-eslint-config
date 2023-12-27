@@ -9,35 +9,61 @@ export async function unicorn(): Promise<Array<FlatConfigItem>> {
 				unicorn: pluginUnicorn,
 			},
 			rules: {
+				// The auto-fix here does not support roblox-ts well, but the
+				"unicorn/catch-error-name": [
+					"error",
+					{
+						name: "err",
+					},
+				],
 				"unicorn/consistent-destructuring": "error",
 				"unicorn/consistent-function-scoping": "error",
-				// Pass error message when throwing errors
-				"unicorn/error-message": "off",
-				// Uppercase regex escapes
-				"unicorn/escape-case": "off",
-				// Array.isArray instead of instanceof
-				"unicorn/no-instanceof-array": "off",
+				"unicorn/no-array-for-each": "error",
 				"unicorn/no-lonely-if": "error",
-				// Ban `new Array` as `Array` constructor's params are ambiguous
-				"unicorn/no-new-array": "off",
-				// Prevent deprecated `new Buffer()`
-				"unicorn/no-new-buffer": "off",
-				// Lowercase number formatting for octal, hex, binary (0x1'error' instead of 0X1'error')
+				"unicorn/no-negated-condition": "off",
+				"unicorn/no-nested-ternary": "error",
+				"unicorn/no-unused-properties": "error",
+				"unicorn/no-useless-promise-resolve-reject": "error",
+				"unicorn/no-useless-undefined": ["error", { checkArguments: false }],
 				"unicorn/number-literal-case": "error",
-				// textContent instead of innerText
-				"unicorn/prefer-dom-node-text-content": "off",
-				// includes over indexOf when checking for existence
-				"unicorn/prefer-includes": "off",
-				// Prefer using the node: protocol
-				"unicorn/prefer-node-protocol": "off",
-				// Prefer using number properties like `Number.isNaN` rather than `isNaN`
-				"unicorn/prefer-number-properties": "off",
-				// String methods startsWith/endsWith instead of more complicated stuff
-				"unicorn/prefer-string-starts-ends-with": "off",
-				// Enforce throwing type error when throwing error while checking typeof
-				"unicorn/prefer-type-error": "error",
-				// Use new when throwing error
-				"unicorn/throw-new-error": "error",
+				"unicorn/prefer-logical-operator-over-ternary": "error",
+				"unicorn/prefer-switch": "error",
+				"unicorn/prefer-ternary": ["error", "only-single-line"],
+				"unicorn/prevent-abbreviations": [
+					"error",
+					{
+						replacements: {
+							args: false,
+							dist: {
+								distance: true,
+							},
+							e: {
+								err: true,
+								error: false,
+							},
+							err: false,
+							fn: {
+								func: true,
+								function: false,
+							},
+							func: false,
+							inst: {
+								instance: true,
+							},
+							nums: {
+								numbers: true,
+							},
+							pos: {
+								position: true,
+							},
+							props: false,
+							ref: false,
+							refs: false,
+							str: false,
+						},
+					},
+				],
+				"unicorn/switch-case-braces": "error",
 			},
 		},
 	];

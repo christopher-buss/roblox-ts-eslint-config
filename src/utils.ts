@@ -34,9 +34,9 @@ export function toArray<T>(value: T | Array<T>): Array<T> {
 }
 
 export async function interopDefault<T>(
-	m: Awaitable<T>,
+	dynamicImport: Awaitable<T>,
 ): Promise<T extends { default: infer U } ? U : T> {
-	const resolved = await m;
+	const resolved = await dynamicImport;
 	return (resolved as any).default || resolved;
 }
 
@@ -45,7 +45,7 @@ export async function ensurePackages(packages: Array<string>): Promise<void> {
 		return;
 	}
 
-	const nonExistingPackages = packages.filter(i => !isPackageExists(i));
+	const nonExistingPackages = packages.filter(index => !isPackageExists(index));
 	if (nonExistingPackages.length === 0) {
 		return;
 	}
@@ -64,8 +64,8 @@ export async function ensurePackages(packages: Array<string>): Promise<void> {
 	]);
 
 	if (result) {
-		await import("@antfu/install-pkg").then(i =>
-			i.installPackage(nonExistingPackages, { dev: true }),
+		await import("@antfu/install-pkg").then(import_ =>
+			import_.installPackage(nonExistingPackages, { dev: true }),
 		);
 	}
 }

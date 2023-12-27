@@ -4,7 +4,7 @@ import { GLOB_SRC } from "../globs";
 import { pluginAntfu, pluginNoAutofix } from "../plugins";
 import type {
 	FlatConfigItem,
-	OptionsComponentExts,
+	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
@@ -14,14 +14,17 @@ import { interopDefault, renameRules, toArray } from "../utils";
 
 export async function typescript(
 	options: OptionsFiles &
-		OptionsComponentExts &
+		OptionsComponentExtensions &
 		OptionsOverrides &
 		OptionsTypeScriptWithTypes &
 		OptionsTypeScriptParserOptions = {},
 ): Promise<Array<FlatConfigItem>> {
-	const { componentExts = [], overrides = {}, parserOptions = {} } = options;
+	const { componentExts: componentExtensions = [], overrides = {}, parserOptions = {} } = options;
 
-	const files = options.files ?? [GLOB_SRC, ...componentExts.map(ext => `**/*.${ext}`)];
+	const files = options.files ?? [
+		GLOB_SRC,
+		...componentExtensions.map(extension => `**/*.${extension}`),
+	];
 
 	const typeAwareRules: FlatConfigItem["rules"] = {
 		"dot-notation": "off",
@@ -105,7 +108,7 @@ export async function typescript(
 			languageOptions: {
 				parser: parserTs,
 				parserOptions: {
-					extraFileExtensions: componentExts.map(ext => `.${ext}`),
+					extraFileExtensions: componentExtensions.map(extension => `.${extension}`),
 					sourceType: "module",
 					...(tsconfigPath
 						? {
@@ -125,7 +128,22 @@ export async function typescript(
 				),
 				...renameRules(pluginTs.configs.strict.rules ?? {}, "@typescript-eslint/", "ts/"),
 
-				"array-callback-return": "error",
+				"array-callback-return": [
+					"error",
+					{
+						allowImplicit: true,
+					},
+				],
+				"id-length": [
+					"error",
+					{
+						exceptions: ["_", "x", "y", "z", "a", "b"],
+						max: 30,
+						min: 2,
+						properties: "never",
+					},
+				],
+				"no-array-constructor": "error",
 				"no-autofix/no-useless-return": "error",
 				"no-autofix/prefer-const": [
 					"error",
@@ -134,10 +152,21 @@ export async function typescript(
 						ignoreReadBeforeAssign: true,
 					},
 				],
+				"no-constant-condition": [
+					"error",
+					{
+						checkLoops: false,
+					},
+				],
 				"no-dupe-class-members": "off",
+				"no-else-return": "error",
+				"no-empty-function": "off",
 				"no-lonely-if": "error",
 				"no-loss-of-precision": "off",
 				"no-redeclare": "off",
+				"no-return-assign": ["error", "always"],
+				"no-shadow": "off",
+				"no-unused-private-class-members": "error",
 				"no-use-before-define": "off",
 				"no-useless-constructor": "off",
 				"no-useless-return": "off",
@@ -174,7 +203,7 @@ export async function typescript(
 					},
 				],
 				"ts/max-params": ["error", { max: 4 }],
-				"ts/method-signature-style": ["error", "property"],
+				"ts/method-signature-style": "off",
 				"ts/no-confusing-non-null-assertion": "error",
 				"ts/no-dupe-class-members": "error",
 				"ts/no-dynamic-delete": "off",
@@ -201,10 +230,7 @@ export async function typescript(
 						varsIgnorePattern: "^(Roact$|_)",
 					},
 				],
-				"ts/no-use-before-define": [
-					"error",
-					{ classes: false, functions: false, variables: true },
-				],
+				"ts/no-use-before-define": "off",
 				"ts/no-useless-constructor": "error",
 				"ts/prefer-for-of": "error",
 				"ts/prefer-function-type": "error",

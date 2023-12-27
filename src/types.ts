@@ -12,7 +12,7 @@ import type {
 	RenamePrefix,
 	RuleConfig,
 } from "@antfu/eslint-define-config";
-import type { RuleOptions as JSDocRules } from "@eslint-types/jsdoc/types";
+import type { RuleOptions as JSDocumentRules } from "@eslint-types/jsdoc/types";
 import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
 import type { RuleOptions as UnicornRules } from "@eslint-types/unicorn/types";
 import type {
@@ -41,7 +41,7 @@ export type Rules = WrapRuleConfig<
 			Prefix<AntfuRules, "antfu/"> &
 			ReactHooksRules &
 			ReactRules &
-			JSDocRules &
+			JSDocumentRules &
 			ImportRules &
 			EslintRules &
 			JsoncRules &
@@ -125,7 +125,7 @@ export interface OptionsFormatters {
 	toml?: "dprint" | boolean;
 }
 
-export interface OptionsComponentExts {
+export interface OptionsComponentExtensions {
 	/**
 	 * Additional extensions for components.
 	 */
@@ -165,7 +165,7 @@ export interface OptionsIsInEditor {
 	isInEditor?: boolean;
 }
 
-export interface OptionsConfig extends OptionsComponentExts {
+export interface OptionsConfig extends OptionsComponentExtensions {
 	/**
 	 * Use external formatters to format files.
 	 *

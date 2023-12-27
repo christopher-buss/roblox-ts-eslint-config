@@ -19,6 +19,7 @@ import {
 	unicorn,
 } from "./configs";
 import { formatters } from "./configs/formatters";
+import { shopify } from "./configs/shopify";
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
 import { combine, interopDefault } from "./utils";
 
@@ -41,7 +42,7 @@ export async function style(
 	...userConfigs: Array<Awaitable<UserConfigItem | Array<UserConfigItem>>>
 ): Promise<Array<UserConfigItem>> {
 	const {
-		componentExts = [],
+		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx,
 		overrides = {},
@@ -65,12 +66,16 @@ export async function style(
 	if (enableGitignore) {
 		if (typeof enableGitignore !== "boolean") {
 			configs.push(
-				interopDefault(import("eslint-config-flat-gitignore")).then(r => [
-					r(enableGitignore),
+				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => [
+					resolved(enableGitignore),
 				]),
 			);
 		} else if (fs.existsSync(".gitignore")) {
-			configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r()]));
+			configs.push(
+				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => [
+					resolved(),
+				]),
+			);
 		}
 	}
 
@@ -87,14 +92,14 @@ export async function style(
 		}),
 		unicorn(),
 
-		// Optional plugins (installed but not enabled by default)
+		shopify(),
 		perfectionist(),
 	);
 
 	configs.push(
 		typescript({
 			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
-			componentExts,
+			componentExts: componentExtensions,
 			overrides: overrides.typescript,
 		}),
 	);
@@ -103,7 +108,7 @@ export async function style(
 		configs.push(
 			roblox({
 				...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
-				componentExts,
+				componentExts: componentExtensions,
 				overrides: overrides.typescript,
 			}),
 		);
@@ -137,7 +142,7 @@ export async function style(
 		configs.push(
 			markdown(
 				{
-					componentExts,
+					componentExts: componentExtensions,
 					overrides: overrides.markdown,
 				},
 
@@ -159,19 +164,19 @@ export async function style(
 	configs.push(
 		prettier({
 			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
-			componentExts,
+			componentExts: componentExtensions,
 			overrides: overrides.typescript,
 		}),
 	);
 
 	// User can optionally pass a flat config item to the first argument
 	// We pick the known keys as ESLint would do schema validation
-	const fusedConfig = flatConfigProps.reduce((acc, key) => {
+	const fusedConfig = flatConfigProps.reduce((accumulator, key) => {
 		if (key in options) {
-			acc[key] = options[key] as any;
+			accumulator[key] = options[key] as any;
 		}
 
-		return acc;
+		return accumulator;
 	}, {} as FlatConfigItem);
 	if (Object.keys(fusedConfig).length) {
 		configs.push([fusedConfig]);

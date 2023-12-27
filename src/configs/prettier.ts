@@ -4,7 +4,7 @@ import type { VendoredPrettierOptions } from "src/vender/prettier-types";
 import { configPrettier, pluginFormat } from "../plugins";
 import type {
 	FlatConfigItem,
-	OptionsComponentExts,
+	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
@@ -13,14 +13,17 @@ import type {
 
 export async function prettier(
 	options: OptionsFiles &
-		OptionsComponentExts &
+		OptionsComponentExtensions &
 		OptionsOverrides &
 		OptionsTypeScriptWithTypes &
 		OptionsTypeScriptParserOptions = {},
 ): Promise<Array<FlatConfigItem>> {
-	const { componentExts = [] } = options;
+	const { componentExts: componentExtensions = [] } = options;
 
-	const files = options.files ?? [GLOB_SRC, ...componentExts.map(ext => `**/*.${ext}`)];
+	const files = options.files ?? [
+		GLOB_SRC,
+		...componentExtensions.map(extension => `**/*.${extension}`),
+	];
 
 	const prettierOptions: VendoredPrettierOptions = {
 		arrowParens: "avoid",

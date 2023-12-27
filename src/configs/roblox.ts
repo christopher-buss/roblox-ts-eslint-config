@@ -5,7 +5,7 @@ import { interopDefault, toArray } from "src/utils";
 
 import type {
 	FlatConfigItem,
-	OptionsComponentExts,
+	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
@@ -14,12 +14,12 @@ import type {
 
 export async function roblox(
 	options: OptionsFiles &
-		OptionsComponentExts &
+		OptionsComponentExtensions &
 		OptionsOverrides &
 		OptionsTypeScriptWithTypes &
 		OptionsTypeScriptParserOptions = {},
 ): Promise<Array<FlatConfigItem>> {
-	const { componentExts = [], parserOptions = {} } = options;
+	const { componentExts: componentExtensions = [], parserOptions = {} } = options;
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
 
@@ -27,7 +27,10 @@ export async function roblox(
 		interopDefault(import("@typescript-eslint/parser")),
 	] as const);
 
-	const files = options.files ?? [GLOB_SRC, ...componentExts.map(ext => `**/*.${ext}`)];
+	const files = options.files ?? [
+		GLOB_SRC,
+		...componentExtensions.map(extension => `**/*.${extension}`),
+	];
 
 	return [
 		{

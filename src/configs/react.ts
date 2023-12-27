@@ -52,12 +52,11 @@ export async function react(
 						destructureInSignature: "always",
 					},
 				],
-				// recommended rules react
-				"react/display-name": "error",
-
+				"react/display-name": "off",
 				"react/function-component-definition": "error",
 				"react/hook-use-state": "error",
 				"react/jsx-fragments": "error",
+				"react/jsx-handler-names": "error",
 				"react/jsx-key": "error",
 				"react/jsx-max-depth": [
 					"error",
@@ -101,7 +100,6 @@ export async function react(
 						component: true,
 					},
 				],
-				// recommended rules react-hooks
 				"react-hooks/exhaustive-deps": "warn",
 				"react-hooks/rules-of-hooks": "error",
 				"style/jsx-curly-brace-presence": [
@@ -112,6 +110,7 @@ export async function react(
 						props: "never",
 					},
 				],
+				"style/jsx-newline": "error",
 				"style/jsx-sort-props": [
 					"error",
 					{
