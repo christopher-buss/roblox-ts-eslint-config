@@ -22,6 +22,7 @@ export async function unicorn(): Promise<Array<FlatConfigItem>> {
 				"unicorn/no-lonely-if": "error",
 				"unicorn/no-negated-condition": "off",
 				"unicorn/no-nested-ternary": "error",
+				"unicorn/no-static-only-class": "error",
 				"unicorn/no-unused-properties": "error",
 				"unicorn/no-useless-promise-resolve-reject": "error",
 				"unicorn/no-useless-undefined": ["error", { checkArguments: false }],

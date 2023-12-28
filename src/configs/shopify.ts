@@ -9,7 +9,10 @@ export async function shopify(): Promise<Array<FlatConfigItem>> {
 				shopify: eslintPluginShopify,
 			},
 			rules: {
+				"shopify/prefer-class-properties": "error",
 				"shopify/prefer-early-return": ["error", { maximumStatements: 1 }],
+				"shopify/typescript/prefer-pascal-case-enums": "error",
+				"shopify/typescript/prefer-singular-enums": "error",
 			},
 		},
 	];

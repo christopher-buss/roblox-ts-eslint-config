@@ -162,11 +162,11 @@ export async function formatters(
 								...prettierOptions,
 								embeddedLanguageFormatting: "off",
 								parser: "markdown",
-						  }
+							}
 						: {
 								...dprintOptions,
 								language: "markdown",
-						  },
+							},
 				],
 			},
 		});
