@@ -83,6 +83,7 @@ export async function typescript(
 		"ts/restrict-plus-operands": "error",
 		"ts/restrict-template-expressions": "off",
 		"ts/return-await": "error",
+		"ts/switch-exhaustiveness-check": "error",
 		"ts/unbound-method": "error",
 	};
 
@@ -114,7 +115,7 @@ export async function typescript(
 						? {
 								project: tsconfigPath,
 								tsconfigRootDir: process.cwd(),
-						  }
+							}
 						: {}),
 					...(parserOptions as any),
 				},

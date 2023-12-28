@@ -9,6 +9,7 @@ export * from "./perfectionist";
 export * from "./prettier";
 export * from "./react";
 export * from "./roblox";
+export * from "./shopify";
 export * from "./sort";
 export * from "./stylistic";
 export * from "./typescript";

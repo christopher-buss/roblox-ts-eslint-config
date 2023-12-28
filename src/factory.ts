@@ -11,6 +11,7 @@ import {
 	prettier,
 	react,
 	roblox,
+	shopify,
 	sortPackageJson,
 	sortTsconfig,
 	stylistic,
@@ -18,7 +19,6 @@ import {
 	unicorn,
 } from "./configs";
 import { formatters } from "./configs/formatters";
-import { shopify } from "./configs/shopify";
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
 import { combine, interopDefault } from "./utils";
 
@@ -89,7 +89,6 @@ export async function style(
 			stylistic: stylisticOptions,
 		}),
 		unicorn(),
-
 		shopify(),
 		perfectionist(),
 	);

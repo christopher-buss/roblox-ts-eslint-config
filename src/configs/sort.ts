@@ -90,12 +90,12 @@ export async function sortPackageJson(): Promise<Array<FlatConfigItem>> {
 		},
 	];
 }
+
 /**
  * Sort tsconfig.json
  *
  * Requires `jsonc` config
  */
-
 export function sortTsconfig(): Array<FlatConfigItem> {
 	return [
 		{
