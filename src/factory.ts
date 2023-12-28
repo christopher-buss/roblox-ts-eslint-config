@@ -12,6 +12,7 @@ import {
 	react,
 	roblox,
 	shopify,
+	sonarjs,
 	sortPackageJson,
 	sortTsconfig,
 	stylistic,
@@ -75,6 +76,10 @@ export async function style(
 					resolved(),
 				]),
 			);
+		} else {
+			throw new Error(
+				"gitignore option is enabled but no .gitignore file was found in the current directory",
+			);
 		}
 	}
 
@@ -88,6 +93,7 @@ export async function style(
 		imports({
 			stylistic: stylisticOptions,
 		}),
+		sonarjs(),
 		unicorn(),
 		shopify(),
 		perfectionist(),
@@ -179,7 +185,5 @@ export async function style(
 		configs.push([fusedConfig]);
 	}
 
-	const merged = combine(...configs, ...userConfigs);
-
-	return merged;
+	return combine(...configs, ...userConfigs);
 }

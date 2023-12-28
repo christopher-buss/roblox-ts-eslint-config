@@ -74,6 +74,9 @@ importers:
       eslint-plugin-roblox-ts:
         specifier: ^0.0.36
         version: 0.0.36(eslint-ts-patch@8.56.0-0)
+      eslint-plugin-sonarjs:
+        specifier: ^0.23.0
+        version: 0.23.0(eslint-ts-patch@8.56.0-0)
       eslint-plugin-unicorn:
         specifier: ^50.0.1
         version: 50.0.1(eslint-ts-patch@8.56.0-0)
@@ -2621,6 +2624,15 @@ packages:
     dependencies:
       eslint: /eslint-ts-patch@8.56.0-0
     dev: true
+
+  /eslint-plugin-sonarjs@0.23.0(eslint-ts-patch@8.56.0-0):
+    resolution: {integrity: sha512-z44T3PBf9W7qQ/aR+NmofOTyg6HLhSEZOPD4zhStqBpLoMp8GYhFksuUBnCxbnf1nfISpKBVkQhiBLFI/F4Wlg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
+    dependencies:
+      eslint: /eslint-ts-patch@8.56.0-0
+    dev: false
 
   /eslint-plugin-sort-class-members@1.19.0(eslint-ts-patch@8.56.0-0):
     resolution: {integrity: sha512-YayvASA1bavdPeRU9FMPnale2+Oi3aMcHGVC5EUm9b671oxm7ahvR+q8BfsU2aV+KAFezNfu47VPgdZK6gwYPw==}

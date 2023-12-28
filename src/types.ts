@@ -10,6 +10,7 @@ import type {
 	ReactRules,
 	RenamePrefix,
 	RuleConfig,
+	SonarJSRules,
 } from "@antfu/eslint-define-config";
 import type { RuleOptions as JSDocumentRules } from "@eslint-types/jsdoc/types";
 import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
@@ -44,7 +45,8 @@ export type Rules = WrapRuleConfig<
 			EslintRules &
 			JsoncRules &
 			UnicornRules &
-			EslintCommentsRules
+			EslintCommentsRules &
+			RenamePrefix<SonarJSRules, "sonarjs/", "sonar/">
 	>
 >;
 

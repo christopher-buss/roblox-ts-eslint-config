@@ -12,5 +12,6 @@ export { default as pluginNoAutofix } from "eslint-plugin-no-autofix";
 export { default as pluginPerfectionist } from "eslint-plugin-perfectionist";
 export { default as pluginRobloxTS } from "eslint-plugin-roblox-ts";
 export { default as pluginSimpleImportSort } from "eslint-plugin-simple-import-sort";
+export * as pluginSonar from "eslint-plugin-sonarjs";
 export { default as pluginUnicorn } from "eslint-plugin-unicorn";
 export { default as pluginUnusedImports } from "eslint-plugin-unused-imports";
