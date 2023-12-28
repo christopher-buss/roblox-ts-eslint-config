@@ -13,7 +13,6 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Fla
 			},
 			rules: {
 				"antfu/import-dedupe": "error",
-				"antfu/no-import-node-modules-by-path": "error",
 
 				"import/first": "error",
 				"import/no-duplicates": "error",
@@ -29,7 +28,7 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Fla
 								"error",
 								{ considerComments: true, count: 1 },
 							],
-					  }
+						}
 					: {}),
 			},
 		},

@@ -5,7 +5,6 @@ import type {
 	ImportRules,
 	JsoncRules,
 	MergeIntersection,
-	NRules,
 	Prefix,
 	ReactHooksRules,
 	ReactRules,
@@ -36,7 +35,6 @@ export type Awaitable<T> = T | Promise<T>;
 export type Rules = WrapRuleConfig<
 	MergeIntersection<
 		RenamePrefix<TypeScriptRules, "@typescript-eslint/", "ts/"> &
-			RenamePrefix<NRules, "n/", "node/"> &
 			Prefix<StylisticRules, "style/"> &
 			Prefix<AntfuRules, "antfu/"> &
 			ReactHooksRules &

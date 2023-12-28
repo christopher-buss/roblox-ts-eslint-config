@@ -7,7 +7,6 @@ import {
 	jsdoc,
 	jsonc,
 	markdown,
-	node,
 	perfectionist,
 	prettier,
 	react,
@@ -55,8 +54,8 @@ export async function style(
 		options.stylistic === false
 			? false
 			: typeof options.stylistic === "object"
-			  ? options.stylistic
-			  : {};
+				? options.stylistic
+				: {};
 	if (stylisticOptions && !("jsx" in stylisticOptions)) {
 		stylisticOptions.jsx = jsx ?? true;
 	}
@@ -83,7 +82,6 @@ export async function style(
 	configs.push(
 		ignores(),
 		comments(),
-		node(),
 		jsdoc({
 			stylistic: stylisticOptions,
 		}),

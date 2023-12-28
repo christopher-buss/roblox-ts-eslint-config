@@ -44,7 +44,7 @@ export async function roblox(
 						? {
 								project: tsconfigPath,
 								tsconfigRootDir: process.cwd(),
-						  }
+							}
 						: {}),
 					...(parserOptions as any),
 				},
