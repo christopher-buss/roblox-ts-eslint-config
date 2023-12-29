@@ -10,6 +10,7 @@ export { default as pluginFormat } from "eslint-plugin-format";
 export * as pluginImport from "eslint-plugin-i";
 export { default as pluginNoAutofix } from "eslint-plugin-no-autofix";
 export { default as pluginPerfectionist } from "eslint-plugin-perfectionist";
+export { default as pluginPromise } from "eslint-plugin-promise";
 export { default as pluginRobloxTS } from "eslint-plugin-roblox-ts";
 export { default as pluginSimpleImportSort } from "eslint-plugin-simple-import-sort";
 export * as pluginSonar from "eslint-plugin-sonarjs";

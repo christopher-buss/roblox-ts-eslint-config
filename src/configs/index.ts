@@ -7,6 +7,7 @@ export * from "./jsonc";
 export * from "./markdown";
 export * from "./perfectionist";
 export * from "./prettier";
+export * from "./promise";
 export * from "./react";
 export * from "./roblox";
 export * from "./shopify";
