@@ -1,7 +1,7 @@
 import { isPackageExists } from "local-pkg";
 import process from "node:process";
 
-import type { Awaitable, UserConfigItem } from "./types";
+import type { Awaitable, OptionsConfig, UserConfigItem } from "./types";
 
 /**
  * Combine array and non-array configs into a single array.
@@ -68,4 +68,21 @@ export async function ensurePackages(packages: Array<string>): Promise<void> {
 			import_.installPackage(nonExistingPackages, { dev: true }),
 		);
 	}
+}
+
+export type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
+
+export function resolveSubOptions<K extends keyof OptionsConfig>(
+	options: OptionsConfig,
+	key: K,
+): ResolvedOptions<OptionsConfig[K]> {
+	return typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
+}
+
+export function getOverrides<K extends keyof OptionsConfig>(options: OptionsConfig, key: K): any {
+	const sub = resolveSubOptions(options, key);
+
+	return {
+		...("overrides" in sub ? sub.overrides : {}),
+	};
 }

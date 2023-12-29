@@ -36,17 +36,17 @@ export type Awaitable<T> = T | Promise<T>;
 export type Rules = WrapRuleConfig<
 	MergeIntersection<
 		RenamePrefix<TypeScriptRules, "@typescript-eslint/", "ts/"> &
-			Prefix<StylisticRules, "style/"> &
+			EslintCommentsRules &
+			EslintRules &
+			ImportRules &
+			JSDocumentRules &
+			JsoncRules &
 			Prefix<AntfuRules, "antfu/"> &
+			Prefix<StylisticRules, "style/"> &
 			ReactHooksRules &
 			ReactRules &
-			JSDocumentRules &
-			ImportRules &
-			EslintRules &
-			JsoncRules &
-			UnicornRules &
-			EslintCommentsRules &
-			RenamePrefix<SonarJSRules, "sonarjs/", "sonar/">
+			RenamePrefix<SonarJSRules, "sonarjs/", "sonar/"> &
+			UnicornRules
 	>
 >;
 
@@ -73,6 +73,10 @@ export interface OptionsFiles {
 	 */
 	files?: Array<string>;
 }
+
+export type OptionsTypescript =
+	| (OptionsTypeScriptWithTypes & OptionsOverrides)
+	| (OptionsTypeScriptParserOptions & OptionsOverrides);
 
 export interface OptionsFormatters {
 	/**
@@ -133,6 +137,12 @@ export interface OptionsComponentExtensions {
 }
 
 export interface OptionsTypeScriptParserOptions {
+	/**
+	 * Glob patterns for files that should be type aware.
+	 * @default ['**\/*.{ts,tsx}']
+	 */
+	filesTypeAware?: Array<string>;
+
 	/**
 	 * Additional parser options for TypeScript.
 	 */
@@ -199,7 +209,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	jsonc?: boolean;
+	jsonc?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable JSX related rules.
@@ -217,17 +227,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	markdown?: boolean;
-
-	/**
-	 * Provide overrides for rules for each integration.
-	 */
-	overrides?: {
-		jsonc?: FlatConfigItem["rules"];
-		markdown?: FlatConfigItem["rules"];
-		react?: FlatConfigItem["rules"];
-		typescript?: FlatConfigItem["rules"];
-	};
+	markdown?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable react rules.
@@ -238,7 +238,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default false
 	 */
-	react?: boolean;
+	react?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable Roblox-TS support.
@@ -259,5 +259,5 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	typescript?: OptionsTypeScriptWithTypes | OptionsTypeScriptParserOptions;
+	typescript?: OptionsTypescript;
 }

@@ -9,6 +9,7 @@ import {
 	markdown,
 	perfectionist,
 	prettier,
+	promise,
 	react,
 	roblox,
 	shopify,
@@ -21,7 +22,7 @@ import {
 } from "./configs";
 import { formatters } from "./configs/formatters";
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
-import { combine, interopDefault } from "./utils";
+import { combine, getOverrides, interopDefault, resolveSubOptions } from "./utils";
 
 const flatConfigProps: Array<keyof FlatConfigItem> = [
 	"files",
@@ -45,7 +46,6 @@ export async function style(
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx,
-		overrides = {},
 		react: enableReact = false,
 		roblox: enableRoblox = true,
 		typescript: enableTypeScript,
@@ -93,26 +93,25 @@ export async function style(
 		imports({
 			stylistic: stylisticOptions,
 		}),
+		promise(),
+		shopify(),
 		sonarjs(),
 		unicorn(),
-		shopify(),
 		perfectionist(),
 	);
 
 	configs.push(
 		typescript({
-			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
+			...resolveSubOptions(options, "typescript"),
 			componentExts: componentExtensions,
-			overrides: overrides.typescript,
 		}),
 	);
 
 	if (enableRoblox) {
 		configs.push(
 			roblox({
-				...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
+				...resolveSubOptions(options, "typescript"),
 				componentExts: componentExtensions,
-				overrides: overrides.typescript,
 			}),
 		);
 	}
@@ -124,7 +123,7 @@ export async function style(
 	if (enableReact) {
 		configs.push(
 			react({
-				overrides: overrides.react,
+				overrides: getOverrides(options, "react"),
 				typescript: !!enableTypeScript,
 			}),
 		);
@@ -133,7 +132,7 @@ export async function style(
 	if (options.jsonc ?? true) {
 		configs.push(
 			jsonc({
-				overrides: overrides.jsonc,
+				overrides: getOverrides(options, "jsonc"),
 				stylistic: stylisticOptions,
 			}),
 			sortPackageJson(),
@@ -146,7 +145,7 @@ export async function style(
 			markdown(
 				{
 					componentExts: componentExtensions,
-					overrides: overrides.markdown,
+					overrides: getOverrides(options, "markdown"),
 				},
 
 				options.formatters === true || !!(options.formatters || {})?.markdown,
@@ -168,7 +167,7 @@ export async function style(
 		prettier({
 			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
 			componentExts: componentExtensions,
-			overrides: overrides.typescript,
+			overrides: getOverrides(options, "typescript"),
 		}),
 	);
 
@@ -181,6 +180,7 @@ export async function style(
 
 		return accumulator;
 	}, {} as FlatConfigItem);
+
 	if (Object.keys(fusedConfig).length) {
 		configs.push([fusedConfig]);
 	}
