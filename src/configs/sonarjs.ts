@@ -10,11 +10,16 @@ export async function sonarjs(): Promise<Array<FlatConfigItem>> {
 			},
 			rules: {
 				"sonar/cognitive-complexity": "warn",
-				"sonar/elseif-without-else": "error",
+				"sonar/elseif-without-else": "off",
 				"sonar/max-switch-cases": "error",
 				"sonar/no-all-duplicated-branches": "error",
 				"sonar/no-collapsible-if": "error",
-				"sonar/no-duplicate-string": "error",
+				"sonar/no-duplicate-string": [
+					"error",
+					{
+						ignoreStrings: "Not implemented",
+					},
+				],
 				"sonar/no-duplicated-branches": "error",
 				"sonar/no-element-overwrite": "error",
 				"sonar/no-gratuitous-expressions": "off",
