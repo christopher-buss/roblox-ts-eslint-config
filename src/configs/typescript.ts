@@ -144,7 +144,6 @@ export async function typescript(
 						properties: "never",
 					},
 				],
-				"no-array-constructor": "error",
 				"no-autofix/no-useless-return": "error",
 				"no-autofix/prefer-const": [
 					"error",
