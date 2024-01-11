@@ -8,7 +8,6 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<FlatC
 		{
 			name: "style:jsdoc",
 			plugins: {
-				// @ts-expect-error missing types
 				jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),
 			},
 			rules: {
@@ -33,7 +32,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<FlatC
 					? {
 							"jsdoc/check-alignment": "warn",
 							"jsdoc/multiline-blocks": "warn",
-					  }
+						}
 					: {}),
 			},
 		},
