@@ -1,7 +1,7 @@
 {
 	"name": "@isentinel/eslint-config",
 	"type": "module",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"packageManager": "pnpm@8.11.0",
 	"description": "iSentinel's ESLint config",
 	"author": "Christopher Buss <christopher.buss@pm.me> (https://github.com/christopher-buss)",
