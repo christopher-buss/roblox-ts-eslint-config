@@ -1,4 +1,4 @@
-import { pluginAntfu } from "../plugins";
+import { pluginAntfu, pluginArrowReturnStyle } from "../plugins";
 import type { FlatConfigItem, StylisticConfig } from "../types";
 import { interopDefault } from "../utils";
 
@@ -31,6 +31,7 @@ export async function stylistic(options: StylisticConfig = {}): Promise<Array<Fl
 			name: "style:stylistic",
 			plugins: {
 				antfu: pluginAntfu,
+				"arrow-style": pluginArrowReturnStyle,
 				style: pluginStylistic,
 			},
 			rules: {
@@ -40,10 +41,19 @@ export async function stylistic(options: StylisticConfig = {}): Promise<Array<Fl
 				"antfu/if-newline": "off",
 				"antfu/top-level-function": "error",
 
+				"arrow-style/arrow-return-style": [
+					"warn",
+					{
+						jsxAlwaysUseExplicitReturn: true,
+						maxLen: 80,
+					},
+				],
+
+				"arrow-style/no-export-default-arrow": "warn",
+
 				curly: ["error", "all"],
 
 				"style/object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
-
 				"style/padding-line-between-statements": [
 					"error",
 					{

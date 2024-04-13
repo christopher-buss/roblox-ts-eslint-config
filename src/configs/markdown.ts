@@ -24,8 +24,8 @@ export async function markdown(
 	const baseProcessor = markdownPlugin.processors.markdown;
 
 	// `eslint-plugin-markdown` only creates virtual files for code blocks,
-	// but not the markdown file itself. In order to format the whole markdown file,
-	// we need to create another virtual file for the markdown file itself.
+	// but not the markdown file itself. In order to format the whole markdown
+	// file, we need to create another virtual file for the markdown file itself.
 	const processor: Linter.Processor = !formatMarkdown
 		? {
 				meta: {
@@ -99,38 +99,36 @@ export async function markdown(
 
 				"style/comma-dangle": "off",
 				"style/eol-last": "off",
+				"ts/await-thenable": "off",
 				"ts/consistent-type-imports": "off",
+				"ts/dot-notation": "off",
+				"ts/no-floating-promises": "off",
+				"ts/no-for-in-array": "off",
+				"ts/no-implied-eval": "off",
+				"ts/no-misused-promises": "off",
+
 				"ts/no-namespace": "off",
 				"ts/no-redeclare": "off",
 				"ts/no-require-imports": "off",
+
+				// Type aware rules
+
+				"ts/no-throw-literal": "off",
+				"ts/no-unnecessary-type-assertion": "off",
+				"ts/no-unsafe-argument": "off",
+				"ts/no-unsafe-assignment": "off",
+				"ts/no-unsafe-call": "off",
+				"ts/no-unsafe-member-access": "off",
+				"ts/no-unsafe-return": "off",
 				"ts/no-unused-vars": "off",
 				"ts/no-use-before-define": "off",
 				"ts/no-var-requires": "off",
-
+				"ts/restrict-plus-operands": "off",
+				"ts/restrict-template-expressions": "off",
+				"ts/unbound-method": "off",
 				"unicode-bom": "off",
 				"unused-imports/no-unused-imports": "off",
 				"unused-imports/no-unused-vars": "off",
-
-				// Type aware rules
-				...{
-					"ts/await-thenable": "off",
-					"ts/dot-notation": "off",
-					"ts/no-floating-promises": "off",
-					"ts/no-for-in-array": "off",
-					"ts/no-implied-eval": "off",
-					"ts/no-misused-promises": "off",
-					"ts/no-throw-literal": "off",
-					"ts/no-unnecessary-type-assertion": "off",
-					"ts/no-unsafe-argument": "off",
-					"ts/no-unsafe-assignment": "off",
-					"ts/no-unsafe-call": "off",
-					"ts/no-unsafe-member-access": "off",
-					"ts/no-unsafe-return": "off",
-					"ts/restrict-plus-operands": "off",
-					"ts/restrict-template-expressions": "off",
-					"ts/unbound-method": "off",
-				},
-
 				...overrides,
 			},
 		},

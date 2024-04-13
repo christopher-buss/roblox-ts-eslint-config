@@ -79,7 +79,7 @@ export async function jsonc(
 							],
 							"jsonc/quote-props": "error",
 							"jsonc/quotes": "error",
-					  }
+						}
 					: {}),
 
 				...overrides,

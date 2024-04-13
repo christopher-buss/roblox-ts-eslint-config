@@ -11,6 +11,12 @@ import type {
 	OptionsTypeScriptWithTypes,
 } from "../types";
 
+interface PrettierPluginJsdocOptions {
+	jsdocPreferCodeFences: boolean;
+	jsdocPrintWidth: number;
+	tsdoc: boolean;
+}
+
 export async function prettier(
 	options: OptionsFiles &
 		OptionsComponentExtensions &
@@ -25,15 +31,20 @@ export async function prettier(
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
 
-	const prettierOptions: VendoredPrettierOptions = {
+	// TODO: Pull this from the local prettier config
+	const prettierOptions: VendoredPrettierOptions & PrettierPluginJsdocOptions = {
 		arrowParens: "avoid",
+		jsdocPreferCodeFences: true,
+		jsdocPrintWidth: 80,
+		plugins: ["prettier-plugin-jsdoc"],
 		printWidth: 100,
 		semi: true,
 		singleQuote: false,
 		tabWidth: 4,
 		trailingComma: "all",
+		tsdoc: true,
 		useTabs: true,
-	} satisfies VendoredPrettierOptions;
+	} satisfies VendoredPrettierOptions & PrettierPluginJsdocOptions;
 
 	return [
 		{

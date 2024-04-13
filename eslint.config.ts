@@ -21,6 +21,7 @@ export default style(
 					type: "natural",
 				},
 			],
+			"sonar/cognitive-complexity": "off",
 		},
 	},
 	{

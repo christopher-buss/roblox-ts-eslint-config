@@ -117,7 +117,8 @@ And that's it! Or you can configure each integration individually, for example:
 import style from "@isentinel/eslint-config";
 
 export default style({
-	// `.eslintignore` is no longer supported in Flat config, use `ignores` instead
+	// `.eslintignore` is no longer supported in Flat config, use `ignores`
+	// instead
 	ignores: [
 		"./fixtures",
 		// ...globs

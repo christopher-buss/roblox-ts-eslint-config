@@ -63,6 +63,7 @@ export async function typescript(
 		"ts/no-mixed-enums": "error",
 		"ts/no-redundant-type-constituents": "error",
 		"ts/no-throw-literal": "off",
+		"ts/no-unnecessary-boolean-literal-compare": "error",
 		"ts/no-unnecessary-condition": ["error", { allowConstantLoopConditions: true }],
 		"ts/no-unnecessary-qualifier": "error",
 		"ts/no-unnecessary-type-arguments": "error",
@@ -72,7 +73,9 @@ export async function typescript(
 		"ts/no-unsafe-call": "error",
 		"ts/no-unsafe-member-access": "error",
 		"ts/no-unsafe-return": "error",
+		"ts/no-useless-template-literals": "error",
 		"ts/non-nullable-type-assertion-style": "error",
+		"ts/prefer-destructuring": "error",
 		"ts/prefer-includes": "error",
 		"ts/prefer-nullish-coalescing": "error",
 		"ts/prefer-optional-chain": "error",
@@ -83,6 +86,7 @@ export async function typescript(
 		"ts/restrict-plus-operands": "error",
 		"ts/restrict-template-expressions": "off",
 		"ts/return-await": "error",
+		"ts/strict-boolean-expressions": "error",
 		"ts/switch-exhaustiveness-check": "error",
 		"ts/unbound-method": "error",
 	};
@@ -96,7 +100,8 @@ export async function typescript(
 
 	return [
 		{
-			// Install the plugins without globs, so they can be configured separately.
+			// Install the plugins without globs, so they can be configured
+			// separately.
 			name: "style:typescript:setup",
 			plugins: {
 				antfu: pluginAntfu,
@@ -144,6 +149,7 @@ export async function typescript(
 						properties: "never",
 					},
 				],
+				"logical-assignment-operators": "error",
 				"no-autofix/no-useless-return": "error",
 				"no-autofix/prefer-const": [
 					"error",
@@ -171,6 +177,7 @@ export async function typescript(
 				"no-useless-constructor": "off",
 				"no-useless-return": "off",
 				"prefer-const": "off",
+				"ts/adjacent-overload-signatures": "error",
 				"ts/array-type": [
 					"error",
 					{
@@ -204,13 +211,14 @@ export async function typescript(
 				],
 				"ts/max-params": ["error", { max: 4 }],
 				"ts/method-signature-style": "off",
+				"ts/no-array-constructor": "off",
 				"ts/no-confusing-non-null-assertion": "error",
 				"ts/no-dupe-class-members": "error",
 				"ts/no-dynamic-delete": "off",
 				"ts/no-empty-function": "error",
 				"ts/no-empty-interface": "error",
 				"ts/no-explicit-any": "off",
-				"ts/no-extraneous-class": "off",
+				"ts/no-extraneous-class": "error",
 				"ts/no-for-in-array": "off",
 				"ts/no-import-type-side-effects": "error",
 				"ts/no-inferrable-types": "error",
@@ -218,7 +226,7 @@ export async function typescript(
 				"ts/no-loss-of-precision": "error",
 				"ts/no-namespace": "off",
 				"ts/no-non-null-assertion": "error",
-				"ts/no-redeclare": "error",
+				"ts/no-redeclare": "off",
 				"ts/no-require-imports": "error",
 				"ts/no-shadow": "error",
 				"ts/no-throw-literal": "off",

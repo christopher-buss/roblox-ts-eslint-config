@@ -14,16 +14,18 @@ export async function react(
 
 	await ensurePackages(["eslint-plugin-react", "eslint-plugin-react-hooks"]);
 
-	const [pluginReact, pluginReactHooks, pluginStylistic] = await Promise.all([
+	const [pluginReact, pluginReactHooks, pluginStylistic, pluginPreferHooks] = await Promise.all([
 		interopDefault(import("eslint-plugin-react")),
 		interopDefault(import("eslint-plugin-react-hooks")),
 		interopDefault(import("@stylistic/eslint-plugin")),
+		interopDefault(import("eslint-plugin-react-prefer-function-component")),
 	] as const);
 
 	return [
 		{
 			name: "style:react:setup",
 			plugins: {
+				"prefer-hooks": pluginPreferHooks,
 				react: pluginReact,
 				"react-hooks": pluginReactHooks,
 				style: pluginStylistic,
@@ -45,6 +47,7 @@ export async function react(
 			},
 			name: "style:react:rules",
 			rules: {
+				"prefer-hooks/react-prefer-function-component": "error",
 				"react/destructuring-assignment": [
 					"error",
 					"always",
@@ -125,7 +128,7 @@ export async function react(
 					? {
 							"react/jsx-no-undef": "off",
 							"react/prop-type": "off",
-					  }
+						}
 					: {}),
 
 				// overrides

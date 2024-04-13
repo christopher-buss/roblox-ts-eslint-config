@@ -51,14 +51,15 @@ export type Rules = WrapRuleConfig<
 >;
 
 export type FlatConfigItem = Omit<FlatESLintConfigItem<Rules, false>, "plugins"> & {
-	/**
-	 * Custom name of each config item
-	 */
+	/** Custom name of each config item. */
 	name?: string;
 
-	// Relax plugins type limitation, as most of the plugins did not have correct type info yet.
+	// Relax plugins type limitation, as most of the plugins did not have correct
+	// type info yet.
 	/**
-	 * An object containing a name-value mapping of plugin names to plugin objects. When `files` is specified, these plugins are only available to the matching files.
+	 * An object containing a name-value mapping of plugin names to plugin
+	 * objects. When `files` is specified, these plugins are only available to
+	 * the matching files.
 	 *
 	 * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
 	 */
@@ -68,9 +69,7 @@ export type FlatConfigItem = Omit<FlatESLintConfigItem<Rules, false>, "plugins">
 export type UserConfigItem = FlatConfigItem | Linter.FlatConfig;
 
 export interface OptionsFiles {
-	/**
-	 * Override the `files` option to provide custom globs.
-	 */
+	/** Override the `files` option to provide custom globs. */
 	files?: Array<string>;
 }
 
@@ -93,9 +92,7 @@ export interface OptionsFormatters {
 	 */
 	dprintOptions?: boolean;
 
-	/**
-	 * Enable formatting support for GraphQL.
-	 */
+	/** Enable formatting support for GraphQL. */
 	graphql?: "prettier" | boolean;
 
 	/**
@@ -130,28 +127,26 @@ export interface OptionsFormatters {
 }
 
 export interface OptionsComponentExtensions {
-	/**
-	 * Additional extensions for components.
-	 */
+	/** Additional extensions for components. */
 	componentExts?: Array<string>;
 }
 
 export interface OptionsTypeScriptParserOptions {
 	/**
 	 * Glob patterns for files that should be type aware.
-	 * @default ['**\/*.{ts,tsx}']
+	 *
+	 * @default \['**\/*.{ts,tsx}']
 	 */
 	filesTypeAware?: Array<string>;
 
-	/**
-	 * Additional parser options for TypeScript.
-	 */
+	/** Additional parser options for TypeScript. */
 	parserOptions?: Partial<ParserOptions>;
 }
 
 export interface OptionsTypeScriptWithTypes {
 	/**
 	 * When this options is provided, type aware rules will be enabled.
+	 *
 	 * @see https://typescript-eslint.io/linting/typed-linting/
 	 */
 	tsconfigPath?: string | Array<string>;
@@ -180,7 +175,8 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * Use external formatters to format files.
 	 *
 	 * Requires installing:
-	 * - `eslint-plugin-format`
+	 *
+	 * - `eslint-plugin-format`.
 	 *
 	 * When set to `true`, it will enable all formatters.
 	 *
@@ -193,13 +189,14 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * Passing an object to configure the options.
 	 *
-	 * @see https://github.com/antfu/eslint-config-flat-gitignore
 	 * @default true
+	 * @see https://github.com/antfu/eslint-config-flat-gitignore
 	 */
 	gitignore?: boolean | FlatGitignoreOptions;
 
 	/**
 	 * Control to disable some rules in editors.
+	 *
 	 * @default auto-detect based on the process.env
 	 */
 	isInEditor?: boolean;
@@ -233,16 +230,15 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * Enable react rules.
 	 *
 	 * Requires installing:
+	 *
 	 * - `eslint-plugin-react`
-	 * - `eslint-plugin-react-hooks`
+	 * - `eslint-plugin-react-hooks`.
 	 *
 	 * @default false
 	 */
 	react?: boolean | OptionsOverrides;
 
-	/**
-	 * Enable Roblox-TS support.
-	 */
+	/** Enable Roblox-TS support. */
 	roblox?: boolean;
 
 	/**

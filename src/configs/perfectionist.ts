@@ -4,6 +4,7 @@ import type { FlatConfigItem } from "../types";
 /**
  * Perfectionist plugin for props and items sorting.
  *
+ * @returns The configuration.
  * @see https://github.com/azat-io/eslint-plugin-perfectionist
  */
 export async function perfectionist(): Promise<Array<FlatConfigItem>> {

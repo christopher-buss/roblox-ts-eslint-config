@@ -1,92 +1,84 @@
-/**
- * Vendor types from Prettier so we don't rely on the dependency.
- */
+/** Vendor types from Prettier so we don't rely on the dependency. */
 
 export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>;
 
 export interface VendoredPrettierOptionsRequired {
 	/**
 	 * Include parentheses around a sole arrow function parameter.
+	 *
 	 * @default "always"
 	 */
 	arrowParens: "avoid" | "always";
 	/**
-	 * Put the `>` of a multi-line HTML (HTML, JSX, Angular) element at the end of the last line instead of being
-	 * alone on the next line (does not apply to self closing elements).
+	 * Put the `>` of a multi-line HTML (HTML, JSX, Angular) element at the end
+	 * of the last line instead of being alone on the next line (does not apply
+	 * to self closing elements).
 	 */
 	bracketSameLine: boolean;
-	/**
-	 * Print spaces between brackets in object literals.
-	 */
+	/** Print spaces between brackets in object literals. */
 	bracketSpacing: boolean;
 	/**
 	 * Which end of line characters to apply.
+	 *
 	 * @default "lf"
 	 */
 	endOfLine: "auto" | "lf" | "crlf" | "cr";
 	/**
 	 * How to handle whitespaces in HTML.
+	 *
 	 * @default "css"
 	 */
 	htmlWhitespaceSensitivity: "css" | "strict" | "ignore";
 	/**
-	 * Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line.
-	 * @deprecated use bracketSameLine instead
+	 * Put the `>` of a multi-line JSX element at the end of the last line
+	 * instead of being alone on the next line.
+	 *
+	 * @deprecated Use bracketSameLine instead.
 	 */
 	jsxBracketSameLine: boolean;
-	/**
-	 * Use single quotes in JSX.
-	 */
+	/** Use single quotes in JSX. */
 	jsxSingleQuote: boolean;
-	/**
-	 * Provide ability to support new languages to prettier.
-	 */
+	/** Provide ability to support new languages to prettier. */
 	plugins: Array<string | any>;
 	printWidth: number;
 	/**
-	 * By default, Prettier will wrap markdown text as-is since some services use a linebreak-sensitive renderer.
-	 * In some cases you may want to rely on editor/viewer soft wrapping instead, so this option allows you to opt out.
+	 * By default, Prettier will wrap markdown text as-is since some services
+	 * use a linebreak-sensitive renderer. In some cases you may want to rely on
+	 * editor/viewer soft wrapping instead, so this option allows you to opt
+	 * out.
+	 *
 	 * @default "preserve"
 	 */
 	proseWrap: "always" | "never" | "preserve";
 	/**
 	 * Change when properties in objects are quoted.
+	 *
 	 * @default "as-needed"
 	 */
 	quoteProps: "as-needed" | "consistent" | "preserve";
 	/**
 	 * Format only a segment of a file.
+	 *
 	 * @default Number.POSITIVE_INFINITY
 	 */
 	rangeEnd: number;
-	/**
-	 * Format only a segment of a file.
-	 */
+	/** Format only a segment of a file. */
 	rangeStart: number;
-	/**
-	 * Print semicolons at the ends of statements.
-	 */
+	/** Print semicolons at the ends of statements. */
 	semi: boolean;
 	/**
 	 * Enforce single attribute per line in HTML, and JSX.
+	 *
 	 * @default false
 	 */
 	singleAttributePerLine: boolean;
-	/**
-	 * Use single quotes instead of double quotes.
-	 */
+	/** Use single quotes instead of double quotes. */
 	singleQuote: boolean;
-	/**
-	 * Specify the number of spaces per indentation-level.
-	 */
+	/** Specify the number of spaces per indentation-level. */
 	tabWidth: number;
-	/**
-	 * Print trailing commas wherever possible.
-	 */
+	/** Print trailing commas wherever possible. */
 	trailingComma: "none" | "es5" | "all";
-	/**
-	 * Indent lines with tabs instead of spaces
-	 */
+	/** Indent lines with tabs instead of spaces. */
 	useTabs?: boolean;
 }
 

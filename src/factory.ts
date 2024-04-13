@@ -36,7 +36,12 @@ const flatConfigProps: Array<keyof FlatConfigItem> = [
 ];
 
 /**
- * Construct an array of ESLint flat config items.
+ * Generates an array of user configuration items based on the provided options
+ * and user configs.
+ *
+ * @param options - The options for generating the user configuration items.
+ * @param userConfigs - Additional user configuration items.
+ * @returns A promise that resolves to an array of user configuration items.
  */
 export async function style(
 	options: OptionsConfig & FlatConfigItem = {},
@@ -63,18 +68,19 @@ export async function style(
 
 	const configs: Array<Awaitable<Array<FlatConfigItem>>> = [];
 
+	/* eslint-disable arrow-style/arrow-return-style -- Bug with line length. */
 	if (enableGitignore) {
 		if (typeof enableGitignore !== "boolean") {
 			configs.push(
-				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => [
-					resolved(enableGitignore),
-				]),
+				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => {
+					return [resolved(enableGitignore)];
+				}),
 			);
 		} else if (fs.existsSync(".gitignore")) {
 			configs.push(
-				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => [
-					resolved(),
-				]),
+				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => {
+					return [resolved()];
+				}),
 			);
 		} else {
 			throw new Error(
@@ -82,6 +88,7 @@ export async function style(
 			);
 		}
 	}
+	/* eslint-enable arrow-style/arrow-return-style -- Bug with line length. */
 
 	// Base configs
 	configs.push(
@@ -98,9 +105,6 @@ export async function style(
 		sonarjs(),
 		unicorn(),
 		perfectionist(),
-	);
-
-	configs.push(
 		typescript({
 			...resolveSubOptions(options, "typescript"),
 			componentExts: componentExtensions,
@@ -163,6 +167,7 @@ export async function style(
 		);
 	}
 
+	// We require prettier to be the last config
 	configs.push(
 		prettier({
 			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),

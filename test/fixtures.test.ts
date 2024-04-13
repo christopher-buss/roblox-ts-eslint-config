@@ -78,9 +78,7 @@ function runWithConfig(
 			const target = resolve("_fixtures", name);
 
 			await fs.copy(from, target, {
-				filter: src => {
-					return !src.includes("node_modules");
-				},
+				filter: source => !source.includes("node_modules"),
 			});
 			await fs.writeFile(
 				join(target, "eslint.config.js"),

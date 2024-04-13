@@ -1,9 +1,11 @@
 import type { FlatConfigItem } from "../types";
 
 /**
- * Sort package.json
+ * Sort package.json.
  *
- * Requires `jsonc` config
+ * Requires `jsonc` config.
+ *
+ * @returns An array of flat configuration items.
  */
 export async function sortPackageJson(): Promise<Array<FlatConfigItem>> {
 	return [
@@ -92,9 +94,11 @@ export async function sortPackageJson(): Promise<Array<FlatConfigItem>> {
 }
 
 /**
- * Sort tsconfig.json
+ * Sort tsconfig.json.
  *
- * Requires `jsonc` config
+ * Requires `jsonc` config.
+ *
+ * @returns An array of flat configuration items.
  */
 export function sortTsconfig(): Array<FlatConfigItem> {
 	return [

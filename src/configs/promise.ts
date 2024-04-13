@@ -9,7 +9,12 @@ export async function promise(): Promise<Array<FlatConfigItem>> {
 				promise: pluginPromise,
 			},
 			rules: {
-				"promise/always-return": "off",
+				"promise/always-return": [
+					"error",
+					{
+						ignoreLastCallback: true,
+					},
+				],
 				"promise/avoid-new": "off",
 				"promise/catch-or-return": [
 					"error",

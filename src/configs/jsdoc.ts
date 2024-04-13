@@ -9,6 +9,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<FlatC
 			name: "style:jsdoc",
 			plugins: {
 				jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),
+				"jsdoc-prettier": await interopDefault(import("prettier-plugin-jsdoc")),
 			},
 			rules: {
 				"jsdoc/check-access": "warn",
@@ -18,15 +19,26 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<FlatC
 				"jsdoc/empty-tags": "warn",
 				"jsdoc/implements-on-classes": "warn",
 				"jsdoc/informative-docs": "warn",
+				"jsdoc/no-blank-block-descriptions": "warn",
+				"jsdoc/no-blank-blocks": "warn",
 				"jsdoc/no-defaults": "warn",
 				"jsdoc/no-multi-asterisks": "warn",
+				"jsdoc/no-types": "warn",
+				"jsdoc/require-asterisk-prefix": "warn",
+				"jsdoc/require-description": ["warn", { exemptedBy: ["hidden, ignore"] }],
+				"jsdoc/require-description-complete-sentence": "warn",
+				"jsdoc/require-hyphen-before-param-description": "warn",
+				"jsdoc/require-param": ["warn", { exemptedBy: ["hidden"] }],
+				"jsdoc/require-param-description": "warn",
 				"jsdoc/require-param-name": "warn",
 				"jsdoc/require-property": "warn",
 				"jsdoc/require-property-description": "warn",
 				"jsdoc/require-property-name": "warn",
+				"jsdoc/require-returns": ["warn", { exemptedBy: ["hidden"] }],
 				"jsdoc/require-returns-check": "warn",
 				"jsdoc/require-returns-description": "warn",
 				"jsdoc/require-yields-check": "warn",
+				"jsdoc/sort-tags": "warn",
 
 				...(stylistic
 					? {

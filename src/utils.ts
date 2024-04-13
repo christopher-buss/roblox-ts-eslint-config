@@ -5,6 +5,9 @@ import type { Awaitable, OptionsConfig, UserConfigItem } from "./types";
 
 /**
  * Combine array and non-array configs into a single array.
+ *
+ * @param configs - Array of configs or a single config.
+ * @returns Combined array of configs.
  */
 export async function combine(
 	...configs: Array<Awaitable<UserConfigItem | Array<UserConfigItem>>>
