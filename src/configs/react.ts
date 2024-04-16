@@ -12,7 +12,11 @@ export async function react(
 ): Promise<Array<FlatConfigItem>> {
 	const { files = [GLOB_JSX, GLOB_TSX], overrides = {}, typescript = true } = options;
 
-	await ensurePackages(["eslint-plugin-react", "eslint-plugin-react-hooks"]);
+	await ensurePackages([
+		"eslint-plugin-react",
+		"eslint-plugin-react-hooks",
+		"eslint-plugin-react-prefer-function-component",
+	]);
 
 	const [pluginReact, pluginReactHooks, pluginStylistic, pluginPreferHooks] = await Promise.all([
 		interopDefault(import("eslint-plugin-react")),

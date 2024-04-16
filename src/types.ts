@@ -233,12 +233,19 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * - `eslint-plugin-react`
 	 * - `eslint-plugin-react-hooks`.
+	 * - `eslint-plugin-react-prefer-function-component`.
 	 *
 	 * @default false
 	 */
 	react?: boolean | OptionsOverrides;
 
-	/** Enable Roblox-TS support. */
+	/**
+	 * Enable Roblox-TS support.
+	 *
+	 * @ignore
+	 * @note This is only required as we are linting this
+	 * project with its own rule-set, despite not being a roblox project.
+	 */
 	roblox?: boolean;
 
 	/**
