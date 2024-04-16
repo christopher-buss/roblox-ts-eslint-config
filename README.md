@@ -18,10 +18,18 @@
 
 ## Usage
 
+### Quick Start
+
+For an existing template that already has this config setup, please refer to the
+[roblox-ts
+template](https://github.com/christopher-buss/roblox-ts-project-template)
+repository. This includes all necessarily files and configurations to get you up
+and running.
+
 ### Install
 
 ```bash
-npm i -D eslint @isentinel/eslint-config
+pnpm i -D eslint @isentinel/eslint-config
 ```
 
 ### Create config file
@@ -39,7 +47,25 @@ export default style();
 > [customization](#customization) for more details.
 
 > [!TIP]
-> ESLint only detects `eslint.config.js` as the flat config entry, meaning you need to put `type: module` in your `package.json`. `eslint.config.ts`, you can install [`eslint-ts-patch`](https://github.com/antfu/eslint-ts-patch) to fix it.
+> ESLint by default only detects `eslint.config.js` as the flat config entry.
+> You should install
+> [`eslint-ts-patch`](https://github.com/antfu/eslint-ts-patch) so that you can
+> use `.ts` as the config file.
+
+### tsconfig.build.json
+
+Create a `tsconfig.build.json` file in the root of your project with the
+following content:
+
+```json
+{
+	"extends": "./tsconfig.json",
+	"include": ["src/**/*", "eslint.config.ts"]
+}
+```
+
+This is required to allow typescript to work with the ESLint configuration file,
+without erroring due to it not being included in the project.
 
 ### Add script for package.json
 
@@ -129,10 +155,11 @@ export default style({
 		parserOptions: {
 			ecmaVersion: 2018,
 			jsx: true,
+			project: "tsconfig.build.json",
 			sourceType: "module",
 			useJSXTextNode: true,
 		},
-		tsconfigPath: "./tsconfig.json",
+		tsconfigPath: "tsconfig.build.json",
 	},
 
 	// Disable yaml support
@@ -148,7 +175,7 @@ import style from "@isentinel/eslint-config";
 
 export default style(
 	{
-		// Configures for isentinel's config
+		// Configures for this config
 	},
 
 	// From the second arguments they are ESLint Flat Configs
@@ -207,7 +234,7 @@ export default style({
 Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
 
 ```bash
-npm i -D eslint-plugin-react eslint-plugin-react-hooks
+pnpm i -D eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ### Optional Rules
@@ -253,7 +280,7 @@ If you want to apply lint and auto-fix before every commit, you can add the foll
 ```json
 {
 	"simple-git-hooks": {
-		"pre-commit": "npm lint-staged"
+		"pre-commit": "pnpm lint-staged"
 	},
 	"lint-staged": {
 		"*": "eslint --fix"
@@ -264,7 +291,7 @@ If you want to apply lint and auto-fix before every commit, you can add the foll
 and then
 
 ```bash
-npm i -D lint-staged simple-git-hooks
+pnpm i -D lint-staged simple-git-hooks
 ```
 
 ## View what rules are enabled
