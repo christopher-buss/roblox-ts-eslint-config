@@ -38,7 +38,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<FlatC
 				"jsdoc/require-returns-check": "warn",
 				"jsdoc/require-returns-description": "warn",
 				"jsdoc/require-yields-check": "warn",
-				"jsdoc/sort-tags": "warn",
+				"jsdoc/sort-tags": "off",
 
 				...(stylistic
 					? {
