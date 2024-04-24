@@ -80,6 +80,38 @@ For example:
 }
 ```
 
+## Recommended Settings
+
+### TSConfig
+
+Many of the rules in this config are designed to work with the following options
+set:
+
+```json
+{
+	"noUncheckedIndexedAccess": true,
+	"noImplicitReturns": true,
+	"noFallthroughCasesInSwitch": true
+}
+```
+
+### ESLint
+
+The `ts/no-non-null-assertion` rule is enabled by default, which will warn you
+when you use the `!` operator to assert that a value is not `undefined`. The
+caveat is that this rule will not always play nicely with
+`noUncheckedIndexedAccess`, and will often require you to disable it in certain
+lines. I believe that this is a good trade-off, as it will help you catch
+potential bugs in your code, but you can disable it if you find it too restrictive.
+
+```json
+{
+	"rules": {
+		"ts/no-non-null-assertion": "off"
+	}
+}
+```
+
 ## VS Code support (auto fix)
 
 Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
