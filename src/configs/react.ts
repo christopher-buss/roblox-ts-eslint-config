@@ -62,6 +62,7 @@ export async function react(
 				"react/display-name": "off",
 				"react/function-component-definition": "error",
 				"react/hook-use-state": "error",
+				"react/jsx-boolean-value": ["error", "always"],
 				"react/jsx-fragments": "error",
 				"react/jsx-handler-names": "error",
 				"react/jsx-key": "error",

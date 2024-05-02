@@ -11,6 +11,8 @@ export async function shopify(): Promise<Array<FlatConfigItem>> {
 			rules: {
 				"shopify/prefer-class-properties": "error",
 				"shopify/prefer-early-return": ["error", { maximumStatements: 1 }],
+				"shopify/prefer-module-scope-constants": "error",
+				"shopify/strict-component-boundaries": "error",
 				"shopify/typescript/prefer-pascal-case-enums": "error",
 				"shopify/typescript/prefer-singular-enums": "error",
 			},

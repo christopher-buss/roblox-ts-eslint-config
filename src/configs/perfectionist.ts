@@ -19,10 +19,12 @@ export async function perfectionist(): Promise<Array<FlatConfigItem>> {
 				"perfectionist/sort-classes": ["off"],
 				"perfectionist/sort-enums": ["error", { type: "natural" }],
 				"perfectionist/sort-interfaces": ["error", { type: "natural" }],
+				"perfectionist/sort-intersection-types": ["error", { type: "natural" }],
 				"perfectionist/sort-jsx-props": "off",
 				"perfectionist/sort-maps": ["error", { type: "natural" }],
 				"perfectionist/sort-object-types": ["error", { type: "natural" }],
 				"perfectionist/sort-objects": ["error", { type: "natural" }],
+				"perfectionist/sort-union-types": ["error", { type: "natural" }],
 			},
 		},
 	];
