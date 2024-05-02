@@ -19,6 +19,7 @@ import {
 	sortPackageJson,
 	sortTsconfig,
 	stylistic,
+	toml,
 	typescript,
 	unicorn,
 } from "./configs";
@@ -161,6 +162,15 @@ export function style(
 			}),
 			sortPackageJson(),
 			sortTsconfig(),
+		);
+	}
+
+	if (options.toml ?? true) {
+		configs.push(
+			toml({
+				overrides: getOverrides(options, "toml"),
+				stylistic: stylisticOptions,
+			}),
 		);
 	}
 

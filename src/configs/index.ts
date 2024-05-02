@@ -14,5 +14,6 @@ export * from "./shopify";
 export * from "./sonarjs";
 export * from "./sort";
 export * from "./stylistic";
+export * from "./toml";
 export * from "./typescript";
 export * from "./unicorn";

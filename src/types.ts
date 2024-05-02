@@ -240,6 +240,13 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	stylistic?: StylisticConfig | boolean;
 
 	/**
+	 * Enable TOML support.
+	 *
+	 * @default true
+	 */
+	toml?: OptionsOverrides | boolean;
+
+	/**
 	 * Enable TypeScript support.
 	 *
 	 * Passing an object to enable TypeScript Language Server support.

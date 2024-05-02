@@ -8495,6 +8495,117 @@ export interface RuleOptions {
    */
   'no-autofix/template-tag-spacing'?: Linter.RuleEntry<NoAutofixTemplateTagSpacing>
   /**
+   * enforce linebreaks after opening and before closing array brackets
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/array-bracket-newline.html
+   */
+  'no-autofix/toml/array-bracket-newline'?: Linter.RuleEntry<NoAutofixTomlArrayBracketNewline>
+  /**
+   * enforce consistent spacing inside array brackets
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/array-bracket-spacing.html
+   */
+  'no-autofix/toml/array-bracket-spacing'?: Linter.RuleEntry<NoAutofixTomlArrayBracketSpacing>
+  /**
+   * enforce line breaks between array elements
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/array-element-newline.html
+   */
+  'no-autofix/toml/array-element-newline'?: Linter.RuleEntry<NoAutofixTomlArrayElementNewline>
+  /**
+   * enforce consistent comma style in array
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/comma-style.html
+   */
+  'no-autofix/toml/comma-style'?: Linter.RuleEntry<NoAutofixTomlCommaStyle>
+  /**
+   * enforce consistent indentation
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/indent.html
+   */
+  'no-autofix/toml/indent'?: Linter.RuleEntry<NoAutofixTomlIndent>
+  /**
+   * enforce consistent spacing inside braces
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/inline-table-curly-spacing.html
+   */
+  'no-autofix/toml/inline-table-curly-spacing'?: Linter.RuleEntry<NoAutofixTomlInlineTableCurlySpacing>
+  /**
+   * enforce consistent spacing between keys and values in key/value pairs
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/key-spacing.html
+   */
+  'no-autofix/toml/key-spacing'?: Linter.RuleEntry<NoAutofixTomlKeySpacing>
+  /**
+   * disallow defining pair keys out-of-order
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/keys-order.html
+   */
+  'no-autofix/toml/keys-order'?: Linter.RuleEntry<[]>
+  /**
+   * disallow mixed data types in array
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/no-mixed-type-in-array.html
+   */
+  'no-autofix/toml/no-mixed-type-in-array'?: Linter.RuleEntry<NoAutofixTomlNoMixedTypeInArray>
+  /**
+   * disallow hexadecimal, octal and binary integer
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/no-non-decimal-integer.html
+   */
+  'no-autofix/toml/no-non-decimal-integer'?: Linter.RuleEntry<NoAutofixTomlNoNonDecimalInteger>
+  /**
+   * disallow spacing around infix operators
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/no-space-dots.html
+   */
+  'no-autofix/toml/no-space-dots'?: Linter.RuleEntry<[]>
+  /**
+   * disallow number separators that to not enhance readability.
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/no-unreadable-number-separator.html
+   */
+  'no-autofix/toml/no-unreadable-number-separator'?: Linter.RuleEntry<[]>
+  /**
+   * require or disallow padding lines between pairs
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/padding-line-between-pairs.html
+   */
+  'no-autofix/toml/padding-line-between-pairs'?: Linter.RuleEntry<[]>
+  /**
+   * require or disallow padding lines between tables
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/padding-line-between-tables.html
+   */
+  'no-autofix/toml/padding-line-between-tables'?: Linter.RuleEntry<[]>
+  /**
+   * disallow precision of fractional seconds greater than the specified value.
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/precision-of-fractional-seconds.html
+   */
+  'no-autofix/toml/precision-of-fractional-seconds'?: Linter.RuleEntry<NoAutofixTomlPrecisionOfFractionalSeconds>
+  /**
+   * disallow precision of integer greater than the specified value.
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/precision-of-integer.html
+   */
+  'no-autofix/toml/precision-of-integer'?: Linter.RuleEntry<NoAutofixTomlPrecisionOfInteger>
+  /**
+   * require or disallow quotes around keys
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/quoted-keys.html
+   */
+  'no-autofix/toml/quoted-keys'?: Linter.RuleEntry<NoAutofixTomlQuotedKeys>
+  /**
+   * require spacing around equals sign
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/space-eq-sign.html
+   * @deprecated
+   */
+  'no-autofix/toml/space-eq-sign'?: Linter.RuleEntry<[]>
+  /**
+   * enforce consistent spacing after the `#` in a comment
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/spaced-comment.html
+   */
+  'no-autofix/toml/spaced-comment'?: Linter.RuleEntry<NoAutofixTomlSpacedComment>
+  /**
+   * enforce consistent spacing inside table brackets
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/table-bracket-spacing.html
+   */
+  'no-autofix/toml/table-bracket-spacing'?: Linter.RuleEntry<NoAutofixTomlTableBracketSpacing>
+  /**
+   * disallow defining tables out-of-order
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/tables-order.html
+   */
+  'no-autofix/toml/tables-order'?: Linter.RuleEntry<[]>
+  /**
+   * disallow parsing errors in Vue custom blocks
+   * @see https://ota-meshi.github.io/eslint-plugin-toml/rules/vue-custom-block/no-parsing-error.html
+   */
+  'no-autofix/toml/vue-custom-block/no-parsing-error'?: Linter.RuleEntry<[]>
+  /**
    * Require or disallow Unicode byte order mark (BOM)
    * @see https://eslint.org/docs/latest/rules/unicode-bom
    */
@@ -22922,6 +23033,130 @@ type NoAutofixSwitchColonSpacing = []|[{
 type NoAutofixTemplateCurlySpacing = []|[("always" | "never")]
 // ----- no-autofix/template-tag-spacing -----
 type NoAutofixTemplateTagSpacing = []|[("always" | "never")]
+// ----- no-autofix/toml/array-bracket-newline -----
+type NoAutofixTomlArrayBracketNewline = []|[(("always" | "never" | "consistent") | {
+  multiline?: boolean
+  minItems?: (number | null)
+})]
+// ----- no-autofix/toml/array-bracket-spacing -----
+type NoAutofixTomlArrayBracketSpacing = []|[("always" | "never")]|[("always" | "never"), {
+  singleValue?: boolean
+  objectsInArrays?: boolean
+  arraysInArrays?: boolean
+}]
+// ----- no-autofix/toml/array-element-newline -----
+type NoAutofixTomlArrayElementNewline = []|[(_NoAutofixTomlArrayElementNewlineBasicConfig | {
+  ArrayExpression?: _NoAutofixTomlArrayElementNewlineBasicConfig
+  ArrayPattern?: _NoAutofixTomlArrayElementNewlineBasicConfig
+  TOMLArray?: _NoAutofixTomlArrayElementNewlineBasicConfig
+})]
+type _NoAutofixTomlArrayElementNewlineBasicConfig = (("always" | "never" | "consistent") | {
+  multiline?: boolean
+  minItems?: (number | null)
+})
+// ----- no-autofix/toml/comma-style -----
+type NoAutofixTomlCommaStyle = []|[("first" | "last")]|[("first" | "last"), {
+  exceptions?: {
+    [k: string]: boolean | undefined
+  }
+}]
+// ----- no-autofix/toml/indent -----
+type NoAutofixTomlIndent = []|[("tab" | number)]|[("tab" | number), {
+  subTables?: number
+  keyValuePairs?: number
+}]
+// ----- no-autofix/toml/inline-table-curly-spacing -----
+type NoAutofixTomlInlineTableCurlySpacing = []|[("always" | "never")]|[("always" | "never"), {
+  arraysInObjects?: boolean
+  objectsInObjects?: boolean
+}]
+// ----- no-autofix/toml/key-spacing -----
+type NoAutofixTomlKeySpacing = []|[({
+  align?: (("equal" | "value") | {
+    on?: ("equal" | "value")
+    mode?: ("strict" | "minimum")
+    beforeEqual?: boolean
+    afterEqual?: boolean
+  })
+  mode?: ("strict" | "minimum")
+  beforeEqual?: boolean
+  afterEqual?: boolean
+} | {
+  singleLine?: {
+    mode?: ("strict" | "minimum")
+    beforeEqual?: boolean
+    afterEqual?: boolean
+  }
+  multiLine?: {
+    align?: (("equal" | "value") | {
+      on?: ("equal" | "value")
+      mode?: ("strict" | "minimum")
+      beforeEqual?: boolean
+      afterEqual?: boolean
+    })
+    mode?: ("strict" | "minimum")
+    beforeEqual?: boolean
+    afterEqual?: boolean
+  }
+} | {
+  singleLine?: {
+    mode?: ("strict" | "minimum")
+    beforeEqual?: boolean
+    afterEqual?: boolean
+  }
+  multiLine?: {
+    mode?: ("strict" | "minimum")
+    beforeEqual?: boolean
+    afterEqual?: boolean
+  }
+  align?: {
+    on?: ("equal" | "value")
+    mode?: ("strict" | "minimum")
+    beforeEqual?: boolean
+    afterEqual?: boolean
+  }
+})]
+// ----- no-autofix/toml/no-mixed-type-in-array -----
+type NoAutofixTomlNoMixedTypeInArray = []|[{
+  typeMap?: {
+    string?: string
+    boolean?: string
+    integer?: string
+    float?: string
+    offsetDateTime?: string
+    localDateTime?: string
+    localDate?: string
+    localTime?: string
+    array?: string
+    inlineTable?: string
+  }
+}]
+// ----- no-autofix/toml/no-non-decimal-integer -----
+type NoAutofixTomlNoNonDecimalInteger = []|[{
+  allowHexadecimal?: boolean
+  allowOctal?: boolean
+  allowBinary?: boolean
+}]
+// ----- no-autofix/toml/precision-of-fractional-seconds -----
+type NoAutofixTomlPrecisionOfFractionalSeconds = []|[{
+  max?: number
+}]
+// ----- no-autofix/toml/precision-of-integer -----
+type NoAutofixTomlPrecisionOfInteger = []|[{
+  maxBit?: number
+}]
+// ----- no-autofix/toml/quoted-keys -----
+type NoAutofixTomlQuotedKeys = []|[{
+  prefer?: ("as-needed" | "always")
+  numbers?: boolean
+}]
+// ----- no-autofix/toml/spaced-comment -----
+type NoAutofixTomlSpacedComment = []|[("always" | "never")]|[("always" | "never"), {
+  exceptions?: string[]
+  markers?: string[]
+}]
+// ----- no-autofix/toml/table-bracket-spacing -----
+type NoAutofixTomlTableBracketSpacing = []|[("always" | "never")]
 // ----- no-autofix/unicode-bom -----
 type NoAutofixUnicodeBom = []|[("always" | "never")]
 // ----- no-autofix/unicorn/better-regex -----
