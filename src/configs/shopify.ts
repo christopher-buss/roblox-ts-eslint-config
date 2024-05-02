@@ -1,7 +1,7 @@
 import { eslintPluginShopify } from "../plugins";
-import type { FlatConfigItem } from "../types";
+import type { TypedFlatConfigItem } from "../types";
 
-export async function shopify(): Promise<Array<FlatConfigItem>> {
+export async function shopify(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
 			name: "style:shopify",
@@ -11,7 +11,7 @@ export async function shopify(): Promise<Array<FlatConfigItem>> {
 			rules: {
 				"shopify/prefer-class-properties": "error",
 				"shopify/prefer-early-return": ["error", { maximumStatements: 1 }],
-				"shopify/prefer-module-scope-constants": "error",
+				// "shopify/prefer-module-scope-constants": "error",
 				"shopify/strict-component-boundaries": "error",
 				"shopify/typescript/prefer-pascal-case-enums": "error",
 				"shopify/typescript/prefer-singular-enums": "error",

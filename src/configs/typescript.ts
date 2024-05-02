@@ -3,22 +3,22 @@ import process from "node:process";
 import { GLOB_SRC } from "../globs";
 import { pluginAntfu, pluginNoAutofix } from "../plugins";
 import type {
-	FlatConfigItem,
 	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
+	TypedFlatConfigItem,
 } from "../types";
 import { interopDefault, renameRules, toArray } from "../utils";
 
 export async function typescript(
-	options: OptionsFiles &
-		OptionsComponentExtensions &
+	options: OptionsComponentExtensions &
+		OptionsFiles &
 		OptionsOverrides &
-		OptionsTypeScriptWithTypes &
-		OptionsTypeScriptParserOptions = {},
-): Promise<Array<FlatConfigItem>> {
+		OptionsTypeScriptParserOptions &
+		OptionsTypeScriptWithTypes = {},
+): Promise<Array<TypedFlatConfigItem>> {
 	const { componentExts: componentExtensions = [], overrides = {}, parserOptions = {} } = options;
 
 	const files = options.files ?? [
@@ -26,7 +26,7 @@ export async function typescript(
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
 
-	const typeAwareRules: FlatConfigItem["rules"] = {
+	const typeAwareRules: TypedFlatConfigItem["rules"] = {
 		"dot-notation": "off",
 		"no-implied-eval": "off",
 		"no-throw-literal": "off",
@@ -76,6 +76,7 @@ export async function typescript(
 		"ts/no-useless-template-literals": "error",
 		"ts/non-nullable-type-assertion-style": "error",
 		"ts/prefer-destructuring": "error",
+		"ts/prefer-find": "error",
 		"ts/prefer-includes": "error",
 		"ts/prefer-nullish-coalescing": "error",
 		"ts/prefer-optional-chain": "error",
@@ -243,7 +244,6 @@ export async function typescript(
 				],
 				"ts/no-use-before-define": "off",
 				"ts/no-useless-constructor": "error",
-				"ts/prefer-find": "error",
 				"ts/prefer-for-of": "error",
 				"ts/prefer-function-type": "error",
 				"ts/prefer-ts-expect-error": "error",

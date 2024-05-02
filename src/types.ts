@@ -1,59 +1,20 @@
-import type {
-	EslintCommentsRules,
-	EslintRules,
-	FlatESLintConfigItem,
-	ImportRules,
-	JsoncRules,
-	MergeIntersection,
-	Prefix,
-	ReactHooksRules,
-	ReactRules,
-	RenamePrefix,
-	RuleConfig,
-	SonarJSRules,
-} from "@antfu/eslint-define-config";
-import type { RuleOptions as JSDocumentRules } from "@eslint-types/jsdoc/types";
-import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
-import type { RuleOptions as UnicornRules } from "@eslint-types/unicorn/types";
-import type {
-	StylisticCustomizeOptions,
-	UnprefixedRuleOptions as StylisticRules,
-} from "@stylistic/eslint-plugin";
+import type { StylisticCustomizeOptions } from "@stylistic/eslint-plugin";
 import type { ParserOptions } from "@typescript-eslint/parser";
 
 import type { Linter } from "eslint";
 import type { FlatGitignoreOptions } from "eslint-config-flat-gitignore";
-import type { Rules as AntfuRules } from "eslint-plugin-antfu";
 
+import type { ConfigNames, RuleOptions } from "./typegen";
 import type { VendoredPrettierOptions } from "./vender/prettier-types";
 
-export type WrapRuleConfig<T extends Record<string, any>> = {
-	[K in keyof T]: T[K] extends RuleConfig ? T[K] : RuleConfig<T[K]>;
-};
+export type Awaitable<T> = Promise<T> | T;
 
-export type Awaitable<T> = T | Promise<T>;
+export type Rules = RuleOptions;
 
-export type Rules = WrapRuleConfig<
-	MergeIntersection<
-		RenamePrefix<TypeScriptRules, "@typescript-eslint/", "ts/"> &
-			EslintCommentsRules &
-			EslintRules &
-			ImportRules &
-			JSDocumentRules &
-			JsoncRules &
-			Prefix<AntfuRules, "antfu/"> &
-			Prefix<StylisticRules, "style/"> &
-			ReactHooksRules &
-			ReactRules &
-			RenamePrefix<SonarJSRules, "sonarjs/", "sonar/"> &
-			UnicornRules
-	>
->;
+// eslint-disable-next-line unicorn/prefer-export-from -- Required due to build issues
+export type { ConfigNames };
 
-export type FlatConfigItem = Omit<FlatESLintConfigItem<Rules, false>, "plugins"> & {
-	/** Custom name of each config item. */
-	name?: string;
-
+export type TypedFlatConfigItem = {
 	// Relax plugins type limitation, as most of the plugins did not have correct
 	// type info yet.
 	/**
@@ -64,9 +25,7 @@ export type FlatConfigItem = Omit<FlatESLintConfigItem<Rules, false>, "plugins">
 	 * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
 	 */
 	plugins?: Record<string, any>;
-};
-
-export type UserConfigItem = FlatConfigItem | Linter.FlatConfig;
+} & Omit<Linter.FlatConfig<Linter.RulesRecord & Rules>, "plugins">;
 
 export interface OptionsFiles {
 	/** Override the `files` option to provide custom globs. */
@@ -74,8 +33,8 @@ export interface OptionsFiles {
 }
 
 export type OptionsTypescript =
-	| (OptionsTypeScriptWithTypes & OptionsOverrides)
-	| (OptionsTypeScriptParserOptions & OptionsOverrides);
+	| (OptionsOverrides & OptionsTypeScriptParserOptions)
+	| (OptionsOverrides & OptionsTypeScriptWithTypes);
 
 export interface OptionsFormatters {
 	/**
@@ -109,7 +68,7 @@ export interface OptionsFormatters {
 	 *
 	 * When set to `true`, it will use Prettier.
 	 */
-	markdown?: "prettier" | "dprint" | boolean;
+	markdown?: "dprint" | "prettier" | boolean;
 
 	/**
 	 * Custom options for Prettier.
@@ -149,7 +108,7 @@ export interface OptionsTypeScriptWithTypes {
 	 *
 	 * @see https://typescript-eslint.io/linting/typed-linting/
 	 */
-	tsconfigPath?: string | Array<string>;
+	tsconfigPath?: Array<string> | string;
 }
 
 export interface OptionsHasTypeScript {
@@ -157,13 +116,13 @@ export interface OptionsHasTypeScript {
 }
 
 export interface OptionsStylistic {
-	stylistic?: boolean | StylisticConfig;
+	stylistic?: StylisticConfig | boolean;
 }
 
-export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "quotes" | "jsx" | "semi">;
+export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
 
 export interface OptionsOverrides {
-	overrides?: FlatConfigItem["rules"];
+	overrides?: TypedFlatConfigItem["rules"];
 }
 
 export interface OptionsIsInEditor {
@@ -171,6 +130,13 @@ export interface OptionsIsInEditor {
 }
 
 export interface OptionsConfig extends OptionsComponentExtensions {
+	/**
+	 * Automatically rename plugins in the config.
+	 *
+	 * @default true
+	 */
+	autoRenamePlugins?: boolean;
+
 	/**
 	 * Use external formatters to format files.
 	 *
@@ -182,7 +148,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default false
 	 */
-	formatters?: boolean | OptionsFormatters;
+	formatters?: OptionsFormatters | boolean;
 
 	/**
 	 * Enable gitignore support.
@@ -192,7 +158,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @default true
 	 * @see https://github.com/antfu/eslint-config-flat-gitignore
 	 */
-	gitignore?: boolean | FlatGitignoreOptions;
+	gitignore?: FlatGitignoreOptions | boolean;
 
 	/**
 	 * Control to disable some rules in editors.
@@ -206,7 +172,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	jsonc?: boolean | OptionsOverrides;
+	jsonc?: OptionsOverrides | boolean;
 
 	/**
 	 * Enable JSX related rules.
@@ -224,20 +190,38 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	markdown?: boolean | OptionsOverrides;
+	markdown?: OptionsOverrides | boolean;
+
+	/**
+	 * Provide overrides for rules for each integration.
+	 *
+	 * @deprecated Use `overrides` option in each integration key instead.
+	 */
+	overrides?: {
+		javascript?: TypedFlatConfigItem["rules"];
+		jsonc?: TypedFlatConfigItem["rules"];
+		markdown?: TypedFlatConfigItem["rules"];
+		react?: TypedFlatConfigItem["rules"];
+		stylistic?: TypedFlatConfigItem["rules"];
+		svelte?: TypedFlatConfigItem["rules"];
+		test?: TypedFlatConfigItem["rules"];
+		toml?: TypedFlatConfigItem["rules"];
+		typescript?: TypedFlatConfigItem["rules"];
+		vue?: TypedFlatConfigItem["rules"];
+		yaml?: TypedFlatConfigItem["rules"];
+	};
 
 	/**
 	 * Enable react rules.
 	 *
 	 * Requires installing:
 	 *
-	 * - `eslint-plugin-react`
+	 * - `@eslint-react/eslint-plugin`
 	 * - `eslint-plugin-react-hooks`.
-	 * - `eslint-plugin-react-prefer-function-component`.
 	 *
 	 * @default false
 	 */
-	react?: boolean | OptionsOverrides;
+	react?: OptionsOverrides | boolean;
 
 	/**
 	 * Enable Roblox-TS support.
@@ -253,7 +237,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	stylistic?: boolean | StylisticConfig;
+	stylistic?: StylisticConfig | boolean;
 
 	/**
 	 * Enable TypeScript support.

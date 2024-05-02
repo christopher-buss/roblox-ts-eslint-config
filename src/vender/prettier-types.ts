@@ -8,7 +8,7 @@ export interface VendoredPrettierOptionsRequired {
 	 *
 	 * @default "always"
 	 */
-	arrowParens: "avoid" | "always";
+	arrowParens: "always" | "avoid";
 	/**
 	 * Put the `>` of a multi-line HTML (HTML, JSX, Angular) element at the end
 	 * of the last line instead of being alone on the next line (does not apply
@@ -22,13 +22,13 @@ export interface VendoredPrettierOptionsRequired {
 	 *
 	 * @default "lf"
 	 */
-	endOfLine: "auto" | "lf" | "crlf" | "cr";
+	endOfLine: "auto" | "cr" | "crlf" | "lf";
 	/**
 	 * How to handle whitespaces in HTML.
 	 *
 	 * @default "css"
 	 */
-	htmlWhitespaceSensitivity: "css" | "strict" | "ignore";
+	htmlWhitespaceSensitivity: "css" | "ignore" | "strict";
 	/**
 	 * Put the `>` of a multi-line JSX element at the end of the last line
 	 * instead of being alone on the next line.
@@ -39,7 +39,7 @@ export interface VendoredPrettierOptionsRequired {
 	/** Use single quotes in JSX. */
 	jsxSingleQuote: boolean;
 	/** Provide ability to support new languages to prettier. */
-	plugins: Array<string | any>;
+	plugins: Array<any | string>;
 	printWidth: number;
 	/**
 	 * By default, Prettier will wrap markdown text as-is since some services
@@ -77,7 +77,7 @@ export interface VendoredPrettierOptionsRequired {
 	/** Specify the number of spaces per indentation-level. */
 	tabWidth: number;
 	/** Print trailing commas wherever possible. */
-	trailingComma: "none" | "es5" | "all";
+	trailingComma: "all" | "es5" | "none";
 	/** Indent lines with tabs instead of spaces. */
 	useTabs?: boolean;
 }
@@ -85,17 +85,17 @@ export interface VendoredPrettierOptionsRequired {
 export type BuiltInParserName =
 	| "acorn"
 	| "angular"
+	| "babel"
 	| "babel-flow"
 	| "babel-ts"
-	| "babel"
 	| "css"
 	| "espree"
 	| "flow"
 	| "glimmer"
 	| "graphql"
 	| "html"
-	| "json-stringify"
 	| "json"
+	| "json-stringify"
 	| "json5"
 	| "less"
 	| "lwc"
@@ -114,5 +114,5 @@ export type BuiltInParserName =
 // It comes from this issue: microsoft/TypeScript#29729:
 //   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
 export type LiteralUnion<T extends U, U = string> =
-	| T
-	| (Pick<U, never> & { _?: never | undefined });
+	| ({ _?: never | undefined } & Pick<U, never>)
+	| T;

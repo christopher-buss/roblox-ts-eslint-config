@@ -7,7 +7,8 @@ import style from "./dist/index.js";
 export default style(
 	{
 		formatters: true,
-		ignores: ["fixtures", "_fixtures"],
+		ignores: ["fixtures", "_fixtures", "src/typegen.d.ts"],
+		react: true,
 		roblox: false,
 	},
 	{

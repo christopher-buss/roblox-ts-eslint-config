@@ -4,21 +4,21 @@ import { pluginRobloxTS } from "src/plugins";
 import { interopDefault, toArray } from "src/utils";
 
 import type {
-	FlatConfigItem,
 	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
+	TypedFlatConfigItem,
 } from "../types";
 
 export async function roblox(
-	options: OptionsFiles &
-		OptionsComponentExtensions &
+	options: OptionsComponentExtensions &
+		OptionsFiles &
 		OptionsOverrides &
-		OptionsTypeScriptWithTypes &
-		OptionsTypeScriptParserOptions = {},
-): Promise<Array<FlatConfigItem>> {
+		OptionsTypeScriptParserOptions &
+		OptionsTypeScriptWithTypes = {},
+): Promise<Array<TypedFlatConfigItem>> {
 	const { componentExts: componentExtensions = [], parserOptions = {} } = options;
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;

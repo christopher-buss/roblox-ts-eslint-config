@@ -1,5 +1,5 @@
 import { pluginPerfectionist } from "../plugins";
-import type { FlatConfigItem } from "../types";
+import type { TypedFlatConfigItem } from "../types";
 
 /**
  * Perfectionist plugin for props and items sorting.
@@ -7,7 +7,7 @@ import type { FlatConfigItem } from "../types";
  * @returns The configuration.
  * @see https://github.com/azat-io/eslint-plugin-perfectionist
  */
-export async function perfectionist(): Promise<Array<FlatConfigItem>> {
+export async function perfectionist(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
 			name: "style:perfectionist",

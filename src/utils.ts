@@ -1,7 +1,7 @@
 import { isPackageExists } from "local-pkg";
 import process from "node:process";
 
-import type { Awaitable, OptionsConfig, UserConfigItem } from "./types";
+import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from "./types";
 
 /**
  * Combine array and non-array configs into a single array.
@@ -10,8 +10,8 @@ import type { Awaitable, OptionsConfig, UserConfigItem } from "./types";
  * @returns Combined array of configs.
  */
 export async function combine(
-	...configs: Array<Awaitable<UserConfigItem | Array<UserConfigItem>>>
-): Promise<Array<UserConfigItem>> {
+	...configs: Array<Awaitable<Array<TypedFlatConfigItem> | TypedFlatConfigItem>>
+): Promise<Array<TypedFlatConfigItem>> {
 	const resolved = await Promise.all(configs);
 	return resolved.flat();
 }
@@ -32,7 +32,7 @@ export function renameRules(
 	);
 }
 
-export function toArray<T>(value: T | Array<T>): Array<T> {
+export function toArray<T>(value: Array<T> | T): Array<T> {
 	return Array.isArray(value) ? value : [value];
 }
 

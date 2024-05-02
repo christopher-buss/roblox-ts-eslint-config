@@ -2,17 +2,17 @@ import type { Linter } from "eslint";
 
 import { GLOB_MARKDOWN, GLOB_MARKDOWN_CODE, GLOB_MARKDOWN_IN_MARKDOWN } from "../globs";
 import type {
-	FlatConfigItem,
 	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
+	TypedFlatConfigItem,
 } from "../types";
 import { interopDefault } from "../utils";
 
 export async function markdown(
-	options: OptionsFiles & OptionsComponentExtensions & OptionsOverrides = {},
+	options: OptionsComponentExtensions & OptionsFiles & OptionsOverrides = {},
 	formatMarkdown = false,
-): Promise<Array<FlatConfigItem>> {
+): Promise<Array<TypedFlatConfigItem>> {
 	const {
 		componentExts: componentExtensions = [],
 		files = [GLOB_MARKDOWN],

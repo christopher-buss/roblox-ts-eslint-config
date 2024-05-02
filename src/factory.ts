@@ -1,3 +1,5 @@
+import type { Linter } from "eslint";
+import { FlatConfigComposer } from "eslint-flat-config-utils";
 import fs from "node:fs";
 
 import {
@@ -21,10 +23,11 @@ import {
 	unicorn,
 } from "./configs";
 import { formatters } from "./configs/formatters";
-import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
-import { combine, getOverrides, interopDefault, resolveSubOptions } from "./utils";
+import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types";
+import { getOverrides, interopDefault, resolveSubOptions } from "./utils";
 
-const flatConfigProps: Array<keyof FlatConfigItem> = [
+const flatConfigProps: Array<keyof TypedFlatConfigItem> = [
+	"name",
 	"files",
 	"ignores",
 	"languageOptions",
@@ -35,6 +38,15 @@ const flatConfigProps: Array<keyof FlatConfigItem> = [
 	"settings",
 ];
 
+export const defaultPluginRenaming = {
+	"@eslint-react": "react",
+	"@eslint-react/hooks-extra": "react-hooks-extra",
+	"@eslint-react/naming-convention": "react-naming-convention",
+
+	"@stylistic": "style",
+	"@typescript-eslint": "ts",
+};
+
 /**
  * Generates an array of user configuration items based on the provided options
  * and user configs.
@@ -43,11 +55,19 @@ const flatConfigProps: Array<keyof FlatConfigItem> = [
  * @param userConfigs - Additional user configuration items.
  * @returns A promise that resolves to an array of user configuration items.
  */
-export async function style(
-	options: OptionsConfig & FlatConfigItem = {},
-	...userConfigs: Array<Awaitable<UserConfigItem | Array<UserConfigItem>>>
-): Promise<Array<UserConfigItem>> {
+export function style(
+	options: OptionsConfig & TypedFlatConfigItem = {},
+	...userConfigs: Array<
+		Awaitable<
+			| Array<Linter.FlatConfig>
+			| Array<TypedFlatConfigItem>
+			| FlatConfigComposer<any, any>
+			| TypedFlatConfigItem
+		>
+	>
+): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
 	const {
+		autoRenamePlugins = true,
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx,
@@ -66,7 +86,7 @@ export async function style(
 		stylisticOptions.jsx = jsx ?? true;
 	}
 
-	const configs: Array<Awaitable<Array<FlatConfigItem>>> = [];
+	const configs: Array<Awaitable<Array<TypedFlatConfigItem>>> = [];
 
 	/* eslint-disable arrow-style/arrow-return-style -- Bug with line length. */
 	if (enableGitignore) {
@@ -128,7 +148,7 @@ export async function style(
 		configs.push(
 			react({
 				overrides: getOverrides(options, "react"),
-				typescript: !!enableTypeScript,
+				tsconfigPath: getOverrides(options, "typescript").tsconfigPath,
 			}),
 		);
 	}
@@ -184,11 +204,18 @@ export async function style(
 		}
 
 		return accumulator;
-	}, {} as FlatConfigItem);
-
+	}, {} as TypedFlatConfigItem);
 	if (Object.keys(fusedConfig).length) {
 		configs.push([fusedConfig]);
 	}
 
-	return combine(...configs, ...userConfigs);
+	let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>();
+
+	composer = composer.append(...configs, ...(userConfigs as any));
+
+	if (autoRenamePlugins) {
+		composer = composer.renamePlugins(defaultPluginRenaming);
+	}
+
+	return composer;
 }

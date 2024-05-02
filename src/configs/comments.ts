@@ -1,7 +1,8 @@
-import { pluginCommentLength, pluginComments } from "../plugins";
-import type { FlatConfigItem } from "../types";
+import type { TypedFlatConfigItem } from "src/types";
 
-export async function comments(): Promise<Array<FlatConfigItem>> {
+import { pluginCommentLength, pluginComments } from "../plugins";
+
+export async function comments(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
 			name: "style:eslint-comments",

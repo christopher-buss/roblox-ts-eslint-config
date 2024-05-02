@@ -3,12 +3,12 @@ import type { VendoredPrettierOptions } from "src/vender/prettier-types";
 
 import { configPrettier, pluginFormat } from "../plugins";
 import type {
-	FlatConfigItem,
 	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
+	TypedFlatConfigItem,
 } from "../types";
 
 interface PrettierPluginJsdocOptions {
@@ -18,12 +18,12 @@ interface PrettierPluginJsdocOptions {
 }
 
 export async function prettier(
-	options: OptionsFiles &
-		OptionsComponentExtensions &
+	options: OptionsComponentExtensions &
+		OptionsFiles &
 		OptionsOverrides &
-		OptionsTypeScriptWithTypes &
-		OptionsTypeScriptParserOptions = {},
-): Promise<Array<FlatConfigItem>> {
+		OptionsTypeScriptParserOptions &
+		OptionsTypeScriptWithTypes = {},
+): Promise<Array<TypedFlatConfigItem>> {
 	const { componentExts: componentExtensions = [] } = options;
 
 	const files = options.files ?? [
@@ -32,7 +32,7 @@ export async function prettier(
 	];
 
 	// TODO: Pull this from the local prettier config
-	const prettierOptions: VendoredPrettierOptions & PrettierPluginJsdocOptions = {
+	const prettierOptions: PrettierPluginJsdocOptions & VendoredPrettierOptions = {
 		arrowParens: "avoid",
 		jsdocPreferCodeFences: true,
 		jsdocPrintWidth: 80,
@@ -44,7 +44,7 @@ export async function prettier(
 		trailingComma: "all",
 		tsdoc: true,
 		useTabs: true,
-	} satisfies VendoredPrettierOptions & PrettierPluginJsdocOptions;
+	} satisfies PrettierPluginJsdocOptions & VendoredPrettierOptions;
 
 	return [
 		{

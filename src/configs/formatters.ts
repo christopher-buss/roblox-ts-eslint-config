@@ -1,7 +1,7 @@
 import { pluginFormat } from "src/plugins";
 
 import { GLOB_CSS, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from "../globs";
-import type { FlatConfigItem, OptionsFormatters, StylisticConfig } from "../types";
+import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types";
 import type { VendoredPrettierOptions } from "../vender/prettier-types";
 import { StylisticConfigDefaults } from "./stylistic";
 
@@ -9,7 +9,7 @@ export async function formatters(
 	options: OptionsFormatters | true = {},
 	stylistic: StylisticConfig = {},
 	markdownEnabled = true,
-): Promise<Array<FlatConfigItem>> {
+): Promise<Array<TypedFlatConfigItem>> {
 	if (options === true) {
 		options = {
 			css: true,
@@ -45,7 +45,7 @@ export async function formatters(
 		options.dprintOptions ?? {},
 	);
 
-	const configs: Array<FlatConfigItem> = [
+	const configs: Array<TypedFlatConfigItem> = [
 		{
 			name: "style:formatters:setup",
 			plugins: {

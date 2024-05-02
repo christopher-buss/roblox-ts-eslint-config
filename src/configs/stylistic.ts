@@ -1,5 +1,5 @@
 import { pluginAntfu, pluginArrowReturnStyle } from "../plugins";
-import type { FlatConfigItem, StylisticConfig } from "../types";
+import type { StylisticConfig, TypedFlatConfigItem } from "../types";
 import { interopDefault } from "../utils";
 
 export const StylisticConfigDefaults: StylisticConfig = {
@@ -9,7 +9,9 @@ export const StylisticConfigDefaults: StylisticConfig = {
 	semi: true,
 };
 
-export async function stylistic(options: StylisticConfig = {}): Promise<Array<FlatConfigItem>> {
+export async function stylistic(
+	options: StylisticConfig = {},
+): Promise<Array<TypedFlatConfigItem>> {
 	const { indent, jsx, quotes, semi } = {
 		...StylisticConfigDefaults,
 		...options,
