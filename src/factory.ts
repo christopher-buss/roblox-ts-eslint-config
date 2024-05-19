@@ -43,7 +43,6 @@ export const defaultPluginRenaming = {
 	"@eslint-react": "react",
 	"@eslint-react/hooks-extra": "react-hooks-extra",
 	"@eslint-react/naming-convention": "react-naming-convention",
-
 	"@stylistic": "style",
 	"@typescript-eslint": "ts",
 };
@@ -203,6 +202,10 @@ export function style(
 			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
 			componentExts: componentExtensions,
 			overrides: getOverrides(options, "typescript"),
+			prettierOptions:
+				typeof options["formatters"] === "boolean"
+					? ({} as any)
+					: options["formatters"]?.prettierOptions || {},
 		}),
 	);
 

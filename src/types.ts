@@ -4,9 +4,9 @@ import type { ParserOptions } from "@typescript-eslint/parser";
 
 import type { Linter } from "eslint";
 import type { FlatGitignoreOptions } from "eslint-config-flat-gitignore";
+import type { Options as PrettierOptions } from "prettier";
 
 import type { ConfigNames, RuleOptions } from "./typegen";
-import type { VendoredPrettierOptions } from "./vender/prettier-types";
 
 export type Awaitable<T> = Promise<T> | T;
 
@@ -76,7 +76,7 @@ export interface OptionsFormatters {
 	 *
 	 * By default it's controlled by our own config.
 	 */
-	prettierOptions?: VendoredPrettierOptions;
+	prettierOptions?: PrettierOptions;
 
 	/**
 	 * Enable formatting support for TOML.

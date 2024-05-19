@@ -1,5 +1,5 @@
+import type { Options as PrettierOptions } from "prettier";
 import { GLOB_SRC } from "src";
-import type { VendoredPrettierOptions } from "src/vender/prettier-types";
 
 import { configPrettier, pluginFormat } from "../plugins";
 import type {
@@ -7,44 +7,37 @@ import type {
 	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
-	OptionsTypeScriptWithTypes,
 	TypedFlatConfigItem,
 } from "../types";
 
-interface PrettierPluginJsdocOptions {
-	jsdocPreferCodeFences: boolean;
-	jsdocPrintWidth: number;
-	tsdoc: boolean;
-}
-
 export async function prettier(
-	options: OptionsComponentExtensions &
+	options?: { prettierOptions?: PrettierOptions } & OptionsComponentExtensions &
 		OptionsFiles &
 		OptionsOverrides &
-		OptionsTypeScriptParserOptions &
-		OptionsTypeScriptWithTypes = {},
+		OptionsTypeScriptParserOptions,
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { componentExts: componentExtensions = [] } = options;
+	const {
+		componentExts: componentExtensions = [],
+		files: prettierFiles,
+		prettierOptions,
+	} = options ?? {};
 
-	const files = options.files ?? [
+	const files = prettierFiles ?? [
 		GLOB_SRC,
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
 
-	// TODO: Pull this from the local prettier config
-	const prettierOptions: PrettierPluginJsdocOptions & VendoredPrettierOptions = {
-		arrowParens: "avoid",
-		jsdocPreferCodeFences: true,
-		jsdocPrintWidth: 80,
-		plugins: ["prettier-plugin-jsdoc"],
-		printWidth: 100,
-		semi: true,
-		singleQuote: false,
-		tabWidth: 4,
-		trailingComma: "all",
-		tsdoc: true,
-		useTabs: true,
-	} satisfies PrettierPluginJsdocOptions & VendoredPrettierOptions;
+	const defaultPrettierOptions =
+		prettierOptions ??
+		({
+			arrowParens: "avoid",
+			printWidth: 120,
+			semi: true,
+			singleQuote: false,
+			tabWidth: 4,
+			trailingComma: "all",
+			useTabs: true,
+		} satisfies PrettierOptions);
 
 	return [
 		{
@@ -59,7 +52,7 @@ export async function prettier(
 				"format/prettier": [
 					"error",
 					{
-						...prettierOptions,
+						...defaultPrettierOptions,
 						parser: "typescript",
 					},
 				],

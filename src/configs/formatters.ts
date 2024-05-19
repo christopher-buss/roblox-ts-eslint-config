@@ -1,8 +1,8 @@
+import type { Options as PrettierOptions } from "prettier";
 import { pluginFormat } from "src/plugins";
 
 import { GLOB_CSS, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from "../globs";
 import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types";
-import type { VendoredPrettierOptions } from "../vender/prettier-types";
 import { StylisticConfigDefaults } from "./stylistic";
 
 export async function formatters(
@@ -25,14 +25,14 @@ export async function formatters(
 		...stylistic,
 	};
 
-	const prettierOptions: VendoredPrettierOptions = Object.assign(
+	const prettierOptions: PrettierOptions = Object.assign(
 		{
 			semi,
 			singleQuote: quotes === "single",
 			tabWidth: typeof indent === "number" ? indent : 2,
 			trailingComma: "all",
 			useTabs: indent === "tab",
-		} satisfies VendoredPrettierOptions,
+		} satisfies PrettierOptions,
 		options.prettierOptions ?? {},
 	);
 
