@@ -40,7 +40,6 @@
 		"typegen": "esno scripts/typegen.ts",
 		"prepack": "nr build",
 		"release": "bumpp && pnpm publish --p",
-		"test": "vitest",
 		"typecheck": "tsc --noEmit",
 		"prepare": "simple-git-hooks"
 	},
@@ -126,8 +125,8 @@
 		"rimraf": "^5.0.7",
 		"simple-git-hooks": "^2.11.1",
 		"tsup": "^8.0.2",
-		"typescript": "^5.4.5",
-		"vitest": "^1.6.0"
+		"typescript": "^5.4.5"
+
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
