@@ -1,16 +1,18 @@
-import { GLOB_JSX, GLOB_TSX } from "../globs";
+import { fixupPluginRules } from "@eslint/compat";
+
+import { GLOB_TS, GLOB_TSX } from "../globs";
 import type {
 	OptionsFiles,
-	OptionsOverrides,
 	OptionsTypeScriptWithTypes,
+	ReactConfig,
 	TypedFlatConfigItem,
 } from "../types";
 import { ensurePackages, interopDefault, toArray } from "../utils";
 
 export async function react(
-	options: OptionsFiles & OptionsOverrides & OptionsTypeScriptWithTypes = {},
+	options: OptionsFiles & OptionsTypeScriptWithTypes & ReactConfig = {},
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { files = [GLOB_JSX, GLOB_TSX], overrides = {} } = options;
+	const { files = [GLOB_TS, GLOB_TSX], overrides = {} } = options;
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"]);
 
@@ -29,16 +31,11 @@ export async function react(
 		{
 			name: "style:react:setup",
 			plugins: {
-				react: pluginReact,
-				"react-hooks": pluginReactHooks,
+				react: plugins["@eslint-react"],
+				"react-hooks": fixupPluginRules(pluginReactHooks),
 				"react-hooks-extra": plugins["@eslint-react/hooks-extra"],
 				"react-naming-convention": plugins["@eslint-react/naming-convention"],
 				style: pluginStylistic,
-			},
-			settings: {
-				react: {
-					version: "detect",
-				},
 			},
 		},
 		{
@@ -55,9 +52,8 @@ export async function react(
 			},
 			name: "style:react:rules",
 			rules: {
+				// recommended rules from @eslint-react
 				"react/ensure-forward-ref-using-ref": "warn",
-				// recommended rules from @eslint-react/naming-convention
-				"react/naming-convention/use-state": "error",
 				"react/no-access-state-in-setstate": "error",
 				"react/no-array-index-key": "warn",
 				"react/no-children-count": "warn",
@@ -66,18 +62,17 @@ export async function react(
 				"react/no-children-only": "warn",
 				"react/no-children-prop": "warn",
 				"react/no-children-to-array": "warn",
-				// recommended rules from @eslint-react
 				"react/no-class-component": "error",
 				"react/no-clone-element": "warn",
 				"react/no-comment-textnodes": "warn",
-				"react/no-complicated-conditional-rendering": "warn",
+				"react/no-complicated-conditional-rendering": "off",
 				"react/no-component-will-mount": "error",
 				"react/no-component-will-receive-props": "error",
 				"react/no-component-will-update": "error",
 				"react/no-create-ref": "error",
 				"react/no-direct-mutation-state": "error",
 				"react/no-duplicate-key": "error",
-				"react/no-implicit-key": "error",
+				"react/no-implicit-key": "off",
 				"react/no-leaked-conditional-rendering": "warn",
 				"react/no-missing-key": "error",
 				"react/no-nested-components": "warn",
@@ -96,15 +91,18 @@ export async function react(
 				"react/no-useless-fragment": "warn",
 				"react/prefer-destructuring-assignment": "warn",
 				"react/prefer-shorthand-boolean": "off",
-
 				"react/prefer-shorthand-fragment": "warn",
+
 				// recommended rules react-hooks
 				"react-hooks/exhaustive-deps": "warn",
 				"react-hooks/rules-of-hooks": "error",
 				// recommended rules from @eslint-react/hooks-extra
-				"react-hooks-extra/ensure-custom-hooks-using-other-hooks": "warn",
-
-				"react-hooks-extra/ensure-use-callback-has-non-empty-deps": "warn",
+				"react-hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
+				"react-hooks-extra/ensure-use-callback-has-non-empty-deps": "error",
+				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "error",
+				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
+				// recommended rules from @eslint-react/naming-convention
+				"react-naming-convention/use-state": "error",
 
 				// "react/destructuring-assignment": [
 				// 	"error",
@@ -163,9 +161,6 @@ export async function react(
 				// 	},
 				// ],
 
-				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "warn",
-				"react-hooks-extra/prefer-use-state-lazy-initialization": "warn",
-
 				"style/jsx-curly-brace-presence": [
 					"error",
 					{
@@ -192,6 +187,10 @@ export async function react(
 			settings: {
 				react: {
 					version: "17.0",
+				},
+				reactOptions: {
+					importSource: "@rbxts",
+					jsxPragma: "React",
 				},
 			},
 		},

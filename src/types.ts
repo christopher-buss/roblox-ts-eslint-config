@@ -1,3 +1,4 @@
+import type { ESLintReactSettings } from "@eslint-react/shared";
 import type { StylisticCustomizeOptions } from "@stylistic/eslint-plugin";
 import type { ParserOptions } from "@typescript-eslint/parser";
 
@@ -121,6 +122,8 @@ export interface OptionsStylistic {
 
 export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
 
+export type ReactConfig = ESLintReactSettings & OptionsOverrides;
+
 export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem["rules"];
 }
@@ -221,7 +224,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default false
 	 */
-	react?: OptionsOverrides | boolean;
+	react?: ReactConfig | boolean;
 
 	/**
 	 * Enable Roblox-TS support.

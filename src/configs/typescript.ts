@@ -128,12 +128,10 @@ export async function typescript(
 			},
 			name: "style:typescript:rules",
 			rules: {
-				...renameRules(
-					pluginTs.configs["eslint-recommended"].overrides?.[0].rules ?? {},
-					"@typescript-eslint/",
-					"ts/",
-				),
-				...renameRules(pluginTs.configs.strict.rules ?? {}, "@typescript-eslint/", "ts/"),
+				...renameRules(pluginTs.configs["eslint-recommended"].overrides?.[0].rules ?? {}, {
+					"@typescript-eslint": "ts",
+				}),
+				...renameRules(pluginTs.configs.strict.rules ?? {}, { "@typescript-eslint": "ts" }),
 
 				"array-callback-return": [
 					"error",

@@ -1453,6 +1453,7 @@ export interface RuleOptions {
   /**
    * disallow complicated conditional rendering
    * @see https://eslint-react.xyz/rules/no-complicated-conditional-rendering
+   * @deprecated
    */
   'no-autofix/@eslint-react/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
@@ -1488,6 +1489,7 @@ export interface RuleOptions {
   /**
    * disallow spreading 'key' from objects.
    * @see https://eslint-react.xyz/rules/no-implicit-key
+   * @deprecated
    */
   'no-autofix/@eslint-react/no-implicit-key'?: Linter.RuleEntry<[]>
   /**
@@ -7349,6 +7351,7 @@ export interface RuleOptions {
   /**
    * disallow complicated conditional rendering
    * @see https://eslint-react.xyz/rules/no-complicated-conditional-rendering
+   * @deprecated
    */
   'no-autofix/react-core/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
@@ -7384,6 +7387,7 @@ export interface RuleOptions {
   /**
    * disallow spreading 'key' from objects.
    * @see https://eslint-react.xyz/rules/no-implicit-key
+   * @deprecated
    */
   'no-autofix/react-core/no-implicit-key'?: Linter.RuleEntry<[]>
   /**
@@ -8124,106 +8128,6 @@ export interface RuleOptions {
    * @deprecated
    */
   'no-autofix/rest-spread-spacing'?: Linter.RuleEntry<NoAutofixRestSpreadSpacing>
-  /**
-   * Warns against falsy strings and numbers
-   * @see lua-truthiness
-   */
-  'no-autofix/roblox-ts/lua-truthiness'?: Linter.RuleEntry<[]>
-  /**
-   * Bans LuaTuples boolean expressions
-   * @see misleading-luatuple-checks
-   */
-  'no-autofix/roblox-ts/misleading-luatuple-checks'?: Linter.RuleEntry<[]>
-  /**
-   * Bans prototype from being used
-   * @see no-any
-   */
-  'no-autofix/roblox-ts/no-any'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows usage of pairs() and ipairs() with Array<T>
-   * @see no-array-pairs
-   */
-  'no-autofix/roblox-ts/no-array-pairs'?: Linter.RuleEntry<[]>
-  /**
-   * Bans enum declaration merging
-   * @see no-enum-merging
-   */
-  'no-autofix/roblox-ts/no-enum-merging'?: Linter.RuleEntry<[]>
-  /**
-   * Bans using `export =` on a let variable
-   * @see no-export-assignment-let
-   */
-  'no-autofix/roblox-ts/no-export-assignment-let'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows iterating with a for-in loop
-   * @see no-for-in
-   */
-  'no-autofix/roblox-ts/no-for-in'?: Linter.RuleEntry<[]>
-  /**
-   * Bans function expression names
-   * @see no-function-expression-id
-   */
-  'no-autofix/roblox-ts/no-function-expression-id'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows getters and setters
-   * @see no-getters-or-setters
-   */
-  'no-autofix/roblox-ts/no-getters-or-setters'?: Linter.RuleEntry<[]>
-  /**
-   * Bans globalThis from being used
-   * @see no-global-this
-   */
-  'no-autofix/roblox-ts/no-global-this'?: Linter.RuleEntry<[]>
-  /**
-   * Bans namespace declaration merging
-   * @see no-namespace-merging
-   */
-  'no-autofix/roblox-ts/no-namespace-merging'?: Linter.RuleEntry<[]>
-  /**
-   * Bans null from being used
-   * @see no-null
-   */
-  'no-autofix/roblox-ts/no-null'?: Linter.RuleEntry<[]>
-  /**
-   * Bans math operators from being used on data types
-   * @see no-object-math
-   */
-  'no-autofix/roblox-ts/no-object-math'?: Linter.RuleEntry<[]>
-  /**
-   * Bans spread elements not last in a list of arguments from being used
-   * @see no-preceding-spread-element
-   */
-  'no-autofix/roblox-ts/no-preceding-spread-element'?: Linter.RuleEntry<[]>
-  /**
-   * Bans private identifiers from being used
-   * @see no-private-identifier
-   */
-  'no-autofix/roblox-ts/no-private-identifier'?: Linter.RuleEntry<[]>
-  /**
-   * Bans prototype from being used
-   * @see no-prototype
-   */
-  'no-autofix/roblox-ts/no-prototype'?: Linter.RuleEntry<[]>
-  /**
-   * Bans calling .new() on Roblox objects (helps transition to TS)
-   * @see no-rbx-postfix-new
-   */
-  'no-autofix/roblox-ts/no-rbx-postfix-new'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows the regex operator
-   * @see no-regex
-   */
-  'no-autofix/roblox-ts/no-regex'?: Linter.RuleEntry<[]>
-  /**
-   * Bans spread destructuring from being used
-   * @see no-spread-destructuring
-   */
-  'no-autofix/roblox-ts/no-spread-destructuring'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows the typeof operator for values
-   * @see no-value-typeof
-   */
-  'no-autofix/roblox-ts/no-value-typeof'?: Linter.RuleEntry<[]>
   /**
    * Require or disallow semicolons instead of ASI
    * @see https://eslint.org/docs/latest/rules/semi
@@ -10592,105 +10496,10 @@ export interface RuleOptions {
    */
   'react-naming-convention/use-state'?: Linter.RuleEntry<[]>
   /**
-   * disallow passing 'children' to void DOM elements
-   * @see https://eslint-react.xyz/rules/dom-no-children-in-void-dom-elements
-   */
-  'react/dom/no-children-in-void-dom-elements'?: Linter.RuleEntry<[]>
-  /**
-   * disallow when a DOM component is using 'dangerouslySetInnerHTML'
-   * @see https://eslint-react.xyz/rules/dom-no-dangerously-set-innerhtml
-   */
-  'react/dom/no-dangerously-set-innerhtml'?: Linter.RuleEntry<[]>
-  /**
-   * disallow when a DOM component is using both 'children' and 'dangerouslySetInnerHTML'
-   * @see https://eslint-react.xyz/rules/dom-no-dangerously-set-innerhtml-with-children
-   */
-  'react/dom/no-dangerously-set-innerhtml-with-children'?: Linter.RuleEntry<[]>
-  /**
-   * disallow 'findDOMNode'
-   * @see https://eslint-react.xyz/rules/dom-no-find-dom-node
-   */
-  'react/dom/no-find-dom-node'?: Linter.RuleEntry<[]>
-  /**
-   * enforce that button component have an explicit 'type' attribute
-   * @see https://eslint-react.xyz/rules/dom-no-missing-button-type
-   */
-  'react/dom/no-missing-button-type'?: Linter.RuleEntry<[]>
-  /**
-   * enforce that 'iframe' component have an explicit 'sandbox' attribute
-   * @see https://eslint-react.xyz/rules/dom-no-missing-iframe-sandbox
-   */
-  'react/dom/no-missing-iframe-sandbox'?: Linter.RuleEntry<[]>
-  /**
-   * enforce that namespaces are not used in React elements
-   * @see https://eslint-react.xyz/rules/dom-no-namespace
-   */
-  'react/dom/no-namespace'?: Linter.RuleEntry<[]>
-  /**
-   * disallow usage of the return value of 'ReactDOM.render'
-   * @see https://eslint-react.xyz/rules/dom-no-render-return-value
-   */
-  'react/dom/no-render-return-value'?: Linter.RuleEntry<[]>
-  /**
-   * disallow 'javascript:' URLs as JSX event handler prop's value
-   * @see https://eslint-react.xyz/rules/dom-no-script-url
-   */
-  'react/dom/no-script-url'?: Linter.RuleEntry<[]>
-  /**
-   * disallow unsafe iframe 'sandbox' attribute combinations
-   * @see https://eslint-react.xyz/rules/dom-no-unsafe-iframe-sandbox
-   */
-  'react/dom/no-unsafe-iframe-sandbox'?: Linter.RuleEntry<[]>
-  /**
-   * disallow 'target="_blank"' on an external link without 'rel="noreferrer noopener"'.
-   * @see https://eslint-react.xyz/rules/dom-no-unsafe-target-blank
-   */
-  'react/dom/no-unsafe-target-blank'?: Linter.RuleEntry<[]>
-  /**
    * require all 'forwardRef' components include a 'ref' parameter
    * @see https://eslint-react.xyz/rules/ensure-forward-ref-using-ref
    */
   'react/ensure-forward-ref-using-ref'?: Linter.RuleEntry<[]>
-  /**
-   * enforce custom hooks using other hooks
-   * @see https://eslint-react.xyz/rules/hooks-extra-ensure-custom-hooks-using-other-hooks
-   */
-  'react/hooks-extra/ensure-custom-hooks-using-other-hooks'?: Linter.RuleEntry<[]>
-  /**
-   * enforce 'useCallback' has non-empty dependencies array
-   * @see https://eslint-react.xyz/rules/hooks-extra-ensure-use-callback-has-non-empty-deps
-   */
-  'react/hooks-extra/ensure-use-callback-has-non-empty-deps'?: Linter.RuleEntry<[]>
-  /**
-   * enforce 'useMemo' has non-empty dependencies array
-   * @see https://eslint-react.xyz/rules/hooks-extra-ensure-use-memo-has-non-empty-deps
-   */
-  'react/hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
-  /**
-   * disallow function calls in 'useState' that aren't wrapped in an initializer function
-   * @see https://eslint-react.xyz/rules/hooks-extra-prefer-use-state-lazy-initialization
-   */
-  'react/hooks-extra/prefer-use-state-lazy-initialization'?: Linter.RuleEntry<[]>
-  /**
-   * enforce component naming convention to 'PascalCase' or 'CONSTANT_CASE'
-   * @see https://eslint-react.xyz/rules/naming-convention-component-name
-   */
-  'react/naming-convention/component-name'?: Linter.RuleEntry<ReactNamingConventionComponentName>
-  /**
-   * enforce naming convention for JSX filenames
-   * @see https://eslint-react.xyz/rules/naming-convention-filename
-   */
-  'react/naming-convention/filename'?: Linter.RuleEntry<ReactNamingConventionFilename>
-  /**
-   * enforce naming convention for JSX file extensions
-   * @see https://eslint-react.xyz/rules/naming-convention-filename-extension
-   */
-  'react/naming-convention/filename-extension'?: Linter.RuleEntry<ReactNamingConventionFilenameExtension>
-  /**
-   * enforce destructuring and symmetric naming of 'useState' hook value and setter variables
-   * @see https://eslint-react.xyz/rules/naming-convention-use-state
-   */
-  'react/naming-convention/use-state'?: Linter.RuleEntry<[]>
   /**
    * disallow accessing 'this.state' within 'setState'
    * @see https://eslint-react.xyz/rules/no-access-state-in-setstate
@@ -10749,6 +10558,7 @@ export interface RuleOptions {
   /**
    * disallow complicated conditional rendering
    * @see https://eslint-react.xyz/rules/no-complicated-conditional-rendering
+   * @deprecated
    */
   'react/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
@@ -10784,6 +10594,7 @@ export interface RuleOptions {
   /**
    * disallow spreading 'key' from objects.
    * @see https://eslint-react.xyz/rules/no-implicit-key
+   * @deprecated
    */
   'react/no-implicit-key'?: Linter.RuleEntry<[]>
   /**
@@ -24346,22 +24157,6 @@ type ReactNamingConventionFilename = []|[(("PascalCase" | "camelCase" | "kebab-c
   rule?: ("PascalCase" | "camelCase" | "kebab-case" | "snake_case")
 })]
 // ----- react-naming-convention/filename-extension -----
-type ReactNamingConventionFilenameExtension = []|[(("always" | "as-needed") | {
-  allow?: ("always" | "as-needed")
-  extensions?: string[]
-})]
-// ----- react/naming-convention/component-name -----
-type ReactNamingConventionComponentName = []|[(("PascalCase" | "CONSTANT_CASE") | {
-  excepts?: string[]
-  rule?: ("PascalCase" | "CONSTANT_CASE")
-})]
-// ----- react/naming-convention/filename -----
-type ReactNamingConventionFilename = []|[(("PascalCase" | "camelCase" | "kebab-case" | "snake_case") | {
-  excepts?: string[]
-  extensions?: string[]
-  rule?: ("PascalCase" | "camelCase" | "kebab-case" | "snake_case")
-})]
-// ----- react/naming-convention/filename-extension -----
 type ReactNamingConventionFilenameExtension = []|[(("always" | "as-needed") | {
   allow?: ("always" | "as-needed")
   extensions?: string[]

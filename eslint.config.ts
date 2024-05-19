@@ -8,7 +8,7 @@ export default style(
 	{
 		formatters: true,
 		ignores: ["fixtures", "_fixtures", "src/typegen.d.ts"],
-		react: true,
+		react: false,
 		roblox: false,
 	},
 	{
