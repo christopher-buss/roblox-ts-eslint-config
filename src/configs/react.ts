@@ -12,7 +12,7 @@ import { ensurePackages, interopDefault, toArray } from "../utils";
 export async function react(
 	options: OptionsFiles & OptionsTypeScriptWithTypes & ReactConfig = {},
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { files = [GLOB_TS, GLOB_TSX], overrides = {} } = options;
+	const { files = [GLOB_TS, GLOB_TSX], importSource, jsxPragma, overrides = {} } = options;
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"]);
 
@@ -189,8 +189,8 @@ export async function react(
 					version: "17.0",
 				},
 				reactOptions: {
-					importSource: "@rbxts",
-					jsxPragma: "React",
+					importSource: importSource ?? "@rbxts",
+					jsxPragma: jsxPragma ?? "React",
 				},
 			},
 		},
