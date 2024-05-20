@@ -200,5 +200,11 @@ export async function react(
 				"react-hooks/rules-of-hooks": "off",
 			},
 		},
+		{
+			files: [GLOB_TSX],
+			rules: {
+				"max-lines-per-function": "off",
+			},
+		},
 	];
 }
