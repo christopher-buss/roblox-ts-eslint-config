@@ -13,7 +13,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 			},
 			rules: {
 				"jsdoc/check-access": "warn",
-				"jsdoc/check-param-names": "warn",
+				"jsdoc/check-param-names": ["warn", { checkDestructured: false }],
 				"jsdoc/check-property-names": "warn",
 				"jsdoc/check-types": "warn",
 				"jsdoc/empty-tags": "warn",
@@ -28,7 +28,10 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 				"jsdoc/require-description": ["warn", { exemptedBy: ["hidden, ignore"] }],
 				"jsdoc/require-description-complete-sentence": "warn",
 				"jsdoc/require-hyphen-before-param-description": "warn",
-				"jsdoc/require-param": ["warn", { exemptedBy: ["hidden"] }],
+				"jsdoc/require-param": [
+					"warn",
+					{ checkDestructured: false, exemptedBy: ["ignore"] },
+				],
 				"jsdoc/require-param-description": "warn",
 				"jsdoc/require-param-name": "warn",
 				"jsdoc/require-property": "warn",

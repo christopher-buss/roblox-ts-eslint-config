@@ -149,6 +149,13 @@ export async function typescript(
 					},
 				],
 				"logical-assignment-operators": "error",
+				"max-classes-per-file": "error",
+				"max-depth": "error",
+				"max-lines": "warn",
+				"max-lines-per-function": [
+					"warn",
+					{ max: 30, skipBlankLines: true, skipComments: true },
+				],
 				"no-autofix/no-useless-return": "error",
 				"no-autofix/prefer-const": [
 					"error",
@@ -179,6 +186,7 @@ export async function typescript(
 				"no-useless-return": "off",
 				"object-shorthand": "error",
 				"prefer-const": "off",
+				"prefer-destructuring": "off",
 				"ts/adjacent-overload-signatures": "error",
 				"ts/array-type": [
 					"error",

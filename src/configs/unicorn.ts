@@ -39,7 +39,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				"unicorn/no-unreadable-array-destructuring": "error",
 				"unicorn/no-unused-properties": "error",
 				"unicorn/no-useless-promise-resolve-reject": "error",
-				"unicorn/no-useless-spread": "error",
+				"unicorn/no-useless-spread": "off",
 				"unicorn/no-useless-undefined": ["error", { checkArguments: false }],
 				"unicorn/number-literal-case": "error",
 				"unicorn/prefer-default-parameters": "error",
