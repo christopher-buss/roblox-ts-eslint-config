@@ -33,6 +33,7 @@ export const GLOB_EXCLUDE = [
 	"**/package-lock.json",
 	"**/yarn.lock",
 	"**/bun.lockb",
+	"**/.pnpm-store",
 
 	"**/output",
 	"**/coverage",
