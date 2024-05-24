@@ -17,3 +17,4 @@ export * from "./stylistic";
 export * from "./toml";
 export * from "./typescript";
 export * from "./unicorn";
+export * from "./yaml";

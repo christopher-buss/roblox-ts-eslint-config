@@ -257,4 +257,11 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @default auto-detect based on the dependencies
 	 */
 	typescript?: OptionsTypescript;
+
+	/**
+	 * Enable YAML support.
+	 *
+	 * @default true
+	 */
+	yaml?: OptionsOverrides | boolean;
 }

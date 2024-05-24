@@ -1,11 +1,8 @@
 # @isentinel/eslint-config
 
 <!-- - Single quotes, no semi
-- Auto fix for formatting (aimed to be used standalone **without** Prettier)
-- Designed to work with TypeScript, JSX, Vue out-of-box
-- Lints also for json, yaml, markdown
-- Sorted imports, dangling commas
-- Reasonable defaults, best practices, only one-line of config
+- Auto fix for formatting
+- Designed to work with TypeScript, JSX, JSON, Yaml, Toml, Markdown, etc. out of the box
 - Opinionated, but [very customizable](#customization)
 - [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
 - Using [ESLint Stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
@@ -152,7 +149,8 @@ Add the following settings to your `.vscode/settings.json`:
 		"markdown",
 		"json",
 		"jsonc",
-		"yaml"
+		"yaml",
+		"toml"
 	]
 }
 ```

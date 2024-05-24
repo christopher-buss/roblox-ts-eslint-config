@@ -1,6 +1,6 @@
 {
 	// Enable the ESlint flat config support
-	"eslint.experimental.useFlatConfig": true,
+	"eslint.useFlatConfig": true,
 
 	// Disable the default formatter, use eslint instead
 	"prettier.enable": false,
@@ -26,12 +26,5 @@
 	// ],
 
 	// Enable eslint for all supported languages
-	"eslint.validate": ["typescript", "typescriptreact", "markdown", "json", "jsonc", "yaml"],
-
-	"pair-diff.patterns": [
-		{
-			"source": "./fixtures/output/**/*.*",
-			"target": "./fixtures/input/<base>"
-		}
-	]
+	"eslint.validate": ["typescript", "typescriptreact", "markdown", "json", "jsonc", "yaml"]
 }

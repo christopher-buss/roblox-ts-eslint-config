@@ -6,6 +6,7 @@ import style from "./dist/index.js";
 export default style(
 	{
 		formatters: {
+			markdown: true,
 			prettierOptions: {
 				arrowParens: "avoid",
 				jsdocPreferCodeFences: true,
@@ -19,14 +20,17 @@ export default style(
 				tsdoc: true,
 				useTabs: true,
 			},
+			toml: true,
 		},
 		ignores: ["fixtures", "_fixtures", "src/typegen.d.ts"],
 		react: false,
 		roblox: false,
+		yaml: true,
 	},
 	{
 		files: ["src/**/*.ts"],
 		rules: {
+			"max-lines-per-function": "off",
 			"perfectionist/sort-objects": [
 				"error",
 				{

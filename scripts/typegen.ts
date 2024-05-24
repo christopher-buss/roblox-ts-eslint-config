@@ -23,6 +23,7 @@ import {
 	stylistic,
 	typescript,
 	unicorn,
+	yaml,
 } from "../src";
 
 const configs = await combine(
@@ -52,6 +53,7 @@ const configs = await combine(
 	stylistic(),
 	typescript(),
 	unicorn(),
+	yaml(),
 );
 
 const configNames = configs.map(index => index.name).filter(Boolean) as Array<string>;

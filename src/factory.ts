@@ -22,6 +22,7 @@ import {
 	toml,
 	typescript,
 	unicorn,
+	yaml,
 } from "./configs";
 import { formatters } from "./configs/formatters";
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types";
@@ -45,6 +46,7 @@ export const defaultPluginRenaming = {
 	"@eslint-react/naming-convention": "react-naming-convention",
 	"@stylistic": "style",
 	"@typescript-eslint": "ts",
+	yml: "yaml",
 };
 
 /**
@@ -161,6 +163,15 @@ export function style(
 			}),
 			sortPackageJson(),
 			sortTsconfig(),
+		);
+	}
+
+	if (options.yaml ?? true) {
+		configs.push(
+			yaml({
+				overrides: getOverrides(options, "yaml"),
+				stylistic: stylisticOptions,
+			}),
 		);
 	}
 
