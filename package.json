@@ -5,7 +5,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "pnpm@9.0.5",
+	"packageManager": "pnpm@9.1.2",
 	"description": "iSentinel's ESLint config",
 	"author": "Christopher Buss <christopher.buss@pm.me> (https://github.com/christopher-buss)",
 	"contributors": [
