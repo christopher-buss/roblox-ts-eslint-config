@@ -151,7 +151,7 @@ export async function typescript(
 				"logical-assignment-operators": "error",
 				"max-classes-per-file": "error",
 				"max-depth": "error",
-				"max-lines": "warn",
+				"max-lines": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
 				"max-lines-per-function": [
 					"warn",
 					{ max: 30, skipBlankLines: true, skipComments: true },
