@@ -3257,6 +3257,11 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/no-unnecessary-qualifier'?: Linter.RuleEntry<[]>
   /**
+   * Disallow unnecessary template expressions
+   * @see https://typescript-eslint.io/rules/no-unnecessary-template-expression
+   */
+  'no-autofix/@typescript-eslint/no-unnecessary-template-expression'?: Linter.RuleEntry<[]>
+  /**
    * Disallow type arguments that are equal to the default
    * @see https://typescript-eslint.io/rules/no-unnecessary-type-arguments
    */
@@ -3337,8 +3342,9 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/no-useless-empty-export'?: Linter.RuleEntry<[]>
   /**
-   * Disallow unnecessary template literals
+   * Disallow unnecessary template expressions
    * @see https://typescript-eslint.io/rules/no-useless-template-literals
+   * @deprecated
    */
   'no-autofix/@typescript-eslint/no-useless-template-literals'?: Linter.RuleEntry<[]>
   /**
@@ -3466,6 +3472,7 @@ export interface RuleOptions {
   /**
    * Enforce using `@ts-expect-error` over `@ts-ignore`
    * @see https://typescript-eslint.io/rules/prefer-ts-expect-error
+   * @deprecated
    */
   'no-autofix/@typescript-eslint/prefer-ts-expect-error'?: Linter.RuleEntry<[]>
   /**
@@ -3485,7 +3492,7 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/require-array-sort-compare'?: Linter.RuleEntry<NoAutofixTypescriptEslintRequireArraySortCompare>
   /**
-   * Disallow async functions which have no `await` expression
+   * Disallow async functions which do not return promises and have no `await` expression
    * @see https://typescript-eslint.io/rules/require-await
    */
   'no-autofix/@typescript-eslint/require-await'?: Linter.RuleEntry<[]>
@@ -3513,6 +3520,7 @@ export interface RuleOptions {
   /**
    * Enforce constituents of a type union/intersection to be sorted alphabetically
    * @see https://typescript-eslint.io/rules/sort-type-constituents
+   * @deprecated
    */
   'no-autofix/@typescript-eslint/sort-type-constituents'?: Linter.RuleEntry<NoAutofixTypescriptEslintSortTypeConstituents>
   /**
@@ -13227,6 +13235,11 @@ export interface RuleOptions {
    */
   'ts/no-unnecessary-qualifier'?: Linter.RuleEntry<[]>
   /**
+   * Disallow unnecessary template expressions
+   * @see https://typescript-eslint.io/rules/no-unnecessary-template-expression
+   */
+  'ts/no-unnecessary-template-expression'?: Linter.RuleEntry<[]>
+  /**
    * Disallow type arguments that are equal to the default
    * @see https://typescript-eslint.io/rules/no-unnecessary-type-arguments
    */
@@ -13307,8 +13320,9 @@ export interface RuleOptions {
    */
   'ts/no-useless-empty-export'?: Linter.RuleEntry<[]>
   /**
-   * Disallow unnecessary template literals
+   * Disallow unnecessary template expressions
    * @see https://typescript-eslint.io/rules/no-useless-template-literals
+   * @deprecated
    */
   'ts/no-useless-template-literals'?: Linter.RuleEntry<[]>
   /**
@@ -13436,6 +13450,7 @@ export interface RuleOptions {
   /**
    * Enforce using `@ts-expect-error` over `@ts-ignore`
    * @see https://typescript-eslint.io/rules/prefer-ts-expect-error
+   * @deprecated
    */
   'ts/prefer-ts-expect-error'?: Linter.RuleEntry<[]>
   /**
@@ -13455,7 +13470,7 @@ export interface RuleOptions {
    */
   'ts/require-array-sort-compare'?: Linter.RuleEntry<TsRequireArraySortCompare>
   /**
-   * Disallow async functions which have no `await` expression
+   * Disallow async functions which do not return promises and have no `await` expression
    * @see https://typescript-eslint.io/rules/require-await
    */
   'ts/require-await'?: Linter.RuleEntry<[]>
@@ -13483,6 +13498,7 @@ export interface RuleOptions {
   /**
    * Enforce constituents of a type union/intersection to be sorted alphabetically
    * @see https://typescript-eslint.io/rules/sort-type-constituents
+   * @deprecated
    */
   'ts/sort-type-constituents'?: Linter.RuleEntry<TsSortTypeConstituents>
   /**
@@ -19860,6 +19876,18 @@ type NoAutofixTypescriptEslintNoFloatingPromises = []|[{
   ignoreVoid?: boolean
   
   ignoreIIFE?: boolean
+  allowForKnownSafePromises?: (string | {
+    from: "file"
+    name: (string | [string, ...(string)[]])
+    path?: string
+  } | {
+    from: "lib"
+    name: (string | [string, ...(string)[]])
+  } | {
+    from: "package"
+    name: (string | [string, ...(string)[]])
+    package: string
+  })[]
 }]
 // ----- no-autofix/@typescript-eslint/no-inferrable-types -----
 type NoAutofixTypescriptEslintNoInferrableTypes = []|[{
@@ -20234,6 +20262,8 @@ type NoAutofixTypescriptEslintSortTypeConstituents = []|[{
   checkIntersections?: boolean
   
   checkUnions?: boolean
+  
+  caseSensitive?: boolean
   
   groupOrder?: ("conditional" | "function" | "import" | "intersection" | "keyword" | "nullish" | "literal" | "named" | "object" | "operator" | "tuple" | "union")[]
 }]
@@ -27915,6 +27945,18 @@ type TsNoFloatingPromises = []|[{
   ignoreVoid?: boolean
   
   ignoreIIFE?: boolean
+  allowForKnownSafePromises?: (string | {
+    from: "file"
+    name: (string | [string, ...(string)[]])
+    path?: string
+  } | {
+    from: "lib"
+    name: (string | [string, ...(string)[]])
+  } | {
+    from: "package"
+    name: (string | [string, ...(string)[]])
+    package: string
+  })[]
 }]
 // ----- ts/no-inferrable-types -----
 type TsNoInferrableTypes = []|[{
@@ -28289,6 +28331,8 @@ type TsSortTypeConstituents = []|[{
   checkIntersections?: boolean
   
   checkUnions?: boolean
+  
+  caseSensitive?: boolean
   
   groupOrder?: ("conditional" | "function" | "import" | "intersection" | "keyword" | "nullish" | "literal" | "named" | "object" | "operator" | "tuple" | "union")[]
 }]
@@ -28799,4 +28843,4 @@ type Yoda = []|[("always" | "never")]|[("always" | "never"), {
   onlyEquality?: boolean
 }]
 // Names of all the configs
-export type ConfigNames = 'style:eslint-comments' | 'style:formatters:setup' | 'style:imports' | 'style:import-sort' | 'style:jsdoc' | 'style:jsonc:setup' | 'style:jsonc:rules' | 'style:markdown:setup' | 'style:markdown:processor' | 'style:markdown:disables' | 'style:perfectionist' | 'style:promise' | 'style:react:setup' | 'style:react:rules' | 'style:roblox' | 'style:shopify' | 'style:sonarjs' | 'style:sort-package-json' | 'style:sort-tsconfig' | 'style:stylistic' | 'style:typescript:setup' | 'style:typescript:rules' | 'style:typescript:dts-overrides' | 'style:unicorn' | 'style:yaml:setup' | 'style:yaml:rules'
+export type ConfigNames = 'style:eslint-comments' | 'style:formatters:setup' | 'style:imports' | 'style:import-sort' | 'style:jsdoc' | 'style:jsonc:setup' | 'style:jsonc:rules' | 'antfu/markdown/setup' | 'antfu/markdown/processor' | 'antfu/markdown/parser' | 'antfu/markdown/disables' | 'style:perfectionist' | 'style:promise' | 'style:react:setup' | 'style:react:rules' | 'style:roblox' | 'style:shopify' | 'style:sonarjs' | 'style:sort-package-json' | 'style:sort-tsconfig' | 'style:stylistic' | 'style:typescript:setup' | 'style:typescript:rules' | 'style:typescript:dts-overrides' | 'style:unicorn' | 'style:yaml:setup' | 'style:yaml:rules'

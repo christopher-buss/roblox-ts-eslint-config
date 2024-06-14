@@ -186,14 +186,10 @@ export function style(
 
 	if (options.markdown ?? true) {
 		configs.push(
-			markdown(
-				{
-					componentExts: componentExtensions,
-					overrides: getOverrides(options, "markdown"),
-				},
-
-				options.formatters === true || !!(options.formatters || {})?.markdown,
-			),
+			markdown({
+				componentExts: componentExtensions,
+				overrides: getOverrides(options, "markdown"),
+			}),
 		);
 	}
 
