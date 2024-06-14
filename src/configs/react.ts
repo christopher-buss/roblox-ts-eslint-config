@@ -16,11 +16,12 @@ export async function react(
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"]);
 
-	const [pluginReact, pluginReactHooks, pluginStylistic, parserTs] = await Promise.all([
+	const [pluginReact, pluginReactHooks, pluginStylistic, parserTs, pluginTs] = await Promise.all([
 		interopDefault(import("@eslint-react/eslint-plugin")),
 		interopDefault(import("eslint-plugin-react-hooks")),
 		interopDefault(import("@stylistic/eslint-plugin")),
 		interopDefault(import("@typescript-eslint/parser")),
+		interopDefault(import("@typescript-eslint/eslint-plugin")),
 	] as const);
 
 	const plugins = pluginReact.configs.all.plugins;
@@ -36,6 +37,7 @@ export async function react(
 				"react-hooks-extra": plugins["@eslint-react/hooks-extra"],
 				"react-naming-convention": plugins["@eslint-react/naming-convention"],
 				style: pluginStylistic,
+				ts: pluginTs,
 			},
 		},
 		{
@@ -85,7 +87,8 @@ export async function react(
 				"react/no-unsafe-component-will-receive-props": "off",
 				"react/no-unsafe-component-will-update": "off",
 				"react/no-unstable-context-value": "error",
-				"react/no-unstable-default-props": "error",
+				// TODO: False positives on roblox primitives.
+				"react/no-unstable-default-props": "off",
 				"react/no-unused-class-component-members": "warn",
 				"react/no-unused-state": "warn",
 				"react/no-useless-fragment": "warn",
@@ -103,63 +106,6 @@ export async function react(
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
 				// recommended rules from @eslint-react/naming-convention
 				"react-naming-convention/use-state": "error",
-
-				// "react/destructuring-assignment": [
-				// 	"error",
-				// 	"always",
-				// 	{
-				// 		destructureInSignature: "always",
-				// 	},
-				// ],
-				// "react/display-name": "off",
-				// "react/function-component-definition": "error",
-				// "react/hook-use-state": "error",
-				// "react/jsx-boolean-value": ["error", "always"],
-				// "react/jsx-fragments": "error",
-				// "react/jsx-handler-names": "error",
-				// "react/jsx-key": "error",
-				// "react/jsx-max-depth": [
-				// 	"error",
-				// 	{
-				// 		max: 5,
-				// 	},
-				// ],
-				// "react/jsx-no-bind": "error",
-				// "react/jsx-no-comment-textnodes": "error",
-				// "react/jsx-no-duplicate-props": "error",
-				// "react/jsx-no-leaked-render": "error",
-				// "react/jsx-no-target-blank": "error",
-				// "react/jsx-no-undef": "off",
-				// "react/jsx-uses-react": "error",
-				// "react/jsx-uses-vars": "error",
-				// "react/no-children-prop": "error",
-				// "react/no-danger-with-children": "off",
-				// "react/no-deprecated": "error",
-				// "react/no-direct-mutation-state": "error",
-				// "react/no-find-dom-node": "off",
-				// "react/no-is-mounted": "error",
-				// "react/no-render-return-value": "error",
-				// "react/no-string-refs": "error",
-				// "react/no-unescaped-entities": "off",
-				// "react/no-unknown-property": "off",
-				// "react/no-unsafe": "off",
-				// "react/no-unstable-nested-components": [
-				// 	"error",
-				// 	{
-				// 		allowAsProps: true,
-				// 	},
-				// ],
-				// "react/no-unused-prop-types": "error",
-				// "react/prefer-read-only-props": "error",
-				// "react/prop-types": "off",
-				// "react/react-in-jsx-scope": "off",
-				// "react/require-render-return": "error",
-				// "react/self-closing-comp": [
-				// 	"error",
-				// 	{
-				// 		component: true,
-				// 	},
-				// ],
 
 				"style/jsx-curly-brace-presence": [
 					"error",
@@ -204,6 +150,7 @@ export async function react(
 			files: [GLOB_TSX],
 			rules: {
 				"max-lines-per-function": "off",
+				"ts/no-magic-numbers": "off",
 			},
 		},
 	];
