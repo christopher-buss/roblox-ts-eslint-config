@@ -32,8 +32,8 @@ export async function comments(): Promise<Array<TypedFlatConfigItem>> {
 				"eslint-comments/no-unused-enable": "error",
 				"eslint-comments/require-description": "error",
 
-				"multiline-comment-style": ["error", "separate-lines"],
 				"no-inline-comments": "error",
+				"style/multiline-comment-style": ["error", "separate-lines"],
 			},
 		},
 	];
