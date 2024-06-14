@@ -38,7 +38,7 @@ jobs:
       - name: Typecheck
         run: nr typecheck
 
-  test:
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:

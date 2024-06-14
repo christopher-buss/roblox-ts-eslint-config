@@ -14,6 +14,11 @@ export interface RuleOptions {
    */
   'antfu/consistent-list-newline'?: Linter.RuleEntry<AntfuConsistentListNewline>
   /**
+   * Enforce Anthony's style of curly bracket
+   * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/curly.test.ts
+   */
+  'antfu/curly'?: Linter.RuleEntry<[]>
+  /**
    * Newline after if
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/if-newline.md
    */
@@ -312,7 +317,7 @@ export interface RuleOptions {
    */
   'func-names'?: Linter.RuleEntry<FuncNames>
   /**
-   * Enforce the consistent use of either `function` declarations or expressions
+   * Enforce the consistent use of either `function` declarations or expressions assigned to variables
    * @see https://eslint.org/docs/latest/rules/func-style
    */
   'func-style'?: Linter.RuleEntry<FuncStyle>
@@ -390,42 +395,42 @@ export interface RuleOptions {
   'implicit-arrow-linebreak'?: Linter.RuleEntry<ImplicitArrowLinebreak>
   /**
    * Enforce or ban the use of inline type-only markers for named imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/consistent-type-specifier-style.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/consistent-type-specifier-style.md
    */
   'import/consistent-type-specifier-style'?: Linter.RuleEntry<ImportConsistentTypeSpecifierStyle>
   /**
    * Ensure a default export is present, given a default import.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/default.md
    */
   'import/default'?: Linter.RuleEntry<[]>
   /**
    * Enforce a leading comment with the webpackChunkName for dynamic imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/dynamic-import-chunkname.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/dynamic-import-chunkname.md
    */
   'import/dynamic-import-chunkname'?: Linter.RuleEntry<ImportDynamicImportChunkname>
   /**
    * Forbid any invalid exports, i.e. re-export of the same name.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/export.md
    */
   'import/export'?: Linter.RuleEntry<[]>
   /**
    * Ensure all exports appear after other statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/exports-last.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/exports-last.md
    */
   'import/exports-last'?: Linter.RuleEntry<[]>
   /**
    * Ensure consistent use of file extension within the import path.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/extensions.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/extensions.md
    */
   'import/extensions'?: Linter.RuleEntry<ImportExtensions>
   /**
    * Ensure all imports appear before other statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/first.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/first.md
    */
   'import/first'?: Linter.RuleEntry<ImportFirst>
   /**
    * Prefer named exports to be grouped together in a single export declaration.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/group-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/group-exports.md
    */
   'import/group-exports'?: Linter.RuleEntry<[]>
   /**
@@ -436,182 +441,182 @@ export interface RuleOptions {
   'import/imports-first'?: Linter.RuleEntry<ImportImportsFirst>
   /**
    * Enforce the maximum number of dependencies a module can have.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/max-dependencies.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/max-dependencies.md
    */
   'import/max-dependencies'?: Linter.RuleEntry<ImportMaxDependencies>
   /**
    * Ensure named imports correspond to a named export in the remote file.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/named.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/named.md
    */
   'import/named'?: Linter.RuleEntry<ImportNamed>
   /**
    * Ensure imported namespaces contain dereferenced properties as they are dereferenced.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/namespace.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/namespace.md
    */
   'import/namespace'?: Linter.RuleEntry<ImportNamespace>
   /**
    * Enforce a newline after import statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/newline-after-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/newline-after-import.md
    */
   'import/newline-after-import'?: Linter.RuleEntry<ImportNewlineAfterImport>
   /**
    * Forbid import of modules using absolute paths.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-absolute-path.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-absolute-path.md
    */
   'import/no-absolute-path'?: Linter.RuleEntry<ImportNoAbsolutePath>
   /**
    * Forbid AMD `require` and `define` calls.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-amd.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-amd.md
    */
   'import/no-amd'?: Linter.RuleEntry<[]>
   /**
    * Forbid anonymous values as default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-anonymous-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-anonymous-default-export.md
    */
   'import/no-anonymous-default-export'?: Linter.RuleEntry<ImportNoAnonymousDefaultExport>
   /**
    * Forbid CommonJS `require` calls and `module.exports` or `exports.*`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-commonjs.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-commonjs.md
    */
   'import/no-commonjs'?: Linter.RuleEntry<ImportNoCommonjs>
   /**
    * Forbid a module from importing a module with a dependency path back to itself.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-cycle.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-cycle.md
    */
   'import/no-cycle'?: Linter.RuleEntry<ImportNoCycle>
   /**
    * Forbid default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-default-export.md
    */
   'import/no-default-export'?: Linter.RuleEntry<[]>
   /**
    * Forbid imported names marked with `@deprecated` documentation tag.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-deprecated.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-deprecated.md
    */
   'import/no-deprecated'?: Linter.RuleEntry<[]>
   /**
    * Forbid repeated import of the same module in multiple places.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-duplicates.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-duplicates.md
    */
   'import/no-duplicates'?: Linter.RuleEntry<ImportNoDuplicates>
   /**
    * Forbid `require()` calls with expressions.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-dynamic-require.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-dynamic-require.md
    */
   'import/no-dynamic-require'?: Linter.RuleEntry<ImportNoDynamicRequire>
   /**
    * Forbid empty named import blocks.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-empty-named-blocks.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-empty-named-blocks.md
    */
   'import/no-empty-named-blocks'?: Linter.RuleEntry<[]>
   /**
    * Forbid the use of extraneous packages.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-extraneous-dependencies.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-extraneous-dependencies.md
    */
   'import/no-extraneous-dependencies'?: Linter.RuleEntry<ImportNoExtraneousDependencies>
   /**
    * Forbid import statements with CommonJS module.exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-import-module-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-import-module-exports.md
    */
   'import/no-import-module-exports'?: Linter.RuleEntry<ImportNoImportModuleExports>
   /**
    * Forbid importing the submodules of other modules.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-internal-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-internal-modules.md
    */
   'import/no-internal-modules'?: Linter.RuleEntry<ImportNoInternalModules>
   /**
    * Forbid the use of mutable exports with `var` or `let`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-mutable-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-mutable-exports.md
    */
   'import/no-mutable-exports'?: Linter.RuleEntry<[]>
   /**
    * Forbid use of exported name as identifier of default export.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-as-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-as-default.md
    */
   'import/no-named-as-default'?: Linter.RuleEntry<[]>
   /**
    * Forbid use of exported name as property of default export.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-as-default-member.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-as-default-member.md
    */
   'import/no-named-as-default-member'?: Linter.RuleEntry<[]>
   /**
    * Forbid named default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-default.md
    */
   'import/no-named-default'?: Linter.RuleEntry<[]>
   /**
    * Forbid named exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-export.md
    */
   'import/no-named-export'?: Linter.RuleEntry<[]>
   /**
    * Forbid namespace (a.k.a. "wildcard" `*`) imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-namespace.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-namespace.md
    */
   'import/no-namespace'?: Linter.RuleEntry<ImportNoNamespace>
   /**
    * Forbid Node.js builtin modules.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-nodejs-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-nodejs-modules.md
    */
   'import/no-nodejs-modules'?: Linter.RuleEntry<ImportNoNodejsModules>
   /**
    * Forbid importing packages through relative paths.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-relative-packages.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-relative-packages.md
    */
   'import/no-relative-packages'?: Linter.RuleEntry<ImportNoRelativePackages>
   /**
    * Forbid importing modules from parent directories.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-relative-parent-imports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-relative-parent-imports.md
    */
   'import/no-relative-parent-imports'?: Linter.RuleEntry<ImportNoRelativeParentImports>
   /**
    * Enforce which files can be imported in a given folder.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-restricted-paths.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-restricted-paths.md
    */
   'import/no-restricted-paths'?: Linter.RuleEntry<ImportNoRestrictedPaths>
   /**
    * Forbid a module from importing itself.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-self-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-self-import.md
    */
   'import/no-self-import'?: Linter.RuleEntry<[]>
   /**
    * Forbid unassigned imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-unassigned-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-unassigned-import.md
    */
   'import/no-unassigned-import'?: Linter.RuleEntry<ImportNoUnassignedImport>
   /**
    * Ensure imports point to a file/module that can be resolved.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-unresolved.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-unresolved.md
    */
   'import/no-unresolved'?: Linter.RuleEntry<ImportNoUnresolved>
   /**
    * Forbid modules without exports, or exports without matching import in another module.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-unused-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-unused-modules.md
    */
   'import/no-unused-modules'?: Linter.RuleEntry<ImportNoUnusedModules>
   /**
    * Forbid unnecessary path segments in import and require statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-useless-path-segments.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-useless-path-segments.md
    */
   'import/no-useless-path-segments'?: Linter.RuleEntry<ImportNoUselessPathSegments>
   /**
    * Forbid webpack loader syntax in imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-webpack-loader-syntax.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-webpack-loader-syntax.md
    */
   'import/no-webpack-loader-syntax'?: Linter.RuleEntry<[]>
   /**
    * Enforce a convention in module import order.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/order.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/order.md
    */
   'import/order'?: Linter.RuleEntry<ImportOrder>
   /**
    * Prefer a default export if module exports a single name or multiple names.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/prefer-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/prefer-default-export.md
    */
   'import/prefer-default-export'?: Linter.RuleEntry<ImportPreferDefaultExport>
   /**
    * Forbid potentially ambiguous parse goal (`script` vs. `module`).
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/unambiguous.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/unambiguous.md
    */
   'import/unambiguous'?: Linter.RuleEntry<[]>
   /**
@@ -1303,6 +1308,16 @@ export interface RuleOptions {
    */
   'no-autofix/@babel/semi'?: Linter.RuleEntry<NoAutofixBabelSemi>
   /**
+   * enforce boolean attributes notation in JSX
+   * @see https://eslint-react.xyz/rules/avoid-shorthand-boolean
+   */
+  'no-autofix/@eslint-react/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using fragment component instead of shorthand fragment syntax
+   * @see https://eslint-react.xyz/rules/avoid-shorthand-fragment
+   */
+  'no-autofix/@eslint-react/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
+  /**
    * disallow passing 'children' to void DOM elements
    * @see https://eslint-react.xyz/rules/dom-no-children-in-void-dom-elements
    */
@@ -1599,6 +1614,21 @@ export interface RuleOptions {
    * @see https://eslint-react.xyz/rules/prefer-shorthand-fragment
    */
   'no-autofix/@eslint-react/prefer-shorthand-fragment'?: Linter.RuleEntry<[]>
+  /**
+   * Reflows multi-line comments to ensure that blocks never exceed the configured length
+   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-multi-line-comments/docs.md
+   */
+  'no-autofix/@isentinel/comment-length/limit-multi-line-comments'?: Linter.RuleEntry<NoAutofixIsentinelCommentLengthLimitMultiLineComments>
+  /**
+   * Reflows single-line comments to ensure that blocks never exceed the configured length
+   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-single-line-comments/docs.md
+   */
+  'no-autofix/@isentinel/comment-length/limit-single-line-comments'?: Linter.RuleEntry<NoAutofixIsentinelCommentLengthLimitSingleLineComments>
+  /**
+   * Reflows javascript comments within tagged template literals to ensure that blocks never exceed the configured length
+   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-tagged-template-literal-comments/docs.md
+   */
+  'no-autofix/@isentinel/comment-length/limit-tagged-template-literal-comments'?: Linter.RuleEntry<NoAutofixIsentinelCommentLengthLimitTaggedTemplateLiteralComments>
   /**
    * Enforce (or disallow) assignments of binary, boolean-producing expressions to be wrapped in parentheses.
    */
@@ -3555,6 +3585,11 @@ export interface RuleOptions {
    */
   'no-autofix/antfu/consistent-list-newline'?: Linter.RuleEntry<NoAutofixAntfuConsistentListNewline>
   /**
+   * Enforce Anthony's style of curly bracket
+   * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/curly.test.ts
+   */
+  'no-autofix/antfu/curly'?: Linter.RuleEntry<[]>
+  /**
    * Newline after if
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/if-newline.md
    */
@@ -3695,21 +3730,6 @@ export interface RuleOptions {
    * @deprecated
    */
   'no-autofix/comma-style'?: Linter.RuleEntry<NoAutofixCommaStyle>
-  /**
-   * Reflows multi-line comments to ensure that blocks never exceed the configured length
-   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-multi-line-comments/docs.md
-   */
-  'no-autofix/comment-length/limit-multi-line-comments'?: Linter.RuleEntry<NoAutofixCommentLengthLimitMultiLineComments>
-  /**
-   * Reflows single-line comments to ensure that blocks never exceed the configured length
-   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-single-line-comments/docs.md
-   */
-  'no-autofix/comment-length/limit-single-line-comments'?: Linter.RuleEntry<NoAutofixCommentLengthLimitSingleLineComments>
-  /**
-   * Reflows javascript comments within tagged template literals to ensure that blocks never exceed the configured length
-   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-tagged-template-literal-comments/docs.md
-   */
-  'no-autofix/comment-length/limit-tagged-template-literal-comments'?: Linter.RuleEntry<NoAutofixCommentLengthLimitTaggedTemplateLiteralComments>
   /**
    * Enforce a maximum cyclomatic complexity allowed in a program
    * @see https://eslint.org/docs/latest/rules/complexity
@@ -5358,7 +5378,7 @@ export interface RuleOptions {
    */
   'no-autofix/func-names'?: Linter.RuleEntry<NoAutofixFuncNames>
   /**
-   * Enforce the consistent use of either `function` declarations or expressions
+   * Enforce the consistent use of either `function` declarations or expressions assigned to variables
    * @see https://eslint.org/docs/latest/rules/func-style
    */
   'no-autofix/func-style'?: Linter.RuleEntry<NoAutofixFuncStyle>
@@ -5436,42 +5456,42 @@ export interface RuleOptions {
   'no-autofix/implicit-arrow-linebreak'?: Linter.RuleEntry<NoAutofixImplicitArrowLinebreak>
   /**
    * Enforce or ban the use of inline type-only markers for named imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/consistent-type-specifier-style.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/consistent-type-specifier-style.md
    */
   'no-autofix/import-x/consistent-type-specifier-style'?: Linter.RuleEntry<NoAutofixImportXConsistentTypeSpecifierStyle>
   /**
    * Ensure a default export is present, given a default import.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/default.md
    */
   'no-autofix/import-x/default'?: Linter.RuleEntry<[]>
   /**
    * Enforce a leading comment with the webpackChunkName for dynamic imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/dynamic-import-chunkname.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/dynamic-import-chunkname.md
    */
   'no-autofix/import-x/dynamic-import-chunkname'?: Linter.RuleEntry<NoAutofixImportXDynamicImportChunkname>
   /**
    * Forbid any invalid exports, i.e. re-export of the same name.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/export.md
    */
   'no-autofix/import-x/export'?: Linter.RuleEntry<[]>
   /**
    * Ensure all exports appear after other statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/exports-last.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/exports-last.md
    */
   'no-autofix/import-x/exports-last'?: Linter.RuleEntry<[]>
   /**
    * Ensure consistent use of file extension within the import path.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/extensions.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/extensions.md
    */
   'no-autofix/import-x/extensions'?: Linter.RuleEntry<NoAutofixImportXExtensions>
   /**
    * Ensure all imports appear before other statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/first.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/first.md
    */
   'no-autofix/import-x/first'?: Linter.RuleEntry<NoAutofixImportXFirst>
   /**
    * Prefer named exports to be grouped together in a single export declaration.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/group-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/group-exports.md
    */
   'no-autofix/import-x/group-exports'?: Linter.RuleEntry<[]>
   /**
@@ -5482,182 +5502,182 @@ export interface RuleOptions {
   'no-autofix/import-x/imports-first'?: Linter.RuleEntry<NoAutofixImportXImportsFirst>
   /**
    * Enforce the maximum number of dependencies a module can have.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/max-dependencies.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/max-dependencies.md
    */
   'no-autofix/import-x/max-dependencies'?: Linter.RuleEntry<NoAutofixImportXMaxDependencies>
   /**
    * Ensure named imports correspond to a named export in the remote file.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/named.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/named.md
    */
   'no-autofix/import-x/named'?: Linter.RuleEntry<NoAutofixImportXNamed>
   /**
    * Ensure imported namespaces contain dereferenced properties as they are dereferenced.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/namespace.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/namespace.md
    */
   'no-autofix/import-x/namespace'?: Linter.RuleEntry<NoAutofixImportXNamespace>
   /**
    * Enforce a newline after import statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/newline-after-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/newline-after-import.md
    */
   'no-autofix/import-x/newline-after-import'?: Linter.RuleEntry<NoAutofixImportXNewlineAfterImport>
   /**
    * Forbid import of modules using absolute paths.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-absolute-path.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-absolute-path.md
    */
   'no-autofix/import-x/no-absolute-path'?: Linter.RuleEntry<NoAutofixImportXNoAbsolutePath>
   /**
    * Forbid AMD `require` and `define` calls.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-amd.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-amd.md
    */
   'no-autofix/import-x/no-amd'?: Linter.RuleEntry<[]>
   /**
    * Forbid anonymous values as default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-anonymous-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-anonymous-default-export.md
    */
   'no-autofix/import-x/no-anonymous-default-export'?: Linter.RuleEntry<NoAutofixImportXNoAnonymousDefaultExport>
   /**
    * Forbid CommonJS `require` calls and `module.exports` or `exports.*`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-commonjs.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-commonjs.md
    */
   'no-autofix/import-x/no-commonjs'?: Linter.RuleEntry<NoAutofixImportXNoCommonjs>
   /**
    * Forbid a module from importing a module with a dependency path back to itself.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-cycle.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-cycle.md
    */
   'no-autofix/import-x/no-cycle'?: Linter.RuleEntry<NoAutofixImportXNoCycle>
   /**
    * Forbid default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-default-export.md
    */
   'no-autofix/import-x/no-default-export'?: Linter.RuleEntry<[]>
   /**
    * Forbid imported names marked with `@deprecated` documentation tag.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-deprecated.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-deprecated.md
    */
   'no-autofix/import-x/no-deprecated'?: Linter.RuleEntry<[]>
   /**
    * Forbid repeated import of the same module in multiple places.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-duplicates.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-duplicates.md
    */
   'no-autofix/import-x/no-duplicates'?: Linter.RuleEntry<NoAutofixImportXNoDuplicates>
   /**
    * Forbid `require()` calls with expressions.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-dynamic-require.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-dynamic-require.md
    */
   'no-autofix/import-x/no-dynamic-require'?: Linter.RuleEntry<NoAutofixImportXNoDynamicRequire>
   /**
    * Forbid empty named import blocks.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-empty-named-blocks.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-empty-named-blocks.md
    */
   'no-autofix/import-x/no-empty-named-blocks'?: Linter.RuleEntry<[]>
   /**
    * Forbid the use of extraneous packages.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-extraneous-dependencies.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-extraneous-dependencies.md
    */
   'no-autofix/import-x/no-extraneous-dependencies'?: Linter.RuleEntry<NoAutofixImportXNoExtraneousDependencies>
   /**
    * Forbid import statements with CommonJS module.exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-import-module-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-import-module-exports.md
    */
   'no-autofix/import-x/no-import-module-exports'?: Linter.RuleEntry<NoAutofixImportXNoImportModuleExports>
   /**
    * Forbid importing the submodules of other modules.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-internal-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-internal-modules.md
    */
   'no-autofix/import-x/no-internal-modules'?: Linter.RuleEntry<NoAutofixImportXNoInternalModules>
   /**
    * Forbid the use of mutable exports with `var` or `let`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-mutable-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-mutable-exports.md
    */
   'no-autofix/import-x/no-mutable-exports'?: Linter.RuleEntry<[]>
   /**
    * Forbid use of exported name as identifier of default export.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-as-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-as-default.md
    */
   'no-autofix/import-x/no-named-as-default'?: Linter.RuleEntry<[]>
   /**
    * Forbid use of exported name as property of default export.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-as-default-member.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-as-default-member.md
    */
   'no-autofix/import-x/no-named-as-default-member'?: Linter.RuleEntry<[]>
   /**
    * Forbid named default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-default.md
    */
   'no-autofix/import-x/no-named-default'?: Linter.RuleEntry<[]>
   /**
    * Forbid named exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-named-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-named-export.md
    */
   'no-autofix/import-x/no-named-export'?: Linter.RuleEntry<[]>
   /**
    * Forbid namespace (a.k.a. "wildcard" `*`) imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-namespace.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-namespace.md
    */
   'no-autofix/import-x/no-namespace'?: Linter.RuleEntry<NoAutofixImportXNoNamespace>
   /**
    * Forbid Node.js builtin modules.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-nodejs-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-nodejs-modules.md
    */
   'no-autofix/import-x/no-nodejs-modules'?: Linter.RuleEntry<NoAutofixImportXNoNodejsModules>
   /**
    * Forbid importing packages through relative paths.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-relative-packages.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-relative-packages.md
    */
   'no-autofix/import-x/no-relative-packages'?: Linter.RuleEntry<NoAutofixImportXNoRelativePackages>
   /**
    * Forbid importing modules from parent directories.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-relative-parent-imports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-relative-parent-imports.md
    */
   'no-autofix/import-x/no-relative-parent-imports'?: Linter.RuleEntry<NoAutofixImportXNoRelativeParentImports>
   /**
    * Enforce which files can be imported in a given folder.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-restricted-paths.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-restricted-paths.md
    */
   'no-autofix/import-x/no-restricted-paths'?: Linter.RuleEntry<NoAutofixImportXNoRestrictedPaths>
   /**
    * Forbid a module from importing itself.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-self-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-self-import.md
    */
   'no-autofix/import-x/no-self-import'?: Linter.RuleEntry<[]>
   /**
    * Forbid unassigned imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-unassigned-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-unassigned-import.md
    */
   'no-autofix/import-x/no-unassigned-import'?: Linter.RuleEntry<NoAutofixImportXNoUnassignedImport>
   /**
    * Ensure imports point to a file/module that can be resolved.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-unresolved.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-unresolved.md
    */
   'no-autofix/import-x/no-unresolved'?: Linter.RuleEntry<NoAutofixImportXNoUnresolved>
   /**
    * Forbid modules without exports, or exports without matching import in another module.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-unused-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-unused-modules.md
    */
   'no-autofix/import-x/no-unused-modules'?: Linter.RuleEntry<NoAutofixImportXNoUnusedModules>
   /**
    * Forbid unnecessary path segments in import and require statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-useless-path-segments.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-useless-path-segments.md
    */
   'no-autofix/import-x/no-useless-path-segments'?: Linter.RuleEntry<NoAutofixImportXNoUselessPathSegments>
   /**
    * Forbid webpack loader syntax in imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/no-webpack-loader-syntax.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/no-webpack-loader-syntax.md
    */
   'no-autofix/import-x/no-webpack-loader-syntax'?: Linter.RuleEntry<[]>
   /**
    * Enforce a convention in module import order.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/order.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/order.md
    */
   'no-autofix/import-x/order'?: Linter.RuleEntry<NoAutofixImportXOrder>
   /**
    * Prefer a default export if module exports a single name or multiple names.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/prefer-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/prefer-default-export.md
    */
   'no-autofix/import-x/prefer-default-export'?: Linter.RuleEntry<NoAutofixImportXPreferDefaultExport>
   /**
    * Forbid potentially ambiguous parse goal (`script` vs. `module`).
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.0/docs/rules/unambiguous.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v0.5.1/docs/rules/unambiguous.md
    */
   'no-autofix/import-x/unambiguous'?: Linter.RuleEntry<[]>
   /**
@@ -5912,267 +5932,272 @@ export interface RuleOptions {
   'no-autofix/jest-formatting/padding-around-test-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce `test` and `it` usage conventions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/consistent-test-it.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/consistent-test-it.md
    */
   'no-autofix/jest/consistent-test-it'?: Linter.RuleEntry<NoAutofixJestConsistentTestIt>
   /**
    * Enforce assertion to be made in a test body
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/expect-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/expect-expect.md
    */
   'no-autofix/jest/expect-expect'?: Linter.RuleEntry<NoAutofixJestExpectExpect>
   /**
    * Enforces a maximum number assertion calls in a test body
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/max-expects.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/max-expects.md
    */
   'no-autofix/jest/max-expects'?: Linter.RuleEntry<NoAutofixJestMaxExpects>
   /**
    * Enforces a maximum depth to nested describe calls
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/max-nested-describe.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/max-nested-describe.md
    */
   'no-autofix/jest/max-nested-describe'?: Linter.RuleEntry<NoAutofixJestMaxNestedDescribe>
   /**
    * Disallow alias methods
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-alias-methods.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-alias-methods.md
    */
   'no-autofix/jest/no-alias-methods'?: Linter.RuleEntry<[]>
   /**
    * Disallow commented out tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-commented-out-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-commented-out-tests.md
    */
   'no-autofix/jest/no-commented-out-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow calling `expect` conditionally
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-conditional-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-conditional-expect.md
    */
   'no-autofix/jest/no-conditional-expect'?: Linter.RuleEntry<[]>
   /**
    * Disallow conditional logic in tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-conditional-in-test.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-conditional-in-test.md
    */
   'no-autofix/jest/no-conditional-in-test'?: Linter.RuleEntry<[]>
   /**
    * Disallow confusing usages of jest.setTimeout
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-confusing-set-timeout.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-confusing-set-timeout.md
    */
   'no-autofix/jest/no-confusing-set-timeout'?: Linter.RuleEntry<[]>
   /**
    * Disallow use of deprecated functions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-deprecated-functions.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-deprecated-functions.md
    */
   'no-autofix/jest/no-deprecated-functions'?: Linter.RuleEntry<[]>
   /**
    * Disallow disabled tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-disabled-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-disabled-tests.md
    */
   'no-autofix/jest/no-disabled-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow using a callback in asynchronous tests and hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-done-callback.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-done-callback.md
    */
   'no-autofix/jest/no-done-callback'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate setup and teardown hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-duplicate-hooks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-duplicate-hooks.md
    */
   'no-autofix/jest/no-duplicate-hooks'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `exports` in files containing tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-export.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-export.md
    */
   'no-autofix/jest/no-export'?: Linter.RuleEntry<[]>
   /**
    * Disallow focused tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-focused-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-focused-tests.md
    */
   'no-autofix/jest/no-focused-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow setup and teardown hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-hooks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-hooks.md
    */
   'no-autofix/jest/no-hooks'?: Linter.RuleEntry<NoAutofixJestNoHooks>
   /**
    * Disallow identical titles
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-identical-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-identical-title.md
    */
   'no-autofix/jest/no-identical-title'?: Linter.RuleEntry<[]>
   /**
    * Disallow string interpolation inside snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-interpolation-in-snapshots.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-interpolation-in-snapshots.md
    */
   'no-autofix/jest/no-interpolation-in-snapshots'?: Linter.RuleEntry<[]>
   /**
    * Disallow Jasmine globals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-jasmine-globals.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-jasmine-globals.md
    */
   'no-autofix/jest/no-jasmine-globals'?: Linter.RuleEntry<[]>
   /**
    * Disallow large snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-large-snapshots.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-large-snapshots.md
    */
   'no-autofix/jest/no-large-snapshots'?: Linter.RuleEntry<NoAutofixJestNoLargeSnapshots>
   /**
    * Disallow manually importing from `__mocks__`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-mocks-import.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-mocks-import.md
    */
   'no-autofix/jest/no-mocks-import'?: Linter.RuleEntry<[]>
   /**
    * Disallow specific `jest.` methods
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-restricted-jest-methods.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-restricted-jest-methods.md
    */
   'no-autofix/jest/no-restricted-jest-methods'?: Linter.RuleEntry<NoAutofixJestNoRestrictedJestMethods>
   /**
    * Disallow specific matchers & modifiers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-restricted-matchers.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-restricted-matchers.md
    */
   'no-autofix/jest/no-restricted-matchers'?: Linter.RuleEntry<NoAutofixJestNoRestrictedMatchers>
   /**
    * Disallow using `expect` outside of `it` or `test` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-standalone-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-standalone-expect.md
    */
   'no-autofix/jest/no-standalone-expect'?: Linter.RuleEntry<NoAutofixJestNoStandaloneExpect>
   /**
    * Require using `.only` and `.skip` over `f` and `x`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-test-prefixes.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-test-prefixes.md
    */
   'no-autofix/jest/no-test-prefixes'?: Linter.RuleEntry<[]>
   /**
    * Disallow explicitly returning from tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-test-return-statement.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-test-return-statement.md
    */
   'no-autofix/jest/no-test-return-statement'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `jest.mock()` factories without an explicit type parameter
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/no-untyped-mock-factory.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-untyped-mock-factory.md
    */
   'no-autofix/jest/no-untyped-mock-factory'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toBeCalledWith()` or `toHaveBeenCalledWith()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-called-with.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-called-with.md
    */
   'no-autofix/jest/prefer-called-with'?: Linter.RuleEntry<[]>
   /**
    * Suggest using the built-in comparison matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-comparison-matcher.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-comparison-matcher.md
    */
   'no-autofix/jest/prefer-comparison-matcher'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `.each` rather than manual loops
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-each.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-each.md
    */
   'no-autofix/jest/prefer-each'?: Linter.RuleEntry<[]>
   /**
    * Suggest using the built-in equality matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-equality-matcher.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-equality-matcher.md
    */
   'no-autofix/jest/prefer-equality-matcher'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `expect.assertions()` OR `expect.hasAssertions()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-expect-assertions.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-expect-assertions.md
    */
   'no-autofix/jest/prefer-expect-assertions'?: Linter.RuleEntry<NoAutofixJestPreferExpectAssertions>
   /**
    * Prefer `await expect(...).resolves` over `expect(await ...)` syntax
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-expect-resolves.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-expect-resolves.md
    */
   'no-autofix/jest/prefer-expect-resolves'?: Linter.RuleEntry<[]>
   /**
    * Prefer having hooks in a consistent order
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-hooks-in-order.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-hooks-in-order.md
    */
   'no-autofix/jest/prefer-hooks-in-order'?: Linter.RuleEntry<[]>
   /**
    * Suggest having hooks before any test cases
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-hooks-on-top.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-hooks-on-top.md
    */
   'no-autofix/jest/prefer-hooks-on-top'?: Linter.RuleEntry<[]>
   /**
    * Prefer importing Jest globals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-importing-jest-globals.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-importing-jest-globals.md
    */
   'no-autofix/jest/prefer-importing-jest-globals'?: Linter.RuleEntry<NoAutofixJestPreferImportingJestGlobals>
   /**
+   * Prefer `jest.mocked()` over `fn as jest.Mock`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-jest-mocked.md
+   */
+  'no-autofix/jest/prefer-jest-mocked'?: Linter.RuleEntry<[]>
+  /**
    * Enforce lowercase test names
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-lowercase-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-lowercase-title.md
    */
   'no-autofix/jest/prefer-lowercase-title'?: Linter.RuleEntry<NoAutofixJestPreferLowercaseTitle>
   /**
    * Prefer mock resolved/rejected shorthands for promises
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-mock-promise-shorthand.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-mock-promise-shorthand.md
    */
   'no-autofix/jest/prefer-mock-promise-shorthand'?: Linter.RuleEntry<[]>
   /**
    * Prefer including a hint with external snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-snapshot-hint.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-snapshot-hint.md
    */
   'no-autofix/jest/prefer-snapshot-hint'?: Linter.RuleEntry<NoAutofixJestPreferSnapshotHint>
   /**
    * Suggest using `jest.spyOn()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-spy-on.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-spy-on.md
    */
   'no-autofix/jest/prefer-spy-on'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toStrictEqual()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-strict-equal.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-strict-equal.md
    */
   'no-autofix/jest/prefer-strict-equal'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toBe()` for primitive literals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-to-be.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-to-be.md
    */
   'no-autofix/jest/prefer-to-be'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toContain()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-to-contain.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-to-contain.md
    */
   'no-autofix/jest/prefer-to-contain'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toHaveLength()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-to-have-length.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-to-have-length.md
    */
   'no-autofix/jest/prefer-to-have-length'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `test.todo`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/prefer-todo.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-todo.md
    */
   'no-autofix/jest/prefer-todo'?: Linter.RuleEntry<[]>
   /**
    * Require setup and teardown code to be within a hook
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/require-hook.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/require-hook.md
    */
   'no-autofix/jest/require-hook'?: Linter.RuleEntry<NoAutofixJestRequireHook>
   /**
    * Require a message for `toThrow()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/require-to-throw-message.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/require-to-throw-message.md
    */
   'no-autofix/jest/require-to-throw-message'?: Linter.RuleEntry<[]>
   /**
    * Require test cases and hooks to be inside a `describe` block
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/require-top-level-describe.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/require-top-level-describe.md
    */
   'no-autofix/jest/require-top-level-describe'?: Linter.RuleEntry<NoAutofixJestRequireTopLevelDescribe>
   /**
    * Enforce unbound methods are called with their expected scope
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/unbound-method.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/unbound-method.md
    */
   'no-autofix/jest/unbound-method'?: Linter.RuleEntry<NoAutofixJestUnboundMethod>
   /**
    * Enforce valid `describe()` callback
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/valid-describe-callback.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-describe-callback.md
    */
   'no-autofix/jest/valid-describe-callback'?: Linter.RuleEntry<[]>
   /**
    * Enforce valid `expect()` usage
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/valid-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-expect.md
    */
   'no-autofix/jest/valid-expect'?: Linter.RuleEntry<NoAutofixJestValidExpect>
   /**
    * Require promises that have expectations in their chain to be valid
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/valid-expect-in-promise.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-expect-in-promise.md
    */
   'no-autofix/jest/valid-expect-in-promise'?: Linter.RuleEntry<[]>
   /**
    * Enforce valid titles
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.5.0/docs/rules/valid-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-title.md
    */
   'no-autofix/jest/valid-title'?: Linter.RuleEntry<NoAutofixJestValidTitle>
   /**
@@ -8224,63 +8249,77 @@ export interface RuleOptions {
    */
   'no-autofix/prettier/prettier'?: Linter.RuleEntry<NoAutofixPrettierPrettier>
   /**
+   * Require returning inside each `then()` to create readable and reusable Promise chains.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/always-return.md
    */
   'no-autofix/promise/always-return'?: Linter.RuleEntry<NoAutofixPromiseAlwaysReturn>
   /**
+   * Disallow creating `new` promises outside of utility libs (use [pify][] instead).
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/avoid-new.md
    */
   'no-autofix/promise/avoid-new'?: Linter.RuleEntry<[]>
   /**
+   * Enforce the use of `catch()` on un-returned promises.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/catch-or-return.md
    */
   'no-autofix/promise/catch-or-return'?: Linter.RuleEntry<NoAutofixPromiseCatchOrReturn>
   /**
+   * Disallow calling `cb()` inside of a `then()` (use [nodeify][] instead).
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-callback-in-promise.md
    */
   'no-autofix/promise/no-callback-in-promise'?: Linter.RuleEntry<NoAutofixPromiseNoCallbackInPromise>
   /**
+   * Disallow creating new promises with paths that resolve multiple times.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-multiple-resolved.md
    */
   'no-autofix/promise/no-multiple-resolved'?: Linter.RuleEntry<[]>
   /**
+   * Require creating a `Promise` constructor before using it in an ES5 environment.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-native.md
    */
   'no-autofix/promise/no-native'?: Linter.RuleEntry<[]>
   /**
+   * Disallow nested `then()` or `catch()` statements.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-nesting.md
    */
   'no-autofix/promise/no-nesting'?: Linter.RuleEntry<[]>
   /**
+   * Disallow calling `new` on a Promise static method.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-new-statics.md
    */
   'no-autofix/promise/no-new-statics'?: Linter.RuleEntry<[]>
   /**
+   * Disallow using promises inside of callbacks.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-promise-in-callback.md
    */
   'no-autofix/promise/no-promise-in-callback'?: Linter.RuleEntry<[]>
   /**
+   * Disallow return statements in `finally()`.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-return-in-finally.md
    */
   'no-autofix/promise/no-return-in-finally'?: Linter.RuleEntry<[]>
   /**
+   * Disallow wrapping values in `Promise.resolve` or `Promise.reject` when not needed.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-return-wrap.md
    */
   'no-autofix/promise/no-return-wrap'?: Linter.RuleEntry<NoAutofixPromiseNoReturnWrap>
   /**
+   * Enforce consistent param names and ordering when creating new promises.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/param-names.md
    */
   'no-autofix/promise/param-names'?: Linter.RuleEntry<NoAutofixPromiseParamNames>
   /**
+   * Prefer async/await to the callback pattern.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/prefer-await-to-callbacks.md
    */
   'no-autofix/promise/prefer-await-to-callbacks'?: Linter.RuleEntry<[]>
   /**
+   * Prefer `await` to `then()`/`catch()`/`finally()` for reading Promise values.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/prefer-await-to-then.md
    */
   'no-autofix/promise/prefer-await-to-then'?: Linter.RuleEntry<[]>
   /**
-   * Ensures the proper number of arguments are passed to Promise functions
+   * Enforces the proper number of arguments are passed to Promise functions.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/valid-params.md
    */
   'no-autofix/promise/valid-params'?: Linter.RuleEntry<[]>
@@ -8301,6 +8340,16 @@ export interface RuleOptions {
    * @see https://eslint.org/docs/latest/rules/radix
    */
   'no-autofix/radix'?: Linter.RuleEntry<NoAutofixRadix>
+  /**
+   * enforce boolean attributes notation in JSX
+   * @see https://eslint-react.xyz/rules/avoid-shorthand-boolean
+   */
+  'no-autofix/react-core/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using fragment component instead of shorthand fragment syntax
+   * @see https://eslint-react.xyz/rules/avoid-shorthand-fragment
+   */
+  'no-autofix/react-core/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
   /**
    * require all 'forwardRef' components include a 'ref' parameter
    * @see https://eslint-react.xyz/rules/ensure-forward-ref-using-ref
@@ -8782,7 +8831,7 @@ export interface RuleOptions {
    * Disallows JSX context provider values from taking values that will cause needless rerenders
    * @see https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-constructed-context-values.md
    */
-  'no-autofix/react/jsx-no-constructed-context-values'?: Linter.RuleEntry<NoAutofixReactJsxNoConstructedContextValues>
+  'no-autofix/react/jsx-no-constructed-context-values'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate properties in JSX
    * @see https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-duplicate-props.md
@@ -11406,63 +11455,77 @@ export interface RuleOptions {
    */
   'prefer-template'?: Linter.RuleEntry<[]>
   /**
+   * Require returning inside each `then()` to create readable and reusable Promise chains.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/always-return.md
    */
   'promise/always-return'?: Linter.RuleEntry<PromiseAlwaysReturn>
   /**
+   * Disallow creating `new` promises outside of utility libs (use [pify][] instead).
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/avoid-new.md
    */
   'promise/avoid-new'?: Linter.RuleEntry<[]>
   /**
+   * Enforce the use of `catch()` on un-returned promises.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/catch-or-return.md
    */
   'promise/catch-or-return'?: Linter.RuleEntry<PromiseCatchOrReturn>
   /**
+   * Disallow calling `cb()` inside of a `then()` (use [nodeify][] instead).
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-callback-in-promise.md
    */
   'promise/no-callback-in-promise'?: Linter.RuleEntry<PromiseNoCallbackInPromise>
   /**
+   * Disallow creating new promises with paths that resolve multiple times.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-multiple-resolved.md
    */
   'promise/no-multiple-resolved'?: Linter.RuleEntry<[]>
   /**
+   * Require creating a `Promise` constructor before using it in an ES5 environment.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-native.md
    */
   'promise/no-native'?: Linter.RuleEntry<[]>
   /**
+   * Disallow nested `then()` or `catch()` statements.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-nesting.md
    */
   'promise/no-nesting'?: Linter.RuleEntry<[]>
   /**
+   * Disallow calling `new` on a Promise static method.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-new-statics.md
    */
   'promise/no-new-statics'?: Linter.RuleEntry<[]>
   /**
+   * Disallow using promises inside of callbacks.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-promise-in-callback.md
    */
   'promise/no-promise-in-callback'?: Linter.RuleEntry<[]>
   /**
+   * Disallow return statements in `finally()`.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-return-in-finally.md
    */
   'promise/no-return-in-finally'?: Linter.RuleEntry<[]>
   /**
+   * Disallow wrapping values in `Promise.resolve` or `Promise.reject` when not needed.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-return-wrap.md
    */
   'promise/no-return-wrap'?: Linter.RuleEntry<PromiseNoReturnWrap>
   /**
+   * Enforce consistent param names and ordering when creating new promises.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/param-names.md
    */
   'promise/param-names'?: Linter.RuleEntry<PromiseParamNames>
   /**
+   * Prefer async/await to the callback pattern.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/prefer-await-to-callbacks.md
    */
   'promise/prefer-await-to-callbacks'?: Linter.RuleEntry<[]>
   /**
+   * Prefer `await` to `then()`/`catch()`/`finally()` for reading Promise values.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/prefer-await-to-then.md
    */
   'promise/prefer-await-to-then'?: Linter.RuleEntry<[]>
   /**
-   * Ensures the proper number of arguments are passed to Promise functions
+   * Enforces the proper number of arguments are passed to Promise functions.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/valid-params.md
    */
   'promise/valid-params'?: Linter.RuleEntry<[]>
@@ -11533,6 +11596,16 @@ export interface RuleOptions {
    * @see https://eslint-react.xyz/rules/naming-convention-use-state
    */
   'react-naming-convention/use-state'?: Linter.RuleEntry<[]>
+  /**
+   * enforce boolean attributes notation in JSX
+   * @see https://eslint-react.xyz/rules/avoid-shorthand-boolean
+   */
+  'react/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using fragment component instead of shorthand fragment syntax
+   * @see https://eslint-react.xyz/rules/avoid-shorthand-fragment
+   */
+  'react/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
   /**
    * require all 'forwardRef' components include a 'ref' parameter
    * @see https://eslint-react.xyz/rules/ensure-forward-ref-using-ref
@@ -14357,6 +14430,8 @@ type AntfuConsistentListNewline = []|[{
   ObjectPattern?: boolean
   ArrayPattern?: boolean
   JSXOpeningElement?: boolean
+  JSONArrayExpression?: boolean
+  JSONObjectExpression?: boolean
 }]
 // ----- antfu/indent-unindent -----
 type AntfuIndentUnindent = []|[{
@@ -16196,6 +16271,37 @@ type NoAutofixEslintReactNamingConventionFilenameExtension = []|[(("always" | "a
   allow?: ("always" | "as-needed")
   extensions?: string[]
 })]
+// ----- no-autofix/@isentinel/comment-length/limit-multi-line-comments -----
+type NoAutofixIsentinelCommentLengthLimitMultiLineComments = []|[{
+  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
+  maxLength?: number
+  ignoreUrls?: boolean
+  ignoreCommentsWithCode?: boolean
+  tabSize?: number
+  logicalWrap?: boolean
+  [k: string]: unknown | undefined
+}]
+// ----- no-autofix/@isentinel/comment-length/limit-single-line-comments -----
+type NoAutofixIsentinelCommentLengthLimitSingleLineComments = []|[{
+  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
+  maxLength?: number
+  ignoreUrls?: boolean
+  ignoreCommentsWithCode?: boolean
+  tabSize?: number
+  logicalWrap?: boolean
+  [k: string]: unknown | undefined
+}]
+// ----- no-autofix/@isentinel/comment-length/limit-tagged-template-literal-comments -----
+type NoAutofixIsentinelCommentLengthLimitTaggedTemplateLiteralComments = []|[{
+  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
+  maxLength?: number
+  ignoreUrls?: boolean
+  ignoreCommentsWithCode?: boolean
+  tabSize?: number
+  logicalWrap?: boolean
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
 // ----- no-autofix/@shopify/binary-assignment-parens -----
 type NoAutofixShopifyBinaryAssignmentParens = []|[("always" | "never")]
 // ----- no-autofix/@shopify/class-property-semi -----
@@ -20235,6 +20341,8 @@ type NoAutofixAntfuConsistentListNewline = []|[{
   ObjectPattern?: boolean
   ArrayPattern?: boolean
   JSXOpeningElement?: boolean
+  JSONArrayExpression?: boolean
+  JSONObjectExpression?: boolean
 }]
 // ----- no-autofix/antfu/indent-unindent -----
 type NoAutofixAntfuIndentUnindent = []|[{
@@ -20346,37 +20454,6 @@ type NoAutofixCommaStyle = []|[("first" | "last")]|[("first" | "last"), {
   exceptions?: {
     [k: string]: boolean | undefined
   }
-}]
-// ----- no-autofix/comment-length/limit-multi-line-comments -----
-type NoAutofixCommentLengthLimitMultiLineComments = []|[{
-  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
-  maxLength?: number
-  ignoreUrls?: boolean
-  ignoreCommentsWithCode?: boolean
-  tabSize?: number
-  logicalWrap?: boolean
-  [k: string]: unknown | undefined
-}]
-// ----- no-autofix/comment-length/limit-single-line-comments -----
-type NoAutofixCommentLengthLimitSingleLineComments = []|[{
-  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
-  maxLength?: number
-  ignoreUrls?: boolean
-  ignoreCommentsWithCode?: boolean
-  tabSize?: number
-  logicalWrap?: boolean
-  [k: string]: unknown | undefined
-}]
-// ----- no-autofix/comment-length/limit-tagged-template-literal-comments -----
-type NoAutofixCommentLengthLimitTaggedTemplateLiteralComments = []|[{
-  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
-  maxLength?: number
-  ignoreUrls?: boolean
-  ignoreCommentsWithCode?: boolean
-  tabSize?: number
-  logicalWrap?: boolean
-  tags?: string[]
-  [k: string]: unknown | undefined
 }]
 // ----- no-autofix/complexity -----
 type NoAutofixComplexity = []|[(number | {
@@ -23464,6 +23541,9 @@ type NoAutofixPerfectionistSortAstroAttributes = []|[{
 }]
 // ----- no-autofix/perfectionist/sort-classes -----
 type NoAutofixPerfectionistSortClasses = []|[{
+  "custom-groups"?: {
+    [k: string]: unknown | undefined
+  }
   type?: ("alphabetical" | "natural" | "line-length")
   "ignore-case"?: boolean
   order?: ("asc" | "desc")
@@ -23943,10 +24023,6 @@ type NoAutofixReactJsxNoBind = []|[{
   ignoreRefs?: boolean
   ignoreDOMComponents?: boolean
 }]
-// ----- no-autofix/react/jsx-no-constructed-context-values -----
-interface NoAutofixReactJsxNoConstructedContextValues {
-  [k: string]: unknown | undefined
-}
 // ----- no-autofix/react/jsx-no-duplicate-props -----
 type NoAutofixReactJsxNoDuplicateProps = []|[{
   ignoreCase?: boolean
@@ -25394,6 +25470,9 @@ type PerfectionistSortAstroAttributes = []|[{
 }]
 // ----- perfectionist/sort-classes -----
 type PerfectionistSortClasses = []|[{
+  "custom-groups"?: {
+    [k: string]: unknown | undefined
+  }
   type?: ("alphabetical" | "natural" | "line-length")
   "ignore-case"?: boolean
   order?: ("asc" | "desc")
