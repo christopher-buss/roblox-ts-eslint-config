@@ -107,7 +107,7 @@ export async function typescript(
 			plugins: {
 				antfu: pluginAntfu,
 				"no-autofix": pluginNoAutofix,
-				ts: pluginTs as any,
+				ts: pluginTs,
 			},
 		},
 		{
@@ -267,6 +267,7 @@ export async function typescript(
 			rules: {
 				"eslint-comments/no-unlimited-disable": "off",
 				"import/no-duplicates": "off",
+				"max-lines": "off",
 				"no-restricted-syntax": "off",
 				"unused-imports/no-unused-vars": "off",
 			},
