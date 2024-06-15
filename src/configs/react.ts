@@ -150,7 +150,6 @@ export async function react(
 			files: [GLOB_TSX],
 			rules: {
 				"max-lines-per-function": "off",
-				"ts/no-magic-numbers": "off",
 			},
 		},
 	];
