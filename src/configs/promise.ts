@@ -26,7 +26,8 @@ export async function promise(): Promise<Array<TypedFlatConfigItem>> {
 					},
 				],
 				"promise/no-callback-in-promise": "off",
-				"promise/no-multiple-resolved": "warn",
+				// TODO: Enable this rule eslint-community/eslint-plugin-promise#472
+				"promise/no-multiple-resolved": "off",
 				"promise/no-native": "off",
 				"promise/no-nesting": "warn",
 				"promise/no-new-statics": "off",
