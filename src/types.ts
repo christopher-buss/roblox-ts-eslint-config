@@ -122,7 +122,10 @@ export interface OptionsStylistic {
 
 export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
 
-export type ReactConfig = ESLintReactSettings & OptionsOverrides;
+export type ReactConfig = {
+	componentCasing?: "camelCase" | "kebabCase" | "pascalCase" | "snakeCase";
+} & ESLintReactSettings &
+	OptionsOverrides;
 
 export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem["rules"];

@@ -12,7 +12,13 @@ import { ensurePackages, interopDefault, toArray } from "../utils";
 export async function react(
 	options: OptionsFiles & OptionsTypeScriptWithTypes & ReactConfig = {},
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { files = [GLOB_TS, GLOB_TSX], importSource, jsxPragma, overrides = {} } = options;
+	const {
+		componentCasing,
+		files = [GLOB_TS, GLOB_TSX],
+		importSource,
+		jsxPragma,
+		overrides = {},
+	} = options;
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"]);
 
@@ -28,7 +34,7 @@ export async function react(
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
 
-	return [
+	const config: Array<TypedFlatConfigItem> = [
 		{
 			name: "style:react:setup",
 			plugins: {
@@ -141,16 +147,26 @@ export async function react(
 			},
 		},
 		{
-			files: ["**/*.story.tsx"],
-			rules: {
-				"react-hooks/rules-of-hooks": "off",
-			},
-		},
-		{
 			files: [GLOB_TSX],
 			rules: {
 				"max-lines-per-function": "off",
 			},
 		},
 	];
+
+	if (componentCasing) {
+		config.push({
+			files: ["**/!(*.story).tsx"],
+			rules: {
+				"unicorn/filename-case": [
+					"error",
+					{
+						case: componentCasing,
+					},
+				],
+			},
+		});
+	}
+
+	return config;
 }
