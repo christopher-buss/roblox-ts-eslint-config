@@ -151,6 +151,7 @@ export function style(
 	if (enableReact) {
 		configs.push(
 			react({
+				...resolveSubOptions(options, "react"),
 				overrides: getOverrides(options, "react"),
 				tsconfigPath: getOverrides(options, "typescript").tsconfigPath,
 			}),
