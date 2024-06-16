@@ -25,6 +25,7 @@ import {
 	yaml,
 } from "./configs";
 import { formatters } from "./configs/formatters";
+import { spelling } from "./configs/spelling";
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types";
 import { getOverrides, interopDefault, resolveSubOptions } from "./utils";
 
@@ -71,6 +72,7 @@ export function style(
 	const {
 		autoRenamePlugins = true,
 		componentExts: componentExtensions = [],
+		enableSpellCheck,
 		gitignore: enableGitignore = true,
 		jsx,
 		react: enableReact = false,
@@ -151,6 +153,15 @@ export function style(
 			react({
 				overrides: getOverrides(options, "react"),
 				tsconfigPath: getOverrides(options, "typescript").tsconfigPath,
+			}),
+		);
+	}
+
+	if (enableSpellCheck ?? true) {
+		configs.push(
+			spelling({
+				...resolveSubOptions(options, "typescript"),
+				componentExts: componentExtensions,
 			}),
 		);
 	}

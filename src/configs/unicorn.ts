@@ -53,6 +53,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				"unicorn/prevent-abbreviations": [
 					"error",
 					{
+						/* eslint-disable @cspell/spellchecker -- Used to correct abbreviations. */
 						replacements: {
 							args: false,
 							dist: {
@@ -82,6 +83,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 							refs: false,
 							str: false,
 						},
+						/* eslint-enable @cspell/spellchecker */
 					},
 				],
 				"unicorn/switch-case-braces": "error",

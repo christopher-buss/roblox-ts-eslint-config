@@ -146,7 +146,7 @@ export async function formatters(
 	}
 
 	if (options.markdown) {
-		const formater = options.markdown === true ? "prettier" : options.markdown;
+		const formatter = options.markdown === true ? "prettier" : options.markdown;
 
 		configs.push({
 			files: markdownEnabled ? ["**/*.__markdown_content__"] : [GLOB_MARKDOWN],
@@ -155,9 +155,9 @@ export async function formatters(
 			},
 			name: "style:formatter:markdown",
 			rules: {
-				[`format/${formater}`]: [
+				[`format/${formatter}`]: [
 					"error",
-					formater === "prettier"
+					formatter === "prettier"
 						? {
 								...prettierOptions,
 								embeddedLanguageFormatting: "off",

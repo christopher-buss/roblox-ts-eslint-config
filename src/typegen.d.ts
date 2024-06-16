@@ -4,6 +4,10 @@ import type { Linter } from 'eslint'
 
 export interface RuleOptions {
   /**
+   * CSpell spellchecker
+   */
+  '@cspell/spellchecker'?: Linter.RuleEntry<CspellSpellchecker>
+  /**
    * Enforce getter and setter pairs in objects and classes
    * @see https://eslint.org/docs/latest/rules/accessor-pairs
    */
@@ -1307,6 +1311,10 @@ export interface RuleOptions {
    * @deprecated
    */
   'no-autofix/@babel/semi'?: Linter.RuleEntry<NoAutofixBabelSemi>
+  /**
+   * CSpell spellchecker
+   */
+  'no-autofix/@cspell/spellchecker'?: Linter.RuleEntry<NoAutofixCspellSpellchecker>
   /**
    * enforce boolean attributes notation in JSX
    * @see https://eslint-react.xyz/rules/avoid-shorthand-boolean
@@ -14421,6 +14429,77 @@ export interface RuleOptions {
 }
 
 /* ======= Declarations ======= */
+// ----- @cspell/spellchecker -----
+type CspellSpellchecker = []|[{
+  
+  autoFix: boolean
+  
+  checkComments?: boolean
+  
+  checkIdentifiers?: boolean
+  
+  checkJSXText?: boolean
+  
+  checkStringTemplates?: boolean
+  
+  checkStrings?: boolean
+  
+  configFile?: string
+  
+  cspell?: {
+    
+    allowCompoundWords?: boolean
+    
+    dictionaries?: (string | string)[]
+    dictionaryDefinitions?: {
+      
+      description?: string
+      
+      name: string
+      
+      noSuggest?: boolean
+      
+      path: string
+      
+      repMap?: [string, string][]
+      
+      type?: ("S" | "W" | "C" | "T")
+      
+      useCompounds?: boolean
+    }[]
+    
+    enabled?: boolean
+    
+    flagWords?: string[]
+    
+    ignoreRegExpList?: (string | string | ("Base64" | "Base64MultiLine" | "Base64SingleLine" | "CStyleComment" | "CStyleHexValue" | "CSSHexValue" | "CommitHash" | "CommitHashLink" | "Email" | "EscapeCharacters" | "HexValues" | "href" | "PhpHereDoc" | "PublicKey" | "RsaCert" | "SshRsa" | "SHA" | "HashStrings" | "SpellCheckerDisable" | "SpellCheckerDisableBlock" | "SpellCheckerDisableLine" | "SpellCheckerDisableNext" | "SpellCheckerIgnoreInDocSetting" | "string" | "UnicodeRef" | "Urls" | "UUID" | "Everything"))[]
+    
+    ignoreWords?: string[]
+    
+    import?: (string | string[])
+    
+    includeRegExpList?: (string | string | ("Base64" | "Base64MultiLine" | "Base64SingleLine" | "CStyleComment" | "CStyleHexValue" | "CSSHexValue" | "CommitHash" | "CommitHashLink" | "Email" | "EscapeCharacters" | "HexValues" | "href" | "PhpHereDoc" | "PublicKey" | "RsaCert" | "SshRsa" | "SHA" | "HashStrings" | "SpellCheckerDisable" | "SpellCheckerDisableBlock" | "SpellCheckerDisableLine" | "SpellCheckerDisableNext" | "SpellCheckerIgnoreInDocSetting" | "string" | "UnicodeRef" | "Urls" | "UUID" | "Everything"))[]
+    
+    language?: string
+    
+    words?: string[]
+  }
+  
+  customWordListFile?: (string | {
+    
+    path: string
+  })
+  
+  debugMode?: boolean
+  
+  generateSuggestions: boolean
+  
+  ignoreImportProperties?: boolean
+  
+  ignoreImports?: boolean
+  
+  numSuggestions: number
+}]
 // ----- accessor-pairs -----
 type AccessorPairs = []|[{
   getWithoutSet?: boolean
@@ -16271,6 +16350,77 @@ type NoAutofixBabelSemi = ([]|["never"]|["never", {
   omitLastInOneLineBlock?: boolean
   omitLastInOneLineClassBody?: boolean
 }])
+// ----- no-autofix/@cspell/spellchecker -----
+type NoAutofixCspellSpellchecker = []|[{
+  
+  autoFix: boolean
+  
+  checkComments?: boolean
+  
+  checkIdentifiers?: boolean
+  
+  checkJSXText?: boolean
+  
+  checkStringTemplates?: boolean
+  
+  checkStrings?: boolean
+  
+  configFile?: string
+  
+  cspell?: {
+    
+    allowCompoundWords?: boolean
+    
+    dictionaries?: (string | string)[]
+    dictionaryDefinitions?: {
+      
+      description?: string
+      
+      name: string
+      
+      noSuggest?: boolean
+      
+      path: string
+      
+      repMap?: [string, string][]
+      
+      type?: ("S" | "W" | "C" | "T")
+      
+      useCompounds?: boolean
+    }[]
+    
+    enabled?: boolean
+    
+    flagWords?: string[]
+    
+    ignoreRegExpList?: (string | string | ("Base64" | "Base64MultiLine" | "Base64SingleLine" | "CStyleComment" | "CStyleHexValue" | "CSSHexValue" | "CommitHash" | "CommitHashLink" | "Email" | "EscapeCharacters" | "HexValues" | "href" | "PhpHereDoc" | "PublicKey" | "RsaCert" | "SshRsa" | "SHA" | "HashStrings" | "SpellCheckerDisable" | "SpellCheckerDisableBlock" | "SpellCheckerDisableLine" | "SpellCheckerDisableNext" | "SpellCheckerIgnoreInDocSetting" | "string" | "UnicodeRef" | "Urls" | "UUID" | "Everything"))[]
+    
+    ignoreWords?: string[]
+    
+    import?: (string | string[])
+    
+    includeRegExpList?: (string | string | ("Base64" | "Base64MultiLine" | "Base64SingleLine" | "CStyleComment" | "CStyleHexValue" | "CSSHexValue" | "CommitHash" | "CommitHashLink" | "Email" | "EscapeCharacters" | "HexValues" | "href" | "PhpHereDoc" | "PublicKey" | "RsaCert" | "SshRsa" | "SHA" | "HashStrings" | "SpellCheckerDisable" | "SpellCheckerDisableBlock" | "SpellCheckerDisableLine" | "SpellCheckerDisableNext" | "SpellCheckerIgnoreInDocSetting" | "string" | "UnicodeRef" | "Urls" | "UUID" | "Everything"))[]
+    
+    language?: string
+    
+    words?: string[]
+  }
+  
+  customWordListFile?: (string | {
+    
+    path: string
+  })
+  
+  debugMode?: boolean
+  
+  generateSuggestions: boolean
+  
+  ignoreImportProperties?: boolean
+  
+  ignoreImports?: boolean
+  
+  numSuggestions: number
+}]
 // ----- no-autofix/@eslint-react/naming-convention/component-name -----
 type NoAutofixEslintReactNamingConventionComponentName = []|[(("PascalCase" | "CONSTANT_CASE") | {
   excepts?: string[]
@@ -28843,4 +28993,4 @@ type Yoda = []|[("always" | "never")]|[("always" | "never"), {
   onlyEquality?: boolean
 }]
 // Names of all the configs
-export type ConfigNames = 'style:eslint-comments' | 'style:formatters:setup' | 'style:imports' | 'style:import-sort' | 'style:jsdoc' | 'style:jsonc:setup' | 'style:jsonc:rules' | 'antfu/markdown/setup' | 'antfu/markdown/processor' | 'antfu/markdown/parser' | 'antfu/markdown/disables' | 'style:perfectionist' | 'style:promise' | 'style:react:setup' | 'style:react:rules' | 'style:roblox' | 'style:shopify' | 'style:sonarjs' | 'style:sort-package-json' | 'style:sort-tsconfig' | 'style:stylistic' | 'style:typescript:setup' | 'style:typescript:rules' | 'style:typescript:dts-overrides' | 'style:unicorn' | 'style:yaml:setup' | 'style:yaml:rules'
+export type ConfigNames = 'style:eslint-comments' | 'style:formatters:setup' | 'style:imports' | 'style:import-sort' | 'style:jsdoc' | 'style:jsonc:setup' | 'style:jsonc:rules' | 'style:markdown:setup' | 'style:markdown:processor' | 'style:markdown:parser' | 'style:markdown:disables' | 'style:perfectionist' | 'style:promise' | 'style:react:setup' | 'style:react:rules' | 'style:roblox' | 'style:shopify' | 'style:sonarjs' | 'style:sort-package-json' | 'style:sort-tsconfig' | 'style:spelling' | 'style:stylistic' | 'style:typescript:setup' | 'style:typescript:rules' | 'style:typescript:dts-overrides' | 'style:unicorn' | 'style:yaml:setup' | 'style:yaml:rules'

@@ -141,6 +141,13 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	autoRenamePlugins?: boolean;
 
 	/**
+	 * Enable CSpell support.
+	 *
+	 * @default true
+	 */
+	enableSpellCheck?: boolean;
+
+	/**
 	 * Use external formatters to format files.
 	 *
 	 * Requires installing:

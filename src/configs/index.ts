@@ -13,6 +13,7 @@ export * from "./roblox";
 export * from "./shopify";
 export * from "./sonarjs";
 export * from "./sort";
+export * from "./spelling";
 export * from "./stylistic";
 export * from "./toml";
 export * from "./typescript";
