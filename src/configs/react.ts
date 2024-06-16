@@ -34,7 +34,7 @@ export async function react(
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
 
-	const config: Array<TypedFlatConfigItem> = [
+	return [
 		{
 			name: "style:react:setup",
 			plugins: {
@@ -150,23 +150,14 @@ export async function react(
 			files: [GLOB_TSX],
 			rules: {
 				"max-lines-per-function": "off",
-			},
-		},
-	];
-
-	if (componentCasing) {
-		config.push({
-			files: ["**/!(*.story).tsx"],
-			rules: {
 				"unicorn/filename-case": [
 					"error",
 					{
 						case: componentCasing,
+						multipleFileExtensions: true,
 					},
 				],
 			},
-		});
-	}
-
-	return config;
+		},
+	];
 }
