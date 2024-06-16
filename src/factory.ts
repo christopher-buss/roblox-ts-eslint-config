@@ -72,11 +72,11 @@ export function style(
 	const {
 		autoRenamePlugins = true,
 		componentExts: componentExtensions = [],
-		enableSpellCheck,
 		gitignore: enableGitignore = true,
 		jsx,
 		react: enableReact = false,
 		roblox: enableRoblox = true,
+		spellCheck: enableSpellCheck,
 		typescript: enableTypeScript,
 	} = options;
 

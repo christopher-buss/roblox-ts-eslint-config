@@ -144,13 +144,6 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	autoRenamePlugins?: boolean;
 
 	/**
-	 * Enable CSpell support.
-	 *
-	 * @default true
-	 */
-	enableSpellCheck?: boolean;
-
-	/**
 	 * Use external formatters to format files.
 	 *
 	 * Requires installing:
@@ -244,6 +237,13 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * project with its own rule-set, despite not being a roblox project.
 	 */
 	roblox?: boolean;
+
+	/**
+	 * Enable CSpell support.
+	 *
+	 * @default true
+	 */
+	spellCheck?: boolean;
 
 	/**
 	 * Enable stylistic rules.
