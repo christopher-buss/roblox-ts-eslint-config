@@ -24,6 +24,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 					{
 						case: "kebabCase",
 						ignore: ["README.md"],
+						multipleFileExtensions: true,
 					},
 				],
 				"unicorn/no-array-for-each": "error",

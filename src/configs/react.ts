@@ -1,5 +1,7 @@
 import { fixupPluginRules } from "@eslint/compat";
 
+import { pluginUnicorn } from "src/plugins";
+
 import { GLOB_TS, GLOB_TSX } from "../globs";
 import type {
 	OptionsFiles,
@@ -13,7 +15,7 @@ export async function react(
 	options: OptionsFiles & OptionsTypeScriptWithTypes & ReactConfig = {},
 ): Promise<Array<TypedFlatConfigItem>> {
 	const {
-		componentCasing,
+		filenameCase = "kebabCase",
 		files = [GLOB_TS, GLOB_TSX],
 		importSource,
 		jsxPragma,
@@ -44,6 +46,7 @@ export async function react(
 				"react-naming-convention": plugins["@eslint-react/naming-convention"],
 				style: pluginStylistic,
 				ts: pluginTs,
+				unicorn: pluginUnicorn,
 			},
 		},
 		{
@@ -111,6 +114,7 @@ export async function react(
 				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "error",
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
 				// recommended rules from @eslint-react/naming-convention
+				"react-naming-convention/filename-extension": ["warn", "as-needed"],
 				"react-naming-convention/use-state": "error",
 
 				"style/jsx-curly-brace-presence": [
@@ -153,7 +157,8 @@ export async function react(
 				"unicorn/filename-case": [
 					"error",
 					{
-						case: componentCasing,
+						case: filenameCase,
+						ignore: ["README.md"],
 						multipleFileExtensions: true,
 					},
 				],

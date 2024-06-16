@@ -123,7 +123,7 @@ export interface OptionsStylistic {
 export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
 
 export type ReactConfig = {
-	componentCasing?: "camelCase" | "kebabCase" | "pascalCase" | "snakeCase";
+	filenameCase?: "kebabCase" | "pascalCase";
 } & ESLintReactSettings &
 	OptionsOverrides;
 
