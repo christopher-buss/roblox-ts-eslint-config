@@ -171,6 +171,13 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	isInEditor?: boolean;
 
 	/**
+	 * Enable JSDoc support.
+	 *
+	 * @default true
+	 */
+	jsdoc?: boolean;
+
+	/**
 	 * Enable JSONC support.
 	 *
 	 * @default true

@@ -73,8 +73,6 @@ export function style(
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx,
-		react: enableReact = false,
-		roblox: enableRoblox = true,
 		typescript: enableTypeScript,
 	} = options;
 
@@ -116,9 +114,6 @@ export function style(
 	configs.push(
 		ignores(),
 		comments(),
-		jsdoc({
-			stylistic: stylisticOptions,
-		}),
 		imports({
 			stylistic: stylisticOptions,
 		}),
@@ -133,7 +128,7 @@ export function style(
 		}),
 	);
 
-	if (enableRoblox) {
+	if (options.roblox ?? true) {
 		configs.push(
 			roblox({
 				...resolveSubOptions(options, "typescript"),
@@ -146,11 +141,19 @@ export function style(
 		configs.push(stylistic(stylisticOptions));
 	}
 
-	if (enableReact) {
+	if (options.react) {
 		configs.push(
 			react({
 				overrides: getOverrides(options, "react"),
 				tsconfigPath: getOverrides(options, "typescript").tsconfigPath,
+			}),
+		);
+	}
+
+	if (options.jsdoc ?? true) {
+		configs.push(
+			jsdoc({
+				stylistic: stylisticOptions,
 			}),
 		);
 	}
