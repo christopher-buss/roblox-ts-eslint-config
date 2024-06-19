@@ -1,18 +1,5 @@
 # @isentinel/eslint-config
 
-<!-- - Single quotes, no semi
-- Auto fix for formatting
-- Designed to work with TypeScript, JSX, JSON, Yaml, Toml, Markdown, etc. out of the box
-- Opinionated, but [very customizable](#customization)
-- [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
-- Using [ESLint Stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
-- Respects `.gitignore` by default
-- Optional [formatters](#formatters) support for CSS, HTML, TOML, etc.
-- **Style principle**: Minimal for reading, stable for diff, consistent -->
-
-<!-- > [!IMPORTANT]
-> Since v1.0.0, this config is rewritten to the new [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), check the [release note](https://github.com/antfu/eslint-config/releases/tag/v1.0.0) for more details. -->
-
 ## Usage
 
 ### Quick Start
@@ -244,32 +231,40 @@ When you want to override rules, or disable them inline, you need to update to t
 type foo = { bar: 2 }
 ```
 
-### Optional Configs
+### Spell Checker
 
-We provide some optional configs for specific use cases, that we don't include their dependencies by default.
+This config includes the `CSpell` plugin by default, which will warn you when
+you have misspelled words in your code. This can be useful for catching typos,
+and ensuring that your code is consistent. Roblox keywords are also included in
+the dictionary, which is provided by the
+[`cspell-dicts-roblox`](https://github.com/christopher-buss/cspell-dicts-roblox)
+package. If any words roblox words are missing, please open an issue on that
+repository rather than this one.
 
-#### React
+Sometimes you will have words that are not in the dictionary, but are still
+valid for your project. To add these words to the dictionary, you can create a
+`cspell.config.yaml` file in the root of your project with the following content:
 
-To enable React support, you need to explicitly turn it on:
+```yaml
+# cspell.config.yaml
+words:
+  - isentinel
+  - isverycool
+```
+
+To disable this, you can set the `spellCheck` option to `false`:
 
 ```js
 // eslint.config.ts
 import style from "@isentinel/eslint-config";
 
 export default style({
-	react: true,
+	spellCheck: false,
 });
 ```
 
-Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
-
-```bash
-pnpm i -D eslint-plugin-react eslint-plugin-react-hooks
-```
-
-### Optional Rules
-
-This config also provides some optional plugins/rules for extended usages.
+For more information on how to configure the spell checker, please refer to the
+[CSpell documentation](https://cspell.org/).
 
 #### `perfectionist` (sorting)
 
@@ -303,6 +298,29 @@ export default style({
 });
 ```
 
+### Optional Configs
+
+We provide some optional configs for specific use cases, that we don't include their dependencies by default.
+
+#### React
+
+To enable React support, you need to explicitly turn it on:
+
+```js
+// eslint.config.ts
+import style from "@isentinel/eslint-config";
+
+export default style({
+	react: true,
+});
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+pnpm i -D eslint-plugin-react eslint-plugin-react-hooks
+```
+
 ### Lint Staged
 
 If you want to apply lint and auto-fix before every commit, you can add the following to your `package.json`:
@@ -326,12 +344,12 @@ pnpm i -D lint-staged simple-git-hooks
 
 ## View what rules are enabled
 
-There is a visual tool to help you view what rules are enabled in your project and apply them to what files, [eslint-flat-config-viewer](https://github.com/antfu/eslint-flat-config-viewer)
+There is a visual tool to help you view what rules are enabled in your project and apply them to what files, [eslint-config-inspector](https://github.com/eslint/config-inspector)
 
 Go to your project root that contains `eslint.config.ts` and run:
 
 ```bash
-npx eslint-flat-config-viewer
+npx eslint-config-inspector
 ```
 
 ### I prefer XXX...

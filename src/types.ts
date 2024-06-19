@@ -122,7 +122,10 @@ export interface OptionsStylistic {
 
 export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
 
-export type ReactConfig = ESLintReactSettings & OptionsOverrides;
+export type ReactConfig = {
+	filenameCase?: "kebabCase" | "pascalCase";
+} & ESLintReactSettings &
+	OptionsOverrides;
 
 export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem["rules"];
@@ -241,6 +244,13 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * project with its own rule-set, despite not being a roblox project.
 	 */
 	roblox?: boolean;
+
+	/**
+	 * Enable CSpell support.
+	 *
+	 * @default true
+	 */
+	spellCheck?: boolean;
 
 	/**
 	 * Enable stylistic rules.

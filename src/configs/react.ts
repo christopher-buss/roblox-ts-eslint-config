@@ -1,5 +1,7 @@
 import { fixupPluginRules } from "@eslint/compat";
 
+import { pluginUnicorn } from "src/plugins";
+
 import { GLOB_TS, GLOB_TSX } from "../globs";
 import type {
 	OptionsFiles,
@@ -12,7 +14,13 @@ import { ensurePackages, interopDefault, toArray } from "../utils";
 export async function react(
 	options: OptionsFiles & OptionsTypeScriptWithTypes & ReactConfig = {},
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { files = [GLOB_TS, GLOB_TSX], importSource, jsxPragma, overrides = {} } = options;
+	const {
+		filenameCase = "kebabCase",
+		files = [GLOB_TS, GLOB_TSX],
+		importSource,
+		jsxPragma,
+		overrides = {},
+	} = options;
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"]);
 
@@ -38,6 +46,7 @@ export async function react(
 				"react-naming-convention": plugins["@eslint-react/naming-convention"],
 				style: pluginStylistic,
 				ts: pluginTs,
+				unicorn: pluginUnicorn,
 			},
 		},
 		{
@@ -105,6 +114,7 @@ export async function react(
 				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "error",
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
 				// recommended rules from @eslint-react/naming-convention
+				"react-naming-convention/filename-extension": ["warn", "as-needed"],
 				"react-naming-convention/use-state": "error",
 
 				"style/jsx-curly-brace-presence": [
@@ -141,15 +151,17 @@ export async function react(
 			},
 		},
 		{
-			files: ["**/*.story.tsx"],
-			rules: {
-				"react-hooks/rules-of-hooks": "off",
-			},
-		},
-		{
 			files: [GLOB_TSX],
 			rules: {
 				"max-lines-per-function": "off",
+				"unicorn/filename-case": [
+					"error",
+					{
+						case: filenameCase,
+						ignore: ["README.md"],
+						multipleFileExtensions: true,
+					},
+				],
 			},
 		},
 	];

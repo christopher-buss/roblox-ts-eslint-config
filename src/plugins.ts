@@ -1,6 +1,7 @@
 // eslint-disable-next-line ts/ban-ts-comment -- Not all plugins have types.
 // @ts-nocheck
 
+export { default as pluginCspell } from "@cspell/eslint-plugin";
 export { default as pluginCommentLength } from "@isentinel/eslint-plugin-comment-length";
 export { default as eslintPluginShopify } from "@shopify/eslint-plugin";
 export { default as configPrettier } from "eslint-config-prettier";

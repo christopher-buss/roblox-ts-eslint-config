@@ -245,7 +245,6 @@ export async function typescript(
 					{
 						argsIgnorePattern: "^_",
 						caughtErrorsIgnorePattern: "^_",
-						varsIgnorePattern: "^(Roact$|_)",
 					},
 				],
 				"ts/no-use-before-define": "off",
