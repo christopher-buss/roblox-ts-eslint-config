@@ -127,6 +127,11 @@ export type ReactConfig = {
 } & ESLintReactSettings &
 	OptionsOverrides;
 
+export interface SpellCheckConfig {
+	/** Defaults to `en-US`. */
+	language?: string;
+}
+
 export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem["rules"];
 }
@@ -243,7 +248,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	spellCheck?: boolean;
+	spellCheck?: SpellCheckConfig | boolean;
 
 	/**
 	 * Enable stylistic rules.

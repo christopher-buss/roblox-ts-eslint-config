@@ -161,7 +161,7 @@ export function style(
 	if (enableSpellCheck ?? true) {
 		configs.push(
 			spelling({
-				...resolveSubOptions(options, "typescript"),
+				...resolveSubOptions(options, "spellCheck"),
 				componentExts: componentExtensions,
 			}),
 		);
