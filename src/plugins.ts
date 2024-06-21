@@ -16,5 +16,4 @@ export { default as pluginPromise } from "eslint-plugin-promise";
 export { default as pluginSimpleImportSort } from "eslint-plugin-simple-import-sort";
 export * as pluginSonar from "eslint-plugin-sonarjs";
 export { default as pluginUnicorn } from "eslint-plugin-unicorn";
-export { default as pluginUnusedImports } from "eslint-plugin-unused-imports";
 export { default as pluginRobloxTS } from "isentinel-eslint-plugin-roblox-ts";

@@ -77,13 +77,6 @@ export interface OptionsFormatters {
 	 * By default it's controlled by our own config.
 	 */
 	prettierOptions?: PrettierOptions;
-
-	/**
-	 * Enable formatting support for TOML.
-	 *
-	 * Currently only support dprint.
-	 */
-	toml?: "dprint" | boolean;
 }
 
 export interface OptionsComponentExtensions {
@@ -136,10 +129,6 @@ export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem["rules"];
 }
 
-export interface OptionsIsInEditor {
-	isInEditor?: boolean;
-}
-
 export interface OptionsConfig extends OptionsComponentExtensions {
 	/**
 	 * Automatically rename plugins in the config.
@@ -151,13 +140,9 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	/**
 	 * Use external formatters to format files.
 	 *
-	 * Requires installing:
-	 *
-	 * - `eslint-plugin-format`.
-	 *
 	 * When set to `true`, it will enable all formatters.
 	 *
-	 * @default false
+	 * @default true
 	 */
 	formatters?: OptionsFormatters | boolean;
 
@@ -170,13 +155,6 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @see https://github.com/antfu/eslint-config-flat-gitignore
 	 */
 	gitignore?: FlatGitignoreOptions | boolean;
-
-	/**
-	 * Control to disable some rules in editors.
-	 *
-	 * @default auto-detect based on the process.env
-	 */
-	isInEditor?: boolean;
 
 	/**
 	 * Enable JSONC support.
@@ -202,25 +180,6 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @default true
 	 */
 	markdown?: OptionsOverrides | boolean;
-
-	/**
-	 * Provide overrides for rules for each integration.
-	 *
-	 * @deprecated Use `overrides` option in each integration key instead.
-	 */
-	overrides?: {
-		javascript?: TypedFlatConfigItem["rules"];
-		jsonc?: TypedFlatConfigItem["rules"];
-		markdown?: TypedFlatConfigItem["rules"];
-		react?: TypedFlatConfigItem["rules"];
-		stylistic?: TypedFlatConfigItem["rules"];
-		svelte?: TypedFlatConfigItem["rules"];
-		test?: TypedFlatConfigItem["rules"];
-		toml?: TypedFlatConfigItem["rules"];
-		typescript?: TypedFlatConfigItem["rules"];
-		vue?: TypedFlatConfigItem["rules"];
-		yaml?: TypedFlatConfigItem["rules"];
-	};
 
 	/**
 	 * Enable react rules.

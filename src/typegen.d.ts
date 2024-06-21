@@ -3331,7 +3331,7 @@ export interface RuleOptions {
   'no-autofix/@typescript-eslint/no-unused-expressions'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoUnusedExpressions>
   /**
    * Disallow unused variables
-   * @see https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md
+   * @see https://typescript-eslint.io/rules/no-unused-vars
    */
   'no-autofix/@typescript-eslint/no-unused-vars'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoUnusedVars>
   /**
@@ -6520,11 +6520,6 @@ export interface RuleOptions {
    */
   'no-autofix/no-octal-escape'?: Linter.RuleEntry<[]>
   /**
-   * disallow .only blocks in tests
-   * @see https://github.com/levibuzolic/eslint-plugin-no-only-tests
-   */
-  'no-autofix/no-only-tests/no-only-tests'?: Linter.RuleEntry<NoAutofixNoOnlyTestsNoOnlyTests>
-  /**
    * Disallow reassigning `function` parameters
    * @see https://eslint.org/docs/latest/rules/no-param-reassign
    */
@@ -9287,26 +9282,6 @@ export interface RuleOptions {
    * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v53.0.0/docs/rules/throw-new-error.md
    */
   'no-autofix/unicorn/throw-new-error'?: Linter.RuleEntry<[]>
-  /**
-   * Disallow unused variables
-   * @see https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md
-   */
-  'no-autofix/unused-imports/no-unused-imports'?: Linter.RuleEntry<NoAutofixUnusedImportsNoUnusedImports>
-  /**
-   * Disallow unused variables
-   * @see https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md
-   */
-  'no-autofix/unused-imports/no-unused-imports-ts'?: Linter.RuleEntry<NoAutofixUnusedImportsNoUnusedImportsTs>
-  /**
-   * Disallow unused variables
-   * @see https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md
-   */
-  'no-autofix/unused-imports/no-unused-vars'?: Linter.RuleEntry<NoAutofixUnusedImportsNoUnusedVars>
-  /**
-   * Disallow unused variables
-   * @see https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md
-   */
-  'no-autofix/unused-imports/no-unused-vars-ts'?: Linter.RuleEntry<NoAutofixUnusedImportsNoUnusedVarsTs>
   /**
    * Require calls to `isNaN()` when checking for `NaN`
    * @see https://eslint.org/docs/latest/rules/use-isnan
@@ -12329,7 +12304,7 @@ export interface RuleOptions {
   'ts/no-unused-expressions'?: Linter.RuleEntry<TsNoUnusedExpressions>
   /**
    * Disallow unused variables
-   * @see https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md
+   * @see https://typescript-eslint.io/rules/no-unused-vars
    */
   'ts/no-unused-vars'?: Linter.RuleEntry<TsNoUnusedVars>
   /**
@@ -21992,12 +21967,6 @@ type NoAutofixNoMultipleEmptyLines = []|[{
 type NoAutofixNoNativeReassign = []|[{
   exceptions?: string[]
 }]
-// ----- no-autofix/no-only-tests/no-only-tests -----
-type NoAutofixNoOnlyTestsNoOnlyTests = []|[{
-  block?: string[]
-  focus?: string[]
-  fix?: boolean
-}]
 // ----- no-autofix/no-param-reassign -----
 type NoAutofixNoParamReassign = []|[({
   props?: false
@@ -23709,50 +23678,6 @@ type NoAutofixUnicornTemplateIndent = []|[{
   selectors?: string[]
   comments?: string[]
 }]
-// ----- no-autofix/unused-imports/no-unused-imports -----
-type NoAutofixUnusedImportsNoUnusedImports = []|[(("all" | "local") | {
-  vars?: ("all" | "local")
-  varsIgnorePattern?: string
-  args?: ("all" | "after-used" | "none")
-  ignoreRestSiblings?: boolean
-  argsIgnorePattern?: string
-  caughtErrors?: ("all" | "none")
-  caughtErrorsIgnorePattern?: string
-  destructuredArrayIgnorePattern?: string
-})]
-// ----- no-autofix/unused-imports/no-unused-imports-ts -----
-type NoAutofixUnusedImportsNoUnusedImportsTs = []|[(("all" | "local") | {
-  vars?: ("all" | "local")
-  varsIgnorePattern?: string
-  args?: ("all" | "after-used" | "none")
-  ignoreRestSiblings?: boolean
-  argsIgnorePattern?: string
-  caughtErrors?: ("all" | "none")
-  caughtErrorsIgnorePattern?: string
-  destructuredArrayIgnorePattern?: string
-})]
-// ----- no-autofix/unused-imports/no-unused-vars -----
-type NoAutofixUnusedImportsNoUnusedVars = []|[(("all" | "local") | {
-  vars?: ("all" | "local")
-  varsIgnorePattern?: string
-  args?: ("all" | "after-used" | "none")
-  ignoreRestSiblings?: boolean
-  argsIgnorePattern?: string
-  caughtErrors?: ("all" | "none")
-  caughtErrorsIgnorePattern?: string
-  destructuredArrayIgnorePattern?: string
-})]
-// ----- no-autofix/unused-imports/no-unused-vars-ts -----
-type NoAutofixUnusedImportsNoUnusedVarsTs = []|[(("all" | "local") | {
-  vars?: ("all" | "local")
-  varsIgnorePattern?: string
-  args?: ("all" | "after-used" | "none")
-  ignoreRestSiblings?: boolean
-  argsIgnorePattern?: string
-  caughtErrors?: ("all" | "none")
-  caughtErrorsIgnorePattern?: string
-  destructuredArrayIgnorePattern?: string
-})]
 // ----- no-autofix/use-isnan -----
 type NoAutofixUseIsnan = []|[{
   enforceForSwitchCase?: boolean

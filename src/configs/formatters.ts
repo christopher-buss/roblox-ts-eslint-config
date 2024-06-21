@@ -10,13 +10,12 @@ export async function formatters(
 	stylistic: StylisticConfig = {},
 	markdownEnabled = true,
 ): Promise<Array<TypedFlatConfigItem>> {
-	if (options === true) {
+	if (options === undefined || options === true) {
 		options = {
 			css: true,
 			graphql: true,
 			html: true,
 			markdown: true,
-			toml: true,
 		};
 	}
 
@@ -120,25 +119,6 @@ export async function formatters(
 					{
 						...prettierOptions,
 						parser: "html",
-					},
-				],
-			},
-		});
-	}
-
-	if (options.toml) {
-		configs.push({
-			files: ["**/*.toml"],
-			languageOptions: {
-				parser: pluginFormat.parserPlain,
-			},
-			name: "style:formatter:toml",
-			rules: {
-				"format/dprint": [
-					"error",
-					{
-						...dprintOptions,
-						language: "toml",
 					},
 				],
 			},

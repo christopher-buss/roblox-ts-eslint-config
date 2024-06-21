@@ -5,27 +5,8 @@ import style from "./dist/index.js";
 
 export default style(
 	{
-		formatters: {
-			markdown: true,
-			prettierOptions: {
-				arrowParens: "avoid",
-				jsdocPreferCodeFences: true,
-				jsdocPrintWidth: 80,
-				plugins: ["prettier-plugin-jsdoc"],
-				printWidth: 100,
-				semi: true,
-				singleQuote: false,
-				tabWidth: 4,
-				trailingComma: "all",
-				tsdoc: true,
-				useTabs: true,
-			},
-			toml: true,
-		},
 		ignores: ["fixtures", "_fixtures", "src/typegen.d.ts"],
-		react: false,
 		roblox: false,
-		yaml: true,
 	},
 	{
 		files: ["src/**/*.ts"],
