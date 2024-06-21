@@ -29,6 +29,9 @@ importers:
       '@eslint/compat':
         specifier: ^1.1.0
         version: 1.1.0
+      '@isentinel/dict-rbxts':
+        specifier: ^1.0.1
+        version: 1.0.1
       '@isentinel/dict-roblox':
         specifier: ^1.0.0
         version: 1.0.0
@@ -791,6 +794,9 @@ packages:
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
+
+  '@isentinel/dict-rbxts@1.0.1':
+    resolution: {integrity: sha512-Icj7VOG1p/y9i1ngtaguSuSE6ToUeX2XU6uIjUHDmS9qfe1xxYuZMyBa3sVBnP3/oPnWFrMglVqoH/RUOQoQpg==}
 
   '@isentinel/dict-roblox@1.0.0':
     resolution: {integrity: sha512-ZJoeESlqIgf76JFOjQXHk4bf/JtuvG0bUJy0TC1o5Ysvp7U6nEp9PVUWj3/NDVzj23RVJBfhLMIG4mrzE9uHyg==}
@@ -4312,6 +4318,8 @@ snapshots:
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
+
+  '@isentinel/dict-rbxts@1.0.1': {}
 
   '@isentinel/dict-roblox@1.0.0': {}
 

@@ -22,9 +22,13 @@ export async function spelling(
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
 
-	const robloxPackage = require.resolve("@isentinel/dict-roblox");
-	const urlRobloxPackage = pathToFileURL(robloxPackage);
-	const urlRoblox = new URL("dict/roblox.txt", urlRobloxPackage);
+	const robloxDictionary = require.resolve("@isentinel/dict-roblox");
+	const urlRobloxDictionary = pathToFileURL(robloxDictionary);
+	const urlRoblox = new URL("dict/roblox.txt", urlRobloxDictionary);
+
+	const rbxtsDictionary = require.resolve("@isentinel/dict-rbxts");
+	const urlRbxtsDictionary = pathToFileURL(rbxtsDictionary);
+	const urlRbxts = new URL("dict/rbxts.txt", urlRbxtsDictionary);
 
 	return [
 		{
@@ -40,17 +44,20 @@ export async function spelling(
 						autoFix: false,
 						checkComments: true,
 						cspell: {
-							dictionaries: ["roblox"],
+							dictionaries: ["roblox", "rbxts"],
 							dictionaryDefinitions: [
 								{
 									name: "roblox",
 									path: urlRoblox.href,
 								},
+								{
+									name: "rbxts",
+									path: urlRbxts.href,
+								},
 							],
 							language,
 							words: ["isentinel"],
 						},
-						// debugMode: true,
 						generateSuggestions: true,
 						numSuggestions: 8,
 					},
