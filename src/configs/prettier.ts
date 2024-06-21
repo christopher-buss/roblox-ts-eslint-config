@@ -27,17 +27,16 @@ export async function prettier(
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
 
-	const defaultPrettierOptions =
-		prettierOptions ??
-		({
-			arrowParens: "avoid",
-			printWidth: 120,
-			semi: true,
-			singleQuote: false,
-			tabWidth: 4,
-			trailingComma: "all",
-			useTabs: true,
-		} satisfies PrettierOptions);
+	const defaultPrettierOptions = {
+		arrowParens: "avoid",
+		printWidth: 100,
+		semi: true,
+		singleQuote: false,
+		tabWidth: 4,
+		trailingComma: "all",
+		useTabs: true,
+		...prettierOptions,
+	} satisfies PrettierOptions;
 
 	return [
 		{
