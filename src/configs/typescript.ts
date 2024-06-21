@@ -179,6 +179,14 @@ export async function typescript(
 				"no-return-assign": ["error", "always"],
 				"no-shadow": "off",
 				"no-unneeded-ternary": "error",
+				"no-unused-expressions": [
+					"error",
+					{
+						allowShortCircuit: true,
+						allowTaggedTemplates: true,
+						allowTernary: true,
+					},
+				],
 				"no-unused-private-class-members": "error",
 				"no-use-before-define": "off",
 				"no-useless-constructor": "off",

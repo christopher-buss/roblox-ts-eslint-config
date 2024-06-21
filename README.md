@@ -10,7 +10,19 @@ template](https://github.com/christopher-buss/roblox-ts-project-template)
 repository. This includes all necessarily files and configurations to get you up
 and running.
 
-### Install
+## Usage
+
+### Starter Wizard
+
+We provided a CLI tool to help you set up your project, or migrate from the legacy config to the new flat config with one command.
+
+```bash
+npx @isentinel/eslint-config@latest
+```
+
+### Manual Install
+
+If you prefer to set up manually:
 
 ```bash
 pnpm i -D eslint @isentinel/eslint-config

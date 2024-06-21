@@ -19,6 +19,7 @@ words:
   - multilines
   - nocheck
   - nonblock
+  - pico
   - rbxts
   - setstate
   - sonarjs

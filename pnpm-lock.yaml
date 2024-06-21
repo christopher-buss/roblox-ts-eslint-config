@@ -122,6 +122,9 @@ importers:
       parse-gitignore:
         specifier: ^2.0.0
         version: 2.0.0
+      picocolors:
+        specifier: ^1.0.1
+        version: 1.0.1
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
