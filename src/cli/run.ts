@@ -21,9 +21,7 @@ export interface CliRunOptions {
 
 export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	const argumentSkipPrompt = !!process.env.SKIP_PROMPT || options.yes;
-	const argumentTemplate = <Array<FrameworkOption>>(
-		options.frameworks?.map(argument => argument.trim())
-	);
+	const argumentTemplate = ["react"] as Array<FrameworkOption>;
 
 	if (fs.existsSync(path.join(process.cwd(), "eslint.config.js"))) {
 		p.log.warn(pico.yellow(`eslint.config.js already exists, migration wizard exited.`));
@@ -32,7 +30,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 
 	// Set default value for promptResult if `argSkipPrompt` is enabled
 	let result: PromptResult = {
-		frameworks: argumentTemplate ?? [],
+		frameworks: argumentTemplate,
 		uncommittedConfirmed: false,
 		updateVscodeSettings: true,
 	};
