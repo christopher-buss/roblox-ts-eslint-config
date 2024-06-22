@@ -64,7 +64,7 @@
 		"@eslint-types/unicorn": "^52.0.0",
 		"@eslint/compat": "^1.1.0",
 		"@isentinel/dict-rbxts": "^1.0.1",
-		"@isentinel/dict-roblox": "^1.0.0",
+		"@isentinel/dict-roblox": "^1.0.2",
 		"@isentinel/eslint-plugin-comment-length": "^1.7.3",
 		"@shopify/eslint-plugin": "^45.0.0",
 		"@stylistic/eslint-plugin": "^2.1.0",

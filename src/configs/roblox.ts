@@ -59,7 +59,8 @@ export async function roblox(
 				"roblox/no-any": "off",
 				"roblox/no-array-pairs": "warn",
 				"roblox/no-enum-merging": "error",
-				"roblox/no-export-assignment-let": "error",
+				// TODO: Enable this rule when it's fixed
+				// "roblox/no-export-assignment-let": "error",
 				"roblox/no-for-in": "error",
 				"roblox/no-function-expression-id": "error",
 				"roblox/no-getters-or-setters": "error",

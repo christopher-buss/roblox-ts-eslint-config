@@ -9,7 +9,6 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 			name: "style:jsdoc",
 			plugins: {
 				jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),
-				"jsdoc-prettier": await interopDefault(import("prettier-plugin-jsdoc")),
 			},
 			rules: {
 				"jsdoc/check-access": "warn",

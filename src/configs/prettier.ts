@@ -1,3 +1,4 @@
+import { createRequire } from "module";
 import type { Options as PrettierOptions } from "prettier";
 import { GLOB_SRC } from "src";
 
@@ -9,6 +10,8 @@ import type {
 	OptionsTypeScriptParserOptions,
 	TypedFlatConfigItem,
 } from "../types";
+
+const require = createRequire(import.meta.url);
 
 export async function prettier(
 	options?: { prettierOptions?: PrettierOptions } & OptionsComponentExtensions &
@@ -31,7 +34,7 @@ export async function prettier(
 		arrowParens: "avoid",
 		jsdocPreferCodeFences: true,
 		jsdocPrintWidth: 80,
-		plugins: ["prettier-plugin-jsdoc"],
+		plugins: [require.resolve("prettier-plugin-jsdoc")],
 		printWidth: 100,
 		semi: true,
 		singleQuote: false,
