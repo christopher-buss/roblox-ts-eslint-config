@@ -30,8 +30,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@isentinel/dict-roblox':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: 1.0.3
+        version: 1.0.3
       '@isentinel/eslint-plugin-comment-length':
         specifier: ^1.7.3
         version: 1.7.3(eslint@9.4.0)(typescript@5.4.5)
@@ -788,8 +788,8 @@ packages:
   '@isentinel/dict-rbxts@1.0.1':
     resolution: {integrity: sha512-Icj7VOG1p/y9i1ngtaguSuSE6ToUeX2XU6uIjUHDmS9qfe1xxYuZMyBa3sVBnP3/oPnWFrMglVqoH/RUOQoQpg==}
 
-  '@isentinel/dict-roblox@1.0.2':
-    resolution: {integrity: sha512-QNMEEzZAe6vGOSyxGLihO2YHnWjxRoqgSFM7Ma7jf89YqbN1VA+bT+CQ4mTXGXKbzgTsl31ZEP1jtDthlZau1Q==}
+  '@isentinel/dict-roblox@1.0.3':
+    resolution: {integrity: sha512-XR1KVHZLyyamVobUICxTlDkB3gfLVuV34mdFQeIL7DfCtNI2uCeuZm6g6J63AQzUrqsCIUF166Ogf+TL0przdg==}
 
   '@isentinel/eslint-plugin-comment-length@1.7.3':
     resolution: {integrity: sha512-NfOTdxB+PgHKdqxwGP1i+u5d0+lOQgXbzObjR9Bpgdt1lVG2CxTcC7sExkKq3sJWA6LUIg9PNgVYpqX2kj5qkw==}
@@ -4295,7 +4295,7 @@ snapshots:
 
   '@isentinel/dict-rbxts@1.0.1': {}
 
-  '@isentinel/dict-roblox@1.0.2': {}
+  '@isentinel/dict-roblox@1.0.3': {}
 
   '@isentinel/eslint-plugin-comment-length@1.7.3(eslint@9.4.0)(typescript@5.4.5)':
     dependencies:
