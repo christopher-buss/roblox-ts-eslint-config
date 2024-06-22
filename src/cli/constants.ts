@@ -1,8 +1,7 @@
-import pico from "picocolors";
-
-import type { FrameworkOption, PromItem } from "./types";
-
 export const vscodeSettingsString = `
+  // Enable the ESlint flat config support
+	"eslint.useFlatConfig": true,
+
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
@@ -35,19 +34,10 @@ export const vscodeSettingsString = `
     "json",
     "jsonc",
     "yaml",
-	"toml",
-	"luau"
+	  "toml",
+	  "luau"
   ]
 `;
-
-export const frameworkOptions: Array<PromItem<FrameworkOption>> = [
-	{
-		label: pico.cyan("React"),
-		value: "react",
-	},
-];
-
-export const frameworks: Array<FrameworkOption> = frameworkOptions.map(({ value }) => value);
 
 export const dependenciesMap = {
 	react: ["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"],

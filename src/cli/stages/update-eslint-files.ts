@@ -9,10 +9,9 @@ import process from "node:process";
 import parse from "parse-gitignore";
 import pico from "picocolors";
 
-import type { PromptResult } from "../types";
 import { getEslintConfigContent } from "../utils";
 
-export async function updateEslintFiles(result: PromptResult): Promise<void> {
+export async function updateEslintFiles(): Promise<void> {
 	const cwd = process.cwd();
 	const pathESLintIgnore = path.join(cwd, ".eslintignore");
 	const pathPackageJSON = path.join(cwd, "package.json");
@@ -45,9 +44,14 @@ export async function updateEslintFiles(result: PromptResult): Promise<void> {
 		configLines.push(`ignores: ${JSON.stringify(eslintIgnores)},`);
 	}
 
-	for (const framework of result.frameworks) {
-		configLines.push(`${framework}: true,`);
-	}
+	configLines.push(
+		`${"react"}: true,`,
+		`typescript: {
+			parserOptions: {
+				project: "tsconfig.build.json",
+			},
+		},`,
+	);
 
 	const mainConfig = configLines.map(index => `  ${index}`).join("\n");
 	const additionalConfig: Array<string> = [];

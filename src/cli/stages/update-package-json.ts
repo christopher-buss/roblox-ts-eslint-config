@@ -6,9 +6,8 @@ import process from "node:process";
 import pico from "picocolors";
 
 import { dependenciesMap, pkgJson as packageJson } from "../constants";
-import type { PromptResult } from "../types";
 
-export async function updatePackageJson(result: PromptResult): Promise<void> {
+export async function updatePackageJson(): Promise<void> {
 	const cwd = process.cwd();
 
 	const pathPackageJSON = path.join(cwd, "package.json");
@@ -26,16 +25,9 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
 
 	const addedPackages: Array<string> = [];
 
-	for (const framework of result.frameworks) {
-		const deps = dependenciesMap[framework];
-		if (!deps) {
-			continue;
-		}
-
-		for (const dep of deps) {
-			package_.devDependencies[dep] = packageJson.devDependencies[dep];
-			addedPackages.push(dep);
-		}
+	for (const dep of dependenciesMap["react"]) {
+		package_.devDependencies[dep] = packageJson.devDependencies[dep];
+		addedPackages.push(dep);
 	}
 
 	if (addedPackages.length) {

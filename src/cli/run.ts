@@ -5,11 +5,11 @@ import path from "node:path";
 import process from "node:process";
 import pico from "picocolors";
 
-import { frameworkOptions, frameworks } from "./constants";
+import { addTsconfigBuild } from "./stages/add-tsconfig.build.json";
 import { updateEslintFiles } from "./stages/update-eslint-files";
 import { updatePackageJson } from "./stages/update-package-json";
 import { updateVscodeSettings } from "./stages/update-vscode-settings";
-import type { FrameworkOption, PromItem, PromptResult } from "./types";
+import type { FrameworkOption, PromptResult } from "./types";
 import { isGitClean } from "./utils";
 
 export interface CliRunOptions {
@@ -38,26 +38,6 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	if (!argumentSkipPrompt) {
 		result = (await p.group(
 			{
-				frameworks: ({ results }) => {
-					const isArgumentTemplateValid =
-						typeof argumentTemplate === "string" &&
-						!!frameworks.includes(<FrameworkOption>argumentTemplate);
-
-					if (!results.uncommittedConfirmed || isArgumentTemplateValid) {
-						return;
-					}
-
-					const message =
-						!isArgumentTemplateValid && argumentTemplate
-							? `"${argumentTemplate}" isn't a valid template. Please choose from below: `
-							: "Select a framework:";
-
-					return p.multiselect<Array<PromItem<FrameworkOption>>, FrameworkOption>({
-						message: pico.reset(message),
-						options: frameworkOptions,
-						required: false,
-					});
-				},
 				uncommittedConfirmed: () => {
 					if (argumentSkipPrompt || isGitClean()) {
 						return Promise.resolve(true);
@@ -94,9 +74,10 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 		}
 	}
 
-	await updatePackageJson(result);
-	await updateEslintFiles(result);
+	await updatePackageJson();
+	await updateEslintFiles();
 	await updateVscodeSettings(result);
+	await addTsconfigBuild();
 
 	p.log.success(pico.green(`Setup completed`));
 	p.outro(`Now you can update the dependencies and run ${pico.blue("eslint . --fix")}\n`);

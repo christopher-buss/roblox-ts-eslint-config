@@ -115,8 +115,11 @@ export async function typescript(
 			languageOptions: {
 				parser: parserTs,
 				parserOptions: {
+					ecmaVersion: 2018,
 					extraFileExtensions: componentExtensions.map(extension => `.${extension}`),
+					jsx: true,
 					sourceType: "module",
+					useJSXTextNode: true,
 					...(tsconfigPath
 						? {
 								project: tsconfigPath,
