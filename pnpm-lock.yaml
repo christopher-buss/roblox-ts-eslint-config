@@ -17,12 +17,6 @@ importers:
       '@cspell/eslint-plugin':
         specifier: 8.9.0
         version: 8.9.0(eslint@9.5.0)
-      '@eslint-types/jsdoc':
-        specifier: 48.2.2
-        version: 48.2.2
-      '@eslint-types/unicorn':
-        specifier: 52.0.0
-        version: 52.0.0
       '@eslint/compat':
         specifier: 1.1.0
         version: 1.1.0
@@ -738,12 +732,6 @@ packages:
 
   '@eslint-stylistic/metadata@2.1.0':
     resolution: {integrity: sha512-zqO4PkrOj0q/KpzaoPk2jnbV5OIP/fE5aBO02JCAkGzadXFxVAnazWr+xGh5YR1Rxo6mBOuaCVDmAlEoj6nftg==}
-
-  '@eslint-types/jsdoc@48.2.2':
-    resolution: {integrity: sha512-HpyW7wipVZGkCMOMMzjZ/wieIoinafxg1M617s8UPEchEGH/Xgs7pLZMaNR3Kdyx3Rz8STHYzCmKJfV2orjFJg==}
-
-  '@eslint-types/unicorn@52.0.0':
-    resolution: {integrity: sha512-1+Om/IekT0AwlPiARvhbtKsSgVMu3ZAtP99YCzhHkDSnF5f8sQegh8/3ZmMhlCnKipa7/x8qEC7Bn4rbaagnSA==}
 
   '@eslint/compat@1.1.0':
     resolution: {integrity: sha512-s9Wi/p25+KbzxKlDm3VshQdImhWk+cbdblhwGNnyCU5lpSwtWa4v7VQCxSki0FAUrGA3s8nCWgYzAH41mwQVKQ==}
@@ -4159,10 +4147,6 @@ snapshots:
       - typescript
 
   '@eslint-stylistic/metadata@2.1.0': {}
-
-  '@eslint-types/jsdoc@48.2.2': {}
-
-  '@eslint-types/unicorn@52.0.0': {}
 
   '@eslint/compat@1.1.0': {}
 
