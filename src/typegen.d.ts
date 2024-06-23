@@ -7276,10 +7276,6 @@ export interface RuleOptions {
    */
   'no-autofix/prefer-template'?: Linter.RuleEntry<[]>
   /**
-   * @see https://github.com/prettier/eslint-plugin-prettier#options
-   */
-  'no-autofix/prettier/prettier'?: Linter.RuleEntry<NoAutofixPrettierPrettier>
-  /**
    * Require returning inside each `then()` to create readable and reusable Promise chains.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/always-return.md
    */
@@ -13435,6 +13431,8 @@ type CspellSpellchecker = []|[{
   
   checkJSXText?: boolean
   
+  checkScope?: [string, boolean][]
+  
   checkStringTemplates?: boolean
   
   checkStrings?: boolean
@@ -15355,6 +15353,8 @@ type NoAutofixCspellSpellchecker = []|[{
   checkIdentifiers?: boolean
   
   checkJSXText?: boolean
+  
+  checkScope?: [string, boolean][]
   
   checkStringTemplates?: boolean
   
@@ -22700,18 +22700,6 @@ type NoAutofixPreferReflect = []|[{
 // ----- no-autofix/prefer-regex-literals -----
 type NoAutofixPreferRegexLiterals = []|[{
   disallowRedundantWrapping?: boolean
-}]
-// ----- no-autofix/prettier/prettier -----
-type NoAutofixPrettierPrettier = []|[{
-  [k: string]: unknown | undefined
-}]|[{
-  [k: string]: unknown | undefined
-}, {
-  usePrettierrc?: boolean
-  fileInfoOptions?: {
-    [k: string]: unknown | undefined
-  }
-  [k: string]: unknown | undefined
 }]
 // ----- no-autofix/promise/always-return -----
 type NoAutofixPromiseAlwaysReturn = []|[{
