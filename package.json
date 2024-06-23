@@ -59,7 +59,7 @@
 	"dependencies": {
 		"@antfu/install-pkg": "0.3.3",
 		"@clack/prompts": "0.7.0",
-		"@cspell/eslint-plugin": "8.8.4",
+		"@cspell/eslint-plugin": "8.9.0",
 		"@eslint-types/jsdoc": "48.2.2",
 		"@eslint-types/unicorn": "52.0.0",
 		"@eslint/compat": "1.1.0",
