@@ -125,8 +125,8 @@ export async function react(
 						props: "never",
 					},
 				],
-
 				"style/jsx-newline": "error",
+				"style/jsx-self-closing-comp": "error",
 				"style/jsx-sort-props": [
 					"error",
 					{
