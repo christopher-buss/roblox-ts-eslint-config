@@ -116,7 +116,7 @@
 		"@types/yargs": "17.0.32",
 		"bumpp": "9.4.1",
 		"bundle-require": "5.0.0",
-		"eslint": "9.4.0",
+		"eslint": "9.5.0",
 		"eslint-plugin-react-hooks": "4.6.2",
 		"eslint-plugin-simple-import-sort": "12.1.0",
 		"eslint-typegen": "0.2.4",
