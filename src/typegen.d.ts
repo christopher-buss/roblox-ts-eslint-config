@@ -1326,6 +1326,21 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
   /**
+   * report all class components, including anonymous ones
+   * @see https://eslint-react.xyz/rules/debug-class-component
+   */
+  'no-autofix/@eslint-react/debug/class-component'?: Linter.RuleEntry<[]>
+  /**
+   * report all function components, including anonymous ones
+   * @see https://eslint-react.xyz/rules/debug-function-component
+   */
+  'no-autofix/@eslint-react/debug/function-component'?: Linter.RuleEntry<[]>
+  /**
+   * report all React Hooks
+   * @see https://eslint-react.xyz/rules/debug-react-hooks
+   */
+  'no-autofix/@eslint-react/debug/react-hooks'?: Linter.RuleEntry<[]>
+  /**
    * disallow passing 'children' to void DOM elements
    * @see https://eslint-react.xyz/rules/dom-no-children-in-void-dom-elements
    */
@@ -7275,6 +7290,10 @@ export interface RuleOptions {
    * @see https://eslint.org/docs/latest/rules/prefer-template
    */
   'no-autofix/prefer-template'?: Linter.RuleEntry<[]>
+  /**
+   * @see https://github.com/prettier/eslint-plugin-prettier#options
+   */
+  'no-autofix/prettier/prettier'?: Linter.RuleEntry<NoAutofixPrettierPrettier>
   /**
    * Require returning inside each `then()` to create readable and reusable Promise chains.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/always-return.md
@@ -22700,6 +22719,18 @@ type NoAutofixPreferReflect = []|[{
 // ----- no-autofix/prefer-regex-literals -----
 type NoAutofixPreferRegexLiterals = []|[{
   disallowRedundantWrapping?: boolean
+}]
+// ----- no-autofix/prettier/prettier -----
+type NoAutofixPrettierPrettier = []|[{
+  [k: string]: unknown | undefined
+}]|[{
+  [k: string]: unknown | undefined
+}, {
+  usePrettierrc?: boolean
+  fileInfoOptions?: {
+    [k: string]: unknown | undefined
+  }
+  [k: string]: unknown | undefined
 }]
 // ----- no-autofix/promise/always-return -----
 type NoAutofixPromiseAlwaysReturn = []|[{
