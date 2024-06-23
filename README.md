@@ -10,8 +10,6 @@ template](https://github.com/christopher-buss/roblox-ts-project-template)
 repository. This includes all necessarily files and configurations to get you up
 and running.
 
-## Usage
-
 ### Starter Wizard
 
 We provided a CLI tool to help you set up your project, or migrate from the legacy config to the new flat config with one command.
@@ -97,7 +95,7 @@ The `ts/no-non-null-assertion` rule is enabled by default, which will warn you
 when you use the `!` operator to assert that a value is not `undefined`. The
 caveat is that this rule will not always play nicely with
 `noUncheckedIndexedAccess`, and will often require you to disable it in certain
-lines. I believe that this is a good trade-off, as it will help you catch
+places. I believe that this is a good trade-off, as it will help you catch
 potential bugs in your code, but you can disable it if you find it too restrictive.
 
 ```json
@@ -182,13 +180,8 @@ export default style({
 	// Provide TypeScript parser options for access to type checking lints.
 	typescript: {
 		parserOptions: {
-			ecmaVersion: 2018,
-			jsx: true,
 			project: "tsconfig.build.json",
-			sourceType: "module",
-			useJSXTextNode: true,
 		},
-		tsconfigPath: "tsconfig.build.json",
 	},
 
 	// Disable yaml support
@@ -330,7 +323,7 @@ export default style({
 Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
 
 ```bash
-pnpm i -D eslint-plugin-react eslint-plugin-react-hooks
+pnpm i -D @eslint-react/eslint-plugin eslint-plugin-react-hooks
 ```
 
 ### Lint Staged
