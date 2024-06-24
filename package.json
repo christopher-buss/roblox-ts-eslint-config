@@ -117,7 +117,7 @@
 		"eslint-plugin-simple-import-sort": "12.1.0",
 		"eslint-typegen": "0.2.4",
 		"esno": "4.7.0",
-		"execa": "9.2.0",
+		"execa": "9.3.0",
 		"fast-glob": "3.3.2",
 		"fs-extra": "11.2.0",
 		"lint-staged": "15.2.7",
