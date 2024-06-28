@@ -107,7 +107,7 @@
 		"@stylistic/eslint-plugin-migrate": "2.2.2",
 		"@types/eslint": "8.56.10",
 		"@types/fs-extra": "11.0.4",
-		"@types/node": "20.14.8",
+		"@types/node": "20.14.9",
 		"@types/prompts": "2.4.9",
 		"@types/yargs": "17.0.32",
 		"bumpp": "9.4.1",
