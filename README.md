@@ -238,10 +238,10 @@ type foo = { bar: 2 }
 
 ### Spell Checker
 
-This config includes the `CSpell` plugin by default, which will warn you when
-you have misspelled words in your code. This can be useful for catching typos,
-and ensuring that your code is consistent. Roblox keywords are also included in
-the dictionary, which is provided by the
+This config includes the [CSpell](https://cspell.org/) plugin by default, which
+will warn you when you have misspelled words in your code. This can be useful
+for catching typos, and ensuring that your code is consistent. Roblox keywords
+are also included in the dictionary, which is provided by the
 [`cspell-dicts-roblox`](https://github.com/christopher-buss/cspell-dicts-roblox)
 package. If any words roblox words are missing, please open an issue on that
 repository rather than this one.
