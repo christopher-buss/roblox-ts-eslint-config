@@ -102,7 +102,7 @@ export async function react(
 				"react/no-unused-state": "warn",
 				"react/no-useless-fragment": "warn",
 				"react/prefer-destructuring-assignment": "warn",
-				"react/prefer-read-only-props": "error",
+				"react/prefer-read-only-props": "off",
 				"react/prefer-shorthand-boolean": "off",
 				"react/prefer-shorthand-fragment": "warn",
 
