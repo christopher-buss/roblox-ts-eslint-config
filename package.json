@@ -85,7 +85,7 @@
 		"eslint-plugin-promise": "6.2.0",
 		"eslint-plugin-sonarjs": "1.0.3",
 		"eslint-plugin-toml": "0.11.1",
-		"eslint-plugin-unicorn": "53.0.0",
+		"eslint-plugin-unicorn": "54.0.0",
 		"eslint-plugin-yml": "1.14.0",
 		"isentinel-eslint-plugin-roblox-ts": "0.0.37",
 		"jsonc-eslint-parser": "2.4.0",
