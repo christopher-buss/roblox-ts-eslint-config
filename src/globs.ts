@@ -1,6 +1,8 @@
 export const GLOB_SRC_EXT = "?([cm])[jt]s?(x)";
 export const GLOB_SRC = "**/*.?([cm])[jt]s?(x)";
 
+export const GLOB_LUA = "**/*.lua?(u)";
+
 export const GLOB_JS = "**/*.?([cm])js";
 export const GLOB_JSX = "**/*.?([cm])jsx";
 

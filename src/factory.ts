@@ -137,10 +137,13 @@ export function style(
 
 	if (enableRoblox) {
 		configs.push(
-			roblox({
-				...resolveSubOptions(options, "typescript"),
-				componentExts: componentExtensions,
-			}),
+			roblox(
+				{
+					...resolveSubOptions(options, "typescript"),
+					componentExts: componentExtensions,
+				},
+				!(options.formatters !== undefined || options.formatters === false),
+			),
 		);
 	}
 

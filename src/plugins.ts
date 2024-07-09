@@ -9,6 +9,7 @@ export { default as pluginAntfu } from "eslint-plugin-antfu";
 export { default as pluginArrowReturnStyle } from "eslint-plugin-arrow-return-style";
 export { default as pluginComments } from "eslint-plugin-eslint-comments";
 export { default as pluginFormat } from "eslint-plugin-format";
+export { default as pluginFormatLua } from "eslint-plugin-format-lua";
 export * as pluginImport from "eslint-plugin-import-x";
 export { default as pluginNoAutofix } from "eslint-plugin-no-autofix";
 export { default as pluginPerfectionist } from "eslint-plugin-perfectionist";

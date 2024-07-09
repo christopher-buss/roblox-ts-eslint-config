@@ -63,6 +63,13 @@ export interface OptionsFormatters {
 	html?: "prettier" | boolean;
 
 	/**
+	 * Enable formatting support for Lua files (powered by stylua).
+	 *
+	 * @default true
+	 */
+	lua?: boolean;
+
+	/**
 	 * Enable formatting support for Markdown.
 	 *
 	 * Support both Prettier and dprint.

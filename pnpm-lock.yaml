@@ -65,6 +65,9 @@ importers:
       eslint-plugin-format:
         specifier: 0.1.2
         version: 0.1.2(eslint@9.6.0)
+      eslint-plugin-format-lua:
+        specifier: 0.1.0
+        version: 0.1.0(eslint@9.6.0)
       eslint-plugin-import-x:
         specifier: 0.5.3
         version: 0.5.3(eslint@9.6.0)(typescript@5.5.3)
@@ -781,6 +784,9 @@ packages:
     resolution: {integrity: sha512-NfOTdxB+PgHKdqxwGP1i+u5d0+lOQgXbzObjR9Bpgdt1lVG2CxTcC7sExkKq3sJWA6LUIg9PNgVYpqX2kj5qkw==}
     peerDependencies:
       eslint: '>=8.56.0'
+
+  '@johnnymorganz/stylua@0.20.0':
+    resolution: {integrity: sha512-8rsTwI/KFhMvRxsTMsUQnxrjkBVuq69bPv1m9B1v8NJSFlvAvkfrmRF/86w8oHVntwwt4OdbG3bEjjeqA3b8xw==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -1761,6 +1767,11 @@ packages:
     engines: {node: '>=6.5.0'}
     peerDependencies:
       eslint: '>=4.19.1'
+
+  eslint-plugin-format-lua@0.1.0:
+    resolution: {integrity: sha512-AgEfESp2feNG3Un8v1sU+G42P5oHtr7K1KcPpSZ1fgPCkxh6odDACuZh/6BCPpU0tfGYH4ZcF8LF7ZCAoEVSXg==}
+    peerDependencies:
+      eslint: ^8.40.0 || ^9.0.0
 
   eslint-plugin-format@0.1.2:
     resolution: {integrity: sha512-ZrcO3aiumgJ6ENAv65IWkPjtW77ML/5mp0YrRK0jdvvaZJb+4kKWbaQTMr/XbJo6CtELRmCApAziEKh7L2NbdQ==}
@@ -4314,6 +4325,8 @@ snapshots:
       - supports-color
       - typescript
 
+  '@johnnymorganz/stylua@0.20.0': {}
+
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -5507,6 +5520,13 @@ snapshots:
       escape-string-regexp: 1.0.5
       eslint: 9.6.0
       ignore: 5.3.1
+
+  eslint-plugin-format-lua@0.1.0(eslint@9.6.0):
+    dependencies:
+      '@johnnymorganz/stylua': 0.20.0
+      eslint: 9.6.0
+      eslint-formatting-reporter: 0.0.0(eslint@9.6.0)
+      eslint-parser-plain: 0.1.0
 
   eslint-plugin-format@0.1.2(eslint@9.6.0):
     dependencies:
