@@ -90,8 +90,8 @@ importers:
         specifier: 1.0.3
         version: 1.0.3(eslint@9.6.0)
       eslint-plugin-toml:
-        specifier: 0.11.0
-        version: 0.11.0(eslint@9.6.0)
+        specifier: 0.11.1
+        version: 0.11.1(eslint@9.6.0)
       eslint-plugin-unicorn:
         specifier: 53.0.0
         version: 53.0.0(eslint@9.6.0)
@@ -1961,8 +1961,8 @@ packages:
     peerDependencies:
       eslint: '>=0.8.0'
 
-  eslint-plugin-toml@0.11.0:
-    resolution: {integrity: sha512-sau+YvPU4fWTjB+qtBt3n8WS87aoDCs+BVbSUAemGaIsRNbvR9uEk+Tt892iLHTGvp/DPWYoCX4/8DoyAbB+sQ==}
+  eslint-plugin-toml@0.11.1:
+    resolution: {integrity: sha512-Y1WuMSzfZpeMIrmlP1nUh3kT8p96mThIq4NnHrYUhg10IKQgGfBZjAWnrg9fBqguiX4iFps/x/3Hb5TxBisfdw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -3421,6 +3421,10 @@ packages:
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+
+  toml-eslint-parser@0.10.0:
+    resolution: {integrity: sha512-khrZo4buq4qVmsGzS5yQjKe/WsFvV8fGfOjDQN0q4iy9FjRfPWRgTFrU8u1R2iu/SfWLhY9WnCi4Jhdrcbtg+g==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   toml-eslint-parser@0.9.3:
     resolution: {integrity: sha512-moYoCvkNUAPCxSW9jmHmRElhm4tVJpHL8ItC/+uYD0EpPSFXbck7yREz9tNdJVTSpHVod8+HoipcpbQ0oE6gsw==}
@@ -5796,13 +5800,13 @@ snapshots:
     dependencies:
       eslint: 9.6.0
 
-  eslint-plugin-toml@0.11.0(eslint@9.6.0):
+  eslint-plugin-toml@0.11.1(eslint@9.6.0):
     dependencies:
       debug: 4.3.5
       eslint: 9.6.0
       eslint-compat-utils: 0.5.1(eslint@9.6.0)
       lodash: 4.17.21
-      toml-eslint-parser: 0.9.3
+      toml-eslint-parser: 0.10.0
     transitivePeerDependencies:
       - supports-color
 
@@ -7440,6 +7444,10 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
+
+  toml-eslint-parser@0.10.0:
+    dependencies:
+      eslint-visitor-keys: 3.4.3
 
   toml-eslint-parser@0.9.3:
     dependencies:
