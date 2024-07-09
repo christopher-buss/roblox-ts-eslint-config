@@ -142,9 +142,6 @@ export async function react(
 				...overrides,
 			},
 			settings: {
-				react: {
-					version: "17.0",
-				},
 				reactOptions: {
 					importSource: importSource ?? "@rbxts",
 					jsxPragma: jsxPragma ?? "React",
