@@ -123,8 +123,8 @@ importers:
         specifier: 2.4.2
         version: 2.4.2
       toml-eslint-parser:
-        specifier: 0.9.3
-        version: 0.9.3
+        specifier: 0.10.0
+        version: 0.10.0
       yaml-eslint-parser:
         specifier: 1.2.3
         version: 1.2.3
