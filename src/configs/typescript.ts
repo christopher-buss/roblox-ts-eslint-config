@@ -142,6 +142,7 @@ export async function typescript(
 						allowImplicit: true,
 					},
 				],
+				camelcase: "error",
 				"id-length": [
 					"error",
 					{
@@ -256,13 +257,13 @@ export async function typescript(
 					{
 						argsIgnorePattern: "^_",
 						caughtErrorsIgnorePattern: "^_",
+						varsIgnorePattern: "^_",
 					},
 				],
 				"ts/no-use-before-define": "off",
 				"ts/no-useless-constructor": "error",
 				"ts/prefer-for-of": "error",
 				"ts/prefer-function-type": "error",
-				"ts/prefer-ts-expect-error": "error",
 				"ts/triple-slash-reference": "off",
 				"ts/unified-signatures": "off",
 				yoda: ["error", "never"],
