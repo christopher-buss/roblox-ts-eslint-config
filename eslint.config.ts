@@ -12,14 +12,6 @@ export default style(
 		files: ["src/**/*.ts"],
 		rules: {
 			"max-lines-per-function": "off",
-			"perfectionist/sort-objects": [
-				"error",
-				{
-					order: "asc",
-					"partition-by-comment": "Part:**",
-					type: "natural",
-				},
-			],
 			"sonar/cognitive-complexity": "off",
 		},
 	},

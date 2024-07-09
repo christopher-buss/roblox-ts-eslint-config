@@ -15,7 +15,9 @@
 	"homepage": "https://github.com/christopher-buss/roblox-ts-eslint-config",
 	"keywords": [
 		"eslint-config",
-		"roblox"
+		"roblox",
+		"roblox-ts",
+		"rbxts"
 	],
 	"exports": {
 		".": {
