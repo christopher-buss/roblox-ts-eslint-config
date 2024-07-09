@@ -9,8 +9,6 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				unicorn: pluginUnicorn,
 			},
 			rules: {
-				// The auto-fix here does not support roblox-ts well, but the rules are
-				// still useful
 				"unicorn/catch-error-name": [
 					"error",
 					{
@@ -34,6 +32,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				"unicorn/no-keyword-prefix": "error",
 				"unicorn/no-lonely-if": "error",
 				"unicorn/no-negated-condition": "off",
+				"unicorn/no-negation-in-equality-check": "error",
 				"unicorn/no-nested-ternary": "error",
 				"unicorn/no-object-as-default-parameter": "error",
 				"unicorn/no-static-only-class": "error",
