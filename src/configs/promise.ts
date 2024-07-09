@@ -1,5 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat";
-
 import { pluginPromise } from "../plugins";
 import type { TypedFlatConfigItem } from "../types";
 
@@ -8,7 +6,7 @@ export async function promise(): Promise<Array<TypedFlatConfigItem>> {
 		{
 			name: "style:promise",
 			plugins: {
-				promise: fixupPluginRules(pluginPromise),
+				promise: pluginPromise,
 			},
 			rules: {
 				"promise/always-return": [
@@ -26,8 +24,7 @@ export async function promise(): Promise<Array<TypedFlatConfigItem>> {
 					},
 				],
 				"promise/no-callback-in-promise": "off",
-				// TODO: Enable this rule eslint-community/eslint-plugin-promise#472
-				"promise/no-multiple-resolved": "off",
+				"promise/no-multiple-resolved": "error",
 				"promise/no-native": "off",
 				"promise/no-nesting": "warn",
 				"promise/no-new-statics": "off",
