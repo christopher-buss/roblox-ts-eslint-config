@@ -9,6 +9,9 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				unicorn: pluginUnicorn,
 			},
 			rules: {
+				// The autofix for this rule does not work well as we do not
+				// have an array.entries() method built-in to roblox-ts.
+				"no-autofix/unicorn/no-array-for-each": "error",
 				"unicorn/catch-error-name": [
 					"error",
 					{
@@ -25,7 +28,6 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 						multipleFileExtensions: true,
 					},
 				],
-				"unicorn/no-array-for-each": "error",
 				"unicorn/no-array-push-push": "error",
 				"unicorn/no-await-expression-member": "error",
 				"unicorn/no-for-loop": "error",
