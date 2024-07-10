@@ -16,7 +16,6 @@ import {
 	roblox,
 	shopify,
 	sonarjs,
-	sortPackageJson,
 	sortTsconfig,
 	stylistic,
 	toml,
@@ -25,6 +24,7 @@ import {
 	yaml,
 } from "./configs";
 import { formatters } from "./configs/formatters";
+import { packageJson } from "./configs/package-json";
 import { spelling } from "./configs/spelling";
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types";
 import { getOverrides, interopDefault, resolveSubOptions } from "./utils";
@@ -176,7 +176,7 @@ export function style(
 				overrides: getOverrides(options, "jsonc"),
 				stylistic: stylisticOptions,
 			}),
-			sortPackageJson(),
+			packageJson(),
 			sortTsconfig(),
 		);
 	}

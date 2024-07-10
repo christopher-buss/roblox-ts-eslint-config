@@ -7153,6 +7153,42 @@ export interface RuleOptions {
    */
   'no-autofix/operator-linebreak'?: Linter.RuleEntry<NoAutofixOperatorLinebreak>
   /**
+   * Package properties must be declared in standard order
+   */
+  'no-autofix/package-json/order-properties'?: Linter.RuleEntry<NoAutofixPackageJsonOrderProperties>
+  /**
+   * Enforce either object or shorthand declaration for repository.
+   */
+  'no-autofix/package-json/repository-shorthand'?: Linter.RuleEntry<NoAutofixPackageJsonRepositoryShorthand>
+  /**
+   * Dependencies, scripts, and configuration values must be declared in alphabetical order.
+   */
+  'no-autofix/package-json/sort-collections'?: Linter.RuleEntry<NoAutofixPackageJsonSortCollections>
+  /**
+   * Enforce that if repository directory is specified, it matches the path to the package.json file
+   */
+  'no-autofix/package-json/unique-dependencies'?: Linter.RuleEntry<[]>
+  /**
+   * Checks existence of local dependencies in the package.json
+   */
+  'no-autofix/package-json/valid-local-dependency'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package names are valid npm package names
+   */
+  'no-autofix/package-json/valid-name'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package.json has all properties required by the npm spec
+   */
+  'no-autofix/package-json/valid-package-def'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that if repository directory is specified, it matches the path to the package.json file
+   */
+  'no-autofix/package-json/valid-repository-directory'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package versions are valid semver specifiers
+   */
+  'no-autofix/package-json/valid-version'?: Linter.RuleEntry<[]>
+  /**
    * Require or disallow padding within blocks
    * @see https://eslint.org/docs/latest/rules/padded-blocks
    * @deprecated
@@ -10369,6 +10405,42 @@ export interface RuleOptions {
    * @deprecated
    */
   'operator-linebreak'?: Linter.RuleEntry<OperatorLinebreak>
+  /**
+   * Package properties must be declared in standard order
+   */
+  'package-json/order-properties'?: Linter.RuleEntry<PackageJsonOrderProperties>
+  /**
+   * Enforce either object or shorthand declaration for repository.
+   */
+  'package-json/repository-shorthand'?: Linter.RuleEntry<PackageJsonRepositoryShorthand>
+  /**
+   * Dependencies, scripts, and configuration values must be declared in alphabetical order.
+   */
+  'package-json/sort-collections'?: Linter.RuleEntry<PackageJsonSortCollections>
+  /**
+   * Enforce that if repository directory is specified, it matches the path to the package.json file
+   */
+  'package-json/unique-dependencies'?: Linter.RuleEntry<[]>
+  /**
+   * Checks existence of local dependencies in the package.json
+   */
+  'package-json/valid-local-dependency'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package names are valid npm package names
+   */
+  'package-json/valid-name'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package.json has all properties required by the npm spec
+   */
+  'package-json/valid-package-def'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that if repository directory is specified, it matches the path to the package.json file
+   */
+  'package-json/valid-repository-directory'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package versions are valid semver specifiers
+   */
+  'package-json/valid-version'?: Linter.RuleEntry<[]>
   /**
    * Require or disallow padding within blocks
    * @see https://eslint.org/docs/latest/rules/padded-blocks
@@ -22650,6 +22722,18 @@ type NoAutofixOperatorLinebreak = []|[("after" | "before" | "none" | null)]|[("a
     [k: string]: ("after" | "before" | "none" | "ignore") | undefined
   }
 }]
+// ----- no-autofix/package-json/order-properties -----
+type NoAutofixPackageJsonOrderProperties = []|[{
+  order?: (("legacy" | "sort-package-json") | string[])
+  [k: string]: unknown | undefined
+}]
+// ----- no-autofix/package-json/repository-shorthand -----
+type NoAutofixPackageJsonRepositoryShorthand = []|[{
+  form?: ("object" | "shorthand")
+  [k: string]: unknown | undefined
+}]
+// ----- no-autofix/package-json/sort-collections -----
+type NoAutofixPackageJsonSortCollections = []|[string[]]
 // ----- no-autofix/padded-blocks -----
 type NoAutofixPaddedBlocks = []|[(("always" | "never") | {
   blocks?: ("always" | "never")
@@ -24535,6 +24619,18 @@ type OperatorLinebreak = []|[("after" | "before" | "none" | null)]|[("after" | "
     [k: string]: ("after" | "before" | "none" | "ignore") | undefined
   }
 }]
+// ----- package-json/order-properties -----
+type PackageJsonOrderProperties = []|[{
+  order?: (("legacy" | "sort-package-json") | string[])
+  [k: string]: unknown | undefined
+}]
+// ----- package-json/repository-shorthand -----
+type PackageJsonRepositoryShorthand = []|[{
+  form?: ("object" | "shorthand")
+  [k: string]: unknown | undefined
+}]
+// ----- package-json/sort-collections -----
+type PackageJsonSortCollections = []|[string[]]
 // ----- padded-blocks -----
 type PaddedBlocks = []|[(("always" | "never") | {
   blocks?: ("always" | "never")
@@ -27935,4 +28031,4 @@ type Yoda = []|[("always" | "never")]|[("always" | "never"), {
   onlyEquality?: boolean
 }]
 // Names of all the configs
-export type ConfigNames = 'style:eslint-comments' | 'style:formatters:setup' | 'style:imports' | 'style:import-sort' | 'style:jsdoc' | 'style:jsonc:setup' | 'style:jsonc:rules' | 'style:markdown:setup' | 'style:markdown:processor' | 'style:markdown:parser' | 'style:markdown:disables' | 'style:perfectionist' | 'style:promise' | 'style:react:setup' | 'style:react:rules' | 'style:roblox' | 'style:shopify' | 'style:sonarjs' | 'style:sort-package-json' | 'style:sort-tsconfig' | 'style:spelling' | 'style:stylistic' | 'style:typescript:setup' | 'style:typescript:rules' | 'style:typescript:dts-overrides' | 'style:unicorn' | 'style:yaml:setup' | 'style:yaml:rules'
+export type ConfigNames = 'style:eslint-comments' | 'style:formatters:setup' | 'style:imports' | 'style:import-sort' | 'style:jsdoc' | 'style:jsonc:setup' | 'style:jsonc:rules' | 'style:markdown:setup' | 'style:markdown:processor' | 'style:markdown:parser' | 'style:markdown:disables' | 'style:package-json' | 'style:perfectionist' | 'style:promise' | 'style:react:setup' | 'style:react:rules' | 'style:roblox' | 'style:shopify' | 'style:sonarjs' | 'style:sort-tsconfig' | 'style:spelling' | 'style:stylistic' | 'style:typescript:setup' | 'style:typescript:rules' | 'style:typescript:dts-overrides' | 'style:unicorn' | 'style:yaml:setup' | 'style:yaml:rules'
