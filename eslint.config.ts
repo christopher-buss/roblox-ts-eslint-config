@@ -1,7 +1,8 @@
 // @ts-expect-error missing types
 import styleMigrate from "@stylistic/eslint-plugin-migrate";
 
-import style from "./dist/index.js";
+// eslint-disable-next-line antfu/no-import-dist -- Need the compiled version.
+import { style } from "./dist";
 
 export default style(
 	{

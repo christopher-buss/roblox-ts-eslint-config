@@ -1,4 +1,4 @@
-import type { TypedFlatConfigItem } from "dist";
+import type { TypedFlatConfigItem } from "src";
 import { pluginPackageJson } from "src/plugins";
 import { interopDefault } from "src/utils";
 
