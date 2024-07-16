@@ -51,7 +51,7 @@
 		"@antfu/install-pkg": "0.3.3",
 		"@clack/prompts": "0.7.0",
 		"@cspell/eslint-plugin": "8.10.4",
-		"@eslint/compat": "1.1.0",
+		"@eslint/compat": "1.1.1",
 		"@isentinel/dict-rbxts": "1.0.1",
 		"@isentinel/dict-roblox": "1.0.3",
 		"@isentinel/eslint-plugin-comment-length": "1.7.3",
