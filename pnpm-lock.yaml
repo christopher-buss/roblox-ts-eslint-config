@@ -139,8 +139,8 @@ importers:
         version: 17.7.2
     devDependencies:
       '@antfu/ni':
-        specifier: 0.21.12
-        version: 0.21.12
+        specifier: 0.22.0
+        version: 0.22.0
       '@eslint-react/eslint-plugin':
         specifier: 1.5.25
         version: 1.5.25(eslint@9.7.0)(typescript@5.5.3)
@@ -223,8 +223,8 @@ packages:
   '@antfu/install-pkg@0.3.3':
     resolution: {integrity: sha512-nHHsk3NXQ6xkCfiRRC8Nfrg8pU5kkr3P3Y9s9dKqiuRmBD0Yap7fymNDjGFKeWhZQHqqbCS5CfeMy9wtExM24w==}
 
-  '@antfu/ni@0.21.12':
-    resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
+  '@antfu/ni@0.22.0':
+    resolution: {integrity: sha512-qP2zFsmypfWpKnmQcjoqMfYrPRHbqcXnhaUrg3VGqPGFXyN9sKz2+/TvNKByWDqAfuVStE8Fy2ppuVdoWQDjkw==}
     hasBin: true
 
   '@antfu/utils@0.7.10':
@@ -3844,7 +3844,7 @@ snapshots:
     dependencies:
       '@jsdevtools/ez-spawn': 3.0.4
 
-  '@antfu/ni@0.21.12': {}
+  '@antfu/ni@0.22.0': {}
 
   '@antfu/utils@0.7.10': {}
 
