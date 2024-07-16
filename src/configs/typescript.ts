@@ -66,6 +66,7 @@ export async function typescript(
 		"ts/no-throw-literal": "off",
 		"ts/no-unnecessary-boolean-literal-compare": "error",
 		"ts/no-unnecessary-condition": ["error", { allowConstantLoopConditions: true }],
+		"ts/no-unnecessary-parameter-property-assignment": "error",
 		"ts/no-unnecessary-qualifier": "error",
 		"ts/no-unnecessary-type-arguments": "error",
 		"ts/no-unnecessary-type-assertion": "error",
