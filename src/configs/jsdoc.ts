@@ -15,6 +15,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 				"jsdoc/check-param-names": ["warn", { checkDestructured: false }],
 				"jsdoc/check-property-names": "warn",
 				"jsdoc/check-types": "warn",
+				"jsdoc/convert-to-jsdoc-comments": "warn",
 				"jsdoc/empty-tags": "warn",
 				"jsdoc/implements-on-classes": "warn",
 				"jsdoc/informative-docs": "warn",
