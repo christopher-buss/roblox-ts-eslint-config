@@ -102,7 +102,7 @@ export async function react(
 				"react/no-unused-state": "warn",
 				"react/no-useless-fragment": "warn",
 				"react/prefer-destructuring-assignment": "warn",
-				"react/prefer-read-only-props": "off",
+				"react/prefer-read-only-props": "error",
 				"react/prefer-shorthand-boolean": "off",
 				"react/prefer-shorthand-fragment": "warn",
 
@@ -113,6 +113,8 @@ export async function react(
 				"react-hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
 				"react-hooks-extra/ensure-use-callback-has-non-empty-deps": "error",
 				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "error",
+				"react-hooks-extra/no-direct-set-state-in-use-effect": "error",
+				"react-hooks-extra/no-direct-set-state-in-use-layout-effect": "error",
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
 				// recommended rules from @eslint-react/naming-convention
 				"react-naming-convention/filename-extension": ["warn", "as-needed"],

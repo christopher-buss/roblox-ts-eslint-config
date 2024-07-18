@@ -1430,6 +1430,16 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
   /**
+   * disallow direct calls to the 'set' function of 'useState' in 'useEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
+   */
+  'no-autofix/@eslint-react/hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
+  /**
+   * disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   */
+  'no-autofix/@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
+  /**
    * disallow function calls in 'useState' that aren't wrapped in an initializer function
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
    */
@@ -7568,6 +7578,16 @@ export interface RuleOptions {
    */
   'no-autofix/react-hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
   /**
+   * disallow direct calls to the 'set' function of 'useState' in 'useEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
+   */
+  'no-autofix/react-hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
+  /**
+   * disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   */
+  'no-autofix/react-hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
+  /**
    * disallow function calls in 'useState' that aren't wrapped in an initializer function
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
    */
@@ -10746,6 +10766,16 @@ export interface RuleOptions {
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-memo-has-non-empty-deps
    */
   'react-hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
+  /**
+   * disallow direct calls to the 'set' function of 'useState' in 'useEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
+   */
+  'react-hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
+  /**
+   * disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   */
+  'react-hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
   /**
    * disallow function calls in 'useState' that aren't wrapped in an initializer function
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
