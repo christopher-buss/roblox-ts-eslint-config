@@ -76,7 +76,7 @@
 		"eslint-plugin-package-json": "0.15.2",
 		"eslint-plugin-perfectionist": "2.11.0",
 		"eslint-plugin-promise": "6.4.0",
-		"eslint-plugin-sonarjs": "1.0.3",
+		"eslint-plugin-sonarjs": "1.0.4",
 		"eslint-plugin-toml": "0.11.1",
 		"eslint-plugin-unicorn": "54.0.0",
 		"eslint-plugin-yml": "1.14.0",
