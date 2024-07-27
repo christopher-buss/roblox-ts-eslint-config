@@ -117,7 +117,7 @@ export interface OptionsHasTypeScript {
 }
 
 export interface OptionsStylistic {
-	stylistic?: StylisticConfig | boolean;
+	stylistic?: boolean | StylisticConfig;
 }
 
 export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
@@ -151,7 +151,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	formatters?: OptionsFormatters | boolean;
+	formatters?: boolean | OptionsFormatters;
 
 	/**
 	 * Enable gitignore support.
@@ -161,14 +161,14 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @default true
 	 * @see https://github.com/antfu/eslint-config-flat-gitignore
 	 */
-	gitignore?: FlatGitignoreOptions | boolean;
+	gitignore?: boolean | FlatGitignoreOptions;
 
 	/**
 	 * Enable JSONC support.
 	 *
 	 * @default true
 	 */
-	jsonc?: OptionsOverrides | boolean;
+	jsonc?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable JSX related rules.
@@ -186,7 +186,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	markdown?: OptionsOverrides | boolean;
+	markdown?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable react rules.
@@ -198,7 +198,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default false
 	 */
-	react?: ReactConfig | boolean;
+	react?: boolean | ReactConfig;
 
 	/**
 	 * Enable Roblox-TS support.
@@ -214,21 +214,21 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	spellCheck?: SpellCheckConfig | boolean;
+	spellCheck?: boolean | SpellCheckConfig;
 
 	/**
 	 * Enable stylistic rules.
 	 *
 	 * @default true
 	 */
-	stylistic?: StylisticConfig | boolean;
+	stylistic?: boolean | StylisticConfig;
 
 	/**
 	 * Enable TOML support.
 	 *
 	 * @default true
 	 */
-	toml?: OptionsOverrides | boolean;
+	toml?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable TypeScript support.
@@ -244,5 +244,5 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 *
 	 * @default true
 	 */
-	yaml?: OptionsOverrides | boolean;
+	yaml?: boolean | OptionsOverrides;
 }
