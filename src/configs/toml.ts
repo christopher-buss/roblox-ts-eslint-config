@@ -21,7 +21,7 @@ export async function toml(
 
 	return [
 		{
-			name: "antfu/toml/setup",
+			name: "style/toml/setup",
 			plugins: {
 				toml: pluginToml,
 			},
@@ -31,7 +31,7 @@ export async function toml(
 			languageOptions: {
 				parser: parserToml,
 			},
-			name: "antfu/toml/rules",
+			name: "style/toml/rules",
 			rules: {
 				"style/spaced-comment": "off",
 

@@ -6,7 +6,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 
 	return [
 		{
-			name: "style:jsdoc",
+			name: "style/jsdoc",
 			plugins: {
 				jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),
 			},

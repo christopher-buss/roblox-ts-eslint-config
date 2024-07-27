@@ -33,7 +33,7 @@ export async function spelling(
 	return [
 		{
 			files,
-			name: "style:spelling",
+			name: "style/spelling",
 			plugins: {
 				["@cspell"]: pluginCspell,
 			},

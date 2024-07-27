@@ -8,7 +8,7 @@ import { pluginCommentLength, pluginComments } from "../plugins";
 export async function comments(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
-			name: "style:eslint-comments",
+			name: "style/eslint/comments",
 			plugins: {
 				"comment-length": fixupPluginRules(pluginCommentLength),
 				"eslint-comments": pluginComments,

@@ -8,7 +8,7 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Typ
 
 	return [
 		{
-			name: "style:imports",
+			name: "style/imports",
 			plugins: {
 				antfu: pluginAntfu,
 				import: pluginImport,
@@ -42,7 +42,7 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Typ
 					sourceType: "script",
 				},
 			},
-			name: "style:import-sort",
+			name: "style/import-sort",
 			plugins: {
 				"simple-import-sort": pluginSimpleImportSort,
 			},

@@ -105,7 +105,7 @@ export async function typescript(
 		{
 			// Install the plugins without globs, so they can be configured
 			// separately.
-			name: "style:typescript:setup",
+			name: "style/typescript:setup",
 			plugins: {
 				antfu: pluginAntfu,
 				"no-autofix": pluginNoAutofix,
@@ -131,7 +131,7 @@ export async function typescript(
 					...(parserOptions as any),
 				},
 			},
-			name: "style:typescript:rules",
+			name: "style/typescript:rules",
 			rules: {
 				...renameRules(pluginTs.configs["eslint-recommended"].overrides?.[0].rules ?? {}, {
 					"@typescript-eslint": "ts",
@@ -276,7 +276,7 @@ export async function typescript(
 		},
 		{
 			files: ["**/*.d.ts"],
-			name: "style:typescript:dts-overrides",
+			name: "style/typescript:dts-overrides",
 			rules: {
 				"eslint-comments/no-unlimited-disable": "off",
 				"import/no-duplicates": "off",

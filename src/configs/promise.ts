@@ -4,7 +4,7 @@ import type { TypedFlatConfigItem } from "../types";
 export async function promise(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
-			name: "style:promise",
+			name: "style/promise",
 			plugins: {
 				promise: pluginPromise,
 			},

@@ -30,7 +30,7 @@ export async function stylistic(
 
 	return [
 		{
-			name: "style:stylistic",
+			name: "style/stylistic",
 			plugins: {
 				antfu: pluginAntfu,
 				"arrow-style": pluginArrowReturnStyle,

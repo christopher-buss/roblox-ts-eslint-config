@@ -9,7 +9,7 @@ export async function packageJson(): Promise<Array<TypedFlatConfigItem>> {
 			languageOptions: {
 				parser: await interopDefault(import("jsonc-eslint-parser")),
 			},
-			name: "style:package-json",
+			name: "style/package-json",
 			plugins: {
 				"package-json": pluginPackageJson,
 			},

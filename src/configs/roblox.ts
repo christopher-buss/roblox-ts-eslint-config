@@ -51,7 +51,7 @@ export async function roblox(
 				...(parserOptions as any),
 			},
 		},
-		name: "style:roblox",
+		name: "style/roblox",
 		plugins: {
 			roblox: pluginRobloxTS,
 		},

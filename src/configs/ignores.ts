@@ -5,6 +5,7 @@ export async function ignores(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
 			ignores: [...GLOB_EXCLUDE, GLOB_JS],
+			name: "style/ignores",
 		},
 	];
 }

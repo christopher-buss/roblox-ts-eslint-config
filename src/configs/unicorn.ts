@@ -4,7 +4,7 @@ import type { TypedFlatConfigItem } from "../types";
 export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
-			name: "style:unicorn",
+			name: "style/unicorn",
 			plugins: {
 				unicorn: pluginUnicorn,
 			},

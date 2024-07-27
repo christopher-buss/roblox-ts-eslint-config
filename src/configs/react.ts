@@ -38,7 +38,7 @@ export async function react(
 
 	return [
 		{
-			name: "style:react:setup",
+			name: "style/react:setup",
 			plugins: {
 				react: plugins["@eslint-react"],
 				"react-hooks": fixupPluginRules(pluginReactHooks),
@@ -61,7 +61,7 @@ export async function react(
 				},
 				sourceType: "module",
 			},
-			name: "style:react:rules",
+			name: "style/react:rules",
 			rules: {
 				// recommended rules from @eslint-react
 				"react/ensure-forward-ref-using-ref": "warn",

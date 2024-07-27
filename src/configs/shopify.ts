@@ -6,7 +6,7 @@ import type { TypedFlatConfigItem } from "../types";
 export async function shopify(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
-			name: "style:shopify",
+			name: "style/shopify",
 			plugins: {
 				shopify: fixupPluginRules(eslintPluginShopify),
 			},

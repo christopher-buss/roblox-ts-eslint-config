@@ -4,7 +4,7 @@ import type { TypedFlatConfigItem } from "../types";
 export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
 	return [
 		{
-			name: "style:sonarjs",
+			name: "style/sonarjs",
 			plugins: {
 				sonar: pluginSonar,
 			},

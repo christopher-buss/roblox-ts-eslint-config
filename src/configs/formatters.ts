@@ -46,7 +46,7 @@ export async function formatters(
 
 	const configs: Array<TypedFlatConfigItem> = [
 		{
-			name: "style:formatters:setup",
+			name: "style/formatters/setup",
 			plugins: {
 				format: pluginFormat,
 			},
@@ -60,7 +60,7 @@ export async function formatters(
 				languageOptions: {
 					parser: pluginFormat.parserPlain,
 				},
-				name: "style:formatter:css",
+				name: "style/formatter/css",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -76,7 +76,7 @@ export async function formatters(
 				languageOptions: {
 					parser: pluginFormat.parserPlain,
 				},
-				name: "style:formatter:scss",
+				name: "style/formatter/scss",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -92,7 +92,7 @@ export async function formatters(
 				languageOptions: {
 					parser: pluginFormat.parserPlain,
 				},
-				name: "style:formatter:less",
+				name: "style/formatter/less",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -112,7 +112,7 @@ export async function formatters(
 			languageOptions: {
 				parser: pluginFormat.parserPlain,
 			},
-			name: "style:formatter:html",
+			name: "style/formatter/html",
 			rules: {
 				"format/prettier": [
 					"error",
@@ -133,7 +133,7 @@ export async function formatters(
 			languageOptions: {
 				parser: pluginFormat.parserPlain,
 			},
-			name: "style:formatter:markdown",
+			name: "style/formatter/markdown",
 			rules: {
 				[`format/${formatter}`]: [
 					"error",
@@ -158,7 +158,7 @@ export async function formatters(
 			languageOptions: {
 				parser: pluginFormat.parserPlain,
 			},
-			name: "style:formatter:graphql",
+			name: "style/formatter/graphql",
 			rules: {
 				"format/prettier": [
 					"error",
