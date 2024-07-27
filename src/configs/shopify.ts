@@ -16,8 +16,8 @@ export async function shopify(): Promise<Array<TypedFlatConfigItem>> {
 				"shopify/prefer-module-scope-constants": "error",
 				"shopify/react-hooks-strict-return": "error",
 				"shopify/strict-component-boundaries": "error",
-				"shopify/typescript/prefer-pascal-case-enums": "error",
-				"shopify/typescript/prefer-singular-enums": "error",
+				"shopify/typescript-prefer-pascal-case-enums": "error",
+				"shopify/typescript-prefer-singular-enums": "error",
 			},
 			// Shopify has a dependency on 'eslint-plugin-react' so we need to
 			// set the react version to avoid the warning.
