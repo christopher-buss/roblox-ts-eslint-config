@@ -1,4 +1,4 @@
-import type { ESLintReactXSettings } from "@eslint-react/shared";
+import type { ESLintReactSettings } from "@eslint-react/shared";
 import type { StylisticCustomizeOptions } from "@stylistic/eslint-plugin";
 import type { ParserOptions } from "@typescript-eslint/parser";
 
@@ -124,7 +124,7 @@ export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" |
 
 export type ReactConfig = {
 	filenameCase?: "kebabCase" | "pascalCase";
-} & ESLintReactXSettings &
+} & ESLintReactSettings &
 	OptionsOverrides;
 
 export interface SpellCheckConfig {
