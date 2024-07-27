@@ -55,7 +55,7 @@
 		"@isentinel/dict-rbxts": "1.0.1",
 		"@isentinel/dict-roblox": "1.0.3",
 		"@isentinel/eslint-plugin-comment-length": "1.7.3",
-		"@shopify/eslint-plugin": "45.0.0",
+		"@shopify/eslint-plugin": "46.0.0",
 		"@stylistic/eslint-plugin": "2.3.0",
 		"@typescript-eslint/eslint-plugin": "7.17.0",
 		"@typescript-eslint/parser": "7.17.0",
