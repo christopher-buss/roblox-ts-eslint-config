@@ -201,7 +201,7 @@ export async function typescript(
 				"object-shorthand": "error",
 				"prefer-const": "off",
 				"prefer-destructuring": "off",
-				"ts/adjacent-overload-signatures": "error",
+				"ts/adjacent-overload-signatures": "off",
 				"ts/array-type": [
 					"error",
 					{

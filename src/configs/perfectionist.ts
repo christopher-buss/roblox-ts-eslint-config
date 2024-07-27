@@ -24,7 +24,9 @@ export async function perfectionist(): Promise<Array<TypedFlatConfigItem>> {
 				"perfectionist/sort-maps": ["error", { type: "natural" }],
 				"perfectionist/sort-object-types": ["error", { type: "natural" }],
 				"perfectionist/sort-objects": ["error", { type: "natural" }],
+				"perfectionist/sort-switch-case": ["error", { type: "natural" }],
 				"perfectionist/sort-union-types": ["error", { type: "natural" }],
+				"perfectionist/sort-variable-declarations": ["error", { type: "natural" }],
 			},
 		},
 	];

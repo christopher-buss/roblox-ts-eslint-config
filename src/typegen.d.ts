@@ -7241,88 +7241,98 @@ export interface RuleOptions {
    */
   'no-autofix/padding-line-between-statements'?: Linter.RuleEntry<NoAutofixPaddingLineBetweenStatements>
   /**
-   * enforce sorted arrays before include method
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-array-includes
+   * Enforce sorted arrays before include method.
+   * @see https://perfectionist.dev/rules/sort-array-includes
    */
   'no-autofix/perfectionist/sort-array-includes'?: Linter.RuleEntry<NoAutofixPerfectionistSortArrayIncludes>
   /**
-   * enforce sorted Astro attributes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-astro-attributes
+   * Enforce sorted Astro attributes.
+   * @see https://perfectionist.dev/rules/sort-astro-attributes
    */
   'no-autofix/perfectionist/sort-astro-attributes'?: Linter.RuleEntry<NoAutofixPerfectionistSortAstroAttributes>
   /**
-   * enforce sorted classes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-classes
+   * Enforce sorted classes.
+   * @see https://perfectionist.dev/rules/sort-classes
    */
   'no-autofix/perfectionist/sort-classes'?: Linter.RuleEntry<NoAutofixPerfectionistSortClasses>
   /**
-   * enforce sorted TypeScript enums
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-enums
+   * Enforce sorted TypeScript enums.
+   * @see https://perfectionist.dev/rules/sort-enums
    */
   'no-autofix/perfectionist/sort-enums'?: Linter.RuleEntry<NoAutofixPerfectionistSortEnums>
   /**
-   * enforce sorted exports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-exports
+   * Enforce sorted exports.
+   * @see https://perfectionist.dev/rules/sort-exports
    */
   'no-autofix/perfectionist/sort-exports'?: Linter.RuleEntry<NoAutofixPerfectionistSortExports>
   /**
-   * enforce sorted imports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
+   * Enforce sorted imports.
+   * @see https://perfectionist.dev/rules/sort-imports
    */
   'no-autofix/perfectionist/sort-imports'?: Linter.RuleEntry<NoAutofixPerfectionistSortImports>
   /**
-   * enforce sorted interface properties
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-interfaces
+   * Enforce sorted interface properties.
+   * @see https://perfectionist.dev/rules/sort-interfaces
    */
   'no-autofix/perfectionist/sort-interfaces'?: Linter.RuleEntry<NoAutofixPerfectionistSortInterfaces>
   /**
-   * enforce sorted intersection types
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-intersection-types
+   * Enforce sorted intersection types.
+   * @see https://perfectionist.dev/rules/sort-intersection-types
    */
   'no-autofix/perfectionist/sort-intersection-types'?: Linter.RuleEntry<NoAutofixPerfectionistSortIntersectionTypes>
   /**
-   * enforce sorted JSX props
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
+   * Enforce sorted JSX props.
+   * @see https://perfectionist.dev/rules/sort-jsx-props
    */
   'no-autofix/perfectionist/sort-jsx-props'?: Linter.RuleEntry<NoAutofixPerfectionistSortJsxProps>
   /**
-   * enforce sorted Map elements
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-maps
+   * Enforce sorted Map elements.
+   * @see https://perfectionist.dev/rules/sort-maps
    */
   'no-autofix/perfectionist/sort-maps'?: Linter.RuleEntry<NoAutofixPerfectionistSortMaps>
   /**
-   * enforce sorted named exports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-named-exports
+   * Enforce sorted named exports.
+   * @see https://perfectionist.dev/rules/sort-named-exports
    */
   'no-autofix/perfectionist/sort-named-exports'?: Linter.RuleEntry<NoAutofixPerfectionistSortNamedExports>
   /**
-   * enforce sorted named imports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-named-imports
+   * Enforce sorted named imports.
+   * @see https://perfectionist.dev/rules/sort-named-imports
    */
   'no-autofix/perfectionist/sort-named-imports'?: Linter.RuleEntry<NoAutofixPerfectionistSortNamedImports>
   /**
-   * enforce sorted object types
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-object-types
+   * Enforce sorted object types.
+   * @see https://perfectionist.dev/rules/sort-object-types
    */
   'no-autofix/perfectionist/sort-object-types'?: Linter.RuleEntry<NoAutofixPerfectionistSortObjectTypes>
   /**
-   * enforce sorted objects
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-objects
+   * Enforce sorted objects.
+   * @see https://perfectionist.dev/rules/sort-objects
    */
   'no-autofix/perfectionist/sort-objects'?: Linter.RuleEntry<NoAutofixPerfectionistSortObjects>
   /**
-   * enforce sorted Svelte attributes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-svelte-attributes
+   * Enforce sorted Svelte attributes.
+   * @see https://perfectionist.dev/rules/sort-svelte-attributes
    */
   'no-autofix/perfectionist/sort-svelte-attributes'?: Linter.RuleEntry<NoAutofixPerfectionistSortSvelteAttributes>
   /**
-   * enforce sorted union types
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-union-types
+   * Enforce sorted switch cases.
+   * @see https://perfectionist.dev/rules/sort-switch-case
+   */
+  'no-autofix/perfectionist/sort-switch-case'?: Linter.RuleEntry<NoAutofixPerfectionistSortSwitchCase>
+  /**
+   * Enforce sorted union types.
+   * @see https://perfectionist.dev/rules/sort-union-types
    */
   'no-autofix/perfectionist/sort-union-types'?: Linter.RuleEntry<NoAutofixPerfectionistSortUnionTypes>
   /**
-   * enforce sorted Vue attributes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-vue-attributes
+   * Enforce sorted variable declarations.
+   * @see https://perfectionist.dev/rules/sort-variable-declarations
+   */
+  'no-autofix/perfectionist/sort-variable-declarations'?: Linter.RuleEntry<NoAutofixPerfectionistSortVariableDeclarations>
+  /**
+   * Enforce sorted Vue attributes.
+   * @see https://perfectionist.dev/rules/sort-vue-attributes
    */
   'no-autofix/perfectionist/sort-vue-attributes'?: Linter.RuleEntry<NoAutofixPerfectionistSortVueAttributes>
   /**
@@ -10504,88 +10514,98 @@ export interface RuleOptions {
    */
   'padding-line-between-statements'?: Linter.RuleEntry<PaddingLineBetweenStatements>
   /**
-   * enforce sorted arrays before include method
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-array-includes
+   * Enforce sorted arrays before include method.
+   * @see https://perfectionist.dev/rules/sort-array-includes
    */
   'perfectionist/sort-array-includes'?: Linter.RuleEntry<PerfectionistSortArrayIncludes>
   /**
-   * enforce sorted Astro attributes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-astro-attributes
+   * Enforce sorted Astro attributes.
+   * @see https://perfectionist.dev/rules/sort-astro-attributes
    */
   'perfectionist/sort-astro-attributes'?: Linter.RuleEntry<PerfectionistSortAstroAttributes>
   /**
-   * enforce sorted classes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-classes
+   * Enforce sorted classes.
+   * @see https://perfectionist.dev/rules/sort-classes
    */
   'perfectionist/sort-classes'?: Linter.RuleEntry<PerfectionistSortClasses>
   /**
-   * enforce sorted TypeScript enums
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-enums
+   * Enforce sorted TypeScript enums.
+   * @see https://perfectionist.dev/rules/sort-enums
    */
   'perfectionist/sort-enums'?: Linter.RuleEntry<PerfectionistSortEnums>
   /**
-   * enforce sorted exports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-exports
+   * Enforce sorted exports.
+   * @see https://perfectionist.dev/rules/sort-exports
    */
   'perfectionist/sort-exports'?: Linter.RuleEntry<PerfectionistSortExports>
   /**
-   * enforce sorted imports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
+   * Enforce sorted imports.
+   * @see https://perfectionist.dev/rules/sort-imports
    */
   'perfectionist/sort-imports'?: Linter.RuleEntry<PerfectionistSortImports>
   /**
-   * enforce sorted interface properties
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-interfaces
+   * Enforce sorted interface properties.
+   * @see https://perfectionist.dev/rules/sort-interfaces
    */
   'perfectionist/sort-interfaces'?: Linter.RuleEntry<PerfectionistSortInterfaces>
   /**
-   * enforce sorted intersection types
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-intersection-types
+   * Enforce sorted intersection types.
+   * @see https://perfectionist.dev/rules/sort-intersection-types
    */
   'perfectionist/sort-intersection-types'?: Linter.RuleEntry<PerfectionistSortIntersectionTypes>
   /**
-   * enforce sorted JSX props
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
+   * Enforce sorted JSX props.
+   * @see https://perfectionist.dev/rules/sort-jsx-props
    */
   'perfectionist/sort-jsx-props'?: Linter.RuleEntry<PerfectionistSortJsxProps>
   /**
-   * enforce sorted Map elements
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-maps
+   * Enforce sorted Map elements.
+   * @see https://perfectionist.dev/rules/sort-maps
    */
   'perfectionist/sort-maps'?: Linter.RuleEntry<PerfectionistSortMaps>
   /**
-   * enforce sorted named exports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-named-exports
+   * Enforce sorted named exports.
+   * @see https://perfectionist.dev/rules/sort-named-exports
    */
   'perfectionist/sort-named-exports'?: Linter.RuleEntry<PerfectionistSortNamedExports>
   /**
-   * enforce sorted named imports
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-named-imports
+   * Enforce sorted named imports.
+   * @see https://perfectionist.dev/rules/sort-named-imports
    */
   'perfectionist/sort-named-imports'?: Linter.RuleEntry<PerfectionistSortNamedImports>
   /**
-   * enforce sorted object types
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-object-types
+   * Enforce sorted object types.
+   * @see https://perfectionist.dev/rules/sort-object-types
    */
   'perfectionist/sort-object-types'?: Linter.RuleEntry<PerfectionistSortObjectTypes>
   /**
-   * enforce sorted objects
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-objects
+   * Enforce sorted objects.
+   * @see https://perfectionist.dev/rules/sort-objects
    */
   'perfectionist/sort-objects'?: Linter.RuleEntry<PerfectionistSortObjects>
   /**
-   * enforce sorted Svelte attributes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-svelte-attributes
+   * Enforce sorted Svelte attributes.
+   * @see https://perfectionist.dev/rules/sort-svelte-attributes
    */
   'perfectionist/sort-svelte-attributes'?: Linter.RuleEntry<PerfectionistSortSvelteAttributes>
   /**
-   * enforce sorted union types
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-union-types
+   * Enforce sorted switch cases.
+   * @see https://perfectionist.dev/rules/sort-switch-case
+   */
+  'perfectionist/sort-switch-case'?: Linter.RuleEntry<PerfectionistSortSwitchCase>
+  /**
+   * Enforce sorted union types.
+   * @see https://perfectionist.dev/rules/sort-union-types
    */
   'perfectionist/sort-union-types'?: Linter.RuleEntry<PerfectionistSortUnionTypes>
   /**
-   * enforce sorted Vue attributes
-   * @see https://eslint-plugin-perfectionist.azat.io/rules/sort-vue-attributes
+   * Enforce sorted variable declarations.
+   * @see https://perfectionist.dev/rules/sort-variable-declarations
+   */
+  'perfectionist/sort-variable-declarations'?: Linter.RuleEntry<PerfectionistSortVariableDeclarations>
+  /**
+   * Enforce sorted Vue attributes.
+   * @see https://perfectionist.dev/rules/sort-vue-attributes
    */
   'perfectionist/sort-vue-attributes'?: Linter.RuleEntry<PerfectionistSortVueAttributes>
   /**
@@ -22868,48 +22888,86 @@ type NoAutofixPaddingLineBetweenStatements = {
 }[]
 // ----- no-autofix/perfectionist/sort-array-includes -----
 type NoAutofixPerfectionistSortArrayIncludes = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "spread-last"?: boolean
+  
+  ignoreCase?: boolean
+  
+  groupKind?: ("mixed" | "literals-first" | "spreads-first")
 }]
 // ----- no-autofix/perfectionist/sort-astro-attributes -----
 type NoAutofixPerfectionistSortAstroAttributes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/perfectionist/sort-classes -----
 type NoAutofixPerfectionistSortClasses = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
-  "ignore-case"?: boolean
+  
   order?: ("asc" | "desc")
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  partitionByComment?: (string[] | boolean | string)
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/perfectionist/sort-enums -----
 type NoAutofixPerfectionistSortEnums = []|[{
-  "partition-by-comment"?: (boolean | string | unknown[])
+  
   type?: ("alphabetical" | "natural" | "line-length")
-  "ignore-case"?: boolean
+  
   order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
+  
+  partitionByComment?: (string[] | boolean | string)
 }]
 // ----- no-autofix/perfectionist/sort-exports -----
 type NoAutofixPerfectionistSortExports = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
 }]
 // ----- no-autofix/perfectionist/sort-imports -----
 type NoAutofixPerfectionistSortImports = []|[_NoAutofixPerfectionistSortImportsSortImports]
 type _NoAutofixPerfectionistSortImportsSortImports = (_NoAutofixPerfectionistSortImportsMaxLineLengthRequiresLineLengthType & {
-  "custom-groups"?: {
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
+  
+  internalPattern?: string[]
+  
+  newlinesBetween?: ("ignore" | "always" | "never")
+  
+  maxLineLength?: number
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
     type?: {
       [k: string]: unknown | undefined
     }
@@ -22917,13 +22975,8 @@ type _NoAutofixPerfectionistSortImportsSortImports = (_NoAutofixPerfectionistSor
       [k: string]: unknown | undefined
     }
   }
-  type?: ("alphabetical" | "natural" | "line-length")
-  order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
-  "internal-pattern"?: string[]
-  "newlines-between"?: ("ignore" | "always" | "never")
-  "max-line-length"?: number
+  
+  environment?: ("node" | "bun")
 })
 type _NoAutofixPerfectionistSortImportsMaxLineLengthRequiresLineLengthType = ({
   [k: string]: unknown | undefined
@@ -22934,105 +22987,188 @@ interface _NoAutofixPerfectionistSortImports_IsLineLength {
 }
 // ----- no-autofix/perfectionist/sort-interfaces -----
 type NoAutofixPerfectionistSortInterfaces = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
-  "optionality-order"?: ("ignore" | "optional-first" | "required-first")
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "ignore-pattern"?: string[]
-  groups?: unknown[]
-  "partition-by-new-line"?: boolean
+  
+  ignoreCase?: boolean
+  
+  ignorePattern?: string[]
+  
+  partitionByNewLine?: boolean
+  
+  groupKind?: ("mixed" | "optional-first" | "required-first")
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/perfectionist/sort-intersection-types -----
 type NoAutofixPerfectionistSortIntersectionTypes = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
 }]
 // ----- no-autofix/perfectionist/sort-jsx-props -----
 type NoAutofixPerfectionistSortJsxProps = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  groups?: unknown[]
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
+  
+  ignorePattern?: string[]
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/perfectionist/sort-maps -----
 type NoAutofixPerfectionistSortMaps = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
 }]
 // ----- no-autofix/perfectionist/sort-named-exports -----
 type NoAutofixPerfectionistSortNamedExports = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "group-kind"?: ("mixed" | "values-first" | "types-first")
+  
+  ignoreCase?: boolean
+  
+  groupKind?: ("mixed" | "values-first" | "types-first")
 }]
 // ----- no-autofix/perfectionist/sort-named-imports -----
 type NoAutofixPerfectionistSortNamedImports = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "ignore-alias"?: boolean
-  "group-kind"?: ("mixed" | "values-first" | "types-first")
+  
+  ignoreCase?: boolean
+  
+  ignoreAlias?: boolean
+  
+  groupKind?: ("mixed" | "values-first" | "types-first")
 }]
 // ----- no-autofix/perfectionist/sort-object-types -----
 type NoAutofixPerfectionistSortObjectTypes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
-  "partition-by-new-line"?: boolean
+  
+  ignoreCase?: boolean
+  
+  partitionByNewLine?: boolean
+  
+  groupKind?: ("mixed" | "required-first" | "optional-first")
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/perfectionist/sort-objects -----
 type NoAutofixPerfectionistSortObjects = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
-  "partition-by-comment"?: (boolean | string | unknown[])
-  "partition-by-new-line"?: boolean
-  "styled-components"?: boolean
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "ignore-pattern"?: string[]
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  partitionByComment?: (string[] | boolean | string)
+  
+  partitionByNewLine?: boolean
+  
+  styledComponents?: boolean
+  
+  ignorePattern?: string[]
+  
+  customIgnore?: unknown[]
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/perfectionist/sort-svelte-attributes -----
 type NoAutofixPerfectionistSortSvelteAttributes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
+}]
+// ----- no-autofix/perfectionist/sort-switch-case -----
+type NoAutofixPerfectionistSortSwitchCase = []|[{
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
 }]
 // ----- no-autofix/perfectionist/sort-union-types -----
 type NoAutofixPerfectionistSortUnionTypes = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "nullable-last"?: boolean
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+}]
+// ----- no-autofix/perfectionist/sort-variable-declarations -----
+type NoAutofixPerfectionistSortVariableDeclarations = []|[{
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
 }]
 // ----- no-autofix/perfectionist/sort-vue-attributes -----
 type NoAutofixPerfectionistSortVueAttributes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- no-autofix/prefer-arrow-callback -----
 type NoAutofixPreferArrowCallback = []|[{
@@ -24758,48 +24894,86 @@ type PaddingLineBetweenStatements = {
 }[]
 // ----- perfectionist/sort-array-includes -----
 type PerfectionistSortArrayIncludes = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "spread-last"?: boolean
+  
+  ignoreCase?: boolean
+  
+  groupKind?: ("mixed" | "literals-first" | "spreads-first")
 }]
 // ----- perfectionist/sort-astro-attributes -----
 type PerfectionistSortAstroAttributes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- perfectionist/sort-classes -----
 type PerfectionistSortClasses = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
-  "ignore-case"?: boolean
+  
   order?: ("asc" | "desc")
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  partitionByComment?: (string[] | boolean | string)
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- perfectionist/sort-enums -----
 type PerfectionistSortEnums = []|[{
-  "partition-by-comment"?: (boolean | string | unknown[])
+  
   type?: ("alphabetical" | "natural" | "line-length")
-  "ignore-case"?: boolean
+  
   order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
+  
+  partitionByComment?: (string[] | boolean | string)
 }]
 // ----- perfectionist/sort-exports -----
 type PerfectionistSortExports = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
 }]
 // ----- perfectionist/sort-imports -----
 type PerfectionistSortImports = []|[_PerfectionistSortImportsSortImports]
 type _PerfectionistSortImportsSortImports = (_PerfectionistSortImportsMaxLineLengthRequiresLineLengthType & {
-  "custom-groups"?: {
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
+  
+  internalPattern?: string[]
+  
+  newlinesBetween?: ("ignore" | "always" | "never")
+  
+  maxLineLength?: number
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
     type?: {
       [k: string]: unknown | undefined
     }
@@ -24807,13 +24981,8 @@ type _PerfectionistSortImportsSortImports = (_PerfectionistSortImportsMaxLineLen
       [k: string]: unknown | undefined
     }
   }
-  type?: ("alphabetical" | "natural" | "line-length")
-  order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
-  "internal-pattern"?: string[]
-  "newlines-between"?: ("ignore" | "always" | "never")
-  "max-line-length"?: number
+  
+  environment?: ("node" | "bun")
 })
 type _PerfectionistSortImportsMaxLineLengthRequiresLineLengthType = ({
   [k: string]: unknown | undefined
@@ -24824,105 +24993,188 @@ interface _PerfectionistSortImports_IsLineLength {
 }
 // ----- perfectionist/sort-interfaces -----
 type PerfectionistSortInterfaces = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
-  "optionality-order"?: ("ignore" | "optional-first" | "required-first")
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "ignore-pattern"?: string[]
-  groups?: unknown[]
-  "partition-by-new-line"?: boolean
+  
+  ignoreCase?: boolean
+  
+  ignorePattern?: string[]
+  
+  partitionByNewLine?: boolean
+  
+  groupKind?: ("mixed" | "optional-first" | "required-first")
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- perfectionist/sort-intersection-types -----
 type PerfectionistSortIntersectionTypes = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
 }]
 // ----- perfectionist/sort-jsx-props -----
 type PerfectionistSortJsxProps = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  groups?: unknown[]
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
+  
+  ignorePattern?: string[]
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- perfectionist/sort-maps -----
 type PerfectionistSortMaps = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
+  
+  ignoreCase?: boolean
 }]
 // ----- perfectionist/sort-named-exports -----
 type PerfectionistSortNamedExports = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "group-kind"?: ("mixed" | "values-first" | "types-first")
+  
+  ignoreCase?: boolean
+  
+  groupKind?: ("mixed" | "values-first" | "types-first")
 }]
 // ----- perfectionist/sort-named-imports -----
 type PerfectionistSortNamedImports = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "ignore-alias"?: boolean
-  "group-kind"?: ("mixed" | "values-first" | "types-first")
+  
+  ignoreCase?: boolean
+  
+  ignoreAlias?: boolean
+  
+  groupKind?: ("mixed" | "values-first" | "types-first")
 }]
 // ----- perfectionist/sort-object-types -----
 type PerfectionistSortObjectTypes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
-  "partition-by-new-line"?: boolean
+  
+  ignoreCase?: boolean
+  
+  partitionByNewLine?: boolean
+  
+  groupKind?: ("mixed" | "required-first" | "optional-first")
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- perfectionist/sort-objects -----
 type PerfectionistSortObjects = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
-  "partition-by-comment"?: (boolean | string | unknown[])
-  "partition-by-new-line"?: boolean
-  "styled-components"?: boolean
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "ignore-pattern"?: string[]
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  partitionByComment?: (string[] | boolean | string)
+  
+  partitionByNewLine?: boolean
+  
+  styledComponents?: boolean
+  
+  ignorePattern?: string[]
+  
+  customIgnore?: unknown[]
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- perfectionist/sort-svelte-attributes -----
 type PerfectionistSortSvelteAttributes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
+}]
+// ----- perfectionist/sort-switch-case -----
+type PerfectionistSortSwitchCase = []|[{
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
 }]
 // ----- perfectionist/sort-union-types -----
 type PerfectionistSortUnionTypes = []|[{
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  "nullable-last"?: boolean
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+}]
+// ----- perfectionist/sort-variable-declarations -----
+type PerfectionistSortVariableDeclarations = []|[{
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
 }]
 // ----- perfectionist/sort-vue-attributes -----
 type PerfectionistSortVueAttributes = []|[{
-  "custom-groups"?: {
-    [k: string]: unknown | undefined
-  }
+  
   type?: ("alphabetical" | "natural" | "line-length")
+  
   order?: ("asc" | "desc")
-  "ignore-case"?: boolean
-  groups?: unknown[]
+  
+  ignoreCase?: boolean
+  
+  groups?: (string | string[])[]
+  
+  customGroups?: {
+    [k: string]: (string | string[]) | undefined
+  }
 }]
 // ----- prefer-arrow-callback -----
 type PreferArrowCallback = []|[{
