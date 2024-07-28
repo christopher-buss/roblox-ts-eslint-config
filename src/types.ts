@@ -26,7 +26,7 @@ export type TypedFlatConfigItem = {
 	 * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
 	 */
 	plugins?: Record<string, any>;
-} & Omit<Linter.FlatConfig<Linter.RulesRecord & Rules>, "plugins">;
+} & Omit<Linter.Config<Linter.RulesRecord & Rules>, "plugins">;
 
 export interface OptionsFiles {
 	/** Override the `files` option to provide custom globs. */

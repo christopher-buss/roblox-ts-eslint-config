@@ -62,7 +62,7 @@ export function style(
 	options: OptionsConfig & TypedFlatConfigItem = {},
 	...userConfigs: Array<
 		Awaitable<
-			| Array<Linter.FlatConfig>
+			| Array<Linter.Config>
 			| Array<TypedFlatConfigItem>
 			| FlatConfigComposer<any, any>
 			| TypedFlatConfigItem
