@@ -1,6 +1,6 @@
 {
 	"name": "@isentinel/eslint-config",
-	"version": "0.7.3",
+	"version": "0.7.4",
 	"description": "iSentinel's ESLint config",
 	"keywords": [
 		"eslint-config",
