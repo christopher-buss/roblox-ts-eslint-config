@@ -41,6 +41,7 @@ export async function yaml(
 
 				"yaml/block-mapping": "error",
 				"yaml/block-sequence": "error",
+				"yaml/file-extension": "error",
 				"yaml/no-empty-key": "error",
 				"yaml/no-empty-sequence-entry": "error",
 				"yaml/no-irregular-whitespace": "error",
