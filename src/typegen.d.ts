@@ -2946,23 +2946,6 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/ban-tslint-comment'?: Linter.RuleEntry<[]>
   /**
-   * Disallow certain types
-   * @see https://typescript-eslint.io/rules/ban-types
-   */
-  'no-autofix/@typescript-eslint/ban-types'?: Linter.RuleEntry<NoAutofixTypescriptEslintBanTypes>
-  /**
-   * Disallow or enforce spaces inside of blocks after opening block and before closing block
-   * @see https://typescript-eslint.io/rules/block-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/block-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintBlockSpacing>
-  /**
-   * Enforce consistent brace style for blocks
-   * @see https://typescript-eslint.io/rules/brace-style
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/brace-style'?: Linter.RuleEntry<NoAutofixTypescriptEslintBraceStyle>
-  /**
    * Enforce that literals on classes are exposed in a consistent style
    * @see https://typescript-eslint.io/rules/class-literal-property-style
    */
@@ -2972,18 +2955,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/class-methods-use-this
    */
   'no-autofix/@typescript-eslint/class-methods-use-this'?: Linter.RuleEntry<NoAutofixTypescriptEslintClassMethodsUseThis>
-  /**
-   * Require or disallow trailing commas
-   * @see https://typescript-eslint.io/rules/comma-dangle
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/comma-dangle'?: Linter.RuleEntry<NoAutofixTypescriptEslintCommaDangle>
-  /**
-   * Enforce consistent spacing before and after commas
-   * @see https://typescript-eslint.io/rules/comma-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/comma-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintCommaSpacing>
   /**
    * Enforce specifying generic type arguments on type annotation or constructor name of a constructor call
    * @see https://typescript-eslint.io/rules/consistent-generic-constructors
@@ -3045,57 +3016,15 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/explicit-module-boundary-types'?: Linter.RuleEntry<NoAutofixTypescriptEslintExplicitModuleBoundaryTypes>
   /**
-   * Require or disallow spacing between function identifiers and their invocations
-   * @see https://typescript-eslint.io/rules/func-call-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/func-call-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintFuncCallSpacing>
-  /**
-   * Enforce consistent indentation
-   * @see https://typescript-eslint.io/rules/indent
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/indent'?: Linter.RuleEntry<NoAutofixTypescriptEslintIndent>
-  /**
    * Require or disallow initialization in variable declarations
    * @see https://typescript-eslint.io/rules/init-declarations
    */
   'no-autofix/@typescript-eslint/init-declarations'?: Linter.RuleEntry<NoAutofixTypescriptEslintInitDeclarations>
   /**
-   * Enforce consistent spacing between property names and type annotations in types and interfaces
-   * @see https://typescript-eslint.io/rules/key-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/key-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintKeySpacing>
-  /**
-   * Enforce consistent spacing before and after keywords
-   * @see https://typescript-eslint.io/rules/keyword-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/keyword-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintKeywordSpacing>
-  /**
-   * Require empty lines around comments
-   * @see https://typescript-eslint.io/rules/lines-around-comment
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/lines-around-comment'?: Linter.RuleEntry<NoAutofixTypescriptEslintLinesAroundComment>
-  /**
-   * Require or disallow an empty line between class members
-   * @see https://typescript-eslint.io/rules/lines-between-class-members
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/lines-between-class-members'?: Linter.RuleEntry<NoAutofixTypescriptEslintLinesBetweenClassMembers>
-  /**
    * Enforce a maximum number of parameters in function definitions
    * @see https://typescript-eslint.io/rules/max-params
    */
   'no-autofix/@typescript-eslint/max-params'?: Linter.RuleEntry<NoAutofixTypescriptEslintMaxParams>
-  /**
-   * Require a specific member delimiter style for interfaces and type literals
-   * @see https://typescript-eslint.io/rules/member-delimiter-style
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/member-delimiter-style'?: Linter.RuleEntry<NoAutofixTypescriptEslintMemberDelimiterStyle>
   /**
    * Require a consistent member declaration order
    * @see https://typescript-eslint.io/rules/member-ordering
@@ -3164,6 +3093,7 @@ export interface RuleOptions {
   /**
    * Disallow the declaration of empty interfaces
    * @see https://typescript-eslint.io/rules/no-empty-interface
+   * @deprecated
    */
   'no-autofix/@typescript-eslint/no-empty-interface'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoEmptyInterface>
   /**
@@ -3181,18 +3111,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/no-extra-non-null-assertion
    */
   'no-autofix/@typescript-eslint/no-extra-non-null-assertion'?: Linter.RuleEntry<[]>
-  /**
-   * Disallow unnecessary parentheses
-   * @see https://typescript-eslint.io/rules/no-extra-parens
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/no-extra-parens'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoExtraParens>
-  /**
-   * Disallow unnecessary semicolons
-   * @see https://typescript-eslint.io/rules/no-extra-semi
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/no-extra-semi'?: Linter.RuleEntry<[]>
   /**
    * Disallow classes used as namespaces
    * @see https://typescript-eslint.io/rules/no-extraneous-class
@@ -3241,6 +3159,7 @@ export interface RuleOptions {
   /**
    * Disallow literal numbers that lose precision
    * @see https://typescript-eslint.io/rules/no-loss-of-precision
+   * @deprecated
    */
   'no-autofix/@typescript-eslint/no-loss-of-precision'?: Linter.RuleEntry<[]>
   /**
@@ -3309,6 +3228,11 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/no-restricted-imports'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoRestrictedImports>
   /**
+   * Disallow certain types
+   * @see https://typescript-eslint.io/rules/no-restricted-types
+   */
+  'no-autofix/@typescript-eslint/no-restricted-types'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoRestrictedTypes>
+  /**
    * Disallow variable declarations from shadowing variables declared in the outer scope
    * @see https://typescript-eslint.io/rules/no-shadow
    */
@@ -3318,12 +3242,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/no-this-alias
    */
   'no-autofix/@typescript-eslint/no-this-alias'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoThisAlias>
-  /**
-   * Disallow throwing literals as exceptions
-   * @see https://typescript-eslint.io/rules/no-throw-literal
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/no-throw-literal'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoThrowLiteral>
   /**
    * Disallow type aliases
    * @see https://typescript-eslint.io/rules/no-type-alias
@@ -3446,14 +3364,9 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/no-useless-empty-export'?: Linter.RuleEntry<[]>
   /**
-   * Disallow unnecessary template expressions
-   * @see https://typescript-eslint.io/rules/no-useless-template-literals
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/no-useless-template-literals'?: Linter.RuleEntry<[]>
-  /**
    * Disallow `require` statements except in import statements
    * @see https://typescript-eslint.io/rules/no-var-requires
+   * @deprecated
    */
   'no-autofix/@typescript-eslint/no-var-requires'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoVarRequires>
   /**
@@ -3467,22 +3380,10 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/non-nullable-type-assertion-style'?: Linter.RuleEntry<[]>
   /**
-   * Enforce consistent spacing inside braces
-   * @see https://typescript-eslint.io/rules/object-curly-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/object-curly-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintObjectCurlySpacing>
-  /**
    * Disallow throwing non-`Error` values as exceptions
    * @see https://typescript-eslint.io/rules/only-throw-error
    */
   'no-autofix/@typescript-eslint/only-throw-error'?: Linter.RuleEntry<NoAutofixTypescriptEslintOnlyThrowError>
-  /**
-   * Require or disallow padding lines between statements
-   * @see https://typescript-eslint.io/rules/padding-line-between-statements
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/padding-line-between-statements'?: Linter.RuleEntry<NoAutofixTypescriptEslintPaddingLineBetweenStatements>
   /**
    * Require or disallow parameter properties in class constructors
    * @see https://typescript-eslint.io/rules/parameter-properties
@@ -3590,12 +3491,6 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/promise-function-async'?: Linter.RuleEntry<NoAutofixTypescriptEslintPromiseFunctionAsync>
   /**
-   * Enforce the consistent use of either backticks, double, or single quotes
-   * @see https://typescript-eslint.io/rules/quotes
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/quotes'?: Linter.RuleEntry<NoAutofixTypescriptEslintQuotes>
-  /**
    * Require `Array#sort` and `Array#toSorted` calls to always provide a `compareFunction`
    * @see https://typescript-eslint.io/rules/require-array-sort-compare
    */
@@ -3621,35 +3516,11 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/return-await'?: Linter.RuleEntry<NoAutofixTypescriptEslintReturnAwait>
   /**
-   * Require or disallow semicolons instead of ASI
-   * @see https://typescript-eslint.io/rules/semi
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/semi'?: Linter.RuleEntry<NoAutofixTypescriptEslintSemi>
-  /**
    * Enforce constituents of a type union/intersection to be sorted alphabetically
    * @see https://typescript-eslint.io/rules/sort-type-constituents
    * @deprecated
    */
   'no-autofix/@typescript-eslint/sort-type-constituents'?: Linter.RuleEntry<NoAutofixTypescriptEslintSortTypeConstituents>
-  /**
-   * Enforce consistent spacing before blocks
-   * @see https://typescript-eslint.io/rules/space-before-blocks
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/space-before-blocks'?: Linter.RuleEntry<NoAutofixTypescriptEslintSpaceBeforeBlocks>
-  /**
-   * Enforce consistent spacing before function parenthesis
-   * @see https://typescript-eslint.io/rules/space-before-function-paren
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/space-before-function-paren'?: Linter.RuleEntry<NoAutofixTypescriptEslintSpaceBeforeFunctionParen>
-  /**
-   * Require spacing around infix operators
-   * @see https://typescript-eslint.io/rules/space-infix-ops
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/space-infix-ops'?: Linter.RuleEntry<NoAutofixTypescriptEslintSpaceInfixOps>
   /**
    * Disallow certain types in boolean expressions
    * @see https://typescript-eslint.io/rules/strict-boolean-expressions
@@ -3665,12 +3536,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/triple-slash-reference
    */
   'no-autofix/@typescript-eslint/triple-slash-reference'?: Linter.RuleEntry<NoAutofixTypescriptEslintTripleSlashReference>
-  /**
-   * Require consistent spacing around type annotations
-   * @see https://typescript-eslint.io/rules/type-annotation-spacing
-   * @deprecated
-   */
-  'no-autofix/@typescript-eslint/type-annotation-spacing'?: Linter.RuleEntry<NoAutofixTypescriptEslintTypeAnnotationSpacing>
   /**
    * Require type annotations in certain places
    * @see https://typescript-eslint.io/rules/typedef
@@ -12145,23 +12010,6 @@ export interface RuleOptions {
    */
   'ts/ban-tslint-comment'?: Linter.RuleEntry<[]>
   /**
-   * Disallow certain types
-   * @see https://typescript-eslint.io/rules/ban-types
-   */
-  'ts/ban-types'?: Linter.RuleEntry<TsBanTypes>
-  /**
-   * Disallow or enforce spaces inside of blocks after opening block and before closing block
-   * @see https://typescript-eslint.io/rules/block-spacing
-   * @deprecated
-   */
-  'ts/block-spacing'?: Linter.RuleEntry<TsBlockSpacing>
-  /**
-   * Enforce consistent brace style for blocks
-   * @see https://typescript-eslint.io/rules/brace-style
-   * @deprecated
-   */
-  'ts/brace-style'?: Linter.RuleEntry<TsBraceStyle>
-  /**
    * Enforce that literals on classes are exposed in a consistent style
    * @see https://typescript-eslint.io/rules/class-literal-property-style
    */
@@ -12171,18 +12019,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/class-methods-use-this
    */
   'ts/class-methods-use-this'?: Linter.RuleEntry<TsClassMethodsUseThis>
-  /**
-   * Require or disallow trailing commas
-   * @see https://typescript-eslint.io/rules/comma-dangle
-   * @deprecated
-   */
-  'ts/comma-dangle'?: Linter.RuleEntry<TsCommaDangle>
-  /**
-   * Enforce consistent spacing before and after commas
-   * @see https://typescript-eslint.io/rules/comma-spacing
-   * @deprecated
-   */
-  'ts/comma-spacing'?: Linter.RuleEntry<TsCommaSpacing>
   /**
    * Enforce specifying generic type arguments on type annotation or constructor name of a constructor call
    * @see https://typescript-eslint.io/rules/consistent-generic-constructors
@@ -12244,57 +12080,15 @@ export interface RuleOptions {
    */
   'ts/explicit-module-boundary-types'?: Linter.RuleEntry<TsExplicitModuleBoundaryTypes>
   /**
-   * Require or disallow spacing between function identifiers and their invocations
-   * @see https://typescript-eslint.io/rules/func-call-spacing
-   * @deprecated
-   */
-  'ts/func-call-spacing'?: Linter.RuleEntry<TsFuncCallSpacing>
-  /**
-   * Enforce consistent indentation
-   * @see https://typescript-eslint.io/rules/indent
-   * @deprecated
-   */
-  'ts/indent'?: Linter.RuleEntry<TsIndent>
-  /**
    * Require or disallow initialization in variable declarations
    * @see https://typescript-eslint.io/rules/init-declarations
    */
   'ts/init-declarations'?: Linter.RuleEntry<TsInitDeclarations>
   /**
-   * Enforce consistent spacing between property names and type annotations in types and interfaces
-   * @see https://typescript-eslint.io/rules/key-spacing
-   * @deprecated
-   */
-  'ts/key-spacing'?: Linter.RuleEntry<TsKeySpacing>
-  /**
-   * Enforce consistent spacing before and after keywords
-   * @see https://typescript-eslint.io/rules/keyword-spacing
-   * @deprecated
-   */
-  'ts/keyword-spacing'?: Linter.RuleEntry<TsKeywordSpacing>
-  /**
-   * Require empty lines around comments
-   * @see https://typescript-eslint.io/rules/lines-around-comment
-   * @deprecated
-   */
-  'ts/lines-around-comment'?: Linter.RuleEntry<TsLinesAroundComment>
-  /**
-   * Require or disallow an empty line between class members
-   * @see https://typescript-eslint.io/rules/lines-between-class-members
-   * @deprecated
-   */
-  'ts/lines-between-class-members'?: Linter.RuleEntry<TsLinesBetweenClassMembers>
-  /**
    * Enforce a maximum number of parameters in function definitions
    * @see https://typescript-eslint.io/rules/max-params
    */
   'ts/max-params'?: Linter.RuleEntry<TsMaxParams>
-  /**
-   * Require a specific member delimiter style for interfaces and type literals
-   * @see https://typescript-eslint.io/rules/member-delimiter-style
-   * @deprecated
-   */
-  'ts/member-delimiter-style'?: Linter.RuleEntry<TsMemberDelimiterStyle>
   /**
    * Require a consistent member declaration order
    * @see https://typescript-eslint.io/rules/member-ordering
@@ -12363,6 +12157,7 @@ export interface RuleOptions {
   /**
    * Disallow the declaration of empty interfaces
    * @see https://typescript-eslint.io/rules/no-empty-interface
+   * @deprecated
    */
   'ts/no-empty-interface'?: Linter.RuleEntry<TsNoEmptyInterface>
   /**
@@ -12380,18 +12175,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/no-extra-non-null-assertion
    */
   'ts/no-extra-non-null-assertion'?: Linter.RuleEntry<[]>
-  /**
-   * Disallow unnecessary parentheses
-   * @see https://typescript-eslint.io/rules/no-extra-parens
-   * @deprecated
-   */
-  'ts/no-extra-parens'?: Linter.RuleEntry<TsNoExtraParens>
-  /**
-   * Disallow unnecessary semicolons
-   * @see https://typescript-eslint.io/rules/no-extra-semi
-   * @deprecated
-   */
-  'ts/no-extra-semi'?: Linter.RuleEntry<[]>
   /**
    * Disallow classes used as namespaces
    * @see https://typescript-eslint.io/rules/no-extraneous-class
@@ -12440,6 +12223,7 @@ export interface RuleOptions {
   /**
    * Disallow literal numbers that lose precision
    * @see https://typescript-eslint.io/rules/no-loss-of-precision
+   * @deprecated
    */
   'ts/no-loss-of-precision'?: Linter.RuleEntry<[]>
   /**
@@ -12508,6 +12292,11 @@ export interface RuleOptions {
    */
   'ts/no-restricted-imports'?: Linter.RuleEntry<TsNoRestrictedImports>
   /**
+   * Disallow certain types
+   * @see https://typescript-eslint.io/rules/no-restricted-types
+   */
+  'ts/no-restricted-types'?: Linter.RuleEntry<TsNoRestrictedTypes>
+  /**
    * Disallow variable declarations from shadowing variables declared in the outer scope
    * @see https://typescript-eslint.io/rules/no-shadow
    */
@@ -12517,12 +12306,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/no-this-alias
    */
   'ts/no-this-alias'?: Linter.RuleEntry<TsNoThisAlias>
-  /**
-   * Disallow throwing literals as exceptions
-   * @see https://typescript-eslint.io/rules/no-throw-literal
-   * @deprecated
-   */
-  'ts/no-throw-literal'?: Linter.RuleEntry<TsNoThrowLiteral>
   /**
    * Disallow type aliases
    * @see https://typescript-eslint.io/rules/no-type-alias
@@ -12645,14 +12428,9 @@ export interface RuleOptions {
    */
   'ts/no-useless-empty-export'?: Linter.RuleEntry<[]>
   /**
-   * Disallow unnecessary template expressions
-   * @see https://typescript-eslint.io/rules/no-useless-template-literals
-   * @deprecated
-   */
-  'ts/no-useless-template-literals'?: Linter.RuleEntry<[]>
-  /**
    * Disallow `require` statements except in import statements
    * @see https://typescript-eslint.io/rules/no-var-requires
+   * @deprecated
    */
   'ts/no-var-requires'?: Linter.RuleEntry<TsNoVarRequires>
   /**
@@ -12666,22 +12444,10 @@ export interface RuleOptions {
    */
   'ts/non-nullable-type-assertion-style'?: Linter.RuleEntry<[]>
   /**
-   * Enforce consistent spacing inside braces
-   * @see https://typescript-eslint.io/rules/object-curly-spacing
-   * @deprecated
-   */
-  'ts/object-curly-spacing'?: Linter.RuleEntry<TsObjectCurlySpacing>
-  /**
    * Disallow throwing non-`Error` values as exceptions
    * @see https://typescript-eslint.io/rules/only-throw-error
    */
   'ts/only-throw-error'?: Linter.RuleEntry<TsOnlyThrowError>
-  /**
-   * Require or disallow padding lines between statements
-   * @see https://typescript-eslint.io/rules/padding-line-between-statements
-   * @deprecated
-   */
-  'ts/padding-line-between-statements'?: Linter.RuleEntry<TsPaddingLineBetweenStatements>
   /**
    * Require or disallow parameter properties in class constructors
    * @see https://typescript-eslint.io/rules/parameter-properties
@@ -12789,12 +12555,6 @@ export interface RuleOptions {
    */
   'ts/promise-function-async'?: Linter.RuleEntry<TsPromiseFunctionAsync>
   /**
-   * Enforce the consistent use of either backticks, double, or single quotes
-   * @see https://typescript-eslint.io/rules/quotes
-   * @deprecated
-   */
-  'ts/quotes'?: Linter.RuleEntry<TsQuotes>
-  /**
    * Require `Array#sort` and `Array#toSorted` calls to always provide a `compareFunction`
    * @see https://typescript-eslint.io/rules/require-array-sort-compare
    */
@@ -12820,35 +12580,11 @@ export interface RuleOptions {
    */
   'ts/return-await'?: Linter.RuleEntry<TsReturnAwait>
   /**
-   * Require or disallow semicolons instead of ASI
-   * @see https://typescript-eslint.io/rules/semi
-   * @deprecated
-   */
-  'ts/semi'?: Linter.RuleEntry<TsSemi>
-  /**
    * Enforce constituents of a type union/intersection to be sorted alphabetically
    * @see https://typescript-eslint.io/rules/sort-type-constituents
    * @deprecated
    */
   'ts/sort-type-constituents'?: Linter.RuleEntry<TsSortTypeConstituents>
-  /**
-   * Enforce consistent spacing before blocks
-   * @see https://typescript-eslint.io/rules/space-before-blocks
-   * @deprecated
-   */
-  'ts/space-before-blocks'?: Linter.RuleEntry<TsSpaceBeforeBlocks>
-  /**
-   * Enforce consistent spacing before function parenthesis
-   * @see https://typescript-eslint.io/rules/space-before-function-paren
-   * @deprecated
-   */
-  'ts/space-before-function-paren'?: Linter.RuleEntry<TsSpaceBeforeFunctionParen>
-  /**
-   * Require spacing around infix operators
-   * @see https://typescript-eslint.io/rules/space-infix-ops
-   * @deprecated
-   */
-  'ts/space-infix-ops'?: Linter.RuleEntry<TsSpaceInfixOps>
   /**
    * Disallow certain types in boolean expressions
    * @see https://typescript-eslint.io/rules/strict-boolean-expressions
@@ -12864,12 +12600,6 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/triple-slash-reference
    */
   'ts/triple-slash-reference'?: Linter.RuleEntry<TsTripleSlashReference>
-  /**
-   * Require consistent spacing around type annotations
-   * @see https://typescript-eslint.io/rules/type-annotation-spacing
-   * @deprecated
-   */
-  'ts/type-annotation-spacing'?: Linter.RuleEntry<TsTypeAnnotationSpacing>
   /**
    * Require type annotations in certain places
    * @see https://typescript-eslint.io/rules/typedef
@@ -18473,26 +18203,6 @@ type NoAutofixTypescriptEslintBanTsComment = []|[{
   })
   minimumDescriptionLength?: number
 }]
-// ----- no-autofix/@typescript-eslint/ban-types -----
-type NoAutofixTypescriptEslintBanTypes = []|[{
-  types?: {
-    [k: string]: (null | false | true | string | {
-      
-      message?: string
-      
-      fixWith?: string
-      
-      suggest?: string[]
-    }) | undefined
-  }
-  extendDefaults?: boolean
-}]
-// ----- no-autofix/@typescript-eslint/block-spacing -----
-type NoAutofixTypescriptEslintBlockSpacing = []|[("always" | "never")]
-// ----- no-autofix/@typescript-eslint/brace-style -----
-type NoAutofixTypescriptEslintBraceStyle = []|[("1tbs" | "stroustrup" | "allman")]|[("1tbs" | "stroustrup" | "allman"), {
-  allowSingleLine?: boolean
-}]
 // ----- no-autofix/@typescript-eslint/class-literal-property-style -----
 type NoAutofixTypescriptEslintClassLiteralPropertyStyle = []|[("fields" | "getters")]
 // ----- no-autofix/@typescript-eslint/class-methods-use-this -----
@@ -18505,24 +18215,6 @@ type NoAutofixTypescriptEslintClassMethodsUseThis = []|[{
   ignoreOverrideMethods?: boolean
   
   ignoreClassesThatImplementAnInterface?: (boolean | "public-fields")
-}]
-// ----- no-autofix/@typescript-eslint/comma-dangle -----
-type NoAutofixTypescriptEslintCommaDangle = []|[(_NoAutofixTypescriptEslintCommaDangleValue | {
-  arrays?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  objects?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  imports?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  exports?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  functions?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  enums?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  generics?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-  tuples?: _NoAutofixTypescriptEslintCommaDangleValueWithIgnore
-})]
-type _NoAutofixTypescriptEslintCommaDangleValue = ("always-multiline" | "always" | "never" | "only-multiline")
-type _NoAutofixTypescriptEslintCommaDangleValueWithIgnore = ("always-multiline" | "always" | "never" | "only-multiline" | "ignore")
-// ----- no-autofix/@typescript-eslint/comma-spacing -----
-type NoAutofixTypescriptEslintCommaSpacing = []|[{
-  before?: boolean
-  after?: boolean
 }]
 // ----- no-autofix/@typescript-eslint/consistent-generic-constructors -----
 type NoAutofixTypescriptEslintConsistentGenericConstructors = []|[("type-annotation" | "constructor")]
@@ -18603,459 +18295,16 @@ type NoAutofixTypescriptEslintExplicitModuleBoundaryTypes = []|[{
   
   allowTypedFunctionExpressions?: boolean
 }]
-// ----- no-autofix/@typescript-eslint/func-call-spacing -----
-type NoAutofixTypescriptEslintFuncCallSpacing = ([]|["never"] | []|["always"]|["always", {
-  allowNewlines?: boolean
-}])
-// ----- no-autofix/@typescript-eslint/indent -----
-type NoAutofixTypescriptEslintIndent = []|[("tab" | number)]|[("tab" | number), {
-  SwitchCase?: number
-  VariableDeclarator?: ((number | ("first" | "off")) | {
-    var?: (number | ("first" | "off"))
-    let?: (number | ("first" | "off"))
-    const?: (number | ("first" | "off"))
-  })
-  outerIIFEBody?: (number | "off")
-  MemberExpression?: (number | "off")
-  FunctionDeclaration?: {
-    parameters?: (number | ("first" | "off"))
-    body?: number
-  }
-  FunctionExpression?: {
-    parameters?: (number | ("first" | "off"))
-    body?: number
-  }
-  StaticBlock?: {
-    body?: number
-  }
-  CallExpression?: {
-    arguments?: (number | ("first" | "off"))
-  }
-  ArrayExpression?: (number | ("first" | "off"))
-  ObjectExpression?: (number | ("first" | "off"))
-  ImportDeclaration?: (number | ("first" | "off"))
-  flatTernaryExpressions?: boolean
-  offsetTernaryExpressions?: boolean
-  ignoredNodes?: string[]
-  ignoreComments?: boolean
-}]
 // ----- no-autofix/@typescript-eslint/init-declarations -----
 type NoAutofixTypescriptEslintInitDeclarations = ([]|["always"] | []|["never"]|["never", {
   ignoreForLoopInit?: boolean
 }])
-// ----- no-autofix/@typescript-eslint/key-spacing -----
-type NoAutofixTypescriptEslintKeySpacing = []|[({
-  align?: (("colon" | "value") | {
-    mode?: ("strict" | "minimum")
-    on?: ("colon" | "value")
-    beforeColon?: boolean
-    afterColon?: boolean
-  })
-  mode?: ("strict" | "minimum")
-  beforeColon?: boolean
-  afterColon?: boolean
-} | {
-  singleLine?: {
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-  multiLine?: {
-    align?: (("colon" | "value") | {
-      mode?: ("strict" | "minimum")
-      on?: ("colon" | "value")
-      beforeColon?: boolean
-      afterColon?: boolean
-    })
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-} | {
-  singleLine?: {
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-  multiLine?: {
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-  align?: {
-    mode?: ("strict" | "minimum")
-    on?: ("colon" | "value")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-})]
-// ----- no-autofix/@typescript-eslint/keyword-spacing -----
-type NoAutofixTypescriptEslintKeywordSpacing = []|[{
-  before?: boolean
-  after?: boolean
-  overrides?: {
-    abstract?: {
-      before?: boolean
-      after?: boolean
-    }
-    as?: {
-      before?: boolean
-      after?: boolean
-    }
-    async?: {
-      before?: boolean
-      after?: boolean
-    }
-    await?: {
-      before?: boolean
-      after?: boolean
-    }
-    boolean?: {
-      before?: boolean
-      after?: boolean
-    }
-    break?: {
-      before?: boolean
-      after?: boolean
-    }
-    byte?: {
-      before?: boolean
-      after?: boolean
-    }
-    case?: {
-      before?: boolean
-      after?: boolean
-    }
-    catch?: {
-      before?: boolean
-      after?: boolean
-    }
-    char?: {
-      before?: boolean
-      after?: boolean
-    }
-    class?: {
-      before?: boolean
-      after?: boolean
-    }
-    const?: {
-      before?: boolean
-      after?: boolean
-    }
-    continue?: {
-      before?: boolean
-      after?: boolean
-    }
-    debugger?: {
-      before?: boolean
-      after?: boolean
-    }
-    default?: {
-      before?: boolean
-      after?: boolean
-    }
-    delete?: {
-      before?: boolean
-      after?: boolean
-    }
-    do?: {
-      before?: boolean
-      after?: boolean
-    }
-    double?: {
-      before?: boolean
-      after?: boolean
-    }
-    else?: {
-      before?: boolean
-      after?: boolean
-    }
-    enum?: {
-      before?: boolean
-      after?: boolean
-    }
-    export?: {
-      before?: boolean
-      after?: boolean
-    }
-    extends?: {
-      before?: boolean
-      after?: boolean
-    }
-    false?: {
-      before?: boolean
-      after?: boolean
-    }
-    final?: {
-      before?: boolean
-      after?: boolean
-    }
-    finally?: {
-      before?: boolean
-      after?: boolean
-    }
-    float?: {
-      before?: boolean
-      after?: boolean
-    }
-    for?: {
-      before?: boolean
-      after?: boolean
-    }
-    from?: {
-      before?: boolean
-      after?: boolean
-    }
-    function?: {
-      before?: boolean
-      after?: boolean
-    }
-    get?: {
-      before?: boolean
-      after?: boolean
-    }
-    goto?: {
-      before?: boolean
-      after?: boolean
-    }
-    if?: {
-      before?: boolean
-      after?: boolean
-    }
-    implements?: {
-      before?: boolean
-      after?: boolean
-    }
-    import?: {
-      before?: boolean
-      after?: boolean
-    }
-    in?: {
-      before?: boolean
-      after?: boolean
-    }
-    instanceof?: {
-      before?: boolean
-      after?: boolean
-    }
-    int?: {
-      before?: boolean
-      after?: boolean
-    }
-    interface?: {
-      before?: boolean
-      after?: boolean
-    }
-    let?: {
-      before?: boolean
-      after?: boolean
-    }
-    long?: {
-      before?: boolean
-      after?: boolean
-    }
-    native?: {
-      before?: boolean
-      after?: boolean
-    }
-    new?: {
-      before?: boolean
-      after?: boolean
-    }
-    null?: {
-      before?: boolean
-      after?: boolean
-    }
-    of?: {
-      before?: boolean
-      after?: boolean
-    }
-    package?: {
-      before?: boolean
-      after?: boolean
-    }
-    private?: {
-      before?: boolean
-      after?: boolean
-    }
-    protected?: {
-      before?: boolean
-      after?: boolean
-    }
-    public?: {
-      before?: boolean
-      after?: boolean
-    }
-    return?: {
-      before?: boolean
-      after?: boolean
-    }
-    set?: {
-      before?: boolean
-      after?: boolean
-    }
-    short?: {
-      before?: boolean
-      after?: boolean
-    }
-    static?: {
-      before?: boolean
-      after?: boolean
-    }
-    super?: {
-      before?: boolean
-      after?: boolean
-    }
-    switch?: {
-      before?: boolean
-      after?: boolean
-    }
-    synchronized?: {
-      before?: boolean
-      after?: boolean
-    }
-    this?: {
-      before?: boolean
-      after?: boolean
-    }
-    throw?: {
-      before?: boolean
-      after?: boolean
-    }
-    throws?: {
-      before?: boolean
-      after?: boolean
-    }
-    transient?: {
-      before?: boolean
-      after?: boolean
-    }
-    true?: {
-      before?: boolean
-      after?: boolean
-    }
-    try?: {
-      before?: boolean
-      after?: boolean
-    }
-    typeof?: {
-      before?: boolean
-      after?: boolean
-    }
-    var?: {
-      before?: boolean
-      after?: boolean
-    }
-    void?: {
-      before?: boolean
-      after?: boolean
-    }
-    volatile?: {
-      before?: boolean
-      after?: boolean
-    }
-    while?: {
-      before?: boolean
-      after?: boolean
-    }
-    with?: {
-      before?: boolean
-      after?: boolean
-    }
-    yield?: {
-      before?: boolean
-      after?: boolean
-    }
-    type?: {
-      before?: boolean
-      after?: boolean
-    }
-  }
-}]
-// ----- no-autofix/@typescript-eslint/lines-around-comment -----
-type NoAutofixTypescriptEslintLinesAroundComment = []|[{
-  beforeBlockComment?: boolean
-  afterBlockComment?: boolean
-  beforeLineComment?: boolean
-  afterLineComment?: boolean
-  allowBlockStart?: boolean
-  allowBlockEnd?: boolean
-  allowClassStart?: boolean
-  allowClassEnd?: boolean
-  allowObjectStart?: boolean
-  allowObjectEnd?: boolean
-  allowArrayStart?: boolean
-  allowArrayEnd?: boolean
-  allowInterfaceStart?: boolean
-  allowInterfaceEnd?: boolean
-  allowTypeStart?: boolean
-  allowTypeEnd?: boolean
-  allowEnumStart?: boolean
-  allowEnumEnd?: boolean
-  allowModuleStart?: boolean
-  allowModuleEnd?: boolean
-  ignorePattern?: string
-  applyDefaultIgnorePatterns?: boolean
-}]
-// ----- no-autofix/@typescript-eslint/lines-between-class-members -----
-type NoAutofixTypescriptEslintLinesBetweenClassMembers = []|[({
-  
-  enforce: [{
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  }, ...({
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  })[]]
-} | ("always" | "never"))]|[({
-  
-  enforce: [{
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  }, ...({
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  })[]]
-} | ("always" | "never")), {
-  exceptAfterSingleLine?: boolean
-  exceptAfterOverload?: boolean
-}]
 // ----- no-autofix/@typescript-eslint/max-params -----
 type NoAutofixTypescriptEslintMaxParams = []|[{
   maximum?: number
   max?: number
   countVoidThis?: boolean
 }]
-// ----- no-autofix/@typescript-eslint/member-delimiter-style -----
-type NoAutofixTypescriptEslintMemberDelimiterStyle = []|[{
-  multiline?: {
-    delimiter?: ("none" | "semi" | "comma")
-    requireLast?: boolean
-  }
-  singleline?: {
-    delimiter?: ("semi" | "comma")
-    requireLast?: boolean
-  }
-  overrides?: {
-    interface?: _NoAutofixTypescriptEslintMemberDelimiterStyle_DelimiterConfig
-    typeLiteral?: _NoAutofixTypescriptEslintMemberDelimiterStyle_DelimiterConfig
-  }
-  multilineDetection?: ("brackets" | "last-member")
-}]
-interface _NoAutofixTypescriptEslintMemberDelimiterStyle_DelimiterConfig {
-  multiline?: {
-    delimiter?: ("none" | "semi" | "comma")
-    requireLast?: boolean
-  }
-  singleline?: {
-    delimiter?: ("semi" | "comma")
-    requireLast?: boolean
-  }
-}
 // ----- no-autofix/@typescript-eslint/member-ordering -----
 type NoAutofixTypescriptEslintMemberOrdering = []|[{
   default?: ("never" | (("readonly-signature" | "signature" | "readonly-field" | "public-readonly-field" | "public-decorated-readonly-field" | "decorated-readonly-field" | "static-readonly-field" | "public-static-readonly-field" | "instance-readonly-field" | "public-instance-readonly-field" | "abstract-readonly-field" | "public-abstract-readonly-field" | "protected-readonly-field" | "protected-decorated-readonly-field" | "protected-static-readonly-field" | "protected-instance-readonly-field" | "protected-abstract-readonly-field" | "private-readonly-field" | "private-decorated-readonly-field" | "private-static-readonly-field" | "private-instance-readonly-field" | "#private-readonly-field" | "#private-static-readonly-field" | "#private-instance-readonly-field" | "field" | "public-field" | "public-decorated-field" | "decorated-field" | "static-field" | "public-static-field" | "instance-field" | "public-instance-field" | "abstract-field" | "public-abstract-field" | "protected-field" | "protected-decorated-field" | "protected-static-field" | "protected-instance-field" | "protected-abstract-field" | "private-field" | "private-decorated-field" | "private-static-field" | "private-instance-field" | "#private-field" | "#private-static-field" | "#private-instance-field" | "method" | "public-method" | "public-decorated-method" | "decorated-method" | "static-method" | "public-static-method" | "instance-method" | "public-instance-method" | "abstract-method" | "public-abstract-method" | "protected-method" | "protected-decorated-method" | "protected-static-method" | "protected-instance-method" | "protected-abstract-method" | "private-method" | "private-decorated-method" | "private-static-method" | "private-instance-method" | "#private-method" | "#private-static-method" | "#private-instance-method" | "call-signature" | "constructor" | "public-constructor" | "protected-constructor" | "private-constructor" | "accessor" | "public-accessor" | "public-decorated-accessor" | "decorated-accessor" | "static-accessor" | "public-static-accessor" | "instance-accessor" | "public-instance-accessor" | "abstract-accessor" | "public-abstract-accessor" | "protected-accessor" | "protected-decorated-accessor" | "protected-static-accessor" | "protected-instance-accessor" | "protected-abstract-accessor" | "private-accessor" | "private-decorated-accessor" | "private-static-accessor" | "private-instance-accessor" | "#private-accessor" | "#private-static-accessor" | "#private-instance-accessor" | "get" | "public-get" | "public-decorated-get" | "decorated-get" | "static-get" | "public-static-get" | "instance-get" | "public-instance-get" | "abstract-get" | "public-abstract-get" | "protected-get" | "protected-decorated-get" | "protected-static-get" | "protected-instance-get" | "protected-abstract-get" | "private-get" | "private-decorated-get" | "private-static-get" | "private-instance-get" | "#private-get" | "#private-static-get" | "#private-instance-get" | "set" | "public-set" | "public-decorated-set" | "decorated-set" | "static-set" | "public-static-set" | "instance-set" | "public-instance-set" | "abstract-set" | "public-abstract-set" | "protected-set" | "protected-decorated-set" | "protected-static-set" | "protected-instance-set" | "protected-abstract-set" | "private-set" | "private-decorated-set" | "private-static-set" | "private-instance-set" | "#private-set" | "#private-static-set" | "#private-instance-set" | "static-initialization" | "static-static-initialization" | "public-static-static-initialization" | "instance-static-initialization" | "public-instance-static-initialization" | "abstract-static-initialization" | "public-abstract-static-initialization" | "protected-static-static-initialization" | "protected-instance-static-initialization" | "protected-abstract-static-initialization" | "private-static-static-initialization" | "private-instance-static-initialization" | "#private-static-static-initialization" | "#private-instance-static-initialization") | ("readonly-signature" | "signature" | "readonly-field" | "public-readonly-field" | "public-decorated-readonly-field" | "decorated-readonly-field" | "static-readonly-field" | "public-static-readonly-field" | "instance-readonly-field" | "public-instance-readonly-field" | "abstract-readonly-field" | "public-abstract-readonly-field" | "protected-readonly-field" | "protected-decorated-readonly-field" | "protected-static-readonly-field" | "protected-instance-readonly-field" | "protected-abstract-readonly-field" | "private-readonly-field" | "private-decorated-readonly-field" | "private-static-readonly-field" | "private-instance-readonly-field" | "#private-readonly-field" | "#private-static-readonly-field" | "#private-instance-readonly-field" | "field" | "public-field" | "public-decorated-field" | "decorated-field" | "static-field" | "public-static-field" | "instance-field" | "public-instance-field" | "abstract-field" | "public-abstract-field" | "protected-field" | "protected-decorated-field" | "protected-static-field" | "protected-instance-field" | "protected-abstract-field" | "private-field" | "private-decorated-field" | "private-static-field" | "private-instance-field" | "#private-field" | "#private-static-field" | "#private-instance-field" | "method" | "public-method" | "public-decorated-method" | "decorated-method" | "static-method" | "public-static-method" | "instance-method" | "public-instance-method" | "abstract-method" | "public-abstract-method" | "protected-method" | "protected-decorated-method" | "protected-static-method" | "protected-instance-method" | "protected-abstract-method" | "private-method" | "private-decorated-method" | "private-static-method" | "private-instance-method" | "#private-method" | "#private-static-method" | "#private-instance-method" | "call-signature" | "constructor" | "public-constructor" | "protected-constructor" | "private-constructor" | "accessor" | "public-accessor" | "public-decorated-accessor" | "decorated-accessor" | "static-accessor" | "public-static-accessor" | "instance-accessor" | "public-instance-accessor" | "abstract-accessor" | "public-abstract-accessor" | "protected-accessor" | "protected-decorated-accessor" | "protected-static-accessor" | "protected-instance-accessor" | "protected-abstract-accessor" | "private-accessor" | "private-decorated-accessor" | "private-static-accessor" | "private-instance-accessor" | "#private-accessor" | "#private-static-accessor" | "#private-instance-accessor" | "get" | "public-get" | "public-decorated-get" | "decorated-get" | "static-get" | "public-static-get" | "instance-get" | "public-instance-get" | "abstract-get" | "public-abstract-get" | "protected-get" | "protected-decorated-get" | "protected-static-get" | "protected-instance-get" | "protected-abstract-get" | "private-get" | "private-decorated-get" | "private-static-get" | "private-instance-get" | "#private-get" | "#private-static-get" | "#private-instance-get" | "set" | "public-set" | "public-decorated-set" | "decorated-set" | "static-set" | "public-static-set" | "instance-set" | "public-instance-set" | "abstract-set" | "public-abstract-set" | "protected-set" | "protected-decorated-set" | "protected-static-set" | "protected-instance-set" | "protected-abstract-set" | "private-set" | "private-decorated-set" | "private-static-set" | "private-instance-set" | "#private-set" | "#private-static-set" | "#private-instance-set" | "static-initialization" | "static-static-initialization" | "public-static-static-initialization" | "instance-static-initialization" | "public-instance-static-initialization" | "abstract-static-initialization" | "public-abstract-static-initialization" | "protected-static-static-initialization" | "protected-instance-static-initialization" | "protected-abstract-static-initialization" | "private-static-static-initialization" | "private-instance-static-initialization" | "#private-static-static-initialization" | "#private-instance-static-initialization")[])[] | {
@@ -19430,7 +18679,7 @@ type NoAutofixTypescriptEslintNoEmptyInterface = []|[{
 // ----- no-autofix/@typescript-eslint/no-empty-object-type -----
 type NoAutofixTypescriptEslintNoEmptyObjectType = []|[{
   allowInterfaces?: ("always" | "never" | "with-single-extends")
-  allowObjectTypes?: ("always" | "in-type-alias-with-name" | "never")
+  allowObjectTypes?: ("always" | "never")
   allowWithName?: string
 }]
 // ----- no-autofix/@typescript-eslint/no-explicit-any -----
@@ -19440,19 +18689,6 @@ type NoAutofixTypescriptEslintNoExplicitAny = []|[{
   
   ignoreRestArgs?: boolean
 }]
-// ----- no-autofix/@typescript-eslint/no-extra-parens -----
-type NoAutofixTypescriptEslintNoExtraParens = ([]|["functions"] | []|["all"]|["all", {
-  conditionalAssign?: boolean
-  ternaryOperandBinaryExpressions?: boolean
-  nestedBinaryExpressions?: boolean
-  returnAssign?: boolean
-  ignoreJSX?: ("none" | "all" | "single-line" | "multi-line")
-  enforceForArrowConditionals?: boolean
-  enforceForSequenceExpressions?: boolean
-  enforceForNewInMemberExpressions?: boolean
-  enforceForFunctionPrototypeMethods?: boolean
-  allowParensAfterCommentPattern?: string
-}])
 // ----- no-autofix/@typescript-eslint/no-extraneous-class -----
 type NoAutofixTypescriptEslintNoExtraneousClass = []|[{
   
@@ -19467,6 +18703,18 @@ type NoAutofixTypescriptEslintNoExtraneousClass = []|[{
 // ----- no-autofix/@typescript-eslint/no-floating-promises -----
 type NoAutofixTypescriptEslintNoFloatingPromises = []|[{
   allowForKnownSafePromises?: (string | {
+    from: "file"
+    name: (string | [string, ...(string)[]])
+    path?: string
+  } | {
+    from: "lib"
+    name: (string | [string, ...(string)[]])
+  } | {
+    from: "package"
+    name: (string | [string, ...(string)[]])
+    package: string
+  })[]
+  allowForKnownSafeCalls?: (string | {
     from: "file"
     name: (string | [string, ...(string)[]])
     path?: string
@@ -19544,6 +18792,8 @@ type NoAutofixTypescriptEslintNoRedeclare = []|[{
 type NoAutofixTypescriptEslintNoRequireImports = []|[{
   
   allow?: string[]
+  
+  allowAsImport?: boolean
 }]
 // ----- no-autofix/@typescript-eslint/no-restricted-imports -----
 type NoAutofixTypescriptEslintNoRestrictedImports = ((string | {
@@ -19578,6 +18828,19 @@ type NoAutofixTypescriptEslintNoRestrictedImports = ((string | {
     allowTypeImports?: boolean
   }[])
 }])
+// ----- no-autofix/@typescript-eslint/no-restricted-types -----
+type NoAutofixTypescriptEslintNoRestrictedTypes = []|[{
+  types?: {
+    [k: string]: (true | string | {
+      
+      message?: string
+      
+      fixWith?: string
+      
+      suggest?: string[]
+    }) | undefined
+  }
+}]
 // ----- no-autofix/@typescript-eslint/no-shadow -----
 type NoAutofixTypescriptEslintNoShadow = []|[{
   builtinGlobals?: boolean
@@ -19593,11 +18856,6 @@ type NoAutofixTypescriptEslintNoThisAlias = []|[{
   allowDestructuring?: boolean
   
   allowedNames?: string[]
-}]
-// ----- no-autofix/@typescript-eslint/no-throw-literal -----
-type NoAutofixTypescriptEslintNoThrowLiteral = []|[{
-  allowThrowingAny?: boolean
-  allowThrowingUnknown?: boolean
 }]
 // ----- no-autofix/@typescript-eslint/no-type-alias -----
 type NoAutofixTypescriptEslintNoTypeAlias = []|[{
@@ -19654,6 +18912,8 @@ type NoAutofixTypescriptEslintNoUnusedVars = []|[(("all" | "local") | {
   caughtErrors?: ("all" | "none")
   caughtErrorsIgnorePattern?: string
   destructuredArrayIgnorePattern?: string
+  ignoreClassWithStaticInitBlock?: boolean
+  reportUsedIgnorePattern?: boolean
 })]
 // ----- no-autofix/@typescript-eslint/no-use-before-define -----
 type NoAutofixTypescriptEslintNoUseBeforeDefine = []|[("nofunc" | {
@@ -19670,24 +18930,11 @@ type NoAutofixTypescriptEslintNoVarRequires = []|[{
   
   allow?: string[]
 }]
-// ----- no-autofix/@typescript-eslint/object-curly-spacing -----
-type NoAutofixTypescriptEslintObjectCurlySpacing = []|[("always" | "never")]|[("always" | "never"), {
-  arraysInObjects?: boolean
-  objectsInObjects?: boolean
-}]
 // ----- no-autofix/@typescript-eslint/only-throw-error -----
 type NoAutofixTypescriptEslintOnlyThrowError = []|[{
   allowThrowingAny?: boolean
   allowThrowingUnknown?: boolean
 }]
-// ----- no-autofix/@typescript-eslint/padding-line-between-statements -----
-type _NoAutofixTypescriptEslintPaddingLineBetweenStatementsPaddingType = ("any" | "never" | "always")
-type _NoAutofixTypescriptEslintPaddingLineBetweenStatementsStatementType = (("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "interface" | "type") | [("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "interface" | "type"), ...(("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "interface" | "type"))[]])
-type NoAutofixTypescriptEslintPaddingLineBetweenStatements = {
-  blankLine: _NoAutofixTypescriptEslintPaddingLineBetweenStatementsPaddingType
-  prev: _NoAutofixTypescriptEslintPaddingLineBetweenStatementsStatementType
-  next: _NoAutofixTypescriptEslintPaddingLineBetweenStatementsStatementType
-}[]
 // ----- no-autofix/@typescript-eslint/parameter-properties -----
 type NoAutofixTypescriptEslintParameterProperties = []|[{
   allow?: ("readonly" | "private" | "protected" | "public" | "private readonly" | "protected readonly" | "public readonly")[]
@@ -19802,11 +19049,6 @@ type NoAutofixTypescriptEslintPromiseFunctionAsync = []|[{
   checkFunctionExpressions?: boolean
   checkMethodDeclarations?: boolean
 }]
-// ----- no-autofix/@typescript-eslint/quotes -----
-type NoAutofixTypescriptEslintQuotes = []|[("single" | "double" | "backtick")]|[("single" | "double" | "backtick"), ("avoid-escape" | {
-  avoidEscape?: boolean
-  allowTemplateLiterals?: boolean
-})]
 // ----- no-autofix/@typescript-eslint/require-array-sort-compare -----
 type NoAutofixTypescriptEslintRequireArraySortCompare = []|[{
   
@@ -19846,13 +19088,6 @@ type NoAutofixTypescriptEslintRestrictTemplateExpressions = []|[{
 }]
 // ----- no-autofix/@typescript-eslint/return-await -----
 type NoAutofixTypescriptEslintReturnAwait = []|[("in-try-catch" | "always" | "never" | "error-handling-correctness-only")]
-// ----- no-autofix/@typescript-eslint/semi -----
-type NoAutofixTypescriptEslintSemi = ([]|["never"]|["never", {
-  beforeStatementContinuationChars?: ("always" | "any" | "never")
-}] | []|["always"]|["always", {
-  omitLastInOneLineBlock?: boolean
-  omitLastInOneLineClassBody?: boolean
-}])
 // ----- no-autofix/@typescript-eslint/sort-type-constituents -----
 type NoAutofixTypescriptEslintSortTypeConstituents = []|[{
   
@@ -19863,22 +19098,6 @@ type NoAutofixTypescriptEslintSortTypeConstituents = []|[{
   caseSensitive?: boolean
   
   groupOrder?: ("conditional" | "function" | "import" | "intersection" | "keyword" | "nullish" | "literal" | "named" | "object" | "operator" | "tuple" | "union")[]
-}]
-// ----- no-autofix/@typescript-eslint/space-before-blocks -----
-type NoAutofixTypescriptEslintSpaceBeforeBlocks = []|[(("always" | "never") | {
-  keywords?: ("always" | "never" | "off")
-  functions?: ("always" | "never" | "off")
-  classes?: ("always" | "never" | "off")
-})]
-// ----- no-autofix/@typescript-eslint/space-before-function-paren -----
-type NoAutofixTypescriptEslintSpaceBeforeFunctionParen = []|[(("always" | "never") | {
-  anonymous?: ("always" | "never" | "ignore")
-  named?: ("always" | "never" | "ignore")
-  asyncArrow?: ("always" | "never" | "ignore")
-})]
-// ----- no-autofix/@typescript-eslint/space-infix-ops -----
-type NoAutofixTypescriptEslintSpaceInfixOps = []|[{
-  int32Hint?: boolean
 }]
 // ----- no-autofix/@typescript-eslint/strict-boolean-expressions -----
 type NoAutofixTypescriptEslintStrictBooleanExpressions = []|[{
@@ -19905,23 +19124,6 @@ type NoAutofixTypescriptEslintTripleSlashReference = []|[{
   path?: ("always" | "never")
   types?: ("always" | "never" | "prefer-import")
 }]
-// ----- no-autofix/@typescript-eslint/type-annotation-spacing -----
-type NoAutofixTypescriptEslintTypeAnnotationSpacing = []|[{
-  before?: boolean
-  after?: boolean
-  overrides?: {
-    colon?: _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig
-    arrow?: _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig
-    variable?: _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig
-    parameter?: _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig
-    property?: _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig
-    returnType?: _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig
-  }
-}]
-interface _NoAutofixTypescriptEslintTypeAnnotationSpacing_SpacingConfig {
-  before?: boolean
-  after?: boolean
-}
 // ----- no-autofix/@typescript-eslint/typedef -----
 type NoAutofixTypescriptEslintTypedef = []|[{
   arrayDestructuring?: boolean
@@ -26588,26 +25790,6 @@ type TsBanTsComment = []|[{
   })
   minimumDescriptionLength?: number
 }]
-// ----- ts/ban-types -----
-type TsBanTypes = []|[{
-  types?: {
-    [k: string]: (null | false | true | string | {
-      
-      message?: string
-      
-      fixWith?: string
-      
-      suggest?: string[]
-    }) | undefined
-  }
-  extendDefaults?: boolean
-}]
-// ----- ts/block-spacing -----
-type TsBlockSpacing = []|[("always" | "never")]
-// ----- ts/brace-style -----
-type TsBraceStyle = []|[("1tbs" | "stroustrup" | "allman")]|[("1tbs" | "stroustrup" | "allman"), {
-  allowSingleLine?: boolean
-}]
 // ----- ts/class-literal-property-style -----
 type TsClassLiteralPropertyStyle = []|[("fields" | "getters")]
 // ----- ts/class-methods-use-this -----
@@ -26620,24 +25802,6 @@ type TsClassMethodsUseThis = []|[{
   ignoreOverrideMethods?: boolean
   
   ignoreClassesThatImplementAnInterface?: (boolean | "public-fields")
-}]
-// ----- ts/comma-dangle -----
-type TsCommaDangle = []|[(_TsCommaDangleValue | {
-  arrays?: _TsCommaDangleValueWithIgnore
-  objects?: _TsCommaDangleValueWithIgnore
-  imports?: _TsCommaDangleValueWithIgnore
-  exports?: _TsCommaDangleValueWithIgnore
-  functions?: _TsCommaDangleValueWithIgnore
-  enums?: _TsCommaDangleValueWithIgnore
-  generics?: _TsCommaDangleValueWithIgnore
-  tuples?: _TsCommaDangleValueWithIgnore
-})]
-type _TsCommaDangleValue = ("always-multiline" | "always" | "never" | "only-multiline")
-type _TsCommaDangleValueWithIgnore = ("always-multiline" | "always" | "never" | "only-multiline" | "ignore")
-// ----- ts/comma-spacing -----
-type TsCommaSpacing = []|[{
-  before?: boolean
-  after?: boolean
 }]
 // ----- ts/consistent-generic-constructors -----
 type TsConsistentGenericConstructors = []|[("type-annotation" | "constructor")]
@@ -26718,459 +25882,16 @@ type TsExplicitModuleBoundaryTypes = []|[{
   
   allowTypedFunctionExpressions?: boolean
 }]
-// ----- ts/func-call-spacing -----
-type TsFuncCallSpacing = ([]|["never"] | []|["always"]|["always", {
-  allowNewlines?: boolean
-}])
-// ----- ts/indent -----
-type TsIndent = []|[("tab" | number)]|[("tab" | number), {
-  SwitchCase?: number
-  VariableDeclarator?: ((number | ("first" | "off")) | {
-    var?: (number | ("first" | "off"))
-    let?: (number | ("first" | "off"))
-    const?: (number | ("first" | "off"))
-  })
-  outerIIFEBody?: (number | "off")
-  MemberExpression?: (number | "off")
-  FunctionDeclaration?: {
-    parameters?: (number | ("first" | "off"))
-    body?: number
-  }
-  FunctionExpression?: {
-    parameters?: (number | ("first" | "off"))
-    body?: number
-  }
-  StaticBlock?: {
-    body?: number
-  }
-  CallExpression?: {
-    arguments?: (number | ("first" | "off"))
-  }
-  ArrayExpression?: (number | ("first" | "off"))
-  ObjectExpression?: (number | ("first" | "off"))
-  ImportDeclaration?: (number | ("first" | "off"))
-  flatTernaryExpressions?: boolean
-  offsetTernaryExpressions?: boolean
-  ignoredNodes?: string[]
-  ignoreComments?: boolean
-}]
 // ----- ts/init-declarations -----
 type TsInitDeclarations = ([]|["always"] | []|["never"]|["never", {
   ignoreForLoopInit?: boolean
 }])
-// ----- ts/key-spacing -----
-type TsKeySpacing = []|[({
-  align?: (("colon" | "value") | {
-    mode?: ("strict" | "minimum")
-    on?: ("colon" | "value")
-    beforeColon?: boolean
-    afterColon?: boolean
-  })
-  mode?: ("strict" | "minimum")
-  beforeColon?: boolean
-  afterColon?: boolean
-} | {
-  singleLine?: {
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-  multiLine?: {
-    align?: (("colon" | "value") | {
-      mode?: ("strict" | "minimum")
-      on?: ("colon" | "value")
-      beforeColon?: boolean
-      afterColon?: boolean
-    })
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-} | {
-  singleLine?: {
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-  multiLine?: {
-    mode?: ("strict" | "minimum")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-  align?: {
-    mode?: ("strict" | "minimum")
-    on?: ("colon" | "value")
-    beforeColon?: boolean
-    afterColon?: boolean
-  }
-})]
-// ----- ts/keyword-spacing -----
-type TsKeywordSpacing = []|[{
-  before?: boolean
-  after?: boolean
-  overrides?: {
-    abstract?: {
-      before?: boolean
-      after?: boolean
-    }
-    as?: {
-      before?: boolean
-      after?: boolean
-    }
-    async?: {
-      before?: boolean
-      after?: boolean
-    }
-    await?: {
-      before?: boolean
-      after?: boolean
-    }
-    boolean?: {
-      before?: boolean
-      after?: boolean
-    }
-    break?: {
-      before?: boolean
-      after?: boolean
-    }
-    byte?: {
-      before?: boolean
-      after?: boolean
-    }
-    case?: {
-      before?: boolean
-      after?: boolean
-    }
-    catch?: {
-      before?: boolean
-      after?: boolean
-    }
-    char?: {
-      before?: boolean
-      after?: boolean
-    }
-    class?: {
-      before?: boolean
-      after?: boolean
-    }
-    const?: {
-      before?: boolean
-      after?: boolean
-    }
-    continue?: {
-      before?: boolean
-      after?: boolean
-    }
-    debugger?: {
-      before?: boolean
-      after?: boolean
-    }
-    default?: {
-      before?: boolean
-      after?: boolean
-    }
-    delete?: {
-      before?: boolean
-      after?: boolean
-    }
-    do?: {
-      before?: boolean
-      after?: boolean
-    }
-    double?: {
-      before?: boolean
-      after?: boolean
-    }
-    else?: {
-      before?: boolean
-      after?: boolean
-    }
-    enum?: {
-      before?: boolean
-      after?: boolean
-    }
-    export?: {
-      before?: boolean
-      after?: boolean
-    }
-    extends?: {
-      before?: boolean
-      after?: boolean
-    }
-    false?: {
-      before?: boolean
-      after?: boolean
-    }
-    final?: {
-      before?: boolean
-      after?: boolean
-    }
-    finally?: {
-      before?: boolean
-      after?: boolean
-    }
-    float?: {
-      before?: boolean
-      after?: boolean
-    }
-    for?: {
-      before?: boolean
-      after?: boolean
-    }
-    from?: {
-      before?: boolean
-      after?: boolean
-    }
-    function?: {
-      before?: boolean
-      after?: boolean
-    }
-    get?: {
-      before?: boolean
-      after?: boolean
-    }
-    goto?: {
-      before?: boolean
-      after?: boolean
-    }
-    if?: {
-      before?: boolean
-      after?: boolean
-    }
-    implements?: {
-      before?: boolean
-      after?: boolean
-    }
-    import?: {
-      before?: boolean
-      after?: boolean
-    }
-    in?: {
-      before?: boolean
-      after?: boolean
-    }
-    instanceof?: {
-      before?: boolean
-      after?: boolean
-    }
-    int?: {
-      before?: boolean
-      after?: boolean
-    }
-    interface?: {
-      before?: boolean
-      after?: boolean
-    }
-    let?: {
-      before?: boolean
-      after?: boolean
-    }
-    long?: {
-      before?: boolean
-      after?: boolean
-    }
-    native?: {
-      before?: boolean
-      after?: boolean
-    }
-    new?: {
-      before?: boolean
-      after?: boolean
-    }
-    null?: {
-      before?: boolean
-      after?: boolean
-    }
-    of?: {
-      before?: boolean
-      after?: boolean
-    }
-    package?: {
-      before?: boolean
-      after?: boolean
-    }
-    private?: {
-      before?: boolean
-      after?: boolean
-    }
-    protected?: {
-      before?: boolean
-      after?: boolean
-    }
-    public?: {
-      before?: boolean
-      after?: boolean
-    }
-    return?: {
-      before?: boolean
-      after?: boolean
-    }
-    set?: {
-      before?: boolean
-      after?: boolean
-    }
-    short?: {
-      before?: boolean
-      after?: boolean
-    }
-    static?: {
-      before?: boolean
-      after?: boolean
-    }
-    super?: {
-      before?: boolean
-      after?: boolean
-    }
-    switch?: {
-      before?: boolean
-      after?: boolean
-    }
-    synchronized?: {
-      before?: boolean
-      after?: boolean
-    }
-    this?: {
-      before?: boolean
-      after?: boolean
-    }
-    throw?: {
-      before?: boolean
-      after?: boolean
-    }
-    throws?: {
-      before?: boolean
-      after?: boolean
-    }
-    transient?: {
-      before?: boolean
-      after?: boolean
-    }
-    true?: {
-      before?: boolean
-      after?: boolean
-    }
-    try?: {
-      before?: boolean
-      after?: boolean
-    }
-    typeof?: {
-      before?: boolean
-      after?: boolean
-    }
-    var?: {
-      before?: boolean
-      after?: boolean
-    }
-    void?: {
-      before?: boolean
-      after?: boolean
-    }
-    volatile?: {
-      before?: boolean
-      after?: boolean
-    }
-    while?: {
-      before?: boolean
-      after?: boolean
-    }
-    with?: {
-      before?: boolean
-      after?: boolean
-    }
-    yield?: {
-      before?: boolean
-      after?: boolean
-    }
-    type?: {
-      before?: boolean
-      after?: boolean
-    }
-  }
-}]
-// ----- ts/lines-around-comment -----
-type TsLinesAroundComment = []|[{
-  beforeBlockComment?: boolean
-  afterBlockComment?: boolean
-  beforeLineComment?: boolean
-  afterLineComment?: boolean
-  allowBlockStart?: boolean
-  allowBlockEnd?: boolean
-  allowClassStart?: boolean
-  allowClassEnd?: boolean
-  allowObjectStart?: boolean
-  allowObjectEnd?: boolean
-  allowArrayStart?: boolean
-  allowArrayEnd?: boolean
-  allowInterfaceStart?: boolean
-  allowInterfaceEnd?: boolean
-  allowTypeStart?: boolean
-  allowTypeEnd?: boolean
-  allowEnumStart?: boolean
-  allowEnumEnd?: boolean
-  allowModuleStart?: boolean
-  allowModuleEnd?: boolean
-  ignorePattern?: string
-  applyDefaultIgnorePatterns?: boolean
-}]
-// ----- ts/lines-between-class-members -----
-type TsLinesBetweenClassMembers = []|[({
-  
-  enforce: [{
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  }, ...({
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  })[]]
-} | ("always" | "never"))]|[({
-  
-  enforce: [{
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  }, ...({
-    blankLine: ("always" | "never")
-    prev: ("method" | "field" | "*")
-    next: ("method" | "field" | "*")
-  })[]]
-} | ("always" | "never")), {
-  exceptAfterSingleLine?: boolean
-  exceptAfterOverload?: boolean
-}]
 // ----- ts/max-params -----
 type TsMaxParams = []|[{
   maximum?: number
   max?: number
   countVoidThis?: boolean
 }]
-// ----- ts/member-delimiter-style -----
-type TsMemberDelimiterStyle = []|[{
-  multiline?: {
-    delimiter?: ("none" | "semi" | "comma")
-    requireLast?: boolean
-  }
-  singleline?: {
-    delimiter?: ("semi" | "comma")
-    requireLast?: boolean
-  }
-  overrides?: {
-    interface?: _TsMemberDelimiterStyle_DelimiterConfig
-    typeLiteral?: _TsMemberDelimiterStyle_DelimiterConfig
-  }
-  multilineDetection?: ("brackets" | "last-member")
-}]
-interface _TsMemberDelimiterStyle_DelimiterConfig {
-  multiline?: {
-    delimiter?: ("none" | "semi" | "comma")
-    requireLast?: boolean
-  }
-  singleline?: {
-    delimiter?: ("semi" | "comma")
-    requireLast?: boolean
-  }
-}
 // ----- ts/member-ordering -----
 type TsMemberOrdering = []|[{
   default?: ("never" | (("readonly-signature" | "signature" | "readonly-field" | "public-readonly-field" | "public-decorated-readonly-field" | "decorated-readonly-field" | "static-readonly-field" | "public-static-readonly-field" | "instance-readonly-field" | "public-instance-readonly-field" | "abstract-readonly-field" | "public-abstract-readonly-field" | "protected-readonly-field" | "protected-decorated-readonly-field" | "protected-static-readonly-field" | "protected-instance-readonly-field" | "protected-abstract-readonly-field" | "private-readonly-field" | "private-decorated-readonly-field" | "private-static-readonly-field" | "private-instance-readonly-field" | "#private-readonly-field" | "#private-static-readonly-field" | "#private-instance-readonly-field" | "field" | "public-field" | "public-decorated-field" | "decorated-field" | "static-field" | "public-static-field" | "instance-field" | "public-instance-field" | "abstract-field" | "public-abstract-field" | "protected-field" | "protected-decorated-field" | "protected-static-field" | "protected-instance-field" | "protected-abstract-field" | "private-field" | "private-decorated-field" | "private-static-field" | "private-instance-field" | "#private-field" | "#private-static-field" | "#private-instance-field" | "method" | "public-method" | "public-decorated-method" | "decorated-method" | "static-method" | "public-static-method" | "instance-method" | "public-instance-method" | "abstract-method" | "public-abstract-method" | "protected-method" | "protected-decorated-method" | "protected-static-method" | "protected-instance-method" | "protected-abstract-method" | "private-method" | "private-decorated-method" | "private-static-method" | "private-instance-method" | "#private-method" | "#private-static-method" | "#private-instance-method" | "call-signature" | "constructor" | "public-constructor" | "protected-constructor" | "private-constructor" | "accessor" | "public-accessor" | "public-decorated-accessor" | "decorated-accessor" | "static-accessor" | "public-static-accessor" | "instance-accessor" | "public-instance-accessor" | "abstract-accessor" | "public-abstract-accessor" | "protected-accessor" | "protected-decorated-accessor" | "protected-static-accessor" | "protected-instance-accessor" | "protected-abstract-accessor" | "private-accessor" | "private-decorated-accessor" | "private-static-accessor" | "private-instance-accessor" | "#private-accessor" | "#private-static-accessor" | "#private-instance-accessor" | "get" | "public-get" | "public-decorated-get" | "decorated-get" | "static-get" | "public-static-get" | "instance-get" | "public-instance-get" | "abstract-get" | "public-abstract-get" | "protected-get" | "protected-decorated-get" | "protected-static-get" | "protected-instance-get" | "protected-abstract-get" | "private-get" | "private-decorated-get" | "private-static-get" | "private-instance-get" | "#private-get" | "#private-static-get" | "#private-instance-get" | "set" | "public-set" | "public-decorated-set" | "decorated-set" | "static-set" | "public-static-set" | "instance-set" | "public-instance-set" | "abstract-set" | "public-abstract-set" | "protected-set" | "protected-decorated-set" | "protected-static-set" | "protected-instance-set" | "protected-abstract-set" | "private-set" | "private-decorated-set" | "private-static-set" | "private-instance-set" | "#private-set" | "#private-static-set" | "#private-instance-set" | "static-initialization" | "static-static-initialization" | "public-static-static-initialization" | "instance-static-initialization" | "public-instance-static-initialization" | "abstract-static-initialization" | "public-abstract-static-initialization" | "protected-static-static-initialization" | "protected-instance-static-initialization" | "protected-abstract-static-initialization" | "private-static-static-initialization" | "private-instance-static-initialization" | "#private-static-static-initialization" | "#private-instance-static-initialization") | ("readonly-signature" | "signature" | "readonly-field" | "public-readonly-field" | "public-decorated-readonly-field" | "decorated-readonly-field" | "static-readonly-field" | "public-static-readonly-field" | "instance-readonly-field" | "public-instance-readonly-field" | "abstract-readonly-field" | "public-abstract-readonly-field" | "protected-readonly-field" | "protected-decorated-readonly-field" | "protected-static-readonly-field" | "protected-instance-readonly-field" | "protected-abstract-readonly-field" | "private-readonly-field" | "private-decorated-readonly-field" | "private-static-readonly-field" | "private-instance-readonly-field" | "#private-readonly-field" | "#private-static-readonly-field" | "#private-instance-readonly-field" | "field" | "public-field" | "public-decorated-field" | "decorated-field" | "static-field" | "public-static-field" | "instance-field" | "public-instance-field" | "abstract-field" | "public-abstract-field" | "protected-field" | "protected-decorated-field" | "protected-static-field" | "protected-instance-field" | "protected-abstract-field" | "private-field" | "private-decorated-field" | "private-static-field" | "private-instance-field" | "#private-field" | "#private-static-field" | "#private-instance-field" | "method" | "public-method" | "public-decorated-method" | "decorated-method" | "static-method" | "public-static-method" | "instance-method" | "public-instance-method" | "abstract-method" | "public-abstract-method" | "protected-method" | "protected-decorated-method" | "protected-static-method" | "protected-instance-method" | "protected-abstract-method" | "private-method" | "private-decorated-method" | "private-static-method" | "private-instance-method" | "#private-method" | "#private-static-method" | "#private-instance-method" | "call-signature" | "constructor" | "public-constructor" | "protected-constructor" | "private-constructor" | "accessor" | "public-accessor" | "public-decorated-accessor" | "decorated-accessor" | "static-accessor" | "public-static-accessor" | "instance-accessor" | "public-instance-accessor" | "abstract-accessor" | "public-abstract-accessor" | "protected-accessor" | "protected-decorated-accessor" | "protected-static-accessor" | "protected-instance-accessor" | "protected-abstract-accessor" | "private-accessor" | "private-decorated-accessor" | "private-static-accessor" | "private-instance-accessor" | "#private-accessor" | "#private-static-accessor" | "#private-instance-accessor" | "get" | "public-get" | "public-decorated-get" | "decorated-get" | "static-get" | "public-static-get" | "instance-get" | "public-instance-get" | "abstract-get" | "public-abstract-get" | "protected-get" | "protected-decorated-get" | "protected-static-get" | "protected-instance-get" | "protected-abstract-get" | "private-get" | "private-decorated-get" | "private-static-get" | "private-instance-get" | "#private-get" | "#private-static-get" | "#private-instance-get" | "set" | "public-set" | "public-decorated-set" | "decorated-set" | "static-set" | "public-static-set" | "instance-set" | "public-instance-set" | "abstract-set" | "public-abstract-set" | "protected-set" | "protected-decorated-set" | "protected-static-set" | "protected-instance-set" | "protected-abstract-set" | "private-set" | "private-decorated-set" | "private-static-set" | "private-instance-set" | "#private-set" | "#private-static-set" | "#private-instance-set" | "static-initialization" | "static-static-initialization" | "public-static-static-initialization" | "instance-static-initialization" | "public-instance-static-initialization" | "abstract-static-initialization" | "public-abstract-static-initialization" | "protected-static-static-initialization" | "protected-instance-static-initialization" | "protected-abstract-static-initialization" | "private-static-static-initialization" | "private-instance-static-initialization" | "#private-static-static-initialization" | "#private-instance-static-initialization")[])[] | {
@@ -27545,7 +26266,7 @@ type TsNoEmptyInterface = []|[{
 // ----- ts/no-empty-object-type -----
 type TsNoEmptyObjectType = []|[{
   allowInterfaces?: ("always" | "never" | "with-single-extends")
-  allowObjectTypes?: ("always" | "in-type-alias-with-name" | "never")
+  allowObjectTypes?: ("always" | "never")
   allowWithName?: string
 }]
 // ----- ts/no-explicit-any -----
@@ -27555,19 +26276,6 @@ type TsNoExplicitAny = []|[{
   
   ignoreRestArgs?: boolean
 }]
-// ----- ts/no-extra-parens -----
-type TsNoExtraParens = ([]|["functions"] | []|["all"]|["all", {
-  conditionalAssign?: boolean
-  ternaryOperandBinaryExpressions?: boolean
-  nestedBinaryExpressions?: boolean
-  returnAssign?: boolean
-  ignoreJSX?: ("none" | "all" | "single-line" | "multi-line")
-  enforceForArrowConditionals?: boolean
-  enforceForSequenceExpressions?: boolean
-  enforceForNewInMemberExpressions?: boolean
-  enforceForFunctionPrototypeMethods?: boolean
-  allowParensAfterCommentPattern?: string
-}])
 // ----- ts/no-extraneous-class -----
 type TsNoExtraneousClass = []|[{
   
@@ -27582,6 +26290,18 @@ type TsNoExtraneousClass = []|[{
 // ----- ts/no-floating-promises -----
 type TsNoFloatingPromises = []|[{
   allowForKnownSafePromises?: (string | {
+    from: "file"
+    name: (string | [string, ...(string)[]])
+    path?: string
+  } | {
+    from: "lib"
+    name: (string | [string, ...(string)[]])
+  } | {
+    from: "package"
+    name: (string | [string, ...(string)[]])
+    package: string
+  })[]
+  allowForKnownSafeCalls?: (string | {
     from: "file"
     name: (string | [string, ...(string)[]])
     path?: string
@@ -27659,6 +26379,8 @@ type TsNoRedeclare = []|[{
 type TsNoRequireImports = []|[{
   
   allow?: string[]
+  
+  allowAsImport?: boolean
 }]
 // ----- ts/no-restricted-imports -----
 type TsNoRestrictedImports = ((string | {
@@ -27693,6 +26415,19 @@ type TsNoRestrictedImports = ((string | {
     allowTypeImports?: boolean
   }[])
 }])
+// ----- ts/no-restricted-types -----
+type TsNoRestrictedTypes = []|[{
+  types?: {
+    [k: string]: (true | string | {
+      
+      message?: string
+      
+      fixWith?: string
+      
+      suggest?: string[]
+    }) | undefined
+  }
+}]
 // ----- ts/no-shadow -----
 type TsNoShadow = []|[{
   builtinGlobals?: boolean
@@ -27708,11 +26443,6 @@ type TsNoThisAlias = []|[{
   allowDestructuring?: boolean
   
   allowedNames?: string[]
-}]
-// ----- ts/no-throw-literal -----
-type TsNoThrowLiteral = []|[{
-  allowThrowingAny?: boolean
-  allowThrowingUnknown?: boolean
 }]
 // ----- ts/no-type-alias -----
 type TsNoTypeAlias = []|[{
@@ -27769,6 +26499,8 @@ type TsNoUnusedVars = []|[(("all" | "local") | {
   caughtErrors?: ("all" | "none")
   caughtErrorsIgnorePattern?: string
   destructuredArrayIgnorePattern?: string
+  ignoreClassWithStaticInitBlock?: boolean
+  reportUsedIgnorePattern?: boolean
 })]
 // ----- ts/no-use-before-define -----
 type TsNoUseBeforeDefine = []|[("nofunc" | {
@@ -27785,24 +26517,11 @@ type TsNoVarRequires = []|[{
   
   allow?: string[]
 }]
-// ----- ts/object-curly-spacing -----
-type TsObjectCurlySpacing = []|[("always" | "never")]|[("always" | "never"), {
-  arraysInObjects?: boolean
-  objectsInObjects?: boolean
-}]
 // ----- ts/only-throw-error -----
 type TsOnlyThrowError = []|[{
   allowThrowingAny?: boolean
   allowThrowingUnknown?: boolean
 }]
-// ----- ts/padding-line-between-statements -----
-type _TsPaddingLineBetweenStatementsPaddingType = ("any" | "never" | "always")
-type _TsPaddingLineBetweenStatementsStatementType = (("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "interface" | "type") | [("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "interface" | "type"), ...(("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "interface" | "type"))[]])
-type TsPaddingLineBetweenStatements = {
-  blankLine: _TsPaddingLineBetweenStatementsPaddingType
-  prev: _TsPaddingLineBetweenStatementsStatementType
-  next: _TsPaddingLineBetweenStatementsStatementType
-}[]
 // ----- ts/parameter-properties -----
 type TsParameterProperties = []|[{
   allow?: ("readonly" | "private" | "protected" | "public" | "private readonly" | "protected readonly" | "public readonly")[]
@@ -27917,11 +26636,6 @@ type TsPromiseFunctionAsync = []|[{
   checkFunctionExpressions?: boolean
   checkMethodDeclarations?: boolean
 }]
-// ----- ts/quotes -----
-type TsQuotes = []|[("single" | "double" | "backtick")]|[("single" | "double" | "backtick"), ("avoid-escape" | {
-  avoidEscape?: boolean
-  allowTemplateLiterals?: boolean
-})]
 // ----- ts/require-array-sort-compare -----
 type TsRequireArraySortCompare = []|[{
   
@@ -27961,13 +26675,6 @@ type TsRestrictTemplateExpressions = []|[{
 }]
 // ----- ts/return-await -----
 type TsReturnAwait = []|[("in-try-catch" | "always" | "never" | "error-handling-correctness-only")]
-// ----- ts/semi -----
-type TsSemi = ([]|["never"]|["never", {
-  beforeStatementContinuationChars?: ("always" | "any" | "never")
-}] | []|["always"]|["always", {
-  omitLastInOneLineBlock?: boolean
-  omitLastInOneLineClassBody?: boolean
-}])
 // ----- ts/sort-type-constituents -----
 type TsSortTypeConstituents = []|[{
   
@@ -27978,22 +26685,6 @@ type TsSortTypeConstituents = []|[{
   caseSensitive?: boolean
   
   groupOrder?: ("conditional" | "function" | "import" | "intersection" | "keyword" | "nullish" | "literal" | "named" | "object" | "operator" | "tuple" | "union")[]
-}]
-// ----- ts/space-before-blocks -----
-type TsSpaceBeforeBlocks = []|[(("always" | "never") | {
-  keywords?: ("always" | "never" | "off")
-  functions?: ("always" | "never" | "off")
-  classes?: ("always" | "never" | "off")
-})]
-// ----- ts/space-before-function-paren -----
-type TsSpaceBeforeFunctionParen = []|[(("always" | "never") | {
-  anonymous?: ("always" | "never" | "ignore")
-  named?: ("always" | "never" | "ignore")
-  asyncArrow?: ("always" | "never" | "ignore")
-})]
-// ----- ts/space-infix-ops -----
-type TsSpaceInfixOps = []|[{
-  int32Hint?: boolean
 }]
 // ----- ts/strict-boolean-expressions -----
 type TsStrictBooleanExpressions = []|[{
@@ -28020,23 +26711,6 @@ type TsTripleSlashReference = []|[{
   path?: ("always" | "never")
   types?: ("always" | "never" | "prefer-import")
 }]
-// ----- ts/type-annotation-spacing -----
-type TsTypeAnnotationSpacing = []|[{
-  before?: boolean
-  after?: boolean
-  overrides?: {
-    colon?: _TsTypeAnnotationSpacing_SpacingConfig
-    arrow?: _TsTypeAnnotationSpacing_SpacingConfig
-    variable?: _TsTypeAnnotationSpacing_SpacingConfig
-    parameter?: _TsTypeAnnotationSpacing_SpacingConfig
-    property?: _TsTypeAnnotationSpacing_SpacingConfig
-    returnType?: _TsTypeAnnotationSpacing_SpacingConfig
-  }
-}]
-interface _TsTypeAnnotationSpacing_SpacingConfig {
-  before?: boolean
-  after?: boolean
-}
 // ----- ts/typedef -----
 type TsTypedef = []|[{
   arrayDestructuring?: boolean

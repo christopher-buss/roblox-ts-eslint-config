@@ -51,5 +51,5 @@ const instance = yargs(hideBin(process.argv))
 	.version("version", packageJson.version)
 	.alias("v", "version");
 
-// eslint-disable-next-line no-unused-expressions -- yargs API
+// eslint-disable-next-line no-unused-expressions, ts/no-unused-expressions -- yargs API
 instance.help().argv;
