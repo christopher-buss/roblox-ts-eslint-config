@@ -49,6 +49,7 @@ export async function yaml(
 
 				...(stylistic
 					? {
+							"yaml/block-mapping-colon-indicator-newline": "error",
 							"yaml/block-mapping-question-indicator-newline": "error",
 							"yaml/block-sequence-hyphen-indicator-newline": "error",
 							"yaml/flow-mapping-curly-newline": "error",
