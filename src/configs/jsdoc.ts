@@ -43,6 +43,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 				"jsdoc/require-returns": ["warn", { exemptedBy: ["hidden"] }],
 				"jsdoc/require-returns-check": "warn",
 				"jsdoc/require-returns-description": "warn",
+				"jsdoc/require-template": "warn",
 				"jsdoc/require-yields-check": "warn",
 				"jsdoc/sort-tags": "off",
 
