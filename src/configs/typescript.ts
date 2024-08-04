@@ -247,7 +247,6 @@ export async function typescript(
 				"ts/no-import-type-side-effects": "error",
 				"ts/no-inferrable-types": "error",
 				"ts/no-invalid-void-type": "off",
-				"ts/no-loss-of-precision": "error",
 				"ts/no-namespace": "off",
 				"ts/no-non-null-assertion": "error",
 				"ts/no-redeclare": "off",
