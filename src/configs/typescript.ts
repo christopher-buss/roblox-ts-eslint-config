@@ -181,6 +181,7 @@ export async function typescript(
 				"no-empty-function": "off",
 				"no-lonely-if": "error",
 				"no-loss-of-precision": "off",
+				"no-param-reassign": ["error", { props: false }],
 				"no-redeclare": "off",
 				"no-return-assign": ["error", "always"],
 				"no-shadow": "off",
