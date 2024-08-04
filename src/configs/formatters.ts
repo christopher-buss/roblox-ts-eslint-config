@@ -6,12 +6,12 @@ import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "..
 import { StylisticConfigDefaults } from "./stylistic";
 
 export async function formatters(
-	options: OptionsFormatters | true,
+	options: OptionsFormatters | true = {},
 	stylistic: StylisticConfig = {},
 	markdownEnabled = true,
 ): Promise<Array<TypedFlatConfigItem>> {
 	let formattingOptions = options;
-	if (formattingOptions === undefined || formattingOptions === true) {
+	if (formattingOptions === true) {
 		formattingOptions = {
 			css: true,
 			graphql: true,
