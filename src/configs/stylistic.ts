@@ -79,6 +79,7 @@ export async function stylistic(
 						prev: ["do"],
 					},
 				],
+				"style/quotes": ["error", "double"],
 			},
 		},
 	];
