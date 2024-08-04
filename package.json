@@ -103,7 +103,7 @@
 		"@types/node": "20.14.13",
 		"@types/prompts": "2.4.9",
 		"@types/yargs": "17.0.32",
-		"bumpp": "9.4.1",
+		"bumpp": "9.4.2",
 		"bundle-require": "5.0.0",
 		"eslint": "9.8.0",
 		"eslint-plugin-react-hooks": "4.6.2",
