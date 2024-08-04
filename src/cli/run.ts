@@ -1,4 +1,4 @@
-import * as p from "@clack/prompts";
+import { cancel, confirm, group, log, outro } from "@clack/prompts";
 
 import fs from "node:fs";
 import path from "node:path";
@@ -24,7 +24,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	const argumentTemplate = ["react"] as Array<FrameworkOption>;
 
 	if (fs.existsSync(path.join(process.cwd(), "eslint.config.js"))) {
-		p.log.warn(pico.yellow(`eslint.config.js already exists, migration wizard exited.`));
+		log.warn(pico.yellow(`eslint.config.js already exists, migration wizard exited.`));
 		return process.exit(1);
 	}
 
@@ -36,14 +36,14 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	};
 
 	if (!argumentSkipPrompt) {
-		result = (await p.group(
+		result = (await group(
 			{
 				uncommittedConfirmed: () => {
 					if (argumentSkipPrompt || isGitClean()) {
 						return Promise.resolve(true);
 					}
 
-					return p.confirm({
+					return confirm({
 						initialValue: false,
 						message:
 							"There are uncommitted changes in the current repository, are you sure to continue?",
@@ -55,7 +55,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 						return;
 					}
 
-					return p.confirm({
+					return confirm({
 						initialValue: true,
 						message: "Update .vscode/settings.json for better VS Code experience?",
 					});
@@ -63,7 +63,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 			},
 			{
 				onCancel: () => {
-					p.cancel("Operation cancelled.");
+					cancel("Operation cancelled.");
 					process.exit(0);
 				},
 			},
@@ -79,6 +79,6 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	await updateVscodeSettings(result);
 	await addTsconfigBuild();
 
-	p.log.success(pico.green(`Setup completed`));
-	p.outro(`Now you can update the dependencies and run ${pico.blue("eslint . --fix")}\n`);
+	log.success(pico.green(`Setup completed`));
+	outro(`Now you can update the dependencies and run ${pico.blue("eslint . --fix")}\n`);
 }

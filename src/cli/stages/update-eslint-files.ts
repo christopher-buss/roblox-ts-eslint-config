@@ -1,5 +1,5 @@
 /* eslint-disable import/newline-after-import -- #2673 */
-import * as p from "@clack/prompts";
+import { log, note } from "@clack/prompts";
 
 import fs from "node:fs";
 import fsp from "node:fs/promises";
@@ -24,7 +24,7 @@ export async function updateEslintFiles(): Promise<void> {
 
 	const eslintIgnores: Array<string> = [];
 	if (fs.existsSync(pathESLintIgnore)) {
-		p.log.step(pico.cyan(`Migrating existing .eslintignore`));
+		log.step(pico.cyan(`Migrating existing .eslintignore`));
 		const content = await fsp.readFile(pathESLintIgnore, "utf-8");
 		const parsed = parse(content);
 		const globs = parsed.globs();
@@ -59,7 +59,7 @@ export async function updateEslintFiles(): Promise<void> {
 	const eslintConfigContent: string = getEslintConfigContent(mainConfig, additionalConfig);
 
 	await fsp.writeFile(pathFlatConfig, eslintConfigContent);
-	p.log.success(pico.green(`Created ${configFileName}`));
+	log.success(pico.green(`Created ${configFileName}`));
 
 	const files = fs.readdirSync(cwd);
 	const legacyConfig: Array<string> = [];
@@ -70,6 +70,6 @@ export async function updateEslintFiles(): Promise<void> {
 	}
 
 	if (legacyConfig.length) {
-		p.note(`${pico.dim(legacyConfig.join(", "))}`, "You can now remove those files manually");
+		note(`${pico.dim(legacyConfig.join(", "))}`, "You can now remove those files manually");
 	}
 }

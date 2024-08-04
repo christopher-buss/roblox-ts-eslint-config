@@ -1,4 +1,4 @@
-import * as p from "@clack/prompts";
+import { log, note } from "@clack/prompts";
 
 import fsp from "node:fs/promises";
 import path from "node:path";
@@ -12,7 +12,7 @@ export async function updatePackageJson(): Promise<void> {
 
 	const pathPackageJSON = path.join(cwd, "package.json");
 
-	p.log.step(pico.cyan(`Bumping @isentinel/eslint-config to v${packageJson.version}`));
+	log.step(pico.cyan(`Bumping @isentinel/eslint-config to v${packageJson.version}`));
 
 	const packageContent = await fsp.readFile(pathPackageJSON, "utf-8");
 	const package_: Record<string, any> = JSON.parse(packageContent);
@@ -31,9 +31,9 @@ export async function updatePackageJson(): Promise<void> {
 	}
 
 	if (addedPackages.length) {
-		p.note(`${pico.dim(addedPackages.join(", "))}`, "Added packages");
+		note(`${pico.dim(addedPackages.join(", "))}`, "Added packages");
 	}
 
 	await fsp.writeFile(pathPackageJSON, JSON.stringify(package_, null, 2));
-	p.log.success(pico.green(`Changes wrote to package.json`));
+	log.success(pico.green(`Changes wrote to package.json`));
 }

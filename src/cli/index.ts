@@ -1,4 +1,4 @@
-import * as p from "@clack/prompts";
+import { intro, log } from "@clack/prompts";
 
 import process from "node:process";
 import pico from "picocolors";
@@ -12,7 +12,7 @@ function header(): void {
 	console.log("\n");
 	const introText = `${pico.green("@isentinel/eslint-config")}`;
 	const versionText = `v${packageJson.version}`;
-	p.intro(introText + pico.dim(versionText));
+	intro(introText + pico.dim(versionText));
 }
 
 const instance = yargs(hideBin(process.argv))
@@ -40,8 +40,8 @@ const instance = yargs(hideBin(process.argv))
 			try {
 				await run(args);
 			} catch (err) {
-				p.log.error(pico.inverse(pico.red(" Failed to migrate ")));
-				p.log.error(pico.red(`✘ ${String(err)}`));
+				log.error(pico.inverse(pico.red(" Failed to migrate ")));
+				log.error(pico.red(`✘ ${String(err)}`));
 				process.exit(1);
 			}
 		},

@@ -6,12 +6,13 @@ import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "..
 import { StylisticConfigDefaults } from "./stylistic";
 
 export async function formatters(
-	options: OptionsFormatters | true = {},
+	options: OptionsFormatters | true,
 	stylistic: StylisticConfig = {},
 	markdownEnabled = true,
 ): Promise<Array<TypedFlatConfigItem>> {
-	if (options === undefined || options === true) {
-		options = {
+	let formattingOptions = options;
+	if (formattingOptions === undefined || formattingOptions === true) {
+		formattingOptions = {
 			css: true,
 			graphql: true,
 			html: true,
@@ -32,7 +33,7 @@ export async function formatters(
 			trailingComma: "all",
 			useTabs: indent === "tab",
 		} satisfies PrettierOptions,
-		options.prettierOptions ?? {},
+		formattingOptions.prettierOptions ?? {},
 	);
 
 	const dprintOptions = Object.assign(
@@ -41,7 +42,7 @@ export async function formatters(
 			quoteStyle: quotes === "single" ? "preferSingle" : "preferDouble",
 			useTabs: indent === "tab",
 		},
-		options.dprintOptions ?? {},
+		formattingOptions.dprintOptions ?? {},
 	);
 
 	const configs: Array<TypedFlatConfigItem> = [
@@ -53,7 +54,7 @@ export async function formatters(
 		},
 	];
 
-	if (options.css) {
+	if (formattingOptions.css) {
 		configs.push(
 			{
 				files: [GLOB_CSS, GLOB_POSTCSS],
@@ -106,7 +107,7 @@ export async function formatters(
 		);
 	}
 
-	if (options.html) {
+	if (formattingOptions.html) {
 		configs.push({
 			files: ["**/*.html"],
 			languageOptions: {
@@ -125,8 +126,9 @@ export async function formatters(
 		});
 	}
 
-	if (options.markdown) {
-		const formatter = options.markdown === true ? "prettier" : options.markdown;
+	if (formattingOptions.markdown) {
+		const formatter =
+			formattingOptions.markdown === true ? "prettier" : formattingOptions.markdown;
 
 		configs.push({
 			files: markdownEnabled ? ["**/*.__markdown_content__"] : [GLOB_MARKDOWN],
@@ -152,7 +154,7 @@ export async function formatters(
 		});
 	}
 
-	if (options.graphql) {
+	if (formattingOptions.graphql) {
 		configs.push({
 			files: ["**/*.graphql"],
 			languageOptions: {
