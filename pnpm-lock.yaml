@@ -171,9 +171,6 @@ importers:
       bumpp:
         specifier: 9.4.2
         version: 9.4.2
-      bundle-require:
-        specifier: 5.0.0
-        version: 5.0.0(esbuild@0.23.0)
       eslint:
         specifier: 9.9.0
         version: 9.9.0(jiti@1.21.6)
@@ -198,6 +195,9 @@ importers:
       fs-extra:
         specifier: 11.2.0
         version: 11.2.0
+      jiti:
+        specifier: 1.21.6
+        version: 1.21.6
       lint-staged:
         specifier: 15.2.8
         version: 15.2.8

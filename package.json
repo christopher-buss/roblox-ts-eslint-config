@@ -32,7 +32,7 @@
 		"build": "nr typegen && tsup --format esm,cjs --clean --dts",
 		"build:inspector": "pnpm build && npx @eslint/config-inspector build",
 		"dev": "npx @eslint/config-inspector --config eslint.config.ts",
-		"lint": "eslint .",
+		"lint": "eslint . --flag unstable_ts_config",
 		"prepack": "nr build",
 		"prepare": "simple-git-hooks",
 		"release": "bumpp && pnpm publish --p",
@@ -45,7 +45,7 @@
 		"pre-commit": "pnpm lint-staged"
 	},
 	"lint-staged": {
-		"*": "eslint --fix"
+		"*": "eslint --fix --flag unstable_ts_config"
 	},
 	"dependencies": {
 		"@antfu/install-pkg": "0.3.3",
@@ -104,7 +104,6 @@
 		"@types/prompts": "2.4.9",
 		"@types/yargs": "17.0.33",
 		"bumpp": "9.4.2",
-		"bundle-require": "5.0.0",
 		"eslint": "9.9.0",
 		"eslint-plugin-react-hooks": "4.6.2",
 		"eslint-plugin-simple-import-sort": "12.1.1",
@@ -113,6 +112,7 @@
 		"execa": "9.3.0",
 		"fast-glob": "3.3.2",
 		"fs-extra": "11.2.0",
+		"jiti": "1.21.6",
 		"lint-staged": "15.2.8",
 		"rimraf": "6.0.1",
 		"simple-git-hooks": "2.11.1",
