@@ -41,10 +41,9 @@ export default style();
 > [customization](#customization) for more details.
 
 > [!TIP]
-> ESLint by default only detects `eslint.config.js` as the flat config entry.
-> You should install
-> [`eslint-ts-patch`](https://github.com/antfu/eslint-ts-patch) so that you can
-> use `.ts` as the config file.
+> ESLint can support .ts config files, but requires some additional setup. See
+> [here](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)
+> for more information.
 
 ### tsconfig.build.json
 
@@ -148,7 +147,10 @@ Add the following settings to your `.vscode/settings.json`:
 		"jsonc",
 		"yaml",
 		"toml"
-	]
+	],
+
+	// Currently required to enable .ts config files
+	"eslint.options": { "flags": ["unstable_ts_config"] }
 }
 ```
 
