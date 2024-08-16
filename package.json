@@ -113,7 +113,7 @@
 		"fast-glob": "3.3.2",
 		"fs-extra": "11.2.0",
 		"jiti": "1.21.6",
-		"lint-staged": "15.2.8",
+		"lint-staged": "15.2.9",
 		"rimraf": "6.0.1",
 		"simple-git-hooks": "2.11.1",
 		"tsup": "8.2.4",
