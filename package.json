@@ -74,7 +74,7 @@
 		"eslint-plugin-markdown": "5.1.0",
 		"eslint-plugin-no-autofix": "2.0.0",
 		"eslint-plugin-package-json": "0.15.2",
-		"eslint-plugin-perfectionist": "3.1.2",
+		"eslint-plugin-perfectionist": "3.2.0",
 		"eslint-plugin-promise": "7.0.0",
 		"eslint-plugin-sonarjs": "1.0.4",
 		"eslint-plugin-toml": "0.11.1",
