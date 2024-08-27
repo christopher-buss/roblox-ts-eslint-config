@@ -145,6 +145,7 @@ export async function typescript(
 					},
 				],
 				camelcase: "error",
+				eqeqeq: "error",
 				"id-length": [
 					"error",
 					{
