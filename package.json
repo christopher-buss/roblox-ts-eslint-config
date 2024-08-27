@@ -48,7 +48,7 @@
 		"*": "eslint --fix --flag unstable_ts_config"
 	},
 	"dependencies": {
-		"@antfu/install-pkg": "0.3.3",
+		"@antfu/install-pkg": "0.4.0",
 		"@clack/prompts": "0.7.0",
 		"@cspell/eslint-plugin": "8.14.2",
 		"@eslint/compat": "1.1.1",
