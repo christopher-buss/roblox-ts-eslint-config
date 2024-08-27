@@ -113,7 +113,8 @@ export async function react(
 				"react-hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
 				"react-hooks-extra/ensure-use-callback-has-non-empty-deps": "error",
 				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "error",
-				"react-hooks-extra/no-direct-set-state-in-use-effect": "error",
+				// react-lua does not seem to fully support the patterns that this rule enforces.
+				"react-hooks-extra/no-direct-set-state-in-use-effect": "off",
 				"react-hooks-extra/no-direct-set-state-in-use-layout-effect": "error",
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
 				// recommended rules from @eslint-react/naming-convention
