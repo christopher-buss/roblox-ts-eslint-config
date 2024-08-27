@@ -691,7 +691,7 @@ export interface RuleOptions {
   'jsdoc/check-tag-names'?: Linter.RuleEntry<JsdocCheckTagNames>
   /**
    * Checks that any `@template` names are actually used in the connected `@typedef` or type alias.
-   * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-template.md#repos-sticky-header
+   * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-template-names.md#repos-sticky-header
    */
   'jsdoc/check-template-names'?: Linter.RuleEntry<[]>
   /**
@@ -729,6 +729,11 @@ export interface RuleOptions {
    * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/informative-docs.md#repos-sticky-header
    */
   'jsdoc/informative-docs'?: Linter.RuleEntry<JsdocInformativeDocs>
+  /**
+   * Enforces minimum number of newlines before JSDoc comment blocks
+   * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/lines-before-block.md#repos-sticky-header
+   */
+  'jsdoc/lines-before-block'?: Linter.RuleEntry<JsdocLinesBeforeBlock>
   /**
    * Enforces a regular expression pattern on descriptions.
    * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/match-description.md#repos-sticky-header
@@ -5253,7 +5258,7 @@ export interface RuleOptions {
   'no-autofix/jsdoc/check-tag-names'?: Linter.RuleEntry<NoAutofixJsdocCheckTagNames>
   /**
    * Checks that any `@template` names are actually used in the connected `@typedef` or type alias.
-   * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-template.md#repos-sticky-header
+   * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-template-names.md#repos-sticky-header
    */
   'no-autofix/jsdoc/check-template-names'?: Linter.RuleEntry<[]>
   /**
@@ -5291,6 +5296,11 @@ export interface RuleOptions {
    * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/informative-docs.md#repos-sticky-header
    */
   'no-autofix/jsdoc/informative-docs'?: Linter.RuleEntry<NoAutofixJsdocInformativeDocs>
+  /**
+   * Enforces minimum number of newlines before JSDoc comment blocks
+   * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/lines-before-block.md#repos-sticky-header
+   */
+  'no-autofix/jsdoc/lines-before-block'?: Linter.RuleEntry<NoAutofixJsdocLinesBeforeBlock>
   /**
    * Enforces a regular expression pattern on descriptions.
    * @see https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/match-description.md#repos-sticky-header
@@ -14285,6 +14295,12 @@ type JsdocInformativeDocs = []|[{
   excludedTags?: string[]
   uselessWords?: string[]
 }]
+// ----- jsdoc/lines-before-block -----
+type JsdocLinesBeforeBlock = []|[{
+  excludedTags?: string[]
+  ignoreSameLine?: boolean
+  lines?: number
+}]
 // ----- jsdoc/match-description -----
 type JsdocMatchDescription = []|[{
   contexts?: (string | {
@@ -20147,6 +20163,12 @@ type NoAutofixJsdocInformativeDocs = []|[{
   excludedTags?: string[]
   uselessWords?: string[]
 }]
+// ----- no-autofix/jsdoc/lines-before-block -----
+type NoAutofixJsdocLinesBeforeBlock = []|[{
+  excludedTags?: string[]
+  ignoreSameLine?: boolean
+  lines?: number
+}]
 // ----- no-autofix/jsdoc/match-description -----
 type NoAutofixJsdocMatchDescription = []|[{
   contexts?: (string | {
@@ -22225,6 +22247,10 @@ type NoAutofixPerfectionistSortEnums = []|[{
   
   ignoreCase?: boolean
   
+  sortByValue?: boolean
+  
+  forceNumericSort?: boolean
+  
   partitionByComment?: (string[] | boolean | string)
 }]
 // ----- no-autofix/perfectionist/sort-exports -----
@@ -24235,6 +24261,10 @@ type PerfectionistSortEnums = []|[{
   order?: ("asc" | "desc")
   
   ignoreCase?: boolean
+  
+  sortByValue?: boolean
+  
+  forceNumericSort?: boolean
   
   partitionByComment?: (string[] | boolean | string)
 }]
@@ -27160,4 +27190,4 @@ type Yoda = []|[("always" | "never")]|[("always" | "never"), {
   onlyEquality?: boolean
 }]
 // Names of all the configs
-export type ConfigNames = 'style/eslint/comments' | 'style/formatters/setup' | 'style/formatter/css' | 'style/formatter/scss' | 'style/formatter/less' | 'style/formatter/html' | 'style/formatter/markdown' | 'style/formatter/graphql' | 'style/ignores' | 'style/imports' | 'style/import-sort' | 'antfu/imports/disables/bin' | 'style/jsdoc' | 'style/jsonc/setup' | 'style/jsonc/rules' | 'style/markdown/setup' | 'style/markdown/processor' | 'style/markdown/parser' | 'style/markdown/disables' | 'style/package-json' | 'style/perfectionist' | 'style/prettier' | 'style/promise' | 'style/react:setup' | 'style/react:rules' | 'style/roblox' | 'style/shopify' | 'style/sonarjs' | 'style/sort-tsconfig' | 'style/spelling' | 'style/stylistic' | 'style/typescript:setup' | 'style/typescript:rules' | 'style/typescript:dts-overrides' | 'style/unicorn' | 'style/yaml:setup' | 'style/yaml:rules'
+export type ConfigNames = 'style/eslint/comments' | 'style/formatters/setup' | 'style/ignores' | 'style/imports' | 'style/import-sort' | 'antfu/imports/disables/bin' | 'style/jsdoc' | 'style/jsonc/setup' | 'style/jsonc/rules' | 'style/markdown/setup' | 'style/markdown/processor' | 'style/markdown/parser' | 'style/markdown/disables' | 'style/package-json' | 'style/perfectionist' | 'style/prettier' | 'style/promise' | 'style/react:setup' | 'style/react:rules' | 'style/roblox' | 'style/shopify' | 'style/sonarjs' | 'style/sort-tsconfig' | 'style/spelling' | 'style/stylistic' | 'style/typescript:setup' | 'style/typescript:rules' | 'style/typescript:dts-overrides' | 'style/unicorn' | 'style/yaml:setup' | 'style/yaml:rules'

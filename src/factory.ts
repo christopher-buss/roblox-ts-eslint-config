@@ -74,6 +74,7 @@ export function style(
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx,
+		perfectionist: perfectionistOptions,
 		react: enableReact = false,
 		roblox: enableRoblox = true,
 		spellCheck: enableSpellCheck,
@@ -128,7 +129,7 @@ export function style(
 		shopify(),
 		sonarjs(),
 		unicorn(),
-		perfectionist(),
+		perfectionist(perfectionistOptions),
 		typescript({
 			...resolveSubOptions(options, "typescript"),
 			componentExts: componentExtensions,

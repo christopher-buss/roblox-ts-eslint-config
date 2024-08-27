@@ -127,6 +127,10 @@ export type ReactConfig = {
 } & ESLintReactSettings &
 	OptionsOverrides;
 
+export interface PerfectionistConfig {
+	customClassGroups?: Array<string>;
+}
+
 export interface SpellCheckConfig {
 	/** Defaults to `en-US`. */
 	language?: string;
@@ -187,6 +191,9 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @default true
 	 */
 	markdown?: boolean | OptionsOverrides;
+
+	/** Supply custom options for eslint-plugin-perfectionist. */
+	perfectionist?: PerfectionistConfig;
 
 	/**
 	 * Enable react rules.

@@ -1,13 +1,25 @@
 import { pluginPerfectionist } from "../plugins";
-import type { TypedFlatConfigItem } from "../types";
+import type { PerfectionistConfig, TypedFlatConfigItem } from "../types";
 
 /**
  * Perfectionist plugin for props and items sorting.
  *
+ * @param config - An optional configuration object for the plugin.
  * @returns The configuration.
  * @see https://github.com/azat-io/eslint-plugin-perfectionist
  */
-export async function perfectionist(): Promise<Array<TypedFlatConfigItem>> {
+export async function perfectionist(
+	config?: PerfectionistConfig,
+): Promise<Array<TypedFlatConfigItem>> {
+	const { customClassGroups = [] } = config ?? {};
+
+	const customGroups = customClassGroups.reduce((previousValue, currentValue) => {
+		return {
+			...previousValue,
+			[currentValue]: currentValue,
+		};
+	}, {});
+
 	return [
 		{
 			name: "style/perfectionist",
@@ -16,7 +28,34 @@ export async function perfectionist(): Promise<Array<TypedFlatConfigItem>> {
 			},
 			rules: {
 				"perfectionist/sort-array-includes": ["error", { type: "natural" }],
-				"perfectionist/sort-classes": ["off"],
+				"perfectionist/sort-classes": [
+					"warn",
+					{
+						customGroups: {
+							...customGroups,
+						},
+						groups: [
+							"private-static-readonly-property",
+							"private-static-property",
+							"private-property",
+
+							"protected-static-readonly-property",
+							"protected-readonly-property",
+							"protected-static-property",
+							"protected-property",
+
+							"public-static-readonly-property",
+							"public-readonly-property",
+							"public-static-property",
+							"public-property",
+
+							"constructor",
+
+							...customClassGroups,
+						],
+						type: "natural",
+					},
+				],
 				"perfectionist/sort-enums": [
 					"error",
 					{ partitionByComment: "Part:**", type: "natural" },
