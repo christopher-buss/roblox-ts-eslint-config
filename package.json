@@ -132,7 +132,7 @@
 			"optional": true
 		}
 	},
-	"packageManager": "pnpm@9.7.0",
+	"packageManager": "pnpm@9.8.0",
 	"publishConfig": {
 		"access": "public"
 	}
