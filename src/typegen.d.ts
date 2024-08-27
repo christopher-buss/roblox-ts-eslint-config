@@ -3071,6 +3071,11 @@ export interface RuleOptions {
    */
   'no-autofix/@typescript-eslint/no-confusing-void-expression'?: Linter.RuleEntry<NoAutofixTypescriptEslintNoConfusingVoidExpression>
   /**
+   * Disallow using code marked as `@deprecated`
+   * @see https://typescript-eslint.io/rules/no-deprecated
+   */
+  'no-autofix/@typescript-eslint/no-deprecated'?: Linter.RuleEntry<[]>
+  /**
    * Disallow duplicate class members
    * @see https://typescript-eslint.io/rules/no-dupe-class-members
    */
@@ -19497,6 +19502,11 @@ export interface RuleOptions {
    * @see https://typescript-eslint.io/rules/no-confusing-void-expression
    */
   'ts/no-confusing-void-expression'?: Linter.RuleEntry<TsNoConfusingVoidExpression>
+  /**
+   * Disallow using code marked as `@deprecated`
+   * @see https://typescript-eslint.io/rules/no-deprecated
+   */
+  'ts/no-deprecated'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate class members
    * @see https://typescript-eslint.io/rules/no-dupe-class-members
