@@ -36,6 +36,7 @@ export async function perfectionist(
 						},
 						groups: [
 							"private-static-readonly-property",
+							"private-readonly-property",
 							"private-static-property",
 							"private-property",
 
