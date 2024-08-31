@@ -160,8 +160,8 @@ importers:
         specifier: 11.0.4
         version: 11.0.4
       '@types/node':
-        specifier: 20.16.1
-        version: 20.16.1
+        specifier: 20.16.2
+        version: 20.16.2
       '@types/prompts':
         specifier: 2.4.9
         version: 2.4.9
@@ -1766,8 +1766,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@20.16.1':
-    resolution: {integrity: sha512-zJDo7wEadFtSyNz5QITDfRcrhqDvQI1xQNQ0VoizPjM/dVAODqqIUWbJPkvsxmTI0MYRGRikcdjMPhOssnPejQ==}
+  '@types/node@20.16.2':
+    resolution: {integrity: sha512-91s/n4qUPV/wg8eE9KHYW1kouTfDk2FPGjXbBMfRWP/2vg1rCXNQL1OCabwGs0XSdukuK+MwCDXE30QpSeMUhQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -6662,12 +6662,12 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.16.1
+      '@types/node': 20.16.2
 
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.16.1
+      '@types/node': 20.16.2
 
   '@types/json-schema@7.0.15': {}
 
@@ -6675,7 +6675,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.16.1
+      '@types/node': 20.16.2
 
   '@types/mdast@3.0.15':
     dependencies:
@@ -6689,7 +6689,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@20.16.1':
+  '@types/node@20.16.2':
     dependencies:
       undici-types: 6.19.8
 
@@ -6697,7 +6697,7 @@ snapshots:
 
   '@types/prompts@2.4.9':
     dependencies:
-      '@types/node': 20.16.1
+      '@types/node': 20.16.2
       kleur: 3.0.3
 
   '@types/unist@2.0.10': {}
@@ -9116,7 +9116,7 @@ snapshots:
 
   isentinel-eslint-plugin-roblox-ts@0.0.37(eslint@9.9.1(jiti@1.21.6)):
     dependencies:
-      '@types/node': 20.16.1
+      '@types/node': 20.16.2
       '@typescript-eslint/utils': 7.13.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       eslint: 9.9.1(jiti@1.21.6)
       typescript: 5.5.4
