@@ -1692,21 +1692,6 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/prefer-shorthand-fragment'?: Linter.RuleEntry<[]>
   /**
-   * Reflows multi-line comments to ensure that blocks never exceed the configured length
-   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-multi-line-comments/docs.md
-   */
-  'no-autofix/@isentinel/comment-length/limit-multi-line-comments'?: Linter.RuleEntry<NoAutofixIsentinelCommentLengthLimitMultiLineComments>
-  /**
-   * Reflows single-line comments to ensure that blocks never exceed the configured length
-   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-single-line-comments/docs.md
-   */
-  'no-autofix/@isentinel/comment-length/limit-single-line-comments'?: Linter.RuleEntry<NoAutofixIsentinelCommentLengthLimitSingleLineComments>
-  /**
-   * Reflows javascript comments within tagged template literals to ensure that blocks never exceed the configured length
-   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-tagged-template-literal-comments/docs.md
-   */
-  'no-autofix/@isentinel/comment-length/limit-tagged-template-literal-comments'?: Linter.RuleEntry<NoAutofixIsentinelCommentLengthLimitTaggedTemplateLiteralComments>
-  /**
    * Enforce (or disallow) assignments of binary, boolean-producing expressions to be wrapped in parentheses.
    */
   'no-autofix/@shopify/binary-assignment-parens'?: Linter.RuleEntry<NoAutofixShopifyBinaryAssignmentParens>
@@ -3722,6 +3707,21 @@ export interface RuleOptions {
    * @deprecated
    */
   'no-autofix/comma-style'?: Linter.RuleEntry<NoAutofixCommaStyle>
+  /**
+   * Reflows multi-line comments to ensure that blocks never exceed the configured length
+   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-multi-line-comments/docs.md
+   */
+  'no-autofix/comment-length/limit-multi-line-comments'?: Linter.RuleEntry<NoAutofixCommentLengthLimitMultiLineComments>
+  /**
+   * Reflows single-line comments to ensure that blocks never exceed the configured length
+   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-single-line-comments/docs.md
+   */
+  'no-autofix/comment-length/limit-single-line-comments'?: Linter.RuleEntry<NoAutofixCommentLengthLimitSingleLineComments>
+  /**
+   * Reflows javascript comments within tagged template literals to ensure that blocks never exceed the configured length
+   * @see https://github.com/lasselupe33/eslint-plugin-comment-length/tree/master/src/rules/limit-tagged-template-literal-comments/docs.md
+   */
+  'no-autofix/comment-length/limit-tagged-template-literal-comments'?: Linter.RuleEntry<NoAutofixCommentLengthLimitTaggedTemplateLiteralComments>
   /**
    * Enforce a maximum cyclomatic complexity allowed in a program
    * @see https://eslint.org/docs/latest/rules/complexity
@@ -22923,37 +22923,6 @@ type NoAutofixEslintReactNamingConventionFilenameExtension = []|[(("always" | "a
   allow?: ("always" | "as-needed")
   extensions?: string[]
 })]
-// ----- no-autofix/@isentinel/comment-length/limit-multi-line-comments -----
-type NoAutofixIsentinelCommentLengthLimitMultiLineComments = []|[{
-  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
-  maxLength?: number
-  ignoreUrls?: boolean
-  ignoreCommentsWithCode?: boolean
-  tabSize?: number
-  logicalWrap?: boolean
-  [k: string]: unknown | undefined
-}]
-// ----- no-autofix/@isentinel/comment-length/limit-single-line-comments -----
-type NoAutofixIsentinelCommentLengthLimitSingleLineComments = []|[{
-  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
-  maxLength?: number
-  ignoreUrls?: boolean
-  ignoreCommentsWithCode?: boolean
-  tabSize?: number
-  logicalWrap?: boolean
-  [k: string]: unknown | undefined
-}]
-// ----- no-autofix/@isentinel/comment-length/limit-tagged-template-literal-comments -----
-type NoAutofixIsentinelCommentLengthLimitTaggedTemplateLiteralComments = []|[{
-  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
-  maxLength?: number
-  ignoreUrls?: boolean
-  ignoreCommentsWithCode?: boolean
-  tabSize?: number
-  logicalWrap?: boolean
-  tags?: string[]
-  [k: string]: unknown | undefined
-}]
 // ----- no-autofix/@shopify/binary-assignment-parens -----
 type NoAutofixShopifyBinaryAssignmentParens = []|[("always" | "never")]
 // ----- no-autofix/@shopify/class-property-semi -----
@@ -26670,6 +26639,37 @@ type NoAutofixCommaStyle = []|[("first" | "last")]|[("first" | "last"), {
   exceptions?: {
     [k: string]: boolean | undefined
   }
+}]
+// ----- no-autofix/comment-length/limit-multi-line-comments -----
+type NoAutofixCommentLengthLimitMultiLineComments = []|[{
+  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
+  maxLength?: number
+  ignoreUrls?: boolean
+  ignoreCommentsWithCode?: boolean
+  tabSize?: number
+  logicalWrap?: boolean
+  [k: string]: unknown | undefined
+}]
+// ----- no-autofix/comment-length/limit-single-line-comments -----
+type NoAutofixCommentLengthLimitSingleLineComments = []|[{
+  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
+  maxLength?: number
+  ignoreUrls?: boolean
+  ignoreCommentsWithCode?: boolean
+  tabSize?: number
+  logicalWrap?: boolean
+  [k: string]: unknown | undefined
+}]
+// ----- no-autofix/comment-length/limit-tagged-template-literal-comments -----
+type NoAutofixCommentLengthLimitTaggedTemplateLiteralComments = []|[{
+  mode?: ("overflow-only" | "compact-on-overflow" | "compact")
+  maxLength?: number
+  ignoreUrls?: boolean
+  ignoreCommentsWithCode?: boolean
+  tabSize?: number
+  logicalWrap?: boolean
+  tags?: string[]
+  [k: string]: unknown | undefined
 }]
 // ----- no-autofix/complexity -----
 type NoAutofixComplexity = []|[(number | {

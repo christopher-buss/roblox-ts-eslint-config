@@ -2,11 +2,11 @@
 // @ts-nocheck
 
 export { default as pluginCspell } from "@cspell/eslint-plugin";
-export { default as pluginCommentLength } from "@isentinel/eslint-plugin-comment-length";
 export { default as eslintPluginShopify } from "@shopify/eslint-plugin";
 export { default as configPrettier } from "eslint-config-prettier";
 export { default as pluginAntfu } from "eslint-plugin-antfu";
 export { default as pluginArrowReturnStyle } from "eslint-plugin-arrow-return-style";
+export { default as pluginCommentLength } from "eslint-plugin-comment-length";
 export { default as pluginComments } from "eslint-plugin-eslint-comments";
 export { default as pluginFormat } from "eslint-plugin-format";
 export { default as pluginFormatLua } from "eslint-plugin-format-lua";
