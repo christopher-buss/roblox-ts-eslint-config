@@ -28,5 +28,10 @@
 
 	// Enable eslint for all supported languages
 	"eslint.validate": ["typescript", "typescriptreact", "markdown", "json", "jsonc", "yaml"],
-	"eslint.options": { "flags": ["unstable_ts_config"] }
+	"eslint.options": {
+		"flags": [
+			"unstable_ts_config"
+		]
+	},
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
