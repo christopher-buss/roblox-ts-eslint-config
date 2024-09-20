@@ -1340,12 +1340,12 @@ export interface RuleOptions {
    */
   'no-autofix/@cspell/spellchecker'?: Linter.RuleEntry<NoAutofixCspellSpellchecker>
   /**
-   * avoid using shorthand boolean attribute
+   * disallow using shorthand boolean attributes
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean
    */
   'no-autofix/@eslint-react/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
   /**
-   * avoid using shorthand fragment syntax
+   * disallow using shorthand fragment syntax
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment
    */
   'no-autofix/@eslint-react/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
@@ -1361,7 +1361,17 @@ export interface RuleOptions {
   'no-autofix/@eslint-react/debug/function-component'?: Linter.RuleEntry<[]>
   /**
    * report all React Hooks
-   * @see https://eslint-react.xyz/docs/rules/debug-react-hooks
+   * @see https://eslint-react.xyz/docs/rules/debug-hook
+   */
+  'no-autofix/@eslint-react/debug/hook'?: Linter.RuleEntry<[]>
+  /**
+   * report all identifiers that are initialized from React.
+   * @see https://eslint-react.xyz/docs/rules/debug-is-from-react
+   */
+  'no-autofix/@eslint-react/debug/is-from-react'?: Linter.RuleEntry<[]>
+  /**
+   * report all React Hooks
+   * @see https://eslint-react.xyz/docs/rules/debug-hook
    */
   'no-autofix/@eslint-react/debug/react-hooks'?: Linter.RuleEntry<[]>
   /**
@@ -1425,18 +1435,13 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/ensure-forward-ref-using-ref'?: Linter.RuleEntry<[]>
   /**
-   * enforce custom hooks using other hooks
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-custom-hooks-using-other-hooks
+   * enforce custom hooks to use at least one other hook inside
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-redundant-custom-hook
    */
   'no-autofix/@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks'?: Linter.RuleEntry<[]>
   /**
-   * enforce 'useCallback' has non-empty dependencies array
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-callback-has-non-empty-deps
-   */
-  'no-autofix/@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps'?: Linter.RuleEntry<[]>
-  /**
-   * enforce 'useMemo' has non-empty dependencies array
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-memo-has-non-empty-deps
+   * disallow unnecessary usage of 'useMemo'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
    */
   'no-autofix/@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
   /**
@@ -1445,10 +1450,25 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
   /**
-   * disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   * disallow direct calls to the 'set' function of 'useState' in 'useEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
    */
   'no-autofix/@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
+  /**
+   * enforce custom hooks to use at least one other hook inside
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-redundant-custom-hook
+   */
+  'no-autofix/@eslint-react/hooks-extra/no-redundant-custom-hook'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary usage of 'useCallback'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback
+   */
+  'no-autofix/@eslint-react/hooks-extra/no-unnecessary-use-callback'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary usage of 'useMemo'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
+   */
+  'no-autofix/@eslint-react/hooks-extra/no-unnecessary-use-memo'?: Linter.RuleEntry<[]>
   /**
    * disallow function calls in 'useState' that aren't wrapped in an initializer function
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
@@ -1532,13 +1552,11 @@ export interface RuleOptions {
   /**
    * disallow complex conditional rendering
    * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
-   * @deprecated
    */
   'no-autofix/@eslint-react/no-complex-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
    * disallow complex conditional rendering
    * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
-   * @deprecated
    */
   'no-autofix/@eslint-react/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
@@ -1572,7 +1590,7 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/no-direct-mutation-state'?: Linter.RuleEntry<[]>
   /**
-   * disallow duplicate keys in 'key' prop when rendering list
+   * disallow duplicate keys when rendering list
    * @see https://eslint-react.xyz/docs/rules/no-duplicate-key
    */
   'no-autofix/@eslint-react/no-duplicate-key'?: Linter.RuleEntry<[]>
@@ -1592,7 +1610,7 @@ export interface RuleOptions {
    */
   'no-autofix/@eslint-react/no-missing-component-display-name'?: Linter.RuleEntry<[]>
   /**
-   * require 'key' prop when rendering list
+   * require 'key' when rendering list
    * @see https://eslint-react.xyz/docs/rules/no-missing-key
    */
   'no-autofix/@eslint-react/no-missing-key'?: Linter.RuleEntry<[]>
@@ -1691,6 +1709,26 @@ export interface RuleOptions {
    * @see https://eslint-react.xyz/docs/rules/prefer-shorthand-fragment
    */
   'no-autofix/@eslint-react/prefer-shorthand-fragment'?: Linter.RuleEntry<[]>
+  /**
+   * enforce that every 'addEventListener' in a component or custom hook has a corresponding 'removeEventListener'.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-event-listener
+   */
+  'no-autofix/@eslint-react/web-api/no-leaked-event-listener'?: Linter.RuleEntry<[]>
+  /**
+   * enforce that every 'setInterval' in a component or custom hook has a corresponding 'clearInterval'.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-interval
+   */
+  'no-autofix/@eslint-react/web-api/no-leaked-interval'?: Linter.RuleEntry<[]>
+  /**
+   * enforce cleanup of 'ResizeObserver' instances in components and custom hooks.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-resize-observer
+   */
+  'no-autofix/@eslint-react/web-api/no-leaked-resize-observer'?: Linter.RuleEntry<[]>
+  /**
+   * enforce that every 'setTimeout' in a component or custom hook has a corresponding 'clearTimeout'.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-timeout
+   */
+  'no-autofix/@eslint-react/web-api/no-leaked-timeout'?: Linter.RuleEntry<[]>
   /**
    * Enforce (or disallow) assignments of binary, boolean-producing expressions to be wrapped in parentheses.
    */
@@ -7434,7 +7472,17 @@ export interface RuleOptions {
   'no-autofix/react-debug/function-component'?: Linter.RuleEntry<[]>
   /**
    * report all React Hooks
-   * @see https://eslint-react.xyz/docs/rules/debug-react-hooks
+   * @see https://eslint-react.xyz/docs/rules/debug-hook
+   */
+  'no-autofix/react-debug/hook'?: Linter.RuleEntry<[]>
+  /**
+   * report all identifiers that are initialized from React.
+   * @see https://eslint-react.xyz/docs/rules/debug-is-from-react
+   */
+  'no-autofix/react-debug/is-from-react'?: Linter.RuleEntry<[]>
+  /**
+   * report all React Hooks
+   * @see https://eslint-react.xyz/docs/rules/debug-hook
    */
   'no-autofix/react-debug/react-hooks'?: Linter.RuleEntry<[]>
   /**
@@ -7493,18 +7541,13 @@ export interface RuleOptions {
    */
   'no-autofix/react-dom/no-unsafe-target-blank'?: Linter.RuleEntry<[]>
   /**
-   * enforce custom hooks using other hooks
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-custom-hooks-using-other-hooks
+   * enforce custom hooks to use at least one other hook inside
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-redundant-custom-hook
    */
   'no-autofix/react-hooks-extra/ensure-custom-hooks-using-other-hooks'?: Linter.RuleEntry<[]>
   /**
-   * enforce 'useCallback' has non-empty dependencies array
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-callback-has-non-empty-deps
-   */
-  'no-autofix/react-hooks-extra/ensure-use-callback-has-non-empty-deps'?: Linter.RuleEntry<[]>
-  /**
-   * enforce 'useMemo' has non-empty dependencies array
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-memo-has-non-empty-deps
+   * disallow unnecessary usage of 'useMemo'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
    */
   'no-autofix/react-hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
   /**
@@ -7513,10 +7556,25 @@ export interface RuleOptions {
    */
   'no-autofix/react-hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
   /**
-   * disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   * disallow direct calls to the 'set' function of 'useState' in 'useEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
    */
   'no-autofix/react-hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
+  /**
+   * enforce custom hooks to use at least one other hook inside
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-redundant-custom-hook
+   */
+  'no-autofix/react-hooks-extra/no-redundant-custom-hook'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary usage of 'useCallback'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback
+   */
+  'no-autofix/react-hooks-extra/no-unnecessary-use-callback'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary usage of 'useMemo'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
+   */
+  'no-autofix/react-hooks-extra/no-unnecessary-use-memo'?: Linter.RuleEntry<[]>
   /**
    * disallow function calls in 'useState' that aren't wrapped in an initializer function
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
@@ -7563,12 +7621,32 @@ export interface RuleOptions {
    */
   'no-autofix/react-roblox-hooks/rules-of-hooks'?: Linter.RuleEntry<[]>
   /**
-   * avoid using shorthand boolean attribute
+   * enforce that every 'addEventListener' in a component or custom hook has a corresponding 'removeEventListener'.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-event-listener
+   */
+  'no-autofix/react-web-api/no-leaked-event-listener'?: Linter.RuleEntry<[]>
+  /**
+   * enforce that every 'setInterval' in a component or custom hook has a corresponding 'clearInterval'.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-interval
+   */
+  'no-autofix/react-web-api/no-leaked-interval'?: Linter.RuleEntry<[]>
+  /**
+   * enforce cleanup of 'ResizeObserver' instances in components and custom hooks.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-resize-observer
+   */
+  'no-autofix/react-web-api/no-leaked-resize-observer'?: Linter.RuleEntry<[]>
+  /**
+   * enforce that every 'setTimeout' in a component or custom hook has a corresponding 'clearTimeout'.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-timeout
+   */
+  'no-autofix/react-web-api/no-leaked-timeout'?: Linter.RuleEntry<[]>
+  /**
+   * disallow using shorthand boolean attributes
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean
    */
   'no-autofix/react-x/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
   /**
-   * avoid using shorthand fragment syntax
+   * disallow using shorthand fragment syntax
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment
    */
   'no-autofix/react-x/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
@@ -7635,13 +7713,11 @@ export interface RuleOptions {
   /**
    * disallow complex conditional rendering
    * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
-   * @deprecated
    */
   'no-autofix/react-x/no-complex-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
    * disallow complex conditional rendering
    * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
-   * @deprecated
    */
   'no-autofix/react-x/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
@@ -7675,7 +7751,7 @@ export interface RuleOptions {
    */
   'no-autofix/react-x/no-direct-mutation-state'?: Linter.RuleEntry<[]>
   /**
-   * disallow duplicate keys in 'key' prop when rendering list
+   * disallow duplicate keys when rendering list
    * @see https://eslint-react.xyz/docs/rules/no-duplicate-key
    */
   'no-autofix/react-x/no-duplicate-key'?: Linter.RuleEntry<[]>
@@ -7695,7 +7771,7 @@ export interface RuleOptions {
    */
   'no-autofix/react-x/no-missing-component-display-name'?: Linter.RuleEntry<[]>
   /**
-   * require 'key' prop when rendering list
+   * require 'key' when rendering list
    * @see https://eslint-react.xyz/docs/rules/no-missing-key
    */
   'no-autofix/react-x/no-missing-key'?: Linter.RuleEntry<[]>
@@ -14401,18 +14477,13 @@ export interface RuleOptions {
    */
   'radix'?: Linter.RuleEntry<Radix>
   /**
-   * enforce custom hooks using other hooks
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-custom-hooks-using-other-hooks
+   * enforce custom hooks to use at least one other hook inside
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-redundant-custom-hook
    */
   'react-hooks-extra/ensure-custom-hooks-using-other-hooks'?: Linter.RuleEntry<[]>
   /**
-   * enforce 'useCallback' has non-empty dependencies array
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-callback-has-non-empty-deps
-   */
-  'react-hooks-extra/ensure-use-callback-has-non-empty-deps'?: Linter.RuleEntry<[]>
-  /**
-   * enforce 'useMemo' has non-empty dependencies array
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-memo-has-non-empty-deps
+   * disallow unnecessary usage of 'useMemo'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
    */
   'react-hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
   /**
@@ -14421,10 +14492,25 @@ export interface RuleOptions {
    */
   'react-hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
   /**
-   * disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'
-   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   * disallow direct calls to the 'set' function of 'useState' in 'useEffect'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
    */
   'react-hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
+  /**
+   * enforce custom hooks to use at least one other hook inside
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-redundant-custom-hook
+   */
+  'react-hooks-extra/no-redundant-custom-hook'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary usage of 'useCallback'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback
+   */
+  'react-hooks-extra/no-unnecessary-use-callback'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary usage of 'useMemo'
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
+   */
+  'react-hooks-extra/no-unnecessary-use-memo'?: Linter.RuleEntry<[]>
   /**
    * disallow function calls in 'useState' that aren't wrapped in an initializer function
    * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
@@ -14461,12 +14547,12 @@ export interface RuleOptions {
    */
   'react-naming-convention/use-state'?: Linter.RuleEntry<[]>
   /**
-   * avoid using shorthand boolean attribute
+   * disallow using shorthand boolean attributes
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean
    */
   'react/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
   /**
-   * avoid using shorthand fragment syntax
+   * disallow using shorthand fragment syntax
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment
    */
   'react/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
@@ -14533,13 +14619,11 @@ export interface RuleOptions {
   /**
    * disallow complex conditional rendering
    * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
-   * @deprecated
    */
   'react/no-complex-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
    * disallow complex conditional rendering
    * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
-   * @deprecated
    */
   'react/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
@@ -14573,7 +14657,7 @@ export interface RuleOptions {
    */
   'react/no-direct-mutation-state'?: Linter.RuleEntry<[]>
   /**
-   * disallow duplicate keys in 'key' prop when rendering list
+   * disallow duplicate keys when rendering list
    * @see https://eslint-react.xyz/docs/rules/no-duplicate-key
    */
   'react/no-duplicate-key'?: Linter.RuleEntry<[]>
@@ -14593,7 +14677,7 @@ export interface RuleOptions {
    */
   'react/no-missing-component-display-name'?: Linter.RuleEntry<[]>
   /**
-   * require 'key' prop when rendering list
+   * require 'key' when rendering list
    * @see https://eslint-react.xyz/docs/rules/no-missing-key
    */
   'react/no-missing-key'?: Linter.RuleEntry<[]>
@@ -22919,6 +23003,9 @@ type NoAutofixCspellSpellchecker = []|[{
 }]
 // ----- no-autofix/@eslint-react/naming-convention/component-name -----
 type NoAutofixEslintReactNamingConventionComponentName = []|[(("PascalCase" | "CONSTANT_CASE") | {
+  allowAllCaps?: boolean
+  allowLeadingUnderscore?: boolean
+  allowNamespace?: boolean
   excepts?: string[]
   rule?: ("PascalCase" | "CONSTANT_CASE")
 })]
@@ -29978,6 +30065,9 @@ type NoAutofixReactHooksExhaustiveDeps = []|[{
 }]
 // ----- no-autofix/react-naming-convention/component-name -----
 type NoAutofixReactNamingConventionComponentName = []|[(("PascalCase" | "CONSTANT_CASE") | {
+  allowAllCaps?: boolean
+  allowLeadingUnderscore?: boolean
+  allowNamespace?: boolean
   excepts?: string[]
   rule?: ("PascalCase" | "CONSTANT_CASE")
 })]
@@ -33287,6 +33377,9 @@ type ReactHooksRobloxExhaustiveDeps = []|[{
 }]
 // ----- react-naming-convention/component-name -----
 type ReactNamingConventionComponentName = []|[(("PascalCase" | "CONSTANT_CASE") | {
+  allowAllCaps?: boolean
+  allowLeadingUnderscore?: boolean
+  allowNamespace?: boolean
   excepts?: string[]
   rule?: ("PascalCase" | "CONSTANT_CASE")
 })]

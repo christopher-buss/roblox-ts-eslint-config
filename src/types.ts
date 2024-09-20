@@ -124,7 +124,7 @@ export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" |
 
 export type ReactConfig = {
 	filenameCase?: "kebabCase" | "pascalCase";
-} & ESLintReactSettings &
+} & Omit<ESLintReactSettings, "skipImportCheck"> &
 	OptionsOverrides;
 
 export interface PerfectionistConfig {

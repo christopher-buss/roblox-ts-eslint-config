@@ -107,12 +107,11 @@ export async function react(
 				"react/prefer-shorthand-fragment": "warn",
 
 				// recommended rules from @eslint-react/hooks-extra
-				"react-hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
-				"react-hooks-extra/ensure-use-callback-has-non-empty-deps": "error",
-				"react-hooks-extra/ensure-use-memo-has-non-empty-deps": "error",
 				// react-lua does not seem to fully support the patterns that this rule enforces.
 				"react-hooks-extra/no-direct-set-state-in-use-effect": "off",
-				"react-hooks-extra/no-direct-set-state-in-use-layout-effect": "error",
+				"react-hooks-extra/no-redundant-custom-hook": "error",
+				"react-hooks-extra/no-unnecessary-use-callback": "error",
+				"react-hooks-extra/no-unnecessary-use-memo": "error",
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
 				// recommended rules react-hooks roblox
 				"react-hooks-roblox/exhaustive-deps": "warn",
