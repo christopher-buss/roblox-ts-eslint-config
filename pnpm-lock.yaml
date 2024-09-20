@@ -39,8 +39,8 @@ importers:
         specifier: 8.3.0
         version: 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       eslint-config-flat-gitignore:
-        specifier: 0.1.8
-        version: 0.1.8
+        specifier: 0.3.0
+        version: 0.3.0(eslint@9.9.1(jiti@1.21.6))
       eslint-config-prettier:
         specifier: 9.1.0
         version: 9.1.0(eslint@9.9.1(jiti@1.21.6))
@@ -2627,8 +2627,10 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-config-flat-gitignore@0.1.8:
-    resolution: {integrity: sha512-OEUbS2wzzYtUfshjOqzFo4Bl4lHykXUdM08TCnYNl7ki+niW4Q1R0j0FDFDr0vjVsI5ZFOz5LvluxOP+Ew+dYw==}
+  eslint-config-flat-gitignore@0.3.0:
+    resolution: {integrity: sha512-0Ndxo4qGhcewjTzw52TK06Mc00aDtHNTdeeW2JfONgDcLkRO/n/BteMRzNVpLQYxdCC/dFEilfM9fjjpGIJ9Og==}
+    peerDependencies:
+      eslint: ^9.5.0
 
   eslint-config-prettier@9.1.0:
     resolution: {integrity: sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==}
@@ -7813,10 +7815,11 @@ snapshots:
       eslint: 9.9.1(jiti@1.21.6)
       semver: 7.6.3
 
-  eslint-config-flat-gitignore@0.1.8:
+  eslint-config-flat-gitignore@0.3.0(eslint@9.9.1(jiti@1.21.6)):
     dependencies:
+      '@eslint/compat': 1.1.1
+      eslint: 9.9.1(jiti@1.21.6)
       find-up-simple: 1.0.0
-      parse-gitignore: 2.0.0
 
   eslint-config-prettier@9.1.0(eslint@9.9.1(jiti@1.21.6)):
     dependencies:
