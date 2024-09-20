@@ -105,7 +105,7 @@
 		"@types/yargs": "17.0.33",
 		"bumpp": "9.5.2",
 		"eslint": "9.9.1",
-		"eslint-plugin-react-hooks": "4.6.2",
+		"eslint-plugin-react-roblox-hooks": "5.1.0-rbx.1",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"eslint-typegen": "0.3.1",
 		"esno": "4.7.0",
@@ -122,13 +122,13 @@
 	"peerDependencies": {
 		"@eslint-react/eslint-plugin": "^1.8.0",
 		"eslint": ">=8.40.0",
-		"eslint-plugin-react-hooks": "^4.6.0"
+		"eslint-plugin-react-roblox-hooks": "^5.1.0-rbx.1"
 	},
 	"peerDependenciesMeta": {
 		"@eslint-react/eslint-plugin": {
 			"optional": true
 		},
-		"eslint-plugin-react-hooks": {
+		"eslint-plugin-react-roblox-hooks": {
 			"optional": true
 		}
 	},

@@ -174,9 +174,9 @@ importers:
       eslint:
         specifier: 9.9.1
         version: 9.9.1(jiti@1.21.6)
-      eslint-plugin-react-hooks:
-        specifier: 4.6.2
-        version: 4.6.2(eslint@9.9.1(jiti@1.21.6))
+      eslint-plugin-react-roblox-hooks:
+        specifier: 5.1.0-rbx.1
+        version: 5.1.0-rbx.1(eslint@9.9.1(jiti@1.21.6))
       eslint-plugin-simple-import-sort:
         specifier: 12.1.1
         version: 12.1.1(eslint@9.9.1(jiti@1.21.6))
@@ -2950,6 +2950,12 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  eslint-plugin-react-roblox-hooks@5.1.0-rbx.1:
+    resolution: {integrity: sha512-Lf/OtgNar1HAaNPsjf/q94G3gJCphEUhYQKR5+3fa4LpiZ/BRh3za/OlMDy7iPZdmx2KWNu2iC0vY+f9V4ZgrQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
 
   eslint-plugin-react-x@1.8.2:
     resolution: {integrity: sha512-UbdjagNnMvvTAR10cJXQr/c04Vfr729zPQ7rqJhTG8iL5f/nLVcsTxtx2S+HBrada3ZAo1Ai3xBDQ2CsLtTDjA==}
@@ -8355,6 +8361,10 @@ snapshots:
       typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
+
+  eslint-plugin-react-roblox-hooks@5.1.0-rbx.1(eslint@9.9.1(jiti@1.21.6)):
+    dependencies:
+      eslint: 9.9.1(jiti@1.21.6)
 
   eslint-plugin-react-x@1.8.2(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4):
     dependencies:

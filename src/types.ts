@@ -201,7 +201,7 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * Requires installing:
 	 *
 	 * - `@eslint-react/eslint-plugin`
-	 * - `eslint-plugin-react-hooks`.
+	 * - `eslint-plugin-react-roblox-hooks`.
 	 *
 	 * @default false
 	 */

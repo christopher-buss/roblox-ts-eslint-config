@@ -22,11 +22,11 @@ export async function react(
 		overrides = {},
 	} = options;
 
-	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"]);
+	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-roblox-hooks"]);
 
 	const [pluginReact, pluginReactHooks, pluginStylistic, parserTs, pluginTs] = await Promise.all([
 		interopDefault(import("@eslint-react/eslint-plugin")),
-		interopDefault(import("eslint-plugin-react-hooks")),
+		interopDefault(import("eslint-plugin-react-roblox-hooks")),
 		interopDefault(import("@stylistic/eslint-plugin")),
 		interopDefault(import("@typescript-eslint/parser")),
 		interopDefault(import("@typescript-eslint/eslint-plugin")),
@@ -41,8 +41,8 @@ export async function react(
 			name: "style/react:setup",
 			plugins: {
 				react: plugins["@eslint-react"],
-				"react-hooks": fixupPluginRules(pluginReactHooks),
 				"react-hooks-extra": plugins["@eslint-react/hooks-extra"],
+				"react-hooks-roblox": fixupPluginRules(pluginReactHooks),
 				"react-naming-convention": plugins["@eslint-react/naming-convention"],
 				style: pluginStylistic,
 				ts: pluginTs,
@@ -106,9 +106,6 @@ export async function react(
 				"react/prefer-shorthand-boolean": "off",
 				"react/prefer-shorthand-fragment": "warn",
 
-				// recommended rules react-hooks
-				"react-hooks/exhaustive-deps": "warn",
-				"react-hooks/rules-of-hooks": "error",
 				// recommended rules from @eslint-react/hooks-extra
 				"react-hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
 				"react-hooks-extra/ensure-use-callback-has-non-empty-deps": "error",
@@ -117,6 +114,9 @@ export async function react(
 				"react-hooks-extra/no-direct-set-state-in-use-effect": "off",
 				"react-hooks-extra/no-direct-set-state-in-use-layout-effect": "error",
 				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
+				// recommended rules react-hooks roblox
+				"react-hooks-roblox/exhaustive-deps": "warn",
+				"react-hooks-roblox/rules-of-hooks": "error",
 				// recommended rules from @eslint-react/naming-convention
 				"react-naming-convention/filename-extension": ["warn", "as-needed"],
 				"react-naming-convention/use-state": "error",

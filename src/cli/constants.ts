@@ -40,7 +40,7 @@ export const vscodeSettingsString = `
 `;
 
 export const dependenciesMap = {
-	react: ["@eslint-react/eslint-plugin", "eslint-plugin-react-hooks"],
+	react: ["@eslint-react/eslint-plugin", "eslint-plugin-react-roblox-hooks"],
 } as const;
 
 export { default as pkgJson } from "../../package.json";

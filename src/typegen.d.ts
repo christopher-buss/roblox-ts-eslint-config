@@ -7553,6 +7553,16 @@ export interface RuleOptions {
    */
   'no-autofix/react-naming-convention/use-state'?: Linter.RuleEntry<[]>
   /**
+   * verifies the list of dependencies for Hooks like useEffect and similar
+   * @see https://github.com/facebook/react/issues/14920
+   */
+  'no-autofix/react-roblox-hooks/exhaustive-deps'?: Linter.RuleEntry<NoAutofixReactRobloxHooksExhaustiveDeps>
+  /**
+   * enforces the Rules of Hooks
+   * @see https://reactjs.org/docs/hooks-rules.html
+   */
+  'no-autofix/react-roblox-hooks/rules-of-hooks'?: Linter.RuleEntry<[]>
+  /**
    * avoid using shorthand boolean attribute
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean
    */
@@ -14424,12 +14434,12 @@ export interface RuleOptions {
    * verifies the list of dependencies for Hooks like useEffect and similar
    * @see https://github.com/facebook/react/issues/14920
    */
-  'react-hooks/exhaustive-deps'?: Linter.RuleEntry<ReactHooksExhaustiveDeps>
+  'react-hooks-roblox/exhaustive-deps'?: Linter.RuleEntry<ReactHooksRobloxExhaustiveDeps>
   /**
    * enforces the Rules of Hooks
    * @see https://reactjs.org/docs/hooks-rules.html
    */
-  'react-hooks/rules-of-hooks'?: Linter.RuleEntry<[]>
+  'react-hooks-roblox/rules-of-hooks'?: Linter.RuleEntry<[]>
   /**
    * enforce component naming convention to 'PascalCase' or 'CONSTANT_CASE'
    * @see https://eslint-react.xyz/docs/rules/naming-convention-component-name
@@ -29982,6 +29992,11 @@ type NoAutofixReactNamingConventionFilenameExtension = []|[(("always" | "as-need
   allow?: ("always" | "as-needed")
   extensions?: string[]
 })]
+// ----- no-autofix/react-roblox-hooks/exhaustive-deps -----
+type NoAutofixReactRobloxHooksExhaustiveDeps = []|[{
+  additionalHooks?: string
+  enableDangerousAutofixThisMayCauseInfiniteLoops?: boolean
+}]
 // ----- no-autofix/react/boolean-prop-naming -----
 type NoAutofixReactBooleanPropNaming = []|[{
   
@@ -33265,8 +33280,8 @@ type Quotes = []|[("single" | "double" | "backtick")]|[("single" | "double" | "b
 })]
 // ----- radix -----
 type Radix = []|[("always" | "as-needed")]
-// ----- react-hooks/exhaustive-deps -----
-type ReactHooksExhaustiveDeps = []|[{
+// ----- react-hooks-roblox/exhaustive-deps -----
+type ReactHooksRobloxExhaustiveDeps = []|[{
   additionalHooks?: string
   enableDangerousAutofixThisMayCauseInfiniteLoops?: boolean
 }]

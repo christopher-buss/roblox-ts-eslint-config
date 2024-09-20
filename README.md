@@ -325,7 +325,7 @@ export default style({
 Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
 
 ```bash
-pnpm i -D @eslint-react/eslint-plugin eslint-plugin-react-hooks
+pnpm i -D @eslint-react/eslint-plugin eslint-plugin-react-roblox-hooks
 ```
 
 ### Lint Staged
