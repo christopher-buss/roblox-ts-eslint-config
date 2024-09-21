@@ -4,6 +4,7 @@ import fs from "node:fs";
 
 import {
 	comments,
+	disables,
 	ignores,
 	imports,
 	jsdoc,
@@ -219,8 +220,9 @@ export function style(
 		);
 	}
 
-	// We require prettier to be the last config
 	configs.push(
+		disables(),
+		// We require prettier to be the last config
 		prettier({
 			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
 			componentExts: componentExtensions,
