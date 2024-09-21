@@ -40,7 +40,7 @@ importers:
         version: 8.3.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4)
       eslint-config-flat-gitignore:
         specifier: 0.3.0
-        version: 0.3.0(eslint@9.9.1(jiti@1.21.6))
+        version: 0.3.0(eslint@9.10.0(jiti@1.21.6))
       eslint-config-prettier:
         specifier: 9.1.0
         version: 9.1.0(eslint@9.10.0(jiti@1.21.6))
@@ -69,8 +69,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0(eslint@9.10.0(jiti@1.21.6))
       eslint-plugin-import-x:
-        specifier: 3.1.0
-        version: 3.1.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4)
+        specifier: 4.2.1
+        version: 4.2.1(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4)
       eslint-plugin-jsdoc:
         specifier: 50.2.3
         version: 50.2.3(eslint@9.10.0(jiti@1.21.6))
@@ -2660,11 +2660,11 @@ packages:
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
 
-  eslint-plugin-import-x@3.1.0:
-    resolution: {integrity: sha512-/UbPA+bYY7nIxcjL3kpcDY3UNdoLHFhyBFzHox2M0ypcUoueTn6woZUUmzzi5et/dXChksasYYFeKE2wshOrhg==}
-    engines: {node: '>=16'}
+  eslint-plugin-import-x@4.2.1:
+    resolution: {integrity: sha512-WWi2GedccIJa0zXxx3WDnTgouGQTtdYK1nhXMwywbqqAgB0Ov+p1pYBsWh3VaB0bvBOwLse6OfVII7jZD9xo5Q==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.56.0 || ^9.0.0-0
+      eslint: ^8.57.0 || ^9.0.0
 
   eslint-plugin-import@2.29.1:
     resolution: {integrity: sha512-BbPC0cuExzhiMo4Ff1BTVwHpjjv28C5R+btTOGaCRC7UEz801up0JadwkeSk5Ued6TG34uaczuVuH6qyy5YUxw==}
@@ -7644,10 +7644,10 @@ snapshots:
       eslint: 9.10.0(jiti@1.21.6)
       semver: 7.6.3
 
-  eslint-config-flat-gitignore@0.3.0(eslint@9.9.1(jiti@1.21.6)):
+  eslint-config-flat-gitignore@0.3.0(eslint@9.10.0(jiti@1.21.6)):
     dependencies:
       '@eslint/compat': 1.1.1
-      eslint: 9.9.1(jiti@1.21.6)
+      eslint: 9.10.0(jiti@1.21.6)
       find-up-simple: 1.0.0
 
   eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@1.21.6)):
@@ -7758,10 +7758,10 @@ snapshots:
       prettier: 3.3.3
       synckit: 0.9.0
 
-  eslint-plugin-import-x@3.1.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4):
+  eslint-plugin-import-x@4.2.1(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4):
     dependencies:
-      '@typescript-eslint/utils': 7.16.1(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4)
-      debug: 4.3.5
+      '@typescript-eslint/utils': 8.6.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4)
+      debug: 4.3.6
       doctrine: 3.0.0
       eslint: 9.10.0(jiti@1.21.6)
       eslint-import-resolver-node: 0.3.9
