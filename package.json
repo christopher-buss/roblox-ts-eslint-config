@@ -98,7 +98,6 @@
 		"@eslint/config-inspector": "0.5.4",
 		"@isentinel/eslint-config": "workspace:*",
 		"@stylistic/eslint-plugin-migrate": "2.8.0",
-		"@types/eslint": "9.6.1",
 		"@types/fs-extra": "11.0.4",
 		"@types/node": "22.5.5",
 		"@types/prompts": "2.4.9",
