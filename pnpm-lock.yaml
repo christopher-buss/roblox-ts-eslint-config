@@ -81,8 +81,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(eslint@9.10.0(jiti@1.21.6))
       eslint-plugin-no-autofix:
-        specifier: 2.0.0
-        version: 2.0.0(eslint@9.10.0(jiti@1.21.6))
+        specifier: 2.1.0
+        version: 2.1.0(eslint@9.10.0(jiti@1.21.6))
       eslint-plugin-package-json:
         specifier: 0.15.3
         version: 0.15.3(eslint@9.10.0(jiti@1.21.6))(jsonc-eslint-parser@2.4.0)
@@ -2722,8 +2722,8 @@ packages:
     peerDependencies:
       eslint: '>=8'
 
-  eslint-plugin-no-autofix@2.0.0:
-    resolution: {integrity: sha512-x9dbjpWVp/lg9vZ5161W29vDTjSw0MJRc6OQxV54pcY1y+zxZWmjq7WJ1UxA96DSZ74k1aBLFGjMV8UlAoofyQ==}
+  eslint-plugin-no-autofix@2.1.0:
+    resolution: {integrity: sha512-JAg9OhE1QkaqlSOWTx/AdOk+1pS/ZZvBCGYa052d/vXB1oKJux0Jyj/VDl7hYjp+qxcLX6EyKXC8jtxmiVDEpA==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: '>=8'
@@ -7909,7 +7909,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-no-autofix@2.0.0(eslint@9.10.0(jiti@1.21.6)):
+  eslint-plugin-no-autofix@2.1.0(eslint@9.10.0(jiti@1.21.6)):
     dependencies:
       eslint: 9.10.0(jiti@1.21.6)
       eslint-rule-composer: 0.3.0
