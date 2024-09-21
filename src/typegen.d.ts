@@ -53,6 +53,11 @@ export interface RuleOptions {
    */
   'antfu/no-import-node-modules-by-path'?: Linter.RuleEntry<[]>
   /**
+   * Prevent using top-level await
+   * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/no-top-level-await.test.ts
+   */
+  'antfu/no-top-level-await'?: Linter.RuleEntry<[]>
+  /**
    * Do not use `exports =`
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/no-ts-export-equal.test.ts
    */
@@ -3053,6 +3058,11 @@ export interface RuleOptions {
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/no-import-node-modules-by-path.test.ts
    */
   'no-autofix/antfu/no-import-node-modules-by-path'?: Linter.RuleEntry<[]>
+  /**
+   * Prevent using top-level await
+   * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/no-top-level-await.test.ts
+   */
+  'no-autofix/antfu/no-top-level-await'?: Linter.RuleEntry<[]>
   /**
    * Do not use `exports =`
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/no-ts-export-equal.test.ts

@@ -138,6 +138,7 @@ export async function typescript(
 				}),
 				...renameRules(pluginTs.configs.strict.rules ?? {}, { "@typescript-eslint": "ts" }),
 
+				"antfu/no-top-level-await": "error",
 				"array-callback-return": [
 					"error",
 					{

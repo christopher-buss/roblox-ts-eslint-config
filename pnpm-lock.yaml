@@ -51,8 +51,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0(eslint@9.11.0(jiti@1.21.6))
       eslint-plugin-antfu:
-        specifier: 2.6.0
-        version: 2.6.0(eslint@9.11.0(jiti@1.21.6))
+        specifier: 2.7.0
+        version: 2.7.0(eslint@9.11.0(jiti@1.21.6))
       eslint-plugin-arrow-return-style:
         specifier: 1.3.1
         version: 1.3.1(eslint@9.11.0(jiti@1.21.6))(typescript@5.5.4)
@@ -2567,8 +2567,8 @@ packages:
   eslint-parser-plain@0.1.0:
     resolution: {integrity: sha512-oOeA6FWU0UJT/Rxc3XF5Cq0nbIZbylm7j8+plqq0CZoE6m4u32OXJrR+9iy4srGMmF6v6pmgvP1zPxSRIGh3sg==}
 
-  eslint-plugin-antfu@2.6.0:
-    resolution: {integrity: sha512-4dz0VgWGpZ6jUSEUPSI6OGFqBc+P8c7zFFXht5t+YwzIvBsruqVX7Hjl3I8KNNEyJmA4fL3+GIc+EWU1woTp1A==}
+  eslint-plugin-antfu@2.7.0:
+    resolution: {integrity: sha512-gZM3jq3ouqaoHmUNszb1Zo2Ux7RckSvkGksjLWz9ipBYGSv1EwwBETN6AdiUXn+RpVHXTbEMPAPlXJazcA6+iA==}
     peerDependencies:
       eslint: '*'
 
@@ -7580,7 +7580,7 @@ snapshots:
 
   eslint-parser-plain@0.1.0: {}
 
-  eslint-plugin-antfu@2.6.0(eslint@9.11.0(jiti@1.21.6)):
+  eslint-plugin-antfu@2.7.0(eslint@9.11.0(jiti@1.21.6)):
     dependencies:
       '@antfu/utils': 0.7.10
       eslint: 9.11.0(jiti@1.21.6)
