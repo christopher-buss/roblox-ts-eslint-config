@@ -77,6 +77,7 @@ export async function perfectionist(
 					"error",
 					{ partitionByComment: "Part:**", type: "natural" },
 				],
+				"perfectionist/sort-sets": ["error", { type: "natural" }],
 				"perfectionist/sort-switch-case": ["error", { type: "natural" }],
 				"perfectionist/sort-union-types": ["error", { type: "natural" }],
 				"perfectionist/sort-variable-declarations": ["error", { type: "natural" }],

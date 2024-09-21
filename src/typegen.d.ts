@@ -7264,6 +7264,11 @@ export interface RuleOptions {
    */
   'no-autofix/perfectionist/sort-objects'?: Linter.RuleEntry<NoAutofixPerfectionistSortObjects>
   /**
+   * Enforce sorted sets.
+   * @see https://perfectionist.dev/rules/sort-sets
+   */
+  'no-autofix/perfectionist/sort-sets'?: Linter.RuleEntry<NoAutofixPerfectionistSortSets>
+  /**
    * Enforce sorted Svelte attributes.
    * @see https://perfectionist.dev/rules/sort-svelte-attributes
    */
@@ -14283,6 +14288,11 @@ export interface RuleOptions {
    * @see https://perfectionist.dev/rules/sort-objects
    */
   'perfectionist/sort-objects'?: Linter.RuleEntry<PerfectionistSortObjects>
+  /**
+   * Enforce sorted sets.
+   * @see https://perfectionist.dev/rules/sort-sets
+   */
+  'perfectionist/sort-sets'?: Linter.RuleEntry<PerfectionistSortSets>
   /**
    * Enforce sorted Svelte attributes.
    * @see https://perfectionist.dev/rules/sort-svelte-attributes
@@ -29702,9 +29712,41 @@ type NoAutofixPerfectionistSortClasses = []|[{
   
   groups?: (string | string[])[]
   
-  customGroups?: {
+  customGroups?: ({
     [k: string]: (string | string[]) | undefined
-  }
+  } | ({
+    
+    groupName?: string
+    
+    type?: ("alphabetical" | "line-length" | "natural" | "unsorted")
+    
+    order?: ("desc" | "asc")
+    anyOf?: {
+      
+      selector?: ("accessor-property" | "index-signature" | "constructor" | "static-block" | "get-method" | "set-method" | "function-property" | "property" | "method")
+      
+      modifiers?: ("protected" | "private" | "public" | "static" | "abstract" | "override" | "readonly" | "decorated" | "declare" | "optional")[]
+      
+      elementNamePattern?: string
+      
+      decoratorNamePattern?: string
+    }[]
+  } | {
+    
+    groupName?: string
+    
+    type?: ("alphabetical" | "line-length" | "natural" | "unsorted")
+    
+    order?: ("desc" | "asc")
+    
+    selector?: ("accessor-property" | "index-signature" | "constructor" | "static-block" | "get-method" | "set-method" | "function-property" | "property" | "method")
+    
+    modifiers?: ("protected" | "private" | "public" | "static" | "abstract" | "override" | "readonly" | "decorated" | "declare" | "optional")[]
+    
+    elementNamePattern?: string
+    
+    decoratorNamePattern?: string
+  })[])
 }]
 // ----- no-autofix/perfectionist/sort-enums -----
 type NoAutofixPerfectionistSortEnums = []|[{
@@ -29741,6 +29783,8 @@ type _NoAutofixPerfectionistSortImportsSortImports = (_NoAutofixPerfectionistSor
   ignoreCase?: boolean
   
   internalPattern?: string[]
+  
+  sortSideEffects?: boolean
   
   newlinesBetween?: ("ignore" | "always" | "never")
   
@@ -29891,6 +29935,17 @@ type NoAutofixPerfectionistSortObjects = []|[{
   customGroups?: {
     [k: string]: (string | string[]) | undefined
   }
+}]
+// ----- no-autofix/perfectionist/sort-sets -----
+type NoAutofixPerfectionistSortSets = []|[{
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
+  
+  groupKind?: ("mixed" | "literals-first" | "spreads-first")
 }]
 // ----- no-autofix/perfectionist/sort-svelte-attributes -----
 type NoAutofixPerfectionistSortSvelteAttributes = []|[{
@@ -33026,9 +33081,41 @@ type PerfectionistSortClasses = []|[{
   
   groups?: (string | string[])[]
   
-  customGroups?: {
+  customGroups?: ({
     [k: string]: (string | string[]) | undefined
-  }
+  } | ({
+    
+    groupName?: string
+    
+    type?: ("alphabetical" | "line-length" | "natural" | "unsorted")
+    
+    order?: ("desc" | "asc")
+    anyOf?: {
+      
+      selector?: ("accessor-property" | "index-signature" | "constructor" | "static-block" | "get-method" | "set-method" | "function-property" | "property" | "method")
+      
+      modifiers?: ("protected" | "private" | "public" | "static" | "abstract" | "override" | "readonly" | "decorated" | "declare" | "optional")[]
+      
+      elementNamePattern?: string
+      
+      decoratorNamePattern?: string
+    }[]
+  } | {
+    
+    groupName?: string
+    
+    type?: ("alphabetical" | "line-length" | "natural" | "unsorted")
+    
+    order?: ("desc" | "asc")
+    
+    selector?: ("accessor-property" | "index-signature" | "constructor" | "static-block" | "get-method" | "set-method" | "function-property" | "property" | "method")
+    
+    modifiers?: ("protected" | "private" | "public" | "static" | "abstract" | "override" | "readonly" | "decorated" | "declare" | "optional")[]
+    
+    elementNamePattern?: string
+    
+    decoratorNamePattern?: string
+  })[])
 }]
 // ----- perfectionist/sort-enums -----
 type PerfectionistSortEnums = []|[{
@@ -33065,6 +33152,8 @@ type _PerfectionistSortImportsSortImports = (_PerfectionistSortImportsMaxLineLen
   ignoreCase?: boolean
   
   internalPattern?: string[]
+  
+  sortSideEffects?: boolean
   
   newlinesBetween?: ("ignore" | "always" | "never")
   
@@ -33215,6 +33304,17 @@ type PerfectionistSortObjects = []|[{
   customGroups?: {
     [k: string]: (string | string[]) | undefined
   }
+}]
+// ----- perfectionist/sort-sets -----
+type PerfectionistSortSets = []|[{
+  
+  type?: ("alphabetical" | "natural" | "line-length")
+  
+  order?: ("asc" | "desc")
+  
+  ignoreCase?: boolean
+  
+  groupKind?: ("mixed" | "literals-first" | "spreads-first")
 }]
 // ----- perfectionist/sort-svelte-attributes -----
 type PerfectionistSortSvelteAttributes = []|[{
