@@ -72,7 +72,7 @@
 		"eslint-plugin-jsdoc": "50.2.3",
 		"eslint-plugin-jsonc": "2.16.0",
 		"eslint-plugin-markdown": "5.1.0",
-		"eslint-plugin-no-autofix": "2.0.0",
+		"eslint-plugin-no-autofix": "2.1.0",
 		"eslint-plugin-package-json": "0.15.3",
 		"eslint-plugin-perfectionist": "3.6.0",
 		"eslint-plugin-promise": "7.1.0",
