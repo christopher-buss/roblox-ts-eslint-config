@@ -181,8 +181,8 @@ importers:
         specifier: 0.3.2
         version: 0.3.2(eslint@9.11.1(jiti@2.0.0))
       esno:
-        specifier: 4.7.0
-        version: 4.7.0
+        specifier: 4.8.0
+        version: 4.8.0
       execa:
         specifier: 9.4.0
         version: 9.4.0
@@ -206,7 +206,7 @@ importers:
         version: 2.11.1
       tsup:
         specifier: 8.3.0
-        version: 8.3.0(jiti@2.0.0)(postcss@8.4.38)(tsx@4.15.4)(typescript@5.5.4)(yaml@2.5.1)
+        version: 8.3.0(jiti@2.0.0)(postcss@8.4.38)(tsx@4.19.1)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -2917,8 +2917,8 @@ packages:
       jiti:
         optional: true
 
-  esno@4.7.0:
-    resolution: {integrity: sha512-81owrjxIxOwqcABt20U09Wn8lpBo9K6ttqbGvQcB3VYNLJyaV1fvKkDtpZd3Rj5BX3WXiGiJCjUevKQGNICzJg==}
+  esno@4.8.0:
+    resolution: {integrity: sha512-acMtooReAQGzLU0zcuEDHa8S62meh5aIyi8jboYxyvAePdmuWx2Mpwmt0xjwO0bs9/SXf+dvXJ0QJoDWw814Iw==}
     hasBin: true
 
   espree@10.1.0:
@@ -4570,8 +4570,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.15.4:
-    resolution: {integrity: sha512-d++FLCwJLrXaBFtRcqdPBzu6FiVOJ2j+UsvUZPtoTrnYtCGU5CEW7iHXtNZfA2fcRTvJFWPqA6SWBuB0GSva9w==}
+  tsx@4.19.1:
+    resolution: {integrity: sha512-0flMz1lh74BR4wOvBjuh9olbnwqCPc35OOlfyzHba0Dc+QNUeWX/Gq2YTbnwcWPO3BMd8fkzRVrHcsR+a7z7rA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -8197,9 +8197,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  esno@4.7.0:
+  esno@4.8.0:
     dependencies:
-      tsx: 4.15.4
+      tsx: 4.19.1
 
   espree@10.1.0:
     dependencies:
@@ -9444,13 +9444,13 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-load-config@6.0.1(jiti@2.0.0)(postcss@8.4.38)(tsx@4.15.4)(yaml@2.5.1):
+  postcss-load-config@6.0.1(jiti@2.0.0)(postcss@8.4.38)(tsx@4.19.1)(yaml@2.5.1):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 2.0.0
       postcss: 8.4.38
-      tsx: 4.15.4
+      tsx: 4.19.1
       yaml: 2.5.1
 
   postcss@8.4.38:
@@ -9967,7 +9967,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.3.0(jiti@2.0.0)(postcss@8.4.38)(tsx@4.15.4)(typescript@5.5.4)(yaml@2.5.1):
+  tsup@8.3.0(jiti@2.0.0)(postcss@8.4.38)(tsx@4.19.1)(typescript@5.5.4)(yaml@2.5.1):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -9978,7 +9978,7 @@ snapshots:
       execa: 5.1.1
       joycon: 3.1.1
       picocolors: 1.1.0
-      postcss-load-config: 6.0.1(jiti@2.0.0)(postcss@8.4.38)(tsx@4.15.4)(yaml@2.5.1)
+      postcss-load-config: 6.0.1(jiti@2.0.0)(postcss@8.4.38)(tsx@4.19.1)(yaml@2.5.1)
       resolve-from: 5.0.0
       rollup: 4.19.1
       source-map: 0.8.0-beta.0
@@ -9994,9 +9994,9 @@ snapshots:
       - tsx
       - yaml
 
-  tsx@4.15.4:
+  tsx@4.19.1:
     dependencies:
-      esbuild: 0.21.5
+      esbuild: 0.23.0
       get-tsconfig: 4.7.5
     optionalDependencies:
       fsevents: 2.3.3
