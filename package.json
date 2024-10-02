@@ -107,7 +107,7 @@
 		"eslint-plugin-react-roblox-hooks": "5.1.0-rbx.1",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"eslint-typegen": "0.3.2",
-		"esno": "4.7.0",
+		"esno": "4.8.0",
 		"execa": "9.4.0",
 		"fast-glob": "3.3.2",
 		"fs-extra": "11.2.0",
