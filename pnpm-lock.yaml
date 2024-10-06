@@ -87,8 +87,8 @@ importers:
         specifier: 0.15.3
         version: 0.15.3(eslint@9.11.1(jiti@2.1.2))(jsonc-eslint-parser@2.4.0)
       eslint-plugin-perfectionist:
-        specifier: 3.6.0
-        version: 3.6.0(eslint@9.11.1(jiti@2.1.2))(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@9.11.1(jiti@2.1.2)))
+        specifier: 3.8.0
+        version: 3.8.0(eslint@9.11.1(jiti@2.1.2))(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@9.11.1(jiti@2.1.2)))
       eslint-plugin-promise:
         specifier: 7.1.0
         version: 7.1.0(eslint@9.11.1(jiti@2.1.2))
@@ -2729,8 +2729,8 @@ packages:
       eslint: '>=8.0.0'
       jsonc-eslint-parser: ^2.0.0
 
-  eslint-plugin-perfectionist@3.6.0:
-    resolution: {integrity: sha512-sA6ljy6dL/9cM5ruZ/pMqRVt0FQ4Z7mbQWlBYpyX9941LVfm65d2jl2k1ZbWD3ud9Wm+/NKgOvRnAatsKhMJbA==}
+  eslint-plugin-perfectionist@3.8.0:
+    resolution: {integrity: sha512-BYJWbQVOjvIGK9V1xUfn790HuvkePjxti8epOi1H6sdzo0N4RehBmQ8coHPbgA/f12BUG1NIoDtQhI9mUm+o2A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       astro-eslint-parser: ^1.0.2
@@ -7911,10 +7911,10 @@ snapshots:
       sort-package-json: 1.57.0
       validate-npm-package-name: 5.0.1
 
-  eslint-plugin-perfectionist@3.6.0(eslint@9.11.1(jiti@2.1.2))(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@9.11.1(jiti@2.1.2))):
+  eslint-plugin-perfectionist@3.8.0(eslint@9.11.1(jiti@2.1.2))(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@9.11.1(jiti@2.1.2))):
     dependencies:
-      '@typescript-eslint/types': 8.6.0
-      '@typescript-eslint/utils': 8.6.0(eslint@9.11.1(jiti@2.1.2))(typescript@5.5.4)
+      '@typescript-eslint/types': 8.8.0
+      '@typescript-eslint/utils': 8.8.0(eslint@9.11.1(jiti@2.1.2))(typescript@5.5.4)
       eslint: 9.11.1(jiti@2.1.2)
       minimatch: 9.0.5
       natural-compare-lite: 1.4.0
