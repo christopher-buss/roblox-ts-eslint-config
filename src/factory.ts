@@ -27,8 +27,9 @@ import {
 import { formatters } from "./configs/formatters";
 import { packageJson } from "./configs/package-json";
 import { spelling } from "./configs/spelling";
+import { test } from "./configs/test";
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types";
-import { getOverrides, interopDefault, resolveSubOptions } from "./utils";
+import { getOverrides, interopDefault, isInEditorEnvironment, resolveSubOptions } from "./utils";
 
 const flatConfigProps: Array<keyof TypedFlatConfigItem> = [
 	"name",
@@ -81,6 +82,16 @@ export function style(
 		spellCheck: enableSpellCheck,
 		typescript: enableTypeScript,
 	} = options;
+
+	let isInEditor = options.isInEditor;
+	if (isInEditor === undefined) {
+		isInEditor = isInEditorEnvironment();
+		if (isInEditor) {
+			console.log(
+				"[@isentinel/eslint-config] Detected running in editor, some rules are disabled.",
+			);
+		}
+	}
 
 	const stylisticOptions =
 		options.stylistic === false
@@ -151,6 +162,15 @@ export function style(
 
 	if (stylisticOptions) {
 		configs.push(stylistic(stylisticOptions));
+	}
+
+	if (options.test ?? false) {
+		configs.push(
+			test({
+				isInEditor,
+				overrides: getOverrides(options, "test"),
+			}),
+		);
 	}
 
 	if (enableReact) {

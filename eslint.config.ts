@@ -8,6 +8,7 @@ export default style(
 	{
 		ignores: ["fixtures", "_fixtures", "src/typegen.d.ts"],
 		roblox: false,
+		test: true,
 	},
 	{
 		files: ["src/**/*.ts"],

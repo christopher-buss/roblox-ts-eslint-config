@@ -1,6 +1,7 @@
 import { builtinRules } from "eslint/use-at-your-own-risk";
 import { flatConfigsToRulesDTS } from "eslint-typegen/core";
 import fs from "node:fs/promises";
+import { test } from "src/configs/test";
 
 import {
 	combine,
@@ -53,6 +54,7 @@ const configs = await combine(
 	sortTsconfig(),
 	spelling(),
 	stylistic(),
+	test(),
 	typescript(),
 	unicorn(),
 	yaml(),

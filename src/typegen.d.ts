@@ -4425,272 +4425,312 @@ export interface RuleOptions {
   'no-autofix/jest-formatting/padding-around-test-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce `test` and `it` usage conventions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/consistent-test-it.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/consistent-test-it.md
    */
   'no-autofix/jest/consistent-test-it'?: Linter.RuleEntry<NoAutofixJestConsistentTestIt>
   /**
    * Enforce assertion to be made in a test body
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/expect-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/expect-expect.md
    */
   'no-autofix/jest/expect-expect'?: Linter.RuleEntry<NoAutofixJestExpectExpect>
   /**
    * Enforces a maximum number assertion calls in a test body
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/max-expects.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/max-expects.md
    */
   'no-autofix/jest/max-expects'?: Linter.RuleEntry<NoAutofixJestMaxExpects>
   /**
    * Enforces a maximum depth to nested describe calls
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/max-nested-describe.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/max-nested-describe.md
    */
   'no-autofix/jest/max-nested-describe'?: Linter.RuleEntry<NoAutofixJestMaxNestedDescribe>
   /**
    * Disallow alias methods
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-alias-methods.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-alias-methods.md
    */
   'no-autofix/jest/no-alias-methods'?: Linter.RuleEntry<[]>
   /**
    * Disallow commented out tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-commented-out-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-commented-out-tests.md
    */
   'no-autofix/jest/no-commented-out-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow calling `expect` conditionally
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-conditional-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-conditional-expect.md
    */
   'no-autofix/jest/no-conditional-expect'?: Linter.RuleEntry<[]>
   /**
    * Disallow conditional logic in tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-conditional-in-test.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-conditional-in-test.md
    */
   'no-autofix/jest/no-conditional-in-test'?: Linter.RuleEntry<[]>
   /**
    * Disallow confusing usages of jest.setTimeout
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-confusing-set-timeout.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-confusing-set-timeout.md
    */
   'no-autofix/jest/no-confusing-set-timeout'?: Linter.RuleEntry<[]>
   /**
    * Disallow use of deprecated functions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-deprecated-functions.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-deprecated-functions.md
    */
   'no-autofix/jest/no-deprecated-functions'?: Linter.RuleEntry<[]>
   /**
    * Disallow disabled tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-disabled-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-disabled-tests.md
    */
   'no-autofix/jest/no-disabled-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow using a callback in asynchronous tests and hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-done-callback.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-done-callback.md
    */
   'no-autofix/jest/no-done-callback'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate setup and teardown hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-duplicate-hooks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-duplicate-hooks.md
    */
   'no-autofix/jest/no-duplicate-hooks'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `exports` in files containing tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-export.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-export.md
    */
   'no-autofix/jest/no-export'?: Linter.RuleEntry<[]>
   /**
    * Disallow focused tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-focused-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-focused-tests.md
    */
   'no-autofix/jest/no-focused-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow setup and teardown hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-hooks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-hooks.md
    */
   'no-autofix/jest/no-hooks'?: Linter.RuleEntry<NoAutofixJestNoHooks>
   /**
    * Disallow identical titles
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-identical-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-identical-title.md
    */
   'no-autofix/jest/no-identical-title'?: Linter.RuleEntry<[]>
   /**
    * Disallow string interpolation inside snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-interpolation-in-snapshots.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-interpolation-in-snapshots.md
    */
   'no-autofix/jest/no-interpolation-in-snapshots'?: Linter.RuleEntry<[]>
   /**
    * Disallow Jasmine globals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-jasmine-globals.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-jasmine-globals.md
    */
   'no-autofix/jest/no-jasmine-globals'?: Linter.RuleEntry<[]>
   /**
    * Disallow large snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-large-snapshots.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-large-snapshots.md
    */
   'no-autofix/jest/no-large-snapshots'?: Linter.RuleEntry<NoAutofixJestNoLargeSnapshots>
   /**
    * Disallow manually importing from `__mocks__`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-mocks-import.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-mocks-import.md
    */
   'no-autofix/jest/no-mocks-import'?: Linter.RuleEntry<[]>
   /**
    * Disallow specific `jest.` methods
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-restricted-jest-methods.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-restricted-jest-methods.md
    */
   'no-autofix/jest/no-restricted-jest-methods'?: Linter.RuleEntry<NoAutofixJestNoRestrictedJestMethods>
   /**
    * Disallow specific matchers & modifiers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-restricted-matchers.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-restricted-matchers.md
    */
   'no-autofix/jest/no-restricted-matchers'?: Linter.RuleEntry<NoAutofixJestNoRestrictedMatchers>
   /**
    * Disallow using `expect` outside of `it` or `test` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-standalone-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-standalone-expect.md
    */
   'no-autofix/jest/no-standalone-expect'?: Linter.RuleEntry<NoAutofixJestNoStandaloneExpect>
   /**
    * Require using `.only` and `.skip` over `f` and `x`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-test-prefixes.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-test-prefixes.md
    */
   'no-autofix/jest/no-test-prefixes'?: Linter.RuleEntry<[]>
   /**
    * Disallow explicitly returning from tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-test-return-statement.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-test-return-statement.md
    */
   'no-autofix/jest/no-test-return-statement'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `jest.mock()` factories without an explicit type parameter
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/no-untyped-mock-factory.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-untyped-mock-factory.md
    */
   'no-autofix/jest/no-untyped-mock-factory'?: Linter.RuleEntry<[]>
   /**
+   * Enforce padding around `afterAll` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-after-all-blocks.md
+   */
+  'no-autofix/jest/padding-around-after-all-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `afterEach` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-after-each-blocks.md
+   */
+  'no-autofix/jest/padding-around-after-each-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around Jest functions
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-all.md
+   */
+  'no-autofix/jest/padding-around-all'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `beforeAll` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-before-all-blocks.md
+   */
+  'no-autofix/jest/padding-around-before-all-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `beforeEach` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-before-each-blocks.md
+   */
+  'no-autofix/jest/padding-around-before-each-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `describe` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-describe-blocks.md
+   */
+  'no-autofix/jest/padding-around-describe-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `expect` groups
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-expect-groups.md
+   */
+  'no-autofix/jest/padding-around-expect-groups'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around afterAll blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-test-blocks.md
+   */
+  'no-autofix/jest/padding-around-test-blocks'?: Linter.RuleEntry<[]>
+  /**
    * Suggest using `toBeCalledWith()` or `toHaveBeenCalledWith()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-called-with.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-called-with.md
    */
   'no-autofix/jest/prefer-called-with'?: Linter.RuleEntry<[]>
   /**
    * Suggest using the built-in comparison matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-comparison-matcher.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-comparison-matcher.md
    */
   'no-autofix/jest/prefer-comparison-matcher'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `.each` rather than manual loops
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-each.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-each.md
    */
   'no-autofix/jest/prefer-each'?: Linter.RuleEntry<[]>
   /**
    * Suggest using the built-in equality matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-equality-matcher.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-equality-matcher.md
    */
   'no-autofix/jest/prefer-equality-matcher'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `expect.assertions()` OR `expect.hasAssertions()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-expect-assertions.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-expect-assertions.md
    */
   'no-autofix/jest/prefer-expect-assertions'?: Linter.RuleEntry<NoAutofixJestPreferExpectAssertions>
   /**
    * Prefer `await expect(...).resolves` over `expect(await ...)` syntax
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-expect-resolves.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-expect-resolves.md
    */
   'no-autofix/jest/prefer-expect-resolves'?: Linter.RuleEntry<[]>
   /**
    * Prefer having hooks in a consistent order
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-hooks-in-order.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-hooks-in-order.md
    */
   'no-autofix/jest/prefer-hooks-in-order'?: Linter.RuleEntry<[]>
   /**
    * Suggest having hooks before any test cases
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-hooks-on-top.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-hooks-on-top.md
    */
   'no-autofix/jest/prefer-hooks-on-top'?: Linter.RuleEntry<[]>
   /**
    * Prefer importing Jest globals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-importing-jest-globals.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-importing-jest-globals.md
    */
   'no-autofix/jest/prefer-importing-jest-globals'?: Linter.RuleEntry<NoAutofixJestPreferImportingJestGlobals>
   /**
    * Prefer `jest.mocked()` over `fn as jest.Mock`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-jest-mocked.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-jest-mocked.md
    */
   'no-autofix/jest/prefer-jest-mocked'?: Linter.RuleEntry<[]>
   /**
    * Enforce lowercase test names
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-lowercase-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-lowercase-title.md
    */
   'no-autofix/jest/prefer-lowercase-title'?: Linter.RuleEntry<NoAutofixJestPreferLowercaseTitle>
   /**
    * Prefer mock resolved/rejected shorthands for promises
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-mock-promise-shorthand.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-mock-promise-shorthand.md
    */
   'no-autofix/jest/prefer-mock-promise-shorthand'?: Linter.RuleEntry<[]>
   /**
    * Prefer including a hint with external snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-snapshot-hint.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-snapshot-hint.md
    */
   'no-autofix/jest/prefer-snapshot-hint'?: Linter.RuleEntry<NoAutofixJestPreferSnapshotHint>
   /**
    * Suggest using `jest.spyOn()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-spy-on.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-spy-on.md
    */
   'no-autofix/jest/prefer-spy-on'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toStrictEqual()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-strict-equal.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-strict-equal.md
    */
   'no-autofix/jest/prefer-strict-equal'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toBe()` for primitive literals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-to-be.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-be.md
    */
   'no-autofix/jest/prefer-to-be'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toContain()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-to-contain.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-contain.md
    */
   'no-autofix/jest/prefer-to-contain'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toHaveLength()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-to-have-length.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-have-length.md
    */
   'no-autofix/jest/prefer-to-have-length'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `test.todo`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/prefer-todo.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-todo.md
    */
   'no-autofix/jest/prefer-todo'?: Linter.RuleEntry<[]>
   /**
    * Require setup and teardown code to be within a hook
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/require-hook.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-hook.md
    */
   'no-autofix/jest/require-hook'?: Linter.RuleEntry<NoAutofixJestRequireHook>
   /**
    * Require a message for `toThrow()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/require-to-throw-message.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-to-throw-message.md
    */
   'no-autofix/jest/require-to-throw-message'?: Linter.RuleEntry<[]>
   /**
    * Require test cases and hooks to be inside a `describe` block
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/require-top-level-describe.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-top-level-describe.md
    */
   'no-autofix/jest/require-top-level-describe'?: Linter.RuleEntry<NoAutofixJestRequireTopLevelDescribe>
   /**
    * Enforce unbound methods are called with their expected scope
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/unbound-method.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/unbound-method.md
    */
   'no-autofix/jest/unbound-method'?: Linter.RuleEntry<NoAutofixJestUnboundMethod>
   /**
    * Enforce valid `describe()` callback
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-describe-callback.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-describe-callback.md
    */
   'no-autofix/jest/valid-describe-callback'?: Linter.RuleEntry<[]>
   /**
    * Enforce valid `expect()` usage
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-expect.md
    */
   'no-autofix/jest/valid-expect'?: Linter.RuleEntry<NoAutofixJestValidExpect>
   /**
    * Require promises that have expectations in their chain to be valid
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-expect-in-promise.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-expect-in-promise.md
    */
   'no-autofix/jest/valid-expect-in-promise'?: Linter.RuleEntry<[]>
   /**
    * Enforce valid titles
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.6.0/docs/rules/valid-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-title.md
    */
   'no-autofix/jest/valid-title'?: Linter.RuleEntry<NoAutofixJestValidTitle>
   /**
@@ -5996,6 +6036,11 @@ export interface RuleOptions {
    * @see https://eslint.org/docs/latest/rules/no-octal-escape
    */
   'no-autofix/no-octal-escape'?: Linter.RuleEntry<[]>
+  /**
+   * disallow .only blocks in tests
+   * @see https://github.com/levibuzolic/eslint-plugin-no-only-tests
+   */
+  'no-autofix/no-only-tests/no-only-tests'?: Linter.RuleEntry<NoAutofixNoOnlyTestsNoOnlyTests>
   /**
    * Disallow reassigning `function` parameters
    * @see https://eslint.org/docs/latest/rules/no-param-reassign
@@ -14499,6 +14544,316 @@ export interface RuleOptions {
    */
   'template-tag-spacing'?: Linter.RuleEntry<TemplateTagSpacing>
   /**
+   * Enforce `test` and `it` usage conventions
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/consistent-test-it.md
+   */
+  'test/consistent-test-it'?: Linter.RuleEntry<TestConsistentTestIt>
+  /**
+   * Enforce assertion to be made in a test body
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/expect-expect.md
+   */
+  'test/expect-expect'?: Linter.RuleEntry<TestExpectExpect>
+  /**
+   * Enforces a maximum number assertion calls in a test body
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/max-expects.md
+   */
+  'test/max-expects'?: Linter.RuleEntry<TestMaxExpects>
+  /**
+   * Enforces a maximum depth to nested describe calls
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/max-nested-describe.md
+   */
+  'test/max-nested-describe'?: Linter.RuleEntry<TestMaxNestedDescribe>
+  /**
+   * Disallow alias methods
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-alias-methods.md
+   */
+  'test/no-alias-methods'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow commented out tests
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-commented-out-tests.md
+   */
+  'test/no-commented-out-tests'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow calling `expect` conditionally
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-conditional-expect.md
+   */
+  'test/no-conditional-expect'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow conditional logic in tests
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-conditional-in-test.md
+   */
+  'test/no-conditional-in-test'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow confusing usages of jest.setTimeout
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-confusing-set-timeout.md
+   */
+  'test/no-confusing-set-timeout'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow use of deprecated functions
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-deprecated-functions.md
+   */
+  'test/no-deprecated-functions'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow disabled tests
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-disabled-tests.md
+   */
+  'test/no-disabled-tests'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow using a callback in asynchronous tests and hooks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-done-callback.md
+   */
+  'test/no-done-callback'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow duplicate setup and teardown hooks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-duplicate-hooks.md
+   */
+  'test/no-duplicate-hooks'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow using `exports` in files containing tests
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-export.md
+   */
+  'test/no-export'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow focused tests
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-focused-tests.md
+   */
+  'test/no-focused-tests'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow setup and teardown hooks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-hooks.md
+   */
+  'test/no-hooks'?: Linter.RuleEntry<TestNoHooks>
+  /**
+   * Disallow identical titles
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-identical-title.md
+   */
+  'test/no-identical-title'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow string interpolation inside snapshots
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-interpolation-in-snapshots.md
+   */
+  'test/no-interpolation-in-snapshots'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow Jasmine globals
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-jasmine-globals.md
+   */
+  'test/no-jasmine-globals'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow large snapshots
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-large-snapshots.md
+   */
+  'test/no-large-snapshots'?: Linter.RuleEntry<TestNoLargeSnapshots>
+  /**
+   * Disallow manually importing from `__mocks__`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-mocks-import.md
+   */
+  'test/no-mocks-import'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow specific `jest.` methods
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-restricted-jest-methods.md
+   */
+  'test/no-restricted-jest-methods'?: Linter.RuleEntry<TestNoRestrictedJestMethods>
+  /**
+   * Disallow specific matchers & modifiers
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-restricted-matchers.md
+   */
+  'test/no-restricted-matchers'?: Linter.RuleEntry<TestNoRestrictedMatchers>
+  /**
+   * Disallow using `expect` outside of `it` or `test` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-standalone-expect.md
+   */
+  'test/no-standalone-expect'?: Linter.RuleEntry<TestNoStandaloneExpect>
+  /**
+   * Require using `.only` and `.skip` over `f` and `x`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-test-prefixes.md
+   */
+  'test/no-test-prefixes'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow explicitly returning from tests
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-test-return-statement.md
+   */
+  'test/no-test-return-statement'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow using `jest.mock()` factories without an explicit type parameter
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-untyped-mock-factory.md
+   */
+  'test/no-untyped-mock-factory'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `afterAll` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-after-all-blocks.md
+   */
+  'test/padding-around-after-all-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `afterEach` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-after-each-blocks.md
+   */
+  'test/padding-around-after-each-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around Jest functions
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-all.md
+   */
+  'test/padding-around-all'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `beforeAll` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-before-all-blocks.md
+   */
+  'test/padding-around-before-all-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `beforeEach` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-before-each-blocks.md
+   */
+  'test/padding-around-before-each-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `describe` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-describe-blocks.md
+   */
+  'test/padding-around-describe-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around `expect` groups
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-expect-groups.md
+   */
+  'test/padding-around-expect-groups'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce padding around afterAll blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-test-blocks.md
+   */
+  'test/padding-around-test-blocks'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `toBeCalledWith()` or `toHaveBeenCalledWith()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-called-with.md
+   */
+  'test/prefer-called-with'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using the built-in comparison matchers
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-comparison-matcher.md
+   */
+  'test/prefer-comparison-matcher'?: Linter.RuleEntry<[]>
+  /**
+   * Prefer using `.each` rather than manual loops
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-each.md
+   */
+  'test/prefer-each'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using the built-in equality matchers
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-equality-matcher.md
+   */
+  'test/prefer-equality-matcher'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `expect.assertions()` OR `expect.hasAssertions()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-expect-assertions.md
+   */
+  'test/prefer-expect-assertions'?: Linter.RuleEntry<TestPreferExpectAssertions>
+  /**
+   * Prefer `await expect(...).resolves` over `expect(await ...)` syntax
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-expect-resolves.md
+   */
+  'test/prefer-expect-resolves'?: Linter.RuleEntry<[]>
+  /**
+   * Prefer having hooks in a consistent order
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-hooks-in-order.md
+   */
+  'test/prefer-hooks-in-order'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest having hooks before any test cases
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-hooks-on-top.md
+   */
+  'test/prefer-hooks-on-top'?: Linter.RuleEntry<[]>
+  /**
+   * Prefer importing Jest globals
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-importing-jest-globals.md
+   */
+  'test/prefer-importing-jest-globals'?: Linter.RuleEntry<TestPreferImportingJestGlobals>
+  /**
+   * Prefer `jest.mocked()` over `fn as jest.Mock`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-jest-mocked.md
+   */
+  'test/prefer-jest-mocked'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce lowercase test names
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-lowercase-title.md
+   */
+  'test/prefer-lowercase-title'?: Linter.RuleEntry<TestPreferLowercaseTitle>
+  /**
+   * Prefer mock resolved/rejected shorthands for promises
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-mock-promise-shorthand.md
+   */
+  'test/prefer-mock-promise-shorthand'?: Linter.RuleEntry<[]>
+  /**
+   * Prefer including a hint with external snapshots
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-snapshot-hint.md
+   */
+  'test/prefer-snapshot-hint'?: Linter.RuleEntry<TestPreferSnapshotHint>
+  /**
+   * Suggest using `jest.spyOn()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-spy-on.md
+   */
+  'test/prefer-spy-on'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `toStrictEqual()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-strict-equal.md
+   */
+  'test/prefer-strict-equal'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `toBe()` for primitive literals
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-be.md
+   */
+  'test/prefer-to-be'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `toContain()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-contain.md
+   */
+  'test/prefer-to-contain'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `toHaveLength()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-have-length.md
+   */
+  'test/prefer-to-have-length'?: Linter.RuleEntry<[]>
+  /**
+   * Suggest using `test.todo`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-todo.md
+   */
+  'test/prefer-todo'?: Linter.RuleEntry<[]>
+  /**
+   * Require setup and teardown code to be within a hook
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-hook.md
+   */
+  'test/require-hook'?: Linter.RuleEntry<TestRequireHook>
+  /**
+   * Require a message for `toThrow()`
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-to-throw-message.md
+   */
+  'test/require-to-throw-message'?: Linter.RuleEntry<[]>
+  /**
+   * Require test cases and hooks to be inside a `describe` block
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-top-level-describe.md
+   */
+  'test/require-top-level-describe'?: Linter.RuleEntry<TestRequireTopLevelDescribe>
+  /**
+   * Enforce unbound methods are called with their expected scope
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/unbound-method.md
+   */
+  'test/unbound-method'?: Linter.RuleEntry<TestUnboundMethod>
+  /**
+   * Enforce valid `describe()` callback
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-describe-callback.md
+   */
+  'test/valid-describe-callback'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce valid `expect()` usage
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-expect.md
+   */
+  'test/valid-expect'?: Linter.RuleEntry<TestValidExpect>
+  /**
+   * Require promises that have expectations in their chain to be valid
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-expect-in-promise.md
+   */
+  'test/valid-expect-in-promise'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce valid titles
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-title.md
+   */
+  'test/valid-title'?: Linter.RuleEntry<TestValidTitle>
+  /**
    * Require that function overload signatures be consecutive
    * @see https://typescript-eslint.io/rules/adjacent-overload-signatures
    */
@@ -16265,6 +16620,7 @@ type CommentLengthLimitTaggedTemplateLiteralComments = []|[{
 type Complexity = []|[(number | {
   maximum?: number
   max?: number
+  variant?: ("classic" | "modified")
 })]
 // ----- computed-property-spacing -----
 type ComputedPropertySpacing = []|[("always" | "never")]|[("always" | "never"), {
@@ -20427,6 +20783,7 @@ type NoAutofixCommentLengthLimitTaggedTemplateLiteralComments = []|[{
 type NoAutofixComplexity = []|[(number | {
   maximum?: number
   max?: number
+  variant?: ("classic" | "modified")
 })]
 // ----- no-autofix/computed-property-spacing -----
 type NoAutofixComputedPropertySpacing = []|[("always" | "never")]|[("always" | "never"), {
@@ -22802,6 +23159,13 @@ type NoAutofixNoMultipleEmptyLines = []|[{
 // ----- no-autofix/no-native-reassign -----
 type NoAutofixNoNativeReassign = []|[{
   exceptions?: string[]
+}]
+// ----- no-autofix/no-only-tests/no-only-tests -----
+type NoAutofixNoOnlyTestsNoOnlyTests = []|[{
+  block?: string[]
+  focus?: string[]
+  functions?: string[]
+  fix?: boolean
 }]
 // ----- no-autofix/no-param-reassign -----
 type NoAutofixNoParamReassign = []|[({
@@ -27926,6 +28290,96 @@ type SwitchColonSpacing = []|[{
 type TemplateCurlySpacing = []|[("always" | "never")]
 // ----- template-tag-spacing -----
 type TemplateTagSpacing = []|[("always" | "never")]
+// ----- test/consistent-test-it -----
+type TestConsistentTestIt = []|[{
+  fn?: ("it" | "test")
+  withinDescribe?: ("it" | "test")
+}]
+// ----- test/expect-expect -----
+type TestExpectExpect = []|[{
+  assertFunctionNames?: string[]
+  additionalTestBlockFunctions?: string[]
+}]
+// ----- test/max-expects -----
+type TestMaxExpects = []|[{
+  max?: number
+}]
+// ----- test/max-nested-describe -----
+type TestMaxNestedDescribe = []|[{
+  max?: number
+}]
+// ----- test/no-hooks -----
+type TestNoHooks = []|[{
+  allow?: unknown[]
+}]
+// ----- test/no-large-snapshots -----
+type TestNoLargeSnapshots = []|[{
+  maxSize?: number
+  inlineMaxSize?: number
+  allowedSnapshots?: {
+    [k: string]: unknown[] | undefined
+  }
+}]
+// ----- test/no-restricted-jest-methods -----
+type TestNoRestrictedJestMethods = []|[{
+  [k: string]: (string | null) | undefined
+}]
+// ----- test/no-restricted-matchers -----
+type TestNoRestrictedMatchers = []|[{
+  [k: string]: (string | null) | undefined
+}]
+// ----- test/no-standalone-expect -----
+type TestNoStandaloneExpect = []|[{
+  additionalTestBlockFunctions?: string[]
+}]
+// ----- test/prefer-expect-assertions -----
+type TestPreferExpectAssertions = []|[{
+  onlyFunctionsWithAsyncKeyword?: boolean
+  onlyFunctionsWithExpectInLoop?: boolean
+  onlyFunctionsWithExpectInCallback?: boolean
+}]
+// ----- test/prefer-importing-jest-globals -----
+type TestPreferImportingJestGlobals = []|[{
+  types?: ("hook" | "describe" | "test" | "expect" | "jest" | "unknown")[]
+}]
+// ----- test/prefer-lowercase-title -----
+type TestPreferLowercaseTitle = []|[{
+  ignore?: ("describe" | "test" | "it")[]
+  allowedPrefixes?: string[]
+  ignoreTopLevelDescribe?: boolean
+}]
+// ----- test/prefer-snapshot-hint -----
+type TestPreferSnapshotHint = []|[("always" | "multi")]
+// ----- test/require-hook -----
+type TestRequireHook = []|[{
+  allowedFunctionCalls?: string[]
+}]
+// ----- test/require-top-level-describe -----
+type TestRequireTopLevelDescribe = []|[{
+  maxNumberOfTopLevelDescribes?: number
+}]
+// ----- test/unbound-method -----
+type TestUnboundMethod = []|[{
+  
+  ignoreStatic?: boolean
+}]
+// ----- test/valid-expect -----
+type TestValidExpect = []|[{
+  alwaysAwait?: boolean
+  asyncMatchers?: string[]
+  minArgs?: number
+  maxArgs?: number
+}]
+// ----- test/valid-title -----
+type TestValidTitle = []|[{
+  ignoreSpaces?: boolean
+  ignoreTypeOfDescribeName?: boolean
+  ignoreTypeOfTestName?: boolean
+  disallowedWords?: string[]
+  [k: string]: (string | [string]|[string, string] | {
+    [k: string]: (string | [string]|[string, string]) | undefined
+  })
+}]
 // ----- ts/array-type -----
 type TsArrayType = []|[{
   
@@ -29441,4 +29895,4 @@ type Yoda = []|[("always" | "never")]|[("always" | "never"), {
   onlyEquality?: boolean
 }]
 // Names of all the configs
-export type ConfigNames = 'style/eslint/comments' | 'style/formatters/setup' | 'style/ignores' | 'style/imports' | 'style/import-sort' | 'style/jsdoc' | 'style/jsonc/setup' | 'style/jsonc/rules' | 'style/markdown/setup' | 'style/markdown/processor' | 'style/markdown/parser' | 'style/markdown/disables' | 'style/package-json' | 'style/perfectionist' | 'style/prettier' | 'style/promise' | 'style/react:setup' | 'style/react:rules' | 'style/roblox' | 'style/shopify' | 'style/sonarjs' | 'style/sort-tsconfig' | 'style/spelling' | 'style/stylistic' | 'style/typescript:setup' | 'style/typescript:rules' | 'style/typescript:dts-overrides' | 'style/unicorn' | 'style/yaml:setup' | 'style/yaml:rules'
+export type ConfigNames = 'style/eslint/comments' | 'style/formatters/setup' | 'style/ignores' | 'style/imports' | 'style/import-sort' | 'style/jsdoc' | 'style/jsonc/setup' | 'style/jsonc/rules' | 'style/markdown/setup' | 'style/markdown/processor' | 'style/markdown/parser' | 'style/markdown/disables' | 'style/package-json' | 'style/perfectionist' | 'style/prettier' | 'style/promise' | 'style/react:setup' | 'style/react:rules' | 'style/roblox' | 'style/shopify' | 'style/sonarjs' | 'style/sort-tsconfig' | 'style/spelling' | 'style/stylistic' | 'style/test/setup' | 'style/test/rules' | 'style/typescript:setup' | 'style/typescript:rules' | 'style/typescript:dts-overrides' | 'style/unicorn' | 'style/yaml:setup' | 'style/yaml:rules'

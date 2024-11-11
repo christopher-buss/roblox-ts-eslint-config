@@ -140,6 +140,10 @@ export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem["rules"];
 }
 
+export interface OptionsIsInEditor {
+	isInEditor?: boolean;
+}
+
 export interface OptionsConfig extends OptionsComponentExtensions {
 	/**
 	 * Automatically rename plugins in the config.
@@ -166,6 +170,13 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @see https://github.com/antfu/eslint-config-flat-gitignore
 	 */
 	gitignore?: boolean | FlatGitignoreOptions;
+
+	/**
+	 * Control to disable some rules in editors.
+	 *
+	 * @default auto-detect based on the process.env
+	 */
+	isInEditor?: boolean;
 
 	/**
 	 * Enable JSONC support.
@@ -229,6 +240,17 @@ export interface OptionsConfig extends OptionsComponentExtensions {
 	 * @default true
 	 */
 	stylistic?: boolean | StylisticConfig;
+
+	/**
+	 * Enable test support.
+	 *
+	 * Requires installing:
+	 *
+	 * - 'eslint-plugin-jest'.
+	 *
+	 * @default false
+	 */
+	test?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable TOML support.
