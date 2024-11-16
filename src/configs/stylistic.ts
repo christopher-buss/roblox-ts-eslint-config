@@ -80,6 +80,7 @@ export async function stylistic(
 					},
 				],
 				"style/quotes": ["error", "double"],
+				"style/spaced-comment": ["error", "always", { markers: ["!native", "!optimize"] }],
 			},
 		},
 	];
