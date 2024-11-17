@@ -59,7 +59,7 @@ export async function perfectionist(
 				],
 				"perfectionist/sort-enums": [
 					"error",
-					{ partitionByComment: "Part:**", type: "natural" },
+					{ forceNumericSort: true, partitionByComment: "Part:**", type: "natural" },
 				],
 				"perfectionist/sort-interfaces": [
 					"error",
