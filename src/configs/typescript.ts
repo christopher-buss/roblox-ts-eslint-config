@@ -150,7 +150,7 @@ export async function typescript(
 				"id-length": [
 					"error",
 					{
-						exceptions: ["_", "x", "y", "z", "a", "b"],
+						exceptions: ["_", "x", "y", "z", "a", "b", "e"],
 						max: 30,
 						min: 2,
 						properties: "never",
