@@ -53,7 +53,8 @@ following content:
 ```json
 {
 	"extends": "./tsconfig.json",
-	"include": ["src/**/*", "eslint.config.ts"]
+	"include": ["src/**/*", "eslint.config.ts"],
+	"exclude": ["node_modules"]
 }
 ```
 
@@ -184,6 +185,7 @@ export default style({
 		parserOptions: {
 			project: "tsconfig.build.json",
 		},
+		tsconfigPath: "tsconfig.build.json",
 	},
 
 	// Disable yaml support
