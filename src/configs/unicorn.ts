@@ -30,6 +30,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				],
 				"unicorn/no-array-push-push": "error",
 				"unicorn/no-await-expression-member": "error",
+				"unicorn/no-empty-file": "error",
 				"unicorn/no-for-loop": "error",
 				"unicorn/no-keyword-prefix": "error",
 				"unicorn/no-lonely-if": "error",
