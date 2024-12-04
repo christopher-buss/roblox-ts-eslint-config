@@ -268,6 +268,7 @@ export async function typescript(
 				"ts/no-wrapper-object-types": "error",
 				"ts/prefer-for-of": "error",
 				"ts/prefer-function-type": "error",
+				"ts/prefer-literal-enum-member": ["error", { allowBitwiseExpressions: true }],
 				"ts/triple-slash-reference": "off",
 				"ts/unified-signatures": "off",
 				yoda: ["error", "never"],
