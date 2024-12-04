@@ -27,7 +27,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<Array<Typed
 				"jsdoc/require-asterisk-prefix": "warn",
 				"jsdoc/require-description": [
 					"warn",
-					{ exemptedBy: ["hidden, ignore", "inheritdoc", "client", "server"] },
+					{ exemptedBy: ["hidden, ignore", "inheritdoc", "client", "server", "see"] },
 				],
 				"jsdoc/require-description-complete-sentence": "warn",
 				"jsdoc/require-hyphen-before-param-description": "warn",
