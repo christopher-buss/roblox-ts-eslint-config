@@ -62,10 +62,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 							dist: {
 								distance: true,
 							},
-							e: {
-								err: true,
-								error: false,
-							},
+							e: false,
 							err: false,
 							fn: {
 								func: true,
