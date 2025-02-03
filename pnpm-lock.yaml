@@ -18,8 +18,8 @@ importers:
         specifier: 8.14.4
         version: 8.14.4(eslint@9.13.0(jiti@2.1.2))
       '@eslint/compat':
-        specifier: 1.1.1
-        version: 1.1.1
+        specifier: 1.2.6
+        version: 1.2.6(eslint@9.13.0(jiti@2.1.2))
       '@isentinel/dict-rbxts':
         specifier: 1.0.1
         version: 1.0.1
@@ -1436,9 +1436,14 @@ packages:
   '@eslint-stylistic/metadata@2.8.0':
     resolution: {integrity: sha512-/AvE8Jdp+t6T9WjMmPvbKKGNr+pzx7gkZskCOuU9/auO4TaSU1ukdDN4rE6kNXjNJqeRK8HaLbJkNLeGYf0cjw==}
 
-  '@eslint/compat@1.1.1':
-    resolution: {integrity: sha512-lpHyRyplhGPL5mGEh6M9O5nnKk0Gz4bFI+Zu6tKlPpDUN7XshWvH9C/px4UVm87IAANE0W81CEsNGbS1KlzXpA==}
+  '@eslint/compat@1.2.6':
+    resolution: {integrity: sha512-k7HNCqApoDHM6XzT30zGoETj+D+uUcZUb+IVAJmar3u6bvHf7hhHJcWx09QHj4/a2qrKZMWU0E16tvkiAdv06Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^9.10.0
+    peerDependenciesMeta:
+      eslint:
+        optional: true
 
   '@eslint/config-array@0.17.1':
     resolution: {integrity: sha512-BlYOpej8AQ8Ev9xVqroV7a02JK3SkBAaN9GfMMH9W6Ch8FlQlkjGw4Ir7+FgYwfirivAf4t+GtzuAxqfukmISA==}
@@ -6217,7 +6222,9 @@ snapshots:
 
   '@eslint-stylistic/metadata@2.8.0': {}
 
-  '@eslint/compat@1.1.1': {}
+  '@eslint/compat@1.2.6(eslint@9.13.0(jiti@2.1.2))':
+    optionalDependencies:
+      eslint: 9.13.0(jiti@2.1.2)
 
   '@eslint/config-array@0.17.1':
     dependencies:
@@ -7670,7 +7677,7 @@ snapshots:
 
   eslint-config-flat-gitignore@0.3.0(eslint@9.13.0(jiti@2.1.2)):
     dependencies:
-      '@eslint/compat': 1.1.1
+      '@eslint/compat': 1.2.6(eslint@9.13.0(jiti@2.1.2))
       eslint: 9.13.0(jiti@2.1.2)
       find-up-simple: 1.0.0
 
