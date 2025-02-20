@@ -111,7 +111,7 @@
 		"eslint-typegen": "0.3.2",
 		"esno": "4.8.0",
 		"execa": "9.4.0",
-		"fast-glob": "3.3.2",
+		"fast-glob": "3.3.3",
 		"fs-extra": "11.2.0",
 		"jiti": "2.1.2",
 		"lint-staged": "15.2.10",
