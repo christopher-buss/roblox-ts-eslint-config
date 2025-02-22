@@ -180,6 +180,9 @@ export default style({
 		// ...globs
 	],
 
+	// Type of the project. `package` for packages, the default is `game`
+	type: "package",
+
 	// Provide TypeScript parser options for access to type checking lints.
 	typescript: {
 		parserOptions: {

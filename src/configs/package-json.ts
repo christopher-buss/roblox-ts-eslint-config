@@ -1,8 +1,12 @@
-import type { TypedFlatConfigItem } from "src";
+import type { OptionsProjectType, TypedFlatConfigItem } from "src";
 import { pluginPackageJson } from "src/plugins";
 import { interopDefault } from "src/utils";
 
-export async function packageJson(): Promise<Array<TypedFlatConfigItem>> {
+export async function packageJson(
+	options: OptionsProjectType = {},
+): Promise<Array<TypedFlatConfigItem>> {
+	const { type = "game" } = options;
+
 	return [
 		{
 			files: ["**/package.json"],
@@ -25,6 +29,17 @@ export async function packageJson(): Promise<Array<TypedFlatConfigItem>> {
 				"package-json/valid-package-definition": "error",
 				"package-json/valid-repository-directory": "error",
 				"package-json/valid-version": "error",
+
+				...(type === "package"
+					? {
+							"package-json/require-author": "error",
+							"package-json/require-files": "error",
+							"package-json/require-keywords": "error",
+							"package-json/require-license": "error",
+							"package-json/require-name": "error",
+							"package-json/require-version": "error",
+						}
+					: {}),
 			},
 		},
 	];

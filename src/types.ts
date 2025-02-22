@@ -122,6 +122,16 @@ export interface OptionsStylistic {
 
 export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
 
+export interface OptionsProjectType {
+	/**
+	 * Type of the project. `package` will enable more strict rules for
+	 * packages.
+	 *
+	 * @default "game"
+	 */
+	type?: "game" | "package";
+}
+
 export type ReactConfig = {
 	filenameCase?: "kebabCase" | "pascalCase";
 } & Omit<ESLintReactSettings, "skipImportCheck"> &
@@ -144,7 +154,7 @@ export interface OptionsIsInEditor {
 	isInEditor?: boolean;
 }
 
-export interface OptionsConfig extends OptionsComponentExtensions {
+export interface OptionsConfig extends OptionsComponentExtensions, OptionsProjectType {
 	/**
 	 * Automatically rename plugins in the config.
 	 *
