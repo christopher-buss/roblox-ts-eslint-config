@@ -155,7 +155,7 @@ export function style(
 					...resolveSubOptions(options, "typescript"),
 					componentExts: componentExtensions,
 				},
-				!(options.formatters !== undefined || options.formatters === false),
+				options.formatters === undefined && options.formatters !== false,
 			),
 		);
 	}
