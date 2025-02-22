@@ -1,7 +1,7 @@
 import process from "node:process";
 
 import { GLOB_SRC } from "../globs";
-import { pluginAntfu, pluginNoAutofix } from "../plugins";
+import { pluginAntfu, pluginMaxParams as pluginMaxParameters, pluginNoAutofix } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -108,6 +108,7 @@ export async function typescript(
 			name: "style/typescript:setup",
 			plugins: {
 				antfu: pluginAntfu,
+				"better-max-params": pluginMaxParameters,
 				"no-autofix": pluginNoAutofix,
 				ts: pluginTs,
 			},
@@ -143,6 +144,12 @@ export async function typescript(
 					"error",
 					{
 						allowImplicit: true,
+					},
+				],
+				"better-max-params/better-max-params": [
+					"error",
+					{
+						func: 4,
 					},
 				],
 				camelcase: "error",
@@ -235,7 +242,6 @@ export async function typescript(
 						},
 					},
 				],
-				"ts/max-params": ["error", { max: 4 }],
 				"ts/method-signature-style": "off",
 				"ts/no-array-constructor": "off",
 				"ts/no-confusing-non-null-assertion": "error",

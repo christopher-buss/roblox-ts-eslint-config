@@ -118,6 +118,10 @@ export interface RuleOptions {
    */
   'arrow-style/no-export-default-arrow'?: Linter.RuleEntry<[]>
   /**
+   * Set a max param number for your constructors, functions, methods etc.
+   */
+  'better-max-params/better-max-params'?: Linter.RuleEntry<BetterMaxParamsBetterMaxParams>
+  /**
    * Enforce the use of variables within the scope they are defined
    * @see https://eslint.org/docs/latest/rules/block-scoped-var
    */
@@ -3123,6 +3127,10 @@ export interface RuleOptions {
    * @deprecated
    */
   'no-autofix/arrow-spacing'?: Linter.RuleEntry<NoAutofixArrowSpacing>
+  /**
+   * Set a max param number for your constructors, functions, methods etc.
+   */
+  'no-autofix/better-max-params/better-max-params'?: Linter.RuleEntry<NoAutofixBetterMaxParamsBetterMaxParams>
   /**
    * Enforce the use of variables within the scope they are defined
    * @see https://eslint.org/docs/latest/rules/block-scoped-var
@@ -16525,6 +16533,13 @@ type ArrowStyleArrowReturnStyle = []|[{
   namedExportsAlwaysUseExplicitReturn?: boolean
   [k: string]: unknown | undefined
 }]
+// ----- better-max-params/better-max-params -----
+type BetterMaxParamsBetterMaxParams = []|[({
+  func?: number
+} | {
+  func?: number
+  constructor?: number
+})]
 // ----- block-spacing -----
 type BlockSpacing = []|[("always" | "never")]
 // ----- brace-style -----
@@ -20688,6 +20703,13 @@ type NoAutofixArrowSpacing = []|[{
   before?: boolean
   after?: boolean
 }]
+// ----- no-autofix/better-max-params/better-max-params -----
+type NoAutofixBetterMaxParamsBetterMaxParams = []|[({
+  func?: number
+} | {
+  func?: number
+  constructor?: number
+})]
 // ----- no-autofix/block-spacing -----
 type NoAutofixBlockSpacing = []|[("always" | "never")]
 // ----- no-autofix/brace-style -----
