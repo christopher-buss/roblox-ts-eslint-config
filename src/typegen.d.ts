@@ -224,6 +224,16 @@ export interface RuleOptions {
    */
   'curly'?: Linter.RuleEntry<Curly>
   /**
+   * Transforms the negation of a conjunction !(A && B) into the equivalent !A || !B according to De Morgan’s law
+   * @see https://github.com/azat-io/eslint-plugin-de-morgan/blob/main/docs/no-negated-conjunction.md
+   */
+  'de-morgan/no-negated-conjunction'?: Linter.RuleEntry<[]>
+  /**
+   * Transforms the negation of a disjunction !(A || B) into the equivalent !A && !B according to De Morgan’s law
+   * @see https://github.com/azat-io/eslint-plugin-de-morgan/blob/main/docs/no-negated-disjunction.md
+   */
+  'de-morgan/no-negated-disjunction'?: Linter.RuleEntry<[]>
+  /**
    * Require `default` cases in `switch` statements
    * @see https://eslint.org/docs/latest/rules/default-case
    */
@@ -3233,6 +3243,16 @@ export interface RuleOptions {
    * @see https://eslint.org/docs/latest/rules/curly
    */
   'no-autofix/curly'?: Linter.RuleEntry<NoAutofixCurly>
+  /**
+   * Transforms the negation of a conjunction !(A && B) into the equivalent !A || !B according to De Morgan’s law
+   * @see https://github.com/azat-io/eslint-plugin-de-morgan/blob/main/docs/no-negated-conjunction.md
+   */
+  'no-autofix/de-morgan/no-negated-conjunction'?: Linter.RuleEntry<[]>
+  /**
+   * Transforms the negation of a disjunction !(A || B) into the equivalent !A && !B according to De Morgan’s law
+   * @see https://github.com/azat-io/eslint-plugin-de-morgan/blob/main/docs/no-negated-disjunction.md
+   */
+  'no-autofix/de-morgan/no-negated-disjunction'?: Linter.RuleEntry<[]>
   /**
    * Require `default` cases in `switch` statements
    * @see https://eslint.org/docs/latest/rules/default-case

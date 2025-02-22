@@ -1,7 +1,12 @@
 import process from "node:process";
 
 import { GLOB_SRC } from "../globs";
-import { pluginAntfu, pluginMaxParams as pluginMaxParameters, pluginNoAutofix } from "../plugins";
+import {
+	pluginAntfu,
+	pluginDeMorgan,
+	pluginMaxParams as pluginMaxParameters,
+	pluginNoAutofix,
+} from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -109,6 +114,7 @@ export async function typescript(
 			plugins: {
 				antfu: pluginAntfu,
 				"better-max-params": pluginMaxParameters,
+				["de-morgan"]: pluginDeMorgan,
 				"no-autofix": pluginNoAutofix,
 				ts: pluginTs,
 			},
@@ -153,6 +159,10 @@ export async function typescript(
 					},
 				],
 				camelcase: "error",
+
+				"de-morgan/no-negated-conjunction": "error",
+				"de-morgan/no-negated-disjunction": "error",
+
 				eqeqeq: "error",
 				"id-length": [
 					"error",
@@ -276,6 +286,7 @@ export async function typescript(
 				"ts/prefer-function-type": "error",
 				"ts/prefer-literal-enum-member": ["error", { allowBitwiseExpressions: true }],
 				"ts/triple-slash-reference": "off",
+
 				"ts/unified-signatures": "off",
 				yoda: ["error", "never"],
 

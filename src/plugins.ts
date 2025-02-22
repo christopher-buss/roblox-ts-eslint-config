@@ -8,6 +8,7 @@ export { default as pluginAntfu } from "eslint-plugin-antfu";
 export { default as pluginArrowReturnStyle } from "eslint-plugin-arrow-return-style";
 export { default as pluginMaxParams } from "eslint-plugin-better-max-params";
 export { default as pluginCommentLength } from "eslint-plugin-comment-length";
+export { default as pluginDeMorgan } from "eslint-plugin-de-morgan";
 export { default as pluginComments } from "eslint-plugin-eslint-comments";
 export { default as pluginFormat } from "eslint-plugin-format";
 export { default as pluginFormatLua } from "eslint-plugin-format-lua";
