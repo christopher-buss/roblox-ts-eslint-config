@@ -6658,6 +6658,14 @@ export interface RuleOptions {
    */
   'no-autofix/operator-linebreak'?: Linter.RuleEntry<NoAutofixOperatorLinebreak>
   /**
+   * Reports on unnecessary empty arrays and objects.
+   */
+  'no-autofix/package-json/no-empty-fields'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents adding unnecessary / redundant files.
+   */
+  'no-autofix/package-json/no-redundant-files'?: Linter.RuleEntry<[]>
+  /**
    * Package properties must be declared in standard order
    */
   'no-autofix/package-json/order-properties'?: Linter.RuleEntry<NoAutofixPackageJsonOrderProperties>
@@ -6666,11 +6674,31 @@ export interface RuleOptions {
    */
   'no-autofix/package-json/repository-shorthand'?: Linter.RuleEntry<NoAutofixPackageJsonRepositoryShorthand>
   /**
+   * Requires the `author` property to be present.
+   */
+  'no-autofix/package-json/require-author'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `files` property to be present.
+   */
+  'no-autofix/package-json/require-files'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `keywords` property to be present.
+   */
+  'no-autofix/package-json/require-keywords'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `name` property to be present.
+   */
+  'no-autofix/package-json/require-name'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `version` property to be present.
+   */
+  'no-autofix/package-json/require-version'?: Linter.RuleEntry<[]>
+  /**
    * Dependencies, scripts, and configuration values must be declared in alphabetical order.
    */
   'no-autofix/package-json/sort-collections'?: Linter.RuleEntry<NoAutofixPackageJsonSortCollections>
   /**
-   * Enforce that if repository directory is specified, it matches the path to the package.json file
+   * Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`)
    */
   'no-autofix/package-json/unique-dependencies'?: Linter.RuleEntry<[]>
   /**
@@ -6683,8 +6711,13 @@ export interface RuleOptions {
   'no-autofix/package-json/valid-name'?: Linter.RuleEntry<[]>
   /**
    * Enforce that package.json has all properties required by the npm spec
+   * @deprecated
    */
   'no-autofix/package-json/valid-package-def'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package.json has all properties required by the npm spec
+   */
+  'no-autofix/package-json/valid-package-definition'?: Linter.RuleEntry<[]>
   /**
    * Enforce that if repository directory is specified, it matches the path to the package.json file
    */
@@ -11482,6 +11515,14 @@ export interface RuleOptions {
    */
   'operator-linebreak'?: Linter.RuleEntry<OperatorLinebreak>
   /**
+   * Reports on unnecessary empty arrays and objects.
+   */
+  'package-json/no-empty-fields'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents adding unnecessary / redundant files.
+   */
+  'package-json/no-redundant-files'?: Linter.RuleEntry<[]>
+  /**
    * Package properties must be declared in standard order
    */
   'package-json/order-properties'?: Linter.RuleEntry<PackageJsonOrderProperties>
@@ -11490,11 +11531,31 @@ export interface RuleOptions {
    */
   'package-json/repository-shorthand'?: Linter.RuleEntry<PackageJsonRepositoryShorthand>
   /**
+   * Requires the `author` property to be present.
+   */
+  'package-json/require-author'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `files` property to be present.
+   */
+  'package-json/require-files'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `keywords` property to be present.
+   */
+  'package-json/require-keywords'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `name` property to be present.
+   */
+  'package-json/require-name'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `version` property to be present.
+   */
+  'package-json/require-version'?: Linter.RuleEntry<[]>
+  /**
    * Dependencies, scripts, and configuration values must be declared in alphabetical order.
    */
   'package-json/sort-collections'?: Linter.RuleEntry<PackageJsonSortCollections>
   /**
-   * Enforce that if repository directory is specified, it matches the path to the package.json file
+   * Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`)
    */
   'package-json/unique-dependencies'?: Linter.RuleEntry<[]>
   /**
@@ -11507,8 +11568,13 @@ export interface RuleOptions {
   'package-json/valid-name'?: Linter.RuleEntry<[]>
   /**
    * Enforce that package.json has all properties required by the npm spec
+   * @deprecated
    */
   'package-json/valid-package-def'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that package.json has all properties required by the npm spec
+   */
+  'package-json/valid-package-definition'?: Linter.RuleEntry<[]>
   /**
    * Enforce that if repository directory is specified, it matches the path to the package.json file
    */
