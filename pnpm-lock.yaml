@@ -78,8 +78,8 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
       eslint-plugin-jsdoc:
-        specifier: 50.2.4
-        version: 50.2.4(eslint@9.21.0(jiti@2.4.2))
+        specifier: 50.6.3
+        version: 50.6.3(eslint@9.21.0(jiti@2.4.2))
       eslint-plugin-jsonc:
         specifier: 2.16.0
         version: 2.16.0(eslint@9.21.0(jiti@2.4.2))
@@ -1102,8 +1102,8 @@ packages:
   '@dprint/toml@0.6.2':
     resolution: {integrity: sha512-Mk5unEANsL/L+WHYU3NpDXt1ARU5bNU5k5OZELxaJodDycKG6RoRnSlZXpW6+7UN2PSnETAFVUdKrh937ZwtHA==}
 
-  '@es-joy/jsdoccomment@0.48.0':
-    resolution: {integrity: sha512-G6QUWIcC+KvSwXNsJyDTHvqUdNoAVJPPgkc3+Uk4WBKqZvoXhlvazOgm9aL0HwihJLQf0l+tOE2UFzXBqCqgDw==}
+  '@es-joy/jsdoccomment@0.49.0':
+    resolution: {integrity: sha512-xjZTSFgECpb9Ohuk5yMX5RhUEbfeQcuOp8IF60e+wyzWEF0M5xeSgqsfLtvPEX8BIyOX9saZqzuGPmZ8oWc+5Q==}
     engines: {node: '>=16'}
 
   '@esbuild/aix-ppc64@0.23.0':
@@ -2794,8 +2794,8 @@ packages:
       jest:
         optional: true
 
-  eslint-plugin-jsdoc@50.2.4:
-    resolution: {integrity: sha512-020jA+dXaXdb+TML3ZJBvpPmzwbNROjnYuTYi/g6A5QEmEjhptz4oPJDKkOGMIByNxsPpdTLzSU1HYVqebOX1w==}
+  eslint-plugin-jsdoc@50.6.3:
+    resolution: {integrity: sha512-NxbJyt1M5zffPcYZ8Nb53/8nnbIScmiLAMdoe0/FAszwb7lcSiX3iYBTsuF7RV84dZZJC8r3NghomrUXsmWvxQ==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -5983,7 +5983,7 @@ snapshots:
 
   '@dprint/toml@0.6.2': {}
 
-  '@es-joy/jsdoccomment@0.48.0':
+  '@es-joy/jsdoccomment@0.49.0':
     dependencies:
       comment-parser: 1.4.1
       esquery: 1.6.0
@@ -6714,7 +6714,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 7.17.0(typescript@5.7.3)
       '@typescript-eslint/utils': 7.17.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
-      debug: 4.3.6
+      debug: 4.4.0
       eslint: 9.21.0(jiti@2.4.2)
       ts-api-utils: 1.3.0(typescript@5.7.3)
     optionalDependencies:
@@ -6778,7 +6778,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.16.0
       '@typescript-eslint/visitor-keys': 7.16.0
-      debug: 4.3.6
+      debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -6808,7 +6808,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.17.0
       '@typescript-eslint/visitor-keys': 7.17.0
-      debug: 4.3.6
+      debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -6837,7 +6837,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.6.0
       '@typescript-eslint/visitor-keys': 8.6.0
-      debug: 4.3.6
+      debug: 4.4.0
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -6852,7 +6852,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.8.0
       '@typescript-eslint/visitor-keys': 8.8.0
-      debug: 4.3.6
+      debug: 4.4.0
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -7979,15 +7979,15 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-jsdoc@50.2.4(eslint@9.21.0(jiti@2.4.2)):
+  eslint-plugin-jsdoc@50.6.3(eslint@9.21.0(jiti@2.4.2)):
     dependencies:
-      '@es-joy/jsdoccomment': 0.48.0
+      '@es-joy/jsdoccomment': 0.49.0
       are-docs-informative: 0.0.2
       comment-parser: 1.4.1
-      debug: 4.3.6
+      debug: 4.4.0
       escape-string-regexp: 4.0.0
       eslint: 9.21.0(jiti@2.4.2)
-      espree: 10.1.0
+      espree: 10.3.0
       esquery: 1.6.0
       parse-imports: 2.1.1
       semver: 7.6.3
@@ -9266,7 +9266,7 @@ snapshots:
 
   micromark@2.11.4:
     dependencies:
-      debug: 4.3.6
+      debug: 4.4.0
       parse-entities: 2.0.0
     transitivePeerDependencies:
       - supports-color
