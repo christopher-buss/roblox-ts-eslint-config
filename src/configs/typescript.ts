@@ -1,15 +1,11 @@
 import process from "node:process";
 
 import { GLOB_SRC } from "../globs";
-import {
-	pluginAntfu,
-	pluginDeMorgan,
-	pluginMaxParams as pluginMaxParameters,
-	pluginNoAutofix,
-} from "../plugins";
+import { pluginAntfu, pluginDeMorgan, pluginMaxParams as pluginMaxParameters } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
+	OptionsIsInEditor,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
@@ -20,11 +16,17 @@ import { interopDefault, renameRules, toArray } from "../utils";
 export async function typescript(
 	options: OptionsComponentExtensions &
 		OptionsFiles &
+		OptionsIsInEditor &
 		OptionsOverrides &
 		OptionsTypeScriptParserOptions &
 		OptionsTypeScriptWithTypes = {},
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { componentExts: componentExtensions = [], overrides = {}, parserOptions = {} } = options;
+	const {
+		componentExts: componentExtensions = [],
+		isInEditor = false,
+		overrides = {},
+		parserOptions = {},
+	} = options;
 
 	const files = options.files ?? [
 		GLOB_SRC,
@@ -115,7 +117,6 @@ export async function typescript(
 				antfu: pluginAntfu,
 				"better-max-params": pluginMaxParameters,
 				["de-morgan"]: pluginDeMorgan,
-				"no-autofix": pluginNoAutofix,
 				ts: pluginTs,
 			},
 		},
@@ -181,14 +182,6 @@ export async function typescript(
 					"warn",
 					{ max: 30, skipBlankLines: true, skipComments: true },
 				],
-				"no-autofix/no-useless-return": "error",
-				"no-autofix/prefer-const": [
-					"error",
-					{
-						destructuring: "all",
-						ignoreReadBeforeAssign: true,
-					},
-				],
 				"no-constant-condition": [
 					"error",
 					{
@@ -217,9 +210,15 @@ export async function typescript(
 				"no-use-before-define": "off",
 				"no-useless-constructor": "off",
 				"no-useless-rename": "error",
-				"no-useless-return": "off",
+				"no-useless-return": "error",
 				"object-shorthand": "error",
-				"prefer-const": "off",
+				"prefer-const": [
+					isInEditor ? "warn" : "error",
+					{
+						destructuring: "all",
+						ignoreReadBeforeAssign: true,
+					},
+				],
 				"prefer-destructuring": "off",
 				"ts/adjacent-overload-signatures": "off",
 				"ts/array-type": [
@@ -270,6 +269,7 @@ export async function typescript(
 				"ts/no-redeclare": "off",
 				"ts/no-require-imports": "error",
 				"ts/no-shadow": "error",
+				"ts/no-unused-expressions": "error",
 				"ts/no-unused-vars": [
 					"error",
 					{

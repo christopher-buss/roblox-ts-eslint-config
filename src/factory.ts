@@ -145,6 +145,8 @@ export function style(
 		typescript({
 			...resolveSubOptions(options, "typescript"),
 			componentExts: componentExtensions,
+			isInEditor,
+			overrides: getOverrides(options, "typescript"),
 		}),
 	);
 
@@ -254,6 +256,12 @@ export function style(
 		}),
 	);
 
+	if ("files" in options) {
+		throw new Error(
+			'[@isentinel/eslint-config] The first argument should not contain the "files" property as the options are supposed to be global. Place it in the second or later config instead.',
+		);
+	}
+
 	// User can optionally pass a flat config item to the first argument
 	// We pick the known keys as ESLint would do schema validation
 	const fusedConfig = flatConfigProps.reduce((accumulator, key) => {
@@ -273,6 +281,18 @@ export function style(
 
 	if (autoRenamePlugins) {
 		composer = composer.renamePlugins(defaultPluginRenaming);
+	}
+
+	if (isInEditor) {
+		composer = composer.disableRulesFix(
+			["no-useless-return", "prefer-const", "unicorn/no-array-for-each"],
+			{
+				builtinRules: async () => {
+					const rules = await import("eslint/use-at-your-own-risk");
+					return rules.builtinRules;
+				},
+			},
+		);
 	}
 
 	return composer;
