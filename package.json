@@ -16,10 +16,7 @@
 	],
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		}
+		".": "./dist/index.js"
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -29,17 +26,17 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "nr typegen && tsup --format esm,cjs --clean --dts",
+		"build": "nr typegen && tsup --clean --dts",
 		"build:inspector": "pnpm build && npx @eslint/config-inspector build",
 		"dev": "npx @eslint/config-inspector --config eslint.config.ts",
 		"lint": "eslint . --flag unstable_ts_config",
 		"prepack": "nr build",
 		"prepare": "simple-git-hooks",
 		"release": "bumpp && pnpm publish --p",
-		"stub": "tsup --format esm",
+		"stub": "tsup",
 		"typecheck": "tsc --noEmit",
 		"typegen": "esno scripts/typegen.ts",
-		"watch": "tsup --format esm,cjs --watch"
+		"watch": "tsup --watch"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
