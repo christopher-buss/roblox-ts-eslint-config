@@ -2494,6 +2494,11 @@ export interface RuleOptions {
    */
   'promise/prefer-await-to-then'?: Linter.RuleEntry<PromisePreferAwaitToThen>
   /**
+   * Prefer `catch` to `then(a, b)`/`then(null, b)` for handling errors.
+   * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/prefer-catch.md
+   */
+  'promise/prefer-catch'?: Linter.RuleEntry<[]>
+  /**
    * Disallow use of non-standard Promise static methods.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/spec-only.md
    */
@@ -2502,7 +2507,7 @@ export interface RuleOptions {
    * Enforces the proper number of arguments are passed to Promise functions.
    * @see https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/valid-params.md
    */
-  'promise/valid-params'?: Linter.RuleEntry<[]>
+  'promise/valid-params'?: Linter.RuleEntry<PromiseValidParams>
   /**
    * Require quotes around object literal property names
    * @see https://eslint.org/docs/latest/rules/quote-props
@@ -4575,6 +4580,11 @@ export interface RuleOptions {
    */
   'style/computed-property-spacing'?: Linter.RuleEntry<StyleComputedPropertySpacing>
   /**
+   * Enforce consistent line breaks after opening and before closing braces
+   * @see https://eslint.style/rules/plus/curly-newline
+   */
+  'style/curly-newline'?: Linter.RuleEntry<StyleCurlyNewline>
+  /**
    * Enforce consistent newlines before and after dots
    * @see https://eslint.style/rules/js/dot-location
    */
@@ -4638,7 +4648,7 @@ export interface RuleOptions {
    * Enforce closing tag location for multiline JSX
    * @see https://eslint.style/rules/jsx/jsx-closing-tag-location
    */
-  'style/jsx-closing-tag-location'?: Linter.RuleEntry<[]>
+  'style/jsx-closing-tag-location'?: Linter.RuleEntry<StyleJsxClosingTagLocation>
   /**
    * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes
    * @see https://eslint.style/rules/jsx/jsx-curly-brace-presence
@@ -4912,7 +4922,7 @@ export interface RuleOptions {
   'style/semi'?: Linter.RuleEntry<StyleSemi>
   /**
    * Enforce consistent spacing before and after semicolons
-   * @see https://eslint.style/rules/js/semi-spacing
+   * @see https://eslint.style/rules/ts/semi-spacing
    */
   'style/semi-spacing'?: Linter.RuleEntry<StyleSemiSpacing>
   /**
@@ -9613,16 +9623,19 @@ type PreferRegexLiterals = []|[{
 // ----- promise/always-return -----
 type PromiseAlwaysReturn = []|[{
   ignoreLastCallback?: boolean
+  ignoreAssignmentVariable?: string[]
 }]
 // ----- promise/catch-or-return -----
 type PromiseCatchOrReturn = []|[{
   allowFinally?: boolean
   allowThen?: boolean
+  allowThenStrict?: boolean
   terminationMethod?: (string | string[])
 }]
 // ----- promise/no-callback-in-promise -----
 type PromiseNoCallbackInPromise = []|[{
   exceptions?: string[]
+  timeoutsErr?: boolean
 }]
 // ----- promise/no-return-wrap -----
 type PromiseNoReturnWrap = []|[{
@@ -9641,6 +9654,10 @@ type PromisePreferAwaitToThen = []|[{
 // ----- promise/spec-only -----
 type PromiseSpecOnly = []|[{
   allowedMethods?: string[]
+}]
+// ----- promise/valid-params -----
+type PromiseValidParams = []|[{
+  exclude?: string[]
 }]
 // ----- quote-props -----
 type QuoteProps = ([]|[("always" | "as-needed" | "consistent" | "consistent-as-needed")] | []|[("always" | "as-needed" | "consistent" | "consistent-as-needed")]|[("always" | "as-needed" | "consistent" | "consistent-as-needed"), {
@@ -10136,6 +10153,8 @@ type StyleCommaDangle = []|[(_StyleCommaDangleValue | {
   imports?: _StyleCommaDangleValueWithIgnore
   exports?: _StyleCommaDangleValueWithIgnore
   functions?: _StyleCommaDangleValueWithIgnore
+  importAttributes?: _StyleCommaDangleValueWithIgnore
+  dynamicImports?: _StyleCommaDangleValueWithIgnore
   enums?: _StyleCommaDangleValueWithIgnore
   generics?: _StyleCommaDangleValueWithIgnore
   tuples?: _StyleCommaDangleValueWithIgnore
@@ -10157,6 +10176,127 @@ type StyleCommaStyle = []|[("first" | "last")]|[("first" | "last"), {
 type StyleComputedPropertySpacing = []|[("always" | "never")]|[("always" | "never"), {
   enforceForClassMembers?: boolean
 }]
+// ----- style/curly-newline -----
+type StyleCurlyNewline = []|[(("always" | "never") | {
+  IfStatementConsequent?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  IfStatementAlternative?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  DoWhileStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  ForInStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  ForOfStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  ForStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  WhileStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  SwitchStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  SwitchCase?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  TryStatementBlock?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  TryStatementHandler?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  TryStatementFinalizer?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  BlockStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  ArrowFunctionExpression?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  FunctionDeclaration?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  FunctionExpression?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  Property?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  ClassBody?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  StaticBlock?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  WithStatement?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  TSEnumBody?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  TSInterfaceBody?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  TSModuleBlock?: (("always" | "never") | {
+    multiline?: boolean
+    minElements?: number
+    consistent?: boolean
+  })
+  multiline?: boolean
+  minElements?: number
+  consistent?: boolean
+})]
 // ----- style/dot-location -----
 type StyleDotLocation = []|[("object" | "property")]
 // ----- style/eol-last -----
@@ -10164,12 +10304,20 @@ type StyleEolLast = []|[("always" | "never" | "unix" | "windows")]
 // ----- style/func-call-spacing -----
 type StyleFuncCallSpacing = ([]|["never"] | []|["always"]|["always", {
   allowNewlines?: boolean
+  optionalChain?: {
+    before?: boolean
+    after?: boolean
+  }
 }])
 // ----- style/function-call-argument-newline -----
 type StyleFunctionCallArgumentNewline = []|[("always" | "never" | "consistent")]
 // ----- style/function-call-spacing -----
 type StyleFunctionCallSpacing = ([]|["never"] | []|["always"]|["always", {
   allowNewlines?: boolean
+  optionalChain?: {
+    before?: boolean
+    after?: boolean
+  }
 }])
 // ----- style/function-paren-newline -----
 type StyleFunctionParenNewline = []|[(("always" | "never" | "consistent" | "multiline" | "multiline-arguments") | {
@@ -10223,6 +10371,7 @@ type StyleIndent = []|[("tab" | number)]|[("tab" | number), {
   ImportDeclaration?: (number | ("first" | "off"))
   flatTernaryExpressions?: boolean
   offsetTernaryExpressions?: boolean
+  offsetTernaryExpressionsOffsetCallExpressions?: boolean
   ignoredNodes?: string[]
   ignoreComments?: boolean
   tabLength?: number
@@ -10236,6 +10385,8 @@ type StyleJsxClosingBracketLocation = []|[(("after-props" | "props-aligned" | "t
   nonEmpty?: (("after-props" | "props-aligned" | "tag-aligned" | "line-aligned") | false)
   selfClosing?: (("after-props" | "props-aligned" | "tag-aligned" | "line-aligned") | false)
 })]
+// ----- style/jsx-closing-tag-location -----
+type StyleJsxClosingTagLocation = []|[("tag-aligned" | "line-aligned")]
 // ----- style/jsx-curly-brace-presence -----
 type StyleJsxCurlyBracePresence = []|[({
   props?: ("always" | "never" | "ignore")
@@ -10364,6 +10515,7 @@ type StyleKeySpacing = []|[({
   mode?: ("strict" | "minimum")
   beforeColon?: boolean
   afterColon?: boolean
+  ignoredNodes?: ("ObjectExpression" | "ObjectPattern" | "ImportDeclaration" | "ExportNamedDeclaration" | "ExportAllDeclaration" | "TSTypeLiteral" | "TSInterfaceBody" | "ClassBody")[]
 } | {
   singleLine?: {
     mode?: ("strict" | "minimum")
@@ -10819,6 +10971,7 @@ type StyleMaxLen = []|[({
 // ----- style/max-statements-per-line -----
 type StyleMaxStatementsPerLine = []|[{
   max?: number
+  ignoredNodes?: ("BreakStatement" | "ClassDeclaration" | "ContinueStatement" | "DebuggerStatement" | "DoWhileStatement" | "ExpressionStatement" | "ForInStatement" | "ForOfStatement" | "ForStatement" | "FunctionDeclaration" | "IfStatement" | "ImportDeclaration" | "LabeledStatement" | "ReturnStatement" | "SwitchStatement" | "ThrowStatement" | "TryStatement" | "VariableDeclaration" | "WhileStatement" | "WithStatement" | "ExportNamedDeclaration" | "ExportDefaultDeclaration" | "ExportAllDeclaration")[]
 }]
 // ----- style/member-delimiter-style -----
 type StyleMemberDelimiterStyle = []|[{
@@ -10878,6 +11031,7 @@ type StyleNoExtraParens = ([]|["functions"] | []|["all"]|["all", {
   enforceForNewInMemberExpressions?: boolean
   enforceForFunctionPrototypeMethods?: boolean
   allowParensAfterCommentPattern?: string
+  nestedConditionalExpressions?: boolean
 }])
 // ----- style/no-mixed-operators -----
 type StyleNoMixedOperators = []|[{
@@ -10975,20 +11129,20 @@ type StyleOperatorLinebreak = []|[(("after" | "before" | "none") | null)]|[(("af
   }
 }]
 // ----- style/padded-blocks -----
-type StylePaddedBlocks = []|[(("always" | "never") | {
-  blocks?: ("always" | "never")
-  switches?: ("always" | "never")
-  classes?: ("always" | "never")
-})]|[(("always" | "never") | {
-  blocks?: ("always" | "never")
-  switches?: ("always" | "never")
-  classes?: ("always" | "never")
+type StylePaddedBlocks = []|[(("always" | "never" | "start" | "end") | {
+  blocks?: ("always" | "never" | "start" | "end")
+  switches?: ("always" | "never" | "start" | "end")
+  classes?: ("always" | "never" | "start" | "end")
+})]|[(("always" | "never" | "start" | "end") | {
+  blocks?: ("always" | "never" | "start" | "end")
+  switches?: ("always" | "never" | "start" | "end")
+  classes?: ("always" | "never" | "start" | "end")
 }), {
   allowSingleLineBlocks?: boolean
 }]
 // ----- style/padding-line-between-statements -----
 type _StylePaddingLineBetweenStatementsPaddingType = ("any" | "never" | "always")
-type _StylePaddingLineBetweenStatementsStatementType = (("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "ts-method" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "cjs-export" | "cjs-import" | "enum" | "interface" | "type" | "function-overload") | [("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "ts-method" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "cjs-export" | "cjs-import" | "enum" | "interface" | "type" | "function-overload"), ...(("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "ts-method" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "cjs-export" | "cjs-import" | "enum" | "interface" | "type" | "function-overload"))[]])
+type _StylePaddingLineBetweenStatementsStatementType = (("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-export" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-export" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "ts-method" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "cjs-export" | "cjs-import" | "enum" | "interface" | "type" | "function-overload") | [("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-export" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-export" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "ts-method" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "cjs-export" | "cjs-import" | "enum" | "interface" | "type" | "function-overload"), ...(("*" | "block-like" | "exports" | "require" | "directive" | "expression" | "iife" | "multiline-block-like" | "multiline-expression" | "multiline-const" | "multiline-export" | "multiline-let" | "multiline-var" | "singleline-const" | "singleline-export" | "singleline-let" | "singleline-var" | "block" | "empty" | "function" | "ts-method" | "break" | "case" | "class" | "const" | "continue" | "debugger" | "default" | "do" | "export" | "for" | "if" | "import" | "let" | "return" | "switch" | "throw" | "try" | "var" | "while" | "with" | "cjs-export" | "cjs-import" | "enum" | "interface" | "type" | "function-overload"))[]])
 type StylePaddingLineBetweenStatements = {
   blankLine: _StylePaddingLineBetweenStatementsPaddingType
   prev: _StylePaddingLineBetweenStatementsStatementType
@@ -11003,7 +11157,7 @@ type StyleQuoteProps = ([]|[("always" | "as-needed" | "consistent" | "consistent
 // ----- style/quotes -----
 type StyleQuotes = []|[("single" | "double" | "backtick")]|[("single" | "double" | "backtick"), ("avoid-escape" | {
   avoidEscape?: boolean
-  allowTemplateLiterals?: boolean
+  allowTemplateLiterals?: (boolean | ("never" | "avoidEscape" | "always"))
   ignoreStringLiterals?: boolean
 })]
 // ----- style/rest-spread-spacing -----
@@ -11041,6 +11195,7 @@ type StyleSpaceInParens = []|[("always" | "never")]|[("always" | "never"), {
 // ----- style/space-infix-ops -----
 type StyleSpaceInfixOps = []|[{
   int32Hint?: boolean
+  ignoreTypes?: boolean
 }]
 // ----- style/space-unary-ops -----
 type StyleSpaceUnaryOps = []|[{
