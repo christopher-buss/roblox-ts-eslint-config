@@ -138,5 +138,11 @@
 	"packageManager": "pnpm@10.4.1",
 	"publishConfig": {
 		"access": "public"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"simple-git-hooks"
+		]
 	}
 }
