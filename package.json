@@ -47,7 +47,7 @@
 	"dependencies": {
 		"@antfu/install-pkg": "1.0.0",
 		"@clack/prompts": "0.10.0",
-		"@cspell/eslint-plugin": "8.14.4",
+		"@cspell/eslint-plugin": "8.17.4",
 		"@eslint/compat": "1.2.7",
 		"@isentinel/dict-rbxts": "1.0.1",
 		"@isentinel/dict-roblox": "1.0.3",
