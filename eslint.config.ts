@@ -1,4 +1,3 @@
-// @ts-expect-error missing types
 import styleMigrate from "@stylistic/eslint-plugin-migrate";
 
 // eslint-disable-next-line antfu/no-import-dist -- Need the compiled version.
