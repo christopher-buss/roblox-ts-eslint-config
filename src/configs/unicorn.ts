@@ -47,6 +47,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 				"unicorn/prefer-export-from": "error",
 				"unicorn/prefer-includes": "error",
 				"unicorn/prefer-logical-operator-over-ternary": "error",
+				"unicorn/prefer-math-min-max": "error",
 				"unicorn/prefer-optional-catch-binding": "error",
 				"unicorn/prefer-set-has": "error",
 				"unicorn/prefer-switch": "error",
@@ -80,6 +81,8 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 							ref: false,
 							refs: false,
 							str: false,
+							util: false,
+							utils: false,
 						},
 						/* eslint-enable @cspell/spellchecker */
 					},
