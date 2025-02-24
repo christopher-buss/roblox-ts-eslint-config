@@ -101,7 +101,7 @@
 		"@types/node": "22.13.5",
 		"@types/prompts": "2.4.9",
 		"@types/yargs": "17.0.33",
-		"bumpp": "9.7.1",
+		"bumpp": "9.11.1",
 		"eslint": "9.21.0",
 		"eslint-plugin-jest": "28.9.0",
 		"eslint-plugin-react-roblox-hooks": "5.1.0-rbx.1",
