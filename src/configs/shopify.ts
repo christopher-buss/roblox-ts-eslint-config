@@ -1,5 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat";
-
 import { eslintPluginShopify } from "../plugins";
 import type { TypedFlatConfigItem } from "../types";
 
@@ -8,7 +6,7 @@ export async function shopify(): Promise<Array<TypedFlatConfigItem>> {
 		{
 			name: "style/shopify",
 			plugins: {
-				shopify: fixupPluginRules(eslintPluginShopify),
+				shopify: eslintPluginShopify,
 			},
 			rules: {
 				"shopify/prefer-class-properties": "error",

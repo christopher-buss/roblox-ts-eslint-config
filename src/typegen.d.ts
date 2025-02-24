@@ -427,233 +427,233 @@ export interface RuleOptions {
   'implicit-arrow-linebreak'?: Linter.RuleEntry<ImplicitArrowLinebreak>
   /**
    * Enforce or ban the use of inline type-only markers for named imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/consistent-type-specifier-style.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/consistent-type-specifier-style.md
    */
   'import/consistent-type-specifier-style'?: Linter.RuleEntry<ImportConsistentTypeSpecifierStyle>
   /**
    * Ensure a default export is present, given a default import.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/default.md
    */
   'import/default'?: Linter.RuleEntry<[]>
   /**
    * Enforce a leading comment with the webpackChunkName for dynamic imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/dynamic-import-chunkname.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/dynamic-import-chunkname.md
    */
   'import/dynamic-import-chunkname'?: Linter.RuleEntry<ImportDynamicImportChunkname>
   /**
    * Forbid any invalid exports, i.e. re-export of the same name.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/export.md
    */
   'import/export'?: Linter.RuleEntry<[]>
   /**
    * Ensure all exports appear after other statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/exports-last.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/exports-last.md
    */
   'import/exports-last'?: Linter.RuleEntry<[]>
   /**
    * Ensure consistent use of file extension within the import path.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/extensions.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/extensions.md
    */
   'import/extensions'?: Linter.RuleEntry<ImportExtensions>
   /**
    * Ensure all imports appear before other statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/first.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/first.md
    */
   'import/first'?: Linter.RuleEntry<ImportFirst>
   /**
    * Prefer named exports to be grouped together in a single export declaration.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/group-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/group-exports.md
    */
   'import/group-exports'?: Linter.RuleEntry<[]>
   /**
    * Replaced by `import-x/first`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/imports-first.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/imports-first.md
    * @deprecated
    */
   'import/imports-first'?: Linter.RuleEntry<ImportImportsFirst>
   /**
    * Enforce the maximum number of dependencies a module can have.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/max-dependencies.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/max-dependencies.md
    */
   'import/max-dependencies'?: Linter.RuleEntry<ImportMaxDependencies>
   /**
    * Ensure named imports correspond to a named export in the remote file.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/named.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/named.md
    */
   'import/named'?: Linter.RuleEntry<ImportNamed>
   /**
    * Ensure imported namespaces contain dereferenced properties as they are dereferenced.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/namespace.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/namespace.md
    */
   'import/namespace'?: Linter.RuleEntry<ImportNamespace>
   /**
    * Enforce a newline after import statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/newline-after-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/newline-after-import.md
    */
   'import/newline-after-import'?: Linter.RuleEntry<ImportNewlineAfterImport>
   /**
    * Forbid import of modules using absolute paths.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-absolute-path.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-absolute-path.md
    */
   'import/no-absolute-path'?: Linter.RuleEntry<ImportNoAbsolutePath>
   /**
    * Forbid AMD `require` and `define` calls.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-amd.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-amd.md
    */
   'import/no-amd'?: Linter.RuleEntry<[]>
   /**
    * Forbid anonymous values as default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-anonymous-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-anonymous-default-export.md
    */
   'import/no-anonymous-default-export'?: Linter.RuleEntry<ImportNoAnonymousDefaultExport>
   /**
    * Forbid CommonJS `require` calls and `module.exports` or `exports.*`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-commonjs.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-commonjs.md
    */
   'import/no-commonjs'?: Linter.RuleEntry<ImportNoCommonjs>
   /**
    * Forbid a module from importing a module with a dependency path back to itself.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-cycle.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-cycle.md
    */
   'import/no-cycle'?: Linter.RuleEntry<ImportNoCycle>
   /**
    * Forbid default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-default-export.md
    */
   'import/no-default-export'?: Linter.RuleEntry<[]>
   /**
    * Forbid imported names marked with `@deprecated` documentation tag.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-deprecated.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-deprecated.md
    */
   'import/no-deprecated'?: Linter.RuleEntry<[]>
   /**
    * Forbid repeated import of the same module in multiple places.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-duplicates.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-duplicates.md
    */
   'import/no-duplicates'?: Linter.RuleEntry<ImportNoDuplicates>
   /**
    * Forbid `require()` calls with expressions.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-dynamic-require.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-dynamic-require.md
    */
   'import/no-dynamic-require'?: Linter.RuleEntry<ImportNoDynamicRequire>
   /**
    * Forbid empty named import blocks.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-empty-named-blocks.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-empty-named-blocks.md
    */
   'import/no-empty-named-blocks'?: Linter.RuleEntry<[]>
   /**
    * Forbid the use of extraneous packages.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-extraneous-dependencies.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-extraneous-dependencies.md
    */
   'import/no-extraneous-dependencies'?: Linter.RuleEntry<ImportNoExtraneousDependencies>
   /**
    * Forbid import statements with CommonJS module.exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-import-module-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-import-module-exports.md
    */
   'import/no-import-module-exports'?: Linter.RuleEntry<ImportNoImportModuleExports>
   /**
    * Forbid importing the submodules of other modules.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-internal-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-internal-modules.md
    */
   'import/no-internal-modules'?: Linter.RuleEntry<ImportNoInternalModules>
   /**
    * Forbid the use of mutable exports with `var` or `let`.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-mutable-exports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-mutable-exports.md
    */
   'import/no-mutable-exports'?: Linter.RuleEntry<[]>
   /**
    * Forbid use of exported name as identifier of default export.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-named-as-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-as-default.md
    */
   'import/no-named-as-default'?: Linter.RuleEntry<[]>
   /**
    * Forbid use of exported name as property of default export.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-named-as-default-member.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-as-default-member.md
    */
   'import/no-named-as-default-member'?: Linter.RuleEntry<[]>
   /**
    * Forbid named default exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-named-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-default.md
    */
   'import/no-named-default'?: Linter.RuleEntry<[]>
   /**
    * Forbid named exports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-named-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-export.md
    */
   'import/no-named-export'?: Linter.RuleEntry<[]>
   /**
    * Forbid namespace (a.k.a. "wildcard" `*`) imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-namespace.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-namespace.md
    */
   'import/no-namespace'?: Linter.RuleEntry<ImportNoNamespace>
   /**
    * Forbid Node.js builtin modules.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-nodejs-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-nodejs-modules.md
    */
   'import/no-nodejs-modules'?: Linter.RuleEntry<ImportNoNodejsModules>
   /**
    * Forbid importing packages through relative paths.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-relative-packages.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-relative-packages.md
    */
   'import/no-relative-packages'?: Linter.RuleEntry<ImportNoRelativePackages>
   /**
    * Forbid importing modules from parent directories.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-relative-parent-imports.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-relative-parent-imports.md
    */
   'import/no-relative-parent-imports'?: Linter.RuleEntry<ImportNoRelativeParentImports>
   /**
    * Forbid importing a default export by a different name.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-rename-default.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-rename-default.md
    */
   'import/no-rename-default'?: Linter.RuleEntry<ImportNoRenameDefault>
   /**
    * Enforce which files can be imported in a given folder.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-restricted-paths.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-restricted-paths.md
    */
   'import/no-restricted-paths'?: Linter.RuleEntry<ImportNoRestrictedPaths>
   /**
    * Forbid a module from importing itself.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-self-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-self-import.md
    */
   'import/no-self-import'?: Linter.RuleEntry<[]>
   /**
    * Forbid unassigned imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-unassigned-import.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-unassigned-import.md
    */
   'import/no-unassigned-import'?: Linter.RuleEntry<ImportNoUnassignedImport>
   /**
    * Ensure imports point to a file/module that can be resolved.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-unresolved.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-unresolved.md
    */
   'import/no-unresolved'?: Linter.RuleEntry<ImportNoUnresolved>
   /**
    * Forbid modules without exports, or exports without matching import in another module.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-unused-modules.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-unused-modules.md
    */
   'import/no-unused-modules'?: Linter.RuleEntry<ImportNoUnusedModules>
   /**
    * Forbid unnecessary path segments in import and require statements.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-useless-path-segments.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-useless-path-segments.md
    */
   'import/no-useless-path-segments'?: Linter.RuleEntry<ImportNoUselessPathSegments>
   /**
    * Forbid webpack loader syntax in imports.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/no-webpack-loader-syntax.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-webpack-loader-syntax.md
    */
   'import/no-webpack-loader-syntax'?: Linter.RuleEntry<[]>
   /**
    * Enforce a convention in module import order.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/order.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/order.md
    */
   'import/order'?: Linter.RuleEntry<ImportOrder>
   /**
    * Prefer a default export if module exports a single name or multiple names.
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/prefer-default-export.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/prefer-default-export.md
    */
   'import/prefer-default-export'?: Linter.RuleEntry<ImportPreferDefaultExport>
   /**
    * Forbid potentially ambiguous parse goal (`script` vs. `module`).
-   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.2.1/docs/rules/unambiguous.md
+   * @see https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/unambiguous.md
    */
   'import/unambiguous'?: Linter.RuleEntry<[]>
   /**
@@ -5294,312 +5294,312 @@ export interface RuleOptions {
   'template-tag-spacing'?: Linter.RuleEntry<TemplateTagSpacing>
   /**
    * Enforce `test` and `it` usage conventions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/consistent-test-it.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/consistent-test-it.md
    */
   'test/consistent-test-it'?: Linter.RuleEntry<TestConsistentTestIt>
   /**
    * Enforce assertion to be made in a test body
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/expect-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/expect-expect.md
    */
   'test/expect-expect'?: Linter.RuleEntry<TestExpectExpect>
   /**
    * Enforces a maximum number assertion calls in a test body
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/max-expects.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/max-expects.md
    */
   'test/max-expects'?: Linter.RuleEntry<TestMaxExpects>
   /**
    * Enforces a maximum depth to nested describe calls
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/max-nested-describe.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/max-nested-describe.md
    */
   'test/max-nested-describe'?: Linter.RuleEntry<TestMaxNestedDescribe>
   /**
    * Disallow alias methods
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-alias-methods.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-alias-methods.md
    */
   'test/no-alias-methods'?: Linter.RuleEntry<[]>
   /**
    * Disallow commented out tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-commented-out-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-commented-out-tests.md
    */
   'test/no-commented-out-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow calling `expect` conditionally
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-conditional-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-conditional-expect.md
    */
   'test/no-conditional-expect'?: Linter.RuleEntry<[]>
   /**
    * Disallow conditional logic in tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-conditional-in-test.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-conditional-in-test.md
    */
   'test/no-conditional-in-test'?: Linter.RuleEntry<[]>
   /**
    * Disallow confusing usages of jest.setTimeout
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-confusing-set-timeout.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-confusing-set-timeout.md
    */
   'test/no-confusing-set-timeout'?: Linter.RuleEntry<[]>
   /**
    * Disallow use of deprecated functions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-deprecated-functions.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-deprecated-functions.md
    */
   'test/no-deprecated-functions'?: Linter.RuleEntry<[]>
   /**
    * Disallow disabled tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-disabled-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-disabled-tests.md
    */
   'test/no-disabled-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow using a callback in asynchronous tests and hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-done-callback.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-done-callback.md
    */
   'test/no-done-callback'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate setup and teardown hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-duplicate-hooks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-duplicate-hooks.md
    */
   'test/no-duplicate-hooks'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `exports` in files containing tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-export.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-export.md
    */
   'test/no-export'?: Linter.RuleEntry<[]>
   /**
    * Disallow focused tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-focused-tests.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-focused-tests.md
    */
   'test/no-focused-tests'?: Linter.RuleEntry<[]>
   /**
    * Disallow setup and teardown hooks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-hooks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-hooks.md
    */
   'test/no-hooks'?: Linter.RuleEntry<TestNoHooks>
   /**
    * Disallow identical titles
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-identical-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-identical-title.md
    */
   'test/no-identical-title'?: Linter.RuleEntry<[]>
   /**
    * Disallow string interpolation inside snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-interpolation-in-snapshots.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-interpolation-in-snapshots.md
    */
   'test/no-interpolation-in-snapshots'?: Linter.RuleEntry<[]>
   /**
    * Disallow Jasmine globals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-jasmine-globals.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-jasmine-globals.md
    */
   'test/no-jasmine-globals'?: Linter.RuleEntry<[]>
   /**
    * Disallow large snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-large-snapshots.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-large-snapshots.md
    */
   'test/no-large-snapshots'?: Linter.RuleEntry<TestNoLargeSnapshots>
   /**
    * Disallow manually importing from `__mocks__`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-mocks-import.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-mocks-import.md
    */
   'test/no-mocks-import'?: Linter.RuleEntry<[]>
   /**
    * Disallow specific `jest.` methods
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-restricted-jest-methods.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-restricted-jest-methods.md
    */
   'test/no-restricted-jest-methods'?: Linter.RuleEntry<TestNoRestrictedJestMethods>
   /**
    * Disallow specific matchers & modifiers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-restricted-matchers.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-restricted-matchers.md
    */
   'test/no-restricted-matchers'?: Linter.RuleEntry<TestNoRestrictedMatchers>
   /**
    * Disallow using `expect` outside of `it` or `test` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-standalone-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-standalone-expect.md
    */
   'test/no-standalone-expect'?: Linter.RuleEntry<TestNoStandaloneExpect>
   /**
    * Require using `.only` and `.skip` over `f` and `x`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-test-prefixes.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-test-prefixes.md
    */
   'test/no-test-prefixes'?: Linter.RuleEntry<[]>
   /**
    * Disallow explicitly returning from tests
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-test-return-statement.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-test-return-statement.md
    */
   'test/no-test-return-statement'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `jest.mock()` factories without an explicit type parameter
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/no-untyped-mock-factory.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/no-untyped-mock-factory.md
    */
   'test/no-untyped-mock-factory'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around `afterAll` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-after-all-blocks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-after-all-blocks.md
    */
   'test/padding-around-after-all-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around `afterEach` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-after-each-blocks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-after-each-blocks.md
    */
   'test/padding-around-after-each-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around Jest functions
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-all.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-all.md
    */
   'test/padding-around-all'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around `beforeAll` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-before-all-blocks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-before-all-blocks.md
    */
   'test/padding-around-before-all-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around `beforeEach` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-before-each-blocks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-before-each-blocks.md
    */
   'test/padding-around-before-each-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around `describe` blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-describe-blocks.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-describe-blocks.md
    */
   'test/padding-around-describe-blocks'?: Linter.RuleEntry<[]>
   /**
    * Enforce padding around `expect` groups
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-expect-groups.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-expect-groups.md
    */
   'test/padding-around-expect-groups'?: Linter.RuleEntry<[]>
   /**
-   * Enforce padding around afterAll blocks
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/padding-around-test-blocks.md
+   * Enforce padding around `test` and `it` blocks
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/padding-around-test-blocks.md
    */
   'test/padding-around-test-blocks'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toBeCalledWith()` or `toHaveBeenCalledWith()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-called-with.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-called-with.md
    */
   'test/prefer-called-with'?: Linter.RuleEntry<[]>
   /**
    * Suggest using the built-in comparison matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-comparison-matcher.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-comparison-matcher.md
    */
   'test/prefer-comparison-matcher'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `.each` rather than manual loops
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-each.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-each.md
    */
   'test/prefer-each'?: Linter.RuleEntry<[]>
   /**
    * Suggest using the built-in equality matchers
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-equality-matcher.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-equality-matcher.md
    */
   'test/prefer-equality-matcher'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `expect.assertions()` OR `expect.hasAssertions()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-expect-assertions.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-expect-assertions.md
    */
   'test/prefer-expect-assertions'?: Linter.RuleEntry<TestPreferExpectAssertions>
   /**
    * Prefer `await expect(...).resolves` over `expect(await ...)` syntax
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-expect-resolves.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-expect-resolves.md
    */
   'test/prefer-expect-resolves'?: Linter.RuleEntry<[]>
   /**
    * Prefer having hooks in a consistent order
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-hooks-in-order.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-hooks-in-order.md
    */
   'test/prefer-hooks-in-order'?: Linter.RuleEntry<[]>
   /**
    * Suggest having hooks before any test cases
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-hooks-on-top.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-hooks-on-top.md
    */
   'test/prefer-hooks-on-top'?: Linter.RuleEntry<[]>
   /**
    * Prefer importing Jest globals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-importing-jest-globals.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-importing-jest-globals.md
    */
   'test/prefer-importing-jest-globals'?: Linter.RuleEntry<TestPreferImportingJestGlobals>
   /**
    * Prefer `jest.mocked()` over `fn as jest.Mock`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-jest-mocked.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-jest-mocked.md
    */
   'test/prefer-jest-mocked'?: Linter.RuleEntry<[]>
   /**
    * Enforce lowercase test names
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-lowercase-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-lowercase-title.md
    */
   'test/prefer-lowercase-title'?: Linter.RuleEntry<TestPreferLowercaseTitle>
   /**
    * Prefer mock resolved/rejected shorthands for promises
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-mock-promise-shorthand.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-mock-promise-shorthand.md
    */
   'test/prefer-mock-promise-shorthand'?: Linter.RuleEntry<[]>
   /**
    * Prefer including a hint with external snapshots
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-snapshot-hint.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-snapshot-hint.md
    */
   'test/prefer-snapshot-hint'?: Linter.RuleEntry<TestPreferSnapshotHint>
   /**
    * Suggest using `jest.spyOn()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-spy-on.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-spy-on.md
    */
   'test/prefer-spy-on'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toStrictEqual()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-strict-equal.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-strict-equal.md
    */
   'test/prefer-strict-equal'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toBe()` for primitive literals
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-be.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-to-be.md
    */
   'test/prefer-to-be'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toContain()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-contain.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-to-contain.md
    */
   'test/prefer-to-contain'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `toHaveLength()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-to-have-length.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-to-have-length.md
    */
   'test/prefer-to-have-length'?: Linter.RuleEntry<[]>
   /**
    * Suggest using `test.todo`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-todo.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/prefer-todo.md
    */
   'test/prefer-todo'?: Linter.RuleEntry<[]>
   /**
    * Require setup and teardown code to be within a hook
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-hook.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/require-hook.md
    */
   'test/require-hook'?: Linter.RuleEntry<TestRequireHook>
   /**
    * Require a message for `toThrow()`
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-to-throw-message.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/require-to-throw-message.md
    */
   'test/require-to-throw-message'?: Linter.RuleEntry<[]>
   /**
    * Require test cases and hooks to be inside a `describe` block
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-top-level-describe.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/require-top-level-describe.md
    */
   'test/require-top-level-describe'?: Linter.RuleEntry<TestRequireTopLevelDescribe>
   /**
    * Enforce unbound methods are called with their expected scope
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/unbound-method.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/unbound-method.md
    */
   'test/unbound-method'?: Linter.RuleEntry<TestUnboundMethod>
   /**
    * Enforce valid `describe()` callback
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-describe-callback.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/valid-describe-callback.md
    */
   'test/valid-describe-callback'?: Linter.RuleEntry<[]>
   /**
    * Enforce valid `expect()` usage
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-expect.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/valid-expect.md
    */
   'test/valid-expect'?: Linter.RuleEntry<TestValidExpect>
   /**
    * Require promises that have expectations in their chain to be valid
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-expect-in-promise.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/valid-expect-in-promise.md
    */
   'test/valid-expect-in-promise'?: Linter.RuleEntry<[]>
   /**
    * Enforce valid titles
-   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/valid-title.md
+   * @see https://github.com/jest-community/eslint-plugin-jest/blob/v28.11.0/docs/rules/valid-title.md
    */
   'test/valid-title'?: Linter.RuleEntry<TestValidTitle>
   /**
@@ -7548,16 +7548,18 @@ type ImportExtensions = ([]|[("always" | "ignorePackages" | "never")] | []|[("al
     [k: string]: ("always" | "ignorePackages" | "never")
   }
   ignorePackages?: boolean
+  checkTypeImports?: boolean
   [k: string]: unknown | undefined
 }] | []|[{
   pattern?: {
     [k: string]: ("always" | "ignorePackages" | "never")
   }
   ignorePackages?: boolean
+  checkTypeImports?: boolean
   [k: string]: unknown | undefined
-}] | []|[{
-  [k: string]: ("always" | "ignorePackages" | "never")
 }] | []|[("always" | "ignorePackages" | "never")]|[("always" | "ignorePackages" | "never"), {
+  [k: string]: ("always" | "ignorePackages" | "never")
+}] | []|[{
   [k: string]: ("always" | "ignorePackages" | "never")
 }])
 // ----- import/first -----
@@ -13216,6 +13218,9 @@ type YamlNoMultipleEmptyLines = []|[{
 // ----- yaml/plain-scalar -----
 type YamlPlainScalar = []|[("always" | "never")]|[("always" | "never"), {
   ignorePatterns?: string[]
+  overrides?: {
+    mappingKey?: ("always" | "never" | null)
+  }
 }]
 // ----- yaml/quotes -----
 type YamlQuotes = []|[{
