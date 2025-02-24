@@ -272,47 +272,47 @@ export interface RuleOptions {
   'eqeqeq'?: Linter.RuleEntry<Eqeqeq>
   /**
    * require a `eslint-enable` comment for every `eslint-disable` comment
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
    */
   'eslint-comments/disable-enable-pair'?: Linter.RuleEntry<EslintCommentsDisableEnablePair>
   /**
    * disallow a `eslint-enable` comment for multiple `eslint-disable` comments
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-aggregating-enable.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-aggregating-enable.html
    */
   'eslint-comments/no-aggregating-enable'?: Linter.RuleEntry<[]>
   /**
    * disallow duplicate `eslint-disable` comments
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-duplicate-disable.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-duplicate-disable.html
    */
   'eslint-comments/no-duplicate-disable'?: Linter.RuleEntry<[]>
   /**
    * disallow `eslint-disable` comments about specific rules
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-restricted-disable.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-restricted-disable.html
    */
   'eslint-comments/no-restricted-disable'?: Linter.RuleEntry<EslintCommentsNoRestrictedDisable>
   /**
    * disallow `eslint-disable` comments without rule names
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html
    */
   'eslint-comments/no-unlimited-disable'?: Linter.RuleEntry<[]>
   /**
    * disallow unused `eslint-disable` comments
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
    */
   'eslint-comments/no-unused-disable'?: Linter.RuleEntry<[]>
   /**
    * disallow unused `eslint-enable` comments
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unused-enable.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-enable.html
    */
   'eslint-comments/no-unused-enable'?: Linter.RuleEntry<[]>
   /**
    * disallow ESLint directive-comments
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-use.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-use.html
    */
   'eslint-comments/no-use'?: Linter.RuleEntry<EslintCommentsNoUse>
   /**
    * require include descriptions in ESLint directive-comments
-   * @see https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/require-description.html
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/require-description.html
    */
   'eslint-comments/require-description'?: Linter.RuleEntry<EslintCommentsRequireDescription>
   /**
