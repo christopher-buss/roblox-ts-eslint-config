@@ -35,6 +35,7 @@ export async function react(
 	const plugins = pluginReact.configs.all.plugins;
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
+	const isTypeAware = !!tsconfigPath;
 
 	return [
 		{
@@ -57,7 +58,7 @@ export async function react(
 					ecmaFeatures: {
 						jsx: true,
 					},
-					project: tsconfigPath,
+					...(isTypeAware ? { project: tsconfigPath } : {}),
 				},
 				sourceType: "module",
 			},
@@ -84,7 +85,6 @@ export async function react(
 				"react/no-direct-mutation-state": "error",
 				"react/no-duplicate-key": "error",
 				"react/no-implicit-key": "error",
-				"react/no-leaked-conditional-rendering": "warn",
 				"react/no-missing-key": "error",
 				"react/no-nested-components": "warn",
 				"react/no-redundant-should-component-update": "error",
@@ -139,6 +139,12 @@ export async function react(
 						shorthandFirst: true,
 					},
 				],
+
+				...(isTypeAware
+					? {
+							"react/no-leaked-conditional-rendering": "warn",
+						}
+					: {}),
 
 				// overrides
 				...overrides,
