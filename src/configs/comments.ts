@@ -1,5 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat";
-
 import { GLOB_YAML } from "src/globs";
 import type { TypedFlatConfigItem } from "src/types";
 
@@ -10,7 +8,7 @@ export async function comments(): Promise<Array<TypedFlatConfigItem>> {
 		{
 			name: "style/eslint/comments",
 			plugins: {
-				"comment-length": fixupPluginRules(pluginCommentLength),
+				"comment-length": pluginCommentLength,
 				"eslint-comments": pluginComments,
 			},
 			rules: {
