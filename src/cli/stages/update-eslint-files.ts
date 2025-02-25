@@ -1,13 +1,13 @@
 /* eslint-disable import/newline-after-import -- #2673 */
 import { log, note } from "@clack/prompts";
 
+import ansis from "ansis";
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 // @ts-expect-error missing types
 import parse from "parse-gitignore";
-import pico from "picocolors";
 
 import { getEslintConfigContent } from "../utils";
 
@@ -24,7 +24,7 @@ export async function updateEslintFiles(): Promise<void> {
 
 	const eslintIgnores: Array<string> = [];
 	if (fs.existsSync(pathESLintIgnore)) {
-		log.step(pico.cyan(`Migrating existing .eslintignore`));
+		log.step(ansis.cyan(`Migrating existing .eslintignore`));
 		const content = await fsp.readFile(pathESLintIgnore, "utf-8");
 		const parsed = parse(content);
 		const globs = parsed.globs();
@@ -59,7 +59,7 @@ export async function updateEslintFiles(): Promise<void> {
 	const eslintConfigContent: string = getEslintConfigContent(mainConfig, additionalConfig);
 
 	await fsp.writeFile(pathFlatConfig, eslintConfigContent);
-	log.success(pico.green(`Created ${configFileName}`));
+	log.success(ansis.green(`Created ${configFileName}`));
 
 	const files = fs.readdirSync(cwd);
 	const legacyConfig: Array<string> = [];
@@ -70,6 +70,6 @@ export async function updateEslintFiles(): Promise<void> {
 	}
 
 	if (legacyConfig.length) {
-		note(`${pico.dim(legacyConfig.join(", "))}`, "You can now remove those files manually");
+		note(`${ansis.dim(legacyConfig.join(", "))}`, "You can now remove those files manually");
 	}
 }

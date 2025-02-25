@@ -1,7 +1,7 @@
 import { intro, log } from "@clack/prompts";
 
+import ansis from "ansis";
 import process from "node:process";
-import pico from "picocolors";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
@@ -10,9 +10,9 @@ import { run } from "./run";
 
 function header(): void {
 	console.log("\n");
-	const introText = `${pico.green("@isentinel/eslint-config")}`;
+	const introText = `${ansis.green("@isentinel/eslint-config")}`;
 	const versionText = `v${packageJson.version}`;
-	intro(introText + pico.dim(versionText));
+	intro(introText + ansis.dim(versionText));
 }
 
 const instance = yargs(hideBin(process.argv))
@@ -40,8 +40,8 @@ const instance = yargs(hideBin(process.argv))
 			try {
 				await run(args);
 			} catch (err) {
-				log.error(pico.inverse(pico.red(" Failed to migrate ")));
-				log.error(pico.red(`✘ ${String(err)}`));
+				log.error(ansis.inverse(ansis.red(" Failed to migrate ")));
+				log.error(ansis.red(`✘ ${String(err)}`));
 				process.exit(1);
 			}
 		},

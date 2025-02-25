@@ -1,9 +1,9 @@
 import { log, note } from "@clack/prompts";
 
+import ansis from "ansis";
 import fsp from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import pico from "picocolors";
 
 import { dependenciesMap, pkgJson as packageJson } from "../constants";
 
@@ -12,7 +12,7 @@ export async function updatePackageJson(): Promise<void> {
 
 	const pathPackageJSON = path.join(cwd, "package.json");
 
-	log.step(pico.cyan(`Bumping @isentinel/eslint-config to v${packageJson.version}`));
+	log.step(ansis.cyan(`Bumping @isentinel/eslint-config to v${packageJson.version}`));
 
 	const packageContent = await fsp.readFile(pathPackageJSON, "utf-8");
 	const package_: Record<string, any> = JSON.parse(packageContent);
@@ -31,9 +31,9 @@ export async function updatePackageJson(): Promise<void> {
 	}
 
 	if (addedPackages.length) {
-		note(`${pico.dim(addedPackages.join(", "))}`, "Added packages");
+		note(`${ansis.dim(addedPackages.join(", "))}`, "Added packages");
 	}
 
 	await fsp.writeFile(pathPackageJSON, JSON.stringify(package_, null, 2));
-	log.success(pico.green(`Changes wrote to package.json`));
+	log.success(ansis.green(`Changes wrote to package.json`));
 }
