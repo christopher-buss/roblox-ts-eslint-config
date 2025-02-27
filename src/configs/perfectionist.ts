@@ -1,5 +1,5 @@
 import { pluginPerfectionist } from "../plugins";
-import type { PerfectionistConfig, TypedFlatConfigItem } from "../types";
+import type { OptionsProjectType, PerfectionistConfig, TypedFlatConfigItem } from "../types";
 
 interface CustomGroupDefinition {
 	decoratorNamePattern?:
@@ -31,22 +31,6 @@ const constructorGroup = {
 	groupName: "custom-constructor",
 } satisfies CustomGroupDefinition;
 
-function createUnsortedMethod(type: "private" | "protected" | "public"): {
-	groupName: "private" | "protected" | "public";
-	modifiers: ["private" | "protected" | "public"];
-	newlinesInside: "always";
-	selector: string;
-	type: "unsorted";
-} {
-	return {
-		groupName: type,
-		modifiers: [type] as const,
-		newlinesInside: "always",
-		selector: "method",
-		type: "unsorted",
-	} satisfies CustomGroupDefinition;
-}
-
 function capitalizeFirstLetter(value: string): string {
 	return String(value).charAt(0).toUpperCase() + String(value).slice(1);
 }
@@ -59,9 +43,9 @@ function capitalizeFirstLetter(value: string): string {
  * @see https://github.com/azat-io/eslint-plugin-perfectionist
  */
 export async function perfectionist(
-	config?: PerfectionistConfig,
+	config?: OptionsProjectType & PerfectionistConfig,
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { customClassGroups = [] } = config ?? {};
+	const { customClassGroups = [], type = "game" } = config ?? {};
 
 	const customGroups = [];
 	for (const customGroup of customClassGroups) {
@@ -69,6 +53,22 @@ export async function perfectionist(
 			elementNamePattern: customGroup,
 			groupName: customGroup,
 		});
+	}
+
+	function createUnsortedMethod(methodType: "private" | "protected" | "public"): {
+		groupName: "private" | "protected" | "public";
+		modifiers: ["private" | "protected" | "public"];
+		newlinesInside: "always";
+		selector: string;
+		type: "natural" | "unsorted";
+	} {
+		return {
+			groupName: methodType,
+			modifiers: [methodType] as const,
+			newlinesInside: "always",
+			selector: "method",
+			type: type === "game" ? "unsorted" : "natural",
+		} satisfies CustomGroupDefinition;
 	}
 
 	customGroups.push(
