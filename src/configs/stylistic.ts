@@ -54,6 +54,13 @@ export async function stylistic(
 
 				curly: ["error", "all"],
 
+				"style/lines-between-class-members": [
+					"error",
+					{
+						enforce: [{ blankLine: "always", next: "method", prev: "method" }],
+					},
+				],
+
 				"style/object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
 				"style/padding-line-between-statements": [
 					"error",

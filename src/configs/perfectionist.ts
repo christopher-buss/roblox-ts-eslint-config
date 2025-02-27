@@ -1,6 +1,56 @@
 import { pluginPerfectionist } from "../plugins";
 import type { PerfectionistConfig, TypedFlatConfigItem } from "../types";
 
+interface CustomGroupDefinition {
+	decoratorNamePattern?:
+		| Array<string>
+		| Array<{ flags?: string; pattern: string }>
+		| string
+		| { flags?: string; pattern: string };
+	elementNamePattern?:
+		| Array<string>
+		| Array<{ flags?: string; pattern: string }>
+		| string
+		| { flags?: string; pattern: string };
+	elementValuePattern?:
+		| Array<string>
+		| Array<{ flags?: string; pattern: string }>
+		| string
+		| { flags?: string; pattern: string };
+	fallbackSort?: { order?: "asc" | "desc"; type: string };
+	groupName: string;
+	modifiers?: Array<string>;
+	newlinesInside?: "always" | "ignore" | "never";
+	order?: "asc" | "desc";
+	selector?: string;
+	type?: "alphabetical" | "line-length" | "natural" | "unsorted";
+}
+
+const constructorGroup = {
+	elementNamePattern: "constructor",
+	groupName: "custom-constructor",
+} satisfies CustomGroupDefinition;
+
+function createUnsortedMethod(type: "private" | "protected" | "public"): {
+	groupName: "private" | "protected" | "public";
+	modifiers: ["private" | "protected" | "public"];
+	newlinesInside: "always";
+	selector: string;
+	type: "unsorted";
+} {
+	return {
+		groupName: type,
+		modifiers: [type] as const,
+		newlinesInside: "always",
+		selector: "method",
+		type: "unsorted",
+	} satisfies CustomGroupDefinition;
+}
+
+function capitalizeFirstLetter(value: string): string {
+	return String(value).charAt(0).toUpperCase() + String(value).slice(1);
+}
+
 /**
  * Perfectionist plugin for props and items sorting.
  *
@@ -13,12 +63,20 @@ export async function perfectionist(
 ): Promise<Array<TypedFlatConfigItem>> {
 	const { customClassGroups = [] } = config ?? {};
 
-	const customGroups = customClassGroups.reduce((previousValue, currentValue) => {
-		return {
-			...previousValue,
-			[currentValue]: currentValue,
-		};
-	}, {});
+	const customGroups = [];
+	for (const customGroup of customClassGroups) {
+		customGroups.push({
+			elementNamePattern: customGroup,
+			groupName: customGroup,
+		});
+	}
+
+	customGroups.push(
+		constructorGroup,
+		createUnsortedMethod("private"),
+		createUnsortedMethod("protected"),
+		createUnsortedMethod("public"),
+	);
 
 	return [
 		{
@@ -31,9 +89,8 @@ export async function perfectionist(
 				"perfectionist/sort-classes": [
 					"warn",
 					{
-						customGroups: {
-							...customGroups,
-						},
+						customGroups,
+						fallbackSort: { order: "asc", type: "natural" },
 						groups: [
 							"private-static-readonly-property",
 							"private-readonly-property",
@@ -50,21 +107,49 @@ export async function perfectionist(
 							"public-static-property",
 							"public-property",
 
-							"constructor",
+							"custom-constructor",
 
-							...customClassGroups,
+							...customClassGroups.reduce<Array<string>>((accumulator, item) => {
+								accumulator.push(item);
+								return accumulator;
+							}, []),
+
+							"public",
+							"protected",
+							"private",
+
+							"unknown",
 						],
+						newlinesBetween: "always",
 						type: "natural",
 					},
 				],
 				"perfectionist/sort-enums": [
 					"error",
-					{ forceNumericSort: true, partitionByComment: "Part:**", type: "natural" },
+					{
+						forceNumericSort: true,
+						partitionByComment: "^Part:\\*\\*(.*)$",
+						type: "natural",
+					},
+				],
+				"perfectionist/sort-heritage-clauses": [
+					"error",
+					{
+						customGroups: customClassGroups.reduce(
+							(accumulator, item) => {
+								accumulator[item] = "^" + capitalizeFirstLetter(item) + "$";
+								return accumulator;
+							},
+							{} as Record<string, string>,
+						),
+						groups: [...customClassGroups, "unknown"],
+						type: "natural",
+					},
 				],
 				"perfectionist/sort-interfaces": [
 					"error",
 					{
-						customGroups: { callbacks: ["on[A-Z]*"] },
+						customGroups: { callbacks: ["\b(on[A-Z][a-zA-Z]*)\b"] },
 						groups: ["unknown", "callbacks"],
 						type: "natural",
 					},
@@ -75,7 +160,7 @@ export async function perfectionist(
 				"perfectionist/sort-object-types": ["error", { type: "natural" }],
 				"perfectionist/sort-objects": [
 					"error",
-					{ partitionByComment: "Part:**", type: "natural" },
+					{ partitionByComment: "^Part:\\*\\*(.*)$", type: "natural" },
 				],
 				"perfectionist/sort-sets": ["error", { type: "natural" }],
 				"perfectionist/sort-switch-case": ["error", { type: "natural" }],
