@@ -14,10 +14,10 @@ import type {
 const require = createRequire(import.meta.url);
 
 export async function prettier(
-	options?: { prettierOptions?: PrettierOptions } & OptionsComponentExtensions &
+	options?: OptionsComponentExtensions &
 		OptionsFiles &
 		OptionsOverrides &
-		OptionsTypeScriptParserOptions,
+		OptionsTypeScriptParserOptions & { prettierOptions?: PrettierOptions },
 ): Promise<Array<TypedFlatConfigItem>> {
 	const {
 		componentExts: componentExtensions = [],

@@ -64,6 +64,19 @@ export async function react(
 			},
 			name: "style/react:rules",
 			rules: {
+				// recommended rules from @eslint-react/hooks-extra
+				// react-lua does not seem to fully support the patterns that this rule enforces.
+				"react-hooks-extra/no-direct-set-state-in-use-effect": "off",
+				"react-hooks-extra/no-redundant-custom-hook": "error",
+				"react-hooks-extra/no-unnecessary-use-callback": "error",
+				"react-hooks-extra/no-unnecessary-use-memo": "error",
+				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
+				// recommended rules react-hooks roblox
+				"react-hooks-roblox/exhaustive-deps": "warn",
+				"react-hooks-roblox/rules-of-hooks": "error",
+				// recommended rules from @eslint-react/naming-convention
+				"react-naming-convention/filename-extension": ["warn", "as-needed"],
+				"react-naming-convention/use-state": "error",
 				// recommended rules from @eslint-react
 				"react/ensure-forward-ref-using-ref": "warn",
 				"react/no-access-state-in-setstate": "error",
@@ -95,6 +108,7 @@ export async function react(
 				"react/no-unsafe-component-will-mount": "off",
 				"react/no-unsafe-component-will-receive-props": "off",
 				"react/no-unsafe-component-will-update": "off",
+
 				"react/no-unstable-context-value": "error",
 				// TODO: False positives on roblox primitives.
 				"react/no-unstable-default-props": "off",
@@ -105,20 +119,6 @@ export async function react(
 				"react/prefer-read-only-props": "error",
 				"react/prefer-shorthand-boolean": "off",
 				"react/prefer-shorthand-fragment": "warn",
-
-				// recommended rules from @eslint-react/hooks-extra
-				// react-lua does not seem to fully support the patterns that this rule enforces.
-				"react-hooks-extra/no-direct-set-state-in-use-effect": "off",
-				"react-hooks-extra/no-redundant-custom-hook": "error",
-				"react-hooks-extra/no-unnecessary-use-callback": "error",
-				"react-hooks-extra/no-unnecessary-use-memo": "error",
-				"react-hooks-extra/prefer-use-state-lazy-initialization": "error",
-				// recommended rules react-hooks roblox
-				"react-hooks-roblox/exhaustive-deps": "warn",
-				"react-hooks-roblox/rules-of-hooks": "error",
-				// recommended rules from @eslint-react/naming-convention
-				"react-naming-convention/filename-extension": ["warn", "as-needed"],
-				"react-naming-convention/use-state": "error",
 
 				"style/jsx-curly-brace-presence": [
 					"error",

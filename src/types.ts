@@ -15,7 +15,7 @@ export type Rules = RuleOptions;
 // eslint-disable-next-line unicorn/prefer-export-from -- Required due to build issues
 export type { ConfigNames };
 
-export type TypedFlatConfigItem = {
+export type TypedFlatConfigItem = Omit<Linter.Config<Linter.RulesRecord & Rules>, "plugins"> & {
 	// Relax plugins type limitation, as most of the plugins did not have correct
 	// type info yet.
 	/**
@@ -26,7 +26,7 @@ export type TypedFlatConfigItem = {
 	 * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
 	 */
 	plugins?: Record<string, any>;
-} & Omit<Linter.Config<Linter.RulesRecord & Rules>, "plugins">;
+};
 
 export interface OptionsFiles {
 	/** Override the `files` option to provide custom globs. */
@@ -132,10 +132,10 @@ export interface OptionsProjectType {
 	type?: "game" | "package";
 }
 
-export type ReactConfig = {
-	filenameCase?: "kebabCase" | "pascalCase";
-} & Omit<ESLintReactSettings, "skipImportCheck"> &
-	OptionsOverrides;
+export type ReactConfig = Omit<ESLintReactSettings, "skipImportCheck"> &
+	OptionsOverrides & {
+		filenameCase?: "kebabCase" | "pascalCase";
+	};
 
 export interface PerfectionistConfig {
 	customClassGroups?: Array<string>;
