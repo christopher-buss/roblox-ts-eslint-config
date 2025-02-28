@@ -114,10 +114,10 @@ export async function typescript(
 			// separately.
 			name: "style/typescript:setup",
 			plugins: {
-				antfu: pluginAntfu,
+				"antfu": pluginAntfu,
 				"better-max-params": pluginMaxParameters,
 				["de-morgan"]: pluginDeMorgan,
-				ts: pluginTs,
+				"ts": pluginTs,
 			},
 		},
 		{
@@ -159,12 +159,12 @@ export async function typescript(
 						func: 4,
 					},
 				],
-				camelcase: "error",
+				"camelcase": "error",
 
 				"de-morgan/no-negated-conjunction": "error",
 				"de-morgan/no-negated-disjunction": "error",
 
-				eqeqeq: "error",
+				"eqeqeq": "error",
 				"id-length": [
 					"error",
 					{
@@ -193,7 +193,6 @@ export async function typescript(
 				"no-empty-function": "off",
 				"no-lonely-if": "error",
 				"no-loss-of-precision": "off",
-				"no-param-reassign": ["error", { props: false }],
 				"no-redeclare": "off",
 				"no-return-assign": ["error", "always"],
 				"no-shadow": "off",
@@ -288,7 +287,7 @@ export async function typescript(
 				"ts/triple-slash-reference": "off",
 
 				"ts/unified-signatures": "off",
-				yoda: ["error", "never"],
+				"yoda": ["error", "never"],
 
 				...(tsconfigPath ? typeAwareRules : {}),
 				...overrides,
