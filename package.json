@@ -29,7 +29,7 @@
 		"build": "nr typegen && tsup --clean --dts",
 		"build:inspector": "pnpm build && npx @eslint/config-inspector build",
 		"dev": "npx @eslint/config-inspector --config eslint.config.ts",
-		"lint": "eslint .",
+		"lint": "eslint",
 		"prepack": "nr build",
 		"prepare": "simple-git-hooks",
 		"release": "bumpp && pnpm publish --p",

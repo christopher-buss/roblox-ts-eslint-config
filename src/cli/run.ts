@@ -80,5 +80,5 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	await addTsconfigBuild();
 
 	log.success(ansis.green(`Setup completed`));
-	outro(`Now you can update the dependencies and run ${ansis.blue("eslint . --fix")}\n`);
+	outro(`Now you can update the dependencies and run ${ansis.blue("eslint --fix")}\n`);
 }
