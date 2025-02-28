@@ -71,6 +71,7 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 							inst: {
 								instance: true,
 							},
+							jsdoc: false,
 							nums: {
 								numbers: true,
 							},

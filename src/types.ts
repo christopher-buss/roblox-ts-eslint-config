@@ -154,6 +154,16 @@ export interface OptionsIsInEditor {
 	isInEditor?: boolean;
 }
 
+// eslint-disable-next-line unicorn/prevent-abbreviations -- `JsDoc` is a name
+export interface JsDocOptions {
+	/**
+	 * By default we have different rules enabled for different project types.
+	 * This option allows you to enable the package rules regardless of the
+	 * project type.
+	 */
+	full?: boolean;
+}
+
 export interface OptionsConfig extends OptionsComponentExtensions, OptionsProjectType {
 	/**
 	 * Automatically rename plugins in the config.
@@ -187,6 +197,13 @@ export interface OptionsConfig extends OptionsComponentExtensions, OptionsProjec
 	 * @default auto-detect based on the process.env
 	 */
 	isInEditor?: boolean;
+
+	/**
+	 * Enable JSDoc support.
+	 *
+	 * @default true
+	 */
+	jsdoc?: boolean | JsDocOptions;
 
 	/**
 	 * Enable JSONC support.
