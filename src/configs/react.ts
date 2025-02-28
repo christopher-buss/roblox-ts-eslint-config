@@ -5,6 +5,7 @@ import { pluginUnicorn } from "src/plugins";
 import { GLOB_TS, GLOB_TSX } from "../globs";
 import type {
 	OptionsFiles,
+	OptionsStylistic,
 	OptionsTypeScriptWithTypes,
 	ReactConfig,
 	TypedFlatConfigItem,
@@ -12,7 +13,7 @@ import type {
 import { ensurePackages, interopDefault, toArray } from "../utils";
 
 export async function react(
-	options: OptionsFiles & OptionsTypeScriptWithTypes & ReactConfig = {},
+	options: OptionsFiles & OptionsStylistic & OptionsTypeScriptWithTypes & ReactConfig = {},
 ): Promise<Array<TypedFlatConfigItem>> {
 	const {
 		filenameCase = "kebabCase",
@@ -20,6 +21,7 @@ export async function react(
 		importSource,
 		jsxPragma,
 		overrides = {},
+		stylistic = true,
 	} = options;
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-roblox-hooks"]);
@@ -39,15 +41,15 @@ export async function react(
 
 	return [
 		{
-			name: "style/react:setup",
+			name: "style/react/setup",
 			plugins: {
-				react: plugins["@eslint-react"],
+				"react": plugins["@eslint-react"],
 				"react-hooks-extra": plugins["@eslint-react/hooks-extra"],
 				"react-hooks-roblox": fixupPluginRules(pluginReactHooks),
 				"react-naming-convention": plugins["@eslint-react/naming-convention"],
-				style: pluginStylistic,
-				ts: pluginTs,
-				unicorn: pluginUnicorn,
+				"style": pluginStylistic,
+				"ts": pluginTs,
+				"unicorn": pluginUnicorn,
 			},
 		},
 		{
@@ -62,7 +64,7 @@ export async function react(
 				},
 				sourceType: "module",
 			},
-			name: "style/react:rules",
+			name: "style/react/rules",
 			rules: {
 				// recommended rules from @eslint-react/hooks-extra
 				// react-lua does not seem to fully support the patterns that this rule enforces.
@@ -114,31 +116,35 @@ export async function react(
 				"react/no-unstable-default-props": "off",
 				"react/no-unused-class-component-members": "warn",
 				"react/no-unused-state": "warn",
-				"react/no-useless-fragment": "warn",
-				"react/prefer-destructuring-assignment": "warn",
 				"react/prefer-read-only-props": "error",
 				"react/prefer-shorthand-boolean": "off",
-				"react/prefer-shorthand-fragment": "warn",
 
-				"style/jsx-curly-brace-presence": [
-					"error",
-					{
-						children: "never",
-						propElementValues: "always",
-						props: "never",
-					},
-				],
-				"style/jsx-newline": "error",
-				"style/jsx-self-closing-comp": "error",
-				"style/jsx-sort-props": [
-					"error",
-					{
-						callbacksLast: true,
-						ignoreCase: true,
-						reservedFirst: true,
-						shorthandFirst: true,
-					},
-				],
+				...(stylistic
+					? {
+							"react/no-useless-fragment": "warn",
+							"react/prefer-destructuring-assignment": "warn",
+							"react/prefer-shorthand-fragment": "warn",
+							"style/jsx-curly-brace-presence": [
+								"error",
+								{
+									children: "never",
+									propElementValues: "always",
+									props: "never",
+								},
+							],
+							"style/jsx-newline": "error",
+							"style/jsx-self-closing-comp": "error",
+							"style/jsx-sort-props": [
+								"error",
+								{
+									callbacksLast: true,
+									ignoreCase: true,
+									reservedFirst: true,
+									shorthandFirst: true,
+								},
+							],
+						}
+					: {}),
 
 				...(isTypeAware
 					? {

@@ -49,7 +49,7 @@ export const defaultPluginRenaming = {
 	"@eslint-react/naming-convention": "react-naming-convention",
 	"@stylistic": "style",
 	"@typescript-eslint": "ts",
-	yml: "yaml",
+	"yml": "yaml",
 };
 
 /**
@@ -130,23 +130,19 @@ export function style(
 	// Base configs
 	configs.push(
 		ignores(),
-		comments(),
-		jsdoc({
-			stylistic: stylisticOptions,
-		}),
-		imports({
-			stylistic: stylisticOptions,
-		}),
+		comments({ stylistic: stylisticOptions }),
+		jsdoc({ stylistic: stylisticOptions }),
+		imports({ stylistic: stylisticOptions }),
 		promise(),
-		shopify(),
+		shopify({ stylistic: stylisticOptions }),
 		sonarjs(),
-		unicorn(),
-		perfectionist(perfectionistOptions),
+		unicorn({ stylistic: stylisticOptions }),
 		typescript({
 			...resolveSubOptions(options, "typescript"),
 			componentExts: componentExtensions,
 			isInEditor,
 			overrides: getOverrides(options, "typescript"),
+			stylistic: stylisticOptions,
 		}),
 	);
 
@@ -163,7 +159,7 @@ export function style(
 	}
 
 	if (stylisticOptions) {
-		configs.push(stylistic(stylisticOptions));
+		configs.push(perfectionist(perfectionistOptions), stylistic(stylisticOptions));
 	}
 
 	if (options.test ?? false) {
@@ -201,8 +197,11 @@ export function style(
 				stylistic: stylisticOptions,
 			}),
 			packageJson(),
-			sortTsconfig(),
 		);
+
+		if (stylisticOptions) {
+			configs.push(sortTsconfig());
+		}
 	}
 
 	if (options.yaml ?? true) {
@@ -232,7 +231,7 @@ export function style(
 		);
 	}
 
-	if (options.formatters) {
+	if (options.formatters !== false) {
 		configs.push(
 			formatters(
 				options.formatters,
@@ -242,19 +241,22 @@ export function style(
 		);
 	}
 
-	configs.push(
-		disables(),
+	configs.push(disables());
+
+	if (stylisticOptions) {
 		// We require prettier to be the last config
-		prettier({
-			...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
-			componentExts: componentExtensions,
-			overrides: getOverrides(options, "typescript"),
-			prettierOptions:
-				typeof options["formatters"] === "boolean"
-					? ({} as any)
-					: options["formatters"]?.prettierOptions || {},
-		}),
-	);
+		configs.push(
+			prettier({
+				...(typeof enableTypeScript !== "boolean" ? enableTypeScript : {}),
+				componentExts: componentExtensions,
+				overrides: getOverrides(options, "typescript"),
+				prettierOptions:
+					typeof options["formatters"] === "boolean"
+						? ({} as any)
+						: options["formatters"]?.prettierOptions || {},
+			}),
+		);
+	}
 
 	if ("files" in options) {
 		throw new Error(

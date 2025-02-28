@@ -35,7 +35,7 @@ export async function yaml(
 			languageOptions: {
 				parser: parserYaml,
 			},
-			name: "style/yaml:rules",
+			name: "style/yaml/rules",
 			rules: {
 				"style/spaced-comment": "off",
 

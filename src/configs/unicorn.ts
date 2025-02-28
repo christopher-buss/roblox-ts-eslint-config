@@ -1,7 +1,9 @@
 import { pluginUnicorn } from "../plugins";
-import type { TypedFlatConfigItem } from "../types";
+import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
 
-export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
+export async function unicorn(options: OptionsStylistic = {}): Promise<Array<TypedFlatConfigItem>> {
+	const { stylistic = true } = options;
+
 	return [
 		{
 			name: "style/unicorn",
@@ -88,7 +90,12 @@ export async function unicorn(): Promise<Array<TypedFlatConfigItem>> {
 						/* eslint-enable @cspell/spellchecker */
 					},
 				],
-				"unicorn/switch-case-braces": "error",
+
+				...(stylistic
+					? {
+							"unicorn/switch-case-braces": "error",
+						}
+					: {}),
 			},
 		},
 	];

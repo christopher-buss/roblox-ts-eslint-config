@@ -7,6 +7,7 @@ import type {
 	OptionsFiles,
 	OptionsIsInEditor,
 	OptionsOverrides,
+	OptionsStylistic,
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
 	TypedFlatConfigItem,
@@ -18,6 +19,7 @@ export async function typescript(
 		OptionsFiles &
 		OptionsIsInEditor &
 		OptionsOverrides &
+		OptionsStylistic &
 		OptionsTypeScriptParserOptions &
 		OptionsTypeScriptWithTypes = {},
 ): Promise<Array<TypedFlatConfigItem>> {
@@ -26,6 +28,7 @@ export async function typescript(
 		isInEditor = false,
 		overrides = {},
 		parserOptions = {},
+		stylistic = true,
 	} = options;
 
 	const files = options.files ?? [
@@ -112,7 +115,7 @@ export async function typescript(
 		{
 			// Install the plugins without globs, so they can be configured
 			// separately.
-			name: "style/typescript:setup",
+			name: "style/typescript/setup",
 			plugins: {
 				"antfu": pluginAntfu,
 				"better-max-params": pluginMaxParameters,
@@ -159,29 +162,16 @@ export async function typescript(
 						func: 4,
 					},
 				],
-				"camelcase": "error",
 
 				"de-morgan/no-negated-conjunction": "error",
 				"de-morgan/no-negated-disjunction": "error",
 
 				"eqeqeq": "error",
-				"id-length": [
-					"error",
-					{
-						exceptions: ["_", "x", "y", "z", "a", "b", "e"],
-						max: 30,
-						min: 2,
-						properties: "never",
-					},
-				],
+
 				"logical-assignment-operators": "error",
 				"max-classes-per-file": "error",
 				"max-depth": "error",
-				"max-lines": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
-				"max-lines-per-function": [
-					"warn",
-					{ max: 30, skipBlankLines: true, skipComments: true },
-				],
+
 				"no-constant-condition": [
 					"error",
 					{
@@ -205,12 +195,11 @@ export async function typescript(
 						allowTernary: true,
 					},
 				],
-				"no-unused-private-class-members": "error",
+				"no-unused-private-class-members": "off",
 				"no-use-before-define": "off",
 				"no-useless-constructor": "off",
 				"no-useless-rename": "error",
 				"no-useless-return": "error",
-				"object-shorthand": "error",
 				"prefer-const": [
 					isInEditor ? "warn" : "error",
 					{
@@ -220,21 +209,9 @@ export async function typescript(
 				],
 				"prefer-destructuring": "off",
 				"ts/adjacent-overload-signatures": "off",
-				"ts/array-type": [
-					"error",
-					{
-						default: "generic",
-						readonly: "generic",
-					},
-				],
+
 				"ts/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
-				"ts/consistent-generic-constructors": ["error", "constructor"],
-				"ts/consistent-indexed-object-style": ["error", "record"],
-				"ts/consistent-type-definitions": ["error", "interface"],
-				"ts/consistent-type-imports": [
-					"error",
-					{ disallowTypeAnnotations: false, prefer: "type-imports" },
-				],
+
 				"ts/default-param-last": "error",
 				"ts/explicit-function-return-type": [
 					"error",
@@ -253,7 +230,7 @@ export async function typescript(
 				"ts/method-signature-style": "off",
 				"ts/no-array-constructor": "off",
 				"ts/no-confusing-non-null-assertion": "error",
-				"ts/no-dupe-class-members": "error",
+				"ts/no-dupe-class-members": "off",
 				"ts/no-dynamic-delete": "off",
 				"ts/no-empty-function": "error",
 				"ts/no-empty-object-type": ["error", { allowInterfaces: "always" }],
@@ -287,21 +264,48 @@ export async function typescript(
 				"ts/triple-slash-reference": "off",
 
 				"ts/unified-signatures": "off",
-				"yoda": ["error", "never"],
+
+				...(stylistic
+					? {
+							"camelcase": "error",
+							"id-length": [
+								"error",
+								{
+									exceptions: ["_", "x", "y", "z", "a", "b", "e"],
+									max: 30,
+									min: 2,
+									properties: "never",
+								},
+							],
+							"max-lines": [
+								"warn",
+								{ max: 300, skipBlankLines: true, skipComments: true },
+							],
+							"max-lines-per-function": [
+								"warn",
+								{ max: 30, skipBlankLines: true, skipComments: true },
+							],
+							"object-shorthand": "error",
+							"ts/array-type": [
+								"error",
+								{
+									default: "generic",
+									readonly: "generic",
+								},
+							],
+							"ts/consistent-generic-constructors": ["error", "constructor"],
+							"ts/consistent-indexed-object-style": ["error", "record"],
+							"ts/consistent-type-definitions": ["error", "interface"],
+							"ts/consistent-type-imports": [
+								"error",
+								{ disallowTypeAnnotations: false, prefer: "type-imports" },
+							],
+							"yoda": ["error", "never"],
+						}
+					: {}),
 
 				...(tsconfigPath ? typeAwareRules : {}),
 				...overrides,
-			},
-		},
-		{
-			files: ["**/*.d.ts"],
-			name: "style/typescript:dts-overrides",
-			rules: {
-				"eslint-comments/no-unlimited-disable": "off",
-				"import/no-duplicates": "off",
-				"max-lines": "off",
-				"no-restricted-syntax": "off",
-				"unused-imports/no-unused-vars": "off",
 			},
 		},
 	];

@@ -34,6 +34,7 @@ export async function disables(): Promise<Array<TypedFlatConfigItem>> {
 			rules: {
 				"eslint-comments/no-unlimited-disable": "off",
 				"import/no-duplicates": "off",
+				"max-lines": "off",
 				"no-restricted-syntax": "off",
 				"unused-imports/no-unused-vars": "off",
 			},

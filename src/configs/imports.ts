@@ -35,25 +35,27 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Typ
 					: {}),
 			},
 		},
-		{
-			languageOptions: {
-				parserOptions: {
-					sourceType: "script",
-				},
-			},
-			name: "style/import-sort",
-			plugins: {
-				"simple-import-sort": pluginSimpleImportSort,
-			},
-			rules: {
-				"simple-import-sort/exports": "error",
-				"simple-import-sort/imports": [
-					"error",
-					{
-						groups: [["^react"], ["@?"], ["^\\w"], ["^\\."]],
+		stylistic
+			? {
+					languageOptions: {
+						parserOptions: {
+							sourceType: "script",
+						},
 					},
-				],
-			},
-		},
+					name: "style/import-sort",
+					plugins: {
+						"simple-import-sort": pluginSimpleImportSort,
+					},
+					rules: {
+						"simple-import-sort/exports": "error",
+						"simple-import-sort/imports": [
+							"error",
+							{
+								groups: [["^react"], ["@?"], ["^\\w"], ["^\\."]],
+							},
+						],
+					},
+				}
+			: {},
 	];
 }

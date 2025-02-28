@@ -1,9 +1,13 @@
 import { GLOB_YAML } from "src/globs";
-import type { TypedFlatConfigItem } from "src/types";
+import type { OptionsStylistic, TypedFlatConfigItem } from "src/types";
 
 import { pluginCommentLength, pluginComments } from "../plugins";
 
-export async function comments(): Promise<Array<TypedFlatConfigItem>> {
+export async function comments(
+	options: OptionsStylistic = {},
+): Promise<Array<TypedFlatConfigItem>> {
+	const { stylistic = true } = options;
+
 	return [
 		{
 			name: "style/eslint/comments",
@@ -28,8 +32,12 @@ export async function comments(): Promise<Array<TypedFlatConfigItem>> {
 					},
 				],
 
-				"no-inline-comments": "error",
-				"style/multiline-comment-style": ["error", "separate-lines"],
+				...(stylistic
+					? {
+							"no-inline-comments": "error",
+							"style/multiline-comment-style": ["error", "separate-lines"],
+						}
+					: {}),
 			},
 		},
 		{
@@ -37,7 +45,6 @@ export async function comments(): Promise<Array<TypedFlatConfigItem>> {
 			rules: {
 				// TODO: Seems to be a false positive
 				"comment-length/limit-multi-line-comments": "off",
-
 				"no-inline-comments": "off",
 			},
 		},

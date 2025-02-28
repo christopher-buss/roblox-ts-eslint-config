@@ -31,9 +31,9 @@ export async function stylistic(
 		{
 			name: "style/stylistic",
 			plugins: {
-				antfu: pluginAntfu,
+				"antfu": pluginAntfu,
 				"arrow-style": pluginArrowReturnStyle,
-				style: pluginStylistic,
+				"style": pluginStylistic,
 			},
 			rules: {
 				...config.rules,
@@ -52,7 +52,7 @@ export async function stylistic(
 
 				"arrow-style/no-export-default-arrow": "warn",
 
-				curly: ["error", "all"],
+				"curly": ["error", "all"],
 
 				"style/lines-between-class-members": [
 					"error",

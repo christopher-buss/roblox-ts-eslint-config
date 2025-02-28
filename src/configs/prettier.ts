@@ -36,6 +36,7 @@ export async function prettier(
 		jsdocPrintWidth: 80,
 		plugins: [require.resolve("prettier-plugin-jsdoc")],
 		printWidth: 100,
+		quoteProps: "consistent",
 		semi: true,
 		singleQuote: false,
 		tabWidth: 4,
@@ -55,7 +56,7 @@ export async function prettier(
 			rules: {
 				...configPrettier.rules,
 				"arrow-body-style": "off",
-				curly: ["error", "all"],
+				"curly": ["error", "all"],
 				"format/prettier": [
 					"error",
 					{

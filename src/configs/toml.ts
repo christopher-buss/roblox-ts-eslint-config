@@ -43,8 +43,6 @@ export async function toml(
 				"toml/precision-of-integer": "error",
 				"toml/tables-order": "error",
 
-				"toml/vue-custom-block/no-parsing-error": "error",
-
 				...(stylistic
 					? {
 							"toml/array-bracket-newline": "error",

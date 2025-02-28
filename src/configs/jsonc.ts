@@ -27,7 +27,7 @@ export async function jsonc(
 		{
 			name: "style/jsonc/setup",
 			plugins: {
-				jsonc: pluginJsonc as any,
+				jsonc: pluginJsonc,
 			},
 		},
 		{
