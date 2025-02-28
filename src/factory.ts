@@ -25,6 +25,7 @@ import {
 	yaml,
 } from "./configs";
 import { formatters } from "./configs/formatters";
+import { jsx } from "./configs/jsx";
 import { packageJson } from "./configs/package-json";
 import { spelling } from "./configs/spelling";
 import { test } from "./configs/test";
@@ -75,7 +76,7 @@ export function style(
 		autoRenamePlugins = true,
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
-		jsx,
+		jsx: enableJsx = true,
 		perfectionist: perfectionistOptions,
 		react: enableReact = false,
 		roblox: enableRoblox = true,
@@ -100,7 +101,7 @@ export function style(
 				? options.stylistic
 				: {};
 	if (stylisticOptions && !("jsx" in stylisticOptions)) {
-		stylisticOptions.jsx = jsx ?? true;
+		stylisticOptions.jsx = enableJsx;
 	}
 
 	const configs: Array<Awaitable<Array<TypedFlatConfigItem>>> = [];
@@ -145,6 +146,10 @@ export function style(
 			stylistic: stylisticOptions,
 		}),
 	);
+
+	if (enableJsx) {
+		configs.push(jsx());
+	}
 
 	if (enableRoblox) {
 		configs.push(
