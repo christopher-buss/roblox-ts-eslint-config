@@ -18,8 +18,7 @@ export async function markdown(
 		overrides = {},
 	} = options;
 
-	// @ts-expect-error missing types
-	const markdownPlugin = await interopDefault(import("eslint-plugin-markdown"));
+	const markdownPlugin = await interopDefault(import("@eslint/markdown"));
 
 	return [
 		{
@@ -58,6 +57,8 @@ export async function markdown(
 			},
 			name: "style/markdown/disables",
 			rules: {
+				"antfu/no-top-level-await": "off",
+
 				"import/newline-after-import": "off",
 
 				"no-alert": "off",

@@ -1232,6 +1232,34 @@ export interface RuleOptions {
    */
   'logical-assignment-operators'?: Linter.RuleEntry<LogicalAssignmentOperators>
   /**
+   * Require languages for fenced code blocks
+   */
+  'markdownPlugin/fenced-code-language'?: Linter.RuleEntry<MarkdownPluginFencedCodeLanguage>
+  /**
+   * Enforce heading levels increment by one
+   */
+  'markdownPlugin/heading-increment'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow duplicate headings in the same document
+   */
+  'markdownPlugin/no-duplicate-headings'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow empty links
+   */
+  'markdownPlugin/no-empty-links'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow HTML tags
+   */
+  'markdownPlugin/no-html'?: Linter.RuleEntry<MarkdownPluginNoHtml>
+  /**
+   * Disallow invalid label references
+   */
+  'markdownPlugin/no-invalid-label-refs'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow missing label references
+   */
+  'markdownPlugin/no-missing-label-refs'?: Linter.RuleEntry<[]>
+  /**
    * Enforce a maximum number of classes per file
    * @see https://eslint.org/docs/latest/rules/max-classes-per-file
    */
@@ -8630,6 +8658,14 @@ type LinesBetweenClassMembers = []|[({
 type LogicalAssignmentOperators = (([]|["always"]|["always", {
   enforceForIfStatements?: boolean
 }] | ["never"]) & unknown[])
+// ----- markdownPlugin/fenced-code-language -----
+type MarkdownPluginFencedCodeLanguage = []|[{
+  required?: string[]
+}]
+// ----- markdownPlugin/no-html -----
+type MarkdownPluginNoHtml = []|[{
+  allowed?: string[]
+}]
 // ----- max-classes-per-file -----
 type MaxClassesPerFile = []|[(number | {
   ignoreExpressions?: boolean
