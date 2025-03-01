@@ -85,7 +85,14 @@ export async function stylistic(
 						prev: ["do"],
 					},
 				],
-				"style/quotes": ["error", "double"],
+				"style/quotes": [
+					"error",
+					"double",
+					{
+						allowTemplateLiterals: false,
+						avoidEscape: true,
+					},
+				],
 				"style/spaced-comment": ["error", "always", { markers: ["!native", "!optimize"] }],
 			},
 		},

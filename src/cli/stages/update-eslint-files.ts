@@ -24,7 +24,7 @@ export async function updateEslintFiles(): Promise<void> {
 
 	const eslintIgnores: Array<string> = [];
 	if (fs.existsSync(pathESLintIgnore)) {
-		log.step(ansis.cyan(`Migrating existing .eslintignore`));
+		log.step(ansis.cyan("Migrating existing .eslintignore"));
 		const content = await fsp.readFile(pathESLintIgnore, "utf-8");
 		const parsed = parse(content);
 		const globs = parsed.globs();

@@ -25,7 +25,7 @@ export async function updateVscodeSettings(result: PromptResult): Promise<void> 
 
 	if (!fs.existsSync(settingsPath)) {
 		await fsp.writeFile(settingsPath, `{${vscodeSettingsString}}\n`, "utf-8");
-		log.success(ansis.green(`Created .vscode/settings.json`));
+		log.success(ansis.green("Created .vscode/settings.json"));
 		return;
 	}
 
@@ -36,5 +36,5 @@ export async function updateVscodeSettings(result: PromptResult): Promise<void> 
 	settingsContent += `${vscodeSettingsString}}\n`;
 
 	await fsp.writeFile(settingsPath, settingsContent, "utf-8");
-	log.success(ansis.green(`Updated .vscode/settings.json`));
+	log.success(ansis.green("Updated .vscode/settings.json"));
 }

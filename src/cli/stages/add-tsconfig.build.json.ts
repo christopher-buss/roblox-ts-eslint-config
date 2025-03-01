@@ -23,10 +23,10 @@ export async function addTsconfigBuild(): Promise<void> {
 	`;
 
 	await fsp.writeFile(pathTsconfigBuild, tsconfigBuildContent, "utf-8");
-	log.success(ansis.green(`Created tsconfig.build.json`));
+	log.success(ansis.green("Created tsconfig.build.json"));
 	log.info(
 		ansis.yellow(
-			`You must add '"exclude": ["./eslint.config.ts"]' to your tsconfig.json. In the future, this will be done automatically.`,
+			'You must add \'"exclude": ["./eslint.config.ts"]\' to your tsconfig.json. In the future, this will be done automatically.',
 		),
 	);
 }

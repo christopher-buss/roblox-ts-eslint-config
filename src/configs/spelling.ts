@@ -35,7 +35,7 @@ export async function spelling(
 			files,
 			name: "style/spelling",
 			plugins: {
-				["@cspell"]: pluginCspell,
+				"@cspell": pluginCspell,
 			},
 			rules: {
 				"@cspell/spellchecker": [

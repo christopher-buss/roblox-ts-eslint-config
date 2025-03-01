@@ -35,5 +35,5 @@ export async function updatePackageJson(): Promise<void> {
 	}
 
 	await fsp.writeFile(pathPackageJSON, JSON.stringify(package_, null, 2));
-	log.success(ansis.green(`Changes wrote to package.json`));
+	log.success(ansis.green("Changes wrote to package.json"));
 }

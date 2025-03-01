@@ -121,6 +121,7 @@ export async function react(
 
 				...(stylistic
 					? {
+							"one-var": "off",
 							"react/no-useless-fragment": "warn",
 							"react/prefer-destructuring-assignment": "warn",
 							"react/prefer-shorthand-fragment": "warn",

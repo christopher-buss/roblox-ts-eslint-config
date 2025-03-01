@@ -24,7 +24,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	const argumentTemplate = ["react"] as Array<FrameworkOption>;
 
 	if (fs.existsSync(path.join(process.cwd(), "eslint.config.js"))) {
-		log.warn(ansis.yellow(`eslint.config.js already exists, migration wizard exited.`));
+		log.warn(ansis.yellow("eslint.config.js already exists, migration wizard exited."));
 		return process.exit(1);
 	}
 
@@ -79,6 +79,6 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	await updateVscodeSettings(result);
 	await addTsconfigBuild();
 
-	log.success(ansis.green(`Setup completed`));
+	log.success(ansis.green("Setup completed"));
 	outro(`Now you can update the dependencies and run ${ansis.blue("eslint --fix")}\n`);
 }

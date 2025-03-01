@@ -13,6 +13,7 @@ export default style(
 	{
 		files: ["src/**/*.ts"],
 		rules: {
+			"max-lines": "off",
 			"max-lines-per-function": "off",
 			"sonar/cognitive-complexity": "off",
 		},
