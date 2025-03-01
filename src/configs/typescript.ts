@@ -84,8 +84,10 @@ export async function typescript(
 		"ts/no-unsafe-argument": "error",
 		"ts/no-unsafe-assignment": "error",
 		"ts/no-unsafe-call": "error",
+		"ts/no-unsafe-enum-comparison": "error",
 		"ts/no-unsafe-member-access": "error",
 		"ts/no-unsafe-return": "error",
+		"ts/no-unsafe-unary-minus": "error",
 		"ts/non-nullable-type-assertion-style": "error",
 		"ts/prefer-destructuring": "error",
 		"ts/prefer-find": "error",
@@ -102,6 +104,7 @@ export async function typescript(
 		"ts/strict-boolean-expressions": "error",
 		"ts/switch-exhaustiveness-check": "error",
 		"ts/unbound-method": "error",
+		"ts/use-unknown-in-catch-callback-variable": "error",
 	};
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
@@ -119,7 +122,7 @@ export async function typescript(
 			plugins: {
 				"antfu": pluginAntfu,
 				"better-max-params": pluginMaxParameters,
-				["de-morgan"]: pluginDeMorgan,
+				"de-morgan": pluginDeMorgan,
 				"ts": pluginTs,
 			},
 		},
@@ -141,7 +144,7 @@ export async function typescript(
 					...(parserOptions as any),
 				},
 			},
-			name: "style/typescript:rules",
+			name: "style/typescript/rules",
 			rules: {
 				...renameRules(pluginTs.configs["eslint-recommended"].overrides?.[0].rules ?? {}, {
 					"@typescript-eslint": "ts",
@@ -166,36 +169,50 @@ export async function typescript(
 				"de-morgan/no-negated-disjunction": "error",
 
 				"eqeqeq": "error",
-
+				"for-direction": "error",
 				"logical-assignment-operators": "error",
 				"max-classes-per-file": "error",
 				"max-depth": "error",
-
+				"no-async-promise-executor": "error",
+				"no-cond-assign": ["error", "always"],
 				"no-constant-condition": [
 					"error",
 					{
 						checkLoops: false,
 					},
 				],
+				"no-control-regex": "error",
 				"no-dupe-class-members": "off",
 				"no-else-return": "error",
+				"no-empty": ["error", { allowEmptyCatch: true }],
+				"no-empty-character-class": "error",
 				"no-empty-function": "off",
+				"no-empty-pattern": "error",
+				"no-empty-static-block": "error",
+				"no-ex-assign": "error",
+				"no-extra-boolean-cast": "error",
+				"no-irregular-whitespace": "error",
 				"no-lonely-if": "error",
 				"no-loss-of-precision": "off",
 				"no-redeclare": "off",
+				"no-regex-spaces": "error",
 				"no-return-assign": ["error", "always"],
+				"no-self-assign": "error",
+				"no-self-compare": "error",
 				"no-shadow": "off",
+				"no-sparse-arrays": "error",
+				"no-template-curly-in-string": "error",
+				"no-undef-init": "error",
+				"no-unmodified-loop-condition": "error",
 				"no-unneeded-ternary": "error",
-				"no-unused-expressions": [
-					"error",
-					{
-						allowShortCircuit: true,
-						allowTaggedTemplates: true,
-						allowTernary: true,
-					},
-				],
+				"no-unsafe-finally": "error",
+				"no-unused-expressions": "off",
 				"no-unused-private-class-members": "off",
+				"no-unused-vars": "off",
 				"no-use-before-define": "off",
+				"no-useless-backreference": "error",
+
+				"no-useless-computed-key": "error",
 				"no-useless-constructor": "off",
 				"no-useless-rename": "error",
 				"no-useless-return": "error",
@@ -208,9 +225,7 @@ export async function typescript(
 				],
 				"prefer-destructuring": "off",
 				"ts/adjacent-overload-signatures": "off",
-
 				"ts/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
-
 				"ts/default-param-last": "error",
 				"ts/explicit-function-return-type": [
 					"error",
@@ -284,7 +299,10 @@ export async function typescript(
 								"warn",
 								{ max: 30, skipBlankLines: true, skipComments: true },
 							],
+							"no-lone-blocks": "error",
+							"no-multi-str": "error",
 							"object-shorthand": "error",
+							"one-var": ["error", { initialized: "never" }],
 							"ts/array-type": [
 								"error",
 								{
