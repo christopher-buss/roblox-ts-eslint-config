@@ -281,7 +281,12 @@ export async function typescript(
 
 				...(stylistic
 					? {
-							"camelcase": "error",
+							"camelcase": [
+								"error",
+								{
+									ignoreImports: true,
+								},
+							],
 							"id-length": [
 								"error",
 								{
