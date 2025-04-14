@@ -4,7 +4,7 @@
 export { default as pluginCspell } from "@cspell/eslint-plugin";
 export { default as pluginComments } from "@eslint-community/eslint-plugin-eslint-comments";
 export { default as eslintPluginShopify } from "@shopify/eslint-plugin";
-export { default as configPrettier } from "eslint-config-prettier";
+export { default as configPrettier } from "eslint-config-prettier/flat";
 export { default as pluginAntfu } from "eslint-plugin-antfu";
 export { default as pluginArrowReturnStyle } from "eslint-plugin-arrow-return-style";
 export { default as pluginMaxParams } from "eslint-plugin-better-max-params";
