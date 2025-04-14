@@ -19,6 +19,10 @@ export async function unicorn(options: OptionsStylistic = {}): Promise<Array<Typ
 				],
 				"unicorn/consistent-destructuring": "error",
 				"unicorn/consistent-function-scoping": ["error", { checkArrowFunctions: false }],
+
+				// TODO: https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2628
+				"unicorn/error-message": "off",
+
 				"unicorn/filename-case": [
 					"error",
 					{
@@ -90,6 +94,8 @@ export async function unicorn(options: OptionsStylistic = {}): Promise<Array<Typ
 						/* eslint-enable @cspell/spellchecker */
 					},
 				],
+
+				"unicorn/throw-new-error": "error",
 
 				...(stylistic
 					? {

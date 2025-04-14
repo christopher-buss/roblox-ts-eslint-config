@@ -36,6 +36,7 @@ export async function disables(): Promise<Array<TypedFlatConfigItem>> {
 				"import/no-duplicates": "off",
 				"max-lines": "off",
 				"no-restricted-syntax": "off",
+				"sonar/no-duplicate-string": "off",
 				"unused-imports/no-unused-vars": "off",
 			},
 		},
@@ -44,7 +45,11 @@ export async function disables(): Promise<Array<TypedFlatConfigItem>> {
 			name: "style/disables/test",
 			rules: {
 				"antfu/no-top-level-await": "off",
+				"max-lines": "off",
+				"max-lines-per-function": "off",
 				"no-unused-expressions": "off",
+				"ts/explicit-function-return-type": "off",
+				"ts/no-non-null-assertion": "off",
 			},
 		},
 		{

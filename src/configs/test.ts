@@ -51,6 +51,7 @@ export async function test(
 				"test/no-identical-title": "error",
 				"test/no-standalone-expect": "error",
 				"test/no-test-prefixes": "error",
+				"test/no-test-return-statement": "error",
 				"test/no-untyped-mock-factory": "error",
 				"test/padding-around-all": "warn",
 				"test/prefer-called-with": "warn",
@@ -59,6 +60,7 @@ export async function test(
 				"test/prefer-equality-matcher": "warn",
 				"test/prefer-hooks-in-order": "warn",
 				"test/prefer-lowercase-title": "warn",
+				"test/prefer-mock-promise-shorthand": "error",
 				"test/prefer-strict-equal": "error",
 				"test/prefer-to-be": "error",
 				"test/prefer-to-contain": "error",
@@ -72,13 +74,6 @@ export async function test(
 				"test/valid-expect": "error",
 				"test/valid-expect-in-promise": "error",
 				"test/valid-title": "error",
-
-				// Disables
-				...{
-					"antfu/no-top-level-await": "off",
-					"no-unused-expressions": "off",
-					"ts/explicit-function-return-type": "off",
-				},
 
 				...overrides,
 			},

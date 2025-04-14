@@ -28,6 +28,7 @@ words:
   - textnodes
   - tsdoc
   - typecheck
+  - unthrown
 flagWords: []
 maxNumberOfProblems: 1000
 ignorePaths:
