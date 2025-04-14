@@ -10,7 +10,7 @@ import type { ConfigNames, RuleOptions } from "./typegen";
 
 export type Awaitable<T> = Promise<T> | T;
 
-export type Rules = RuleOptions;
+export interface Rules extends RuleOptions {}
 
 // eslint-disable-next-line unicorn/prefer-export-from -- Required due to build issues
 export type { ConfigNames };
