@@ -21,8 +21,8 @@ importers:
         specifier: 4.4.1
         version: 4.4.1(eslint@9.24.0(jiti@2.4.2))
       '@eslint/compat':
-        specifier: 1.2.7
-        version: 1.2.7(eslint@9.24.0(jiti@2.4.2))
+        specifier: 1.2.8
+        version: 1.2.8(eslint@9.24.0(jiti@2.4.2))
       '@eslint/markdown':
         specifier: 6.3.0
         version: 6.3.0
@@ -857,8 +857,8 @@ packages:
   '@eslint-stylistic/metadata@4.2.0':
     resolution: {integrity: sha512-CPJxCPov9bS5WCLj/RYuys88ZAQZr57XagceRGx/EOcnlUDafssNofboFIksoYgwSUt0za4v8tGymckFZT04Ug==}
 
-  '@eslint/compat@1.2.7':
-    resolution: {integrity: sha512-xvv7hJE32yhegJ8xNAnb62ggiAwTYHBpUCWhRxEj/ksvgDJuSXfoDkBcRYaYNFiJ+jH0IE3K16hd+xXzhBgNbg==}
+  '@eslint/compat@1.2.8':
+    resolution: {integrity: sha512-LqCYHdWL/QqKIJuZ/ucMAv8d4luKGs4oCPgpt8mWztQAtPrHfXKQ/XAUc8ljCHAfJCn6SvkpTcGt5Tsh8saowA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^9.10.0
@@ -4705,7 +4705,7 @@ snapshots:
 
   '@eslint-stylistic/metadata@4.2.0': {}
 
-  '@eslint/compat@1.2.7(eslint@9.24.0(jiti@2.4.2))':
+  '@eslint/compat@1.2.8(eslint@9.24.0(jiti@2.4.2))':
     optionalDependencies:
       eslint: 9.24.0(jiti@2.4.2)
 
@@ -6103,7 +6103,7 @@ snapshots:
 
   eslint-config-flat-gitignore@2.1.0(eslint@9.24.0(jiti@2.4.2)):
     dependencies:
-      '@eslint/compat': 1.2.7(eslint@9.24.0(jiti@2.4.2))
+      '@eslint/compat': 1.2.8(eslint@9.24.0(jiti@2.4.2))
       eslint: 9.24.0(jiti@2.4.2)
 
   eslint-config-prettier@10.1.2(eslint@9.24.0(jiti@2.4.2)):
