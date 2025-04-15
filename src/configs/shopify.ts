@@ -28,7 +28,7 @@ export async function shopify(options: OptionsStylistic = {}): Promise<Array<Typ
 			// set the react version to avoid the warning.
 			settings: {
 				react: {
-					version: "17.0",
+					version: "17.0.2",
 				},
 			},
 		},

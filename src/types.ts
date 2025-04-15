@@ -99,6 +99,13 @@ export interface OptionsTypeScriptParserOptions {
 	 */
 	filesTypeAware?: Array<string>;
 
+	/**
+	 * Glob patterns for files that should not be type aware.
+	 *
+	 * @default \["**\/*.md\/**", "**\/*.astro/*.ts"]
+	 */
+	ignoresTypeAware?: Array<string>;
+
 	/** Additional parser options for TypeScript. */
 	parserOptions?: Partial<ParserOptions>;
 }
@@ -132,7 +139,7 @@ export interface OptionsProjectType {
 	type?: "game" | "package";
 }
 
-export type ReactConfig = Omit<ESLintReactSettings, "skipImportCheck"> &
+export type ReactConfig = ESLintReactSettings &
 	OptionsOverrides & {
 		filenameCase?: "kebabCase" | "pascalCase";
 	};
