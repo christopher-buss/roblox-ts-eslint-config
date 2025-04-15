@@ -98,7 +98,7 @@
 		"@isentinel/eslint-config": "workspace:*",
 		"@stylistic/eslint-plugin-migrate": "4.1.0",
 		"@types/fs-extra": "11.0.4",
-		"@types/node": "22.13.9",
+		"@types/node": "22.14.1",
 		"@types/prompts": "2.4.9",
 		"@types/yargs": "17.0.33",
 		"bumpp": "10.1.0",
