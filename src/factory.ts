@@ -11,6 +11,7 @@ import {
 	jsonc,
 	markdown,
 	perfectionist,
+	pnpm,
 	prettier,
 	promise,
 	react,
@@ -77,6 +78,7 @@ export function style(
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx: enableJsx = true,
+		pnpm: enableCatalogs = false,
 		react: enableReact = false,
 		roblox: enableRoblox = true,
 		spellCheck: enableSpellCheck,
@@ -215,6 +217,10 @@ export function style(
 		if (stylisticOptions) {
 			configs.push(sortTsconfig());
 		}
+	}
+
+	if (enableCatalogs) {
+		configs.push(pnpm());
 	}
 
 	if (options.yaml ?? true) {

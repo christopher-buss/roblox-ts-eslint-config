@@ -98,6 +98,18 @@ export interface OptionsConfig extends OptionsComponentExtensions, OptionsProjec
 	perfectionist?: PerfectionistConfig;
 
 	/**
+	 * Enable pnpm (workspace/catalogs) support.
+	 *
+	 * Currently it's disabled by default, as it's still experimental. In the
+	 * future it will be smartly enabled based on the project usage.
+	 *
+	 * @default false
+	 * @experimental
+	 * @see https://github.com/antfu/pnpm-workspace-utils
+	 */
+	pnpm?: boolean;
+
+	/**
 	 * Enable react rules.
 	 *
 	 * Requires installing:

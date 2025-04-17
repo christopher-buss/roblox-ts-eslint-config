@@ -5,7 +5,8 @@ import { style } from "./dist";
 
 export default style(
 	{
-		ignores: ["fixtures", "_fixtures", "src/typegen.d.ts"],
+		ignores: ["fixtures", "_fixtures", "**/constants-generated.ts"],
+		pnpm: true,
 		roblox: false,
 		test: true,
 		type: "package",

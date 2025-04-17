@@ -70,8 +70,6 @@ export async function perfectionist(
 		createUnsortedMethod("public"),
 	);
 
-	console.log(type);
-
 	return [
 		{
 			name: "style/perfectionist",
