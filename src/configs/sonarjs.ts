@@ -14,6 +14,7 @@ export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
 				"sonar/constructor-for-side-effects": "error",
 				"sonar/destructuring-assignment-syntax": "error",
 				"sonar/elseif-without-else": "off",
+				"sonar/file-name-differ-from-class": "error",
 				"sonar/max-switch-cases": "error",
 				"sonar/no-all-duplicated-branches": "error",
 				"sonar/no-async-constructor": "error",
