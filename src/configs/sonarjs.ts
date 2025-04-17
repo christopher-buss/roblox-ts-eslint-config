@@ -1,7 +1,11 @@
 import { pluginSonar } from "../plugins";
-import type { TypedFlatConfigItem } from "../types";
+import type { OptionsIsInEditor, TypedFlatConfigItem } from "../types";
 
-export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
+export async function sonarjs(
+	options: OptionsIsInEditor = {},
+): Promise<Array<TypedFlatConfigItem>> {
+	const { isInEditor } = options;
+
 	return [
 		{
 			name: "style/sonarjs",
@@ -15,10 +19,14 @@ export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
 				"sonar/destructuring-assignment-syntax": "error",
 				"sonar/elseif-without-else": "off",
 				"sonar/file-name-differ-from-class": "error",
+				"sonar/fixme-tag": isInEditor ? "warn" : "off",
 				"sonar/max-switch-cases": "error",
+				"sonar/misplaced-loop-counter": "error",
 				"sonar/no-all-duplicated-branches": "error",
 				"sonar/no-async-constructor": "error",
 				"sonar/no-collapsible-if": "error",
+				"sonar/no-commented-code": isInEditor ? "off" : "error",
+				"sonar/no-dead-store": "error",
 				"sonar/no-duplicate-string": [
 					"error",
 					{
@@ -34,11 +42,16 @@ export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
 				"sonar/no-identical-functions": "error",
 				"sonar/no-ignored-return": "error",
 				"sonar/no-inverted-boolean-check": "error",
+				"sonar/no-nested-conditional": "error",
+				"sonar/no-nested-incdec": "error",
 				"sonar/no-nested-switch": "error",
 				"sonar/no-nested-template-literals": "error",
 				"sonar/no-one-iteration-loop": "error",
+				"sonar/no-parameter-reassignment": "error",
 				"sonar/no-redundant-boolean": "error",
 				"sonar/no-redundant-jump": "error",
+				"sonar/no-redundant-optional": "error",
+				"sonar/no-try-promise": "error",
 				"sonar/no-unthrown-error": "error",
 				"sonar/no-unused-collection": "error",
 				"sonar/no-use-of-empty-return-value": "error",
@@ -50,6 +63,10 @@ export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
 				"sonar/prefer-promise-shorthand": "error",
 				"sonar/prefer-single-boolean-return": "error",
 				"sonar/prefer-while": "error",
+				"sonar/public-static-readonly": "error",
+				"sonar/super-invocation": "error",
+				"sonar/todo-tag": isInEditor ? "warn" : "off",
+				"sonar/use-type-alias": "error",
 			},
 		},
 	];
