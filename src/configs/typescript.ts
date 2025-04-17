@@ -93,7 +93,7 @@ export async function typescript(
 			"error",
 			{ allow: [{ from: "package", name: "Error", package: "@rbxts/luau-polyfill" }] },
 		],
-		"ts/prefer-destructuring": "error",
+		"ts/prefer-destructuring": ["error", { array: false, object: true }],
 		"ts/prefer-find": "error",
 		"ts/prefer-includes": "error",
 		"ts/prefer-nullish-coalescing": "error",
