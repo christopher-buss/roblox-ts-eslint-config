@@ -95,7 +95,7 @@ export async function unicorn(options: OptionsStylistic = {}): Promise<Array<Typ
 					},
 				],
 
-				"unicorn/throw-new-error": "error",
+				"unicorn/throw-new-error": "off",
 
 				...(stylistic
 					? {
