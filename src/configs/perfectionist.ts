@@ -166,6 +166,12 @@ export async function perfectionist(
 				"perfectionist/sort-switch-case": ["error", { type: "natural" }],
 				"perfectionist/sort-union-types": ["error", { type: "natural" }],
 				"perfectionist/sort-variable-declarations": ["error", { type: "natural" }],
+
+				...(type === "package"
+					? {
+							"perfectionist/sort-modules": "error",
+						}
+					: {}),
 			},
 		},
 	];
