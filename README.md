@@ -364,6 +364,23 @@ Go to your project root that contains `eslint.config.ts` and run:
 npx eslint-config-inspector
 ```
 
+## Versioning Policy
+
+This project follows [Semantic Versioning](https://semver.org/) for releases. However, since this is just a config and involves opinions and many moving parts, we don't treat rules changes as breaking changes.
+
+### Changes Considered as Breaking Changes
+
+- Node.js version requirement changes
+- Huge refactors that might break the config
+- Plugins made major changes that might break the config
+- Changes that might affect most of the codebases
+
+### Changes Considered as Non-breaking Changes
+
+- Enable/disable rules and plugins (that might become stricter)
+- Rules options changes
+- Version bumps of dependencies
+
 ### I prefer XXX...
 
 Sure, you can configure and override rules locally in your project to fit your
