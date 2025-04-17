@@ -37,7 +37,6 @@ export async function unicorn(options: OptionsStylistic = {}): Promise<Array<Typ
 				"unicorn/no-lonely-if": "error",
 				"unicorn/no-negated-condition": "off",
 				"unicorn/no-negation-in-equality-check": "error",
-				"unicorn/no-nested-ternary": "error",
 				"unicorn/no-object-as-default-parameter": "error",
 				"unicorn/no-static-only-class": "error",
 				"unicorn/no-unreadable-array-destructuring": "error",

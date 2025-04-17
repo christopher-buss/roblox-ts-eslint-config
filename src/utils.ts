@@ -26,6 +26,8 @@ export const parserPlain = {
 	},
 };
 
+export type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
+
 /**
  * Combine array and non-array configs into a single array.
  *
@@ -39,45 +41,68 @@ export async function combine(
 	return resolved.flat();
 }
 
-/**
- * Rename plugin prefixes in a rule object. Accepts a map of prefixes to rename.
- *
- * @example
- *
- * ```ts
- * import { renameRules } from "@antfu/eslint-config";
- *
- * export default [
- * 	{
- * 		rules: renameRules(
- * 			{
- * 				"@typescript-eslint/indent": "error",
- * 			},
- * 			{ "@typescript-eslint": "ts" },
- * 		),
- * 	},
- * ];
- * ```
- *
- * @param rules - The rules object to rename.
- * @param map - A map of prefixes to rename.
- * @returns The renamed rules object.
- */
-export function renameRules(
-	rules: Record<string, any>,
-	map: Record<string, string>,
-): Record<string, any> {
-	return Object.fromEntries(
-		Object.entries(rules).map(([key, value]) => {
-			for (const [from, to] of Object.entries(map)) {
-				if (key.startsWith(`${from}/`)) {
-					return [to + key.slice(from.length), value];
-				}
-			}
+export async function ensurePackages(packages: Array<string | undefined>): Promise<void> {
+	if (process.env.CI || process.stdout.isTTY === false) {
+		return;
+	}
 
-			return [key, value];
-		}),
-	);
+	const nonExistingPackages = packages.filter(
+		index => index && !isPackageExists(index),
+	) as Array<string>;
+	if (nonExistingPackages.length === 0) {
+		return;
+	}
+
+	const prompts = await import("@clack/prompts");
+	const result = await prompts.confirm({
+		message: `${nonExistingPackages.length === 1 ? "Package is" : "Packages are"} required for this config: ${nonExistingPackages.join(", ")}. Do you want to install them?`,
+	});
+	if (result) {
+		await import("@antfu/install-pkg").then(index =>
+			index.installPackage(nonExistingPackages, { dev: true }),
+		);
+	}
+}
+
+export function getOverrides<K extends keyof OptionsConfig>(options: OptionsConfig, key: K): any {
+	const sub = resolveSubOptions(options, key);
+
+	return {
+		...("overrides" in sub ? sub.overrides : {}),
+	};
+}
+
+export async function interopDefault<T>(
+	dynamicImport: Awaitable<T>,
+): Promise<T extends { default: infer U } ? U : T> {
+	const resolved = await dynamicImport;
+	return (resolved as any).default || resolved;
+}
+
+export function isInEditorEnvironment(): boolean {
+	if (process.env.CI) {
+		return false;
+	}
+
+	if (isInGitHooksOrLintStaged()) {
+		return false;
+	}
+
+	return [
+		process.env.VSCODE_PID,
+		process.env.VSCODE_CWD,
+		process.env.JETBRAINS_IDE,
+		process.env.VIM,
+		process.env.NVIM,
+	].some(Boolean);
+}
+
+export function isInGitHooksOrLintStaged(): boolean {
+	return [
+		process.env.GIT_PARAMS ||
+			process.env.VSCODE_GIT_COMMAND ||
+			process.env.npm_lifecycle_script?.startsWith("lint-staged"),
+	].some(Boolean);
 }
 
 /**
@@ -125,41 +150,46 @@ export function renamePluginInConfigs(
 	});
 }
 
-export function toArray<T>(value: Array<T> | T): Array<T> {
-	return Array.isArray(value) ? value : [value];
+/**
+ * Rename plugin prefixes in a rule object. Accepts a map of prefixes to rename.
+ *
+ * @example
+ *
+ * ```ts
+ * import { renameRules } from "@antfu/eslint-config";
+ *
+ * export default [
+ * 	{
+ * 		rules: renameRules(
+ * 			{
+ * 				"@typescript-eslint/indent": "error",
+ * 			},
+ * 			{ "@typescript-eslint": "ts" },
+ * 		),
+ * 	},
+ * ];
+ * ```
+ *
+ * @param rules - The rules object to rename.
+ * @param map - A map of prefixes to rename.
+ * @returns The renamed rules object.
+ */
+export function renameRules(
+	rules: Record<string, any>,
+	map: Record<string, string>,
+): Record<string, any> {
+	return Object.fromEntries(
+		Object.entries(rules).map(([key, value]) => {
+			for (const [from, to] of Object.entries(map)) {
+				if (key.startsWith(`${from}/`)) {
+					return [to + key.slice(from.length), value];
+				}
+			}
+
+			return [key, value];
+		}),
+	);
 }
-
-export async function interopDefault<T>(
-	dynamicImport: Awaitable<T>,
-): Promise<T extends { default: infer U } ? U : T> {
-	const resolved = await dynamicImport;
-	return (resolved as any).default || resolved;
-}
-
-export async function ensurePackages(packages: Array<string | undefined>): Promise<void> {
-	if (process.env.CI || process.stdout.isTTY === false) {
-		return;
-	}
-
-	const nonExistingPackages = packages.filter(
-		index => index && !isPackageExists(index),
-	) as Array<string>;
-	if (nonExistingPackages.length === 0) {
-		return;
-	}
-
-	const prompts = await import("@clack/prompts");
-	const result = await prompts.confirm({
-		message: `${nonExistingPackages.length === 1 ? "Package is" : "Packages are"} required for this config: ${nonExistingPackages.join(", ")}. Do you want to install them?`,
-	});
-	if (result) {
-		await import("@antfu/install-pkg").then(index =>
-			index.installPackage(nonExistingPackages, { dev: true }),
-		);
-	}
-}
-
-export type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
 
 export function resolveSubOptions<K extends keyof OptionsConfig>(
 	options: OptionsConfig,
@@ -168,40 +198,6 @@ export function resolveSubOptions<K extends keyof OptionsConfig>(
 	return typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
 }
 
-export function getOverrides<K extends keyof OptionsConfig>(options: OptionsConfig, key: K): any {
-	const sub = resolveSubOptions(options, key);
-
-	return {
-		...("overrides" in sub ? sub.overrides : {}),
-	};
+export function toArray<T>(value: Array<T> | T): Array<T> {
+	return Array.isArray(value) ? value : [value];
 }
-
-/* eslint-disable sonar/no-redundant-boolean -- Taken from antfu config. */
-export function isInEditorEnvironment(): boolean {
-	if (process.env.CI) {
-		return false;
-	}
-
-	if (isInGitHooksOrLintStaged()) {
-		return false;
-	}
-
-	return !!(
-		false ||
-		process.env.VSCODE_PID ||
-		process.env.VSCODE_CWD ||
-		process.env.JETBRAINS_IDE ||
-		process.env.VIM ||
-		process.env.NVIM
-	);
-}
-
-export function isInGitHooksOrLintStaged(): boolean {
-	return !!(
-		false ||
-		process.env.GIT_PARAMS ||
-		process.env.VSCODE_GIT_COMMAND ||
-		process.env.npm_lifecycle_script?.startsWith("lint-staged")
-	);
-}
-/* eslint-enable sonar/no-redundant-boolean */

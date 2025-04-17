@@ -10,157 +10,6 @@ import type { ConfigNames, RuleOptions } from "./typegen";
 
 export type Awaitable<T> = Promise<T> | T;
 
-export interface Rules extends RuleOptions {}
-
-// eslint-disable-next-line unicorn/prefer-export-from -- Required due to build issues
-export type { ConfigNames };
-
-export type TypedFlatConfigItem = Omit<Linter.Config<Linter.RulesRecord & Rules>, "plugins"> & {
-	// Relax plugins type limitation, as most of the plugins did not have correct
-	// type info yet.
-	/**
-	 * An object containing a name-value mapping of plugin names to plugin
-	 * objects. When `files` is specified, these plugins are only available to
-	 * the matching files.
-	 *
-	 * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
-	 */
-	plugins?: Record<string, any>;
-};
-
-export interface OptionsFiles {
-	/** Override the `files` option to provide custom globs. */
-	files?: Array<string>;
-}
-
-export type OptionsTypescript =
-	| (OptionsOverrides & OptionsTypeScriptParserOptions)
-	| (OptionsOverrides & OptionsTypeScriptWithTypes);
-
-export interface OptionsFormatters {
-	/**
-	 * Enable formatting support for CSS, Less, Sass, and SCSS.
-	 *
-	 * Currently only support Prettier.
-	 */
-	css?: "prettier" | boolean;
-
-	/**
-	 * Custom options for dprint.
-	 *
-	 * By default it's controlled by our own config.
-	 */
-	dprintOptions?: boolean;
-
-	/** Enable formatting support for GraphQL. */
-	graphql?: "prettier" | boolean;
-
-	/**
-	 * Enable formatting support for HTML.
-	 *
-	 * Currently only support Prettier.
-	 */
-	html?: "prettier" | boolean;
-
-	/**
-	 * Enable formatting support for Lua files (powered by stylua).
-	 *
-	 * @default true
-	 */
-	lua?: boolean;
-
-	/**
-	 * Enable formatting support for Markdown.
-	 *
-	 * Support both Prettier and dprint.
-	 *
-	 * When set to `true`, it will use Prettier.
-	 */
-	markdown?: "dprint" | "prettier" | boolean;
-
-	/**
-	 * Custom options for Prettier.
-	 *
-	 * By default it's controlled by our own config.
-	 */
-	prettierOptions?: PrettierOptions;
-}
-
-export interface OptionsComponentExtensions {
-	/** Additional extensions for components. */
-	componentExts?: Array<string>;
-}
-
-export interface OptionsTypeScriptParserOptions {
-	/**
-	 * Glob patterns for files that should be type aware.
-	 *
-	 * @default \['**\/*.{ts,tsx}']
-	 */
-	filesTypeAware?: Array<string>;
-
-	/**
-	 * Glob patterns for files that should not be type aware.
-	 *
-	 * @default \["**\/*.md\/**", "**\/*.astro/*.ts"]
-	 */
-	ignoresTypeAware?: Array<string>;
-
-	/** Additional parser options for TypeScript. */
-	parserOptions?: Partial<ParserOptions>;
-}
-
-export interface OptionsTypeScriptWithTypes {
-	/**
-	 * When this options is provided, type aware rules will be enabled.
-	 *
-	 * @see https://typescript-eslint.io/linting/typed-linting/
-	 */
-	tsconfigPath?: Array<string> | string;
-}
-
-export interface OptionsHasTypeScript {
-	typescript?: boolean;
-}
-
-export interface OptionsStylistic {
-	stylistic?: boolean | StylisticConfig;
-}
-
-export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
-
-export interface OptionsProjectType {
-	/**
-	 * Type of the project. `package` will enable more strict rules for
-	 * packages.
-	 *
-	 * @default "game"
-	 */
-	type?: "game" | "package";
-}
-
-export type ReactConfig = ESLintReactSettings &
-	OptionsOverrides & {
-		filenameCase?: "kebabCase" | "pascalCase";
-	};
-
-export interface PerfectionistConfig {
-	customClassGroups?: Array<string>;
-}
-
-export interface SpellCheckConfig {
-	/** Defaults to `en-US`. */
-	language?: string;
-}
-
-export interface OptionsOverrides {
-	overrides?: TypedFlatConfigItem["rules"];
-}
-
-export interface OptionsIsInEditor {
-	isInEditor?: boolean;
-}
-
 // eslint-disable-next-line unicorn/prevent-abbreviations -- `JsDoc` is a name
 export interface JsDocOptions {
 	/**
@@ -169,6 +18,14 @@ export interface JsDocOptions {
 	 * project type.
 	 */
 	full?: boolean;
+}
+
+// eslint-disable-next-line unicorn/prefer-export-from -- Required due to build issues
+export type { ConfigNames };
+
+export interface OptionsComponentExtensions {
+	/** Additional extensions for components. */
+	componentExts?: Array<string>;
 }
 
 export interface OptionsConfig extends OptionsComponentExtensions, OptionsProjectType {
@@ -309,3 +166,146 @@ export interface OptionsConfig extends OptionsComponentExtensions, OptionsProjec
 	 */
 	yaml?: boolean | OptionsOverrides;
 }
+
+export interface OptionsFiles {
+	/** Override the `files` option to provide custom globs. */
+	files?: Array<string>;
+}
+
+export interface OptionsFormatters {
+	/**
+	 * Enable formatting support for CSS, Less, Sass, and SCSS.
+	 *
+	 * Currently only support Prettier.
+	 */
+	css?: "prettier" | boolean;
+
+	/**
+	 * Custom options for dprint.
+	 *
+	 * By default it's controlled by our own config.
+	 */
+	dprintOptions?: boolean;
+
+	/** Enable formatting support for GraphQL. */
+	graphql?: "prettier" | boolean;
+
+	/**
+	 * Enable formatting support for HTML.
+	 *
+	 * Currently only support Prettier.
+	 */
+	html?: "prettier" | boolean;
+
+	/**
+	 * Enable formatting support for Lua files (powered by stylua).
+	 *
+	 * @default true
+	 */
+	lua?: boolean;
+
+	/**
+	 * Enable formatting support for Markdown.
+	 *
+	 * Support both Prettier and dprint.
+	 *
+	 * When set to `true`, it will use Prettier.
+	 */
+	markdown?: "dprint" | "prettier" | boolean;
+
+	/**
+	 * Custom options for Prettier.
+	 *
+	 * By default it's controlled by our own config.
+	 */
+	prettierOptions?: PrettierOptions;
+}
+
+export interface OptionsHasTypeScript {
+	typescript?: boolean;
+}
+
+export interface OptionsIsInEditor {
+	isInEditor?: boolean;
+}
+
+export interface OptionsOverrides {
+	overrides?: TypedFlatConfigItem["rules"];
+}
+
+export interface OptionsProjectType {
+	/**
+	 * Type of the project. `package` will enable more strict rules for
+	 * packages.
+	 *
+	 * @default "game"
+	 */
+	type?: "game" | "package";
+}
+
+export interface OptionsStylistic {
+	stylistic?: boolean | StylisticConfig;
+}
+
+export type OptionsTypescript =
+	| (OptionsOverrides & OptionsTypeScriptParserOptions)
+	| (OptionsOverrides & OptionsTypeScriptWithTypes);
+
+export interface OptionsTypeScriptParserOptions {
+	/**
+	 * Glob patterns for files that should be type aware.
+	 *
+	 * @default \['**\/*.{ts,tsx}']
+	 */
+	filesTypeAware?: Array<string>;
+
+	/**
+	 * Glob patterns for files that should not be type aware.
+	 *
+	 * @default \["**\/*.md\/**", "**\/*.astro/*.ts"]
+	 */
+	ignoresTypeAware?: Array<string>;
+
+	/** Additional parser options for TypeScript. */
+	parserOptions?: Partial<ParserOptions>;
+}
+
+export interface OptionsTypeScriptWithTypes {
+	/**
+	 * When this options is provided, type aware rules will be enabled.
+	 *
+	 * @see https://typescript-eslint.io/linting/typed-linting/
+	 */
+	tsconfigPath?: Array<string> | string;
+}
+
+export interface PerfectionistConfig {
+	customClassGroups?: Array<string>;
+}
+
+export type ReactConfig = ESLintReactSettings &
+	OptionsOverrides & {
+		filenameCase?: "kebabCase" | "pascalCase";
+	};
+
+export interface Rules extends RuleOptions {}
+
+export interface SpellCheckConfig {
+	/** Defaults to `en-US`. */
+	language?: string;
+}
+
+export type StylisticConfig = Pick<StylisticCustomizeOptions, "indent" | "jsx" | "quotes" | "semi">;
+
+export type TypedFlatConfigItem = Omit<Linter.Config<Linter.RulesRecord & Rules>, "plugins"> & {
+	// Relax plugins type limitation, as most of the plugins did not have correct
+	// type info yet.
+	/**
+	 * An object containing a name-value mapping of plugin names to plugin
+	 * objects. When `files` is specified, these plugins are only available to
+	 * the matching files.
+	 *
+	 * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
+	 */
+	plugins?: Record<string, any>;
+};

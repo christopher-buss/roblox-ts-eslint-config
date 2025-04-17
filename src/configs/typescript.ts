@@ -188,7 +188,7 @@ export async function typescript(
 				],
 				"no-control-regex": "error",
 				"no-dupe-class-members": "off",
-				"no-else-return": "error",
+				"no-else-return": ["error", { allowElseIf: false }],
 				"no-empty": ["error", { allowEmptyCatch: true }],
 				"no-empty-character-class": "error",
 				"no-empty-function": "off",

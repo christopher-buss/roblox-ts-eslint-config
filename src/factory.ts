@@ -77,7 +77,6 @@ export function style(
 		componentExts: componentExtensions = [],
 		gitignore: enableGitignore = true,
 		jsx: enableJsx = true,
-		perfectionist: perfectionistOptions,
 		react: enableReact = false,
 		roblox: enableRoblox = true,
 		spellCheck: enableSpellCheck,
@@ -94,12 +93,18 @@ export function style(
 		}
 	}
 
-	const stylisticOptions =
-		options.stylistic === false
-			? false
-			: typeof options.stylistic === "object"
-				? options.stylistic
-				: {};
+	const stylisticOptions = (() => {
+		if (options.stylistic === false) {
+			return false;
+		}
+
+		if (typeof options.stylistic === "object") {
+			return options.stylistic;
+		}
+
+		return {};
+	})();
+
 	if (stylisticOptions && !("jsx" in stylisticOptions)) {
 		stylisticOptions.jsx = enableJsx;
 	}
@@ -130,14 +135,14 @@ export function style(
 
 	// Base configs
 	configs.push(
-		ignores(),
 		comments({ stylistic: stylisticOptions }),
-		jsdoc({ stylistic: stylisticOptions }),
-		imports({ stylistic: stylisticOptions }),
+		ignores(),
+		imports({ stylistic: stylisticOptions, type: options.type }),
+		jsdoc({ stylistic: stylisticOptions, type: options.type }),
+		packageJson({ type: options.type }),
 		promise(),
 		shopify({ stylistic: stylisticOptions }),
-		sonarjs(),
-		unicorn({ stylistic: stylisticOptions }),
+		sonarjs({ isInEditor }),
 		typescript({
 			...resolveSubOptions(options, "typescript"),
 			componentExts: componentExtensions,
@@ -145,6 +150,7 @@ export function style(
 			overrides: getOverrides(options, "typescript"),
 			stylistic: stylisticOptions,
 		}),
+		unicorn({ stylistic: stylisticOptions }),
 	);
 
 	if (enableJsx) {
@@ -164,7 +170,10 @@ export function style(
 	}
 
 	if (stylisticOptions) {
-		configs.push(perfectionist(perfectionistOptions), stylistic(stylisticOptions));
+		configs.push(
+			stylistic(stylisticOptions),
+			perfectionist({ ...resolveSubOptions(options, "perfectionist"), type: options.type }),
+		);
 	}
 
 	if (options.test ?? false) {
@@ -201,7 +210,6 @@ export function style(
 				overrides: getOverrides(options, "jsonc"),
 				stylistic: stylisticOptions,
 			}),
-			packageJson(),
 		);
 
 		if (stylisticOptions) {

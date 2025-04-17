@@ -2,21 +2,9 @@ import { pluginPerfectionist } from "../plugins";
 import type { OptionsProjectType, PerfectionistConfig, TypedFlatConfigItem } from "../types";
 
 interface CustomGroupDefinition {
-	decoratorNamePattern?:
-		| Array<string>
-		| Array<{ flags?: string; pattern: string }>
-		| string
-		| { flags?: string; pattern: string };
-	elementNamePattern?:
-		| Array<string>
-		| Array<{ flags?: string; pattern: string }>
-		| string
-		| { flags?: string; pattern: string };
-	elementValuePattern?:
-		| Array<string>
-		| Array<{ flags?: string; pattern: string }>
-		| string
-		| { flags?: string; pattern: string };
+	decoratorNamePattern?: PatternType;
+	elementNamePattern?: PatternType;
+	elementValuePattern?: PatternType;
 	fallbackSort?: { order?: "asc" | "desc"; type: string };
 	groupName: string;
 	modifiers?: Array<string>;
@@ -26,14 +14,18 @@ interface CustomGroupDefinition {
 	type?: "alphabetical" | "line-length" | "natural" | "unsorted";
 }
 
+type MethodType = "private" | "protected" | "public";
+
+type PatternType =
+	| Array<string>
+	| Array<{ flags?: string; pattern: string }>
+	| string
+	| { flags?: string; pattern: string };
+
 const constructorGroup = {
 	elementNamePattern: "constructor",
 	groupName: "custom-constructor",
 } satisfies CustomGroupDefinition;
-
-function capitalizeFirstLetter(value: string): string {
-	return String(value).charAt(0).toUpperCase() + String(value).slice(1);
-}
 
 /**
  * Perfectionist plugin for props and items sorting.
@@ -55,9 +47,9 @@ export async function perfectionist(
 		});
 	}
 
-	function createUnsortedMethod(methodType: "private" | "protected" | "public"): {
-		groupName: "private" | "protected" | "public";
-		modifiers: ["private" | "protected" | "public"];
+	function createUnsortedMethod(methodType: MethodType): {
+		groupName: MethodType;
+		modifiers: [MethodType];
 		newlinesInside: "always";
 		selector: string;
 		type: "natural" | "unsorted";
@@ -77,6 +69,8 @@ export async function perfectionist(
 		createUnsortedMethod("protected"),
 		createUnsortedMethod("public"),
 	);
+
+	console.log(type);
 
 	return [
 		{
@@ -175,4 +169,8 @@ export async function perfectionist(
 			},
 		},
 	];
+}
+
+function capitalizeFirstLetter(value: string): string {
+	return String(value).charAt(0).toUpperCase() + String(value).slice(1);
 }

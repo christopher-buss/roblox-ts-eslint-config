@@ -35,7 +35,6 @@ export async function packageJson(
 							"package-json/require-author": "error",
 							"package-json/require-files": "error",
 							"package-json/require-keywords": "error",
-							"package-json/require-license": "error",
 							"package-json/require-name": "error",
 							"package-json/require-types": "error",
 							"package-json/require-version": "error",
