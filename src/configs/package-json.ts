@@ -1,6 +1,6 @@
-import type { OptionsProjectType, TypedFlatConfigItem } from "src";
-import { pluginPackageJson } from "src/plugins";
-import { interopDefault } from "src/utils";
+import { pluginPackageJson } from "../plugins";
+import type { OptionsProjectType, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 export async function packageJson(
 	options: OptionsProjectType = {},

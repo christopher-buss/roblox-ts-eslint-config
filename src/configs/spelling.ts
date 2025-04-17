@@ -1,8 +1,8 @@
 import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";
-import { GLOB_SRC } from "src";
-import { pluginCspell } from "src/plugins";
 
+import { GLOB_SRC } from "../globs";
+import { pluginCspell } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,

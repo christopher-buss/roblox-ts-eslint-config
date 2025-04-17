@@ -1,5 +1,4 @@
-import { GLOB_SRC } from "src/globs";
-
+import { GLOB_SRC } from "../globs";
 import { pluginAntfu, pluginImport, pluginSimpleImportSort } from "../plugins";
 import type { OptionsProjectType, OptionsStylistic, TypedFlatConfigItem } from "../types";
 

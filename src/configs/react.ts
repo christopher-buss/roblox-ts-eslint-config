@@ -1,8 +1,7 @@
 import { fixupPluginRules } from "@eslint/compat";
 
-import { pluginUnicorn } from "src/plugins";
-
 import { GLOB_MARKDOWN, GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
+import { pluginUnicorn } from "../plugins";
 import type {
 	OptionsFiles,
 	OptionsStylistic,

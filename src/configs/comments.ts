@@ -1,7 +1,6 @@
-import { GLOB_YAML } from "src/globs";
-import type { OptionsStylistic, TypedFlatConfigItem } from "src/types";
-
+import { GLOB_YAML } from "../globs";
 import { pluginCommentLength, pluginComments } from "../plugins";
+import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
 
 export async function comments(
 	options: OptionsStylistic = {},

@@ -1,7 +1,6 @@
 import styleMigrate from "@stylistic/eslint-plugin-migrate";
 
-// eslint-disable-next-line antfu/no-import-dist -- Need the compiled version.
-import { style } from "./dist";
+import { style } from "./src";
 
 export default style(
 	{

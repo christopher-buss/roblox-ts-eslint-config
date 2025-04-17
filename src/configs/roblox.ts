@@ -1,8 +1,7 @@
 import process from "node:process";
-import { GLOB_LUA, GLOB_SRC } from "src";
-import { pluginFormatLua, pluginRobloxTS } from "src/plugins";
-import { interopDefault, parserPlain, toArray } from "src/utils";
 
+import { GLOB_LUA, GLOB_SRC } from "../globs";
+import { pluginFormatLua, pluginRobloxTS } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -11,6 +10,7 @@ import type {
 	OptionsTypeScriptWithTypes,
 	TypedFlatConfigItem,
 } from "../types";
+import { interopDefault, parserPlain, toArray } from "../utils";
 
 export async function roblox(
 	options: OptionsComponentExtensions &

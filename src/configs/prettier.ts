@@ -1,7 +1,7 @@
 import { createRequire } from "module";
 import type { Options as PrettierOptions } from "prettier";
-import { defaultPluginRenaming, GLOB_SRC, renameRules } from "src";
 
+import { defaultPluginRenaming, GLOB_SRC, renameRules } from "..";
 import { configPrettier, pluginFormat } from "../plugins";
 import type {
 	OptionsComponentExtensions,

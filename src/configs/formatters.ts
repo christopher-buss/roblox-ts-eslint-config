@@ -1,7 +1,7 @@
 import type { Options as PrettierOptions } from "prettier";
-import { pluginFormat } from "src/plugins";
 
 import { GLOB_CSS, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from "../globs";
+import { pluginFormat } from "../plugins";
 import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types";
 import { StylisticConfigDefaults } from "./stylistic";
 

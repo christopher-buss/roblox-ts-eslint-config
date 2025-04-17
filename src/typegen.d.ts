@@ -2389,6 +2389,31 @@ export interface RuleOptions {
    */
   'perfectionist/sort-variable-declarations'?: Linter.RuleEntry<PerfectionistSortVariableDeclarations>
   /**
+   * Enforce using "catalog:" in `package.json`
+   * @see https://github.com/antfu/eslint-plugin-pnpm/blob/main/src/rules/json-enforce-catalog.test.ts
+   */
+  'pnpm/json-enforce-catalog'?: Linter.RuleEntry<PnpmJsonEnforceCatalog>
+  /**
+   * Prefer having pnpm settings in `pnpm-workspace.yaml` instead of `package.json`. This would requires pnpm v10.6+, see https://github.com/orgs/pnpm/discussions/9037.
+   * @see https://github.com/antfu/eslint-plugin-pnpm/blob/main/src/rules/json-prefer-workspace-settings.test.ts
+   */
+  'pnpm/json-prefer-workspace-settings'?: Linter.RuleEntry<PnpmJsonPreferWorkspaceSettings>
+  /**
+   * Enforce using valid catalog in `package.json`
+   * @see https://github.com/antfu/eslint-plugin-pnpm/blob/main/src/rules/json-valid-catalog.test.ts
+   */
+  'pnpm/json-valid-catalog'?: Linter.RuleEntry<PnpmJsonValidCatalog>
+  /**
+   * Disallow unused catalogs in `pnpm-workspace.yaml`
+   * @see https://github.com/antfu/eslint-plugin-pnpm/blob/main/src/rules/yaml-no-duplicate-catalog-item.test.ts
+   */
+  'pnpm/yaml-no-duplicate-catalog-item'?: Linter.RuleEntry<PnpmYamlNoDuplicateCatalogItem>
+  /**
+   * Disallow unused catalogs in `pnpm-workspace.yaml`
+   * @see https://github.com/antfu/eslint-plugin-pnpm/blob/main/src/rules/yaml-no-unused-catalog-item.test.ts
+   */
+  'pnpm/yaml-no-unused-catalog-item'?: Linter.RuleEntry<[]>
+  /**
    * Require using arrow functions for callbacks
    * @see https://eslint.org/docs/latest/rules/prefer-arrow-callback
    */
@@ -11419,6 +11444,43 @@ type PerfectionistSortVariableDeclarations = []|[{
   
   partitionByNewLine?: boolean
 }]
+// ----- pnpm/json-enforce-catalog -----
+type PnpmJsonEnforceCatalog = []|[{
+  
+  allowedProtocols?: string[]
+  
+  autofix?: boolean
+  
+  defaultCatalog?: string
+  
+  reuseExistingCatalog?: boolean
+  
+  conflicts?: ("new-catalog" | "overrides" | "error")
+  
+  fields?: string[]
+}]
+// ----- pnpm/json-prefer-workspace-settings -----
+type PnpmJsonPreferWorkspaceSettings = []|[{
+  
+  autofix?: boolean
+}]
+// ----- pnpm/json-valid-catalog -----
+type PnpmJsonValidCatalog = []|[{
+  
+  autoInsert?: boolean
+  
+  autoInsertDefaultSpecifier?: string
+  
+  autofix?: boolean
+  
+  enforceNoConflict?: boolean
+  
+  fields?: unknown[]
+}]
+// ----- pnpm/yaml-no-duplicate-catalog-item -----
+type PnpmYamlNoDuplicateCatalogItem = []|[{
+  allow?: string[]
+}]
 // ----- prefer-arrow-callback -----
 type PreferArrowCallback = []|[{
   allowNamedFunctions?: boolean
@@ -14821,4 +14883,4 @@ type Yoda = []|[("always" | "never")]|[("always" | "never"), {
   onlyEquality?: boolean
 }]
 // Names of all the configs
-export type ConfigNames = 'style/eslint/comments' | 'style/formatters/setup' | 'style/ignores' | 'style/imports' | 'style/import-sort' | 'style/imports/game' | 'style/jsdoc' | 'style/jsonc/setup' | 'style/jsonc/rules' | 'style/markdown/setup' | 'style/markdown/processor' | 'style/markdown/parser' | 'style/markdown/disables' | 'style/package-json' | 'style/perfectionist' | 'style/prettier' | 'style/promise' | 'style/react/setup' | 'style/react/rules' | 'style/roblox' | 'style/shopify' | 'style/sonarjs' | 'style/sort-tsconfig' | 'style/spelling' | 'style/stylistic' | 'style/test/setup' | 'style/test/rules' | 'style/typescript/setup' | 'style/typescript/rules' | 'style/unicorn' | 'style/yaml:setup' | 'style/yaml/rules'
+export type ConfigNames = 'style/eslint/comments' | 'style/formatters/setup' | 'style/ignores' | 'style/imports' | 'style/import-sort' | 'style/imports/game' | 'style/jsdoc' | 'style/jsonc/setup' | 'style/jsonc/rules' | 'style/markdown/setup' | 'style/markdown/processor' | 'style/markdown/parser' | 'style/markdown/disables' | 'style/package-json' | 'style/perfectionist' | 'style/pnpm/package-json' | 'style/pnpm/pnpm-workspace-yaml' | 'style/prettier' | 'style/promise' | 'style/react/setup' | 'style/react/rules' | 'style/roblox' | 'style/shopify' | 'style/sonarjs' | 'style/sort-tsconfig' | 'style/spelling' | 'style/stylistic' | 'style/test/setup' | 'style/test/rules' | 'style/typescript/setup' | 'style/typescript/rules' | 'style/unicorn' | 'style/yaml:setup' | 'style/yaml/rules'
