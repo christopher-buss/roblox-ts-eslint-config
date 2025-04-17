@@ -1,4 +1,4 @@
-import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
+import { GLOB_DTS, GLOB_SRC, GLOB_SRC_EXT } from "../globs";
 import type { TypedFlatConfigItem } from "../types";
 
 export async function disables(): Promise<Array<TypedFlatConfigItem>> {
@@ -29,10 +29,11 @@ export async function disables(): Promise<Array<TypedFlatConfigItem>> {
 			},
 		},
 		{
-			files: ["**/*.d.?([cm])ts"],
+			files: [GLOB_DTS],
 			name: "style/disables/dts",
 			rules: {
 				"eslint-comments/no-unlimited-disable": "off",
+				"import/no-default-export": "off",
 				"import/no-duplicates": "off",
 				"max-lines": "off",
 				"no-restricted-syntax": "off",

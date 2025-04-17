@@ -1,8 +1,12 @@
-import { pluginAntfu, pluginImport, pluginSimpleImportSort } from "../plugins";
-import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { GLOB_SRC } from "src/globs";
 
-export async function imports(options: OptionsStylistic = {}): Promise<Array<TypedFlatConfigItem>> {
-	const { stylistic = true } = options;
+import { pluginAntfu, pluginImport, pluginSimpleImportSort } from "../plugins";
+import type { OptionsProjectType, OptionsStylistic, TypedFlatConfigItem } from "../types";
+
+export async function imports(
+	options: OptionsProjectType & OptionsStylistic = {},
+): Promise<Array<TypedFlatConfigItem>> {
+	const { stylistic = true, type = "game" } = options;
 
 	return [
 		{
@@ -57,5 +61,22 @@ export async function imports(options: OptionsStylistic = {}): Promise<Array<Typ
 					},
 				}
 			: {},
+		...(type === "game"
+			? [
+					{
+						files: [`src/${GLOB_SRC}`],
+						name: "style/imports/game",
+						rules: {
+							"no-restricted-syntax": [
+								"error",
+								{
+									message: "Prefer named exports",
+									selector: "ExportDefaultDeclaration",
+								},
+							],
+						} satisfies TypedFlatConfigItem["rules"],
+					},
+				]
+			: []),
 	];
 }
