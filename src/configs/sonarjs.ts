@@ -9,8 +9,10 @@ export async function sonarjs(): Promise<Array<TypedFlatConfigItem>> {
 				sonar: pluginSonar,
 			},
 			rules: {
+				"sonar/bool-param-default": "error",
 				"sonar/cognitive-complexity": "warn",
 				"sonar/constructor-for-side-effects": "error",
+				"sonar/destructuring-assignment-syntax": "error",
 				"sonar/elseif-without-else": "off",
 				"sonar/max-switch-cases": "error",
 				"sonar/no-all-duplicated-branches": "error",
