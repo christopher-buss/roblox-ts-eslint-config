@@ -208,7 +208,7 @@ export async function react(
 					"error",
 					{
 						case: filenameCase,
-						ignore: ["README.md"],
+						ignore: ["^[A-Z0-9]+\.md$"],
 						multipleFileExtensions: true,
 					},
 				],

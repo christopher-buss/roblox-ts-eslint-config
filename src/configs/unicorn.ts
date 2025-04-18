@@ -24,7 +24,7 @@ export async function unicorn(options: OptionsStylistic = {}): Promise<Array<Typ
 					"error",
 					{
 						case: "kebabCase",
-						ignore: ["README.md"],
+						ignore: ["^[A-Z0-9]+\.md$"],
 						multipleFileExtensions: true,
 					},
 				],
