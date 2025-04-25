@@ -34,7 +34,7 @@
 		"lint": "eslint",
 		"prepack": "nr build",
 		"prepare": "simple-git-hooks",
-		"release": "bumpp && pnpm publish --p",
+		"release": "bumpp",
 		"stub": "tsup",
 		"typecheck": "tsc --noEmit",
 		"watch": "tsup --watch"
