@@ -1,8 +1,11 @@
 onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
+  - unrs-resolver
+
 packages:
-  - 'fixtures/*'
+  - fixtures/*
+
 catalogs:
   dev:
     '@antfu/ni': 24.3.0
@@ -61,7 +64,7 @@ catalogs:
     eslint-plugin-jsonc: 2.20.0
     eslint-plugin-no-only-tests: 3.3.0
     eslint-plugin-package-json: 0.30.0
-    eslint-plugin-perfectionist: 4.11.0
+    eslint-plugin-perfectionist: 4.12.3
     eslint-plugin-pnpm: 0.3.1
     eslint-plugin-promise: 7.2.1
     eslint-plugin-sentinel: 0.1.1
