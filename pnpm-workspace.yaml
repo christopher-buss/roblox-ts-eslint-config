@@ -37,7 +37,7 @@ catalogs:
     '@cspell/eslint-plugin': 8.19.2
     '@eslint-community/eslint-plugin-eslint-comments': 4.5.0
     '@eslint/compat': 1.2.8
-    '@eslint/markdown': 6.3.0
+    '@eslint/markdown': 6.4.0
     '@isentinel/dict-rbxts': 1.0.1
     '@isentinel/dict-roblox': 1.0.3
     '@shopify/eslint-plugin': 48.0.2
