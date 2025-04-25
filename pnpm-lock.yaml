@@ -179,6 +179,9 @@ catalogs:
     eslint-plugin-promise:
       specifier: 7.2.1
       version: 7.2.1
+    eslint-plugin-sentinel:
+      specifier: 0.1.1
+      version: 0.1.1
     eslint-plugin-sonarjs:
       specifier: 3.0.2
       version: 3.0.2
@@ -322,6 +325,9 @@ importers:
       eslint-plugin-promise:
         specifier: catalog:prod
         version: 7.2.1(eslint@9.24.0(jiti@2.4.2))
+      eslint-plugin-sentinel:
+        specifier: catalog:prod
+        version: 0.1.1(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-sonarjs:
         specifier: catalog:prod
         version: 3.0.2(eslint@9.24.0(jiti@2.4.2))
@@ -2462,6 +2468,11 @@ packages:
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
+
+  eslint-plugin-sentinel@0.1.1:
+    resolution: {integrity: sha512-hiiRhzypgjgLtn/PfOer2K6mO0kiCe4Xog7agOedTrTfAsF7RXvb5LNPuV8y2whHCE+u9UrEAxw5cF6SnGZpWA==}
+    peerDependencies:
+      eslint: '*'
 
   eslint-plugin-simple-import-sort@12.1.1:
     resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
@@ -6551,6 +6562,10 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
+
+  eslint-plugin-sentinel@0.1.1(eslint@9.24.0(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.24.0(jiti@2.4.2)
 
   eslint-plugin-simple-import-sort@12.1.1(eslint@9.24.0(jiti@2.4.2)):
     dependencies:

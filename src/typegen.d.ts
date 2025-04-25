@@ -3126,6 +3126,16 @@ export interface RuleOptions {
    */
   'semi-style'?: Linter.RuleEntry<SemiStyle>
   /**
+   * Enforce explicitly comparing the `size` property of a value.
+   * @see https://github.com/your/eslint-plugin-sentinel/tree/main/src/rules/explicit-size-check/documentation.md
+   */
+  'sentinel/explicit-size-check'?: Linter.RuleEntry<SentinelExplicitSizeCheck>
+  /**
+   * Prefer `math.min()` and `math.max()` over ternaries for simple comparisons.
+   * @see https://github.com/your/eslint-plugin-sentinel/tree/main/src/rules/prefer-math-min-max/documentation.md
+   */
+  'sentinel/prefer-math-min-max'?: Linter.RuleEntry<[]>
+  /**
    * Enforce (or disallow) assignments of binary, boolean-producing expressions to be wrapped in parentheses.
    */
   'shopify/binary-assignment-parens'?: Linter.RuleEntry<ShopifyBinaryAssignmentParens>
@@ -11637,6 +11647,10 @@ type SemiSpacing = []|[{
 }]
 // ----- semi-style -----
 type SemiStyle = []|[("last" | "first")]
+// ----- sentinel/explicit-size-check -----
+type SentinelExplicitSizeCheck = []|[{
+  "non-zero"?: ("greater-than" | "not-equal")
+}]
 // ----- shopify/binary-assignment-parens -----
 type ShopifyBinaryAssignmentParens = []|[("always" | "never")]
 // ----- shopify/class-property-semi -----

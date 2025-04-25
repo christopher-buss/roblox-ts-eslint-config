@@ -16,6 +16,7 @@ export { default as pluginImport } from "eslint-plugin-import-x";
 export * as pluginPackageJson from "eslint-plugin-package-json";
 export { default as pluginPerfectionist } from "eslint-plugin-perfectionist";
 export { default as pluginPromise } from "eslint-plugin-promise";
+export { default as pluginSentinel } from "eslint-plugin-sentinel";
 export { default as pluginSimpleImportSort } from "eslint-plugin-simple-import-sort";
 export { default as pluginSonar } from "eslint-plugin-sonarjs";
 export { default as pluginUnicorn } from "eslint-plugin-unicorn";

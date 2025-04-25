@@ -1,11 +1,12 @@
 import process from "node:process";
 
 import { GLOB_LUA, GLOB_SRC } from "../globs";
-import { pluginFormatLua, pluginRobloxTS } from "../plugins";
+import { pluginFormatLua, pluginRobloxTS, pluginSentinel } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsOverrides,
+	OptionsStylistic,
 	OptionsTypeScriptParserOptions,
 	OptionsTypeScriptWithTypes,
 	TypedFlatConfigItem,
@@ -16,11 +17,16 @@ export async function roblox(
 	options: OptionsComponentExtensions &
 		OptionsFiles &
 		OptionsOverrides &
+		OptionsStylistic &
 		OptionsTypeScriptParserOptions &
 		OptionsTypeScriptWithTypes = {},
 	formatLua = true,
 ): Promise<Array<TypedFlatConfigItem>> {
-	const { componentExts: componentExtensions = [], parserOptions = {} } = options;
+	const {
+		componentExts: componentExtensions = [],
+		parserOptions = {},
+		stylistic = true,
+	} = options;
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
 
@@ -54,19 +60,17 @@ export async function roblox(
 		name: "style/roblox",
 		plugins: {
 			roblox: pluginRobloxTS,
+			sentinel: pluginSentinel,
 		},
+		/* eslint-disable no-inline-comments -- For replacements */
 		rules: {
 			"roblox/lua-truthiness": "warn",
 			"roblox/misleading-luatuple-checks": "warn",
-			"roblox/no-any": "off",
 			"roblox/no-array-pairs": "warn",
 			"roblox/no-enum-merging": "error",
-			// TODO: Enable this rule when it's fixed
-			// "roblox/no-export-assignment-let": "error",
 			"roblox/no-for-in": "error",
 			"roblox/no-function-expression-id": "error",
 			"roblox/no-getters-or-setters": "error",
-			"roblox/no-global-this": "error",
 			"roblox/no-namespace-merging": "error",
 			"roblox/no-null": "error",
 			"roblox/no-object-math": "error",
@@ -78,8 +82,21 @@ export async function roblox(
 			"roblox/no-spread-destructuring": "error",
 			"roblox/no-value-typeof": "error",
 
+			"sentinel/explicit-size-check": "error",
+
 			"ts/no-explicit-any": "error",
+
+			// Part: Replacements
+			"roblox/no-any": "off", // -> @typescript-eslint/no-explicit-any
+			"roblox/no-export-assignment-let": "off", // -> import/no-mutable-exports
+
+			...(stylistic
+				? {
+						"sentinel/prefer-math-min-max": "error",
+					}
+				: {}),
 		},
+		/* eslint-enable no-inline-comments */
 	});
 
 	if (formatLua) {

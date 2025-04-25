@@ -165,6 +165,7 @@ export function style(
 				{
 					...resolveSubOptions(options, "typescript"),
 					componentExts: componentExtensions,
+					stylistic: stylisticOptions,
 				},
 				options.formatters === undefined && options.formatters !== false,
 			),
