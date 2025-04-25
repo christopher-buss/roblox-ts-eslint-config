@@ -120,7 +120,7 @@ export async function perfectionist(
 					"error",
 					{
 						forceNumericSort: true,
-						partitionByComment: "^Part:\\*\\*(.*)$",
+						partitionByComment: "^Part:\\s*(.*)$",
 						type: "natural",
 					},
 				],
@@ -152,7 +152,7 @@ export async function perfectionist(
 				"perfectionist/sort-object-types": ["error", { type: "natural" }],
 				"perfectionist/sort-objects": [
 					"error",
-					{ partitionByComment: "^Part:\\*\\*(.*)$", type: "natural" },
+					{ partitionByComment: "^Part:\\s*(.*)$", type: "natural" },
 				],
 				"perfectionist/sort-sets": ["error", { type: "natural" }],
 				"perfectionist/sort-switch-case": ["error", { type: "natural" }],
