@@ -26,7 +26,7 @@ catalogs:
     lint-staged: 15.5.1
     pnpm-workspace-yaml: 0.3.1
     rimraf: 6.0.1
-    simple-git-hooks: 2.12.1
+    simple-git-hooks: 2.13.0
     tsup: 8.4.0
     typescript: 5.8.3
   peer:
