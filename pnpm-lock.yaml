@@ -179,6 +179,9 @@ catalogs:
     eslint-plugin-promise:
       specifier: 7.2.1
       version: 7.2.1
+    eslint-plugin-roblox-ts-x:
+      specifier: 1.0.1
+      version: 1.0.1
     eslint-plugin-sentinel:
       specifier: 0.1.1
       version: 0.1.1
@@ -194,9 +197,6 @@ catalogs:
     eslint-plugin-yml:
       specifier: 1.17.0
       version: 1.17.0
-    isentinel-eslint-plugin-roblox-ts:
-      specifier: 0.0.37
-      version: 0.0.37
     jsonc-eslint-parser:
       specifier: 2.4.0
       version: 2.4.0
@@ -325,6 +325,9 @@ importers:
       eslint-plugin-promise:
         specifier: catalog:prod
         version: 7.2.1(eslint@9.25.1(jiti@2.4.2))
+      eslint-plugin-roblox-ts-x:
+        specifier: catalog:prod
+        version: 1.0.1(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-sentinel:
         specifier: catalog:prod
         version: 0.1.1(eslint@9.25.1(jiti@2.4.2))
@@ -340,9 +343,6 @@ importers:
       eslint-plugin-yml:
         specifier: catalog:prod
         version: 1.17.0(eslint@9.25.1(jiti@2.4.2))
-      isentinel-eslint-plugin-roblox-ts:
-        specifier: catalog:prod
-        version: 0.0.37(eslint@9.25.1(jiti@2.4.2))
       jsonc-eslint-parser:
         specifier: catalog:prod
         version: 2.4.0
@@ -1378,9 +1378,6 @@ packages:
 
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
-
-  '@types/node@20.16.5':
-    resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
 
   '@types/node@22.14.1':
     resolution: {integrity: sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==}
@@ -2509,6 +2506,11 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
+  eslint-plugin-roblox-ts-x@1.0.1:
+    resolution: {integrity: sha512-80lG7zhMb2xk78L/cB2nNz5T3Ln3wrSbeFu9iYPozs4lW9stTNcpPt7r5lrjnrail33W5Ofuodn7+sNCrpqVqg==}
+    peerDependencies:
+      eslint: '*'
+
   eslint-plugin-sentinel@0.1.1:
     resolution: {integrity: sha512-hiiRhzypgjgLtn/PfOer2K6mO0kiCe4Xog7agOedTrTfAsF7RXvb5LNPuV8y2whHCE+u9UrEAxw5cF6SnGZpWA==}
     peerDependencies:
@@ -3060,12 +3062,6 @@ packages:
 
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
-
-  isentinel-eslint-plugin-roblox-ts@0.0.37:
-    resolution: {integrity: sha512-ER2P+Axm7YWmxD3qZo5dCmw/5re+wBnFzwffhgyLqZXBSgGcjo/DGrdXgb8xQIhXrzpnAfsS5bxvnTryoA89Aw==}
-    engines: {node: '>=0.10.0'}
-    peerDependencies:
-      eslint: '>=8.56.0'
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -4173,9 +4169,6 @@ packages:
   uncrypto@0.1.3:
     resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
-
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
@@ -5209,10 +5202,6 @@ snapshots:
       '@types/unist': 3.0.2
 
   '@types/ms@0.7.34': {}
-
-  '@types/node@20.16.5':
-    dependencies:
-      undici-types: 6.19.8
 
   '@types/node@22.14.1':
     dependencies:
@@ -6684,6 +6673,10 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
+  eslint-plugin-roblox-ts-x@1.0.1(eslint@9.25.1(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.25.1(jiti@2.4.2)
+
   eslint-plugin-sentinel@0.1.1(eslint@9.25.1(jiti@2.4.2)):
     dependencies:
       eslint: 9.25.1(jiti@2.4.2)
@@ -7294,15 +7287,6 @@ snapshots:
       is-inside-container: 1.0.0
 
   isarray@2.0.5: {}
-
-  isentinel-eslint-plugin-roblox-ts@0.0.37(eslint@9.25.1(jiti@2.4.2)):
-    dependencies:
-      '@types/node': 20.16.5
-      '@typescript-eslint/utils': 7.16.0(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
-      eslint: 9.25.1(jiti@2.4.2)
-      typescript: 5.8.3
-    transitivePeerDependencies:
-      - supports-color
 
   isexe@2.0.0: {}
 
@@ -8693,8 +8677,6 @@ snapshots:
       which-boxed-primitive: 1.1.1
 
   uncrypto@0.1.3: {}
-
-  undici-types@6.19.8: {}
 
   undici-types@6.21.0: {}
 

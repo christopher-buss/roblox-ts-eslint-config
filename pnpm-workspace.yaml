@@ -67,12 +67,12 @@ catalogs:
     eslint-plugin-perfectionist: 4.12.3
     eslint-plugin-pnpm: 0.3.1
     eslint-plugin-promise: 7.2.1
+    eslint-plugin-roblox-ts-x: 1.0.1
     eslint-plugin-sentinel: 0.1.1
     eslint-plugin-sonarjs: 3.0.2
     eslint-plugin-toml: 0.12.0
     eslint-plugin-unicorn: 58.0.0
     eslint-plugin-yml: 1.17.0
-    isentinel-eslint-plugin-roblox-ts: 0.0.37
     jsonc-eslint-parser: 2.4.0
     local-pkg: 1.1.1
     parse-gitignore: 2.0.0

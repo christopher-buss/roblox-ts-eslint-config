@@ -62,33 +62,28 @@ export async function roblox(
 			roblox: pluginRobloxTS,
 			sentinel: pluginSentinel,
 		},
-		/* eslint-disable no-inline-comments -- For replacements */
 		rules: {
 			"roblox/lua-truthiness": "warn",
-			"roblox/misleading-luatuple-checks": "warn",
+			"roblox/misleading-lua-tuple-checks": "error",
+			"roblox/no-any": "error",
 			"roblox/no-array-pairs": "warn",
 			"roblox/no-enum-merging": "error",
+			"roblox/no-export-assignment-let": "error",
 			"roblox/no-for-in": "error",
-			"roblox/no-function-expression-id": "error",
-			"roblox/no-getters-or-setters": "error",
+			"roblox/no-function-expression-name": "error",
+			"roblox/no-get-set": "error",
 			"roblox/no-namespace-merging": "error",
 			"roblox/no-null": "error",
 			"roblox/no-object-math": "error",
+			"roblox/no-post-fix-new": "error",
 			"roblox/no-preceding-spread-element": "error",
 			"roblox/no-private-identifier": "error",
-			"roblox/no-prototype": "error",
-			"roblox/no-rbx-postfix-new": "error",
-			"roblox/no-regex": "error",
-			"roblox/no-spread-destructuring": "error",
+			"roblox/no-unsupported-syntax": "error",
 			"roblox/no-value-typeof": "error",
+			"roblox/prefer-task-library": "error",
+			"roblox/size-method": "error",
 
 			"sentinel/explicit-size-check": "error",
-
-			"ts/no-explicit-any": "error",
-
-			// Part: Replacements
-			"roblox/no-any": "off", // -> @typescript-eslint/no-explicit-any
-			"roblox/no-export-assignment-let": "off", // -> import/no-mutable-exports
 
 			...(stylistic
 				? {
@@ -96,7 +91,6 @@ export async function roblox(
 					}
 				: {}),
 		},
-		/* eslint-enable no-inline-comments */
 	});
 
 	if (formatLua) {

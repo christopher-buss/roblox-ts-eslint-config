@@ -3019,105 +3019,105 @@ export interface RuleOptions {
    */
   'rest-spread-spacing'?: Linter.RuleEntry<RestSpreadSpacing>
   /**
-   * Warns against falsy strings and numbers
-   * @see lua-truthiness
+   * Enforces the use of lua truthiness
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/lua-truthiness/documentation.md
    */
   'roblox/lua-truthiness'?: Linter.RuleEntry<[]>
   /**
-   * Bans LuaTuples boolean expressions
-   * @see misleading-luatuple-checks
+   * Disallow the use of LuaTuple in conditional expressions
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/misleading-lua-tuple-checks/documentation.md
    */
-  'roblox/misleading-luatuple-checks'?: Linter.RuleEntry<[]>
+  'roblox/misleading-lua-tuple-checks'?: Linter.RuleEntry<[]>
   /**
-   * Bans prototype from being used
-   * @see no-any
+   * Disallow values of type `any`. Use `unknown` instead
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-any/documentation.md
    */
-  'roblox/no-any'?: Linter.RuleEntry<[]>
+  'roblox/no-any'?: Linter.RuleEntry<RobloxNoAny>
   /**
-   * Disallows usage of pairs() and ipairs() with Array<T>
-   * @see no-array-pairs
+   * Disallow usage of pairs() and ipairs() with Array<T>
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-array-pairs/documentation.md
    */
   'roblox/no-array-pairs'?: Linter.RuleEntry<[]>
   /**
-   * Bans enum declaration merging
-   * @see no-enum-merging
+   * Disallow merging enum declarations
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-enum-merging/documentation.md
    */
   'roblox/no-enum-merging'?: Linter.RuleEntry<[]>
   /**
-   * Bans using `export =` on a let variable
-   * @see no-export-assignment-let
+   * Disallow using `export =` on a let variable
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-export-assignment-let/documentation.md
    */
   'roblox/no-export-assignment-let'?: Linter.RuleEntry<[]>
   /**
-   * Disallows iterating with a for-in loop
-   * @see no-for-in
+   * Disallow iterating with a for-in loop
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-for-in/documentation.md
    */
   'roblox/no-for-in'?: Linter.RuleEntry<[]>
   /**
-   * Bans function expression names
-   * @see no-function-expression-id
+   * Disallow the use of function expression names
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-function-expression-name/documentation.md
    */
-  'roblox/no-function-expression-id'?: Linter.RuleEntry<[]>
+  'roblox/no-function-expression-name'?: Linter.RuleEntry<[]>
   /**
-   * Disallows getters and setters
-   * @see no-getters-or-setters
+   * Disallow getters and setters
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-get-set/documentation.md
    */
-  'roblox/no-getters-or-setters'?: Linter.RuleEntry<[]>
+  'roblox/no-get-set'?: Linter.RuleEntry<[]>
   /**
-   * Bans globalThis from being used
-   * @see no-global-this
+   * Disallow the use of Luau reserved keywords as identifiers
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-invalid-identifier/documentation.md
    */
-  'roblox/no-global-this'?: Linter.RuleEntry<[]>
+  'roblox/no-invalid-identifier'?: Linter.RuleEntry<[]>
   /**
-   * Bans namespace declaration merging
-   * @see no-namespace-merging
+   * Disallow merging namespace declarations
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-namespace-merging/documentation.md
    */
   'roblox/no-namespace-merging'?: Linter.RuleEntry<[]>
   /**
-   * Bans null from being used
-   * @see no-null
+   * Disallow usage of the `null` keyword
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-null/documentation.md
    */
   'roblox/no-null'?: Linter.RuleEntry<[]>
   /**
-   * Bans math operators from being used on data types
-   * @see no-object-math
+   * Disallow using objects in mathematical operations
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-object-math/documentation.md
    */
   'roblox/no-object-math'?: Linter.RuleEntry<[]>
   /**
-   * Bans spread elements not last in a list of arguments from being used
-   * @see no-preceding-spread-element
+   * Disallow .new() on objects without a .new() method
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-post-fix-new/documentation.md
+   */
+  'roblox/no-post-fix-new'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow spread elements not last in a list of arguments
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-preceding-spread-element/documentation.md
    */
   'roblox/no-preceding-spread-element'?: Linter.RuleEntry<[]>
   /**
-   * Bans private identifiers from being used
-   * @see no-private-identifier
+   * Disallow the use of private identifiers (`#`)
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-private-identifier/documentation.md
    */
   'roblox/no-private-identifier'?: Linter.RuleEntry<[]>
   /**
-   * Bans prototype from being used
-   * @see no-prototype
+   * Disallow unsupported syntax in roblox-ts
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-unsupported-syntax/documentation.md
    */
-  'roblox/no-prototype'?: Linter.RuleEntry<[]>
+  'roblox/no-unsupported-syntax'?: Linter.RuleEntry<[]>
   /**
-   * Bans calling .new() on Roblox objects (helps transition to TS)
-   * @see no-rbx-postfix-new
-   */
-  'roblox/no-rbx-postfix-new'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows the regex operator
-   * @see no-regex
-   */
-  'roblox/no-regex'?: Linter.RuleEntry<[]>
-  /**
-   * Bans spread destructuring from being used
-   * @see no-spread-destructuring
-   */
-  'roblox/no-spread-destructuring'?: Linter.RuleEntry<[]>
-  /**
-   * Disallows the typeof operator for values
-   * @see no-value-typeof
+   * Disallow using `typeof` to check for value types
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-value-typeof/documentation.md
    */
   'roblox/no-value-typeof'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce use of task library alternatives
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/prefer-task-library/documentation.md
+   */
+  'roblox/prefer-task-library'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce use of .size() instead of .length or .size property
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/size-method/documentation.md
+   */
+  'roblox/size-method'?: Linter.RuleEntry<[]>
   /**
    * Require or disallow semicolons instead of ASI
    * @see https://eslint.org/docs/latest/rules/semi
@@ -11711,6 +11711,11 @@ type RequireUnicodeRegexp = []|[{
 }]
 // ----- rest-spread-spacing -----
 type RestSpreadSpacing = []|[("always" | "never")]
+// ----- roblox/no-any -----
+type RobloxNoAny = []|[{
+  
+  fixToUnknown?: boolean
+}]
 // ----- semi -----
 type Semi = ([]|["never"]|["never", {
   beforeStatementContinuationChars?: ("always" | "any" | "never")
