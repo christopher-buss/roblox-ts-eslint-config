@@ -1,4 +1,3 @@
-import { pluginAntfu, pluginArrowReturnStyle } from "../plugins";
 import type { StylisticConfig, TypedFlatConfigItem } from "../types";
 import { interopDefault } from "../utils";
 
@@ -17,7 +16,11 @@ export async function stylistic(
 		...options,
 	};
 
-	const pluginStylistic = await interopDefault(import("@stylistic/eslint-plugin"));
+	const [pluginArrowReturnStyle, pluginStylistic, pluginAntfu] = await Promise.all([
+		interopDefault(import("eslint-plugin-arrow-return-style")),
+		interopDefault(import("@stylistic/eslint-plugin")),
+		interopDefault(import("eslint-plugin-antfu")),
+	]);
 
 	const config = pluginStylistic.configs.customize({
 		indent,

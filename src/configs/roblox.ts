@@ -1,7 +1,6 @@
 import process from "node:process";
 
 import { GLOB_LUA, GLOB_SRC } from "../globs";
-import { pluginFormatLua, pluginRobloxTS, pluginSentinel } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -30,8 +29,11 @@ export async function roblox(
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
 
-	const [parserTs] = await Promise.all([
+	const [parserTs, pluginRobloxTs, pluginSentinel, pluginFormatLua] = await Promise.all([
 		interopDefault(import("@typescript-eslint/parser")),
+		interopDefault(import("eslint-plugin-roblox-ts-x")),
+		interopDefault(import("eslint-plugin-sentinel")),
+		interopDefault(import("eslint-plugin-format-lua")),
 	] as const);
 
 	const files = options.files ?? [
@@ -59,7 +61,7 @@ export async function roblox(
 		},
 		name: "style/roblox",
 		plugins: {
-			roblox: pluginRobloxTS,
+			roblox: pluginRobloxTs,
 			sentinel: pluginSentinel,
 		},
 		rules: {

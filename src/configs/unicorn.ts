@@ -1,8 +1,10 @@
-import { pluginUnicorn } from "../plugins";
 import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 export async function unicorn(options: OptionsStylistic = {}): Promise<Array<TypedFlatConfigItem>> {
 	const { stylistic = true } = options;
+
+	const pluginUnicorn = await interopDefault(import("eslint-plugin-unicorn"));
 
 	return [
 		{

@@ -1,8 +1,8 @@
 import type { Options as PrettierOptions } from "prettier";
 
 import { GLOB_CSS, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from "../globs";
-import { pluginFormat } from "../plugins";
 import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 import { StylisticConfigDefaults } from "./stylistic";
 
 export async function formatters(
@@ -44,6 +44,8 @@ export async function formatters(
 		},
 		formattingOptions.dprintOptions ?? {},
 	);
+
+	const pluginFormat = await interopDefault(import("eslint-plugin-format"));
 
 	const configs: Array<TypedFlatConfigItem> = [
 		{

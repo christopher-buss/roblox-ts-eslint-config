@@ -2,13 +2,13 @@ import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";
 
 import { GLOB_SRC } from "../globs";
-import { pluginCspell } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
 	SpellCheckConfig,
 	TypedFlatConfigItem,
 } from "../types";
+import { interopDefault } from "../utils";
 
 const require = createRequire(import.meta.url);
 
@@ -29,6 +29,8 @@ export async function spelling(
 	const rbxtsDictionary = require.resolve("@isentinel/dict-rbxts");
 	const urlRbxtsDictionary = pathToFileURL(rbxtsDictionary);
 	const urlRbxts = new URL("dict/rbxts.txt", urlRbxtsDictionary);
+
+	const pluginCspell = await interopDefault(import("@cspell/eslint-plugin"));
 
 	return [
 		{

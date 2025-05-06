@@ -1,8 +1,11 @@
-import { eslintPluginShopify } from "../plugins";
 import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 export async function shopify(options: OptionsStylistic = {}): Promise<Array<TypedFlatConfigItem>> {
 	const { stylistic = true } = options;
+
+	// @ts-expect-error -- No types
+	const eslintPluginShopify = await interopDefault(import("@shopify/eslint-plugin"));
 
 	return [
 		{

@@ -1,7 +1,6 @@
 import { fixupPluginRules } from "@eslint/compat";
 
 import { GLOB_MARKDOWN, GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
-import { pluginUnicorn } from "../plugins";
 import type {
 	OptionsFiles,
 	OptionsStylistic,
@@ -35,13 +34,15 @@ export async function react(
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-roblox-hooks"]);
 
-	const [pluginReact, pluginReactHooks, pluginStylistic, parserTs, pluginTs] = await Promise.all([
-		interopDefault(import("@eslint-react/eslint-plugin")),
-		interopDefault(import("eslint-plugin-react-roblox-hooks")),
-		interopDefault(import("@stylistic/eslint-plugin")),
-		interopDefault(import("@typescript-eslint/parser")),
-		interopDefault(import("@typescript-eslint/eslint-plugin")),
-	] as const);
+	const [pluginReact, pluginReactHooks, pluginStylistic, parserTs, pluginTs, pluginUnicorn] =
+		await Promise.all([
+			interopDefault(import("@eslint-react/eslint-plugin")),
+			interopDefault(import("eslint-plugin-react-roblox-hooks")),
+			interopDefault(import("@stylistic/eslint-plugin")),
+			interopDefault(import("@typescript-eslint/parser")),
+			interopDefault(import("@typescript-eslint/eslint-plugin")),
+			interopDefault(import("eslint-plugin-unicorn")),
+		] as const);
 
 	const plugins = pluginReact.configs.all.plugins;
 

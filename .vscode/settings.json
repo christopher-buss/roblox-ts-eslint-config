@@ -28,5 +28,6 @@
 
 	// Enable eslint for all supported languages
 	"eslint.validate": ["typescript", "typescriptreact", "markdown", "json", "jsonc", "yaml"],
-	"typescript.tsdk": "node_modules/typescript/lib"
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.preferences.importModuleSpecifier": "project-relative"
 }

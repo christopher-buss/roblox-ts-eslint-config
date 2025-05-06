@@ -1,4 +1,3 @@
-import { pluginPackageJson } from "../plugins";
 import type { OptionsProjectType, TypedFlatConfigItem } from "../types";
 import { interopDefault } from "../utils";
 
@@ -7,11 +6,16 @@ export async function packageJson(
 ): Promise<Array<TypedFlatConfigItem>> {
 	const { type = "game" } = options;
 
+	const [jsoncEslintParser, pluginPackageJson] = await Promise.all([
+		interopDefault(import("jsonc-eslint-parser")),
+		interopDefault(import("eslint-plugin-package-json")),
+	]);
+
 	return [
 		{
 			files: ["**/package.json"],
 			languageOptions: {
-				parser: await interopDefault(import("jsonc-eslint-parser")),
+				parser: jsoncEslintParser,
 			},
 			name: "style/package-json",
 			plugins: {

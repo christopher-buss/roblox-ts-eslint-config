@@ -1,8 +1,7 @@
 import { createRequire } from "module";
 import type { Options as PrettierOptions } from "prettier";
 
-import { defaultPluginRenaming, GLOB_SRC, renameRules } from "..";
-import { configPrettier, pluginFormat } from "../plugins";
+import { defaultPluginRenaming, GLOB_SRC, interopDefault, renameRules } from "..";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -29,6 +28,11 @@ export async function prettier(
 		GLOB_SRC,
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
+
+	const [configPrettier, pluginFormat] = await Promise.all([
+		interopDefault(import("eslint-config-prettier/flat")),
+		interopDefault(import("eslint-plugin-format")),
+	]);
 
 	const defaultPrettierOptions = {
 		arrowParens: "avoid",

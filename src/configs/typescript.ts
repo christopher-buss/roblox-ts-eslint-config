@@ -1,7 +1,6 @@
 import process from "node:process";
 
 import { GLOB_SRC } from "../globs";
-import { pluginAntfu, pluginDeMorgan, pluginMaxParams as pluginMaxParameters } from "../plugins";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -114,10 +113,15 @@ export async function typescript(
 
 	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
 
-	const [pluginTs, parserTs] = await Promise.all([
-		interopDefault(import("@typescript-eslint/eslint-plugin")),
-		interopDefault(import("@typescript-eslint/parser")),
-	] as const);
+	const [parserTs, pluginTs, pluginDeMorgan, pluginAntfu, pluginMaxParameters] =
+		await Promise.all([
+			interopDefault(import("@typescript-eslint/parser")),
+			interopDefault(import("@typescript-eslint/eslint-plugin")),
+			interopDefault(import("eslint-plugin-de-morgan")),
+			interopDefault(import("eslint-plugin-antfu")),
+			// @ts-expect-error -- No types
+			interopDefault(import("eslint-plugin-better-max-params")),
+		] as const);
 
 	return [
 		{

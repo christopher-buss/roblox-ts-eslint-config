@@ -1,11 +1,17 @@
 import { GLOB_YAML } from "../globs";
-import { pluginCommentLength, pluginComments } from "../plugins";
 import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 export async function comments(
 	options: OptionsStylistic = {},
 ): Promise<Array<TypedFlatConfigItem>> {
 	const { stylistic = true } = options;
+
+	const [pluginCommentLength, pluginComments] = await Promise.all([
+		interopDefault(import("eslint-plugin-comment-length")),
+		// @ts-expect-error -- No types
+		interopDefault(import("@eslint-community/eslint-plugin-eslint-comments")),
+	]);
 
 	return [
 		{

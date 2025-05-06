@@ -1,11 +1,17 @@
 import { GLOB_SRC } from "../globs";
-import { pluginAntfu, pluginImport, pluginSimpleImportSort } from "../plugins";
 import type { OptionsProjectType, OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 export async function imports(
 	options: OptionsProjectType & OptionsStylistic = {},
 ): Promise<Array<TypedFlatConfigItem>> {
 	const { stylistic = true, type = "game" } = options;
+
+	const [pluginImport, pluginSimpleImportSort, pluginAntfu] = await Promise.all([
+		interopDefault(import("eslint-plugin-import-x")),
+		interopDefault(import("eslint-plugin-simple-import-sort")),
+		interopDefault(import("eslint-plugin-antfu")),
+	]);
 
 	return [
 		{

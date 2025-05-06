@@ -1,5 +1,5 @@
-import { pluginPerfectionist } from "../plugins";
 import type { OptionsProjectType, PerfectionistConfig, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 interface CustomGroupDefinition {
 	decoratorNamePattern?: PatternType;
@@ -69,6 +69,8 @@ export async function perfectionist(
 		createUnsortedMethod("protected"),
 		createUnsortedMethod("public"),
 	);
+
+	const pluginPerfectionist = await interopDefault(import("eslint-plugin-perfectionist"));
 
 	return [
 		{

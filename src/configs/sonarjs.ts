@@ -1,10 +1,12 @@
-import { pluginSonar } from "../plugins";
 import type { OptionsIsInEditor, TypedFlatConfigItem } from "../types";
+import { interopDefault } from "../utils";
 
 export async function sonarjs(
 	options: OptionsIsInEditor = {},
 ): Promise<Array<TypedFlatConfigItem>> {
 	const { isInEditor } = options;
+
+	const pluginSonar = await interopDefault(import("eslint-plugin-sonarjs"));
 
 	return [
 		{
