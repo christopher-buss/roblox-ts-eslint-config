@@ -1,0 +1,10 @@
+diff --git a/stylua.web/stylua_lib.js b/stylua.web/stylua_lib.js
+index 2c05cf2be71043f2155e7fb204da6da46494b421..06c92494873e1feac06dc1e1629d96bb7ec9a46c 100644
+--- a/stylua.web/stylua_lib.js
++++ b/stylua.web/stylua_lib.js
+@@ -786,4 +786,4 @@ async function __wbg_init(input) {
+ 
+ export { initSync }
+ export default __wbg_init;
+-export { getImports as __getImports, finalizeInit as __finalizeInit }
++export { __wbg_get_imports as __getImports, __wbg_finalize_init as __finalizeInit }
