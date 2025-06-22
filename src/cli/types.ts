@@ -1,4 +1,4 @@
-export type FrameworkOption = "react";
+export type FrameworkOption = "react" | "test";
 
 export interface PromItem<T> {
 	hint?: string;

@@ -17,16 +17,16 @@ export async function updatePackageJson(): Promise<void> {
 	log.step(ansis.cyan(`Bumping @isentinel/eslint-config to v${version}`));
 
 	const packageContent = await fsp.readFile(pathPackageJSON, "utf-8");
-	const package_: Record<string, any> = JSON.parse(packageContent);
+	const parsedPackage: Record<string, any> = JSON.parse(packageContent);
 
-	package_.devDependencies ??= {};
-	package_.devDependencies["@isentinel/eslint-config"] = `^${version}`;
-	package_.devDependencies.eslint ??= versionsMap.eslint;
+	parsedPackage.devDependencies ??= {};
+	parsedPackage.devDependencies["@isentinel/eslint-config"] = `^${version}`;
+	parsedPackage.devDependencies.eslint ??= versionsMap.eslint;
 
 	const addedPackages: Array<string> = [];
 
 	for (const dep of dependenciesMap["react"]) {
-		package_.devDependencies[dep] = versionsMap[dep as keyof typeof versionsMap];
+		parsedPackage.devDependencies[dep] = versionsMap[dep as keyof typeof versionsMap];
 		addedPackages.push(dep);
 	}
 
@@ -34,6 +34,6 @@ export async function updatePackageJson(): Promise<void> {
 		note(`${ansis.dim(addedPackages.join(", "))}`, "Added packages");
 	}
 
-	await fsp.writeFile(pathPackageJSON, JSON.stringify(package_, null, 2));
+	await fsp.writeFile(pathPackageJSON, JSON.stringify(parsedPackage, null, 2));
 	log.success(ansis.green("Changes wrote to package.json"));
 }

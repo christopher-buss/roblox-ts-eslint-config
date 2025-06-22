@@ -274,7 +274,7 @@ export interface OptionsTypeScriptParserOptions {
 	/**
 	 * Glob patterns for files that should not be type aware.
 	 *
-	 * @default \["**\/*.md\/**", "**\/*.astro/*.ts"]
+	 * @default \["**\/*.md\/**"]
 	 */
 	ignoresTypeAware?: Array<string>;
 
@@ -284,11 +284,19 @@ export interface OptionsTypeScriptParserOptions {
 
 export interface OptionsTypeScriptWithTypes {
 	/**
-	 * When this options is provided, type aware rules will be enabled.
+	 * Provide a path to the TypeScript configuration file to use a different
+	 * default to 'tsconfig.json'.
 	 *
 	 * @see https://typescript-eslint.io/linting/typed-linting/
 	 */
-	tsconfigPath?: Array<string> | string;
+	tsconfigPath?: string;
+	/**
+	 * Enable Type-Aware linting.
+	 *
+	 * @default true
+	 * @see https://typescript-eslint.io/linting/typed-linting/
+	 */
+	typeAware?: boolean;
 }
 
 export interface PerfectionistConfig {

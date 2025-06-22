@@ -1,11 +1,10 @@
-import { cancel, confirm, group, log, outro } from "@clack/prompts";
+import { cancel, confirm, group, log, multiselect, outro } from "@clack/prompts";
 
 import ansis from "ansis";
 import fs from "node:fs";
-import path from "node:path";
 import process from "node:process";
 
-import { addTsconfigBuild } from "./stages/add-tsconfig.build.json";
+import { frameworkOptions, frameworks } from "./constants";
 import { updateEslintFiles } from "./stages/update-eslint-files";
 import { updatePackageJson } from "./stages/update-package-json";
 import { updateVscodeSettings } from "./stages/update-vscode-settings";
@@ -21,10 +20,16 @@ export interface CliRunOptions {
 
 export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	const argumentSkipPrompt = !!process.env.SKIP_PROMPT || options.yes;
-	const argumentTemplate = ["react"] as Array<FrameworkOption>;
+	const argumentTemplate = <Array<FrameworkOption>>(
+		options.frameworks?.map(framework => framework?.trim()).filter(Boolean)
+	);
 
-	if (fs.existsSync(path.join(process.cwd(), "eslint.config.js"))) {
-		log.warn(ansis.yellow("eslint.config.js already exists, migration wizard exited."));
+	const eslintConfigFiles = fs
+		.readdirSync(process.cwd())
+		.filter(file => file.startsWith("eslint.config."));
+
+	if (eslintConfigFiles.length > 0) {
+		log.warn(ansis.yellow(`${eslintConfigFiles[0]} already exists, migration wizard exited.`));
 		return process.exit(1);
 	}
 
@@ -38,6 +43,27 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	if (!argumentSkipPrompt) {
 		result = (await group(
 			{
+				frameworks: ({ results }) => {
+					const isArgumentTemplateValid =
+						typeof argumentTemplate === "string" &&
+						!!frameworks.includes(<FrameworkOption>argumentTemplate);
+
+					if (!results.uncommittedConfirmed || isArgumentTemplateValid) {
+						return;
+					}
+
+					const message =
+						!isArgumentTemplateValid && argumentTemplate
+							? `"${argumentTemplate}" isn't a valid template. Please choose from below: `
+							: "Select a framework:";
+
+					return multiselect<FrameworkOption>({
+						message: ansis.reset(message),
+						options: frameworkOptions,
+						required: false,
+					});
+				},
+
 				uncommittedConfirmed: () => {
 					if (argumentSkipPrompt || isGitClean()) {
 						return Promise.resolve(true);
@@ -75,10 +101,11 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	}
 
 	await updatePackageJson();
-	await updateEslintFiles();
+	await updateEslintFiles(result);
 	await updateVscodeSettings(result);
-	await addTsconfigBuild();
 
 	log.success(ansis.green("Setup completed"));
-	outro(`Now you can update the dependencies and run ${ansis.blue("eslint --fix")}\n`);
+	outro(
+		`Now you can update the dependencies by running ${ansis.blue("pnpm install")} and run ${ansis.blue("eslint --fix")}\n`,
+	);
 }

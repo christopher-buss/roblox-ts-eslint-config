@@ -1,6 +1,4 @@
-import process from "node:process";
-
-import { GLOB_SRC } from "../globs";
+import { GLOB_MARKDOWN, GLOB_TS, GLOB_TSX } from "../globs";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -11,7 +9,7 @@ import type {
 	OptionsTypeScriptWithTypes,
 	TypedFlatConfigItem,
 } from "../types";
-import { interopDefault, renameRules, toArray } from "../utils";
+import { createTsParser, getTsConfig, interopDefault, renameRules } from "../utils";
 
 export async function typescript(
 	options: OptionsComponentExtensions &
@@ -28,12 +26,19 @@ export async function typescript(
 		overrides = {},
 		parserOptions = {},
 		stylistic = true,
+		typeAware = true,
 	} = options;
 
 	const files = options.files ?? [
-		GLOB_SRC,
+		GLOB_TS,
+		GLOB_TSX,
 		...componentExtensions.map(extension => `**/*.${extension}`),
 	];
+
+	const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX];
+	const ignoresTypeAware = options.ignoresTypeAware ?? [`${GLOB_MARKDOWN}/**`];
+	const tsconfigPath = typeAware ? getTsConfig(options.tsconfigPath) : undefined;
+	const isTypeAware = tsconfigPath !== undefined;
 
 	const typeAwareRules: TypedFlatConfigItem["rules"] = {
 		"dot-notation": "off",
@@ -111,8 +116,6 @@ export async function typescript(
 		"ts/use-unknown-in-catch-callback-variable": "error",
 	};
 
-	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
-
 	const [parserTs, pluginTs, pluginDeMorgan, pluginAntfu, pluginMaxParameters] =
 		await Promise.all([
 			interopDefault(import("@typescript-eslint/parser")),
@@ -122,6 +125,23 @@ export async function typescript(
 			// @ts-expect-error -- No types
 			interopDefault(import("eslint-plugin-better-max-params")),
 		] as const);
+
+	function makeParser(
+		usesTypeInformation: boolean,
+		parserFiles: Array<string>,
+		ignores?: Array<string>,
+	): TypedFlatConfigItem {
+		return createTsParser({
+			componentExtensions: [GLOB_TS],
+			configName: "typescript",
+			files: parserFiles,
+			ignores,
+			parser: parserTs,
+			parserOptions,
+			tsconfigPath,
+			typeAware: usesTypeInformation,
+		});
+	}
 
 	return [
 		{
@@ -135,27 +155,12 @@ export async function typescript(
 				"ts": pluginTs,
 			},
 		},
+		// assign type-aware parser for type-aware files and type-unaware parser for the rest
+		...(isTypeAware
+			? [makeParser(false, files), makeParser(true, filesTypeAware, ignoresTypeAware)]
+			: [makeParser(false, files)]),
 		{
 			files,
-			languageOptions: {
-				parser: parserTs,
-				parserOptions: {
-					ecmaVersion: 2018,
-					extraFileExtensions: componentExtensions.map(extension => `.${extension}`),
-					sourceType: "module",
-					useJSXTextNode: true,
-					...(tsconfigPath
-						? {
-								projectService: {
-									allowDefaultProject: ["./*.js"],
-									defaultProject: tsconfigPath,
-								},
-								tsconfigRootDir: process.cwd(),
-							}
-						: {}),
-					...(parserOptions as any),
-				},
-			},
 			name: "style/typescript/rules",
 			rules: {
 				...renameRules(pluginTs.configs["eslint-recommended"].overrides?.[0].rules ?? {}, {

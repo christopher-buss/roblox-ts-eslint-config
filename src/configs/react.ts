@@ -2,6 +2,7 @@ import { fixupPluginRules } from "@eslint/compat";
 
 import { GLOB_MARKDOWN, GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
 import type {
+	OptionsComponentExtensions,
 	OptionsFiles,
 	OptionsStylistic,
 	OptionsTypeScriptParserOptions,
@@ -9,10 +10,11 @@ import type {
 	ReactConfig,
 	TypedFlatConfigItem,
 } from "../types";
-import { ensurePackages, interopDefault, toArray } from "../utils";
+import { createTsParser, ensurePackages, getTsConfig, interopDefault } from "../utils";
 
 export async function react(
-	options: OptionsFiles &
+	options: OptionsComponentExtensions &
+		OptionsFiles &
 		OptionsStylistic &
 		OptionsTypeScriptParserOptions &
 		OptionsTypeScriptWithTypes &
@@ -21,6 +23,7 @@ export async function react(
 	const {
 		additionalComponents,
 		additionalHooks,
+		componentExts: componentExtensions = [],
 		filenameCase = "kebabCase",
 		files = [GLOB_SRC],
 		filesTypeAware = [GLOB_TS, GLOB_TSX],
@@ -28,8 +31,10 @@ export async function react(
 		importSource,
 		jsxPragma,
 		overrides = {},
+		parserOptions,
 		skipImportCheck,
 		stylistic = true,
+		typeAware = true,
 	} = options;
 
 	await ensurePackages(["@eslint-react/eslint-plugin", "eslint-plugin-react-roblox-hooks"]);
@@ -46,8 +51,8 @@ export async function react(
 
 	const plugins = pluginReact.configs.all.plugins;
 
-	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
-	const isTypeAware = !!tsconfigPath;
+	const tsconfigPath = typeAware ? getTsConfig(options.tsconfigPath) : undefined;
+	const isTypeAware = tsconfigPath !== undefined;
 
 	const reactSettings = {
 		additionalComponents,
@@ -72,17 +77,15 @@ export async function react(
 			},
 		},
 		{
-			files,
-			languageOptions: {
+			...createTsParser({
+				componentExtensions,
+				configName: "roblox",
+				files,
 				parser: parserTs,
-				parserOptions: {
-					ecmaFeatures: {
-						jsx: true,
-					},
-					...(isTypeAware ? { project: tsconfigPath } : {}),
-				},
-				sourceType: "module",
-			},
+				parserOptions,
+				tsconfigPath,
+				typeAware: isTypeAware,
+			}),
 			name: "style/react/rules",
 			rules: {
 				// recommended rules from @eslint-react/hooks-extra

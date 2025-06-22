@@ -9,6 +9,9 @@ export default style(
 		roblox: false,
 		test: true,
 		type: "package",
+		typescript: {
+			typeAware: false,
+		},
 	},
 	{
 		files: ["src/**/*.ts"],

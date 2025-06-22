@@ -1,4 +1,6 @@
 import { isPackageExists } from "local-pkg";
+import fs from "node:fs";
+import path from "node:path";
 import process from "node:process";
 
 import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from "./types";
@@ -41,6 +43,53 @@ export async function combine(
 	return resolved.flat();
 }
 
+export function createTsParser(options: {
+	componentExtensions?: Array<string>;
+	configName: string;
+	files: Array<string>;
+	ignores?: Array<string>;
+	parser: any;
+	parserOptions?: any;
+	tsconfigPath?: string;
+	typeAware: boolean;
+}): TypedFlatConfigItem {
+	const {
+		componentExtensions = [],
+		configName,
+		files,
+		ignores,
+		parser,
+		parserOptions = {},
+		tsconfigPath,
+		typeAware,
+	} = options;
+
+	return {
+		files,
+		ignores: ignores ?? [],
+		languageOptions: {
+			parser,
+			parserOptions: {
+				ecmaVersion: 2018,
+				extraFileExtensions: componentExtensions.map(extension => `.${extension}`),
+				sourceType: "module",
+				useJSXTextNode: true,
+				...(typeAware
+					? {
+							projectService: {
+								allowDefaultProject: ["*.js", "*.ts"],
+								defaultProject: tsconfigPath,
+							},
+							tsconfigRootDir: process.cwd(),
+						}
+					: {}),
+				...parserOptions,
+			},
+		},
+		name: `style/${configName}/${typeAware ? "type-aware-parser" : "parser"}`,
+	};
+}
+
 export async function ensurePackages(packages: Array<string | undefined>): Promise<void> {
 	if (process.env.CI || process.stdout.isTTY === false) {
 		return;
@@ -70,6 +119,21 @@ export function getOverrides<K extends keyof OptionsConfig>(options: OptionsConf
 	return {
 		...("overrides" in sub ? sub.overrides : {}),
 	};
+}
+
+export function getTsConfig(tsconfigPath?: string): string | undefined {
+	if (tsconfigPath !== undefined) {
+		return tsconfigPath;
+	}
+
+	// Check if tsconfig.json exists in the project root
+	const rootTsConfig = path.join(process.cwd(), "tsconfig.json");
+
+	if (fs.existsSync(rootTsConfig)) {
+		return rootTsConfig;
+	}
+
+	return undefined;
 }
 
 export async function interopDefault<T>(

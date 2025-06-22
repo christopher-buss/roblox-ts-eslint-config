@@ -1,7 +1,8 @@
-export const vscodeSettingsString = `
-  // Enable the ESlint flat config support
-	"eslint.useFlatConfig": true,
+import ansis from "ansis";
 
+import type { FrameworkOption, PromItem } from "./types";
+
+export const vscodeSettingsString = `
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
@@ -39,8 +40,22 @@ export const vscodeSettingsString = `
   ]
 `;
 
+export const frameworkOptions: Array<PromItem<FrameworkOption>> = [
+	{
+		label: ansis.red("Test"),
+		value: "test",
+	},
+	{
+		label: ansis.cyan("React"),
+		value: "react",
+	},
+];
+
+export const frameworks: Array<FrameworkOption> = frameworkOptions.map(({ value }) => value);
+
 export const dependenciesMap = {
 	react: ["@eslint-react/eslint-plugin", "eslint-plugin-react-roblox-hooks"],
+	test: ["eslint-plugin-jest"],
 } as const;
 
 export { default as pkgJson } from "../../package.json";

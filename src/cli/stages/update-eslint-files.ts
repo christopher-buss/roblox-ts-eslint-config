@@ -9,17 +9,19 @@ import process from "node:process";
 // @ts-expect-error missing types
 import parse from "parse-gitignore";
 
+import type { PromptResult } from "../types";
 import { getEslintConfigContent } from "../utils";
 
-export async function updateEslintFiles(): Promise<void> {
+export async function updateEslintFiles(result: PromptResult): Promise<void> {
 	const cwd = process.cwd();
 	const pathESLintIgnore = path.join(cwd, ".eslintignore");
 	const pathPackageJSON = path.join(cwd, "package.json");
 
 	const packageContent = await fsp.readFile(pathPackageJSON, "utf-8");
-	const package_: Record<string, any> = JSON.parse(packageContent);
+	const parsedPackage: Record<string, any> = JSON.parse(packageContent);
 
-	const configFileName = package_.type === "module" ? "eslint.config.js" : "eslint.config.mjs";
+	const configFileName =
+		parsedPackage.type === "module" ? "eslint.config.js" : "eslint.config.mjs";
 	const pathFlatConfig = path.join(cwd, configFileName);
 
 	const eslintIgnores: Array<string> = [];
@@ -44,14 +46,9 @@ export async function updateEslintFiles(): Promise<void> {
 		configLines.push(`ignores: ${JSON.stringify(eslintIgnores)},`);
 	}
 
-	configLines.push(
-		`${"react"}: true,`,
-		`typescript: {
-			parserOptions: {
-				project: "tsconfig.build.json",
-			},
-		},`,
-	);
+	for (const framework of result.frameworks) {
+		configLines.push(`${framework}: true,`);
+	}
 
 	const mainConfig = configLines.map(index => `  ${index}`).join("\n");
 	const additionalConfig: Array<string> = [];

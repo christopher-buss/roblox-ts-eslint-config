@@ -1,6 +1,4 @@
-import process from "node:process";
-
-import { GLOB_LUA, GLOB_SRC } from "../globs";
+import { GLOB_LUA } from "../globs";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -10,7 +8,7 @@ import type {
 	OptionsTypeScriptWithTypes,
 	TypedFlatConfigItem,
 } from "../types";
-import { interopDefault, parserPlain, toArray } from "../utils";
+import { createTsParser, getTsConfig, interopDefault, parserPlain } from "../utils";
 
 export async function roblox(
 	options: OptionsComponentExtensions &
@@ -25,9 +23,11 @@ export async function roblox(
 		componentExts: componentExtensions = [],
 		parserOptions = {},
 		stylistic = true,
+		typeAware = true,
 	} = options;
 
-	const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined;
+	const tsconfigPath = typeAware ? getTsConfig(options.tsconfigPath) : undefined;
+	const isTypeAware = tsconfigPath !== undefined;
 
 	const [parserTs, pluginRobloxTs, pluginSentinel, pluginFormatLua] = await Promise.all([
 		interopDefault(import("@typescript-eslint/parser")),
@@ -37,28 +37,23 @@ export async function roblox(
 	] as const);
 
 	const files = options.files ?? [
-		GLOB_SRC,
-		...componentExtensions.map(extension => `**/*.${extension}`),
+		"**/*/*.?([cm])ts",
+		"**/*/*.?([cm])tsx",
+		...componentExtensions.map(extension => `**/*/*.${extension}`),
 	];
 
 	const configs: Array<TypedFlatConfigItem> = [];
 
 	configs.push({
-		files,
-		languageOptions: {
+		...createTsParser({
+			componentExtensions,
+			configName: "roblox",
+			files,
 			parser: parserTs,
-			parserOptions: {
-				ecmaVersion: 2018,
-				sourceType: "script",
-				...(tsconfigPath
-					? {
-							project: tsconfigPath,
-							tsconfigRootDir: process.cwd(),
-						}
-					: {}),
-				...(parserOptions as any),
-			},
-		},
+			parserOptions,
+			tsconfigPath,
+			typeAware: isTypeAware,
+		}),
 		name: "style/roblox",
 		plugins: {
 			roblox: pluginRobloxTs,

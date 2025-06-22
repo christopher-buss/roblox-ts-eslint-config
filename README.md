@@ -2,17 +2,17 @@
 
 ## Usage
 
-### Quick Start
+### Starter Wizard
+
+We provided a CLI tool to help you set up your project, or migrate from the legacy config to the new flat config with one command.
+
+### Example Usage
 
 For an existing template that already has this config setup, please refer to the
 [roblox-ts
 template](https://github.com/christopher-buss/roblox-ts-project-template)
 repository. This includes all necessarily files and configurations to get you up
 and running.
-
-### Starter Wizard
-
-We provided a CLI tool to help you set up your project, or migrate from the legacy config to the new flat config with one command.
 
 ```bash
 npx @isentinel/eslint-config@latest
@@ -30,36 +30,56 @@ pnpm i -D eslint @isentinel/eslint-config
 
 With [`"type": "module"`](https://nodejs.org/api/packages.html#type) in `package.json` (recommended):
 
-```js
+```ts
 // eslint.config.ts
 import style from "@isentinel/eslint-config";
 
 export default style();
 ```
 
-> Note that `.eslintignore` no longer works in Flat config, see
-> [customization](#customization) for more details.
+#### Optional: TypeScript Config Support
 
-> [!TIP]
-> ESLint can support .ts config files, but requires some additional setup. See
-> [here](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)
-> for more information.
+If you want to use `eslint.config.ts` instead of `.js`, install `jiti` v2.0.0 or greater:
 
-### tsconfig.build.json
-
-Create a `tsconfig.build.json` file in the root of your project with the
-following content:
-
-```json
-{
-	"extends": "./tsconfig.json",
-	"include": ["src/**/*", "eslint.config.ts"],
-	"exclude": ["node_modules"]
-}
+```bash
+pnpm i -D jiti@^2.0.0
 ```
 
-This is required to allow typescript to work with the ESLint configuration file,
-without erroring due to it not being included in the project.
+See [ESLint's TypeScript configuration documentation](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) for more details.
+
+<details>
+<summary>
+Combined with legacy config:
+</summary>
+
+If you still use some configs from the legacy eslintrc format, you can use the [`@eslint/eslintrc`](https://www.npmjs.com/package/@eslint/eslintrc) package to convert them to the flat config.
+
+```ts
+// eslint.config.ts
+import { FlatCompat } from "@eslint/eslintrc";
+import style from "@isentinel/eslint-config";
+
+const compat = new FlatCompat();
+
+export default style(
+	{
+		ignores: [],
+	},
+
+	// Legacy config
+	...compat.config({
+		extends: [
+			"eslint:recommended",
+			// Other extends...
+		],
+	}),
+
+	// Other flat configs...
+);
+```
+
+> Note that `.eslintignore` no longer works in Flat config, see
+> [customization](#customization) for more details.
 
 ### Add script for package.json
 
@@ -114,9 +134,6 @@ Add the following settings to your `.vscode/settings.json`:
 
 ```json
 {
-	// Enable the ESlint flat config support
-	"eslint.experimental.useFlatConfig": true,
-
 	"editor.formatOnSave": false,
 
 	// Auto fix
@@ -148,10 +165,7 @@ Add the following settings to your `.vscode/settings.json`:
 		"jsonc",
 		"yaml",
 		"toml"
-	],
-
-	// Currently required to enable .ts config files
-	"eslint.options": { "flags": ["unstable_ts_config"] }
+	]
 }
 ```
 
@@ -182,14 +196,6 @@ export default style({
 
 	// Type of the project. `package` for packages, the default is `game`
 	type: "package",
-
-	// Provide TypeScript parser options for access to type checking lints.
-	typescript: {
-		parserOptions: {
-			project: "tsconfig.build.json",
-		},
-		tsconfigPath: "tsconfig.build.json",
-	},
 
 	// Disable yaml support
 	yaml: false,
@@ -295,14 +301,15 @@ export default style({
 		"perfectionist/sort-objects": [
 			"warn",
 			{
-				"custom-groups": {
-					id: "id",
-					name: "name",
-					"react-props": ["children", "ref"],
+				customGroups: {
+					callbacks: ["\b(on[A-Z][a-zA-Z]*)\b"],
+					id: "^id$",
+					name: "^name$",
+					reactProps: ["^children$", "^ref$"],
 				},
-				groups: ["id", "name", "unknown", "react-props"],
+				groups: ["id", "name", "unknown", "reactProps"],
 				order: "asc",
-				"partition-by-comment": "Part:**",
+				partitionByComment: "^Part:\\*\\*(.*)$",
 				type: "natural",
 			},
 		],
@@ -327,10 +334,23 @@ export default style({
 });
 ```
 
+#### Jest
+
+To enable Jest support, you need to explicitly turn it on:
+
+```js
+// eslint.config.ts
+import style from "@isentinel/eslint-config";
+
+export default style({
+	test: true,
+});
+```
+
 Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
 
 ```bash
-pnpm i -D @eslint-react/eslint-plugin eslint-plugin-react-roblox-hooks
+pnpm i -D @eslint-react/eslint-plugin eslint-plugin-react-roblox-hooks eslint-plugin-jest
 ```
 
 ### Lint Staged
