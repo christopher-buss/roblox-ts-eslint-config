@@ -82,6 +82,3 @@ onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
   - unrs-resolver
-
-patchedDependencies:
-  '@johnnymorganz/stylua': patches/@johnnymorganz__stylua.patch

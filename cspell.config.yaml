@@ -14,11 +14,13 @@ words:
   - dprint
   - ependencies
   - isentinel
+  - johnnymorganz
   - lockb
   - luatuple
   - multilines
   - nocheck
   - nonblock
+  - nonconstructor
   - pico
   - rbxts
   - setstate
@@ -29,7 +31,6 @@ words:
   - tsdoc
   - typecheck
   - unthrown
-  - nonconstructor
 flagWords: []
 maxNumberOfProblems: 1000
 ignorePaths:
