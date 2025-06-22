@@ -29,11 +29,10 @@ export async function roblox(
 	const tsconfigPath = typeAware ? getTsConfig(options.tsconfigPath) : undefined;
 	const isTypeAware = tsconfigPath !== undefined;
 
-	const [parserTs, pluginRobloxTs, pluginSentinel, pluginFormatLua] = await Promise.all([
+	const [parserTs, pluginRobloxTs, pluginSentinel] = await Promise.all([
 		interopDefault(import("@typescript-eslint/parser")),
 		interopDefault(import("eslint-plugin-roblox-ts-x")),
 		interopDefault(import("eslint-plugin-sentinel")),
-		interopDefault(import("eslint-plugin-format-lua")),
 	] as const);
 
 	const files = options.files ?? [
@@ -91,6 +90,10 @@ export async function roblox(
 	});
 
 	if (formatLua) {
+		const [pluginFormatLua] = await Promise.all([
+			interopDefault(import("eslint-plugin-format-lua")),
+		] as const);
+
 		configs.push({
 			files: [GLOB_LUA],
 			languageOptions: {

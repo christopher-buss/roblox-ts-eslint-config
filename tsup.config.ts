@@ -25,8 +25,10 @@ function removeStyLuaEsmExports(): Plugin {
 }
 
 export default defineConfig({
+	clean: true,
 	entry: ["src/index.ts", "src/cli.ts"],
 	esbuildPlugins: [removeStyLuaEsmExports()],
 	format: ["esm"],
+	noExternal: ["@johnnymorganz/stylua", "eslint-plugin-format-lua"],
 	shims: true,
 });
