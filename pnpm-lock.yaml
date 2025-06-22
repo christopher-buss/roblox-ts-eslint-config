@@ -401,9 +401,6 @@ importers:
       bumpp:
         specifier: catalog:dev
         version: 10.1.0
-      confbox:
-        specifier: 0.2.2
-        version: 0.2.2
       eslint:
         specifier: catalog:peer
         version: 9.25.1(jiti@2.4.2)
@@ -437,9 +434,6 @@ importers:
       lint-staged:
         specifier: catalog:dev
         version: 15.5.1
-      mlly:
-        specifier: 1.7.3
-        version: 1.7.3
       pnpm-workspace-yaml:
         specifier: catalog:dev
         version: 0.3.1
@@ -3182,9 +3176,6 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  mlly@1.7.3:
-    resolution: {integrity: sha512-xUsx5n/mN0uQf4V548PKQ+YShA4/IW0KI1dZhrNrPCLG+xizETbHTkOa1f8/xut9JRPp8kQuMnz0oqwkTiLo/A==}
-
   mlly@1.7.4:
     resolution: {integrity: sha512-qmdSIPC4bDJXgZTCR7XosJiNKySV7O215tsPtDN9iEO/7q/76b/ijtgRu/+epFXSJhijtTCCGp3DWS549P3xKw==}
 
@@ -3387,9 +3378,6 @@ packages:
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
-
-  pathe@1.1.2:
-    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
@@ -7377,13 +7365,6 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  mlly@1.7.3:
-    dependencies:
-      acorn: 8.15.0
-      pathe: 1.1.2
-      pkg-types: 1.3.1
-      ufo: 1.6.1
-
   mlly@1.7.4:
     dependencies:
       acorn: 8.15.0
@@ -7602,8 +7583,6 @@ snapshots:
       minipass: 7.1.2
 
   path-type@4.0.0: {}
-
-  pathe@1.1.2: {}
 
   pathe@2.0.3: {}
 
