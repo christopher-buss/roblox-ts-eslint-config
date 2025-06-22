@@ -146,7 +146,10 @@ export async function typescript(
 					useJSXTextNode: true,
 					...(tsconfigPath
 						? {
-								project: tsconfigPath,
+								projectService: {
+									allowDefaultProject: ["./*.js"],
+									defaultProject: tsconfigPath,
+								},
 								tsconfigRootDir: process.cwd(),
 							}
 						: {}),

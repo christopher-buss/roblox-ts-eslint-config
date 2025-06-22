@@ -29,6 +29,7 @@ words:
   - tsdoc
   - typecheck
   - unthrown
+  - nonconstructor
 flagWords: []
 maxNumberOfProblems: 1000
 ignorePaths:
