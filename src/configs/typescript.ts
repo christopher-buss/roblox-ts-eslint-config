@@ -24,6 +24,7 @@ export async function typescript(
 		componentExts: componentExtensions = [],
 		isInEditor = false,
 		overrides = {},
+		overridesTypeAware = {},
 		parserOptions = {},
 		stylistic = true,
 		typeAware = true,
@@ -342,10 +343,21 @@ export async function typescript(
 							"yoda": ["error", "never"],
 						}
 					: {}),
-
-				...(tsconfigPath ? typeAwareRules : {}),
 				...overrides,
 			},
 		},
+		...(isTypeAware
+			? [
+					{
+						files: filesTypeAware,
+						ignores: ignoresTypeAware,
+						name: "style/typescript/rules-type-aware",
+						rules: {
+							...typeAwareRules,
+							...overridesTypeAware,
+						},
+					},
+				]
+			: []),
 	];
 }
