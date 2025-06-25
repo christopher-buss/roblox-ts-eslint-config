@@ -38,7 +38,7 @@ export async function roblox(
 	const files = options.files ?? [
 		"**/*/*.?([cm])ts",
 		"**/*/*.?([cm])tsx",
-		...componentExtensions.map(extension => `**/*/*.${extension}`),
+		...componentExtensions.map((extension) => `**/*/*.${extension}`),
 	];
 
 	const configs: Array<TypedFlatConfigItem> = [];

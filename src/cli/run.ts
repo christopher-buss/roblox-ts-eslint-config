@@ -21,12 +21,12 @@ export interface CliRunOptions {
 export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	const argumentSkipPrompt = !!process.env.SKIP_PROMPT || options.yes;
 	const argumentTemplate = <Array<FrameworkOption>>(
-		options.frameworks?.map(framework => framework?.trim()).filter(Boolean)
+		options.frameworks?.map((framework) => framework?.trim()).filter(Boolean)
 	);
 
 	const eslintConfigFiles = fs
 		.readdirSync(process.cwd())
-		.filter(file => file.startsWith("eslint.config."));
+		.filter((file) => file.startsWith("eslint.config."));
 
 	if (eslintConfigFiles.length > 0) {
 		log.warn(ansis.yellow(`${eslintConfigFiles[0]} already exists, migration wizard exited.`));

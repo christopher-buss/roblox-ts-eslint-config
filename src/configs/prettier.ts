@@ -26,7 +26,7 @@ export async function prettier(
 
 	const files = prettierFiles ?? [
 		GLOB_SRC,
-		...componentExtensions.map(extension => `**/*.${extension}`),
+		...componentExtensions.map((extension) => `**/*.${extension}`),
 	];
 
 	const [configPrettier, pluginFormat] = await Promise.all([
@@ -35,7 +35,7 @@ export async function prettier(
 	]);
 
 	const defaultPrettierOptions = {
-		arrowParens: "avoid",
+		arrowParens: "always",
 		jsdocPreferCodeFences: true,
 		jsdocPrintWidth: 80,
 		plugins: [require.resolve("prettier-plugin-jsdoc")],

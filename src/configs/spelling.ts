@@ -19,7 +19,7 @@ export async function spelling(
 
 	const files = options.files ?? [
 		GLOB_SRC,
-		...componentExtensions.map(extension => `**/*.${extension}`),
+		...componentExtensions.map((extension) => `**/*.${extension}`),
 	];
 
 	const robloxDictionary = require.resolve("@isentinel/dict-roblox");

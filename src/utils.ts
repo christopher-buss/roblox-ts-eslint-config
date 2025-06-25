@@ -71,7 +71,7 @@ export function createTsParser(options: {
 			parser,
 			parserOptions: {
 				ecmaVersion: 2018,
-				extraFileExtensions: componentExtensions.map(extension => `.${extension}`),
+				extraFileExtensions: componentExtensions.map((extension) => `.${extension}`),
 				sourceType: "module",
 				useJSXTextNode: true,
 				...(typeAware
@@ -96,7 +96,7 @@ export async function ensurePackages(packages: Array<string | undefined>): Promi
 	}
 
 	const nonExistingPackages = packages.filter(
-		index => index && !isPackageExists(index),
+		(index) => index && !isPackageExists(index),
 	) as Array<string>;
 	if (nonExistingPackages.length === 0) {
 		return;
@@ -107,7 +107,7 @@ export async function ensurePackages(packages: Array<string | undefined>): Promi
 		message: `${nonExistingPackages.length === 1 ? "Package is" : "Packages are"} required for this config: ${nonExistingPackages.join(", ")}. Do you want to install them?`,
 	});
 	if (result) {
-		await import("@antfu/install-pkg").then(index =>
+		await import("@antfu/install-pkg").then((index) =>
 			index.installPackage(nonExistingPackages, { dev: true }),
 		);
 	}
@@ -192,7 +192,7 @@ export function renamePluginInConfigs(
 	configs: Array<TypedFlatConfigItem>,
 	map: Record<string, string>,
 ): Array<TypedFlatConfigItem> {
-	return configs.map(index => {
+	return configs.map((index) => {
 		const clone = { ...index };
 		if (clone.rules) {
 			clone.rules = renameRules(clone.rules, map);

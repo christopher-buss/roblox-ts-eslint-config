@@ -33,7 +33,7 @@ export async function typescript(
 	const files = options.files ?? [
 		GLOB_TS,
 		GLOB_TSX,
-		...componentExtensions.map(extension => `**/*.${extension}`),
+		...componentExtensions.map((extension) => `**/*.${extension}`),
 	];
 
 	const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX];

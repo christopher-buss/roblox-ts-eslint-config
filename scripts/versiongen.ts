@@ -15,8 +15,8 @@ const catalogs = Object.values({
 
 const versions = Object.fromEntries(
 	Array.from(names)
-		.map(name => {
-			const version = catalogs.map(catalog => catalog[name]).filter(Boolean)[0];
+		.map((name) => {
+			const version = catalogs.map((catalog) => catalog[name]).filter(Boolean)[0];
 			if (!version) {
 				throw new Error(`Package ${name} not found`);
 			}

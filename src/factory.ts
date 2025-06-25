@@ -117,13 +117,13 @@ export function style(
 	if (enableGitignore) {
 		if (typeof enableGitignore !== "boolean") {
 			configs.push(
-				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => [
+				interopDefault(import("eslint-config-flat-gitignore")).then((resolved) => [
 					resolved(enableGitignore),
 				]),
 			);
 		} else if (fs.existsSync(".gitignore")) {
 			configs.push(
-				interopDefault(import("eslint-config-flat-gitignore")).then(resolved => [
+				interopDefault(import("eslint-config-flat-gitignore")).then((resolved) => [
 					resolved(),
 				]),
 			);

@@ -21,7 +21,7 @@ const instance = yargs(hideBin(process.argv))
 	.command(
 		"*",
 		"Run the initialization or migration",
-		args => {
+		(args) => {
 			return args
 				.option("yes", {
 					alias: "y",
@@ -35,7 +35,7 @@ const instance = yargs(hideBin(process.argv))
 				})
 				.help();
 		},
-		async args => {
+		async (args) => {
 			header();
 			try {
 				await run(args);

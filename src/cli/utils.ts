@@ -9,7 +9,7 @@ import style from '@isentinel/eslint-config'
 
 export default style({
 ${mainConfig}
-}${additionalConfigs?.map(config => `,{\n${config}\n}`)})
+}${additionalConfigs?.map((config) => `,{\n${config}\n}`)})
 `.trimStart();
 }
 

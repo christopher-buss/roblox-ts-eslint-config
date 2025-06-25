@@ -5,7 +5,7 @@ function removeStyLuaEsmExports(): Plugin {
 	return {
 		name: "remove-stylua-esm-exports",
 		setup(build) {
-			build.onLoad({ filter: /@johnnymorganz\/stylua/ }, async args => {
+			build.onLoad({ filter: /@johnnymorganz\/stylua/ }, async (args) => {
 				const fs = await import("fs");
 				let contents = await fs.promises.readFile(args.path, "utf8");
 
