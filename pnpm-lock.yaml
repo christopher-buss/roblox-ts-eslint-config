@@ -152,6 +152,9 @@ catalogs:
     eslint-plugin-format:
       specifier: 1.0.1
       version: 1.0.1
+    eslint-plugin-format-lua:
+      specifier: 1.0.1-beta.1
+      version: 1.0.1-beta.1
     eslint-plugin-import-x:
       specifier: 4.10.6
       version: 4.10.6
@@ -296,7 +299,7 @@ importers:
         specifier: catalog:prod
         version: 1.0.1(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-format-lua:
-        specifier: 1.0.1-beta.1
+        specifier: catalog:prod
         version: 1.0.1-beta.1(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-import-x:
         specifier: catalog:prod
