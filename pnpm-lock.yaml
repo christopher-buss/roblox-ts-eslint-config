@@ -152,9 +152,6 @@ catalogs:
     eslint-plugin-format:
       specifier: 1.0.1
       version: 1.0.1
-    eslint-plugin-format-lua:
-      specifier: 1.0.0
-      version: 1.0.0
     eslint-plugin-import-x:
       specifier: 4.10.6
       version: 4.10.6
@@ -299,8 +296,8 @@ importers:
         specifier: catalog:prod
         version: 1.0.1(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-format-lua:
-        specifier: catalog:prod
-        version: 1.0.0(eslint@9.25.1(jiti@2.4.2))
+        specifier: 1.0.1-beta.1
+        version: 1.0.1-beta.1(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-import-x:
         specifier: catalog:prod
         version: 4.10.6(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
@@ -1015,8 +1012,8 @@ packages:
   '@isentinel/dict-roblox@1.0.3':
     resolution: {integrity: sha512-XR1KVHZLyyamVobUICxTlDkB3gfLVuV34mdFQeIL7DfCtNI2uCeuZm6g6J63AQzUrqsCIUF166Ogf+TL0przdg==}
 
-  '@johnnymorganz/stylua@2.1.0':
-    resolution: {integrity: sha512-reSwruLs7hWzXOveOj3nRQGSClKmsoLReLKLdhKSJePGDwOX+ZxMEv52UEjBNA0vAmj7MFklYku+TVA7D0WgJg==}
+  '@isentinel/stylua@2.1.0-esm.2':
+    resolution: {integrity: sha512-jCCuS4uA61n6krfgReEuS4uKY4f3HphNi0TM6t3YKSFEiTN7Cbs2mk66EopBMKpksOlITHMORAPrCStXXYupwQ==}
 
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -2106,8 +2103,8 @@ packages:
     peerDependencies:
       eslint: '>=4.19.1'
 
-  eslint-plugin-format-lua@1.0.0:
-    resolution: {integrity: sha512-YF+woMquptdvYGZgRiWyBswqe30kshCd8cXJx5JpFjMwBs2mMIVbU433pkukLnc5n8t2Cjv2MjvB+5HTYcYlOg==}
+  eslint-plugin-format-lua@1.0.1-beta.1:
+    resolution: {integrity: sha512-T50rvzmeOT2yx5fib5FPZyDKf9P67DgXqVq01XTr5z7nxcr2RcbvbiIBVyKYPGQdLMax7U8jz7mFQMMmf+Ib2g==}
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
 
@@ -4684,7 +4681,9 @@ snapshots:
 
   '@isentinel/dict-roblox@1.0.3': {}
 
-  '@johnnymorganz/stylua@2.1.0': {}
+  '@isentinel/stylua@2.1.0-esm.2':
+    dependencies:
+      rollup: 4.44.0
 
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
@@ -5887,9 +5886,9 @@ snapshots:
       eslint: 9.25.1(jiti@2.4.2)
       ignore: 5.3.2
 
-  eslint-plugin-format-lua@1.0.0(eslint@9.25.1(jiti@2.4.2)):
+  eslint-plugin-format-lua@1.0.1-beta.1(eslint@9.25.1(jiti@2.4.2)):
     dependencies:
-      '@johnnymorganz/stylua': 2.1.0
+      '@isentinel/stylua': 2.1.0-esm.2
       eslint: 9.25.1(jiti@2.4.2)
       eslint-formatting-reporter: 0.0.0(eslint@9.25.1(jiti@2.4.2))
       eslint-parser-plain: 0.1.1
