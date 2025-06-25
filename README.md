@@ -81,6 +81,8 @@ export default style(
 > Note that `.eslintignore` no longer works in Flat config, see
 > [customization](#customization) for more details.
 
+</details>
+
 ### Add script for package.json
 
 For example:
