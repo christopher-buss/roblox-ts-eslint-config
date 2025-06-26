@@ -153,8 +153,8 @@ catalogs:
       specifier: 1.0.1
       version: 1.0.1
     eslint-plugin-format-lua:
-      specifier: 1.0.1-beta.1
-      version: 1.0.1-beta.1
+      specifier: 1.0.1-beta.2
+      version: 1.0.1-beta.2
     eslint-plugin-import-x:
       specifier: 4.10.6
       version: 4.10.6
@@ -300,7 +300,7 @@ importers:
         version: 1.0.1(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-format-lua:
         specifier: catalog:prod
-        version: 1.0.1-beta.1(eslint@9.25.1(jiti@2.4.2))
+        version: 1.0.1-beta.2(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-import-x:
         specifier: catalog:prod
         version: 4.10.6(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
@@ -1015,8 +1015,8 @@ packages:
   '@isentinel/dict-roblox@1.0.3':
     resolution: {integrity: sha512-XR1KVHZLyyamVobUICxTlDkB3gfLVuV34mdFQeIL7DfCtNI2uCeuZm6g6J63AQzUrqsCIUF166Ogf+TL0przdg==}
 
-  '@isentinel/stylua@2.1.0-esm.2':
-    resolution: {integrity: sha512-jCCuS4uA61n6krfgReEuS4uKY4f3HphNi0TM6t3YKSFEiTN7Cbs2mk66EopBMKpksOlITHMORAPrCStXXYupwQ==}
+  '@isentinel/stylua@2.1.0-esm.3':
+    resolution: {integrity: sha512-thwx7ptSzSGOZhzhxWD6cLOSYesk+5U3Ia/RzMrFc9djpv7LXe0spGCxJ/tWfYdJfg1ryU89rubdhhYxVlyMQg==}
 
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -2106,8 +2106,8 @@ packages:
     peerDependencies:
       eslint: '>=4.19.1'
 
-  eslint-plugin-format-lua@1.0.1-beta.1:
-    resolution: {integrity: sha512-T50rvzmeOT2yx5fib5FPZyDKf9P67DgXqVq01XTr5z7nxcr2RcbvbiIBVyKYPGQdLMax7U8jz7mFQMMmf+Ib2g==}
+  eslint-plugin-format-lua@1.0.1-beta.2:
+    resolution: {integrity: sha512-7BSRyPKj7Jll4tLrywH8CjABBWnq4TY46Lzy9MsvSr7+r9C2htcPAmUQ4YMkBUDeg2uwv1Z89Owu39QLSZ9Meg==}
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
 
@@ -4684,7 +4684,7 @@ snapshots:
 
   '@isentinel/dict-roblox@1.0.3': {}
 
-  '@isentinel/stylua@2.1.0-esm.2':
+  '@isentinel/stylua@2.1.0-esm.3':
     dependencies:
       rollup: 4.44.0
 
@@ -5889,9 +5889,9 @@ snapshots:
       eslint: 9.25.1(jiti@2.4.2)
       ignore: 5.3.2
 
-  eslint-plugin-format-lua@1.0.1-beta.1(eslint@9.25.1(jiti@2.4.2)):
+  eslint-plugin-format-lua@1.0.1-beta.2(eslint@9.25.1(jiti@2.4.2)):
     dependencies:
-      '@isentinel/stylua': 2.1.0-esm.2
+      '@isentinel/stylua': 2.1.0-esm.3
       eslint: 9.25.1(jiti@2.4.2)
       eslint-formatting-reporter: 0.0.0(eslint@9.25.1(jiti@2.4.2))
       eslint-parser-plain: 0.1.1
