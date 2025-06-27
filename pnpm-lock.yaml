@@ -19,8 +19,8 @@ catalogs:
       specifier: 11.0.4
       version: 11.0.4
     '@types/node':
-      specifier: 22.14.1
-      version: 22.14.1
+      specifier: 22.15.33
+      version: 22.15.33
     '@types/prompts':
       specifier: 2.4.9
       version: 2.4.9
@@ -391,7 +391,7 @@ importers:
         version: 11.0.4
       '@types/node':
         specifier: catalog:dev
-        version: 22.14.1
+        version: 22.15.33
       '@types/prompts':
         specifier: catalog:dev
         version: 2.4.9
@@ -1233,8 +1233,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.14.1':
-    resolution: {integrity: sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==}
+  '@types/node@22.15.33':
+    resolution: {integrity: sha512-wzoocdnnpSxZ+6CjW4ADCK1jVmd1S/J3ArNWfn8FDDQtRm8dkDg7TA+mvek2wNrfCgwuZxqEOiB9B1XCJ6+dbw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4884,7 +4884,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.14.1
+      '@types/node': 22.15.33
 
   '@types/json-schema@7.0.15': {}
 
@@ -4892,7 +4892,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.14.1
+      '@types/node': 22.15.33
 
   '@types/mdast@4.0.4':
     dependencies:
@@ -4900,7 +4900,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.14.1':
+  '@types/node@22.15.33':
     dependencies:
       undici-types: 6.21.0
 
@@ -4908,7 +4908,7 @@ snapshots:
 
   '@types/prompts@2.4.9':
     dependencies:
-      '@types/node': 22.14.1
+      '@types/node': 22.15.33
       kleur: 3.0.3
 
   '@types/unist@3.0.3': {}
