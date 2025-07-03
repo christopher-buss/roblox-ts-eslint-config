@@ -21,7 +21,7 @@ export interface CliRunOptions {
 export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	const argumentSkipPrompt = !!process.env.SKIP_PROMPT || options.yes;
 	const argumentTemplate = <Array<FrameworkOption>>(
-		options.frameworks?.map((framework) => framework?.trim()).filter(Boolean)
+		options.frameworks?.map((framework) => framework.trim())
 	);
 
 	const eslintConfigFiles = fs
@@ -35,7 +35,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 
 	// Set default value for promptResult if `argSkipPrompt` is enabled
 	let result: PromptResult = {
-		frameworks: argumentTemplate,
+		frameworks: argumentTemplate ?? [],
 		uncommittedConfirmed: false,
 		updateVscodeSettings: true,
 	};
@@ -43,27 +43,6 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 	if (!argumentSkipPrompt) {
 		result = (await group(
 			{
-				frameworks: ({ results }) => {
-					const isArgumentTemplateValid =
-						typeof argumentTemplate === "string" &&
-						!!frameworks.includes(<FrameworkOption>argumentTemplate);
-
-					if (!results.uncommittedConfirmed || isArgumentTemplateValid) {
-						return;
-					}
-
-					const message =
-						!isArgumentTemplateValid && argumentTemplate
-							? `"${argumentTemplate}" isn't a valid template. Please choose from below: `
-							: "Select a framework:";
-
-					return multiselect<FrameworkOption>({
-						message: ansis.reset(message),
-						options: frameworkOptions,
-						required: false,
-					});
-				},
-
 				uncommittedConfirmed: () => {
 					if (argumentSkipPrompt || isGitClean()) {
 						return Promise.resolve(true);
@@ -73,6 +52,29 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 						initialValue: false,
 						message:
 							"There are uncommitted changes in the current repository, are you sure to continue?",
+					});
+				},
+
+				// eslint-disable-next-line perfectionist/sort-objects -- keep the order of prompts
+				frameworks: ({ results }) => {
+					const isArgumentTemplateValid =
+						argumentTemplate &&
+						argumentTemplate.length > 0 &&
+						argumentTemplate.every((template) => frameworks.includes(template));
+
+					if (!results.uncommittedConfirmed || isArgumentTemplateValid) {
+						return;
+					}
+
+					const message =
+						argumentTemplate && argumentTemplate.length > 0 && !isArgumentTemplateValid
+							? `"${argumentTemplate.join(", ")}" isn't a valid template. Please choose from below: `
+							: "Select a framework:";
+
+					return multiselect<FrameworkOption>({
+						message: ansis.reset(message),
+						options: frameworkOptions,
+						required: false,
 					});
 				},
 
@@ -100,7 +102,7 @@ export async function run(options: CliRunOptions = {}): Promise<undefined> {
 		}
 	}
 
-	await updatePackageJson();
+	await updatePackageJson(result);
 	await updateEslintFiles(result);
 	await updateVscodeSettings(result);
 

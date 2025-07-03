@@ -8,8 +8,9 @@ import process from "node:process";
 import { version } from "../../../package.json";
 import { dependenciesMap } from "../constants";
 import { versionsMap } from "../constants-generated";
+import type { PromptResult } from "../types";
 
-export async function updatePackageJson(): Promise<void> {
+export async function updatePackageJson(result: PromptResult): Promise<void> {
 	const cwd = process.cwd();
 
 	const pathPackageJSON = path.join(cwd, "package.json");
@@ -25,9 +26,13 @@ export async function updatePackageJson(): Promise<void> {
 
 	const addedPackages: Array<string> = [];
 
-	for (const dep of dependenciesMap["react"]) {
-		parsedPackage.devDependencies[dep] = versionsMap[dep as keyof typeof versionsMap];
-		addedPackages.push(dep);
+	for (const framework of result.frameworks) {
+		if (framework in dependenciesMap) {
+			for (const dep of dependenciesMap[framework]) {
+				parsedPackage.devDependencies[dep] = versionsMap[dep as keyof typeof versionsMap];
+				addedPackages.push(dep);
+			}
+		}
 	}
 
 	if (addedPackages.length) {

@@ -30,7 +30,8 @@ const instance = yargs(hideBin(process.argv))
 				})
 				.option("template", {
 					alias: "t",
-					description: "Use the framework template for optimal customization: react",
+					description:
+						"Use the framework template for optimal customization: react, jest",
 					type: "string",
 				})
 				.help();
@@ -38,7 +39,10 @@ const instance = yargs(hideBin(process.argv))
 		async (args) => {
 			header();
 			try {
-				await run(args);
+				await run({
+					...args,
+					frameworks: args.template ? [args.template] : undefined,
+				});
 			} catch (err) {
 				log.error(ansis.inverse(ansis.red(" Failed to migrate ")));
 				log.error(ansis.red(`✘ ${String(err)}`));
