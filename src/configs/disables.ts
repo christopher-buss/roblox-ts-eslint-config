@@ -42,7 +42,7 @@ export async function disables(): Promise<Array<TypedFlatConfigItem>> {
 			},
 		},
 		{
-			files: [GLOB_TESTS],
+			files: [...GLOB_TESTS],
 			name: "style/disables/test",
 			rules: {
 				"antfu/no-top-level-await": "off",
