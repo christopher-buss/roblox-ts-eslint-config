@@ -1,4 +1,4 @@
-import { GLOB_DTS, GLOB_SRC, GLOB_SRC_EXT } from "../globs";
+import { GLOB_DTS, GLOB_SRC, GLOB_SRC_EXT, GLOB_TESTS } from "../globs";
 import type { TypedFlatConfigItem } from "../types";
 
 export async function disables(): Promise<Array<TypedFlatConfigItem>> {
@@ -42,7 +42,7 @@ export async function disables(): Promise<Array<TypedFlatConfigItem>> {
 			},
 		},
 		{
-			files: ["**/*.{test,spec}.([tj])s?(x)"],
+			files: [GLOB_TESTS],
 			name: "style/disables/test",
 			rules: {
 				"antfu/no-top-level-await": "off",
