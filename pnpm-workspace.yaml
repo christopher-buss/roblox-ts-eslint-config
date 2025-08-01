@@ -3,7 +3,7 @@ packages:
 
 catalogs:
   dev:
-    '@antfu/ni': 24.3.0
+    '@antfu/ni': 25.0.0
     '@eslint/config-inspector': 1.0.2
     '@stylistic/eslint-plugin-migrate': 4.2.0
     '@types/fs-extra': 11.0.4
@@ -28,18 +28,18 @@ catalogs:
     '@eslint-react/eslint-plugin': 1.48.4
     eslint-plugin-jest: 28.11.0
     eslint-plugin-react-roblox-hooks: 5.1.0-rbx.1
-    eslint: 9.25.1
+    eslint: 9.32.0
   prod:
     '@antfu/install-pkg': 1.0.0
     '@clack/prompts': 0.10.1
     '@cspell/eslint-plugin': 8.19.4
     '@eslint-community/eslint-plugin-eslint-comments': 4.5.0
     '@eslint/compat': 1.2.8
-    '@eslint/markdown': 6.4.0
+    '@eslint/markdown': 7.1.0
     '@isentinel/dict-rbxts': 1.0.1
     '@isentinel/dict-roblox': 1.0.3
     '@shopify/eslint-plugin': 48.0.2
-    '@stylistic/eslint-plugin': 4.2.0
+    '@stylistic/eslint-plugin': 6.0.0-beta.1
     '@typescript-eslint/eslint-plugin': 8.34.1
     '@typescript-eslint/parser': 8.34.1
     ansis: 3.17.0
@@ -59,7 +59,7 @@ catalogs:
     eslint-plugin-jsonc: 2.20.0
     eslint-plugin-no-only-tests: 3.3.0
     eslint-plugin-package-json: 0.30.0
-    eslint-plugin-perfectionist: 4.12.3
+    eslint-plugin-perfectionist: 4.15.0
     eslint-plugin-pnpm: 0.3.1
     eslint-plugin-promise: 7.2.1
     eslint-plugin-roblox-ts-x: 1.0.1

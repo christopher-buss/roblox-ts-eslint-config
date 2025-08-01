@@ -7,10 +7,11 @@ export async function comments(
 ): Promise<Array<TypedFlatConfigItem>> {
 	const { stylistic = true } = options;
 
-	const [pluginCommentLength, pluginComments] = await Promise.all([
+	const [pluginCommentLength, pluginComments, pluginStylistic] = await Promise.all([
 		interopDefault(import("eslint-plugin-comment-length")),
 		// @ts-expect-error -- No types
 		interopDefault(import("@eslint-community/eslint-plugin-eslint-comments")),
+		interopDefault(import("@stylistic/eslint-plugin")),
 	]);
 
 	return [
@@ -19,6 +20,7 @@ export async function comments(
 			plugins: {
 				"comment-length": pluginCommentLength,
 				"eslint-comments": pluginComments,
+				"style": pluginStylistic,
 			},
 			rules: {
 				// We cover these with prettier

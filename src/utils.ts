@@ -82,7 +82,11 @@ export function createTsParser(options: {
 							},
 							tsconfigRootDir: process.cwd(),
 						}
-					: {}),
+					: {
+							program: null,
+							project: false,
+							projectService: false,
+						}),
 				...parserOptions,
 			},
 		},

@@ -1,3 +1,4 @@
+import { GLOB_SRC } from "../globs";
 import type { StylisticConfig, TypedFlatConfigItem } from "../types";
 import { interopDefault } from "../utils";
 
@@ -32,6 +33,7 @@ export async function stylistic(
 
 	return [
 		{
+			files: [GLOB_SRC],
 			name: "style/stylistic",
 			plugins: {
 				"antfu": pluginAntfu,
@@ -92,7 +94,7 @@ export async function stylistic(
 					"error",
 					"double",
 					{
-						allowTemplateLiterals: false,
+						allowTemplateLiterals: "never",
 						avoidEscape: true,
 					},
 				],

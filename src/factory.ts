@@ -247,6 +247,7 @@ export function style(
 			markdown({
 				componentExts: componentExtensions,
 				overrides: getOverrides(options, "markdown"),
+				type: options.type,
 			}),
 		);
 	}

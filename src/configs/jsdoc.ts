@@ -1,3 +1,4 @@
+import { GLOB_SRC } from "../globs";
 import type {
 	JsDocOptions as JsDocumentOptions,
 	OptionsProjectType,
@@ -15,6 +16,7 @@ export async function jsdoc(
 
 	return [
 		{
+			files: [GLOB_SRC],
 			name: "style/jsdoc",
 			plugins: {
 				jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),

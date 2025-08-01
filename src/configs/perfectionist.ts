@@ -1,3 +1,4 @@
+import { GLOB_SRC } from "../globs";
 import type { OptionsProjectType, PerfectionistConfig, TypedFlatConfigItem } from "../types";
 import { interopDefault } from "../utils";
 
@@ -74,6 +75,7 @@ export async function perfectionist(
 
 	return [
 		{
+			files: [GLOB_SRC],
 			name: "style/perfectionist",
 			plugins: {
 				perfectionist: pluginPerfectionist,

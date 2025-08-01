@@ -272,9 +272,11 @@ export interface OptionsTypeScriptParserOptions {
 	filesTypeAware?: Array<string>;
 
 	/**
-	 * Glob patterns for files that should not be type aware.
+	 * Glob patterns for files that should not be type aware. Used to exclude
+	 * virtual files created by processors (e.g., markdown TypeScript code
+	 * blocks).
 	 *
-	 * @default \["**\/*.md\/**"]
+	 * @default \["**\/*.md\/**.*"]
 	 */
 	ignoresTypeAware?: Array<string>;
 
