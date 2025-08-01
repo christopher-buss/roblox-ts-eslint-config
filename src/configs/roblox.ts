@@ -68,6 +68,8 @@ export async function roblox(
 			"roblox/no-for-in": "error",
 			"roblox/no-function-expression-name": "error",
 			"roblox/no-get-set": "error",
+			"roblox/no-implicit-self": "error",
+			"roblox/no-invalid-identifier": "error",
 			"roblox/no-namespace-merging": "error",
 			"roblox/no-null": "error",
 			"roblox/no-object-math": "error",
@@ -75,7 +77,9 @@ export async function roblox(
 			"roblox/no-preceding-spread-element": "error",
 			"roblox/no-private-identifier": "error",
 			"roblox/no-unsupported-syntax": "error",
+			"roblox/no-user-defined-lua-tuple": "error",
 			"roblox/no-value-typeof": "error",
+			"roblox/prefer-get-players": "error",
 			"roblox/prefer-task-library": "error",
 			"roblox/size-method": "error",
 

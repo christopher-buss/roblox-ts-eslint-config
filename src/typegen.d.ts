@@ -3124,6 +3124,11 @@ export interface RuleOptions {
    */
   'roblox/no-get-set'?: Linter.RuleEntry<[]>
   /**
+   * Enforce the use of `.` instead of `:` for method calls
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-implicit-self/documentation.md
+   */
+  'roblox/no-implicit-self'?: Linter.RuleEntry<[]>
+  /**
    * Disallow the use of Luau reserved keywords as identifiers
    * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-invalid-identifier/documentation.md
    */
@@ -3139,7 +3144,7 @@ export interface RuleOptions {
    */
   'roblox/no-null'?: Linter.RuleEntry<[]>
   /**
-   * Disallow using objects in mathematical operations
+   * Enforce DataType math methods over operators
    * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-object-math/documentation.md
    */
   'roblox/no-object-math'?: Linter.RuleEntry<[]>
@@ -3164,10 +3169,20 @@ export interface RuleOptions {
    */
   'roblox/no-unsupported-syntax'?: Linter.RuleEntry<[]>
   /**
+   * Disallow usage of LuaTuple type keyword and $tuple() calls
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-user-defined-lua-tuple/documentation.md
+   */
+  'roblox/no-user-defined-lua-tuple'?: Linter.RuleEntry<RobloxNoUserDefinedLuaTuple>
+  /**
    * Disallow using `typeof` to check for value types
    * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-value-typeof/documentation.md
    */
   'roblox/no-value-typeof'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces the use of Players.GetPlayers() instead of Players.GetChildren()
+   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/prefer-get-players/documentation.md
+   */
+  'roblox/prefer-get-players'?: Linter.RuleEntry<RobloxPreferGetPlayers>
   /**
    * Enforce use of task library alternatives
    * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/prefer-task-library/documentation.md
@@ -12616,6 +12631,19 @@ type RestSpreadSpacing = []|[("always" | "never")]
 type RobloxNoAny = []|[{
   
   fixToUnknown?: boolean
+}]
+// ----- roblox/no-user-defined-lua-tuple -----
+type RobloxNoUserDefinedLuaTuple = []|[{
+  
+  allowTupleMacro?: boolean
+  
+  shouldFix?: boolean
+}]
+// ----- roblox/prefer-get-players -----
+type RobloxPreferGetPlayers = []|[{
+  
+  validateType?: boolean
+  [k: string]: unknown | undefined
 }]
 // ----- semi -----
 type Semi = ([]|["never"]|["never", {
