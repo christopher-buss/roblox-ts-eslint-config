@@ -155,6 +155,9 @@ catalogs:
     eslint-plugin-format-lua:
       specifier: 1.0.1-beta.2
       version: 1.0.1-beta.2
+    eslint-plugin-import-lite:
+      specifier: ^0.3.0
+      version: 0.3.0
     eslint-plugin-import-x:
       specifier: 4.10.6
       version: 4.10.6
@@ -301,6 +304,9 @@ importers:
       eslint-plugin-format-lua:
         specifier: catalog:prod
         version: 1.0.1-beta.2(eslint@9.32.0(jiti@2.5.1))
+      eslint-plugin-import-lite:
+        specifier: catalog:prod
+        version: 0.3.0(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3)
       eslint-plugin-import-x:
         specifier: catalog:prod
         version: 4.10.6(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3)
@@ -2221,6 +2227,16 @@ packages:
     resolution: {integrity: sha512-Tdns+CDjS+m7QrM85wwRi2yLae88XiWVdIOXjp9mDII0pmTBQlczPCmjpKnjiUIY3yPZNLqb5Ms/A/JXcBF2Dw==}
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
+
+  eslint-plugin-import-lite@0.3.0:
+    resolution: {integrity: sha512-dkNBAL6jcoCsXZsQ/Tt2yXmMDoNt5NaBh/U7yvccjiK8cai6Ay+MK77bMykmqQA2bTF6lngaLCDij6MTO3KkvA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: '>=9.0.0'
+      typescript: '>=4.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   eslint-plugin-import-x@4.10.6:
     resolution: {integrity: sha512-sWIaoezWK7kuPA7u29ULsO8WzlYYC8uivaipsazyHiZDykjNsuPtwRsYZIK2luqc5wppwXOop8iFdW7xffo/Xw==}
@@ -6170,6 +6186,14 @@ snapshots:
       eslint-parser-plain: 0.1.1
       prettier: 3.5.3
       synckit: 0.9.3
+
+  eslint-plugin-import-lite@0.3.0(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3):
+    dependencies:
+      '@eslint-community/eslint-utils': 4.7.0(eslint@9.32.0(jiti@2.5.1))
+      '@typescript-eslint/types': 8.38.0
+      eslint: 9.32.0(jiti@2.5.1)
+    optionalDependencies:
+      typescript: 5.8.3
 
   eslint-plugin-import-x@4.10.6(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3):
     dependencies:

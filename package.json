@@ -74,7 +74,7 @@
 		"eslint-plugin-de-morgan": "catalog:prod",
 		"eslint-plugin-format": "catalog:prod",
 		"eslint-plugin-format-lua": "catalog:prod",
-		"eslint-plugin-import-x": "catalog:prod",
+		"eslint-plugin-import-lite": "catalog:prod",
 		"eslint-plugin-jsdoc": "catalog:prod",
 		"eslint-plugin-jsonc": "catalog:prod",
 		"eslint-plugin-no-only-tests": "catalog:prod",

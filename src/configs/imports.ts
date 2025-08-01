@@ -8,14 +8,14 @@ export async function imports(
 	const { stylistic = true, type = "game" } = options;
 
 	const [pluginImport, pluginSimpleImportSort, pluginAntfu] = await Promise.all([
-		interopDefault(import("eslint-plugin-import-x")),
+		interopDefault(import("eslint-plugin-import-lite")),
 		interopDefault(import("eslint-plugin-simple-import-sort")),
 		interopDefault(import("eslint-plugin-antfu")),
 	]);
 
 	return [
 		{
-			name: "style/imports",
+			name: "style/imports/rules",
 			plugins: {
 				antfu: pluginAntfu,
 				import: pluginImport,
@@ -29,10 +29,6 @@ export async function imports(
 				"import/no-duplicates": "error",
 				"import/no-mutable-exports": "error",
 				"import/no-named-default": "error",
-				"import/no-namespace": "error",
-				"import/no-self-import": "error",
-				"import/no-webpack-loader-syntax": "off",
-				"import/order": "off",
 
 				...(stylistic
 					? {
