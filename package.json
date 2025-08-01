@@ -35,7 +35,8 @@
 		"dev": "npx @eslint/config-inspector --config eslint.config.ts",
 		"gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
 		"postgen": "echo 'Generation complete!'",
-		"lint": "eslint",
+		"lint": "eslint --cache",
+		"lint:ci": "eslint --cache --cache-strategy content",
 		"prepack": "nr build",
 		"prepare": "simple-git-hooks",
 		"release": "bumpp",
@@ -47,7 +48,7 @@
 		"pre-commit": "pnpm lint-staged"
 	},
 	"lint-staged": {
-		"*": "eslint --fix"
+		"*": "eslint --fix --cache"
 	},
 	"dependencies": {
 		"@antfu/install-pkg": "catalog:prod",
