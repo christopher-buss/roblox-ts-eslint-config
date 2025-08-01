@@ -55,8 +55,8 @@ catalogs:
       specifier: 16.1.2
       version: 16.1.2
     pnpm-workspace-yaml:
-      specifier: 0.3.1
-      version: 0.3.1
+      specifier: 1.1.0
+      version: 1.1.0
     rimraf:
       specifier: 6.0.1
       version: 6.0.1
@@ -436,7 +436,7 @@ importers:
         version: 16.1.2
       pnpm-workspace-yaml:
         specifier: catalog:dev
-        version: 0.3.1
+        version: 1.1.0
       rimraf:
         specifier: catalog:dev
         version: 6.0.1
@@ -3515,6 +3515,9 @@ packages:
 
   pnpm-workspace-yaml@0.3.1:
     resolution: {integrity: sha512-3nW5RLmREmZ8Pm8MbPsO2RM+99RRjYd25ynj3NV0cFsN7CcEl4sDFzgoFmSyduFwxFQ2Qbu3y2UdCh6HlyUOeA==}
+
+  pnpm-workspace-yaml@1.1.0:
+    resolution: {integrity: sha512-OWUzBxtitpyUV0fBYYwLAfWxn3mSzVbVB7cwgNaHvTTU9P0V2QHjyaY5i7f1hEiT9VeKsNH1Skfhe2E3lx/zhA==}
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -7874,6 +7877,10 @@ snapshots:
   pluralize@8.0.0: {}
 
   pnpm-workspace-yaml@0.3.1:
+    dependencies:
+      yaml: 2.8.0
+
+  pnpm-workspace-yaml@1.1.0:
     dependencies:
       yaml: 2.8.0
 
