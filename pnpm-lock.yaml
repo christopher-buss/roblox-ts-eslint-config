@@ -129,8 +129,8 @@ catalogs:
       specifier: 10.1.8
       version: 10.1.8
     eslint-flat-config-utils:
-      specifier: 2.0.1
-      version: 2.0.1
+      specifier: 2.1.0
+      version: 2.1.0
     eslint-merge-processors:
       specifier: 2.0.0
       version: 2.0.0
@@ -276,7 +276,7 @@ importers:
         version: 10.1.8(eslint@9.32.0(jiti@2.5.1))
       eslint-flat-config-utils:
         specifier: catalog:prod
-        version: 2.0.1
+        version: 2.1.0
       eslint-merge-processors:
         specifier: catalog:prod
         version: 2.0.0(eslint@9.32.0(jiti@2.5.1))
@@ -2126,8 +2126,8 @@ packages:
       '@types/estree':
         optional: true
 
-  eslint-flat-config-utils@2.0.1:
-    resolution: {integrity: sha512-brf0eAgQ6JlKj3bKfOTuuI7VcCZvi8ZCD1MMTVoEvS/d38j8cByZViLFALH/36+eqB17ukmfmKq3bWzGvizejA==}
+  eslint-flat-config-utils@2.1.0:
+    resolution: {integrity: sha512-6fjOJ9tS0k28ketkUcQ+kKptB4dBZY2VijMZ9rGn8Cwnn1SH0cZBoPXT8AHBFHxmHcLFQK9zbELDinZ2Mr1rng==}
 
   eslint-formatting-reporter@0.0.0:
     resolution: {integrity: sha512-k9RdyTqxqN/wNYVaTk/ds5B5rA8lgoAmvceYN7bcZMBwU7TuXx5ntewJv81eF3pIL/CiJE+pJZm36llG8yhyyw==}
@@ -6112,7 +6112,7 @@ snapshots:
     optionalDependencies:
       '@types/estree': 1.0.8
 
-  eslint-flat-config-utils@2.0.1:
+  eslint-flat-config-utils@2.1.0:
     dependencies:
       pathe: 2.0.3
 
