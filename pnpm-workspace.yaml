@@ -18,7 +18,7 @@ catalogs:
     fast-glob: 3.3.3
     fs-extra: 11.3.0
     jiti: 2.4.2
-    lint-staged: 15.5.1
+    lint-staged: 15.5.2
     pnpm-workspace-yaml: 0.3.1
     rimraf: 6.0.1
     simple-git-hooks: 2.12.1
