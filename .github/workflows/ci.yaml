@@ -53,7 +53,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [22.0.0, 22.x, 24.x]
+        node: [22.1.0, 22.x, 24.x]
       fail-fast: false
 
     steps:
@@ -84,7 +84,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [22.0.0, lts/*, current]
+        node: [22.1.0, lts/*, current]
         os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: false
 
