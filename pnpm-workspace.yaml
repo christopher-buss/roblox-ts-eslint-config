@@ -76,7 +76,7 @@ catalogs:
     prompts: 2.4.2
     toml-eslint-parser: 0.10.0
     yaml-eslint-parser: 1.3.0
-    yargs: 17.7.2
+    yargs: 18.0.0
 
 onlyBuiltDependencies:
   - esbuild
