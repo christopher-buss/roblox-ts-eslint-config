@@ -1,7 +1,8 @@
 import { createRequire } from "module";
 import type { Options as PrettierOptions } from "prettier";
 
-import { defaultPluginRenaming, GLOB_SRC, interopDefault, renameRules } from "..";
+import { defaultPluginRenaming } from "../factory";
+import { GLOB_SRC } from "../globs";
 import type {
 	OptionsComponentExtensions,
 	OptionsFiles,
@@ -9,6 +10,7 @@ import type {
 	OptionsTypeScriptParserOptions,
 	TypedFlatConfigItem,
 } from "../types";
+import { interopDefault, renameRules } from "../utils";
 
 const require = createRequire(import.meta.url);
 
