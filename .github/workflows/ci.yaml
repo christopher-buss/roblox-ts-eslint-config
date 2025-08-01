@@ -47,12 +47,44 @@ jobs:
       - name: Typecheck
         run: nr typecheck
 
+  node-compatibility:
+    runs-on: ubuntu-latest
+    name: Node.js compatibility test
+
+    strategy:
+      matrix:
+        node: [22.0.0, 22.x, 24.x]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Set node ${{ matrix.node }}
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
+
+      - name: Lint
+        run: nr lint
+
   build:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        node: [lts/*]
+        node: [22.0.0, lts/*, current]
         os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: false
 

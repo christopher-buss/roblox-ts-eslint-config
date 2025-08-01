@@ -141,7 +141,7 @@ export function style(
 		ignores(),
 		imports({ stylistic: stylisticOptions, type: options.type }),
 		jsdoc({ stylistic: stylisticOptions, type: options.type }),
-		packageJson({ type: options.type }),
+		packageJson({ roblox: options.roblox, type: options.type }),
 		promise(),
 		shopify({ stylistic: stylisticOptions }),
 		sonarjs({ isInEditor }),

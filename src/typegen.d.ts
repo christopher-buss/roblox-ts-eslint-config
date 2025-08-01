@@ -2073,7 +2073,7 @@ export interface RuleOptions {
   /**
    * Reports on unnecessary empty arrays and objects.
    */
-  'package-json/no-empty-fields'?: Linter.RuleEntry<[]>
+  'package-json/no-empty-fields'?: Linter.RuleEntry<PackageJsonNoEmptyFields>
   /**
    * Prevents adding unnecessary / redundant files.
    */
@@ -2091,6 +2091,10 @@ export interface RuleOptions {
    */
   'package-json/require-author'?: Linter.RuleEntry<[]>
   /**
+   * Requires the `description` property to be present.
+   */
+  'package-json/require-description'?: Linter.RuleEntry<[]>
+  /**
    * Requires the `engines` property to be present.
    */
   'package-json/require-engines'?: Linter.RuleEntry<[]>
@@ -2106,6 +2110,10 @@ export interface RuleOptions {
    * Requires the `name` property to be present.
    */
   'package-json/require-name'?: Linter.RuleEntry<[]>
+  /**
+   * Requires the `type` property to be present.
+   */
+  'package-json/require-type'?: Linter.RuleEntry<[]>
   /**
    * Requires the `types` property to be present.
    */
@@ -2127,7 +2135,32 @@ export interface RuleOptions {
    */
   'package-json/unique-dependencies'?: Linter.RuleEntry<[]>
   /**
+   * Enforce that the `author` property is valid.
+   */
+  'package-json/valid-author'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that the `bin` property is valid.
+   */
+  'package-json/valid-bin'?: Linter.RuleEntry<PackageJsonValidBin>
+  /**
+   * Enforce that the `bundleDependencies` (also: `bundledDependencies`) property is valid.
+   */
+  'package-json/valid-bundleDependencies'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that the `config` property is valid.
+   */
+  'package-json/valid-config'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that the `cpu` property is valid.
+   */
+  'package-json/valid-cpu'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that the `license` property is valid.
+   */
+  'package-json/valid-license'?: Linter.RuleEntry<[]>
+  /**
    * Checks existence of local dependencies in the package.json
+   * @deprecated
    */
   'package-json/valid-local-dependency'?: Linter.RuleEntry<[]>
   /**
@@ -2136,17 +2169,20 @@ export interface RuleOptions {
   'package-json/valid-name'?: Linter.RuleEntry<[]>
   /**
    * Enforce that package.json has all properties required by the npm spec
-   * @deprecated
    */
-  'package-json/valid-package-def'?: Linter.RuleEntry<[]>
-  /**
-   * Enforce that package.json has all properties required by the npm spec
-   */
-  'package-json/valid-package-definition'?: Linter.RuleEntry<[]>
+  'package-json/valid-package-definition'?: Linter.RuleEntry<PackageJsonValidPackageDefinition>
   /**
    * Enforce that if repository directory is specified, it matches the path to the package.json file
    */
   'package-json/valid-repository-directory'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that the `scripts` property is valid.
+   */
+  'package-json/valid-scripts'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce that the `type` property is valid.
+   */
+  'package-json/valid-type'?: Linter.RuleEntry<[]>
   /**
    * Enforce that package versions are valid semver specifiers
    */
@@ -9184,15 +9220,17 @@ type OperatorLinebreak = []|[("after" | "before" | "none" | null)]|[("after" | "
     [k: string]: ("after" | "before" | "none" | "ignore") | undefined
   }
 }]
+// ----- package-json/no-empty-fields -----
+type PackageJsonNoEmptyFields = []|[{
+  ignoreProperties?: string[]
+}]
 // ----- package-json/order-properties -----
 type PackageJsonOrderProperties = []|[{
   order?: (("legacy" | "sort-package-json") | string[])
-  [k: string]: unknown | undefined
 }]
 // ----- package-json/repository-shorthand -----
 type PackageJsonRepositoryShorthand = []|[{
   form?: ("object" | "shorthand")
-  [k: string]: unknown | undefined
 }]
 // ----- package-json/restrict-dependency-ranges -----
 type PackageJsonRestrictDependencyRanges = []|[({
@@ -9208,6 +9246,14 @@ type PackageJsonRestrictDependencyRanges = []|[({
 }[])]
 // ----- package-json/sort-collections -----
 type PackageJsonSortCollections = []|[string[]]
+// ----- package-json/valid-bin -----
+type PackageJsonValidBin = []|[{
+  enforceCase?: boolean
+}]
+// ----- package-json/valid-package-definition -----
+type PackageJsonValidPackageDefinition = []|[{
+  ignoreProperties?: string[]
+}]
 // ----- padded-blocks -----
 type PaddedBlocks = []|[(("always" | "never") | {
   blocks?: ("always" | "never")
