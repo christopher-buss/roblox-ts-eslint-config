@@ -14,7 +14,7 @@ catalogs:
     eslint-plugin-simple-import-sort: 12.1.1
     eslint-typegen: 2.1.0
     esno: 4.8.0
-    execa: 9.5.2
+    execa: 9.6.0
     fast-glob: 3.3.3
     fs-extra: 11.3.0
     jiti: 2.4.2
