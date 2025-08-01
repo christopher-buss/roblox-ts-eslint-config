@@ -15381,6 +15381,7 @@ type YamlFlowSequenceBracketSpacing = []|[("always" | "never")]|[("always" | "ne
 type YamlIndent = []|[number]|[number, {
   indentBlockSequences?: boolean
   indicatorValueIndent?: number
+  alignMultilineFlowScalars?: boolean
 }]
 // ----- yaml/key-name-casing -----
 type YamlKeyNameCasing = []|[{
