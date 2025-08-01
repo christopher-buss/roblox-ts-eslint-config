@@ -25,6 +25,11 @@ export async function pnpm(): Promise<Array<TypedFlatConfigItem>> {
 				"pnpm/json-prefer-workspace-settings": "error",
 				"pnpm/json-valid-catalog": "error",
 			},
+			settings: {
+				pnpm: {
+					ensureWorkspaceFile: true,
+				},
+			},
 		},
 		{
 			files: ["pnpm-workspace.yaml"],
