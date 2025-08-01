@@ -84,8 +84,8 @@ catalogs:
       version: 5.1.0-rbx.1
   prod:
     '@antfu/install-pkg':
-      specifier: 1.0.0
-      version: 1.0.0
+      specifier: 1.1.0
+      version: 1.1.0
     '@clack/prompts':
       specifier: 0.10.1
       version: 0.10.1
@@ -231,7 +231,7 @@ importers:
     dependencies:
       '@antfu/install-pkg':
         specifier: catalog:prod
-        version: 1.0.0
+        version: 1.1.0
       '@clack/prompts':
         specifier: catalog:prod
         version: 0.10.1
@@ -455,8 +455,8 @@ packages:
   '@altano/repository-tools@0.1.1':
     resolution: {integrity: sha512-5vbUs2A98CC3g1AlOBdkBE0BMukkLjLIsMHAtuxg6Pt9dQXxYWdLKOf66v6c/vIqtNcgTMv0oGtddLdMuH9X6w==}
 
-  '@antfu/install-pkg@1.0.0':
-    resolution: {integrity: sha512-xvX6P/lo1B3ej0OsaErAjqgFYzYVcJpamjLAFLYh9vRJngBrMoUG7aVnrGTeqM7yxbyTD5p3F2+0/QUEh8Vzhw==}
+  '@antfu/install-pkg@1.1.0':
+    resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
   '@antfu/ni@25.0.0':
     resolution: {integrity: sha512-9q/yCljni37pkMr4sPrI3G4jqdIk074+iukc5aFJl7kmDCCsiJrbZ6zKxnES1Gwg+i9RcDZwvktl23puGslmvA==}
@@ -3437,9 +3437,6 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  package-manager-detector@0.2.11:
-    resolution: {integrity: sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==}
-
   package-manager-detector@1.3.0:
     resolution: {integrity: sha512-ZsEbbZORsyHuO00lY1kV3/t72yp6Ysay6Pd17ZAlNGuGwmWDLCJxFpRs0IzfXfj1o4icJOkUEioexFHzyPurSQ==}
 
@@ -4248,10 +4245,10 @@ snapshots:
 
   '@altano/repository-tools@0.1.1': {}
 
-  '@antfu/install-pkg@1.0.0':
+  '@antfu/install-pkg@1.1.0':
     dependencies:
-      package-manager-detector: 0.2.11
-      tinyexec: 0.3.2
+      package-manager-detector: 1.3.0
+      tinyexec: 1.0.1
 
   '@antfu/ni@25.0.0':
     dependencies:
@@ -7846,10 +7843,6 @@ snapshots:
   package-json-validator@0.10.2:
     dependencies:
       yargs: 17.7.2
-
-  package-manager-detector@0.2.11:
-    dependencies:
-      quansync: 0.2.10
 
   package-manager-detector@1.3.0: {}
 
