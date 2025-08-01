@@ -5,7 +5,7 @@ catalogs:
   dev:
     '@antfu/ni': 25.0.0
     '@eslint/config-inspector': 1.0.2
-    '@stylistic/eslint-plugin-migrate': 4.2.0
+    '@stylistic/eslint-plugin-migrate': 4.4.1
     '@types/fs-extra': 11.0.4
     '@types/node': 22.14.1
     '@types/prompts': 2.4.9
