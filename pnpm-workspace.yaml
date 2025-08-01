@@ -38,7 +38,7 @@ catalogs:
     '@eslint/markdown': 7.1.0
     '@isentinel/dict-rbxts': 1.0.1
     '@isentinel/dict-roblox': 1.0.3
-    '@shopify/eslint-plugin': 48.0.2
+    '@shopify/eslint-plugin': 50.0.0
     '@stylistic/eslint-plugin': 6.0.0-beta.1
     '@typescript-eslint/eslint-plugin': 8.34.1
     '@typescript-eslint/parser': 8.34.1
