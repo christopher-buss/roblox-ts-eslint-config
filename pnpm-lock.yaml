@@ -28,8 +28,8 @@ catalogs:
       specifier: 17.0.33
       version: 17.0.33
     bumpp:
-      specifier: 10.2.1
-      version: 10.2.1
+      specifier: 10.2.2
+      version: 10.2.2
     eslint-plugin-simple-import-sort:
       specifier: 12.1.1
       version: 12.1.1
@@ -400,7 +400,7 @@ importers:
         version: 17.0.33
       bumpp:
         specifier: catalog:dev
-        version: 10.2.1
+        version: 10.2.2
       eslint:
         specifier: catalog:peer
         version: 9.32.0(jiti@2.5.1)
@@ -1611,8 +1611,8 @@ packages:
     resolution: {integrity: sha512-bkXY9WsVpY7CvMhKSR6pZilZu9Ln5WDrKVBUXf2S443etkmEO4V58heTecXcUIsNsi4Rx8JUO4NfX1IcQl4deg==}
     engines: {node: '>=18.20'}
 
-  bumpp@10.2.1:
-    resolution: {integrity: sha512-Dhgao1WhrcMg+1R3GU+57e6grUNNIGORN53YllDFurNEVGWmkD/z63R3xX4Sl9IqEw//1/UxbrvmK8V1pcJDHw==}
+  bumpp@10.2.2:
+    resolution: {integrity: sha512-b6LpQOuXqhejTfNV8r1XkdPQiPWS09l+k+W8raTV2YaFeIqCA76D81G22ac/2jhVTCWXwbEMgvxbQtHriOIPkw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -5338,7 +5338,7 @@ snapshots:
 
   builtin-modules@5.0.0: {}
 
-  bumpp@10.2.1:
+  bumpp@10.2.2:
     dependencies:
       ansis: 4.1.0
       args-tokenizer: 0.3.0
