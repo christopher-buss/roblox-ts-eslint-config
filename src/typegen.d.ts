@@ -2930,117 +2930,117 @@ export interface RuleOptions {
   'rest-spread-spacing'?: Linter.RuleEntry<RestSpreadSpacing>
   /**
    * Enforces the use of lua truthiness
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/lua-truthiness/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/lua-truthiness/documentation.md
    */
   'roblox/lua-truthiness'?: Linter.RuleEntry<[]>
   /**
    * Disallow the use of LuaTuple in conditional expressions
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/misleading-lua-tuple-checks/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/misleading-lua-tuple-checks/documentation.md
    */
   'roblox/misleading-lua-tuple-checks'?: Linter.RuleEntry<[]>
   /**
    * Disallow values of type `any`. Use `unknown` instead
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-any/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-any/documentation.md
    */
   'roblox/no-any'?: Linter.RuleEntry<RobloxNoAny>
   /**
    * Disallow usage of pairs() and ipairs() with Array<T>
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-array-pairs/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-array-pairs/documentation.md
    */
   'roblox/no-array-pairs'?: Linter.RuleEntry<[]>
   /**
    * Disallow merging enum declarations
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-enum-merging/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-enum-merging/documentation.md
    */
   'roblox/no-enum-merging'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `export =` on a let variable
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-export-assignment-let/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-export-assignment-let/documentation.md
    */
   'roblox/no-export-assignment-let'?: Linter.RuleEntry<[]>
   /**
    * Disallow iterating with a for-in loop
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-for-in/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-for-in/documentation.md
    */
   'roblox/no-for-in'?: Linter.RuleEntry<[]>
   /**
    * Disallow the use of function expression names
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-function-expression-name/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-function-expression-name/documentation.md
    */
   'roblox/no-function-expression-name'?: Linter.RuleEntry<[]>
   /**
    * Disallow getters and setters
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-get-set/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-get-set/documentation.md
    */
   'roblox/no-get-set'?: Linter.RuleEntry<[]>
   /**
    * Enforce the use of `.` instead of `:` for method calls
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-implicit-self/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-implicit-self/documentation.md
    */
   'roblox/no-implicit-self'?: Linter.RuleEntry<[]>
   /**
    * Disallow the use of Luau reserved keywords as identifiers
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-invalid-identifier/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-invalid-identifier/documentation.md
    */
   'roblox/no-invalid-identifier'?: Linter.RuleEntry<[]>
   /**
    * Disallow merging namespace declarations
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-namespace-merging/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-namespace-merging/documentation.md
    */
   'roblox/no-namespace-merging'?: Linter.RuleEntry<[]>
   /**
    * Disallow usage of the `null` keyword
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-null/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-null/documentation.md
    */
   'roblox/no-null'?: Linter.RuleEntry<[]>
   /**
    * Enforce DataType math methods over operators
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-object-math/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-object-math/documentation.md
    */
   'roblox/no-object-math'?: Linter.RuleEntry<[]>
   /**
    * Disallow .new() on objects without a .new() method
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-post-fix-new/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-post-fix-new/documentation.md
    */
   'roblox/no-post-fix-new'?: Linter.RuleEntry<[]>
   /**
    * Disallow spread elements not last in a list of arguments
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-preceding-spread-element/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-preceding-spread-element/documentation.md
    */
   'roblox/no-preceding-spread-element'?: Linter.RuleEntry<[]>
   /**
    * Disallow the use of private identifiers (`#`)
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-private-identifier/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-private-identifier/documentation.md
    */
   'roblox/no-private-identifier'?: Linter.RuleEntry<[]>
   /**
    * Disallow unsupported syntax in roblox-ts
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-unsupported-syntax/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-unsupported-syntax/documentation.md
    */
   'roblox/no-unsupported-syntax'?: Linter.RuleEntry<[]>
   /**
    * Disallow usage of LuaTuple type keyword and $tuple() calls
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-user-defined-lua-tuple/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-user-defined-lua-tuple/documentation.md
    */
   'roblox/no-user-defined-lua-tuple'?: Linter.RuleEntry<RobloxNoUserDefinedLuaTuple>
   /**
    * Disallow using `typeof` to check for value types
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/no-value-typeof/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/no-value-typeof/documentation.md
    */
   'roblox/no-value-typeof'?: Linter.RuleEntry<[]>
   /**
    * Enforces the use of Players.GetPlayers() instead of Players.GetChildren()
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/prefer-get-players/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/prefer-get-players/documentation.md
    */
   'roblox/prefer-get-players'?: Linter.RuleEntry<RobloxPreferGetPlayers>
   /**
    * Enforce use of task library alternatives
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/prefer-task-library/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/prefer-task-library/documentation.md
    */
   'roblox/prefer-task-library'?: Linter.RuleEntry<[]>
   /**
    * Enforce use of .size() instead of .length or .size property
-   * @see https://github.com/christopher-buss/eslint-plugin-roblox-ts-x/tree/main/src/rules/size-method/documentation.md
+   * @see https://github.com/roblox-ts/eslint-plugin-roblox-ts/tree/main/src/rules/size-method/documentation.md
    */
   'roblox/size-method'?: Linter.RuleEntry<[]>
   /**

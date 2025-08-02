@@ -31,7 +31,7 @@ export async function roblox(
 
 	const [parserTs, pluginRobloxTs, pluginSentinel] = await Promise.all([
 		interopDefault(import("@typescript-eslint/parser")),
-		interopDefault(import("eslint-plugin-roblox-ts-x")),
+		interopDefault(import("eslint-plugin-roblox-ts")),
 		interopDefault(import("eslint-plugin-sentinel")),
 	] as const);
 

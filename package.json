@@ -83,7 +83,7 @@
 		"eslint-plugin-perfectionist": "catalog:prod",
 		"eslint-plugin-pnpm": "catalog:prod",
 		"eslint-plugin-promise": "catalog:prod",
-		"eslint-plugin-roblox-ts-x": "catalog:prod",
+		"eslint-plugin-roblox-ts": "catalog:prod",
 		"eslint-plugin-sentinel": "catalog:prod",
 		"eslint-plugin-sonarjs": "catalog:prod",
 		"eslint-plugin-toml": "catalog:prod",
