@@ -57,6 +57,7 @@ export async function test(
 				"test/prefer-called-with": "warn",
 				"test/prefer-comparison-matcher": "warn",
 				"test/prefer-each": "warn",
+				"test/prefer-ending-with-an-expect": "warn",
 				"test/prefer-equality-matcher": "warn",
 				"test/prefer-hooks-in-order": "warn",
 				"test/prefer-lowercase-title": "warn",
