@@ -3221,12 +3221,12 @@ export interface RuleOptions {
    * Parameters should be passed in the correct order
    * @see https://sonarsource.github.io/rspec/#/rspec/S2234/javascript
    */
-  'sonar/arguments-order'?: Linter.RuleEntry<SonarArgumentsOrder>
+  'sonar/arguments-order'?: Linter.RuleEntry<[]>
   /**
    * "arguments" should not be accessed directly
    * @see https://sonarsource.github.io/rspec/#/rspec/S3513/javascript
    */
-  'sonar/arguments-usage'?: Linter.RuleEntry<SonarArgumentsUsage>
+  'sonar/arguments-usage'?: Linter.RuleEntry<[]>
   /**
    * Callbacks of array methods should have return statements
    * @see https://sonarsource.github.io/rspec/#/rspec/S3796/javascript
@@ -3271,22 +3271,22 @@ export interface RuleOptions {
    * Policies granting all privileges are security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6302/javascript
    */
-  'sonar/aws-iam-all-privileges'?: Linter.RuleEntry<SonarAwsIamAllPrivileges>
+  'sonar/aws-iam-all-privileges'?: Linter.RuleEntry<[]>
   /**
    * Policies granting access to all resources of an account are security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6304/javascript
    */
-  'sonar/aws-iam-all-resources-accessible'?: Linter.RuleEntry<SonarAwsIamAllResourcesAccessible>
+  'sonar/aws-iam-all-resources-accessible'?: Linter.RuleEntry<[]>
   /**
    * AWS IAM policies should limit the scope of permissions given
    * @see https://sonarsource.github.io/rspec/#/rspec/S6317/javascript
    */
-  'sonar/aws-iam-privilege-escalation'?: Linter.RuleEntry<SonarAwsIamPrivilegeEscalation>
+  'sonar/aws-iam-privilege-escalation'?: Linter.RuleEntry<[]>
   /**
    * Policies authorizing public access to resources are security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6270/javascript
    */
-  'sonar/aws-iam-public-access'?: Linter.RuleEntry<SonarAwsIamPublicAccess>
+  'sonar/aws-iam-public-access'?: Linter.RuleEntry<[]>
   /**
    * Using unencrypted Elasticsearch domains is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6308/javascript
@@ -3306,7 +3306,7 @@ export interface RuleOptions {
    * Granting access to S3 buckets to all or authenticated users is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6265/javascript
    */
-  'sonar/aws-s3-bucket-granted-access'?: Linter.RuleEntry<SonarAwsS3BucketGrantedAccess>
+  'sonar/aws-s3-bucket-granted-access'?: Linter.RuleEntry<[]>
   /**
    * Authorizing HTTP communications with S3 buckets is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6249/javascript
@@ -3316,18 +3316,18 @@ export interface RuleOptions {
    * Allowing public ACLs or policies on a S3 bucket is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6281/javascript
    */
-  'sonar/aws-s3-bucket-public-access'?: Linter.RuleEntry<SonarAwsS3BucketPublicAccess>
+  'sonar/aws-s3-bucket-public-access'?: Linter.RuleEntry<[]>
   /**
    * Disabling server-side encryption of S3 buckets is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6245/javascript
    * @deprecated
    */
-  'sonar/aws-s3-bucket-server-encryption'?: Linter.RuleEntry<SonarAwsS3BucketServerEncryption>
+  'sonar/aws-s3-bucket-server-encryption'?: Linter.RuleEntry<[]>
   /**
    * Disabling versioning of S3 buckets is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6252/javascript
    */
-  'sonar/aws-s3-bucket-versioning'?: Linter.RuleEntry<SonarAwsS3BucketVersioning>
+  'sonar/aws-s3-bucket-versioning'?: Linter.RuleEntry<[]>
   /**
    * Using unencrypted SageMaker notebook instances is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6319/javascript
@@ -3352,7 +3352,7 @@ export interface RuleOptions {
    * Variables should be used in the blocks where they are declared
    * @see https://sonarsource.github.io/rspec/#/rspec/S2392/javascript
    */
-  'sonar/block-scoped-var'?: Linter.RuleEntry<SonarBlockScopedVar>
+  'sonar/block-scoped-var'?: Linter.RuleEntry<[]>
   /**
    * Optional boolean parameters should have default value
    * @see https://sonarsource.github.io/rspec/#/rspec/S4798/javascript
@@ -3368,7 +3368,7 @@ export interface RuleOptions {
    * @see https://sonarsource.github.io/rspec/#/rspec/S5742/javascript
    * @deprecated
    */
-  'sonar/certificate-transparency'?: Linter.RuleEntry<SonarCertificateTransparency>
+  'sonar/certificate-transparency'?: Linter.RuleEntry<[]>
   /**
    * Chai assertions should have only one reason to succeed
    * @see https://sonarsource.github.io/rspec/#/rspec/S6092/javascript
@@ -3414,12 +3414,12 @@ export interface RuleOptions {
    * @see https://sonarsource.github.io/rspec/#/rspec/S3973/javascript
    * @deprecated
    */
-  'sonar/conditional-indentation'?: Linter.RuleEntry<SonarConditionalIndentation>
+  'sonar/conditional-indentation'?: Linter.RuleEntry<[]>
   /**
    * Allowing confidential information to be logged is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5757/javascript
    */
-  'sonar/confidential-information-logging'?: Linter.RuleEntry<SonarConfidentialInformationLogging>
+  'sonar/confidential-information-logging'?: Linter.RuleEntry<[]>
   /**
    * Objects should not be created to be dropped immediately without being used
    * @see https://sonarsource.github.io/rspec/#/rspec/S1848/javascript
@@ -3434,12 +3434,12 @@ export interface RuleOptions {
    * Disabling content security policy fetch directives is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5728/javascript
    */
-  'sonar/content-security-policy'?: Linter.RuleEntry<SonarContentSecurityPolicy>
+  'sonar/content-security-policy'?: Linter.RuleEntry<[]>
   /**
    * Creating cookies without the "HttpOnly" flag is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S3330/javascript
    */
-  'sonar/cookie-no-httponly'?: Linter.RuleEntry<SonarCookieNoHttponly>
+  'sonar/cookie-no-httponly'?: Linter.RuleEntry<[]>
   /**
    * Writing cookies is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S2255/javascript
@@ -3450,12 +3450,12 @@ export interface RuleOptions {
    * Having a permissive Cross-Origin Resource Sharing policy is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5122/javascript
    */
-  'sonar/cors'?: Linter.RuleEntry<SonarCors>
+  'sonar/cors'?: Linter.RuleEntry<[]>
   /**
    * Disabling CSRF protections is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S4502/javascript
    */
-  'sonar/csrf'?: Linter.RuleEntry<SonarCsrf>
+  'sonar/csrf'?: Linter.RuleEntry<[]>
   /**
    * Cyclomatic Complexity of functions should not be too high
    * @see https://sonarsource.github.io/rspec/#/rspec/S1541/javascript
@@ -3475,17 +3475,17 @@ export interface RuleOptions {
    * Destructuring syntax should be used for assignments
    * @see https://sonarsource.github.io/rspec/#/rspec/S3514/javascript
    */
-  'sonar/destructuring-assignment-syntax'?: Linter.RuleEntry<SonarDestructuringAssignmentSyntax>
+  'sonar/destructuring-assignment-syntax'?: Linter.RuleEntry<[]>
   /**
    * Strict equality operators should not be used with dissimilar types
    * @see https://sonarsource.github.io/rspec/#/rspec/S3403/javascript
    */
-  'sonar/different-types-comparison'?: Linter.RuleEntry<SonarDifferentTypesComparison>
+  'sonar/different-types-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disabling auto-escaping in template engines is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5247/javascript
    */
-  'sonar/disabled-auto-escaping'?: Linter.RuleEntry<SonarDisabledAutoEscaping>
+  'sonar/disabled-auto-escaping'?: Linter.RuleEntry<[]>
   /**
    * Using remote artifacts without integrity checks is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5725/javascript
@@ -3501,12 +3501,12 @@ export interface RuleOptions {
    * @see https://sonarsource.github.io/rspec/#/rspec/S5743/javascript
    * @deprecated
    */
-  'sonar/dns-prefetching'?: Linter.RuleEntry<SonarDnsPrefetching>
+  'sonar/dns-prefetching'?: Linter.RuleEntry<[]>
   /**
    * Character classes in regular expressions should not contain the same character twice
    * @see https://sonarsource.github.io/rspec/#/rspec/S5869/javascript
    */
-  'sonar/duplicates-in-character-class'?: Linter.RuleEntry<SonarDuplicatesInCharacterClass>
+  'sonar/duplicates-in-character-class'?: Linter.RuleEntry<[]>
   /**
    * "if ... else if" constructs should end with "else" clauses
    * @see https://sonarsource.github.io/rspec/#/rspec/S126/javascript
@@ -3563,7 +3563,7 @@ export interface RuleOptions {
    * File uploads should be restricted
    * @see https://sonarsource.github.io/rspec/#/rspec/S2598/javascript
    */
-  'sonar/file-uploads'?: Linter.RuleEntry<SonarFileUploads>
+  'sonar/file-uploads'?: Linter.RuleEntry<[]>
   /**
    * Track uses of "FIXME" tags
    * @see https://sonarsource.github.io/rspec/#/rspec/S1134/javascript
@@ -3578,17 +3578,17 @@ export interface RuleOptions {
    * A "for" loop update clause should move the counter in the right direction
    * @see https://sonarsource.github.io/rspec/#/rspec/S2251/javascript
    */
-  'sonar/for-loop-increment-sign'?: Linter.RuleEntry<SonarForLoopIncrementSign>
+  'sonar/for-loop-increment-sign'?: Linter.RuleEntry<[]>
   /**
    * Disabling content security policy frame-ancestors directive is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5732/javascript
    */
-  'sonar/frame-ancestors'?: Linter.RuleEntry<SonarFrameAncestors>
+  'sonar/frame-ancestors'?: Linter.RuleEntry<[]>
   /**
    * Functions should not be defined inside loops
    * @see https://sonarsource.github.io/rspec/#/rspec/S1515/javascript
    */
-  'sonar/function-inside-loop'?: Linter.RuleEntry<SonarFunctionInsideLoop>
+  'sonar/function-inside-loop'?: Linter.RuleEntry<[]>
   /**
    * Function and method names should comply with a naming convention
    * @see https://sonarsource.github.io/rspec/#/rspec/S100/javascript
@@ -3598,7 +3598,7 @@ export interface RuleOptions {
    * Functions should always return the same type
    * @see https://sonarsource.github.io/rspec/#/rspec/S3800/javascript
    */
-  'sonar/function-return-type'?: Linter.RuleEntry<SonarFunctionReturnType>
+  'sonar/function-return-type'?: Linter.RuleEntry<[]>
   /**
    * Future reserved words should not be used as identifiers
    * @see https://sonarsource.github.io/rspec/#/rspec/S1527/javascript
@@ -3623,12 +3623,12 @@ export interface RuleOptions {
    * "in" should not be used with primitive types
    * @see https://sonarsource.github.io/rspec/#/rspec/S3785/javascript
    */
-  'sonar/in-operator-type-error'?: Linter.RuleEntry<SonarInOperatorTypeError>
+  'sonar/in-operator-type-error'?: Linter.RuleEntry<[]>
   /**
    * Functions should be called consistently with or without "new"
    * @see https://sonarsource.github.io/rspec/#/rspec/S3686/javascript
    */
-  'sonar/inconsistent-function-call'?: Linter.RuleEntry<SonarInconsistentFunctionCall>
+  'sonar/inconsistent-function-call'?: Linter.RuleEntry<[]>
   /**
    * "indexOf" checks should not be for positive numbers
    * @see https://sonarsource.github.io/rspec/#/rspec/S2692/javascript
@@ -3638,17 +3638,17 @@ export interface RuleOptions {
    * Creating cookies without the "secure" flag is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S2092/javascript
    */
-  'sonar/insecure-cookie'?: Linter.RuleEntry<SonarInsecureCookie>
+  'sonar/insecure-cookie'?: Linter.RuleEntry<[]>
   /**
    * JWT should be signed and verified with strong cipher algorithms
    * @see https://sonarsource.github.io/rspec/#/rspec/S5659/javascript
    */
-  'sonar/insecure-jwt-token'?: Linter.RuleEntry<SonarInsecureJwtToken>
+  'sonar/insecure-jwt-token'?: Linter.RuleEntry<[]>
   /**
    * Assertion arguments should be passed in the correct order
    * @see https://sonarsource.github.io/rspec/#/rspec/S3415/javascript
    */
-  'sonar/inverted-assertion-arguments'?: Linter.RuleEntry<SonarInvertedAssertionArguments>
+  'sonar/inverted-assertion-arguments'?: Linter.RuleEntry<[]>
   /**
    * React components should not render non-boolean condition values
    * @see https://sonarsource.github.io/rspec/#/rspec/S6439/javascript
@@ -3748,12 +3748,12 @@ export interface RuleOptions {
    * Tests should not execute any code after "done()" is called
    * @see https://sonarsource.github.io/rspec/#/rspec/S6079/javascript
    */
-  'sonar/no-code-after-done'?: Linter.RuleEntry<SonarNoCodeAfterDone>
+  'sonar/no-code-after-done'?: Linter.RuleEntry<[]>
   /**
    * Mergeable "if" statements should be combined
    * @see https://sonarsource.github.io/rspec/#/rspec/S1066/javascript
    */
-  'sonar/no-collapsible-if'?: Linter.RuleEntry<SonarNoCollapsibleIf>
+  'sonar/no-collapsible-if'?: Linter.RuleEntry<[]>
   /**
    * Collection size and array length comparisons should make sense
    * @see https://sonarsource.github.io/rspec/#/rspec/S3981/javascript
@@ -3783,7 +3783,7 @@ export interface RuleOptions {
    * Union and intersection types should not include duplicated constituents
    * @see https://sonarsource.github.io/rspec/#/rspec/S4621/javascript
    */
-  'sonar/no-duplicate-in-composite'?: Linter.RuleEntry<SonarNoDuplicateInComposite>
+  'sonar/no-duplicate-in-composite'?: Linter.RuleEntry<[]>
   /**
    * String literals should not be duplicated
    * @see https://sonarsource.github.io/rspec/#/rspec/S1192/javascript
@@ -3793,12 +3793,12 @@ export interface RuleOptions {
    * Two branches in a conditional structure should not have exactly the same implementation
    * @see https://sonarsource.github.io/rspec/#/rspec/S1871/javascript
    */
-  'sonar/no-duplicated-branches'?: Linter.RuleEntry<SonarNoDuplicatedBranches>
+  'sonar/no-duplicated-branches'?: Linter.RuleEntry<[]>
   /**
    * Collection elements should not be replaced unconditionally
    * @see https://sonarsource.github.io/rspec/#/rspec/S4143/javascript
    */
-  'sonar/no-element-overwrite'?: Linter.RuleEntry<SonarNoElementOverwrite>
+  'sonar/no-element-overwrite'?: Linter.RuleEntry<[]>
   /**
    * Reluctant quantifiers in regular expressions should be followed by an expression that can't match the empty string
    * @see https://sonarsource.github.io/rspec/#/rspec/S6019/javascript
@@ -3843,7 +3843,7 @@ export interface RuleOptions {
    * Function calls should not pass extra arguments
    * @see https://sonarsource.github.io/rspec/#/rspec/S930/javascript
    */
-  'sonar/no-extra-arguments'?: Linter.RuleEntry<SonarNoExtraArguments>
+  'sonar/no-extra-arguments'?: Linter.RuleEntry<[]>
   /**
    * Switch cases should end with an unconditional "break" statement
    * @see https://sonarsource.github.io/rspec/#/rspec/S128/javascript
@@ -3873,7 +3873,7 @@ export interface RuleOptions {
    * Boolean expressions should not be gratuitous
    * @see https://sonarsource.github.io/rspec/#/rspec/S2589/javascript
    */
-  'sonar/no-gratuitous-expressions'?: Linter.RuleEntry<SonarNoGratuitousExpressions>
+  'sonar/no-gratuitous-expressions'?: Linter.RuleEntry<[]>
   /**
    * Using hardcoded IP addresses is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S1313/javascript
@@ -3898,12 +3898,12 @@ export interface RuleOptions {
    * "if/else if" chains and "switch" cases should not have the same condition
    * @see https://sonarsource.github.io/rspec/#/rspec/S1862/javascript
    */
-  'sonar/no-identical-conditions'?: Linter.RuleEntry<SonarNoIdenticalConditions>
+  'sonar/no-identical-conditions'?: Linter.RuleEntry<[]>
   /**
    * Identical expressions should not be used on both sides of a binary operator
    * @see https://sonarsource.github.io/rspec/#/rspec/S1764/javascript
    */
-  'sonar/no-identical-expressions'?: Linter.RuleEntry<SonarNoIdenticalExpressions>
+  'sonar/no-identical-expressions'?: Linter.RuleEntry<[]>
   /**
    * Functions should not have identical implementations
    * @see https://sonarsource.github.io/rspec/#/rspec/S4144/javascript
@@ -3943,12 +3943,12 @@ export interface RuleOptions {
    * Functions should use "return" consistently
    * @see https://sonarsource.github.io/rspec/#/rspec/S3801/javascript
    */
-  'sonar/no-inconsistent-returns'?: Linter.RuleEntry<SonarNoInconsistentReturns>
+  'sonar/no-inconsistent-returns'?: Linter.RuleEntry<[]>
   /**
    * Strings and non-strings should not be added
    * @see https://sonarsource.github.io/rspec/#/rspec/S3402/javascript
    */
-  'sonar/no-incorrect-string-concat'?: Linter.RuleEntry<SonarNoIncorrectStringConcat>
+  'sonar/no-incorrect-string-concat'?: Linter.RuleEntry<[]>
   /**
    * Users should not use internal APIs
    * @see https://sonarsource.github.io/rspec/#/rspec/S6627/javascript
@@ -3960,11 +3960,6 @@ export interface RuleOptions {
    */
   'sonar/no-intrusive-permissions'?: Linter.RuleEntry<SonarNoIntrusivePermissions>
   /**
-   * "await" should only be used with promises
-   * @see https://sonarsource.github.io/rspec/#/rspec/S4123/javascript
-   */
-  'sonar/no-invalid-await'?: Linter.RuleEntry<[]>
-  /**
    * Regular expressions should be syntactically valid
    * @see https://sonarsource.github.io/rspec/#/rspec/S5856/javascript
    */
@@ -3973,7 +3968,7 @@ export interface RuleOptions {
    * Function returns should not be invariant
    * @see https://sonarsource.github.io/rspec/#/rspec/S3516/javascript
    */
-  'sonar/no-invariant-returns'?: Linter.RuleEntry<SonarNoInvariantReturns>
+  'sonar/no-invariant-returns'?: Linter.RuleEntry<[]>
   /**
    * Boolean checks should not be inverted
    * @see https://sonarsource.github.io/rspec/#/rspec/S1940/javascript
@@ -3983,7 +3978,7 @@ export interface RuleOptions {
    * Forwarding client IP address is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5759/javascript
    */
-  'sonar/no-ip-forward'?: Linter.RuleEntry<SonarNoIpForward>
+  'sonar/no-ip-forward'?: Linter.RuleEntry<[]>
   /**
    * Labels should not be used
    * @see https://sonarsource.github.io/rspec/#/rspec/S1119/javascript
@@ -3998,7 +3993,7 @@ export interface RuleOptions {
    * Allowing browsers to sniff MIME types is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5734/javascript
    */
-  'sonar/no-mime-sniff'?: Linter.RuleEntry<SonarNoMimeSniff>
+  'sonar/no-mime-sniff'?: Linter.RuleEntry<[]>
   /**
    * Array-mutating methods should not be used misleadingly
    * @see https://sonarsource.github.io/rspec/#/rspec/S4043/javascript
@@ -4013,7 +4008,7 @@ export interface RuleOptions {
    * Allowing mixed-content is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5730/javascript
    */
-  'sonar/no-mixed-content'?: Linter.RuleEntry<SonarNoMixedContent>
+  'sonar/no-mixed-content'?: Linter.RuleEntry<[]>
   /**
    * Assignments should not be made from within sub-expressions
    * @see https://sonarsource.github.io/rspec/#/rspec/S1121/javascript
@@ -4083,23 +4078,23 @@ export interface RuleOptions {
    * Optional property declarations should not use both '?' and 'undefined' syntax
    * @see https://sonarsource.github.io/rspec/#/rspec/S4782/javascript
    */
-  'sonar/no-redundant-optional'?: Linter.RuleEntry<SonarNoRedundantOptional>
+  'sonar/no-redundant-optional'?: Linter.RuleEntry<[]>
   /**
    * Redundant pairs of parentheses should be removed
    * @see https://sonarsource.github.io/rspec/#/rspec/S1110/javascript
    * @deprecated
    */
-  'sonar/no-redundant-parentheses'?: Linter.RuleEntry<SonarNoRedundantParentheses>
+  'sonar/no-redundant-parentheses'?: Linter.RuleEntry<[]>
   /**
    * Variables should be defined before being used
    * @see https://sonarsource.github.io/rspec/#/rspec/S3827/javascript
    */
-  'sonar/no-reference-error'?: Linter.RuleEntry<SonarNoReferenceError>
+  'sonar/no-reference-error'?: Linter.RuleEntry<[]>
   /**
    * Disabling strict HTTP no-referrer policy is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5736/javascript
    */
-  'sonar/no-referrer-policy'?: Linter.RuleEntry<SonarNoReferrerPolicy>
+  'sonar/no-referrer-policy'?: Linter.RuleEntry<[]>
   /**
    * Regular expressions should not contain multiple spaces
    * @see https://sonarsource.github.io/rspec/#/rspec/S6326/javascript
@@ -4119,17 +4114,17 @@ export interface RuleOptions {
    * Assertions should not be given twice the same argument
    * @see https://sonarsource.github.io/rspec/#/rspec/S5863/javascript
    */
-  'sonar/no-same-argument-assert'?: Linter.RuleEntry<SonarNoSameArgumentAssert>
+  'sonar/no-same-argument-assert'?: Linter.RuleEntry<[]>
   /**
    * Conditionals should start on new lines
    * @see https://sonarsource.github.io/rspec/#/rspec/S3972/javascript
    */
-  'sonar/no-same-line-conditional'?: Linter.RuleEntry<SonarNoSameLineConditional>
+  'sonar/no-same-line-conditional'?: Linter.RuleEntry<[]>
   /**
    * Methods should not contain selector parameters
    * @see https://sonarsource.github.io/rspec/#/rspec/S2301/javascript
    */
-  'sonar/no-selector-parameter'?: Linter.RuleEntry<SonarNoSelectorParameter>
+  'sonar/no-selector-parameter'?: Linter.RuleEntry<[]>
   /**
    * Tests should not be skipped without providing a reason
    * @see https://sonarsource.github.io/rspec/#/rspec/S1607/javascript
@@ -4160,7 +4155,7 @@ export interface RuleOptions {
    * Promise rejections should not be caught by "try" blocks
    * @see https://sonarsource.github.io/rspec/#/rspec/S4822/javascript
    */
-  'sonar/no-try-promise'?: Linter.RuleEntry<SonarNoTryPromise>
+  'sonar/no-try-promise'?: Linter.RuleEntry<[]>
   /**
    * "undefined" should not be passed as the value of optional parameters
    * @see https://sonarsource.github.io/rspec/#/rspec/S4623/javascript
@@ -4235,7 +4230,7 @@ export interface RuleOptions {
    * Variables declared with "var" should be declared before they are used
    * @see https://sonarsource.github.io/rspec/#/rspec/S1526/javascript
    */
-  'sonar/no-variable-usage-before-declaration'?: Linter.RuleEntry<SonarNoVariableUsageBeforeDeclaration>
+  'sonar/no-variable-usage-before-declaration'?: Linter.RuleEntry<[]>
   /**
    * Disabling Vue.js built-in escaping is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S6299/javascript
@@ -4266,7 +4261,7 @@ export interface RuleOptions {
    * Arithmetic operators should only have numbers as operands
    * @see https://sonarsource.github.io/rspec/#/rspec/S3760/javascript
    */
-  'sonar/non-number-in-arithmetic-expression'?: Linter.RuleEntry<SonarNonNumberInArithmeticExpression>
+  'sonar/non-number-in-arithmetic-expression'?: Linter.RuleEntry<[]>
   /**
    * Properties of variables with "null" or "undefined" values should not be accessed
    * @see https://sonarsource.github.io/rspec/#/rspec/S2259/javascript
@@ -4393,7 +4388,7 @@ export interface RuleOptions {
    * Shorthand object properties should be grouped at the beginning or end of an object declaration
    * @see https://sonarsource.github.io/rspec/#/rspec/S3499/javascript
    */
-  'sonar/shorthand-property-grouping'?: Linter.RuleEntry<SonarShorthandPropertyGrouping>
+  'sonar/shorthand-property-grouping'?: Linter.RuleEntry<[]>
   /**
    * Character classes in regular expressions should not contain only one character
    * @see https://sonarsource.github.io/rspec/#/rspec/S6397/javascript
@@ -4435,17 +4430,17 @@ export interface RuleOptions {
    * Regular expressions with the global flag should be used with caution
    * @see https://sonarsource.github.io/rspec/#/rspec/S6351/javascript
    */
-  'sonar/stateful-regex'?: Linter.RuleEntry<SonarStatefulRegex>
+  'sonar/stateful-regex'?: Linter.RuleEntry<[]>
   /**
    * Disabling Strict-Transport-Security policy is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S5739/javascript
    */
-  'sonar/strict-transport-security'?: Linter.RuleEntry<SonarStrictTransportSecurity>
+  'sonar/strict-transport-security'?: Linter.RuleEntry<[]>
   /**
    * Comparison operators should not be used with strings
    * @see https://sonarsource.github.io/rspec/#/rspec/S3003/javascript
    */
-  'sonar/strings-comparison'?: Linter.RuleEntry<SonarStringsComparison>
+  'sonar/strings-comparison'?: Linter.RuleEntry<[]>
   /**
    * "super()" should be invoked appropriately
    * @see https://sonarsource.github.io/rspec/#/rspec/S3854/javascript
@@ -4475,12 +4470,12 @@ export interface RuleOptions {
    * Loops should not contain more than a single "break" or "continue" statement
    * @see https://sonarsource.github.io/rspec/#/rspec/S135/javascript
    */
-  'sonar/too-many-break-or-continue-in-loop'?: Linter.RuleEntry<SonarTooManyBreakOrContinueInLoop>
+  'sonar/too-many-break-or-continue-in-loop'?: Linter.RuleEntry<[]>
   /**
    * Regular expressions using Unicode character classes or property escapes should enable the unicode flag
    * @see https://sonarsource.github.io/rspec/#/rspec/S5867/javascript
    */
-  'sonar/unicode-aware-regex'?: Linter.RuleEntry<SonarUnicodeAwareRegex>
+  'sonar/unicode-aware-regex'?: Linter.RuleEntry<[]>
   /**
    * Unnecessary imports should be removed
    * @see https://sonarsource.github.io/rspec/#/rspec/S1128/javascript
@@ -4490,32 +4485,33 @@ export interface RuleOptions {
    * Names of regular expressions named groups should be used
    * @see https://sonarsource.github.io/rspec/#/rspec/S5860/javascript
    */
-  'sonar/unused-named-groups'?: Linter.RuleEntry<SonarUnusedNamedGroups>
+  'sonar/unused-named-groups'?: Linter.RuleEntry<[]>
   /**
    * Server certificates should be verified during SSL/TLS connections
    * @see https://sonarsource.github.io/rspec/#/rspec/S4830/javascript
    */
-  'sonar/unverified-certificate'?: Linter.RuleEntry<SonarUnverifiedCertificate>
+  'sonar/unverified-certificate'?: Linter.RuleEntry<[]>
   /**
    * Server hostnames should be verified during SSL/TLS connections
    * @see https://sonarsource.github.io/rspec/#/rspec/S5527/javascript
    */
-  'sonar/unverified-hostname'?: Linter.RuleEntry<SonarUnverifiedHostname>
+  'sonar/unverified-hostname'?: Linter.RuleEntry<[]>
   /**
    * "const" variables should not be reassigned
    * @see https://sonarsource.github.io/rspec/#/rspec/S3500/javascript
    */
-  'sonar/updated-const-var'?: Linter.RuleEntry<SonarUpdatedConstVar>
+  'sonar/updated-const-var'?: Linter.RuleEntry<[]>
   /**
    * Loop counters should not be assigned within the loop body
    * @see https://sonarsource.github.io/rspec/#/rspec/S2310/javascript
+   * @deprecated
    */
-  'sonar/updated-loop-counter'?: Linter.RuleEntry<SonarUpdatedLoopCounter>
+  'sonar/updated-loop-counter'?: Linter.RuleEntry<[]>
   /**
    * Type aliases should be used
    * @see https://sonarsource.github.io/rspec/#/rspec/S4323/javascript
    */
-  'sonar/use-type-alias'?: Linter.RuleEntry<SonarUseTypeAlias>
+  'sonar/use-type-alias'?: Linter.RuleEntry<[]>
   /**
    * Results of operations on strings should not be ignored
    * @see https://sonarsource.github.io/rspec/#/rspec/S1154/javascript
@@ -4557,7 +4553,7 @@ export interface RuleOptions {
    * XML parsers should not be vulnerable to XXE attacks
    * @see https://sonarsource.github.io/rspec/#/rspec/S2755/javascript
    */
-  'sonar/xml-parser-xxe'?: Linter.RuleEntry<SonarXmlParserXxe>
+  'sonar/xml-parser-xxe'?: Linter.RuleEntry<[]>
   /**
    * Executing XPath expressions is security-sensitive
    * @see https://sonarsource.github.io/rspec/#/rspec/S4817/javascript
@@ -12406,35 +12402,11 @@ type ShopifyStrictComponentBoundaries = []|[{
 type SimpleImportSortImports = []|[{
   groups?: string[][]
 }]
-// ----- sonar/arguments-order -----
-type SonarArgumentsOrder = []|[("sonar-runtime" | "metric")]
-// ----- sonar/arguments-usage -----
-type SonarArgumentsUsage = []|[("sonar-runtime" | "metric")]
 // ----- sonar/arrow-function-convention -----
 type SonarArrowFunctionConvention = []|[{
   requireParameterParentheses?: boolean
   requireBodyBraces?: boolean
 }]
-// ----- sonar/aws-iam-all-privileges -----
-type SonarAwsIamAllPrivileges = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-iam-all-resources-accessible -----
-type SonarAwsIamAllResourcesAccessible = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-iam-privilege-escalation -----
-type SonarAwsIamPrivilegeEscalation = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-iam-public-access -----
-type SonarAwsIamPublicAccess = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-s3-bucket-granted-access -----
-type SonarAwsS3BucketGrantedAccess = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-s3-bucket-public-access -----
-type SonarAwsS3BucketPublicAccess = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-s3-bucket-server-encryption -----
-type SonarAwsS3BucketServerEncryption = []|[("sonar-runtime" | "metric")]
-// ----- sonar/aws-s3-bucket-versioning -----
-type SonarAwsS3BucketVersioning = []|[("sonar-runtime" | "metric")]
-// ----- sonar/block-scoped-var -----
-type SonarBlockScopedVar = []|[("sonar-runtime" | "metric")]
-// ----- sonar/certificate-transparency -----
-type SonarCertificateTransparency = []|[("sonar-runtime" | "metric")]
 // ----- sonar/class-name -----
 type SonarClassName = []|[{
   format?: string
@@ -12447,39 +12419,15 @@ type SonarCommentRegex = []|[{
   message?: string
   flags?: string
 }]
-// ----- sonar/conditional-indentation -----
-type SonarConditionalIndentation = []|[("sonar-runtime" | "metric")]
-// ----- sonar/confidential-information-logging -----
-type SonarConfidentialInformationLogging = []|[("sonar-runtime" | "metric")]
 // ----- sonar/content-length -----
 type SonarContentLength = []|[{
   fileUploadSizeLimit?: number
   standardSizeLimit?: number
 }]
-// ----- sonar/content-security-policy -----
-type SonarContentSecurityPolicy = []|[("sonar-runtime" | "metric")]
-// ----- sonar/cookie-no-httponly -----
-type SonarCookieNoHttponly = []|[("sonar-runtime" | "metric")]
-// ----- sonar/cors -----
-type SonarCors = []|[("sonar-runtime" | "metric")]
-// ----- sonar/csrf -----
-type SonarCsrf = []|[("sonar-runtime" | "metric")]
 // ----- sonar/cyclomatic-complexity -----
 type SonarCyclomaticComplexity = []|[{
   threshold?: number
-}]|[{
-  threshold?: number
-}, ("sonar-runtime" | "metric")]
-// ----- sonar/destructuring-assignment-syntax -----
-type SonarDestructuringAssignmentSyntax = []|[("sonar-runtime" | "metric")]
-// ----- sonar/different-types-comparison -----
-type SonarDifferentTypesComparison = []|[("sonar-runtime" | "metric")]
-// ----- sonar/disabled-auto-escaping -----
-type SonarDisabledAutoEscaping = []|[("sonar-runtime" | "metric")]
-// ----- sonar/dns-prefetching -----
-type SonarDnsPrefetching = []|[("sonar-runtime" | "metric")]
-// ----- sonar/duplicates-in-character-class -----
-type SonarDuplicatesInCharacterClass = []|[("sonar-runtime" | "metric")]
+}]
 // ----- sonar/enforce-trailing-comma -----
 type SonarEnforceTrailingComma = []|[(_SonarEnforceTrailingCommaValue | {
   arrays?: _SonarEnforceTrailingCommaValueWithIgnore
@@ -12493,38 +12441,16 @@ type _SonarEnforceTrailingCommaValueWithIgnore = ("always-multiline" | "always" 
 // ----- sonar/expression-complexity -----
 type SonarExpressionComplexity = []|[{
   max?: number
-}]|[{
-  max?: number
-}, ("sonar-runtime" | "metric")]
+}]
 // ----- sonar/file-header -----
 type SonarFileHeader = []|[{
   headerFormat?: string
   isRegularExpression?: boolean
 }]
-// ----- sonar/file-uploads -----
-type SonarFileUploads = []|[("sonar-runtime" | "metric")]
-// ----- sonar/for-loop-increment-sign -----
-type SonarForLoopIncrementSign = []|[("sonar-runtime" | "metric")]
-// ----- sonar/frame-ancestors -----
-type SonarFrameAncestors = []|[("sonar-runtime" | "metric")]
-// ----- sonar/function-inside-loop -----
-type SonarFunctionInsideLoop = []|[("sonar-runtime" | "metric")]
 // ----- sonar/function-name -----
 type SonarFunctionName = []|[{
   format?: string
 }]
-// ----- sonar/function-return-type -----
-type SonarFunctionReturnType = []|[("sonar-runtime" | "metric")]
-// ----- sonar/in-operator-type-error -----
-type SonarInOperatorTypeError = []|[("sonar-runtime" | "metric")]
-// ----- sonar/inconsistent-function-call -----
-type SonarInconsistentFunctionCall = []|[("sonar-runtime" | "metric")]
-// ----- sonar/insecure-cookie -----
-type SonarInsecureCookie = []|[("sonar-runtime" | "metric")]
-// ----- sonar/insecure-jwt-token -----
-type SonarInsecureJwtToken = []|[("sonar-runtime" | "metric")]
-// ----- sonar/inverted-assertion-arguments -----
-type SonarInvertedAssertionArguments = []|[("sonar-runtime" | "metric")]
 // ----- sonar/max-lines -----
 type SonarMaxLines = []|[{
   maximum?: number
@@ -12542,37 +12468,16 @@ type SonarMaxUnionSize = []|[{
 // ----- sonar/nested-control-flow -----
 type SonarNestedControlFlow = []|[{
   maximumNestingLevel?: number
-}]|[{
-  maximumNestingLevel?: number
-}, ("sonar-runtime" | "metric")]
+}]
 // ----- sonar/new-operator-misuse -----
 type SonarNewOperatorMisuse = []|[{
   considerJSDoc?: boolean
-}]|[{
-  considerJSDoc?: boolean
-}, unknown]
-// ----- sonar/no-code-after-done -----
-type SonarNoCodeAfterDone = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-collapsible-if -----
-type SonarNoCollapsibleIf = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-duplicate-in-composite -----
-type SonarNoDuplicateInComposite = []|[("sonar-runtime" | "metric")]
+}]
 // ----- sonar/no-duplicate-string -----
 type SonarNoDuplicateString = []|[{
   threshold?: number
   ignoreStrings?: string
-}]|[{
-  threshold?: number
-  ignoreStrings?: string
-}, ("sonar-runtime" | "metric")]
-// ----- sonar/no-duplicated-branches -----
-type SonarNoDuplicatedBranches = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-element-overwrite -----
-type SonarNoElementOverwrite = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-extra-arguments -----
-type SonarNoExtraArguments = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-gratuitous-expressions -----
-type SonarNoGratuitousExpressions = []|[("sonar-runtime" | "metric")]
+}]
 // ----- sonar/no-hardcoded-passwords -----
 type SonarNoHardcodedPasswords = []|[{
   passwordWords?: string[]
@@ -12582,94 +12487,28 @@ type SonarNoHardcodedSecrets = []|[{
   secretWords?: string
   randomnessSensibility?: number
 }]
-// ----- sonar/no-identical-conditions -----
-type SonarNoIdenticalConditions = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-identical-expressions -----
-type SonarNoIdenticalExpressions = []|[("sonar-runtime" | "metric")]
 // ----- sonar/no-identical-functions -----
-type SonarNoIdenticalFunctions = []|[number]|[number, ("sonar-runtime" | "metric")]
+type SonarNoIdenticalFunctions = []|[number]
 // ----- sonar/no-implicit-dependencies -----
 type SonarNoImplicitDependencies = []|[{
   whitelist?: string[]
 }]
-// ----- sonar/no-inconsistent-returns -----
-type SonarNoInconsistentReturns = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-incorrect-string-concat -----
-type SonarNoIncorrectStringConcat = []|[("sonar-runtime" | "metric")]
 // ----- sonar/no-intrusive-permissions -----
 type SonarNoIntrusivePermissions = []|[{
   permissions?: string[]
 }]
-// ----- sonar/no-invariant-returns -----
-type SonarNoInvariantReturns = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-ip-forward -----
-type SonarNoIpForward = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-mime-sniff -----
-type SonarNoMimeSniff = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-mixed-content -----
-type SonarNoMixedContent = []|[("sonar-runtime" | "metric")]
 // ----- sonar/no-nested-functions -----
 type SonarNoNestedFunctions = []|[{
   threshold?: number
-}]|[{
-  threshold?: number
-}, ("sonar-runtime" | "metric")]
-// ----- sonar/no-redundant-optional -----
-type SonarNoRedundantOptional = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-redundant-parentheses -----
-type SonarNoRedundantParentheses = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-reference-error -----
-type SonarNoReferenceError = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-referrer-policy -----
-type SonarNoReferrerPolicy = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-same-argument-assert -----
-type SonarNoSameArgumentAssert = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-same-line-conditional -----
-type SonarNoSameLineConditional = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-selector-parameter -----
-type SonarNoSelectorParameter = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-try-promise -----
-type SonarNoTryPromise = []|[("sonar-runtime" | "metric")]
-// ----- sonar/no-variable-usage-before-declaration -----
-type SonarNoVariableUsageBeforeDeclaration = []|[("sonar-runtime" | "metric")]
-// ----- sonar/non-number-in-arithmetic-expression -----
-type SonarNonNumberInArithmeticExpression = []|[("sonar-runtime" | "metric")]
+}]
 // ----- sonar/regex-complexity -----
 type SonarRegexComplexity = []|[{
   threshold?: number
-}]|[{
-  threshold?: number
-}, ("sonar-runtime" | "metric")]
-// ----- sonar/shorthand-property-grouping -----
-type SonarShorthandPropertyGrouping = []|[("sonar-runtime" | "metric")]
-// ----- sonar/stateful-regex -----
-type SonarStatefulRegex = []|[("sonar-runtime" | "metric")]
-// ----- sonar/strict-transport-security -----
-type SonarStrictTransportSecurity = []|[("sonar-runtime" | "metric")]
-// ----- sonar/strings-comparison -----
-type SonarStringsComparison = []|[("sonar-runtime" | "metric")]
-// ----- sonar/too-many-break-or-continue-in-loop -----
-type SonarTooManyBreakOrContinueInLoop = []|[("sonar-runtime" | "metric")]
-// ----- sonar/unicode-aware-regex -----
-type SonarUnicodeAwareRegex = []|[("sonar-runtime" | "metric")]
-// ----- sonar/unused-named-groups -----
-type SonarUnusedNamedGroups = []|[("sonar-runtime" | "metric")]
-// ----- sonar/unverified-certificate -----
-type SonarUnverifiedCertificate = []|[("sonar-runtime" | "metric")]
-// ----- sonar/unverified-hostname -----
-type SonarUnverifiedHostname = []|[("sonar-runtime" | "metric")]
-// ----- sonar/updated-const-var -----
-type SonarUpdatedConstVar = []|[("sonar-runtime" | "metric")]
-// ----- sonar/updated-loop-counter -----
-type SonarUpdatedLoopCounter = []|[("sonar-runtime" | "metric")]
-// ----- sonar/use-type-alias -----
-type SonarUseTypeAlias = []|[("sonar-runtime" | "metric")]
+}]
 // ----- sonar/variable-name -----
 type SonarVariableName = []|[{
   format?: string
 }]
-// ----- sonar/xml-parser-xxe -----
-type SonarXmlParserXxe = []|[("sonar-runtime" | "metric")]
 // ----- sort-imports -----
 type SortImports = []|[{
   ignoreCase?: boolean
