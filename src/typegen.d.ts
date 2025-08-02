@@ -2603,10 +2603,20 @@ export interface RuleOptions {
    */
   'react/ensure-forward-ref-using-ref'?: Linter.RuleEntry<[]>
   /**
+   * Enforces that the 'key' attribute is placed before the spread attribute in JSX elements.
+   * @see https://eslint-react.xyz/docs/rules/jsx-key-before-spread
+   */
+  'react/jsx-key-before-spread'?: Linter.RuleEntry<[]>
+  /**
    * Disallow duplicate props in JSX elements.
    * @see https://eslint-react.xyz/docs/rules/jsx-no-duplicate-props
    */
   'react/jsx-no-duplicate-props'?: Linter.RuleEntry<[]>
+  /**
+   * Disallows 'IIFE' in JSX elements.
+   * @see https://eslint-react.xyz/docs/rules/jsx-no-iife
+   */
+  'react/jsx-no-iife'?: Linter.RuleEntry<[]>
   /**
    * Disallow undefined variables in JSX.
    * @see https://eslint-react.xyz/docs/rules/jsx-no-undef
